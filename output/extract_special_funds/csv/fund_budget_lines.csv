@@ -1,0 +1,355 @@
+fund_code,fund_name,section,subclass_code,subclass_name,account_code,account_name,budget_2025,budget_2026,change_amount,change_percent,line_type
+1050263000,HUD Fair Housing Program Trust Fund,revenues,45,INTERGOVERNMENTAL REVENUE,,,70000.0,70000.0,,,section_header
+1050263000,HUD Fair Housing Program Trust Fund,revenues,45,,45703,Intergovernmental Revenue - Federal,70000.0,70000.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,53000.0,53000.0,,,section_header
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,53,,53105,Recording/Filing Fees,1200.0,1200.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,53,,53301,Workforce Training,15000.0,15000.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,53,,53509,Computer Maintenance,1800.0,1800.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,53,,53517,Legal Fees,25000.0,25000.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,53,,53901,Professional Services,10000.0,10000.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,55,OTHER SERVICES,,,8000.0,8000.0,,,section_header
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,55,,55305,Promotional,8000.0,8000.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,56,SUPPLIES,,,9000.0,9000.0,,,section_header
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,56,,56101,Office Supplies,5000.0,5000.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,expenditures,56,,56151,Operational Supplies,4000.0,4000.0,,,detail
+1050263000,HUD Fair Housing Program Trust Fund,net,TOTAL,Net Total,,,,,,,total
+1050282000,EEOC Trust Fund,revenues,45,INTERGOVERNMENTAL REVENUE,,,35000.0,38500.0,3500.0,10.0,section_header
+1050282000,EEOC Trust Fund,revenues,45,,45703,Intergovernmental Revenue - Federal,35000.0,38500.0,3500.0,,detail
+1050282000,EEOC Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,32070.0,32070.0,,,section_header
+1050282000,EEOC Trust Fund,expenditures,53,,53101,Administrative Fees,500.0,500.0,,,detail
+1050282000,EEOC Trust Fund,expenditures,53,,53105,Recording/Filing Fees,1500.0,1500.0,,,detail
+1050282000,EEOC Trust Fund,expenditures,53,,53301,Workforce Training,10000.0,10000.0,,,detail
+1050282000,EEOC Trust Fund,expenditures,53,,53509,Computer Maintenance,5070.0,5070.0,,,detail
+1050282000,EEOC Trust Fund,expenditures,53,,53901,Professional Services,15000.0,15000.0,,,detail
+1050282000,EEOC Trust Fund,expenditures,56,SUPPLIES,,,6430.0,7868.0,1438.0,22.4,section_header
+1050282000,EEOC Trust Fund,expenditures,56,,56101,Office Supplies,1330.0,2768.0,1438.0,,detail
+1050282000,EEOC Trust Fund,expenditures,56,,56151,Operational Supplies,5100.0,5100.0,,,detail
+1050282000,EEOC Trust Fund,net,TOTAL,Net Total,,,-3500.0,-1438.0,2062.0,,total
+1070876500,Three Taxing Bodies Trust Fund,expenditures,51,,51101,Regular,316074.0,305577.0,-10497.0,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,52,,52101,Health Insurance,64745.0,56969.0,-7776.0,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,6592.0,5282.0,-1310.0,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,52,,52201,Social Security,24180.0,23377.0,-803.0,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,125000.0,125000.0,,,section_header
+1070876500,Three Taxing Bodies Trust Fund,expenditures,53,,53101,Administrative Fees,25000.0,25000.0,,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,53,,53517,Legal Fees,100000.0,100000.0,,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,54,PROPERTY SERVICES,,,100000.0,100000.0,,,section_header
+1070876500,Three Taxing Bodies Trust Fund,expenditures,54,,54105,Landscaping,100000.0,100000.0,,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,55,OTHER SERVICES,,,52750.0,52750.0,,,section_header
+1070876500,Three Taxing Bodies Trust Fund,expenditures,55,,55305,Promotional,50000.0,50000.0,,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,55,,55309,Regulatory,2500.0,2500.0,,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,55,,55701,Transportation,250.0,250.0,,,detail
+1070876500,Three Taxing Bodies Trust Fund,expenditures,56,SUPPLIES,,,475.0,475.0,,,section_header
+1070876500,Three Taxing Bodies Trust Fund,expenditures,56,,56401,Materials,475.0,475.0,,,detail
+1070876500,Three Taxing Bodies Trust Fund,net,TOTAL,Net Total,,,-689816.0,-669430.0,20386.0,,total
+1090230000,Pittsburgh Partnership Trust Fund,revenues,45,INTERGOVERNMENTAL REVENUE,,,2759840.0,2759840.0,,,section_header
+1090230000,Pittsburgh Partnership Trust Fund,revenues,45,,45707,JTPA/WIA,2759840.0,2759840.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,1289579.0,1328350.0,38771.0,3.0,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,51,,51101,Regular,1289579.0,1328350.0,38771.0,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,333087.0,374579.0,41492.0,12.5,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,52,,52101,Health Insurance,207340.0,228929.0,21589.0,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,25794.0,25731.0,-63.0,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,52,,52201,Social Security,99953.0,102919.0,2966.0,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,52,,52601,Personal Leave Buyback,17000.0,17000.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,11500.0,11500.0,,,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,53,,53301,Workforce Training,4000.0,4000.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,53,,53901,Professional Services,7500.0,7500.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,54,PROPERTY SERVICES,,,247740.0,247740.0,,,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,54,,54501,Land & Buildings,247740.0,247740.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,55,OTHER SERVICES,,,12100.0,12100.0,,,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,55,,55201,Telephone,12100.0,12100.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,56,SUPPLIES,,,13200.0,13200.0,,,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,56,,56101,Office Supplies,10000.0,10000.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,56,,56151,Operational Supplies,3200.0,3200.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,58,MISCELLANEOUS,,,1150000.0,1150000.0,,,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,58,,58101,Grants,1150000.0,1150000.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,91,TRANSFERS-OUT,,,130000.0,130000.0,,,section_header
+1090230000,Pittsburgh Partnership Trust Fund,expenditures,91,,91105,Trust & Agency-Out,130000.0,130000.0,,,detail
+1090230000,Pittsburgh Partnership Trust Fund,net,TOTAL,Net Total,,,-427366.0,-507629.0,-80263.0,,total
+120000024,Community Development Trust Fund,revenues,45,INTERGOVERNMENTAL REVENUE,,,13398170.0,13398170.0,,,section_header
+120000024,Community Development Trust Fund,revenues,45,,45701,CDBG-City Planning,13398170.0,13398170.0,,,detail
+120000024,Community Development Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,804044.0,828152.0,24108.0,3.0,section_header
+120000024,Community Development Trust Fund,expenditures,51,,51101,Regular,804044.0,828152.0,24108.0,,detail
+120000024,Community Development Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,204279.0,222807.0,18528.0,9.1,section_header
+120000024,Community Development Trust Fund,expenditures,52,,52101,Health Insurance,126063.0,143081.0,17018.0,,detail
+120000024,Community Development Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,16707.0,16373.0,-334.0,,detail
+120000024,Community Development Trust Fund,expenditures,52,,52201,Social Security,61509.0,63354.0,1844.0,,detail
+120000024,Community Development Trust Fund,expenditures,58,MISCELLANEOUS,,,12392536.0,12387869.0,-4667.0,,section_header
+120000024,Community Development Trust Fund,expenditures,58,,58101,Grants*,12392536.0,12387869.0,-4667.0,,detail
+120000024,Community Development Trust Fund,net,TOTAL,Net Total,,,-2689.0,-40658.0,-37969.0,,total
+2100246700,Police Secondary Employment Trust Fund,revenues,43,CHARGES FOR SERVICES,,,9196000.0,9196000.0,,,section_header
+2100246700,Police Secondary Employment Trust Fund,revenues,43,,43161,Secondary Employment Fee,785000.0,785000.0,,,detail
+2100246700,Police Secondary Employment Trust Fund,revenues,43,,43425,Vehicle Usage Fee,120000.0,120000.0,,,detail
+2100246700,Police Secondary Employment Trust Fund,revenues,43,,43722,Secondary Employment Reimbursement,8291000.0,8291000.0,,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,8496518.0,8498649.0,2131.0,,section_header
+2100246700,Police Secondary Employment Trust Fund,expenditures,51,,51101,Regular,39698.0,41829.0,2131.0,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,51,,51401,Premium Pay,8456820.0,8456820.0,,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,139114.0,139787.0,673.0,0.5,section_header
+2100246700,Police Secondary Employment Trust Fund,expenditures,52,,52101,Health Insurance,9031.0,9539.0,508.0,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,897.0,898.0,1.0,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,52,,52201,Social Security,129187.0,129350.0,163.0,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,175000.0,175000.0,,,section_header
+2100246700,Police Secondary Employment Trust Fund,expenditures,53,,53509,Computer Maintenance,175000.0,175000.0,,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,57,PROPERTY,,,120000.0,120000.0,,,section_header
+2100246700,Police Secondary Employment Trust Fund,expenditures,57,,57531,Vehicles,120000.0,120000.0,,,detail
+2100246700,Police Secondary Employment Trust Fund,expenditures,58,MISCELLANEOUS,,,100000.0,100000.0,,,section_header
+2100246700,Police Secondary Employment Trust Fund,expenditures,58,,58105,Judgements,100000.0,100000.0,,,detail
+2100246700,Police Secondary Employment Trust Fund,net,TOTAL,Net Total,,,165368.0,162564.0,-2804.0,,total
+2100247700,Stop the Violence Trust Fund,revenues,90,TRANSFERS,,,11193068.0,11780631.0,587563.0,5.2,section_header
+2100247700,Stop the Violence Trust Fund,revenues,90,,90106,General Fund- In,11193068.0,11780631.0,587563.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,4626328.0,4869401.0,243073.0,5.3,section_header
+2100247700,Stop the Violence Trust Fund,expenditures,51,,51101,Regular,4528190.0,4725528.0,197337.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,51,,51103,Part-Time,98138.0,143874.0,45736.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,1154040.0,1251150.0,97109.0,8.4,section_header
+2100247700,Stop the Violence Trust Fund,expenditures,52,,52101,Health Insurance,711604.0,790593.0,78990.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,88523.0,88048.0,-474.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,52,,52201,Social Security,353914.0,372508.0,18594.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,5061283.0,11084841.0,6023558.0,119.0,section_header
+2100247700,Stop the Violence Trust Fund,expenditures,53,,53301,Workforce Training,1500.0,1500.0,,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,53,,53901,Professional Services,5059783.0,11053341.0,5993558.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,53,,53907,Recreational Services,,30000.0,30000.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,55,OTHER SERVICES,,,32000.0,2000.0,-30000.0,,section_header
+2100247700,Stop the Violence Trust Fund,expenditures,55,,55701,Transportation,32000.0,2000.0,-30000.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,56,,56101,Office Supplies,1000.0,1000.0,,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,56,,56151,Operational Supplies,327000.0,157000.0,-170000.0,,detail
+2100247700,Stop the Violence Trust Fund,expenditures,58,,58101,Grants,1000000.0,,-1000000.0,,detail
+2100247700,Stop the Violence Trust Fund,net,TOTAL,Net Total,,,-1008583.0,-5584761.0,-4576177.0,,total
+4000220000,Liquid Fuels Trust Fund,expenditures,54,PROPERTY SERVICES,,,2620000.0,2620000.0,,,section_header
+4000220000,Liquid Fuels Trust Fund,expenditures,54,,54201,Maintenance,1300000.0,1300000.0,,,detail
+4000220000,Liquid Fuels Trust Fund,expenditures,54,,54601,Electricity,1320000.0,1320000.0,,,detail
+4000220000,Liquid Fuels Trust Fund,expenditures,58,,58101,Grants,4072500.0,3225148.0,-847352.0,,detail
+4000220000,Liquid Fuels Trust Fund,net,TOTAL,Net Total,,,1426345.0,2227352.0,801007.0,,total
+4000280300,Regional Asset District - Public Works Trust Fund,revenues,41,TAX REVENUE,,,6386226.0,7890039.0,1503813.0,23.5,section_header
+4000280300,Regional Asset District - Public Works Trust Fund,revenues,41,,41701,Act 77 - Tax Relief,6386226.0,7890039.0,1503813.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,4660147.0,4777150.0,117003.0,2.5,section_header
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,51,,51101,Regular,4616747.0,4738760.0,122013.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,51,,51201,Longevity,35750.0,23000.0,-12750.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,51,,51203,Allowance,7000.0,7837.0,837.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,51,,51205,Uniform,650.0,650.0,,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,51,,51401,Premium Pay,,6903.0,6903.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,1257101.0,1272767.0,15666.0,1.2,section_header
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,52,,52101,Health Insurance,795849.0,805730.0,9881.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,104751.0,101585.0,-3166.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,52,,52201,Social Security,356501.0,365452.0,8951.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,10000.0,10000.0,,,section_header
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,53,,53701,Repairs,10000.0,10000.0,,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,PROPERTY SERVICES,,,406950.0,1416950.0,1010000.0,248.2,section_header
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,,54201,Maintenance,40000.0,940000.0,900000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,,54305,Building - Systems,20000.0,20000.0,,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,,54501,Land & Buildings,40000.0,240000.0,200000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,,54513,Machinery & Equipment,110000.0,50000.0,-60000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,,54601,Electric,62950.0,62950.0,,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,,54603,Natural Gas,130000.0,100000.0,-30000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,54,,54609,Water,4000.0,4000.0,,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,56,,56101,Office Supplies,15000.0,12472.09,-2528.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,56,,56151,Operational Supplies,220700.0,120700.0,-100000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,56,,56351,Tools,95000.0,45000.0,-50000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,56,,56401,Materials,100000.0,200000.0,100000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,56,,56501,Parts,30000.0,10000.0,-20000.0,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,57,PROPERTY,,,25000.0,25000.0,,,section_header
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,57,,57501,Machinery And Equipment,20000.0,20000.0,,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,expenditures,57,,57571,Furniture And Fixtures,5000.0,5000.0,,,detail
+4000280300,Regional Asset District - Public Works Trust Fund,net,TOTAL,Net Total,,,-433672.0,,433672.0,,total
+4000284300,Public Works Trust Fund,revenues,45,INTERGOVERNMENTAL REVENUE,,,1000000.0,1000000.0,,,section_header
+4000284300,Public Works Trust Fund,revenues,45,,45115,Intergovernmental Revenue-Local,300000.0,300000.0,,,detail
+4000284300,Public Works Trust Fund,revenues,45,,45227,Intergovernmental Revenue-State,700000.0,700000.0,,,detail
+4000284300,Public Works Trust Fund,expenditures,53,,53901,Professional Services,232040.0,232040.0,,,detail
+4000284300,Public Works Trust Fund,expenditures,56,SUPPLIES,,,750000.0,750000.0,,,section_header
+4000284300,Public Works Trust Fund,expenditures,56,,56401,Materials,750000.0,750000.0,,,detail
+4000284300,Public Works Trust Fund,net,TOTAL,Net Total,,,17960.0,17960.0,,,total
+4000285300,Shade Tree Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,65000.0,65000.0,,,section_header
+4000285300,Shade Tree Trust Fund,expenditures,53,,53301,Workforce Training,5000.0,5000.0,,,detail
+4000285300,Shade Tree Trust Fund,expenditures,53,,53901,Professional Services,60000.0,60000.0,,,detail
+4000285300,Shade Tree Trust Fund,expenditures,54,PROPERTY SERVICES,,,65000.0,65000.0,,,section_header
+4000285300,Shade Tree Trust Fund,expenditures,54,,54105,Landscaping,60000.0,60000.0,,,detail
+4000285300,Shade Tree Trust Fund,expenditures,54,,54201,Maintenance,5000.0,5000.0,,,detail
+4000285300,Shade Tree Trust Fund,expenditures,56,SUPPLIES,,,20000.0,20000.0,,,section_header
+4000285300,Shade Tree Trust Fund,expenditures,56,,56151,Operational Supplies,15000.0,15000.0,,,detail
+4000285300,Shade Tree Trust Fund,expenditures,56,,56401,Materials,5000.0,5000.0,,,detail
+4000285300,Shade Tree Trust Fund,net,TOTAL,Net Total,,,50000.0,-150000.0,-200000.0,,total
+4000280070,Parks Tax Trust Fund,revenues,41,,41111,Parks Tax,9844580.0,9255231.0,-589349.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,4121346.0,5137874.0,1016528.0,24.7,section_header
+4000280070,Parks Tax Trust Fund,expenditures,51,,51101,Regular,3399287.0,3693997.0,294710.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,51,,51103,Part-Time,717059.0,732453.0,15394.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,51,,51201,Longevity,2000.0,6750.0,4750.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,51,,51203,Allowances,3000.0,704674.0,701674.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,944818.0,1005199.0,60381.0,6.4,section_header
+4000280070,Parks Tax Trust Fund,expenditures,52,,52101,Health Insurance,544139.0,591035.0,46896.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,72411.0,74667.0,2256.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,52,,52201,Social Security,328268.0,339497.0,11230.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,53,,53301,Workforce Training,60000.0,58000.0,-2000.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,54,PROPERTY SERVICES,,,515000.0,770000.0,255000.0,49.5,section_header
+4000280070,Parks Tax Trust Fund,expenditures,54,,54105,Landscaping,,250000.0,250000.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,54,,54201,Maintenance,515000.0,520000.0,5000.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,56,SUPPLIES,,,65478.0,427164.0,361686.0,552.4,section_header
+4000280070,Parks Tax Trust Fund,expenditures,56,,56151,Operational Supplies,52478.0,264164.0,211686.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,56,,56401,Materials,13000.0,163000.0,150000.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,57,,57501,Machinery and Equipment,165000.0,465000.0,300000.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,57,,57531,Vehicles,1465000.0,,-1465000.0,,detail
+4000280070,Parks Tax Trust Fund,expenditures,91,,91108,Project Fund-Out,2515331.0,1391562.0,-1123769.0,,detail
+4000280070,Parks Tax Trust Fund,net,TOTAL,Net Total,,,-7393.0,432.0,7825.0,,total
+5000731400,Special Events Trust Fund,revenues,42,LICENSES AND PERMITS REVENUE,,,35000.0,35000.0,,,section_header
+5000731400,Special Events Trust Fund,revenues,42,,42375,Farmers Markets,35000.0,35000.0,,,detail
+5000731400,Special Events Trust Fund,revenues,43,CHARGES FOR SERVICES,,,100000.0,100000.0,,,section_header
+5000731400,Special Events Trust Fund,revenues,43,,43166,Great Race,100000.0,100000.0,,,detail
+5000731400,Special Events Trust Fund,revenues,48,MISCELLANEOUS REVENUE,,,40000.0,40000.0,,,section_header
+5000731400,Special Events Trust Fund,revenues,48,,48106,Donations,40000.0,40000.0,,,detail
+5000731400,Special Events Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,90413.0,104655.0,14242.0,15.8,section_header
+5000731400,Special Events Trust Fund,expenditures,51,,51101,Regular,52145.0,65384.0,13239.0,,detail
+5000731400,Special Events Trust Fund,expenditures,51,,51103,Part-Time,33268.0,34271.0,1003.0,,detail
+5000731400,Special Events Trust Fund,expenditures,51,,51401,Premium Pay,5000.0,5000.0,,,detail
+5000731400,Special Events Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,9271.0,10659.0,1388.0,15.0,section_header
+5000731400,Special Events Trust Fund,expenditures,52,,52101,Health Insurance,1299.0,1431.0,132.0,,detail
+5000731400,Special Events Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,1055.0,1222.0,167.0,,detail
+5000731400,Special Events Trust Fund,expenditures,52,,52201,Social Security,6917.0,8006.0,1090.0,,detail
+5000731400,Special Events Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,43000.0,43000.0,,,section_header
+5000731400,Special Events Trust Fund,expenditures,55,,55301,Workforce Training,5000.0,5000.0,,,detail
+5000731400,Special Events Trust Fund,expenditures,53,,53907,Recreational Services,38000.0,38000.0,,,detail
+5000731400,Special Events Trust Fund,expenditures,55,OTHER SERVICES,,,50000.0,50000.0,,,section_header
+5000731400,Special Events Trust Fund,expenditures,55,,55305,Promotional,25000.0,25000.0,,,detail
+5000731400,Special Events Trust Fund,expenditures,55,,55701,Transportation,25000.0,25000.0,,,detail
+5000731400,Special Events Trust Fund,expenditures,56,SUPPLIES,,,25000.0,25000.0,,,section_header
+5000731400,Special Events Trust Fund,expenditures,56,,56151,Operational Supplies,25000.0,25000.0,,,detail
+5000731400,Special Events Trust Fund,expenditures,57,PROPERTY,,,5000.0,5000.0,,,section_header
+5000731400,Special Events Trust Fund,expenditures,57,,57501,Machinery & Equipment,5000.0,5000.0,,,detail
+5000731400,Special Events Trust Fund,net,TOTAL,Net Total,,,-47684.0,-63314.0,-15630.0,,total
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,revenues,41,TAX REVENUE,,,2362028.0,2758358.0,396330.0,16.8,section_header
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,revenues,41,,41701,Act 77 - Tax Relief,2362028.0,2758358.0,396330.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,1557903.0,1893423.0,335520.0,21.5,section_header
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,51,,51101,Regular,751556.0,1065572.0,314016.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,51,,51103,Part-Time,806347.0,826351.0,20004.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,51,,51201,Longevity,,1500.0,1500.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,302616.0,389235.0,86619.0,28.6,section_header
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,52,,52101,Health Insurance,167973.0,223618.0,55645.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,15463.0,20458.0,4995.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,52,,52201,Social Security,119180.0,145160.0,25980.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,93500.0,133500.0,40000.0,42.8,section_header
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,53,,53301,Workforce Training,6000.0,6000.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,53,,53701,Repairs,17500.0,17500.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,53,,53901,Professional Services,70000.0,50000.0,-20000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,53,,53907,Recreational Services,,60000.0,60000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,54,,54201,Maintenance,7000.0,7000.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,54,,54305,Building - Systems,1000.0,1000.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,54,,54501,Land & Buildings,2200.0,2200.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,54,,54513,Machinery & Equipment,15000.0,15000.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,54,,54601,Electric,30000.0,,-30000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,54,,54609,Water,20000.0,,-20000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,55,OTHER SERVICES,,,2000.0,2000.0,,,section_header
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,55,,55701,Machinery & Equipment,2000.0,2000.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,56,SUPPLIES,,,200000.0,205000.0,5000.0,2.5,section_header
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,56,,56101,Office Supplies,35000.0,5000.0,-30000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,56,,56151,Operational Supplies,150000.0,185000.0,35000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,56,,56401,Materials,15000.0,15000.0,,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,57,PROPERTY,,,25000.0,110000.0,85000.0,340.0,section_header
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,57,,57501,Machinery & Equipment,25000.0,15000.0,-10000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,expenditures,57,,57531,Vehicles,,95000.0,95000.0,,detail
+5000280400,Regional Asset District - Parks & Recreation Trust Fund,net,TOTAL,Net Total,,,105809.0,,-105809.0,,total
+5000283300,Mellon Park Trust Fund,revenues,43,CHARGES FOR SERVICES,,,228135.0,347553.0,119418.0,52.3,section_header
+5000283300,Mellon Park Trust Fund,revenues,43,,43925,Mellon Park Tennis,228135.0,347553.0,119418.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,239016.0,304593.0,65577.0,27.4,section_header
+5000283300,Mellon Park Trust Fund,expenditures,51,,51101,Regular,200832.0,216557.0,15725.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,51,,51103,Part-Time,38184.0,85536.0,47352.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,51,,51201,Longevity,,2500.0,2500.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,53983.0,60847.0,6864.0,12.7,section_header
+5000283300,Mellon Park Trust Fund,expenditures,52,,52101,Health Insurance,31608.0,33386.0,1778.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,4090.0,4160.0,70.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,52,,52201,Social Security,18285.0,23301.0,5016.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,53,,53701,Repairs,3000.0,3000.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,53,,53901,Professional Services,15000.0,15000.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,53,,53907,Recreational Services,50000.0,,-50000.0,,detail
+5000283300,Mellon Park Trust Fund,expenditures,54,PROPERTY SERVICES,,,73900.0,73900.0,,,section_header
+5000283300,Mellon Park Trust Fund,expenditures,54,,54101,Cleaning,2000.0,2000.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,54,,54201,Maintenance,7000.0,7000.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,54,,54301,Building - General,5000.0,5000.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,54,,54513,Machinery & Equipment,1000.0,1000.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,54,,54601,Electric,40050.0,40050.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,54,,54603,Natural Gas,18850.0,18850.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,56,SUPPLIES,,,17500.0,17500.0,,,section_header
+5000283300,Mellon Park Trust Fund,expenditures,56,,56101,Office Supplies,500.0,500.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,56,,56151,Operational Supplies,9500.0,9500.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,56,,56401,Materials,7500.0,7500.0,,,detail
+5000283300,Mellon Park Trust Fund,expenditures,59,TRANSFERS OUT,,,,,,,section_header
+5000283300,Mellon Park Trust Fund,expenditures,91,,91108,Project Fund-Out,,,,,detail
+5000283300,Mellon Park Trust Fund,net,TOTAL,Net Total,,,-224264.0,-127287.0,96977.0,,total
+5000284500,Schenley Park Rink Trust Fund,revenues,42,LICENSES & PERMITS REVENUE,,,25000.0,25000.0,,,section_header
+5000284500,Schenley Park Rink Trust Fund,revenues,42,,42377,Meeting Rooms,25000.0,25000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,revenues,43,CHARGES FOR SERVICES,,,135000.0,135000.0,,,section_header
+5000284500,Schenley Park Rink Trust Fund,revenues,43,,43411,Ice Hockey Rinks,77500.0,77500.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,revenues,43,,43913,Admissions,32500.0,32500.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,revenues,43,,43915,Admissions - Youth,25000.0,25000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,8000.0,8000.0,,,section_header
+5000284500,Schenley Park Rink Trust Fund,expenditures,53,,53701,Repairs,8000.0,8000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,54,PROPERTY SERVICES,,,126500.0,126500.0,,,section_header
+5000284500,Schenley Park Rink Trust Fund,expenditures,54,,54201,Maintenance,47500.0,47500.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,54,,54601,Electric,78000.0,78000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,54,,54603,Natural Gas,1000.0,1000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,55,OTHER SERVICES,,,2500.0,2500.0,,,section_header
+5000284500,Schenley Park Rink Trust Fund,expenditures,55,,55201,Telephone,500.0,500.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,55,,55701,Transportation,2000.0,2000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,56,SUPPLIES,,,14000.0,14000.0,,,section_header
+5000284500,Schenley Park Rink Trust Fund,expenditures,56,,56151,Operational Supplies,10000.0,10000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,56,,56401,Materials,4000.0,4000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,57,PROPERTY,,,6000.0,6000.0,,,section_header
+5000284500,Schenley Park Rink Trust Fund,expenditures,57,,57531,Vehicles,1000.0,1000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,expenditures,57,,57571,Furniture And Fixtures,5000.0,5000.0,,,detail
+5000284500,Schenley Park Rink Trust Fund,net,TOTAL,Net Total,,,3000.0,3000.0,,,total
+5000285000,Senior Citizens Program Trust Fund,revenues,42,LICENSES & PERMITS REVENUE,,,28000.0,28000.0,,,section_header
+5000285000,Senior Citizens Program Trust Fund,revenues,42,,42377,Meeting Rooms,28000.0,28000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,revenues,45,INTERGOVERNMENTAL REVENUE,,,1483850.0,1483850.0,,,section_header
+5000285000,Senior Citizens Program Trust Fund,revenues,45,,45115,Intergovernmental Revenue - Local,733850.0,733850.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,revenues,45,,45701,CDBG-City Planning,750000.0,750000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,1560823.0,1685030.0,124207.0,8.0,section_header
+5000285000,Senior Citizens Program Trust Fund,expenditures,51,,51101,Regular,1369903.0,1478100.0,108197.0,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,51,,51103,Part-Time,190920.0,196680.0,5760.0,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,51,,51201,Longevity,,10250.0,10250.0,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,403749.0,408258.0,4509.0,1.1,section_header
+5000285000,Senior Citizens Program Trust Fund,expenditures,52,,52101,Health Insurance,256641.0,251374.0,-5267.0,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,27706.0,27979.0,274.0,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,52,,52201,Social Security,119403.0,128905.0,9502.0,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,23000.0,23000.0,,,section_header
+5000285000,Senior Citizens Program Trust Fund,expenditures,53,,53101,Administrative Fees,1500.0,1500.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,53,,53301,Workforce Training,1000.0,1000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,53,,53509,Computer Maintenance,10000.0,10000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,53,,53701,Repairs,2000.0,2000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,53,,53725,Maintenance - Misc,1000.0,1000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,53,,53901,Professional Services,7500.0,7500.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,54,PROPERTY SERVICES,,,217492.0,217492.0,,,section_header
+5000285000,Senior Citizens Program Trust Fund,expenditures,54,,54101,Cleaning,129492.0,129492.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,54,,54301,Building - General,5000.0,5000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,54,,54501,Land & Buildings,78000.0,78000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,54,,54513,Machinery & Equipment,5000.0,5000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,55,OTHER SERVICES,,,3000.0,3000.0,,,section_header
+5000285000,Senior Citizens Program Trust Fund,expenditures,55,,55701,Transportation,3000.0,3000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,56,SUPPLIES,,,65000.0,65000.0,,,section_header
+5000285000,Senior Citizens Program Trust Fund,expenditures,56,,56101,Office Supplies,5000.0,5000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,56,,56151,Operational Supplies,45000.0,45000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,56,,56401,Materials,15000.0,15000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,57,PROPERTY,,,27500.0,27500.0,,,section_header
+5000285000,Senior Citizens Program Trust Fund,expenditures,57,,57501,Machinery And Equipment,17500.0,17500.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,expenditures,57,,57571,Furniture And Fixtures,10000.0,10000.0,,,detail
+5000285000,Senior Citizens Program Trust Fund,net,TOTAL,Net Total,,,-788714.0,-917430.0,-128716.0,,total
+5000285500,Special Food Service Trust Fund,revenues,45,INTERGOVERNMENTAL REVENUE,,,525000.0,525000.0,,,section_header
+5000285500,Special Food Service Trust Fund,revenues,45,,45507,Summer Food Program,525000.0,525000.0,,,detail
+5000285500,Special Food Service Trust Fund,expenditures,51,PERSONNEL-SALARIES & WAGES,,,189322.0,194992.0,5670.0,3.0,section_header
+5000285500,Special Food Service Trust Fund,expenditures,51,,51101,Regular,83512.0,86008.0,2496.0,,detail
+5000285500,Special Food Service Trust Fund,expenditures,51,,51103,Part-Time,105810.0,108984.0,3174.0,,detail
+5000285500,Special Food Service Trust Fund,expenditures,52,PERSONNEL-EMPLOYEE BENEFITS,,,43415.0,45336.0,1921.0,4.4,section_header
+5000285500,Special Food Service Trust Fund,expenditures,52,,52101,Health Insurance,27092.0,28616.0,1524.0,,detail
+5000285500,Special Food Service Trust Fund,expenditures,52,,52111,Other Insurance/Benefits,1840.0,1803.0,-37.0,,detail
+5000285500,Special Food Service Trust Fund,expenditures,52,,52201,Social Security,14483.0,14917.0,434.0,,detail
+5000285500,Special Food Service Trust Fund,expenditures,53,PROFESSIONAL & TECHNICAL SERVICES,,,175000.0,175000.0,,,section_header
+5000285500,Special Food Service Trust Fund,expenditures,53,,53907,Recreational Services,175000.0,175000.0,,,detail
+5000285500,Special Food Service Trust Fund,expenditures,54,PROPERTY SERVICES,,,500.0,500.0,,,section_header
+5000285500,Special Food Service Trust Fund,expenditures,54,,54301,Building - General,500.0,500.0,,,detail
+5000285500,Special Food Service Trust Fund,expenditures,55,OTHER SERVICES,,,3000.0,3000.0,,,section_header
+5000285500,Special Food Service Trust Fund,expenditures,55,,55701,Transportation,3000.0,3000.0,,,detail
+5000285500,Special Food Service Trust Fund,expenditures,56,SUPPLIES,,,251500.0,251500.0,,,section_header
+5000285500,Special Food Service Trust Fund,expenditures,56,,56101,Office Supplies,1500.0,1500.0,,,detail
+5000285500,Special Food Service Trust Fund,expenditures,56,,56401,Materials,250000.0,250000.0,,,detail
+5000285500,Special Food Service Trust Fund,expenditures,57,PROPERTY,,,1000.0,1000.0,,,section_header
+5000285500,Special Food Service Trust Fund,expenditures,57,,57501,Machinery And Equipment,1000.0,1000.0,,,detail
+5000285500,Special Food Service Trust Fund,net,TOTAL,Net Total,,,-138737.0,-146328.0,-7591.0,,total
+5000771200,Frick Park Trust Fund,revenues,43,CHARGES FOR SERVICES,,,858500.0,858500.0,,,section_header
+5000771200,Frick Park Trust Fund,revenues,43,,43927,Frick Park Trust Fund,858500.0,858500.0,,,detail
+5000771200,Frick Park Trust Fund,expenditures,58,MISCELLANEOUS,,,729725.0,729725.0,,,section_header
+5000771200,Frick Park Trust Fund,expenditures,58,,58101,Grants,729725.0,729725.0,,,detail
+5000771200,Frick Park Trust Fund,net,TOTAL,Net Total,,,128775.0,128775.0,,,total

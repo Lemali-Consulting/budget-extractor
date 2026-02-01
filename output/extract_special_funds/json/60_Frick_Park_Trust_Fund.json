@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "fund_code": "5000771200",
+    "fund_name": "Frick Park Trust Fund",
+    "department": "Parks and Recreation",
+    "authorizing_legislation": "616 of 1926",
+    "description": "The trust fund was established from an endowment from Henry Clay Frick in 1926.",
+    "revenues_description": "Endowment from Henry Clay Frick of $2,000,000",
+    "expenditures_description": "Interest payments on the endowment pay for operational and maintenance expenses of Frick Park",
+    "projected_beginning_balance": 2035076.0,
+    "projected_ending_balance": 2163851.0,
+    "revenues_total_2025": null,
+    "revenues_total_2026": null,
+    "expenditures_total_2025": null,
+    "expenditures_total_2026": null,
+    "net_total_2025": 128775.0,
+    "net_total_2026": 128775.0
+  },
+  "budget_lines": [
+    {
+      "subclass_code": "43",
+      "subclass_name": "CHARGES FOR SERVICES",
+      "account_code": null,
+      "account_name": null,
+      "budget_2025": 858500.0,
+      "budget_2026": 858500.0,
+      "change_amount": null,
+      "change_percent": null,
+      "line_type": "section_header",
+      "section": "revenues"
+    },
+    {
+      "subclass_code": "43",
+      "subclass_name": null,
+      "account_code": "43927",
+      "account_name": "Frick Park Trust Fund",
+      "budget_2025": 858500.0,
+      "budget_2026": 858500.0,
+      "change_amount": null,
+      "change_percent": null,
+      "line_type": "detail",
+      "section": "revenues"
+    },
+    {
+      "subclass_code": "58",
+      "subclass_name": "MISCELLANEOUS",
+      "account_code": null,
+      "account_name": null,
+      "budget_2025": 729725.0,
+      "budget_2026": 729725.0,
+      "change_amount": null,
+      "change_percent": null,
+      "line_type": "section_header",
+      "section": "expenditures"
+    },
+    {
+      "subclass_code": "58",
+      "subclass_name": null,
+      "account_code": "58101",
+      "account_name": "Grants",
+      "budget_2025": 729725.0,
+      "budget_2026": 729725.0,
+      "change_amount": null,
+      "change_percent": null,
+      "line_type": "detail",
+      "section": "expenditures"
+    },
+    {
+      "subclass_code": "TOTAL",
+      "subclass_name": "Net Total",
+      "account_code": null,
+      "account_name": null,
+      "budget_2025": 128775.0,
+      "budget_2026": 128775.0,
+      "change_amount": null,
+      "change_percent": null,
+      "line_type": "total",
+      "section": "net"
+    }
+  ],
+  "positions": [],
+  "source_file": "60_Frick_Park_Trust_Fund.pdf"
+}

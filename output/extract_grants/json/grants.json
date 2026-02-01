@@ -1,0 +1,1460 @@
+{
+  "narrative": "The City of Pittsburgh\u2019s Grants Office is situated within the Office of Management and Budget and is tasked with centralizing the City\u2019s grant-seeking efforts, as well as providing guidance and oversight to City departments in managing their post-award grant administration and reporting processes. The mission of the Grants Office is to increase the City\u2019s capacity to compete for federal, state, county, corporate, and foundation grants, and to effectively assist in the full life-cycle of grant management from application, to award, through close-out. The aim is to increase grant-related revenue, limit the City\u2019s exposure to any grant- related legal liability, and improve the efficiency and impact of programs and services funded through grant dollars. The Grants Office helps departments find and apply for grant opportunities, thereby allowing each department to expand its overall capacity without placing greater burden on the City\u2019s Operating and Capital budgets. Grant funds received by the City of Pittsburgh support important programs and services that the City provides to our community. These funds allow the City to extend pre-existing services, introduce new initiatives, gain technological advances, and subsidize programmatic staffing and equipment. Grant funds are dispersed throughout the City and impact a variety of efforts, including public safety, economic development, social services, recreation, infrastructure improvement and maintenance, and many others. Because grant funding allows the City to leverage local public funds in order to extend and enhance the services it offers to the community, the impact of grant funding upon the City of Pittsburgh is significant. In 2025, the Grants Office helped secure over $14.7 million dollars through 21 grants at the State and Federal level. Some of this funding will support a study of our high crash roadways to further the City's vision of zero roadway deaths, as well as a drop-in support center for individuals requesting social services. 305",
+  "grants": [
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "129400356",
+      "funder": "Publications and Records Commission National Historical Publications and",
+      "grant_description": "Increase access to Records $ Digitize Historic Council Records",
+      "amount_awarded": 12654.0,
+      "amount_spent": -4638.0,
+      "remaining_balance": -237.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "129400357",
+      "funder": "Publications and Museum Commission Dick's Sporting Goods",
+      "grant_description": "Digitize Historic Council Records Provide sports equipment to youth sports",
+      "amount_awarded": 4900.0,
+      "amount_spent": 5100.0,
+      "remaining_balance": -237.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400411",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 9900.0,
+      "amount_spent": 5100.0,
+      "remaining_balance": 100.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400412",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 4950.0,
+      "amount_spent": 5050.0,
+      "remaining_balance": 100.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400413",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 9885.0,
+      "amount_spent": 5050.0,
+      "remaining_balance": 115.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400414",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 9800.0,
+      "amount_spent": 115.0,
+      "remaining_balance": 200.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400415",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 9900.0,
+      "amount_spent": 200.0,
+      "remaining_balance": 100.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400416",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 4950.0,
+      "amount_spent": 5050.0,
+      "remaining_balance": 100.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400417",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 4950.0,
+      "amount_spent": 5050.0,
+      "remaining_balance": 5050.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400418",
+      "funder": "Foundation Dick's Sporting Goods",
+      "grant_description": "organizations in each council district Provide sports equipment to youth sports",
+      "amount_awarded": 7800.0,
+      "amount_spent": 5050.0,
+      "remaining_balance": 2200.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "jde_number": "1029400419",
+      "funder": "Foundation",
+      "grant_description": "organizations in each council district",
+      "amount_awarded": 10000.0,
+      "amount_spent": 7800.0,
+      "remaining_balance": 2200.0
+    },
+    {
+      "department": "Office of the Mayor",
+      "jde_number": "0229400391",
+      "funder": "Heinz Endowments",
+      "grant_description": "Hire a coordinator to liaise with PPS $",
+      "amount_awarded": 175000.0,
+      "amount_spent": 175000.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Office of Management and Budget",
+      "jde_number": "0229400384",
+      "funder": "Environmental Protection PA Department of Environmental",
+      "grant_description": "Diesel Vehicle Replacement $ 2,800,000 Purchase of Electric Vehicles",
+      "amount_awarded": null,
+      "amount_spent": 253125.0,
+      "remaining_balance": 2250.0
+    },
+    {
+      "department": "Office of Management and Budget",
+      "jde_number": "0229400440",
+      "funder": "Environmental Protection PA Department of Environmental",
+      "grant_description": "Purchase of Electric Vehicles Electric Vehicle Infrastructure",
+      "amount_awarded": null,
+      "amount_spent": 253125.0,
+      "remaining_balance": 37028.0
+    },
+    {
+      "department": "Office of Management and Budget",
+      "jde_number": "0229400441",
+      "funder": "Environmental Protection Environmental",
+      "grant_description": "Electric Vehicle Infrastructure Diesel Vehicle Replacement 1,345,000",
+      "amount_awarded": null,
+      "amount_spent": 37028.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Office of Management and Budget",
+      "jde_number": "0229400442",
+      "funder": "Environmental Protection Agency",
+      "grant_description": "Diesel Vehicle Replacement 1,345,000",
+      "amount_awarded": 1345000.0,
+      "amount_spent": 1345000.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Innovation and Performance",
+      "jde_number": "0329400519",
+      "funder": "Noble Reach Foundation",
+      "grant_description": "Cybersecurity Fellows $",
+      "amount_awarded": 78000.0,
+      "amount_spent": 22314.0,
+      "remaining_balance": 55686.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400289",
+      "funder": "Conservation and Natural Resources Pennsylvania Historical and Museum",
+      "grant_description": "Emerald View Park Master Plan $ Manchester Historic Review",
+      "amount_awarded": 17054.0,
+      "amount_spent": 2453.0,
+      "remaining_balance": 446.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400359",
+      "funder": "and Museum Commission PA Department of Community and",
+      "grant_description": "Manchester Historic Review Vacant Lot Study",
+      "amount_awarded": 14656.0,
+      "amount_spent": 2844.0,
+      "remaining_balance": 446.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400361",
+      "funder": "Community and Economic Development Pennsylvania Emergency",
+      "grant_description": "Vacant Lot Study Saw Mill Run flood mitigation",
+      "amount_awarded": 43335.0,
+      "amount_spent": 256665.0,
+      "remaining_balance": 2844.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400394",
+      "funder": "Emergency Management Agency Pennsylvania Historic and Museum",
+      "grant_description": "Saw Mill Run flood mitigation Hill District property stabilization",
+      "amount_awarded": null,
+      "amount_spent": 256665.0,
+      "remaining_balance": 25000.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400448",
+      "funder": "and Museum Commission Pennsylvania Historic and Museum",
+      "grant_description": "Hill District property stabilization Historic Extension Guidelines",
+      "amount_awarded": null,
+      "amount_spent": 25000.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400451",
+      "funder": "and Museum Commission US Conference of Mayors",
+      "grant_description": "Historic Extension Guidelines Composting Pilot",
+      "amount_awarded": null,
+      "amount_spent": 250000.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400467",
+      "funder": "Mayors Pennsylvania Historic and Museum Commission",
+      "grant_description": "Composting Pilot Mexican War Streets",
+      "amount_awarded": null,
+      "amount_spent": 250000.0,
+      "remaining_balance": 25000.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400481",
+      "funder": "Commission Pennsylvania Historic Museum Commission",
+      "grant_description": "Mexican War Streets Manchester guidelines",
+      "amount_awarded": null,
+      "amount_spent": 25000.0,
+      "remaining_balance": 20000.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400481",
+      "funder": "Museum Commission Bloomberg American Sustainable Cities",
+      "grant_description": "Manchester guidelines Support for the Innovation Team",
+      "amount_awarded": null,
+      "amount_spent": 111961.0,
+      "remaining_balance": 20000.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400494",
+      "funder": "Sustainable Cities PA Council of the Arts",
+      "grant_description": "Support for the Innovation Team Artist in Residence",
+      "amount_awarded": null,
+      "amount_spent": 111961.0,
+      "remaining_balance": 100000.0
+    },
+    {
+      "department": "Department of City Planning",
+      "jde_number": "1129400501",
+      "funder": "PA Council of the Arts",
+      "grant_description": "Artist in Residence",
+      "amount_awarded": 100000.0,
+      "amount_spent": null,
+      "remaining_balance": 100000.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400327",
+      "funder": "Department Jewish Healthcare",
+      "grant_description": "Public Health Diversion Program $ 1,084,464 Support HIV Testing in Allegheny County",
+      "amount_awarded": 8111.0,
+      "amount_spent": 210284.0,
+      "remaining_balance": 21889.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400392",
+      "funder": "Foundation US Department of",
+      "grant_description": "Support HIV Testing in Allegheny County Crisis co-response program",
+      "amount_awarded": 8111.0,
+      "amount_spent": 400955.0,
+      "remaining_balance": 21889.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400409",
+      "funder": "Justice , Substance Abuse and Mental Health Services",
+      "grant_description": "Crisis co-response program Post-overdose support 1,000,000",
+      "amount_awarded": 548659.0,
+      "amount_spent": 400955.0,
+      "remaining_balance": 451341.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400452",
+      "funder": "Mental Health Services Administration Federal Emergency",
+      "grant_description": "Post-overdose support 1,000,000 Port Security- Camera Installation",
+      "amount_awarded": 76875.0,
+      "amount_spent": 451341.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400453",
+      "funder": "Management Agency PA Commission on",
+      "grant_description": "Port Security- Camera Installation Radio Replacement Program 17,598,124",
+      "amount_awarded": 76875.0,
+      "amount_spent": 214587.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400457",
+      "funder": "Crime and Delinquency Department of Justice",
+      "grant_description": "Radio Replacement Program 17,598,124 BJA Appropriation",
+      "amount_awarded": 31537.0,
+      "amount_spent": 214587.0,
+      "remaining_balance": 934463.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400483",
+      "funder": "Department of Justice DCED",
+      "grant_description": "BJA Appropriation Ranger Vehicles",
+      "amount_awarded": null,
+      "amount_spent": 934463.0,
+      "remaining_balance": 80000.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400499",
+      "funder": "DCED National Association of",
+      "grant_description": "Ranger Vehicles Training Support",
+      "amount_awarded": null,
+      "amount_spent": 80000.0,
+      "remaining_balance": 20000.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Administration",
+      "jde_number": "2129400505",
+      "funder": "County Health Officials",
+      "grant_description": "Training Support",
+      "amount_awarded": 20000.0,
+      "amount_spent": null,
+      "remaining_balance": 20000.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400402",
+      "funder": "Authority US Department of",
+      "grant_description": "Auto theft prevention Grant $ Inside/Out Training",
+      "amount_awarded": 112875.0,
+      "amount_spent": 117759.0,
+      "remaining_balance": 37625.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400408",
+      "funder": "Justice US Department of",
+      "grant_description": "Inside/Out Training Technology Improvements",
+      "amount_awarded": null,
+      "amount_spent": 37625.0,
+      "remaining_balance": 79327.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400410",
+      "funder": "Justice PA Commission on",
+      "grant_description": "Technology Improvements Safe Passages Expansion 2,500,000",
+      "amount_awarded": null,
+      "amount_spent": 431882.0,
+      "remaining_balance": 79327.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400437",
+      "funder": "Crime and Delinquency US Department of Justice",
+      "grant_description": "Safe Passages Expansion 2,500,000 Holster Purchase",
+      "amount_awarded": 84821.0,
+      "amount_spent": 431882.0,
+      "remaining_balance": 179.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400460",
+      "funder": "Justice DCED",
+      "grant_description": "Genetic Testing",
+      "amount_awarded": 100000.0,
+      "amount_spent": 21297.0,
+      "remaining_balance": 78703.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400487",
+      "funder": "DCED PennDot",
+      "grant_description": "Genetic Testing Impaired Driving Prevention",
+      "amount_awarded": 21297.0,
+      "amount_spent": 683451.0,
+      "remaining_balance": 78703.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400493",
+      "funder": "PennDot PA Commission on Crime and Delinquency",
+      "grant_description": "Impaired Driving Prevention NIBRS Compliance",
+      "amount_awarded": null,
+      "amount_spent": 683451.0,
+      "remaining_balance": 200000.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400496",
+      "funder": "Crime and Delinquency PA Commission on Crime and Delinquency",
+      "grant_description": "NIBRS Compliance Police Recruitment",
+      "amount_awarded": null,
+      "amount_spent": 200000.0,
+      "remaining_balance": 183287.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400476",
+      "funder": "Crime and Delinquency US Department of Justice",
+      "grant_description": "Police Recruitment Software Upgrades",
+      "amount_awarded": null,
+      "amount_spent": 183287.0,
+      "remaining_balance": 51614.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400510",
+      "funder": "Justice Allegheny County",
+      "grant_description": "Software Upgrades Sexual Assault Kit Initiative",
+      "amount_awarded": null,
+      "amount_spent": 51614.0,
+      "remaining_balance": 37000.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400515",
+      "funder": "Allegheny County PennDot",
+      "grant_description": "Sexual Assault Kit Initiative 2024-2026 Autosquad",
+      "amount_awarded": null,
+      "amount_spent": 578221.0,
+      "remaining_balance": 37000.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Police",
+      "jde_number": "2329400516",
+      "funder": "PennDot",
+      "grant_description": "2024-2026 Autosquad",
+      "amount_awarded": 583100.0,
+      "amount_spent": 4879.0,
+      "remaining_balance": 578221.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Emergency Services",
+      "jde_number": "2229400468",
+      "funder": "Commissioner",
+      "grant_description": "Freedom House Training Materials $",
+      "amount_awarded": 15000.0,
+      "amount_spent": 8386.0,
+      "remaining_balance": 6614.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400333",
+      "funder": "Management Agency PA Office of the State",
+      "grant_description": "Supplemental assistance to fire fighters $ Equipment purchase",
+      "amount_awarded": null,
+      "amount_spent": 16936.0,
+      "remaining_balance": 14999.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400352",
+      "funder": "Fire commissioner Federal Emergency",
+      "grant_description": "Equipment purchase Purchase of Self-Contained Breathing 1,718,182",
+      "amount_awarded": null,
+      "amount_spent": 14999.0,
+      "remaining_balance": 607.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400404",
+      "funder": "Management Agency Federal Emergency",
+      "grant_description": "1,718,182 Apparatus Purchase of Attack Hoses",
+      "amount_awarded": 279808.0,
+      "amount_spent": 607.0,
+      "remaining_balance": 192.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400405",
+      "funder": "Management Agency Office of the State Fire",
+      "grant_description": "Purchase of Attack Hoses Purchase of Rescue Equipment",
+      "amount_awarded": 7210.0,
+      "amount_spent": 7790.0,
+      "remaining_balance": 192.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400439",
+      "funder": "Commissioner Federal Emergency",
+      "grant_description": "Purchase of Rescue Equipment Purchase of Ventilation saws and fans",
+      "amount_awarded": 7210.0,
+      "amount_spent": 7790.0,
+      "remaining_balance": 6043.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400450",
+      "funder": "Management Agency Office of the State Fire Commissioner",
+      "grant_description": "Purchase of Ventilation saws and fans Purchase of Handtools",
+      "amount_awarded": 16368.0,
+      "amount_spent": 6043.0,
+      "remaining_balance": 3632.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400469",
+      "funder": "Commissioner Norfolk Southern",
+      "grant_description": "Purchase of Handtools Purchase of non toxic foam",
+      "amount_awarded": null,
+      "amount_spent": 15000.0,
+      "remaining_balance": 3632.0
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400482",
+      "funder": "Norfolk Southern Office of the State Fire Commission",
+      "grant_description": "Purchase of non toxic foam Trauma Bags",
+      "amount_awarded": null,
+      "amount_spent": 15000.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Safety - Bureau of Fire",
+      "jde_number": "2529400509",
+      "funder": "Commission",
+      "grant_description": "Trauma Bags",
+      "amount_awarded": 15676.0,
+      "amount_spent": 15840.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400285",
+      "funder": "and Museum Commission PA Department of Community and",
+      "grant_description": "Highland Park Pedestrian Tunnel $ Highland Park Pedestrian Tunnel",
+      "amount_awarded": 75000.0,
+      "amount_spent": null,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400294",
+      "funder": "Community and Economic Development The Recycling",
+      "grant_description": "Highland Park Pedestrian Tunnel Blue Bin Distribution Grant 1,150,000",
+      "amount_awarded": 75000.0,
+      "amount_spent": 28303.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400303",
+      "funder": "Partnership PA Department of Aging",
+      "grant_description": "Blue Bin Distribution Grant 1,150,000 Hazelwood Senior Center",
+      "amount_awarded": 53244.0,
+      "amount_spent": 28303.0,
+      "remaining_balance": 11756.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400320",
+      "funder": "PA Department of Aging PA Department of Aging",
+      "grant_description": "Hazelwood Senior Center Sheridan Senior Center",
+      "amount_awarded": 41081.0,
+      "amount_spent": 11756.0,
+      "remaining_balance": 3919.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400321",
+      "funder": "PA Department of Aging PA Department of Aging",
+      "grant_description": "Sheridan Senior Center South Side Market Senior Center",
+      "amount_awarded": 49732.0,
+      "amount_spent": 3919.0,
+      "remaining_balance": 1268.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400322",
+      "funder": "PA Department of Aging Redevelopment Assistance Capital",
+      "grant_description": "South Side Market Senior Center Homewood Park Grant 1,500,000",
+      "amount_awarded": 49732.0,
+      "amount_spent": 1268.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400338",
+      "funder": "Assistance Capital Program PA Museum and",
+      "grant_description": "Homewood Park Grant 1,500,000 Oliver Bathhouse Windows",
+      "amount_awarded": 100000.0,
+      "amount_spent": null,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400339",
+      "funder": "Historical Commission PA Department of Conservation",
+      "grant_description": "Oliver Bathhouse Windows Southside Park",
+      "amount_awarded": null,
+      "amount_spent": 400000.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400344",
+      "funder": "Conservation Partnerships PA Department of Community and",
+      "grant_description": "Southside Park Phillips Playground",
+      "amount_awarded": null,
+      "amount_spent": 400000.0,
+      "remaining_balance": 30000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400381",
+      "funder": "Community and Economic Development Redevelopment Assistance Capital",
+      "grant_description": "Phillips Playground Oliver Bath House Funding 2,000,000",
+      "amount_awarded": null,
+      "amount_spent": 134158.0,
+      "remaining_balance": 30000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400383",
+      "funder": "Assistance Capital Program PA Department of",
+      "grant_description": "Oliver Bath House Funding 2,000,000 State Recycling Support",
+      "amount_awarded": null,
+      "amount_spent": 134158.0,
+      "remaining_balance": 349557.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400396",
+      "funder": "Environmental Protection Urban Redevelopment",
+      "grant_description": "State Recycling Support Resurfacing of Washington's Landing Tennis",
+      "amount_awarded": null,
+      "amount_spent": 349557.0,
+      "remaining_balance": 908.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400400",
+      "funder": "Authority Heinz Endowments",
+      "grant_description": "Courts Support construction at Homewood Field 2,000,000",
+      "amount_awarded": 499092.0,
+      "amount_spent": 1850.0,
+      "remaining_balance": 908.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400407",
+      "funder": "Heinz Endowments Redevelopment Assistance Capital",
+      "grant_description": "Support construction at Homewood Field 2,000,000 First Division",
+      "amount_awarded": null,
+      "amount_spent": 500000.0,
+      "remaining_balance": 1850.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400421",
+      "funder": "Assistance Capital Program Redevelopment Assistance Capital",
+      "grant_description": "First Division Warrington Rec Center 1,500,000",
+      "amount_awarded": null,
+      "amount_spent": 1500000.0,
+      "remaining_balance": 500000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400422",
+      "funder": "Assistance Capital Program Redevelopment Assistance Capital",
+      "grant_description": "Warrington Rec Center 1,500,000 Sheraden Park 1,229,987",
+      "amount_awarded": null,
+      "amount_spent": 1500000.0,
+      "remaining_balance": 1229987.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400423",
+      "funder": "Assistance Capital Program Department of Conservation and",
+      "grant_description": "Sheraden Park 1,229,987 Allegheny Landing Park Renovation",
+      "amount_awarded": null,
+      "amount_spent": 1229987.0,
+      "remaining_balance": 499900.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400426",
+      "funder": "Conservation and Natural Resources Redevelopment Assistance Capital",
+      "grant_description": "Allegheny Landing Park Renovation Brighton Heights Healthy Active Living Center 2,229,987",
+      "amount_awarded": null,
+      "amount_spent": 2229987.0,
+      "remaining_balance": 499900.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400429",
+      "funder": "Assistance Capital Program Redevelopment Assistance Capital",
+      "grant_description": "Brighton Heights Healthy Active Living Center 2,229,987 Homewood Park 1,000,000",
+      "amount_awarded": null,
+      "amount_spent": 2229987.0,
+      "remaining_balance": 1000000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400430",
+      "funder": "Assistance Capital Program Redevelopment Assistance Capital",
+      "grant_description": "Homewood Park 1,000,000 Jefferson Recreation Center",
+      "amount_awarded": null,
+      "amount_spent": 1000000.0,
+      "remaining_balance": 500000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400432",
+      "funder": "Assistance Capital Program Redevelopment Assistance Capital",
+      "grant_description": "Jefferson Recreation Center Thaddeus Stevens Elementary School 1,500,000",
+      "amount_awarded": null,
+      "amount_spent": 1500000.0,
+      "remaining_balance": 500000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400434",
+      "funder": "Assistance Capital Program",
+      "grant_description": "Thaddeus Stevens Elementary School 1,500,000 310",
+      "amount_awarded": 1500000.0,
+      "amount_spent": null,
+      "remaining_balance": 1500000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400438",
+      "funder": "Commissioner Department of Conservation and",
+      "grant_description": "Medic 10 Repairs Treevitalize Program",
+      "amount_awarded": null,
+      "amount_spent": 143821.0,
+      "remaining_balance": 10000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400444",
+      "funder": "Conservation and Natural Resources PA Department of Aging",
+      "grant_description": "Treevitalize Program Mt. Washington Healthy Active Living Center",
+      "amount_awarded": 38762.0,
+      "amount_spent": 143821.0,
+      "remaining_balance": 11238.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400445",
+      "funder": "PA Department of Aging PA Department of Aging",
+      "grant_description": "Mt. Washington Healthy Active Living Center West End Healthy Active Living Center",
+      "amount_awarded": 83594.0,
+      "amount_spent": 11238.0,
+      "remaining_balance": 90200.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400446",
+      "funder": "PA Department of Aging Department of Community and",
+      "grant_description": "West End Healthy Active Living Center Leslie Park Planning",
+      "amount_awarded": 60374.0,
+      "amount_spent": 189626.0,
+      "remaining_balance": 90200.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400447",
+      "funder": "Community and Economic Development Department of Conservation and",
+      "grant_description": "Leslie Park Planning Rehabilitation of Riverfront Park",
+      "amount_awarded": null,
+      "amount_spent": 189626.0,
+      "remaining_balance": 250000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400450",
+      "funder": "Conservation and Natural Resources US Forest Service",
+      "grant_description": "Rehabilitation of Riverfront Park Implementation of an equitable tree plan 1,000,000",
+      "amount_awarded": null,
+      "amount_spent": 250000.0,
+      "remaining_balance": 941718.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400461",
+      "funder": "US Forest Service Pittsburgh Arena",
+      "grant_description": "Implementation of an equitable tree plan 1,000,000 Ammon Rec Center",
+      "amount_awarded": null,
+      "amount_spent": 941718.0,
+      "remaining_balance": 500000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400466",
+      "funder": "Development LLC PA Department of Aging",
+      "grant_description": "Ammon Rec Center South Side Market House Doors",
+      "amount_awarded": null,
+      "amount_spent": 500000.0,
+      "remaining_balance": 30000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400480",
+      "funder": "PA Department of Aging US Dept. of Energy",
+      "grant_description": "South Side Market House Doors 4th division solar panels",
+      "amount_awarded": null,
+      "amount_spent": 337960.0,
+      "remaining_balance": 30000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400492",
+      "funder": "US Dept. of Energy The Recycling Partnership",
+      "grant_description": "4th division solar panels Recycling Outreach",
+      "amount_awarded": null,
+      "amount_spent": 337960.0,
+      "remaining_balance": 76514.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400497",
+      "funder": "Partnership Department of Community and Economic Development",
+      "grant_description": "Recycling Outreach Lewis Playground",
+      "amount_awarded": null,
+      "amount_spent": 76514.0,
+      "remaining_balance": 50000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400498",
+      "funder": "Economic Development Department of Conservation and Natural Resources",
+      "grant_description": "Lewis Playground Spring Hill Park",
+      "amount_awarded": null,
+      "amount_spent": 249000.0,
+      "remaining_balance": 50000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400503",
+      "funder": "Natural Resources PA Department of Environmental Protection",
+      "grant_description": "Spring Hill Park 902 Recycling Reimbursement",
+      "amount_awarded": null,
+      "amount_spent": 249000.0,
+      "remaining_balance": 200000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400504",
+      "funder": "Environmental Protection Department of Housing and Urban Development",
+      "grant_description": "902 Recycling Reimbursement Homewood Park 1,666,297",
+      "amount_awarded": null,
+      "amount_spent": 1666297.0,
+      "remaining_balance": 200000.0
+    },
+    {
+      "department": "Department of Public Works",
+      "jde_number": "4029400517",
+      "funder": "and Urban Development",
+      "grant_description": "Homewood Park 1,666,297",
+      "amount_awarded": 1666297.0,
+      "amount_spent": null,
+      "remaining_balance": 1666297.0
+    },
+    {
+      "department": "Department of Parks and Recreation",
+      "jde_number": "5029400507",
+      "funder": "America 250",
+      "grant_description": "Semiquincentennial Celebration $",
+      "amount_awarded": 20000.0,
+      "amount_spent": null,
+      "remaining_balance": 20000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400235",
+      "funder": "Department of Transportation US Department of",
+      "grant_description": "South Side Neighborhood Streets $ I-597 Cap Project 17,750,000",
+      "amount_awarded": 841461.0,
+      "amount_spent": 937148.0,
+      "remaining_balance": 15571.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400236",
+      "funder": "Transportation Redevelopment Assistance Capital",
+      "grant_description": "I-597 Cap Project 17,750,000 I-597 Cap Project 5,235,054",
+      "amount_awarded": 5249931.0,
+      "amount_spent": 937148.0,
+      "remaining_balance": -14877.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400237",
+      "funder": "Assistance Capital Program Department of Community and",
+      "grant_description": "I-597 Cap Project 5,235,054 I-597 Cap Project 1,350,000",
+      "amount_awarded": 1350000.0,
+      "amount_spent": -14877.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400238",
+      "funder": "Community and Economic Development Sports and Exhibition",
+      "grant_description": "I-597 Cap Project 1,350,000 I-597 Cap Project 5,190,000",
+      "amount_awarded": 5171835.0,
+      "amount_spent": 18165.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400239",
+      "funder": "Authority",
+      "grant_description": "I-597 Cap Project 5,190,000 311",
+      "amount_awarded": 5190000.0,
+      "amount_spent": 5171835.0,
+      "remaining_balance": 18165.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400253",
+      "funder": "Transportation PA Department of",
+      "grant_description": "Central Business District Signal Improvements 3,560,565 I-579 Cap Project",
+      "amount_awarded": 647446.0,
+      "amount_spent": 758932.0,
+      "remaining_balance": 2554.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400265",
+      "funder": "Transportation PA Department of Conservation and",
+      "grant_description": "I-579 Cap Project I-579 Cap Project",
+      "amount_awarded": 500000.0,
+      "amount_spent": 2554.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400266",
+      "funder": "Conservation and Natural Resources PA Department of",
+      "grant_description": "I-579 Cap Project Safe Routes to School",
+      "amount_awarded": 123210.0,
+      "amount_spent": 340801.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400275",
+      "funder": "Transportation Pittsburgh Regional",
+      "grant_description": "Safe Routes to School BRT Project Manager Position",
+      "amount_awarded": 337542.0,
+      "amount_spent": 340801.0,
+      "remaining_balance": 37458.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400283",
+      "funder": "Transit PA Department of",
+      "grant_description": "BRT Project Manager Position Automated Red Light Enforcement Grant",
+      "amount_awarded": 165000.0,
+      "amount_spent": 37458.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400288",
+      "funder": "Transportation Allegheny County",
+      "grant_description": "Automated Red Light Enforcement Grant West End Trolley Trail Project",
+      "amount_awarded": null,
+      "amount_spent": 100000.0,
+      "remaining_balance": null
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400305",
+      "funder": "Allegheny County PA Department of Community and",
+      "grant_description": "West End Trolley Trail Project S 21st Street Improvements",
+      "amount_awarded": null,
+      "amount_spent": 100000.0,
+      "remaining_balance": 500000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400306",
+      "funder": "Community and Economic Development Urban Redevelopment",
+      "grant_description": "S 21st Street Improvements Smallman Street TIF 3,700,000",
+      "amount_awarded": null,
+      "amount_spent": 3375402.0,
+      "remaining_balance": 500000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400332",
+      "funder": "Authority PA Department of Community and",
+      "grant_description": "Smallman Street TIF 3,700,000 Automated Red Light Enforcement Grant",
+      "amount_awarded": 59976.0,
+      "amount_spent": 3375402.0,
+      "remaining_balance": 56660.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400340",
+      "funder": "Community and Economic Development PA Emergency",
+      "grant_description": "Automated Red Light Enforcement Grant Mount Washington Landslide Mitigation 9,998,250",
+      "amount_awarded": 59976.0,
+      "amount_spent": 56660.0,
+      "remaining_balance": 68876.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400345",
+      "funder": "Management Agency PA Department of Community and",
+      "grant_description": "Mount Washington Landslide Mitigation 9,998,250 S 21st Street complete streets project",
+      "amount_awarded": null,
+      "amount_spent": 963578.0,
+      "remaining_balance": 68876.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400375",
+      "funder": "Community and Economic Development PA Department of Community and",
+      "grant_description": "S 21st Street complete streets project Repaving the Three Rivers Heritage Trail",
+      "amount_awarded": null,
+      "amount_spent": 963578.0,
+      "remaining_balance": 37047.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400379",
+      "funder": "Community and Economic Development PA Department of",
+      "grant_description": "Repaving the Three Rivers Heritage Trail Traffic Light Removal Study",
+      "amount_awarded": 78000.0,
+      "amount_spent": 37047.0,
+      "remaining_balance": 18000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400397",
+      "funder": "Transportation PA Department of",
+      "grant_description": "Traffic Light Removal Study Braddock Forbes signal replacement",
+      "amount_awarded": 78000.0,
+      "amount_spent": 18000.0,
+      "remaining_balance": 1476.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400398",
+      "funder": "Transportation PA Department of",
+      "grant_description": "Braddock Forbes signal replacement Brighton and Jacksonia signal replacement",
+      "amount_awarded": 131759.0,
+      "amount_spent": 64231.0,
+      "remaining_balance": 1476.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400399",
+      "funder": "Transportation PA Department of Conservation and",
+      "grant_description": "Brighton and Jacksonia signal replacement Three Rivers Heritage Trail Project",
+      "amount_awarded": null,
+      "amount_spent": 500000.0,
+      "remaining_balance": 64231.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400400",
+      "funder": "Conservation and Natural Resources PA Department of Conservation and",
+      "grant_description": "Three Rivers Heritage Trail Project Trail Condition Study",
+      "amount_awarded": null,
+      "amount_spent": 500000.0,
+      "remaining_balance": 12961.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400427",
+      "funder": "Conservation and Natural Resources US Department of",
+      "grant_description": "Trail Condition Study Hill District RAISE Grant 11,320,000",
+      "amount_awarded": 60039.0,
+      "amount_spent": 11135278.0,
+      "remaining_balance": 12961.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400435",
+      "funder": "Transportation Allegheny County",
+      "grant_description": "Hill District RAISE Grant 11,320,000 Haverhill Street Paving",
+      "amount_awarded": null,
+      "amount_spent": 11135278.0,
+      "remaining_balance": 220000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400436",
+      "funder": "Conservation District Pennsylvania Emergency",
+      "grant_description": "Haverhill Street Paving Newton Street Landslide Prevention 1,951,775",
+      "amount_awarded": null,
+      "amount_spent": 1932373.0,
+      "remaining_balance": 220000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400449",
+      "funder": "Emergency Management Agency PennDot",
+      "grant_description": "Newton Street Landslide Prevention 1,951,775 Green Light Go, Signal Controls",
+      "amount_awarded": 19402.0,
+      "amount_spent": 1932373.0,
+      "remaining_balance": 75880.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400454",
+      "funder": "PennDot PennDot",
+      "grant_description": "Green Light Go, Signal Controls Green Light Go, three signal replacements",
+      "amount_awarded": 331366.0,
+      "amount_spent": 623187.0,
+      "remaining_balance": 75880.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400455",
+      "funder": "PennDot Federal Highway",
+      "grant_description": "Green Light Go, three signal replacements Reconnecting Communities 1,432,000",
+      "amount_awarded": 88826.0,
+      "amount_spent": 1343174.0,
+      "remaining_balance": 623187.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400456",
+      "funder": "Administration",
+      "grant_description": "Reconnecting Communities 1,432,000 312",
+      "amount_awarded": 1432000.0,
+      "amount_spent": 88826.0,
+      "remaining_balance": 1343174.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400458",
+      "funder": "PennDot Department of Community and",
+      "grant_description": "1,792,800 intersection Bridge Maintenance",
+      "amount_awarded": null,
+      "amount_spent": 1792800.0,
+      "remaining_balance": 315345.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400463",
+      "funder": "Community and Economic Development Penndot",
+      "grant_description": "Bridge Maintenance Davis Avenue Pedestrian Bridge",
+      "amount_awarded": null,
+      "amount_spent": 315345.0,
+      "remaining_balance": 250000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400464",
+      "funder": "Penndot PennDot",
+      "grant_description": "Davis Avenue Pedestrian Bridge 21st Street Improvements",
+      "amount_awarded": 250000.0,
+      "amount_spent": null,
+      "remaining_balance": 250000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400465",
+      "funder": "PennDot PennDot",
+      "grant_description": "21st Street Improvements ARLE- Allies and Ward",
+      "amount_awarded": null,
+      "amount_spent": 250000.0,
+      "remaining_balance": 453657.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400470",
+      "funder": "PennDot PennDot",
+      "grant_description": "ARLE- Allies and Ward ARLE Becks, Biscayne, Brownsville",
+      "amount_awarded": null,
+      "amount_spent": 453657.0,
+      "remaining_balance": 545268.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400471",
+      "funder": "PennDot RAAC",
+      "grant_description": "ARLE Becks, Biscayne, Brownsville West End Transit Plan",
+      "amount_awarded": null,
+      "amount_spent": 545268.0,
+      "remaining_balance": 99500.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400477",
+      "funder": "RAAC DCED",
+      "grant_description": "West End Transit Plan 2nd ave Connector",
+      "amount_awarded": null,
+      "amount_spent": 99500.0,
+      "remaining_balance": 74147.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400478",
+      "funder": "DCED DCED",
+      "grant_description": "2nd ave Connector Critical Sidewalk Gaps",
+      "amount_awarded": null,
+      "amount_spent": 492604.0,
+      "remaining_balance": 74147.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400479",
+      "funder": "DCED MCC",
+      "grant_description": "Critical Sidewalk Gaps RCP Grant funds",
+      "amount_awarded": null,
+      "amount_spent": 492604.0,
+      "remaining_balance": 13852.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400486",
+      "funder": "MCC PennDot",
+      "grant_description": "RCP Grant funds Green Light Go Five Intersections 2,332,564",
+      "amount_awarded": null,
+      "amount_spent": 2208319.0,
+      "remaining_balance": 13852.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400489",
+      "funder": "PennDot USDOT",
+      "grant_description": "Green Light Go Five Intersections 2,332,564 Safe Streets and Roads for All 1,320,000",
+      "amount_awarded": null,
+      "amount_spent": 2208319.0,
+      "remaining_balance": 1320000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400490",
+      "funder": "USDOT Federal Highway",
+      "grant_description": "Safe Streets and Roads for All 1,320,000 Community Fueling 2,396,407",
+      "amount_awarded": null,
+      "amount_spent": 1320000.0,
+      "remaining_balance": 2396407.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400491",
+      "funder": "Administration DCED",
+      "grant_description": "Community Fueling 2,396,407 Local Share Account- Smallman Street",
+      "amount_awarded": null,
+      "amount_spent": 2396407.0,
+      "remaining_balance": 999999.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400500",
+      "funder": "DCED PennDot",
+      "grant_description": "Local Share Account- Smallman Street ARLE- General Robinson and Sandusky",
+      "amount_awarded": null,
+      "amount_spent": 999999.0,
+      "remaining_balance": 647049.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400511",
+      "funder": "PennDot PennDot",
+      "grant_description": "ARLE- General Robinson and Sandusky ARLE- Center and Dithridge",
+      "amount_awarded": null,
+      "amount_spent": 647049.0,
+      "remaining_balance": 335982.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400512",
+      "funder": "PennDot DCED",
+      "grant_description": "ARLE- Center and Dithridge Smallman Street Multimodal",
+      "amount_awarded": null,
+      "amount_spent": 335982.0,
+      "remaining_balance": 250000.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "jde_number": "6029400513",
+      "funder": "DCED",
+      "grant_description": "Smallman Street Multimodal",
+      "amount_awarded": 250000.0,
+      "amount_spent": null,
+      "remaining_balance": 250000.0
+    },
+    {
+      "department": "Urban Redevelopment Authority",
+      "jde_number": "8229400488",
+      "funder": "Development",
+      "grant_description": "Homewood Ave Appropriation $",
+      "amount_awarded": 750000.0,
+      "amount_spent": null,
+      "remaining_balance": 750000.0
+    }
+  ],
+  "positions": [
+    {
+      "jde_number": "4029400461",
+      "program_name": "Inflation Reduction Act - Department of Public Works",
+      "title": "Tree Equity Lead",
+      "fte_2025": 1.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 60837.0,
+      "fte_2026": 1.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 62662.0
+    },
+    {
+      "jde_number": "6029400283",
+      "program_name": "Port Authority - BRT - Mobility & Infrastructure",
+      "title": "Senior Project Manager",
+      "fte_2025": 1.0,
+      "grade_2025": "31E",
+      "hours_months_2025": "12",
+      "budget_2025": 98517.0,
+      "fte_2026": 1.0,
+      "grade_2026": "29G",
+      "hours_months_2026": "12",
+      "budget_2026": 101525.0
+    },
+    {
+      "jde_number": "2129400409",
+      "program_name": "BJA Crisis Response - Department of Justice",
+      "title": "Data Analyst",
+      "fte_2025": 1.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 68365.0,
+      "fte_2026": 1.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 70416.0
+    },
+    {
+      "jde_number": "2129400409",
+      "program_name": "BJA Crisis Response - Department of Justice",
+      "title": "CIT Project Coordinator",
+      "fte_2025": 1.0,
+      "grade_2025": null,
+      "hours_months_2025": null,
+      "budget_2025": 69811.0,
+      "fte_2026": 1.0,
+      "grade_2026": null,
+      "hours_months_2026": null,
+      "budget_2026": 69811.0
+    },
+    {
+      "jde_number": "2129400409",
+      "program_name": "Noble Reach Fellows",
+      "title": "Noble Reach Fellow in Cybersecurity",
+      "fte_2025": 1.0,
+      "grade_2025": "23G",
+      "hours_months_2025": "3",
+      "budget_2025": 19500.0,
+      "fte_2026": 1.0,
+      "grade_2026": "23G",
+      "hours_months_2026": "3",
+      "budget_2026": 19500.0
+    },
+    {
+      "jde_number": "2129400409",
+      "program_name": "Noble Reach Fellows",
+      "title": "Noble Reach Fellow in AI/Data Science",
+      "fte_2025": 1.0,
+      "grade_2025": "23G",
+      "hours_months_2025": "3",
+      "budget_2025": 19500.0,
+      "fte_2026": 1.0,
+      "grade_2026": "23G",
+      "hours_months_2026": "3",
+      "budget_2026": 19500.0
+    },
+    {
+      "jde_number": "2129400452",
+      "program_name": "Post-Overdose - Substance Abuse and Mental Health Services Administration",
+      "title": "Project Manager",
+      "fte_2025": 1.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 68365.0,
+      "fte_2026": 1.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 70416.0
+    },
+    {
+      "jde_number": "2129400452",
+      "program_name": "Post-Overdose - Substance Abuse and Mental Health Services Administration",
+      "title": "Case Manager",
+      "fte_2025": 3.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 192753.0,
+      "fte_2026": 3.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 201626.0
+    },
+    {
+      "jde_number": "2129400452",
+      "program_name": "Post-Overdose - Substance Abuse and Mental Health Services Administration",
+      "title": "Peer Specialist",
+      "fte_2025": 3.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 162780.0,
+      "fte_2026": 3.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 167663.0
+    },
+    {
+      "jde_number": "2129400452",
+      "program_name": "Post-Overdose - Substance Abuse and Mental Health Services Administration",
+      "title": "Peer Supervisor",
+      "fte_2025": 1.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 61590.0,
+      "fte_2026": 1.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 63438.0
+    },
+    {
+      "jde_number": "2129400483",
+      "program_name": "BJA Appropriation - LEAD",
+      "title": "Lead Case Manger",
+      "fte_2025": 5.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 295325.0,
+      "fte_2026": 5.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 304185.0
+    },
+    {
+      "jde_number": "2329400437",
+      "program_name": "Safe Passages Program - PA Commission on Crime and Delinquency",
+      "title": "Safe Passages Program Manager",
+      "fte_2025": 1.0,
+      "grade_2025": null,
+      "hours_months_2025": "12",
+      "budget_2025": 77233.0,
+      "fte_2026": 1.0,
+      "grade_2026": null,
+      "hours_months_2026": "12",
+      "budget_2026": 79547.0
+    }
+  ],
+  "source_file": "61_Grants.pdf"
+}
