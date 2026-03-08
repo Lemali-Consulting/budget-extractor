@@ -11,7 +11,6 @@ from utils.spatial_table_extractor import SpatialTableExtractor
 
 # Directories to search for source PDFs (in priority order)
 INPUT_DIRS = [
-    "input/split-pdf-revised",
     "input/split-pdf",
 ]
 

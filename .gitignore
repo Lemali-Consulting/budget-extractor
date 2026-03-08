@@ -1,4 +1,4 @@
 .devcontainer/.env.secrets
 __pycache__/
 output/regression/debug/
-input/split-pdf-revised/
+input/split-pdf/

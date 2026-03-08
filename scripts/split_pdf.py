@@ -51,7 +51,7 @@ def main() -> None:
     split_pdf(
         pdf_path="input/2026-operating-budget.pdf",
         sections_path="input/sections.json",
-        output_dir="input/split-pdf-revised",
+        output_dir="input/split-pdf",
     )
 
 
