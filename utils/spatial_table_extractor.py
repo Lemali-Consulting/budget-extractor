@@ -191,14 +191,14 @@ class SpatialTableExtractor:
         return SpatialTable(columns=primary.columns, rows=all_rows, bbox=primary.bbox)
 
     @staticmethod
-    def _has_simple_bordered_tables(page: Page, max_data_rows: int = 4) -> bool:
+    def _has_simple_bordered_tables(page: Page) -> bool:
         """Detect whether a page uses small, hard-ruled (bordered) tables
         suitable for pdfplumber's native extraction.
 
         Returns True only when the page has vertical rule lines AND all
-        detected tables are small (≤ max_data_rows data rows).  Large
-        bordered tables (e.g., grant listings) are better handled by the
-        spatial extractor.
+        detected tables have cleanly separated rows (no merged multi-row
+        cells).  Large bordered tables where pdfplumber merges rows
+        (e.g., grant listings) are rejected.
         """
         v_lines = [
             l for l in (page.lines or [])
@@ -207,16 +207,21 @@ class SpatialTableExtractor:
         if len(v_lines) < 2:
             return False
 
-        # Probe table sizes with pdfplumber's native finder
+        # Probe tables with pdfplumber's native finder
         native_tables = page.find_tables()
         if not native_tables:
             return False
 
         for table in native_tables:
             rows = table.extract()
-            # Subtract 1 for the header row
-            if rows and len(rows) - 1 > max_data_rows:
-                return False
+            if not rows:
+                continue
+            # Check if any data cell contains newlines — a sign that
+            # pdfplumber merged multiple visual rows into one cell
+            for row in rows[1:]:  # skip header row
+                for cell in row:
+                    if cell and "\n" in cell and len(cell) > 50:
+                        return False
 
         return True
 
@@ -312,6 +317,219 @@ class SpatialTableExtractor:
 
         return results
 
+    @staticmethod
+    def _is_grant_page(page: Page) -> bool:
+        """Detect whether a page contains large bordered grant tables.
+
+        Grant pages have vertical lines (bordered tables) but pdfplumber
+        either merges data rows into single cells or fails to find the
+        data area entirely.  Detected by having vertical lines AND either:
+        - a native table with merged multi-row cells (long newline text), or
+        - a native table with a header-only row containing grant-like
+          column names (JDE, Funder, Grant, Amount).
+        """
+        v_lines = [
+            l for l in (page.lines or [])
+            if abs(l["x0"] - l["x1"]) < 1
+        ]
+        if len(v_lines) < 2:
+            return False
+
+        native_tables = page.find_tables()
+        for table in native_tables:
+            rows = table.extract()
+            if not rows:
+                continue
+            # Check for merged multi-row cells
+            for row in rows[1:]:
+                for cell in row:
+                    if cell and "\n" in cell and len(cell) > 50:
+                        return True
+            # Check for grant-like header row (JDE/Funder/Grant/Amount)
+            for row in rows:
+                row_text = " ".join((c or "") for c in row).lower()
+                if "funder" in row_text and "grant" in row_text:
+                    return True
+        return False
+
+    def _extract_grant_tables(self, page: Page) -> list[SpatialTable]:
+        """Extract grant tables from a page with large bordered tables.
+
+        Grant pages have a consistent 6-column structure (JDE Number,
+        Funder, Grant, Amount Awarded, Amount Spent, Remaining Balance)
+        grouped by department.  Each department section has a title row,
+        a header row, and multiple data rows.
+
+        Row boundaries are determined by the y-positions of monetary
+        values (Amount Awarded / Spent / Balance), which appear exactly
+        once per data row.  Midpoints between consecutive monetary
+        y-positions define the row splits.
+
+        Returns one SpatialTable per department section, with a
+        'Department' column prepended.
+        """
+        import re
+
+        # Use x_tolerance=1 to prevent $ signs from bridging columns
+        words = page.extract_words(
+            keep_blank_chars=True,
+            x_tolerance=1,
+            y_tolerance=self.word_y_tolerance,
+        )
+        words = [w for w in words if w["text"].strip()]
+
+        # Derive column boundaries from vertical lines
+        v_lines = [
+            l for l in (page.lines or [])
+            if abs(l["x0"] - l["x1"]) < 1
+        ]
+        x_positions = sorted(set(round(l["x0"]) for l in v_lines))
+
+        # Cluster nearby x-positions (double lines at boundaries)
+        col_boundaries: list[float] = []
+        for x in x_positions:
+            if not col_boundaries or x - col_boundaries[-1] > 5:
+                col_boundaries.append(x)
+            else:
+                col_boundaries[-1] = (col_boundaries[-1] + x) / 2
+
+        if len(col_boundaries) < 2:
+            return []
+
+        # Monetary columns start at the 4th column boundary (index 3)
+        monetary_x0 = col_boundaries[3] if len(col_boundaries) > 3 else 400
+
+        results: list[SpatialTable] = []
+
+        # Use pdfplumber's native table detection to find department sections
+        native_tables = page.find_tables()
+        for native in native_tables:
+            extracted = native.extract()
+            if not extracted or len(extracted) < 2:
+                continue
+
+            # First row is the department title
+            title_row = extracted[0]
+            dept_name = (title_row[0] or "").replace("\n", " ").strip()
+            if not dept_name:
+                continue
+
+            tb = native.bbox  # (x0, top, x1, bottom)
+
+            # Find words within this table's extent
+            table_words = [
+                w for w in words
+                if tb[1] <= w["top"] <= tb[3]
+                and tb[0] <= w["x0"] <= tb[2]
+            ]
+
+            # Skip header words: find the header row y-extent.
+            # Headers contain "Funder", "Grant", "Awarded" etc.
+            header_bottom = tb[1]
+            for w in table_words:
+                t = w["text"].strip().lower()
+                if t in ("funder", "grant", "awarded", "spent",
+                         "balance", "number", "jde", "amount",
+                         "remaining"):
+                    header_bottom = max(header_bottom, w["bottom"])
+            data_words = [w for w in table_words if w["top"] > header_bottom]
+
+            # Find monetary data lines: words in monetary columns
+            # (x0 >= monetary_x0) that look like numbers, grouped by y.
+            # Exclude header-like words.
+            monetary_words = [
+                w for w in data_words
+                if w["x0"] >= monetary_x0 - 5
+                and re.search(r'\d', w["text"])
+            ]
+            if not monetary_words:
+                continue
+
+            # Group monetary words into lines by y-position
+            monetary_lines: list[float] = []
+            for w in sorted(monetary_words, key=lambda w: w["top"]):
+                if not monetary_lines or abs(w["top"] - monetary_lines[-1]) > 5:
+                    monetary_lines.append(w["top"])
+
+            if not monetary_lines:
+                continue
+
+            # Compute row boundaries: each row extends from the previous
+            # row's bottom to this row's bottom.  The bottom is the smaller
+            # of the midpoint to the next data line and the data line
+            # plus a maximum continuation distance (prevents funder text
+            # from the next row bleeding into this one).
+            max_continuation: float = 12.0
+            row_bottoms: list[float] = []
+            for mi, my in enumerate(monetary_lines):
+                if mi + 1 < len(monetary_lines):
+                    midpoint = (my + monetary_lines[mi + 1]) / 2
+                    row_bottoms.append(min(midpoint, my + max_continuation))
+                else:
+                    row_bottoms.append(tb[3])
+
+            row_boundaries: list[tuple[float, float]] = []
+            for mi, my in enumerate(monetary_lines):
+                row_top = header_bottom if mi == 0 else row_bottoms[mi - 1]
+                row_boundaries.append((row_top, row_bottoms[mi]))
+
+            # Build columns and headers
+            headers = ["Department", "JDE Number", "Funder", "Grant",
+                       "Amount Awarded", "Amount Spent", "Remaining Balance"]
+            columns = [
+                SpatialColumn(x0=0, x1=1, alignment="left"),  # Department
+            ]
+            for i in range(len(col_boundaries) - 1):
+                columns.append(SpatialColumn(
+                    x0=col_boundaries[i],
+                    x1=col_boundaries[i + 1],
+                    alignment="right" if i >= 3 else "left",
+                ))
+
+            # Build data rows
+            spatial_rows: list[SpatialRow] = []
+            for row_top, row_bottom in row_boundaries:
+                row_words = [
+                    w for w in data_words
+                    if row_top <= w["top"] < row_bottom
+                ]
+
+                cells: list[str] = [dept_name]
+                for ci in range(len(col_boundaries) - 1):
+                    cx0 = col_boundaries[ci]
+                    cx1 = col_boundaries[ci + 1]
+                    col_words = sorted(
+                        [w for w in row_words
+                         if w["x0"] >= cx0 - 2 and w["x0"] < cx1],
+                        key=lambda w: (w["top"], w["x0"]),
+                    )
+                    if self.strip_dollar_signs:
+                        col_words = [
+                            w for w in col_words
+                            if w["text"].strip() not in ("$", "")
+                        ]
+                    cell_text = " ".join(
+                        w["text"].strip().lstrip("$").strip()
+                        for w in col_words
+                    ).strip()
+                    # Strip leading/trailing commas (PDF text artifacts)
+                    cell_text = cell_text.strip(",").strip()
+                    cells.append(cell_text)
+
+                spatial_rows.append(SpatialRow(
+                    y0=row_top, y1=row_bottom, cells=cells,
+                ))
+
+            if spatial_rows:
+                results.append(SpatialTable(
+                    columns=columns,
+                    rows=spatial_rows,
+                    headers=headers,
+                    bbox=tb,
+                ))
+
+        return results
+
     def extract_tables(
         self,
         page: Page,
@@ -332,6 +550,11 @@ class SpatialTableExtractor:
         Returns:
             List of SpatialTable objects, one per detected sub-table.
         """
+        # Route to grant table extraction for large bordered grant tables
+        # (checked before simple bordered, as grant pages can appear simple)
+        if self._is_grant_page(page):
+            return self._extract_grant_tables(page)
+
         # Route to bordered extraction if the page has small bordered tables
         if self._has_simple_bordered_tables(page):
             return self._extract_bordered_tables(page, bbox=bbox)
@@ -786,8 +1009,15 @@ class SpatialTableExtractor:
                     t_x0 = min(c.x0 for c in table.columns)
                     t_x1 = max(c.x1 for c in table.columns)
                     p_x0, p_x1 = propagated_x_extent
-                    # Similar extent: both start and end within 30pt
-                    if abs(t_x0 - p_x0) < 30 and abs(t_x1 - p_x1) < 30:
+                    natural_col_count = len(table.columns)
+                    propagated_col_count = len(propagated_columns)
+                    # Similar extent and column count: the table's natural
+                    # columns must be at least 50% of the propagated count,
+                    # otherwise it's a different structure (e.g., an
+                    # allocation table or footnote block).
+                    col_ratio_ok = natural_col_count >= propagated_col_count * 0.5
+                    extent_ok = abs(t_x0 - p_x0) < 30 and abs(t_x1 - p_x1) < 30
+                    if extent_ok and col_ratio_ok:
                         table.columns = propagated_columns
                         table.headers = propagated_headers
                         row_groups = self._cluster_rows(table._words)
