@@ -29,3 +29,26 @@ Each workflow directory contains a README.md file describing:
 - At the top of every Python file, add a docstring 1-2 sentences long that describes the purpose of the file
 - Ensure that type hinting is used for all parameters, return values, and variables
 - For CSV outputs with non-obvious columns, include a `DATA_DICTIONARY.md` describing column names, types, and valid values
+
+# Spatial Table Extractor
+
+The core utility is `utils/spatial_table_extractor.py`. It extracts borderless, whitespace-separated tables from Pittsburgh budget PDFs using pdfplumber word positions.
+
+Key concepts:
+- Words are clustered into rows by y-position, then columns are detected by finding consistent inter-word gaps across rows
+- Dollar signs (`$`) and their whitespace placeholders mark column boundaries; these are detected before being stripped
+- Sub-tables are split by horizontal rules, colored bands, and large vertical gaps
+- Multi-line headers (e.g., "2025" / "Budget") are detected and merged into the following data table
+- Column structure propagates from header-bearing tables to subsequent headerless tables with similar x-extent
+- Page-level headers ("City of Pittsburgh...", "Fiscal Year 2026") are filtered before table detection
+- False positives (prose blocks, single-cell tables) are filtered by column count and multi-column utilization ratio
+
+# Regression Tests
+
+Run `python3 scripts/test_regression.py` to verify extractor output against expected CSVs.
+
+- Expected outputs live in `output/regression/expected/{pdf_stem}/P{page}T{table}.csv`
+- Debug outputs (regenerated during development) go to `output/regression/debug/{pdf_stem}/`
+- To regenerate debug output for a PDF: `SpatialTableExtractor().render_debug('path/to/pdf', 'output/regression/debug')`
+- After visually confirming debug CSVs are correct, copy them to `output/regression/expected/` and re-run the regression test
+- Always run regression tests after modifying the extractor to catch regressions across all PDFs
