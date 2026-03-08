@@ -190,6 +190,128 @@ class SpatialTableExtractor:
 
         return SpatialTable(columns=primary.columns, rows=all_rows, bbox=primary.bbox)
 
+    @staticmethod
+    def _has_simple_bordered_tables(page: Page, max_data_rows: int = 4) -> bool:
+        """Detect whether a page uses small, hard-ruled (bordered) tables
+        suitable for pdfplumber's native extraction.
+
+        Returns True only when the page has vertical rule lines AND all
+        detected tables are small (≤ max_data_rows data rows).  Large
+        bordered tables (e.g., grant listings) are better handled by the
+        spatial extractor.
+        """
+        v_lines = [
+            l for l in (page.lines or [])
+            if abs(l["x0"] - l["x1"]) < 1
+        ]
+        if len(v_lines) < 2:
+            return False
+
+        # Probe table sizes with pdfplumber's native finder
+        native_tables = page.find_tables()
+        if not native_tables:
+            return False
+
+        for table in native_tables:
+            rows = table.extract()
+            # Subtract 1 for the header row
+            if rows and len(rows) - 1 > max_data_rows:
+                return False
+
+        return True
+
+    def _extract_bordered_tables(
+        self,
+        page: Page,
+        bbox: Optional[tuple[float, float, float, float]] = None,
+    ) -> list[SpatialTable]:
+        """Extract tables from a page with hard-ruled borders using pdfplumber's
+        native table detection, returning SpatialTable objects for compatibility.
+        """
+        target = page.crop(bbox) if bbox else page
+        native_tables = target.find_tables()
+        results: list[SpatialTable] = []
+
+        for native in native_tables:
+            extracted = native.extract()
+            if not extracted or len(extracted) < 1:
+                continue
+
+            tb = native.bbox  # (x0, top, x1, bottom)
+            num_cols = max(len(row) for row in extracted)
+
+            # Build columns from the table's cell structure
+            cells_info = native.cells  # list of (x0, top, x1, bottom)
+            if cells_info:
+                # Find unique x boundaries to define columns
+                x_bounds: list[float] = sorted(set(
+                    c[0] for c in cells_info
+                ) | set(
+                    c[2] for c in cells_info
+                ))
+                columns = []
+                for i in range(len(x_bounds) - 1):
+                    columns.append(SpatialColumn(
+                        x0=x_bounds[i], x1=x_bounds[i + 1], alignment="right",
+                    ))
+                # Trim to actual column count if cell merging created extras
+                if len(columns) > num_cols:
+                    columns = columns[:num_cols]
+            else:
+                # Fallback: evenly divide the table bbox
+                col_width = (tb[2] - tb[0]) / num_cols
+                columns = [
+                    SpatialColumn(
+                        x0=tb[0] + i * col_width,
+                        x1=tb[0] + (i + 1) * col_width,
+                        alignment="right",
+                    )
+                    for i in range(num_cols)
+                ]
+
+            # Separate header row (first row) from data rows
+            headers: list[str] = []
+            data_rows: list[list[str]] = []
+            for ri, row in enumerate(extracted):
+                # Clean cells: replace None, strip newlines
+                cleaned = [
+                    (cell or "").replace("\n", " ").strip()
+                    for cell in row
+                ]
+                if ri == 0:
+                    headers = cleaned
+                else:
+                    data_rows.append(cleaned)
+
+            # Strip dollar signs from data cells if configured
+            if self.strip_dollar_signs:
+                for row in data_rows:
+                    for ci, cell in enumerate(row):
+                        c = cell.strip()
+                        if c.startswith("$"):
+                            c = c[1:].strip()
+                        if c.startswith("(") and c.endswith(")"):
+                            # Keep parens for negative values, just strip $
+                            pass
+                        row[ci] = c
+
+            # Build SpatialRow objects
+            row_height = (tb[3] - tb[1]) / max(len(extracted), 1)
+            spatial_rows = []
+            for ri, row in enumerate(data_rows):
+                y0 = tb[1] + (ri + 1) * row_height
+                y1 = y0 + row_height
+                spatial_rows.append(SpatialRow(y0=y0, y1=y1, cells=row))
+
+            results.append(SpatialTable(
+                columns=columns,
+                rows=spatial_rows,
+                headers=headers,
+                bbox=tb,
+            ))
+
+        return results
+
     def extract_tables(
         self,
         page: Page,
@@ -199,6 +321,10 @@ class SpatialTableExtractor:
         Extract tables from a page, automatically splitting into sub-tables
         when full-width horizontal rules are found.
 
+        For pages with hard-ruled (bordered) tables, delegates to pdfplumber's
+        native table detection. For borderless pages, uses spatial word
+        clustering.
+
         Args:
             page: A pdfplumber Page.
             bbox: Optional (x0, top, x1, bottom) to crop the page first.
@@ -206,6 +332,10 @@ class SpatialTableExtractor:
         Returns:
             List of SpatialTable objects, one per detected sub-table.
         """
+        # Route to bordered extraction if the page has small bordered tables
+        if self._has_simple_bordered_tables(page):
+            return self._extract_bordered_tables(page, bbox=bbox)
+
         target = page.crop(bbox) if bbox else page
         words = target.extract_words(
             keep_blank_chars=True,
@@ -326,6 +456,15 @@ class SpatialTableExtractor:
         for table in tables:
             if not table.headers:
                 self._extract_internal_headers(table)
+
+        # Split columns where known header patterns were merged due to
+        # tight spacing (e.g., "Increase/(Decrease)" and "% Change").
+        for table in tables:
+            self._split_known_merged_columns(table)
+
+        # Merge multi-line row fragments (e.g., wrapped position titles)
+        for table in tables:
+            table.rows = self._merge_multiline_rows(table.rows)
 
         # Filter out false-positive tables (prose text blocks, page numbers)
         tables = [t for t in tables if self._is_real_table(t)]
@@ -728,6 +867,113 @@ class SpatialTableExtractor:
         table.headers = headers
         table.rows = table.rows[header_count:]
 
+    def _split_known_merged_columns(self, table: SpatialTable) -> None:
+        """Split columns whose headers contain known merged-column patterns.
+
+        When tight spacing causes two conceptually separate columns to merge
+        (e.g., "Increase/(Decrease)" and "% Change" becoming one column),
+        this method detects the merge via header text, locates the split
+        point from word positions, and splits the column and all row cells.
+
+        Modifies the table in place.
+        """
+        import re
+
+        if not table.headers or not table._words:
+            return
+
+        for col_idx, header in enumerate(table.headers):
+            # Detect merged "Increase/(Decrease)" + "% Change" columns.
+            # The multi-line header join order varies by PDF layout, so
+            # match any header containing both "Decrease" and "Change".
+            if not (re.search(r'Decrease', header, re.IGNORECASE)
+                    and re.search(r'Change', header, re.IGNORECASE)):
+                continue
+
+            # Find the split point using data row words.  In rows that
+            # have both a value and a percentage (e.g., "17,829" and "3.0%"),
+            # there is a gap between them.  Find the largest consistent gap
+            # within this column's data words.
+            col = table.columns[col_idx]
+
+            # Collect per-row gap info within this column
+            gaps: list[float] = []
+            for row in table.rows:
+                row_words = sorted(
+                    (w for w in table._words
+                     if col.x0 <= w["x0"] <= col.x1
+                     and abs(w["top"] - row.y0) < self.y_tolerance * 2
+                     and w["text"].strip()),
+                    key=lambda w: w["x0"],
+                )
+                if len(row_words) >= 2:
+                    # Find the largest gap in this row
+                    for i in range(len(row_words) - 1):
+                        gap = row_words[i + 1]["x0"] - row_words[i]["x1"]
+                        if gap > 3:
+                            gaps.append(
+                                (row_words[i]["x1"] + row_words[i + 1]["x0"]) / 2
+                            )
+
+            if not gaps:
+                continue
+
+            # Use the median gap position as split point
+            gaps.sort()
+            split_x: float = gaps[len(gaps) // 2]
+
+            # Split the column
+            old_col = table.columns[col_idx]
+            left_col = SpatialColumn(
+                x0=old_col.x0, x1=split_x, alignment=old_col.alignment,
+            )
+            right_col = SpatialColumn(
+                x0=split_x, x1=old_col.x1, alignment=old_col.alignment,
+            )
+            table.columns = (
+                table.columns[:col_idx]
+                + [left_col, right_col]
+                + table.columns[col_idx + 1:]
+            )
+
+            # Rebuild headers: the original header words may not be in
+            # _words (they come from a merged header sub-table), so use
+            # canonical names for the split columns.
+            table.headers = (
+                table.headers[:col_idx]
+                + ["Increase/ (Decrease)", "% Change"]
+                + table.headers[col_idx + 1:]
+            )
+
+            # Re-assign cells for all rows by distributing words
+            for row in table.rows:
+                # Find words in this row within the old column extent
+                row_words = [
+                    w for w in table._words
+                    if old_col.x0 <= w["x0"] <= old_col.x1
+                    and abs(w["top"] - row.y0) < self.y_tolerance * 2
+                    and w["text"].strip()
+                ]
+                left_parts = [
+                    w["text"].strip() for w in sorted(row_words, key=lambda w: w["x0"])
+                    if w["x0"] < split_x
+                ]
+                right_parts = [
+                    w["text"].strip() for w in sorted(row_words, key=lambda w: w["x0"])
+                    if w["x0"] >= split_x
+                ]
+                left_cell = " ".join(left_parts)
+                right_cell = " ".join(right_parts)
+
+                row.cells = (
+                    row.cells[:col_idx]
+                    + [left_cell, right_cell]
+                    + row.cells[col_idx + 1:]
+                )
+
+            # Only process one split per table
+            break
+
     def _extract_header_separators(
         self,
         header_tables: list[SpatialTable],
@@ -821,8 +1067,8 @@ class SpatialTableExtractor:
                 if not cell:
                     continue
                 total_cells += 1
-                # Comma-formatted numbers like "1,779,292"
-                if re.match(r'^[\d,]+$', cell) and ',' in cell:
+                # Comma-formatted numbers like "1,779,292" or "185,381.3"
+                if re.match(r'^[\d,]+\.?\d*$', cell) and ',' in cell:
                     data_cell_count += 1
                 # Parenthesized negative numbers like "(50,000)" or "(66.5)%"
                 elif re.match(r'^\([\d,.]+\)%?$', cell):
@@ -832,6 +1078,9 @@ class SpatialTableExtractor:
                     data_cell_count += 1
                 # Decimal numbers like "7.6", "17.48"
                 elif re.match(r'^[\d]+\.[\d]+$', cell):
+                    data_cell_count += 1
+                # Em-dashes used as zero/nil placeholders
+                elif cell in ('—', '–', '--'):
                     data_cell_count += 1
 
         if total_cells == 0:
@@ -995,6 +1244,8 @@ class SpatialTableExtractor:
 
         # For each row, collect gap midpoints
         all_gap_positions: list[float] = []
+        # Also collect sub-threshold gaps for header separator corroboration
+        sub_threshold_gaps: list[float] = []
 
         for row in multi_word_rows:
             for i in range(len(row) - 1):
@@ -1004,6 +1255,8 @@ class SpatialTableExtractor:
                 if gap_size >= self.column_gap_threshold:
                     gap_mid = (gap_start + gap_end) / 2
                     all_gap_positions.append(gap_mid)
+                elif gap_size >= self.column_gap_threshold * 0.4:
+                    sub_threshold_gaps.append((gap_start + gap_end) / 2)
 
         # Cluster all gap positions
         raw_clusters = self._cluster_gap_positions(
@@ -1048,23 +1301,34 @@ class SpatialTableExtractor:
         # Merge in header-derived separators (add-only — never replace).
         # These add new column breaks where the header shows distinct columns
         # but data-row gaps are too sparse to pass the frequency filter.
-        # Only add a header separator when it corroborates a WEAK data signal:
-        # a gap cluster that exists but didn't meet the frequency threshold.
-        # This avoids false positives from wide header gaps whose midpoints
-        # don't reflect actual column boundaries.
-        if header_separators and raw_clusters:
+        # A header separator is added when it corroborates either:
+        # 1. A weak gap cluster (exists but didn't meet frequency threshold), or
+        # 2. Sub-threshold gaps in the data (gaps too narrow for the main
+        #    detector but confirmed by the header's column structure).
+        if header_separators:
             header_match_radius = self.column_gap_threshold * 2
             # Find gap clusters that were rejected by frequency filter
             weak_clusters = [
                 center for center, count in raw_clusters
                 if 0 < count < min_count
-            ]
+            ] if raw_clusters else []
+            # Cluster the sub-threshold gaps
+            sub_clusters = self._cluster_gap_positions(
+                sorted(sub_threshold_gaps), self.column_gap_threshold
+            ) if sub_threshold_gaps else []
+            sub_cluster_centers = [center for center, _count in sub_clusters]
             for hs in header_separators:
-                # Already have a separator nearby? Skip.
-                if any(abs(hs - s) < header_match_radius for s in separators):
+                # Skip if a separator already exists at essentially the same
+                # position (within the column gap threshold — a tighter check
+                # than the match radius to avoid skipping splits that fall
+                # within a wide merged column).
+                if any(abs(hs - s) < self.column_gap_threshold for s in separators):
                     continue
                 # Corroborated by a weak data-row gap cluster?
                 if any(abs(hs - wc) < header_match_radius for wc in weak_clusters):
+                    separators.append(hs)
+                # Corroborated by sub-threshold gaps in the data?
+                elif any(abs(hs - sc) < header_match_radius for sc in sub_cluster_centers):
                     separators.append(hs)
 
         if not separators:
@@ -1202,11 +1466,84 @@ class SpatialTableExtractor:
                     ]
                 col_words.sort(key=lambda w: w["x0"])
                 cell_text = " ".join(w["text"] for w in col_words).strip()
+                # Strip trailing ' $' when pdfplumber merges a dollar sign
+                # from the next column into the same word token as the value
+                if self.strip_dollar_signs and cell_text.endswith(" $"):
+                    cell_text = cell_text[:-2]
                 cells.append(cell_text)
 
             rows.append(SpatialRow(y0=y0, y1=y1, cells=cells))
 
         return rows
+
+    @staticmethod
+    def _merge_multiline_rows(rows: list[SpatialRow]) -> list[SpatialRow]:
+        """
+        Merge rows that are fragments of a single multi-line table row.
+
+        When a position title wraps across lines in the PDF, the extractor
+        produces separate rows: one with only the label column filled, one
+        with only the data columns, and possibly a trailing label fragment.
+        This method merges them back together.
+
+        A row is considered a label-only fragment if it has content only in
+        column 0 and that content is non-numeric text.
+        """
+        import re
+
+        if len(rows) < 2:
+            return rows
+
+        def is_label_only(row: SpatialRow) -> bool:
+            """Row has text in column 0 and nothing in any other column."""
+            if not row.cells or not row.cells[0].strip():
+                return False
+            # Column 0 must be non-numeric text
+            c0 = row.cells[0].strip()
+            if re.match(r'^[\d$,.()\-%\s]+$', c0):
+                return False
+            # All other columns must be empty
+            return all(not c.strip() for c in row.cells[1:])
+
+        def is_data_no_label(row: SpatialRow) -> bool:
+            """Row has empty column 0 but data in other columns."""
+            if not row.cells:
+                return False
+            if row.cells[0].strip():
+                return False
+            return any(c.strip() for c in row.cells[1:])
+
+        merged: list[SpatialRow] = []
+        i = 0
+        while i < len(rows):
+            row = rows[i]
+
+            # Look for pattern: label-only row followed by data-no-label row,
+            # optionally followed by more label-only fragments
+            if is_label_only(row) and i + 1 < len(rows) and is_data_no_label(rows[i + 1]):
+                label_parts = [row.cells[0]]
+                data_row = rows[i + 1]
+
+                # Collect any trailing label fragments
+                j = i + 2
+                while j < len(rows) and is_label_only(rows[j]):
+                    label_parts.append(rows[j].cells[0])
+                    j += 1
+
+                # Merge: combine label text into column 0 of data row
+                combined_label = " ".join(label_parts)
+                new_cells = [combined_label] + list(data_row.cells[1:])
+                merged.append(SpatialRow(
+                    y0=row.y0,
+                    y1=rows[j - 1].y1,
+                    cells=new_cells,
+                ))
+                i = j
+            else:
+                merged.append(row)
+                i += 1
+
+        return merged
 
     def _remove_empty_columns(
         self,
@@ -1389,22 +1726,27 @@ class SpatialTableExtractor:
         pages: Optional[list[int]] = None,
         bboxes: Optional[dict[int, tuple[float, float, float, float]]] = None,
         csv_only: bool = False,
+        render_images: bool = False,
     ) -> Path:
         """
-        Generate a full debug output: annotated PDF and per-table CSVs.
+        Generate a full debug output: annotated PDF, per-table CSVs, and
+        optionally per-page PNG images.
 
         Creates:
         - {output_dir}/{stem}/debug.pdf — annotated PDF with boundaries
         - {output_dir}/{stem}/P{page}T{table}.csv — one CSV per sub-table
+        - {output_dir}/{stem}/P{page}.png — (if render_images=True) page images
 
         Args:
             input_pdf_path: Path to the source PDF.
             output_dir: Directory to write debug outputs.
             pages: 0-indexed page numbers to process. None = all pages.
             bboxes: Optional dict mapping page index to a crop bbox.
+            csv_only: If True, skip generating the annotated debug PDF.
+            render_images: If True, render each page of the debug PDF as a PNG.
 
         Returns:
-            Path to the output directory.
+            Path to the per-PDF output directory.
         """
         import csv
 
@@ -1424,8 +1766,8 @@ class SpatialTableExtractor:
             old_csv.unlink()
 
         # Generate annotated PDF (skip when only CSVs are needed)
+        debug_pdf_path = pdf_dir / "debug.pdf"
         if not csv_only:
-            debug_pdf_path = pdf_dir / "debug.pdf"
             self.render_debug_pdf(input_pdf_path, debug_pdf_path, pages=pages, bboxes=bboxes)
 
         # Generate per-table CSVs
@@ -1459,7 +1801,19 @@ class SpatialTableExtractor:
                         writer.writerow(row.cells)
 
         plumber_pdf.close()
-        return output_dir
+
+        # Render debug PDF pages as PNG images for visual inspection
+        if render_images and not csv_only and debug_pdf_path.exists():
+            import fitz  # PyMuPDF
+
+            debug_doc = fitz.open(str(debug_pdf_path))
+            for i, page in enumerate(debug_doc):
+                page_idx = target_pages[i] if i < len(target_pages) else i
+                pix = page.get_pixmap(dpi=150)
+                pix.save(str(pdf_dir / f"P{page_idx}.png"))
+            debug_doc.close()
+
+        return pdf_dir
 
 
 def _variance(values: list[float]) -> float:

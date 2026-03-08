@@ -1,31 +1,35 @@
-Two of these, the Department of Public Safety and the Department of Public Works, contain sub-Bureaus and Offices
+# Spatial Table Extractor — Remaining Issues
 
-[12_City_Council.pdf](input/split-pdf/12_City_Council.pdf)
-[13_Office_of_the_City_Clerk.pdf](input/split-pdf/13_Office_of_the_City_Clerk.pdf)
-[14_Office_of_the_Mayor.pdf](input/split-pdf/14_Office_of_the_Mayor.pdf)
-[15_Office_of_Management_and_Budget.pdf](input/split-pdf/15_Office_of_Management_and_Budget.pdf)
-[16_Department_of_Innovation_and_Performance.pdf](input/split-pdf/16_Department_of_Innovation_and_Performance.pdf)
-[17_Commission_on_Human_Relations.pdf](input/split-pdf/17_Commission_on_Human_Relations.pdf)
-[18_Office_of_the_City_Controller.pdf](input/split-pdf/18_Office_of_the_City_Controller.pdf)
-[19_Department_of_Finance.pdf](input/split-pdf/19_Department_of_Finance.pdf)
-[20_Department_of_Law.pdf](input/split-pdf/20_Department_of_Law.pdf)
-[21_Ethics_Hearing_Board.pdf](input/split-pdf/21_Ethics_Hearing_Board.pdf)
-[22_Office_of_Municipal_Investigations.pdf](input/split-pdf/22_Office_of_Municipal_Investigations.pdf)
-[23_Department_of_Human_Resources_and_Civil_Service.pdf](input/split-pdf/23_Department_of_Human_Resources_and_Civil_Service.pdf)
-[24_Department_of_City_Planning.pdf](input/split-pdf/24_Department_of_City_Planning.pdf)
-[25_Department_of_Permits__Licenses__and_Inspections.pdf](input/split-pdf/25_Department_of_Permits__Licenses__and_Inspections.pdf)
-[26_Department_of_Public_Safety.pdf](input/split-pdf/26_Department_of_Public_Safety.pdf)  
-- [27_Bureau_of_Administration.pdf](input/split-pdf/27_Bureau_of_Administration.pdf)
-- [28_Bureau_of_Emergency_Medical_Services.pdf](input/split-pdf/28_Bureau_of_Emergency_Medical_Services.pdf)
-- [29_Bureau_of_Police.pdf](input/split-pdf/29_Bureau_of_Police.pdf)
-- [30_Bureau_of_Fire.pdf](input/split-pdf/30_Bureau_of_Fire.pdf)
-- [31_Bureau_of_Animal_Care_and_Control.pdf](input/split-pdf/31_Bureau_of_Animal_Care_and_Control.pdf)
-- [32_Office_of_Community_Health_and_Safety.pdf](input/split-pdf/32_Office_of_Community_Health_and_Safety.pdf)
-[33_Department_of_Public_Works.pdf](input/split-pdf/33_Department_of_Public_Works.pdf)
--[34_Bureau_of_Administration.pdf](input/split-pdf/34_Bureau_of_Administration.pdf)
--[35_Bureau_of_Operations.pdf](input/split-pdf/35_Bureau_of_Operations.pdf)
--[36_Bureau_of_Environmental_Services.pdf](input/split-pdf/36_Bureau_of_Environmental_Services.pdf)
--[37_Bureau_of_Facilities.pdf](input/split-pdf/37_Bureau_of_Facilities.pdf)
-[38_Department_of_Parks_and_Recreation.pdf](input/split-pdf/38_Department_of_Parks_and_Recreation.pdf)
-[39_Department_of_Mobility_and_Infrastructure.pdf](input/split-pdf/39_Department_of_Mobility_and_Infrastructure.pdf)
-[40_Citizen_Police_Review_Board.pdf](input/split-pdf/40_Citizen_Police_Review_Board.pdf)
+## Regression baseline
+17 PDFs, ~100 tables in `output/regression/expected/`.
+
+PDFs in expected: 37, 38, 39, 41, 42, 43, 44, 47, 48, 50, 51, 52, 53, 54, 55, 56, 57
+
+## Known imperfection in baseline
+- **44 P3T1** (Stop the Violence, part-time positions): FTE and dollar-rate values are merged into single cells (e.g., `—  50.50`). This is the part-time variant of Issue 2 — the gap between FTE and rate is too narrow, and unlike grade codes (e.g., `U02-G`), dollar rates don't produce a distinct enough gap pattern for header corroboration. Locked into expected as-is; update if fixed later.
+
+## Remaining issues (PDFs not yet in expected)
+
+### Issue 3: Allocation table garbled (40)
+**PDF:** 40_Three_Taxing_Bodies_Trust_Fund (P1T1)
+**Symptom:** The allocation sub-table and footnote paragraph are forced into the 9-column position-summary structure from the preceding table, scattering text fragments across wrong columns.
+**Plan:** The allocation table has a different column structure than the position summary above it. Column propagation from the header table shouldn't apply when the sub-table's x-extent or column count clearly differs. Need to investigate how propagation decides to apply and add a check.
+
+### Issue 4: Net Total row misaligned (45)
+**PDF:** 45_Liquid_Fuels_Trust_Fund (P0T1)
+**Symptom:** An extra empty column appears in the table structure, pushing the "Net Total" label into C1 instead of C0.
+**Plan:** Investigate why an extra column is detected. Likely a gap anomaly in one or two rows creating a spurious column that passes the frequency filter.
+
+### Issue 5: Hours + Budget concatenated (46)
+**PDF:** 46_Regional_Asset_District_-_Public_Works_Trust_Fund (P2T0)
+**Symptom:** The Laborer row has Hours/Months and Budget values merged into one cell (`149,760  3,664,627`).
+**Plan:** Similar to Issue 2 — the gap between Hours and Budget for this specific row is too narrow. May be a one-off data anomaly (large hour count pushing into the Budget column's space). Check if header separators could help here.
+
+### Issue 6: Page number leaked into table (49)
+**PDF:** 49_Parks_Tax_Trust_Fund (P2T1)
+**Symptom:** The page number "278" appears as a stray row at the end of the part-time allowances table.
+**Plan:** Page numbers should be filtered by `_filter_page_headers`. This one likely survives because it sits close to (or within) the table's y-extent rather than being isolated at the bottom of the page. Consider filtering single-number rows that match typical page number patterns.
+
+## Resolved issues
+- **Issue 1** (beginning balance in header): Fixed by recognizing comma+decimal numbers and em-dashes as data cells in `_is_header_table`, preventing balance rows from being misclassified as headers.
+- **Issue 2** (FTE + Rate/Grade merged): Fixed by collecting sub-threshold gaps for header separator corroboration and tightening the duplicate-separator proximity check. Full-time position tables now correctly split; part-time tables with dollar rates remain affected (see known imperfection above).
