@@ -1,19 +1,14 @@
 # Spatial Table Extractor — Remaining Issues
 
 ## Regression baseline
-17 PDFs, ~100 tables in `output/regression/expected/`.
+19 PDFs in `output/regression/expected/`.
 
-PDFs in expected: 37, 38, 39, 41, 42, 43, 44, 47, 48, 50, 51, 52, 53, 54, 55, 56, 57
+PDFs in expected: 37, 38, 39, 40, 41, 42, 43, 44, 47, 48, 50, 51, 52, 53, 54, 55, 56, 57, 58
 
 ## Known imperfection in baseline
 - **44 P3T1** (Stop the Violence, part-time positions): FTE and dollar-rate values are merged into single cells (e.g., `—  50.50`). This is the part-time variant of Issue 2 — the gap between FTE and rate is too narrow, and unlike grade codes (e.g., `U02-G`), dollar rates don't produce a distinct enough gap pattern for header corroboration. Locked into expected as-is; update if fixed later.
 
 ## Remaining issues (PDFs not yet in expected)
-
-### Issue 3: Allocation table garbled (40)
-**PDF:** 40_Three_Taxing_Bodies_Trust_Fund (P1T1)
-**Symptom:** The allocation sub-table and footnote paragraph are forced into the 9-column position-summary structure from the preceding table, scattering text fragments across wrong columns.
-**Plan:** The allocation table has a different column structure than the position summary above it. Column propagation from the header table shouldn't apply when the sub-table's x-extent or column count clearly differs. Need to investigate how propagation decides to apply and add a check.
 
 ### Issue 4: Net Total row misaligned (45)
 **PDF:** 45_Liquid_Fuels_Trust_Fund (P0T1)
@@ -33,3 +28,4 @@ PDFs in expected: 37, 38, 39, 41, 42, 43, 44, 47, 48, 50, 51, 52, 53, 54, 55, 56
 ## Resolved issues
 - **Issue 1** (beginning balance in header): Fixed by recognizing comma+decimal numbers and em-dashes as data cells in `_is_header_table`, preventing balance rows from being misclassified as headers.
 - **Issue 2** (FTE + Rate/Grade merged): Fixed by collecting sub-threshold gaps for header separator corroboration and tightening the duplicate-separator proximity check. Full-time position tables now correctly split; part-time tables with dollar rates remain affected (see known imperfection above).
+- **Issue 3** (allocation table garbled): Fixed with two changes: (a) column propagation now checks that the headerless table's natural column count is ≥50% of the propagated count, preventing different-structure tables from inheriting the wrong schema; (b) trailing prose/footnote rows are filtered before column detection via `_filter_prose_rows`, which strips long wide tokens (>50% region width, >50 chars) from the bottom of sub-table regions, preventing footnote text from distorting column boundaries.

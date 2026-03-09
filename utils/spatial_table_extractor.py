@@ -39,6 +39,7 @@ class SpatialTable:
     rows: list[SpatialRow]
     headers: list[str] = field(default_factory=list)
     bbox: Optional[tuple[float, float, float, float]] = None
+    bordered: bool = False
     _words: list[dict] = field(default_factory=list, repr=False)
     _dollar_separators: list[float] = field(default_factory=list, repr=False)
 
@@ -162,6 +163,31 @@ class SpatialTableExtractor:
                     for w in row:
                         remove_ids.add(id(w))
 
+        # Pass 3: remove standalone page numbers at the bottom of the page.
+        # Find the last surviving multi-word row; any single-word bare-integer
+        # rows below it are almost certainly page footers (e.g., "243").
+        last_multi_y = None
+        for ri in reversed(range(len(rows))):
+            if ri in pattern_removed:
+                continue
+            row = rows[ri]
+            surviving = [w for w in row if id(w) not in remove_ids]
+            if len(surviving) >= 2:
+                last_multi_y = max(w["top"] for w in surviving)
+                break
+
+        if last_multi_y is not None:
+            for ri, row in enumerate(rows):
+                if ri in pattern_removed:
+                    continue
+                surviving = [w for w in row if id(w) not in remove_ids]
+                if len(surviving) == 1:
+                    w = surviving[0]
+                    if w["top"] > last_multi_y and re.fullmatch(
+                        r"\d{1,4}", w["text"].strip()
+                    ):
+                        remove_ids.add(id(w))
+
         return [w for w in words if id(w) not in remove_ids]
 
     def extract(
@@ -217,10 +243,12 @@ class SpatialTableExtractor:
             if not rows:
                 continue
             # Check if any data cell contains newlines — a sign that
-            # pdfplumber merged multiple visual rows into one cell
+            # pdfplumber merged multiple visual rows into one cell.
+            # Grant tables produce 400-1500+ char cells with 10+ newlines;
+            # simple bordered tables may have single-line wraps (~80 chars).
             for row in rows[1:]:  # skip header row
                 for cell in row:
-                    if cell and "\n" in cell and len(cell) > 50:
+                    if cell and "\n" in cell and len(cell) > 200:
                         return False
 
         return True
@@ -274,6 +302,53 @@ class SpatialTableExtractor:
                     for i in range(num_cols)
                 ]
 
+            # Merge phantom columns that are None in nearly all rows.
+            # pdfplumber sometimes finds cell boundaries that only exist in
+            # one row (e.g., a header cell split into "Fee Des" | "cription")
+            # while all data rows span across that boundary → None cells.
+            if len(columns) > 1 and len(extracted) > 2:
+                phantom_cols: set[int] = set()
+                for ci in range(num_cols):
+                    none_count = sum(
+                        1 for row in extracted
+                        if ci >= len(row) or row[ci] is None
+                    )
+                    # If ≥80% of rows are None, this column is phantom.
+                    # 80% catches small tables (5-6 rows) where the phantom
+                    # column has content only in 1 header-like row.
+                    if none_count >= len(extracted) * 0.8:
+                        phantom_cols.add(ci)
+                if phantom_cols:
+                    # Merge phantom columns into their left neighbor's x-extent
+                    merged_columns: list[SpatialColumn] = []
+                    merged_extracted: list[list[Optional[str]]] = []
+                    for ci in range(len(columns)):
+                        if ci in phantom_cols and merged_columns:
+                            # Extend the previous column's right edge
+                            merged_columns[-1] = SpatialColumn(
+                                x0=merged_columns[-1].x0,
+                                x1=columns[ci].x1,
+                                alignment=merged_columns[-1].alignment,
+                            )
+                        else:
+                            merged_columns.append(columns[ci])
+                    # Rebuild extracted data, concatenating phantom column
+                    # text into the left neighbor (e.g., "Fee Des" + "cription")
+                    for row in extracted:
+                        new_row: list[Optional[str]] = []
+                        for ci in range(min(len(row), num_cols)):
+                            if ci in phantom_cols:
+                                # Append non-None text to the previous kept cell
+                                if new_row and row[ci] is not None:
+                                    prev = new_row[-1] or ""
+                                    new_row[-1] = (prev + row[ci]).strip() or None
+                            else:
+                                new_row.append(row[ci])
+                        merged_extracted.append(new_row)
+                    columns = merged_columns
+                    extracted = merged_extracted
+                    num_cols = len(columns)
+
             # Separate header row (first row) from data rows
             headers: list[str] = []
             data_rows: list[list[str]] = []
@@ -308,12 +383,15 @@ class SpatialTableExtractor:
                 y1 = y0 + row_height
                 spatial_rows.append(SpatialRow(y0=y0, y1=y1, cells=row))
 
-            results.append(SpatialTable(
+            table = SpatialTable(
                 columns=columns,
                 rows=spatial_rows,
                 headers=headers,
                 bbox=tb,
-            ))
+                bordered=True,
+            )
+            self._merge_group_headers(table)
+            results.append(table)
 
         return results
 
@@ -335,16 +413,28 @@ class SpatialTableExtractor:
         if len(v_lines) < 2:
             return False
 
+        # Grant tables have many internal vertical separators (>4 unique
+        # x-positions for 6+ column layouts).  Simple 2-column bordered
+        # tables (e.g., fee schedules) have only 3 unique x-positions
+        # (left, middle, right) and must not be misdetected.
+        unique_x = set()
+        for l in v_lines:
+            unique_x.add(round(l["x0"]))
+        has_internal_separators = len(unique_x) > 4
+
         native_tables = page.find_tables()
         for table in native_tables:
             rows = table.extract()
             if not rows:
                 continue
-            # Check for merged multi-row cells
-            for row in rows[1:]:
-                for cell in row:
-                    if cell and "\n" in cell and len(cell) > 50:
-                        return True
+            # Check for merged multi-row cells — only if the table has
+            # internal vertical separators (otherwise it's just outer borders
+            # and pdfplumber merges everything, which is not a grant signal)
+            if has_internal_separators:
+                for row in rows[1:]:
+                    for cell in row:
+                        if cell and "\n" in cell and len(cell) > 200:
+                            return True
             # Check for grant-like header row (JDE/Funder/Grant/Amount)
             for row in rows:
                 row_text = " ".join((c or "") for c in row).lower()
@@ -414,7 +504,23 @@ class SpatialTableExtractor:
             if not dept_name:
                 continue
 
-            tb = native.bbox  # (x0, top, x1, bottom)
+            tb_raw = native.bbox  # (x0, top, x1, bottom)
+
+            # On continuation pages the native table may only cover the
+            # title+header area while data extends far below.  Detect this
+            # by checking if outer vertical border lines that START within
+            # the table's y-extent extend beyond the table's bottom.
+            # Only use lines contiguous with the table (top within bbox)
+            # to avoid picking up borders from a separate table below.
+            tb_bottom = tb_raw[3]
+            for vl in v_lines:
+                if abs(vl["x0"] - tb_raw[0]) < 3 or abs(vl["x0"] - tb_raw[2]) < 3:
+                    vl_top = min(vl["top"], vl["bottom"])
+                    vl_bot = max(vl["top"], vl["bottom"])
+                    # Line must start within (or near) the table's y-extent
+                    if vl_top <= tb_raw[3] + 2 and vl_bot > tb_bottom:
+                        tb_bottom = vl_bot
+            tb = (tb_raw[0], tb_raw[1], tb_raw[2], tb_bottom)
 
             # Find words within this table's extent
             table_words = [
@@ -652,10 +758,20 @@ class SpatialTableExtractor:
             if not row_groups:
                 continue
 
-            columns = self._detect_columns(
-                region_words, row_groups, dollar_separators=region_dollar_seps,
+            # Filter out prose/footnote rows before column detection so
+            # wide paragraph tokens don't distort column boundaries.
+            data_row_groups, _prose_rows = self._filter_prose_rows(
+                row_groups, region_x1 - region_x0,
+                column_gap_threshold=self.column_gap_threshold,
             )
-            rows = self._assign_cells(row_groups, columns)
+            if not data_row_groups:
+                continue
+            data_words = [w for row in data_row_groups for w in row]
+
+            columns = self._detect_columns(
+                data_words, data_row_groups, dollar_separators=region_dollar_seps,
+            )
+            rows = self._assign_cells(data_row_groups, columns)
             columns, rows = self._remove_empty_columns(columns, rows)
 
             r_x0 = min(c.x0 for c in columns)
@@ -667,7 +783,7 @@ class SpatialTableExtractor:
                 columns=columns,
                 rows=rows,
                 bbox=(r_x0, r_y0, r_x1, r_y1),
-                _words=region_words,
+                _words=data_words,
                 _dollar_separators=region_dollar_seps,
             ))
 
@@ -680,6 +796,10 @@ class SpatialTableExtractor:
             if not table.headers:
                 self._extract_internal_headers(table)
 
+        # Merge hierarchical group headers with sub-column headers using "|"
+        for table in tables:
+            self._merge_group_headers(table)
+
         # Split columns where known header patterns were merged due to
         # tight spacing (e.g., "Increase/(Decrease)" and "% Change").
         for table in tables:
@@ -688,6 +808,16 @@ class SpatialTableExtractor:
         # Merge multi-line row fragments (e.g., wrapped position titles)
         for table in tables:
             table.rows = self._merge_multiline_rows(table.rows)
+
+        # Strip trailing caption/footer rows (e.g., "Deliverables are
+        # tentative and are subject to change") that have content in only
+        # one cell and don't look like data values.
+        for table in tables:
+            self._strip_peripheral_captions(table)
+
+        # Split tables that contain mid-table prose (footnotes between
+        # two distinct table sections with separate headers).
+        tables = self._split_tables_at_mid_prose(tables)
 
         # Filter out false-positive tables (prose text blocks, page numbers)
         tables = [t for t in tables if self._is_real_table(t)]
@@ -970,14 +1100,21 @@ class SpatialTableExtractor:
                         # Re-assign cells with new columns
                         row_groups = self._cluster_rows(table._words)
                         table.rows = self._assign_cells(row_groups, new_columns)
-                        table.columns, table.rows = self._remove_empty_columns(
-                            table.columns, table.rows,
-                        )
 
                     # Combine header text using the (possibly updated) columns
                     table.headers = self._combine_header_rows(
                         pending_header_tables, table.columns,
                     )
+
+                    if header_seps:
+                        # Remove columns empty in BOTH header and data.
+                        # Columns with header text (e.g., "Rate/ Grade") are
+                        # preserved even when all data rows are empty.
+                        table.columns, table.rows, table.headers = (
+                            self._remove_empty_columns_with_headers(
+                                table.columns, table.rows, table.headers,
+                            )
+                        )
 
                     # Expand data table bbox to include header region
                     if table.bbox and pending_header_tables[0].bbox:
@@ -1084,6 +1221,36 @@ class SpatialTableExtractor:
         if header_count == 0:
             return
 
+        # Verify: if a supposed header row has cell values that repeat in
+        # the data rows, it's actually data, not a continuation header.
+        # E.g., "DOMI" appearing in both a header row and data rows means
+        # the header went too far.  Check from the last header row backward,
+        # continuing to reduce header_count for each row with repeats.
+        data_rows_below = table.rows[header_count:header_count + 10]
+        if data_rows_below:
+            for hdr_idx in range(header_count - 1, 0, -1):
+                hdr_row = table.rows[hdr_idx]
+                found_repeat = False
+                for col_idx, cell in enumerate(hdr_row.cells):
+                    cell_val = cell.strip()
+                    if not cell_val:
+                        continue
+                    for drow in data_rows_below:
+                        if (col_idx < len(drow.cells)
+                                and drow.cells[col_idx].strip() == cell_val):
+                            found_repeat = True
+                            break
+                    if found_repeat:
+                        break
+                if found_repeat:
+                    header_count = hdr_idx
+                else:
+                    # No repeats found in this row — stop checking
+                    break
+
+        if header_count == 0:
+            return
+
         # Combine the header rows into a single header list per column
         header_rows = table.rows[:header_count]
         headers: list[str] = []
@@ -1097,13 +1264,137 @@ class SpatialTableExtractor:
         table.headers = headers
         table.rows = table.rows[header_count:]
 
-    def _split_known_merged_columns(self, table: SpatialTable) -> None:
-        """Split columns whose headers contain known merged-column patterns.
+    def _merge_group_headers(self, table: SpatialTable) -> None:
+        """
+        Merge hierarchical group headers with sub-column headers using "|".
 
-        When tight spacing causes two conceptually separate columns to merge
-        (e.g., "Increase/(Decrease)" and "% Change" becoming one column),
-        this method detects the merge via header text, locates the split
-        point from word positions, and splits the column and all row cells.
+        Detects when table.headers contains sparse group labels (e.g., "Grade")
+        and the first data row(s) contain per-column labels (e.g., "A", "B").
+        Produces merged headers like "Grade|A", "Grade|B", etc.
+
+        Group header spans are determined by label-type similarity: a group
+        expands rightward through columns whose sub-header labels are the same
+        type (e.g., single characters) and stops when encountering a different
+        type (e.g., a multi-character word like "Step").
+        """
+        import re
+
+        if not table.headers or not table.rows:
+            return
+
+        # Check if headers are sparse (group-level) — most cells empty
+        non_empty_header_count = sum(
+            1 for h in table.headers if h.strip()
+        )
+        total_cols = len(table.headers)
+        if non_empty_header_count == 0 or non_empty_header_count >= total_cols * 0.5:
+            return  # Not a sparse group header pattern
+
+        # Check if first data row(s) are sub-header-like (non-numeric, dense)
+        sub_header_count = 0
+        for row in table.rows:
+            if sub_header_count >= 2:
+                break
+            non_empty_cells = [c for c in row.cells if c.strip()]
+            if not non_empty_cells:
+                break
+            # Must be denser than the header row
+            if len(non_empty_cells) <= non_empty_header_count:
+                break
+            has_data = False
+            for cell in non_empty_cells:
+                cell_text = cell.strip()
+                if re.match(r'^[\d,]+$', cell_text) and ',' in cell_text:
+                    has_data = True
+                    break
+                if re.match(r'^\([\d,]+\)$', cell_text):
+                    has_data = True
+                    break
+                if re.match(r'^[\d.]+%$', cell_text) or cell_text == '—%':
+                    has_data = True
+                    break
+            if has_data:
+                break
+            sub_header_count += 1
+
+        if sub_header_count == 0:
+            return
+
+        # Collect sub-header text per column
+        sub_rows = table.rows[:sub_header_count]
+        sub_labels: list[str] = []
+        for col_idx in range(total_cols):
+            parts: list[str] = []
+            for row in sub_rows:
+                if col_idx < len(row.cells) and row.cells[col_idx].strip():
+                    parts.append(row.cells[col_idx].strip())
+            sub_labels.append(" ".join(parts))
+
+        # Classify each sub-label type for span detection
+        def _label_type(text: str) -> str:
+            """Classify a sub-header label for group-span detection."""
+            text = text.strip()
+            if not text:
+                return "empty"
+            if len(text) == 1 and text.isalpha():
+                return "single_letter"
+            if re.match(r'^\d+$', text):
+                return "number"
+            return "word"
+
+        # Determine group header spans using label-type similarity
+        # Each non-empty header expands right through empty header cells
+        # as long as sub-labels share the same type as the first sub-label
+        # in the group.
+        group_for_col: list[str] = [""] * total_cols
+        i = 0
+        while i < total_cols:
+            group_text = table.headers[i].strip()
+            if group_text:
+                # Start a new group span
+                group_for_col[i] = group_text
+                first_sub_type = _label_type(sub_labels[i])
+                j = i + 1
+                while j < total_cols:
+                    if table.headers[j].strip():
+                        break  # Next group header starts
+                    sub_type = _label_type(sub_labels[j])
+                    if sub_type == "empty" or sub_type == first_sub_type:
+                        group_for_col[j] = group_text
+                        j += 1
+                    else:
+                        break  # Different label type — end of group span
+                i = j
+            else:
+                i += 1
+
+        # Build merged headers
+        merged: list[str] = []
+        for col_idx in range(total_cols):
+            group = group_for_col[col_idx]
+            sub = sub_labels[col_idx]
+            if group and sub:
+                merged.append(f"{group}|{sub}")
+            elif sub:
+                merged.append(sub)
+            elif group:
+                merged.append(group)
+            else:
+                merged.append("")
+
+        table.headers = merged
+        table.rows = table.rows[sub_header_count:]
+
+    def _split_known_merged_columns(self, table: SpatialTable) -> None:
+        """Split columns whose data contains known merged-column patterns.
+
+        Detects merges via two strategies:
+        1. Header contains "Decrease" + "Change" (Increase/(Decrease) + % Change)
+        2. Last column data consistently has "value  percentage" pattern
+
+        When pdfplumber's x_tolerance merges adjacent values into a single
+        word token, the split point is estimated from text character positions
+        as a fallback.
 
         Modifies the table in place.
         """
@@ -1112,97 +1403,176 @@ class SpatialTableExtractor:
         if not table.headers or not table._words:
             return
 
+        split_col_idx: int | None = None
+        new_headers: tuple[str, str] | None = None
+
+        # --- Strategy 1: Header contains "Decrease" + "Change" ---
         for col_idx, header in enumerate(table.headers):
-            # Detect merged "Increase/(Decrease)" + "% Change" columns.
-            # The multi-line header join order varies by PDF layout, so
-            # match any header containing both "Decrease" and "Change".
-            if not (re.search(r'Decrease', header, re.IGNORECASE)
+            if (re.search(r'Decrease', header, re.IGNORECASE)
                     and re.search(r'Change', header, re.IGNORECASE)):
-                continue
+                split_col_idx = col_idx
+                new_headers = ("Increase/ (Decrease)", "% Change")
+                break
 
-            # Find the split point using data row words.  In rows that
-            # have both a value and a percentage (e.g., "17,829" and "3.0%"),
-            # there is a gap between them.  Find the largest consistent gap
-            # within this column's data words.
-            col = table.columns[col_idx]
-
-            # Collect per-row gap info within this column
-            gaps: list[float] = []
-            for row in table.rows:
-                row_words = sorted(
-                    (w for w in table._words
-                     if col.x0 <= w["x0"] <= col.x1
-                     and abs(w["top"] - row.y0) < self.y_tolerance * 2
-                     and w["text"].strip()),
-                    key=lambda w: w["x0"],
+        # --- Strategy 2: Last column data has "value  percentage" pattern ---
+        if split_col_idx is None:
+            last_idx = len(table.columns) - 1
+            if last_idx > 0 and len(table.rows) >= 1:
+                pct_merge = re.compile(
+                    r'[\(]?[\d,]+\.?\d*[\)]?\s{2,}[\(]?[\d.]+[\)]?%'
+                    r'|[\(]?[\d,]+\.?\d*[\)]?\s{2,}—%'
+                    r'|—\s{2,}[\(]?[\d.]+[\)]?%'
+                    r'|—\s{2,}—%'
                 )
-                if len(row_words) >= 2:
-                    # Find the largest gap in this row
-                    for i in range(len(row_words) - 1):
-                        gap = row_words[i + 1]["x0"] - row_words[i]["x1"]
-                        if gap > 3:
-                            gaps.append(
-                                (row_words[i]["x1"] + row_words[i + 1]["x0"]) / 2
-                            )
+                matches = sum(
+                    1 for row in table.rows
+                    if last_idx < len(row.cells)
+                    and pct_merge.search(row.cells[last_idx])
+                )
+                if matches >= min(2, len(table.rows)):
+                    split_col_idx = last_idx
+                    # Split header text intelligently
+                    header = (table.headers[last_idx]
+                              if last_idx < len(table.headers) else "")
+                    if (re.search(r'Decrease', header, re.IGNORECASE)
+                            or re.search(r'Change', header, re.IGNORECASE)):
+                        new_headers = ("Increase/ (Decrease)", "% Change")
+                    elif header:
+                        # e.g., "2030 CAGR*" → ("2030", "CAGR*")
+                        # e.g., "2024 Actual CAGR*" → ("2024 Actual", "CAGR*")
+                        parts = header.rsplit(None, 1)
+                        if len(parts) == 2:
+                            new_headers = (parts[0], parts[1])
+                        else:
+                            new_headers = (header, "")
+                    else:
+                        new_headers = ("Increase/ (Decrease)", "% Change")
 
-            if not gaps:
-                continue
+        if split_col_idx is None:
+            return
 
-            # Use the median gap position as split point
+        col = table.columns[split_col_idx]
+
+        # --- Find the split point ---
+        # Method 1: Word-level gaps between separate tokens
+        gaps: list[float] = []
+        for row in table.rows:
+            row_words = sorted(
+                (w for w in table._words
+                 if col.x0 <= w["x0"] <= col.x1
+                 and abs(w["top"] - row.y0) < self.y_tolerance * 2
+                 and w["text"].strip()),
+                key=lambda w: w["x0"],
+            )
+            if len(row_words) >= 2:
+                for i in range(len(row_words) - 1):
+                    gap = row_words[i + 1]["x0"] - row_words[i]["x1"]
+                    if gap > 3:
+                        gaps.append(
+                            (row_words[i]["x1"] + row_words[i + 1]["x0"]) / 2
+                        )
+
+        if gaps:
             gaps.sort()
             split_x: float = gaps[len(gaps) // 2]
+        else:
+            # Method 2: Estimate from text content of merged word tokens.
+            # When pdfplumber merges "value  pct%" into one token, find the
+            # internal space and estimate x position proportionally.
+            split_x_est = self._estimate_split_x_from_text(table, col)
+            if split_x_est is None:
+                return
+            split_x = split_x_est
 
-            # Split the column
-            old_col = table.columns[col_idx]
-            left_col = SpatialColumn(
-                x0=old_col.x0, x1=split_x, alignment=old_col.alignment,
+        # --- Perform the column split ---
+        old_col = table.columns[split_col_idx]
+        left_col = SpatialColumn(
+            x0=old_col.x0, x1=split_x, alignment=old_col.alignment,
+        )
+        right_col = SpatialColumn(
+            x0=split_x, x1=old_col.x1, alignment=old_col.alignment,
+        )
+        table.columns = (
+            table.columns[:split_col_idx]
+            + [left_col, right_col]
+            + table.columns[split_col_idx + 1:]
+        )
+
+        table.headers = (
+            table.headers[:split_col_idx]
+            + [new_headers[0], new_headers[1]]
+            + table.headers[split_col_idx + 1:]
+        )
+
+        # Re-assign cells for all rows by distributing words
+        for row in table.rows:
+            row_words = [
+                w for w in table._words
+                if old_col.x0 <= w["x0"] <= old_col.x1
+                and abs(w["top"] - row.y0) < self.y_tolerance * 2
+                and w["text"].strip()
+            ]
+            # Split word tokens that straddle the split boundary
+            split_words = self._split_straddling_words(
+                row_words, [left_col, right_col],
             )
-            right_col = SpatialColumn(
-                x0=split_x, x1=old_col.x1, alignment=old_col.alignment,
+            left_parts = [
+                w["text"].strip() for w in sorted(split_words, key=lambda w: w["x0"])
+                if self._word_in_column(w, left_col.x0, left_col.x1)
+            ]
+            right_parts = [
+                w["text"].strip() for w in sorted(split_words, key=lambda w: w["x0"])
+                if self._word_in_column(w, right_col.x0, right_col.x1)
+            ]
+            left_cell = " ".join(left_parts)
+            right_cell = " ".join(right_parts)
+
+            row.cells = (
+                row.cells[:split_col_idx]
+                + [left_cell, right_cell]
+                + row.cells[split_col_idx + 1:]
             )
-            table.columns = (
-                table.columns[:col_idx]
-                + [left_col, right_col]
-                + table.columns[col_idx + 1:]
-            )
 
-            # Rebuild headers: the original header words may not be in
-            # _words (they come from a merged header sub-table), so use
-            # canonical names for the split columns.
-            table.headers = (
-                table.headers[:col_idx]
-                + ["Increase/ (Decrease)", "% Change"]
-                + table.headers[col_idx + 1:]
-            )
+    def _estimate_split_x_from_text(
+        self,
+        table: 'SpatialTable',
+        col: SpatialColumn,
+    ) -> float | None:
+        """Estimate a column split x-position from merged word token text.
 
-            # Re-assign cells for all rows by distributing words
-            for row in table.rows:
-                # Find words in this row within the old column extent
-                row_words = [
-                    w for w in table._words
-                    if old_col.x0 <= w["x0"] <= old_col.x1
-                    and abs(w["top"] - row.y0) < self.y_tolerance * 2
-                    and w["text"].strip()
-                ]
-                left_parts = [
-                    w["text"].strip() for w in sorted(row_words, key=lambda w: w["x0"])
-                    if w["x0"] < split_x
-                ]
-                right_parts = [
-                    w["text"].strip() for w in sorted(row_words, key=lambda w: w["x0"])
-                    if w["x0"] >= split_x
-                ]
-                left_cell = " ".join(left_parts)
-                right_cell = " ".join(right_parts)
-
-                row.cells = (
-                    row.cells[:col_idx]
-                    + [left_cell, right_cell]
-                    + row.cells[col_idx + 1:]
-                )
-
-            # Only process one split per table
-            break
+        When pdfplumber merges two values into one token (e.g., "593,167  1.3%"),
+        find the internal separator space and estimate its x position from the
+        token's character-to-pixel ratio.
+        """
+        import re
+        # Match "value  percentage" or "value  —%" etc.
+        sep_pat = re.compile(
+            r'([\(]?[\d,]+\.?\d*[\)]?|—)'
+            r'\s+'
+            r'([\(]?[\d.]+[\)]?%|—%|n/a)'
+        )
+        estimated_xs: list[float] = []
+        for row in table.rows:
+            row_words = [
+                w for w in table._words
+                if col.x0 <= w["x0"] <= col.x1
+                and abs(w["top"] - row.y0) < self.y_tolerance * 2
+                and w["text"].strip()
+            ]
+            for w in row_words:
+                m = sep_pat.search(w["text"])
+                if m:
+                    # Split position: end of the value part (group 1)
+                    sep_pos = m.end(1)
+                    text_len = len(w["text"])
+                    if text_len > 0:
+                        frac = sep_pos / text_len
+                        est_x = w["x0"] + frac * (w["x1"] - w["x0"])
+                        estimated_xs.append(est_x)
+        if estimated_xs:
+            estimated_xs.sort()
+            return estimated_xs[len(estimated_xs) // 2]
+        return None
 
     def _extract_header_separators(
         self,
@@ -1417,6 +1787,146 @@ class SpatialTableExtractor:
 
         return multi_col_rows / len(table.rows) >= min_multi_col_ratio
 
+    @staticmethod
+    def _strip_peripheral_captions(table: 'SpatialTable') -> None:
+        """Remove trailing rows that are captions/footnotes, not data.
+
+        A trailing row is stripped if it has content in only 1 cell (out of
+        3+ columns) and that content is non-numeric text.  This catches
+        footer captions like "Deliverables are tentative and are subject to
+        change" that align with one column but aren't tabular data.
+        """
+        import re
+
+        if len(table.columns) < 3 or not table.rows:
+            return
+
+        _DATA_RE = re.compile(
+            r'^[\d$,.()\-%—–\s]+$'
+        )
+
+        while table.rows:
+            row = table.rows[-1]
+            non_empty = [cell.strip() for cell in row.cells if cell.strip()]
+            if len(non_empty) != 1:
+                break
+            # Keep if the single cell looks like a numeric data value
+            if _DATA_RE.match(non_empty[0]):
+                break
+            table.rows.pop()
+
+    def _split_tables_at_mid_prose(
+        self,
+        tables: list['SpatialTable'],
+    ) -> list['SpatialTable']:
+        """Split tables that contain mid-table prose (footnotes between
+        two distinct sections with separate headers).
+
+        Detects a pattern where a table contains:
+        1. Data rows (multi-column, possibly with a totals row)
+        2. Prose/footnote rows (sparse, long text in 1-2 cells)
+        3. A second header row (non-numeric text in 2+ columns)
+        4. More data rows
+
+        When found, splits into two tables, discarding the prose rows.
+        """
+        import re
+
+        _DATA_RE = re.compile(
+            r'^[\d$,.()\-%—–\s]+$'
+        )
+
+        result: list[SpatialTable] = []
+        for table in tables:
+            split = self._find_mid_prose_split(table, _DATA_RE)
+            if split is None:
+                result.append(table)
+            else:
+                result.extend(split)
+        return result
+
+    def _find_mid_prose_split(
+        self,
+        table: 'SpatialTable',
+        data_re: 're.Pattern[str]',
+    ) -> list['SpatialTable'] | None:
+        """Find a mid-table prose block and return split tables, or None."""
+        if len(table.columns) < 3 or len(table.rows) < 6:
+            return None
+
+        # Classify each row as "data" (2+ non-empty cells with at least
+        # one data value or short label) or "sparse" (0-1 non-empty cells,
+        # or all-text with long content suggesting prose).
+        row_types: list[str] = []  # "data", "sparse", "header-like"
+        for row in table.rows:
+            non_empty = [c.strip() for c in row.cells if c.strip()]
+            n_non_empty = len(non_empty)
+
+            if n_non_empty >= 2:
+                # Check if any cell is a data value
+                has_data = any(data_re.match(c) for c in non_empty)
+                # Check if any single cell is very long (prose)
+                has_long_text = any(len(c) > 60 for c in non_empty)
+                if has_long_text:
+                    row_types.append("sparse")
+                elif has_data:
+                    row_types.append("data")
+                else:
+                    row_types.append("header-like")
+            else:
+                row_types.append("sparse")
+
+        # Look for a pattern: data+ → sparse+ → header-like → data+
+        # Find the first sparse block that follows data rows
+        in_data = False
+        sparse_start = None
+        for i, rtype in enumerate(row_types):
+            if rtype == "data":
+                in_data = True
+            elif in_data and rtype == "sparse" and sparse_start is None:
+                sparse_start = i
+            elif rtype == "header-like" and sparse_start is not None:
+                # Found: data → sparse → header-like
+                # Check that more data rows follow
+                remaining = row_types[i + 1:]
+                if any(rt == "data" for rt in remaining):
+                    # Split here: table1 = rows[:sparse_start],
+                    # table2 = rows[i:] (header-like row becomes header)
+                    return self._do_split(table, sparse_start, i)
+            elif rtype == "data" and sparse_start is not None:
+                # Data row appeared without a header-like row — reset
+                sparse_start = None
+
+        return None
+
+    def _do_split(
+        self,
+        table: 'SpatialTable',
+        sparse_start: int,
+        header_row_idx: int,
+    ) -> list['SpatialTable']:
+        """Split a table at a mid-prose boundary into two tables."""
+        from copy import deepcopy
+
+        # Table 1: rows before the prose
+        t1 = deepcopy(table)
+        t1.rows = table.rows[:sparse_start]
+
+        # Table 2: rows from the header-like row onward
+        t2 = deepcopy(table)
+        t2.rows = table.rows[header_row_idx:]
+        # The header-like row becomes the header of table 2
+        if t2.rows:
+            t2.headers = [c.strip() for c in t2.rows[0].cells]
+            t2.rows = t2.rows[1:]
+
+        result = []
+        if t1.rows:
+            result.append(t1)
+        if t2.rows:
+            result.append(t2)
+        return result
+
     # ── Row clustering ──────────────────────────────────────────────
 
     def _cluster_rows(self, words: list[dict]) -> list[list[dict]]:
@@ -1442,6 +1952,135 @@ class SpatialTableExtractor:
             row.sort(key=lambda w: w["x0"])
 
         return rows
+
+    @staticmethod
+    def _filter_prose_rows(
+        row_groups: list[list[dict]],
+        region_width: float,
+        min_text_len: int = 50,
+        min_width_ratio: float = 0.5,
+        column_gap_threshold: float = 15.0,
+    ) -> tuple[list[list[dict]], list[list[dict]]]:
+        """Strip leading and trailing prose/footnote rows from a region.
+
+        **Trailing scan** (bottom-up): A row is considered prose if any
+        single word token spans more than ``min_width_ratio`` of the region
+        width AND contains more than ``min_text_len`` characters.  Short
+        fragment rows (≤2 words, ≤30 chars) adjacent to prose are also
+        stripped as likely footnote continuations.
+
+        **Leading scan** (top-down): A row is considered non-tabular if it
+        has no inter-word gap ≥ ``column_gap_threshold``.  This catches
+        bullet-point lists, section headers, and paragraph text that
+        precede a table in the same region.  Stops at the first row with
+        a table-like column gap.
+
+        Returns:
+            (data_rows, prose_rows) — two disjoint lists preserving order.
+        """
+        def _is_prose(row: list[dict]) -> bool:
+            for word in row:
+                token_width = word["x1"] - word["x0"]
+                text = word.get("text", "")
+                if (
+                    token_width > region_width * min_width_ratio
+                    and len(text) > min_text_len
+                ):
+                    return True
+            return False
+
+        def _is_short_fragment(row: list[dict]) -> bool:
+            total_text = " ".join(w.get("text", "") for w in row)
+            return len(row) <= 2 and len(total_text) <= 30
+
+        def _is_non_table_row(row: list[dict]) -> bool:
+            """Return True if the row is clearly non-tabular content.
+
+            Detects bullet-point items (starting with '•') and prose lines
+            (long text with no large inter-word gaps).  Short labels like
+            'Revenues' or 'Personnel' are NOT flagged — they may be valid
+            section headers within tables.
+            """
+            sorted_w = sorted(row, key=lambda w: w["x0"])
+            first_text = sorted_w[0].get("text", "").strip() if sorted_w else ""
+
+            # Bullet items are clearly non-tabular
+            if first_text.startswith("•"):
+                return True
+
+            # Continuous prose: multiple words with no large inter-word gaps
+            # and combined text long enough to be a sentence
+            if len(sorted_w) >= 2:
+                max_gap = max(
+                    sorted_w[j + 1]["x0"] - sorted_w[j]["x1"]
+                    for j in range(len(sorted_w) - 1)
+                )
+                total_text = " ".join(w.get("text", "") for w in sorted_w)
+                if max_gap < column_gap_threshold and len(total_text) > 40:
+                    return True
+
+            # Single long token (existing prose check)
+            if _is_prose(row):
+                return True
+
+            return False
+
+        # ── Leading scan (top-down) ──
+        # Strip rows that are clearly non-tabular (bullet items, prose
+        # sentences).  Short section headers like "Revenues" or
+        # "Personnel" are kept — they are valid table group labels.
+        # Only strip if we find a block of non-table rows; isolated
+        # short labels (1-2 words, ≤30 chars) are kept unless adjacent
+        # to confirmed non-table rows.
+        leading_cutoff = 0
+        found_non_table = False
+        tentative_leading = 0
+        for i, row in enumerate(row_groups):
+            if _is_non_table_row(row):
+                found_non_table = True
+                tentative_leading = i + 1
+                leading_cutoff = i + 1
+            elif _is_short_fragment(row) and not found_non_table:
+                # Short fragment before any non-table row — don't strip yet
+                break
+            elif _is_short_fragment(row):
+                # Short fragment after non-table rows — tentatively strip
+                tentative_leading = i + 1
+            else:
+                break
+        if found_non_table:
+            leading_cutoff = tentative_leading
+
+        # ── Trailing scan (bottom-up) ──
+        # Scan from the end.  Short fragments (e.g., "change.") may appear
+        # below or between prose rows as footnote continuations.  We track
+        # them tentatively and only strip them if confirmed by a prose row.
+        cutoff = len(row_groups)
+        tentative_cutoff = len(row_groups)
+        found_prose = False
+        for i in range(len(row_groups) - 1, -1, -1):
+            row = row_groups[i]
+            if _is_prose(row):
+                found_prose = True
+                tentative_cutoff = i
+                cutoff = i
+            elif _is_short_fragment(row):
+                # Tentatively include — will be confirmed if prose above
+                tentative_cutoff = i
+            else:
+                break
+        if found_prose:
+            cutoff = tentative_cutoff
+
+        # Apply both cutoffs, but don't strip everything
+        if leading_cutoff >= cutoff:
+            # Both scans overlap — would remove all rows.  Keep them.
+            return row_groups, []
+        prose_rows = row_groups[:leading_cutoff] + row_groups[cutoff:]
+        data_rows = row_groups[leading_cutoff:cutoff]
+        if not data_rows:
+            return row_groups, []
+        return data_rows, prose_rows
 
     # ── Column detection ────────────────────────────────────────────
 
@@ -1531,16 +2170,25 @@ class SpatialTableExtractor:
         # Merge in header-derived separators (add-only — never replace).
         # These add new column breaks where the header shows distinct columns
         # but data-row gaps are too sparse to pass the frequency filter.
-        # A header separator is added when it corroborates either:
-        # 1. A weak gap cluster (exists but didn't meet frequency threshold), or
-        # 2. Sub-threshold gaps in the data (gaps too narrow for the main
+        # A header separator is added when it corroborates any data-row gap:
+        # 1. A weak gap cluster (exists but didn't meet frequency threshold),
+        # 2. A strong gap cluster (accepted but possibly removed by $ merge),
+        # 3. Sub-threshold gaps in the data (gaps too narrow for the main
         #    detector but confirmed by the header's column structure).
         if header_separators:
             header_match_radius = self.column_gap_threshold * 2
-            # Find gap clusters that were rejected by frequency filter
-            weak_clusters = [
+            # Weak gap clusters: appeared in data but didn't meet frequency
+            # threshold. These are trusted enough to add without range check.
+            weak_cluster_centers = [
                 center for center, count in raw_clusters
                 if 0 < count < min_count
+            ] if raw_clusters else []
+            # All raw gap cluster centers (including strong ones that may
+            # have been removed during dollar-separator merging). These
+            # require range check to avoid spurious Title-area splits.
+            all_cluster_centers = [
+                center for center, count in raw_clusters
+                if count > 0
             ] if raw_clusters else []
             # Cluster the sub-threshold gaps
             sub_clusters = self._cluster_gap_positions(
@@ -1554,11 +2202,58 @@ class SpatialTableExtractor:
                 # within a wide merged column).
                 if any(abs(hs - s) < self.column_gap_threshold for s in separators):
                     continue
-                # Corroborated by a weak data-row gap cluster?
-                if any(abs(hs - wc) < header_match_radius for wc in weak_clusters):
+                # Corroborated by a weak data-row gap cluster? These are
+                # trusted even outside the main separator range.
+                if any(abs(hs - wc) < header_match_radius for wc in weak_cluster_centers):
+                    separators.append(hs)
+                    continue
+
+                # Check if header sep overlaps a data word. Handle this
+                # before the range check because the snap position may fall
+                # within the data extent even when the original header sep
+                # is beyond the outermost data-derived separator.
+                conflicting = [
+                    w for w in words if w["x0"] < hs < w["x1"]
+                ]
+                if conflicting:
+                    # Snap to just before the leftmost conflicting word,
+                    # but only if the resulting column (from the nearest
+                    # smaller separator to the snap point) would be empty.
+                    snap_x = min(w["x0"] for w in conflicting) - 1.0
+                    if any(
+                        abs(snap_x - s) < self.column_gap_threshold
+                        for s in separators
+                    ):
+                        continue
+                    prev_sep = max(
+                        (s for s in separators if s < snap_x),
+                        default=None,
+                    )
+                    if prev_sep is not None:
+                        col_has_data = any(
+                            prev_sep < (w["x0"] + w["x1"]) / 2 < snap_x
+                            for w in words
+                        )
+                        if not col_has_data:
+                            separators.append(snap_x)
+                    continue
+
+                # For remaining checks, header separators must fall between
+                # existing data-derived separators — they split existing
+                # columns, not extend the column range. This prevents
+                # spurious splits in the Title area.
+                if not separators or not (min(separators) < hs < max(separators)):
+                    continue
+                # Corroborated by any data-row gap cluster (including strong
+                # ones that may have been removed by dollar-sep merging)?
+                if any(abs(hs - ac) < header_match_radius for ac in all_cluster_centers):
                     separators.append(hs)
                 # Corroborated by sub-threshold gaps in the data?
                 elif any(abs(hs - sc) < header_match_radius for sc in sub_cluster_centers):
+                    separators.append(hs)
+                # No data corroboration — the header column is simply
+                # empty in the data and no word crosses this position.
+                elif not any(w["x0"] < hs < w["x1"] for w in words):
                     separators.append(hs)
 
         if not separators:
@@ -1670,6 +2365,87 @@ class SpatialTableExtractor:
 
     # ── Cell assignment ─────────────────────────────────────────────
 
+    @staticmethod
+    def _split_straddling_words(
+        words: list[dict], columns: list[SpatialColumn],
+    ) -> list[dict]:
+        """Split word tokens that straddle two adjacent columns.
+
+        When pdfplumber's x_tolerance merges characters from adjacent columns
+        into a single word token (e.g., "(6,288) (31.5)%"), the word's center
+        may land in one column while part of its text belongs to the next.
+        This splits such words at the column boundary by finding a space in
+        the text near the proportional position of the boundary.
+
+        Only splits when both resulting parts look like numeric values,
+        percentages, or dashes — not label text.
+        """
+        import re
+        # Pattern matching values: numbers (with commas, parens), percentages,
+        # dashes, or dollar amounts
+        _value_pat = re.compile(
+            r'^[\s$]*[\(]?[\d,]+\.?\d*[\)]?%?$'  # (6,288), 31.5%, $100
+            r'|^—$'                                 # em-dash
+            r'|^[\(]?[\d.]+[\)]?%$'                 # (31.5)%, 3.0%
+            r'|^—%$'                                 # —%
+            r'|^n/a$'                                # n/a
+        )
+
+        col_boundaries = [(c.x0, c.x1) for c in columns]
+        result: list[dict] = []
+
+        for w in words:
+            text = w["text"]
+            wx0, wx1 = w["x0"], w["x1"]
+            word_width = wx1 - wx0
+
+            # Only consider words wide enough to plausibly span two columns
+            # and that contain a space (potential split point)
+            if word_width < 15 or " " not in text.strip():
+                result.append(w)
+                continue
+
+            # Check if the word extends significantly past any column boundary
+            split_done = False
+            for i, (cx0, cx1) in enumerate(col_boundaries[:-1]):
+                # Word starts in this column and extends into the next
+                if wx0 >= cx0 and wx0 < cx1 and wx1 > cx1 + 3:
+                    overflow = wx1 - cx1
+                    # At least 20% of word width overflows into next column
+                    if overflow / word_width < 0.2:
+                        continue
+                    # Find the proportional position of the boundary in text
+                    boundary_frac = (cx1 - wx0) / word_width
+                    target_pos = int(boundary_frac * len(text))
+                    # Find the nearest space to split at
+                    best_space = -1
+                    best_dist = len(text)
+                    for sp in range(len(text)):
+                        if text[sp] == " ":
+                            dist = abs(sp - target_pos)
+                            if dist < best_dist:
+                                best_dist = dist
+                                best_space = sp
+                    if best_space > 0 and best_space < len(text) - 1:
+                        left_text = text[:best_space].strip()
+                        right_text = text[best_space + 1:].strip()
+                        # Only split if both parts look like numeric values,
+                        # not label text
+                        if (_value_pat.match(left_text)
+                                and _value_pat.match(right_text)):
+                            split_frac = best_space / len(text)
+                            split_x = wx0 + split_frac * word_width
+                            left_w = {**w, "text": left_text, "x1": split_x}
+                            right_w = {**w, "text": right_text, "x0": split_x}
+                            result.append(left_w)
+                            result.append(right_w)
+                            split_done = True
+                            break
+            if not split_done:
+                result.append(w)
+
+        return result
+
     def _assign_cells(
         self,
         row_groups: list[list[dict]],
@@ -1696,10 +2472,17 @@ class SpatialTableExtractor:
                     ]
                 col_words.sort(key=lambda w: w["x0"])
                 cell_text = " ".join(w["text"] for w in col_words).strip()
-                # Strip trailing ' $' when pdfplumber merges a dollar sign
-                # from the next column into the same word token as the value
-                if self.strip_dollar_signs and cell_text.endswith(" $"):
-                    cell_text = cell_text[:-2]
+                if self.strip_dollar_signs:
+                    # Strip trailing ' $' when pdfplumber merges a dollar sign
+                    # from the next column into the same word token as the value
+                    if cell_text.endswith(" $"):
+                        cell_text = cell_text[:-2]
+                    # Strip leading '$ ' when the dollar sign is part of the
+                    # value token (e.g., "$ 2,752,838" in total rows)
+                    if cell_text.startswith("$ "):
+                        cell_text = cell_text[2:]
+                    elif cell_text.startswith("$"):
+                        cell_text = cell_text[1:]
                 cells.append(cell_text)
 
             rows.append(SpatialRow(y0=y0, y1=y1, cells=cells))
@@ -1831,10 +2614,158 @@ class SpatialTableExtractor:
 
         return new_columns, new_rows
 
+    def _remove_empty_columns_with_headers(
+        self,
+        columns: list[SpatialColumn],
+        rows: list[SpatialRow],
+        headers: list[str],
+    ) -> tuple[list[SpatialColumn], list[SpatialRow], list[str]]:
+        """
+        Remove columns that are empty in every data row AND have no header text.
+
+        Columns with header text (e.g., 'Rate/ Grade') are preserved even when
+        all data rows are empty, since the header indicates an intentional column.
+        """
+        if not columns or not rows:
+            return columns, rows, headers
+
+        # Find columns with content in data or header
+        non_empty: set[int] = set()
+        for row in rows:
+            for i, cell in enumerate(row.cells):
+                if cell.strip():
+                    non_empty.add(i)
+        for i, hdr in enumerate(headers):
+            if hdr.strip():
+                non_empty.add(i)
+
+        if len(non_empty) == len(columns):
+            return columns, rows, headers
+
+        keep_indices: list[int] = sorted(non_empty)
+        if not keep_indices:
+            return columns, rows, headers
+
+        # Build new columns, absorbing empty neighbors
+        new_columns: list[SpatialColumn] = []
+        for ki, col_idx in enumerate(keep_indices):
+            col = columns[col_idx]
+            new_x0 = columns[0].x0 if ki == 0 else col.x0
+            if ki == len(keep_indices) - 1:
+                new_x1 = columns[-1].x1
+            else:
+                next_kept = keep_indices[ki + 1]
+                new_x1 = columns[next_kept].x0
+            new_columns.append(SpatialColumn(
+                x0=new_x0, x1=new_x1, alignment=col.alignment,
+            ))
+
+        new_rows: list[SpatialRow] = []
+        for row in rows:
+            new_cells = [row.cells[i] for i in keep_indices]
+            new_rows.append(SpatialRow(y0=row.y0, y1=row.y1, cells=new_cells))
+
+        new_headers = [headers[i] for i in keep_indices]
+
+        return new_columns, new_rows, new_headers
+
     def _word_in_column(self, word: dict, col_x0: float, col_x1: float) -> bool:
         """Check if a word's horizontal center falls within a column."""
         word_center = (word["x0"] + word["x1"]) / 2
         return col_x0 <= word_center <= col_x1
+
+    # ── Cross-page table merging ────────────────────────────────────
+
+    @staticmethod
+    def _columns_match(
+        a: list[SpatialColumn], b: list[SpatialColumn], tolerance: float = 5.0,
+    ) -> bool:
+        """Check if two column lists have the same structure (count + x-positions)."""
+        if len(a) != len(b):
+            return False
+        return all(
+            abs(ca.x0 - cb.x0) < tolerance and abs(ca.x1 - cb.x1) < tolerance
+            for ca, cb in zip(a, b)
+        )
+
+    @staticmethod
+    def merge_continuation_tables(
+        page_tables: dict[int, list[SpatialTable]],
+    ) -> dict[int, list[SpatialTable]]:
+        """Merge tables that continue across page breaks.
+
+        When the last table on page N and the first table on page N+1 share the
+        same column structure and the continuation table has no meaningful header,
+        append the continuation rows to the previous table and remove the duplicate.
+
+        Args:
+            page_tables: dict mapping page index → list of SpatialTable objects.
+
+        Returns:
+            Updated dict with continuation tables merged into their predecessors.
+        """
+        import re
+
+        # A header cell that looks like a dollar amount indicates the "header"
+        # is actually a data row from a continuation table, not column labels.
+        _dollar_value_re = re.compile(r"^\$\d")
+
+        sorted_pages = sorted(page_tables.keys())
+        if len(sorted_pages) < 2:
+            return page_tables
+
+        # Track the "active" table that may absorb continuations across
+        # multiple pages (e.g., P3→P4→P5→P6 chain).
+        active_table: Optional[SpatialTable] = None
+
+        for page_idx in sorted_pages:
+            tables = page_tables.get(page_idx, [])
+            if not tables:
+                continue
+
+            first_table = tables[0]
+
+            # Try to merge the first table on this page into the active chain
+            if active_table is not None and SpatialTableExtractor._columns_match(
+                active_table.columns, first_table.columns
+            ):
+                headers = first_table.headers or []
+
+                # A continuation table's "header" is really a data row.
+                # Detect this by checking for dollar-amount cells — real
+                # column headers (like "Fee Description", "2026") won't
+                # match, but data rows ("105.6.43 Tent...", "$32.96") will.
+                is_data_header = any(
+                    _dollar_value_re.match(cell.strip())
+                    for cell in headers if cell
+                )
+                # Also treat completely empty headers as continuation
+                has_content = any(cell.strip() for cell in headers)
+                is_continuation = is_data_header or not has_content
+
+                if is_continuation:
+                    # Merge: append continuation rows to the active table
+                    if has_content:
+                        # Header row is actually data — prepend it as a row
+                        active_table.rows.append(SpatialRow(
+                            y0=0, y1=0, cells=headers,
+                        ))
+                    active_table.rows.extend(first_table.rows)
+
+                    # Remove the merged table from this page
+                    tables.pop(0)
+                    page_tables[page_idx] = tables
+
+                    # If this page still has tables, the last one becomes
+                    # the new active candidate; otherwise keep chaining
+                    if tables:
+                        active_table = tables[-1]
+                    continue
+
+            # No merge happened — set the active table to the last on this page
+            active_table = tables[-1] if tables else None
+
+        return page_tables
 
     # ── Debug visualization ─────────────────────────────────────────
 
@@ -2004,6 +2935,8 @@ class SpatialTableExtractor:
         plumber_pdf = pdfplumber.open(input_pdf_path)
         target_pages = pages if pages is not None else list(range(len(plumber_pdf.pages)))
 
+        # Collect all tables per page first
+        page_tables: dict[int, list[SpatialTable]] = {}
         for page_idx in target_pages:
             if page_idx >= len(plumber_pdf.pages):
                 continue
@@ -2012,10 +2945,20 @@ class SpatialTableExtractor:
             bbox = bboxes.get(page_idx) if bboxes else None
             tables = self.extract_tables(plumber_page, bbox=bbox)
 
-            for table_idx, table in enumerate(tables):
-                if not table.rows:
-                    continue
+            # Fall back to OCR for image-based pages (e.g., MMO worksheets)
+            if not tables:
+                from utils.ocr_table_extractor import extract_mmo_tables
 
+                tables = extract_mmo_tables(plumber_page)
+
+            page_tables[page_idx] = [t for t in tables if t.rows]
+
+        # Merge tables that continue across page breaks
+        page_tables = self.merge_continuation_tables(page_tables)
+
+        # Write CSVs
+        for page_idx in target_pages:
+            for table_idx, table in enumerate(page_tables.get(page_idx, [])):
                 csv_path = pdf_dir / f"P{page_idx}T{table_idx}.csv"
                 with open(csv_path, "w", newline="") as f:
                     writer = csv.writer(f)

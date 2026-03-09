@@ -1,0 +1,143 @@
+# Budget Explorer Web App
+
+Related: [table-metadata-sidecars.md](table-metadata-sidecars.md), [non-table-text-extraction.md](non-table-text-extraction.md)
+
+## Goal
+
+A static web app for exploring Pittsburgh's budget data: searching across departments, viewing tables, reading narrative text, and graphing financial trends. No backend — all data baked in at build time.
+
+## Data sources
+
+| Source | Status | Content |
+|---|---|---|
+| Extracted CSVs (287 tables) | Exists | Budget figures, personnel, revenue, expenditures |
+| `sections.json` (64 sections) | Exists | Section titles, page ranges |
+| Table metadata sidecars | Planned | Section linkage, table type, absolute page numbers |
+| Non-table text manifests | Planned | Narratives, footnotes, section descriptions |
+
+## Architecture
+
+### Static site with pre-built data bundle
+
+```
+build step:
+  CSVs + sidecars + text manifests + sections.json
+    → single budget-data.json (or split per-section)
+    → embedded in static site
+
+runtime:
+  browser loads JSON → client-side search, filter, chart
+```
+
+**Why static:** The dataset is small (< 5 MB total), updates only once per budget cycle, and a static site can be hosted free on Netlify with zero infrastructure.
+
+### Tech stack
+
+- **Framework:** Astro with Preact islands — pages are static HTML by default; interactive components (search, sortable tables, charts) hydrate as islands only where needed
+- **Search:** Fuse.js (client-side fuzzy search over tables + narrative text)
+- **Charts:** Observable Plot (lightweight, declarative, good for budget bar/line charts)
+- **Styling:** Tailwind
+- **Hosting:** Netlify (auto-deploys from Git, preview deploys on PRs)
+
+**Why Astro over a React SPA:** Most of the app is read-heavy content (department descriptions, static tables, narrative text) that doesn't need JavaScript. Astro renders these as static HTML at build time, resulting in faster page loads and smaller bundles. Only truly interactive components (search bar, sortable columns, chart controls) ship JS via Preact islands. The data bundle can also be split per-section at build time rather than loading everything upfront.
+
+## Core features
+
+### 1. Section/department browser
+- Tree or list navigation by section (mirrors the 64 sections from `sections.json`)
+- Each section shows its tables and narrative text
+- Breadcrumb: Budget → Department → Table
+
+### 2. Full-text search
+- Search across table content, headers, narrative text, and footnotes
+- Results link to the relevant section + table, with matched text highlighted
+- Built from the search index at build time (Lunr/Fuse)
+
+### 3. Table viewer
+- Render any extracted table with sortable columns
+- Show table metadata: section, page, table type
+- Show related narrative text (from text manifests) above/below the table
+- Link to source PDF page for verification
+
+### 4. Charts and comparisons
+- **Budget trends:** Line/bar chart of a department's budget across years (2024 Actual → 2025 Budget → 2026 Budget)
+- **Cross-department comparison:** Bar chart comparing budget/FTE across departments
+- **Revenue breakdown:** Pie/treemap of revenue categories
+- Charts are generated from normalized data (see build step below)
+
+### 5. Personnel explorer
+- Filter/sort personnel tables by department, title, FTE count, grade
+- Aggregate FTE counts across departments
+
+## Build pipeline
+
+The build step transforms raw extractor output into app-ready JSON:
+
+```
+python3 scripts/build_web_data.py
+  ├── reads output/regression/expected/**/*.csv
+  ├── reads output/regression/expected/**/*.meta.json  (sidecars)
+  ├── reads output/regression/expected/**/*.text.json   (text manifests)
+  ├── reads input/sections.json
+  ├── classifies tables by type (personnel, financial, revenue)
+  ├── normalizes financial columns (strip $, commas → floats)
+  ├── builds search index
+  └── writes web/src/data/budget-data.json
+```
+
+### Data normalization challenges
+
+The CSVs currently have some quirks that the build step would need to handle:
+- Column headers contain debug info (`C0 (l, x:57-238)`) — use the second row as actual headers
+- Dollar amounts are strings with commas (`"806,270"`) — parse to numbers
+- Table types aren't labeled yet — classify by header pattern (depends on sidecar plan)
+- Some tables span multiple pages — may need merging logic
+
+## Directory structure
+
+```
+web/
+  src/
+    pages/
+      index.astro                  (home / section list)
+      sections/[slug].astro        (per-section page, static at build time)
+    components/
+      SearchBar.tsx                (Preact island)
+      SortableTable.tsx            (Preact island)
+      BudgetChart.tsx              (Preact island)
+      PersonnelExplorer.tsx        (Preact island)
+      SectionNav.astro             (static)
+      TableViewer.astro            (static)
+      NarrativeBlock.astro         (static)
+    data/
+      budget-data.json             (generated by build script)
+    layouts/
+      Base.astro
+  astro.config.mjs
+  package.json
+scripts/
+  build_web_data.py          (new — transforms CSVs → JSON)
+```
+
+## Implementation phases
+
+### Phase 1: Data foundation
+- Implement table metadata sidecars and text extraction (prerequisite plans)
+- Build `scripts/build_web_data.py` to produce normalized JSON
+- This is the hardest part — clean data makes the frontend straightforward
+
+### Phase 2: Browse and search
+- Scaffold the static site
+- Section browser with table viewer
+- Full-text search across all content
+
+### Phase 3: Charts and analysis
+- Budget trend charts per department
+- Cross-department comparisons
+- Personnel aggregations
+
+## Open questions
+
+- **Multi-year data:** Current extraction is for a single budget document (FY2026). Would future years be added as separate data bundles, or merged into one timeline?
+- **PDF linking:** Should the app link back to specific PDF pages? Would require hosting the PDF or linking to an external source.
+- **Data corrections:** Should there be a way to flag/correct extraction errors in the UI, or is that handled upstream in the extractor?
