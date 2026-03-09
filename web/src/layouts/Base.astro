@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Pittsburgh Budget Explorer</title>
+  </head>
+  <body class="min-h-screen bg-gray-50 text-gray-900">
+    <header class="bg-blue-900 text-white px-6 py-4">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
+        <nav class="flex gap-4 text-sm text-blue-200">
+          <a href="/charts/" class="hover:text-white">Charts</a>
+          <a href="/personnel/" class="hover:text-white">Personnel</a>
+          <a href="/glossary/" class="hover:text-white">Glossary</a>
+        </nav>
+      </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-6 py-8">
+      <slot />
+    </main>
+    <footer class="text-center text-sm text-gray-400 py-6">
+      Data extracted from the City of Pittsburgh FY2026 Operating Budget
+    </footer>
+  </body>
+</html>

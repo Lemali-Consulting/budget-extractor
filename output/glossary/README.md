@@ -1,0 +1,1 @@
+Machine-readable glossary of terms, codes, and abbreviations from the City of Pittsburgh 2026 Operating Budget. Generated from the extracted budget JSON; some terms may contain PDF extraction artifacts.

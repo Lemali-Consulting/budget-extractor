@@ -1,0 +1,351 @@
+{
+  "metadata": {
+    "source": "City of Pittsburgh 2026 Operating Budget",
+    "generated_from": "output/extract_full_pdf/2026-operating-budget.json",
+    "note": "Some terms may contain extraction artifacts from PDF parsing. Verify against the source PDF when precision is required."
+  },
+  "revenue_subclasses": [
+    {
+      "code": "41",
+      "name": "Tax Revenue"
+    },
+    {
+      "code": "42",
+      "name": "Licenses and Permits Revenue"
+    },
+    {
+      "code": "43",
+      "name": "Charges for Services"
+    },
+    {
+      "code": "44",
+      "name": "Fines and Forfeitures"
+    },
+    {
+      "code": "45",
+      "name": "Intergovernmental Revenue"
+    },
+    {
+      "code": "47",
+      "name": "Interest Earnings"
+    },
+    {
+      "code": "48",
+      "name": "Miscellaneous Revenues"
+    }
+  ],
+  "expenditure_subclasses": [
+    {
+      "code": "51",
+      "name": "Personnel - Salaries and Wages"
+    },
+    {
+      "code": "52",
+      "name": "Personnel - Employee Benefits"
+    },
+    {
+      "code": "53",
+      "name": "Professional and Technical Services"
+    },
+    {
+      "code": "54",
+      "name": "Property Services"
+    },
+    {
+      "code": "55",
+      "name": "Other Services"
+    },
+    {
+      "code": "56",
+      "name": "Supplies"
+    },
+    {
+      "code": "57",
+      "name": "Property"
+    },
+    {
+      "code": "58",
+      "name": "Miscellaneous"
+    },
+    {
+      "code": "59",
+      "name": "Transfers Out"
+    },
+    {
+      "code": "82",
+      "name": "Debt Service"
+    },
+    {
+      "code": "90",
+      "name": "Transfers"
+    },
+    {
+      "code": "91",
+      "name": "Transfers Out"
+    }
+  ],
+  "revenue_line_items": [
+    "Real Estate Tax",
+    "Earned Income Tax",
+    "Payroll Preparation Tax",
+    "Parking Tax",
+    "Regional Asset District Tax Relief",
+    "Deed Transfer Tax",
+    "Amusement Tax",
+    "Local Service Tax",
+    "Facility Usage Fee",
+    "Telecommunications Licensing Tax",
+    "Institution Service Privilege Tax",
+    "Non-Profit Payment for Services",
+    "Other Taxes",
+    "Licenses and Permits",
+    "Charges for Services",
+    "Fines and Forfeitures",
+    "Intergovernmental Revenue",
+    "Interest Earnings",
+    "Miscellaneous Revenues"
+  ],
+  "expenditure_line_items": [
+    "Salaries",
+    "Health Benefits",
+    "Workers' Comp.",
+    "Pension & OPEB",
+    "Operating Departments",
+    "Debt Service"
+  ],
+  "fiscal_metrics": [
+    {
+      "term": "Operating Result",
+      "description": "Total Revenues minus Total Expenditures for the fiscal year"
+    },
+    {
+      "term": "Beginning Reserve Fund Balance",
+      "description": "Unappropriated fund balance carried forward from the prior fiscal year"
+    },
+    {
+      "term": "Ending Reserve Fund Balance",
+      "description": "Reserve balance after operating result and transfers (PAYGO, Housing, etc.)"
+    },
+    {
+      "term": "Fund Balance as a % of Expenditures",
+      "description": "Ending reserve fund balance divided by total expenditures; a measure of fiscal cushion"
+    },
+    {
+      "term": "Debt Service as a % of Expenditures",
+      "description": "Debt service costs divided by total expenditures"
+    },
+    {
+      "term": "PAYGO",
+      "description": "Pay-as-you-go capital funding transferred from the reserve fund rather than financed by debt"
+    },
+    {
+      "term": "OPEB",
+      "description": "Other Post-Employment Benefits (retiree health care, life insurance, etc.)"
+    }
+  ],
+  "funds": [
+    {
+      "name": "General Fund",
+      "description": "Primary operating fund for the City, covering most departmental expenditures"
+    },
+    {
+      "name": "Reserve Fund",
+      "description": "Unappropriated balance carried between fiscal years; used as a fiscal cushion"
+    },
+    {
+      "name": "Stop the Violence Fund",
+      "description": "Special fund established under City Code Chapter 237 for violence prevention programs"
+    },
+    {
+      "name": "American Rescue Plan Trust Fund",
+      "description": "Federal COVID-19 relief funds; must be obligated by Dec 31, 2024 and spent by Dec 31, 2026"
+    },
+    {
+      "name": "Special Food Service Trust Fund",
+      "description": "Trust fund for food service operations"
+    },
+    {
+      "name": "Three Taxing Bodies Trust Fund",
+      "description": "Trust fund shared across three taxing bodies"
+    },
+    {
+      "name": "Early Childhood Community Facilities Fund",
+      "description": "Fund for early childhood community facility investments, funded by reserve transfers"
+    },
+    {
+      "name": "Housing Opportunity Fund",
+      "description": "Dedicated fund for affordable housing programs, receiving $10M annual transfers"
+    },
+    {
+      "name": "Technology Modernization Fund",
+      "description": "Fund for IT and technology modernization initiatives"
+    }
+  ],
+  "departments": [
+    {
+      "cost_center": "101100",
+      "name": "City Council Districts"
+    },
+    {
+      "cost_center": "102000",
+      "name": "Office of the City Clerk"
+    },
+    {
+      "cost_center": "102200",
+      "name": "Office of the Mayor"
+    },
+    {
+      "cost_center": "103000",
+      "name": "Office of Management and Budget"
+    },
+    {
+      "cost_center": "105000",
+      "name": "Department of Innovation and Performance"
+    },
+    {
+      "cost_center": "107000",
+      "name": "Commission on Human Relations"
+    },
+    {
+      "cost_center": "101200",
+      "name": "Office of the City Controller"
+    },
+    {
+      "cost_center": "108000",
+      "name": "Department of Finance"
+    },
+    {
+      "cost_center": "108100",
+      "name": "Department of Law"
+    },
+    {
+      "cost_center": "240000",
+      "name": "Ethics Hearing Board"
+    },
+    {
+      "cost_center": "109000",
+      "name": "Office of Municipal Investigations"
+    },
+    {
+      "cost_center": "110000",
+      "name": "Department of Human Resources and Civil Service"
+    },
+    {
+      "cost_center": "130000",
+      "name": "Department of City Planning"
+    },
+    {
+      "cost_center": "210000",
+      "name": "Department of Permits, Licenses, and Inspections"
+    },
+    {
+      "cost_center": "220000",
+      "name": "Bureau of Administration (Public Safety)"
+    },
+    {
+      "cost_center": "230000",
+      "name": "Bureau of Emergency Medical Services"
+    },
+    {
+      "cost_center": "250000",
+      "name": "Bureau of Police"
+    },
+    {
+      "cost_center": "280000",
+      "name": "Bureau of Fire"
+    },
+    {
+      "cost_center": "102300",
+      "name": "Bureau of Animal Care and Control"
+    },
+    {
+      "cost_center": "410000",
+      "name": "Office of Community Health and Safety"
+    },
+    {
+      "cost_center": "420000",
+      "name": "Bureau of Administration (Public Works)"
+    },
+    {
+      "cost_center": "430000",
+      "name": "Bureau of Operations"
+    },
+    {
+      "cost_center": "450000",
+      "name": "Bureau of Environmental Services"
+    },
+    {
+      "cost_center": "500000",
+      "name": "Bureau of Facilities"
+    },
+    {
+      "cost_center": "600000",
+      "name": "Department of Parks and Recreation"
+    },
+    {
+      "cost_center": "999900",
+      "name": "Department of Mobility and Infrastructure"
+    }
+  ],
+  "budget_structure": {
+    "fiscal_year_columns": [
+      {
+        "label": "Actual",
+        "description": "Prior year actual spending (audited or near-final)"
+      },
+      {
+        "label": "Estimate",
+        "description": "Current year estimated spending"
+      },
+      {
+        "label": "Budget",
+        "description": "Proposed or adopted budget for the target year"
+      },
+      {
+        "label": "Forecast",
+        "description": "Projected spending for out-years in the five-year plan"
+      }
+    ],
+    "table_types": [
+      {
+        "name": "Five-Year Forecast",
+        "description": "Summary-level revenue and expenditure projections across six fiscal years"
+      },
+      {
+        "name": "Department Detail",
+        "description": "Per-department expenditures broken down by subclass (51-58) with five-year projections"
+      },
+      {
+        "name": "Salary Table",
+        "description": "Employee position titles, grades, steps, and annual rates by department"
+      },
+      {
+        "name": "Grant Table",
+        "description": "Grant-funded programs with revenue sources and expenditure details"
+      },
+      {
+        "name": "Debt Service Schedule",
+        "description": "Bond issue principal and interest payments by year"
+      },
+      {
+        "name": "Master Fee Schedule",
+        "description": "Comprehensive listing of all city fees, permits, and license costs"
+      }
+    ]
+  },
+  "abbreviations": {
+    "FTE": "Full-Time Equivalent (staffing measure)",
+    "OPEB": "Other Post-Employment Benefits",
+    "PAYGO": "Pay-As-You-Go (capital funding from reserves instead of debt)",
+    "RAD": "Regional Asset District",
+    "ARP": "American Rescue Plan",
+    "DCP": "Department of City Planning",
+    "OMB": "Office of Management and Budget",
+    "DOMI": "Department of Mobility and Infrastructure",
+    "PLI": "Department of Permits, Licenses, and Inspections",
+    "EMS": "Emergency Medical Services",
+    "JDE": "JD Edwards (the City's enterprise accounting system)",
+    "SSP": "Site Safety Plan",
+    "FAS": "Fire Alarm System"
+  }
+}

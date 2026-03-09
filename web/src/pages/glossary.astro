@@ -1,0 +1,230 @@
+---
+import Base from '../layouts/Base.astro';
+import budgetData from '../data/budget-data.json';
+
+const glossary = budgetData.glossary;
+
+const sections = [
+  { key: 'abbreviations', title: 'Abbreviations', type: 'abbrev' },
+  { key: 'fiscal_metrics', title: 'Fiscal Metrics', type: 'term_desc' },
+  { key: 'funds', title: 'Funds', type: 'name_desc' },
+  { key: 'revenue_subclasses', title: 'Revenue Subclasses', type: 'code_name' },
+  { key: 'expenditure_subclasses', title: 'Expenditure Subclasses', type: 'code_name' },
+  { key: 'revenue_line_items', title: 'Revenue Line Items', type: 'list' },
+  { key: 'expenditure_line_items', title: 'Expenditure Line Items', type: 'list' },
+  { key: 'departments', title: 'Departments', type: 'dept' },
+  { key: 'budget_structure', title: 'Budget Structure', type: 'structure' },
+];
+---
+
+<Base title="Glossary">
+  <nav class="text-sm text-gray-500 mb-4">
+    <a href="/" class="hover:text-blue-600">Home</a>
+    <span class="mx-1">/</span>
+    <span>Glossary</span>
+  </nav>
+
+  <h1 class="text-3xl font-bold mb-2">Budget Glossary</h1>
+  <p class="text-gray-600 mb-6">Terms, codes, abbreviations, and structure from the City of Pittsburgh FY2026 Operating Budget.</p>
+
+  <div class="flex flex-wrap gap-2 mb-8">
+    {sections.map((s) => (
+      <a href={`#${s.key}`} class="text-sm px-3 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200">
+        {s.title}
+      </a>
+    ))}
+  </div>
+
+  {/* Abbreviations */}
+  {glossary.abbreviations && (
+    <section id="abbreviations" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Abbreviations</h2>
+      <div class="bg-white rounded-lg border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-2 text-left font-medium w-32">Abbreviation</th>
+              <th class="px-4 py-2 text-left font-medium">Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(glossary.abbreviations).sort().map(([abbr, meaning], i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="px-4 py-2 font-mono font-medium">{abbr}</td>
+                <td class="px-4 py-2">{meaning}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  {/* Fiscal Metrics */}
+  {glossary.fiscal_metrics && (
+    <section id="fiscal_metrics" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Fiscal Metrics</h2>
+      <div class="space-y-3">
+        {glossary.fiscal_metrics.map((item) => (
+          <div class="bg-white rounded-lg border p-4">
+            <div class="font-medium">{item.term}</div>
+            <div class="text-sm text-gray-600 mt-1">{item.description}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* Funds */}
+  {glossary.funds && (
+    <section id="funds" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Funds</h2>
+      <div class="space-y-3">
+        {glossary.funds.map((item) => (
+          <div class="bg-white rounded-lg border p-4">
+            <div class="font-medium">{item.name}</div>
+            <div class="text-sm text-gray-600 mt-1">{item.description}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* Revenue Subclasses */}
+  {glossary.revenue_subclasses && (
+    <section id="revenue_subclasses" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Revenue Subclasses</h2>
+      <div class="bg-white rounded-lg border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-2 text-left font-medium w-20">Code</th>
+              <th class="px-4 py-2 text-left font-medium">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {glossary.revenue_subclasses.map((item, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="px-4 py-2 font-mono">{item.code}</td>
+                <td class="px-4 py-2">{item.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  {/* Expenditure Subclasses */}
+  {glossary.expenditure_subclasses && (
+    <section id="expenditure_subclasses" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Expenditure Subclasses</h2>
+      <div class="bg-white rounded-lg border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-2 text-left font-medium w-20">Code</th>
+              <th class="px-4 py-2 text-left font-medium">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {glossary.expenditure_subclasses.map((item, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="px-4 py-2 font-mono">{item.code}</td>
+                <td class="px-4 py-2">{item.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  {/* Revenue Line Items */}
+  {glossary.revenue_line_items && (
+    <section id="revenue_line_items" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Revenue Line Items</h2>
+      <div class="bg-white rounded-lg border p-4">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-1 text-sm">
+          {glossary.revenue_line_items.map((item) => (
+            <li class="py-1">{item}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Expenditure Line Items */}
+  {glossary.expenditure_line_items && (
+    <section id="expenditure_line_items" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Expenditure Line Items</h2>
+      <div class="bg-white rounded-lg border p-4">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-1 text-sm">
+          {glossary.expenditure_line_items.map((item) => (
+            <li class="py-1">{item}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {/* Departments */}
+  {glossary.departments && (
+    <section id="departments" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Departments</h2>
+      <div class="bg-white rounded-lg border overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-4 py-2 text-left font-medium w-28">Cost Center</th>
+              <th class="px-4 py-2 text-left font-medium">Department</th>
+            </tr>
+          </thead>
+          <tbody>
+            {glossary.departments.map((item, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="px-4 py-2 font-mono">{item.cost_center}</td>
+                <td class="px-4 py-2">{item.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  {/* Budget Structure */}
+  {glossary.budget_structure && (
+    <section id="budget_structure" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3 border-b pb-1">Budget Structure</h2>
+
+      {glossary.budget_structure.fiscal_year_columns && (
+        <div class="mb-6">
+          <h3 class="text-lg font-medium mb-2">Fiscal Year Columns</h3>
+          <div class="space-y-2">
+            {glossary.budget_structure.fiscal_year_columns.map((item) => (
+              <div class="bg-white rounded-lg border p-3">
+                <span class="font-medium">{item.label}</span>
+                <span class="text-sm text-gray-600 ml-2">{item.description}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {glossary.budget_structure.table_types && (
+        <div>
+          <h3 class="text-lg font-medium mb-2">Table Types</h3>
+          <div class="space-y-2">
+            {glossary.budget_structure.table_types.map((item) => (
+              <div class="bg-white rounded-lg border p-3">
+                <span class="font-medium">{item.name}</span>
+                <span class="text-sm text-gray-600 ml-2">{item.description}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  )}
+</Base>
