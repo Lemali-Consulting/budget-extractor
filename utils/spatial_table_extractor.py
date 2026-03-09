@@ -805,6 +805,11 @@ class SpatialTableExtractor:
         for table in tables:
             self._split_known_merged_columns(table)
 
+        # Adjust column boundaries where Rate/Grade and Hours/Months
+        # headers got merged into one column due to tight spacing.
+        for table in tables:
+            self._fix_merged_rate_hours_boundary(table)
+
         # Merge multi-line row fragments (e.g., wrapped position titles)
         for table in tables:
             table.rows = self._merge_multiline_rows(table.rows)
@@ -1448,18 +1453,31 @@ class SpatialTableExtractor:
                     else:
                         new_headers = ("Increase/ (Decrease)", "% Change")
 
+        # --- Strategy 3: Header is two merged years (e.g., "2028 2029") ---
+        if split_col_idx is None:
+            for col_idx, header in enumerate(table.headers):
+                m = re.fullmatch(r'(\d{4})\s+(\d{4})', header.strip())
+                if m:
+                    split_col_idx = col_idx
+                    new_headers = (m.group(1), m.group(2))
+                    break
+
         if split_col_idx is None:
             return
 
         col = table.columns[split_col_idx]
 
         # --- Find the split point ---
-        # Method 1: Word-level gaps between separate tokens
+        # Method 1: Word-level gaps between separate tokens.
+        # Use center-point inclusion to capture words that start slightly
+        # before the column due to keep_blank_chars whitespace.
+        # Take only the first (leftmost) gap per row to avoid mixing gaps
+        # between different column pairs (e.g., 2028/2029 vs 2029/2030).
         gaps: list[float] = []
         for row in table.rows:
             row_words = sorted(
                 (w for w in table._words
-                 if col.x0 <= w["x0"] <= col.x1
+                 if self._word_in_column(w, col.x0, col.x1)
                  and abs(w["top"] - row.y0) < self.y_tolerance * 2
                  and w["text"].strip()),
                 key=lambda w: w["x0"],
@@ -1471,6 +1489,7 @@ class SpatialTableExtractor:
                         gaps.append(
                             (row_words[i]["x1"] + row_words[i + 1]["x0"]) / 2
                         )
+                        break  # only first gap per row
 
         if gaps:
             gaps.sort()
@@ -1504,11 +1523,13 @@ class SpatialTableExtractor:
             + table.headers[split_col_idx + 1:]
         )
 
-        # Re-assign cells for all rows by distributing words
+        # Re-assign cells for all rows by distributing words.
+        # Use center-point inclusion to capture words that start slightly
+        # before the column due to keep_blank_chars whitespace.
         for row in table.rows:
             row_words = [
                 w for w in table._words
-                if old_col.x0 <= w["x0"] <= old_col.x1
+                if self._word_in_column(w, old_col.x0, old_col.x1)
                 and abs(w["top"] - row.y0) < self.y_tolerance * 2
                 and w["text"].strip()
             ]
@@ -1573,6 +1594,125 @@ class SpatialTableExtractor:
             estimated_xs.sort()
             return estimated_xs[len(estimated_xs) // 2]
         return None
+
+    def _fix_merged_rate_hours_boundary(self, table: SpatialTable) -> None:
+        """Adjust column boundary where Rate/Grade + Hours/Months are merged.
+
+        When tight spacing merges the multi-line headers "Rate/Grade" and
+        "Hours/Months" into a single column header like "Rate/ Hours/ Grade
+        Months", the column boundary ends up too far right for hourly workers.
+        This detects the pattern, finds the correct boundary from data gaps,
+        and adjusts the boundary between the merged column and its neighbor.
+
+        Modifies the table in place.
+        """
+        import re
+
+        if not table.headers or not table._words:
+            return
+
+        for col_idx, header in enumerate(table.headers):
+            # Detect merged "Rate/Grade" + "Hours/Months" header.
+            # The multi-line merge interleaves: "Rate/ Hours/ Grade Months"
+            if not (re.search(r'Rate', header, re.IGNORECASE)
+                    and re.search(r'Hours', header, re.IGNORECASE)
+                    and re.search(r'Grade', header, re.IGNORECASE)):
+                continue
+
+            # Must have a following column to adjust boundary with
+            if col_idx + 1 >= len(table.columns):
+                continue
+
+            col = table.columns[col_idx]
+            next_col = table.columns[col_idx + 1]
+
+            # Find the gap between rate and hours values within this column.
+            # For salaried: "32G" then gap then (nothing — hours in next col)
+            # For hourly: "24.47" then gap then "2,080"
+            # Also look for gaps in the next column's words.
+            gap_xs: list[float] = []
+            for row in table.rows:
+                # Collect words from both the merged col and the next col
+                both_words = sorted(
+                    (w for w in table._words
+                     if col.x0 <= w["x0"] <= next_col.x1
+                     and abs(w["top"] - row.y0) < self.y_tolerance * 2
+                     and w["text"].strip()
+                     and w["text"].strip() not in ("$", "")),
+                    key=lambda w: w["x0"],
+                )
+                if len(both_words) >= 2:
+                    # Find the largest gap between consecutive words
+                    best_gap = 0.0
+                    best_mid = 0.0
+                    for i in range(len(both_words) - 1):
+                        gap = both_words[i + 1]["x0"] - both_words[i]["x1"]
+                        if gap > best_gap:
+                            best_gap = gap
+                            best_mid = (both_words[i]["x1"]
+                                        + both_words[i + 1]["x0"]) / 2
+                    if best_gap > 5:
+                        gap_xs.append(best_mid)
+
+            if not gap_xs:
+                continue
+
+            # Use the median gap as the new boundary position
+            gap_xs.sort()
+            new_boundary: float = gap_xs[len(gap_xs) // 2]
+
+            # Only adjust if the new boundary moves the split leftward
+            # (more restrictive Rate column)
+            old_boundary = col.x1
+            if new_boundary >= old_boundary:
+                continue
+
+            # Adjust the boundary
+            table.columns[col_idx] = SpatialColumn(
+                x0=col.x0, x1=new_boundary, alignment=col.alignment,
+            )
+            table.columns[col_idx + 1] = SpatialColumn(
+                x0=new_boundary, x1=next_col.x1, alignment=next_col.alignment,
+            )
+
+            # Fix headers
+            table.headers[col_idx] = "Rate/ Grade"
+            if col_idx + 1 < len(table.headers):
+                table.headers[col_idx + 1] = "Hours/ Months"
+
+            # Re-assign cells for all rows across both columns
+            left_col = table.columns[col_idx]
+            right_col = table.columns[col_idx + 1]
+            for row in table.rows:
+                row_words = [
+                    w for w in table._words
+                    if self._word_in_column(w, left_col.x0, right_col.x1)
+                    and abs(w["top"] - row.y0) < self.y_tolerance * 2
+                    and w["text"].strip()
+                ]
+                split_words = self._split_straddling_words(
+                    row_words, [left_col, right_col],
+                )
+
+                left_parts = [
+                    w["text"].strip()
+                    for w in sorted(split_words, key=lambda w: w["x0"])
+                    if self._word_in_column(w, left_col.x0, left_col.x1)
+                    and w["text"].strip() not in ("$", "")
+                ]
+                right_parts = [
+                    w["text"].strip()
+                    for w in sorted(split_words, key=lambda w: w["x0"])
+                    if self._word_in_column(w, right_col.x0, right_col.x1)
+                    and w["text"].strip() not in ("$", "")
+                ]
+
+                row.cells[col_idx] = " ".join(left_parts)
+                if col_idx + 1 < len(row.cells):
+                    row.cells[col_idx + 1] = " ".join(right_parts)
+
+            # Only process one fix per table
+            break
 
     def _extract_header_separators(
         self,
@@ -2457,6 +2597,10 @@ class SpatialTableExtractor:
         for row_words in row_groups:
             y0 = min(w["top"] for w in row_words)
             y1 = max(w["bottom"] for w in row_words)
+
+            # Split word tokens that straddle column boundaries (e.g.,
+            # "149,760  3,664,627" bridged by keep_blank_chars whitespace)
+            row_words = self._split_straddling_words(row_words, columns)
 
             cells: list[str] = []
             for col in columns:

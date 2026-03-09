@@ -52,3 +52,13 @@ Run `python3 scripts/test_regression.py` to verify extractor output against expe
 - To regenerate debug output for a PDF: `SpatialTableExtractor().render_debug('path/to/pdf', 'output/regression/debug')`
 - After visually confirming debug CSVs are correct, copy them to `output/regression/expected/` and re-run the regression test
 - Always run regression tests after modifying the extractor to catch regressions across all PDFs
+
+# Dev Container Constraints
+
+This project runs in a devcontainer with limited memory. Follow these rules to avoid crashing it:
+
+- **Never use `kill %1` or similar job-control kills.** Shell job numbers are unreliable across Bash tool invocations and may target the wrong process, potentially killing container-critical processes.
+- **To kill a dev server, use `pkill -f`** with a specific command string (e.g., `pkill -f 'astro dev'`). This targets the right process by name.
+- **Never run dev servers as background jobs** (`&`). Use `run_in_background` instead, which is managed properly.
+- **Never spawn multiple dev server instances.** Always confirm the previous one is stopped before starting a new one.
+- To start the web dev server: `cd web && npm run dev` (foreground, or with `run_in_background`)
