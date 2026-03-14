@@ -1,7 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import PersonnelExplorer from '../components/PersonnelExplorer.tsx';
+import PersonnelTreemap from '../components/PersonnelTreemap.tsx';
 import personnelData from '../data/views/personnel.json';
+import personnelByDept from '../data/views/personnel-by-department.json';
 ---
 
 <Base title="Personnel">
@@ -13,6 +15,8 @@ import personnelData from '../data/views/personnel.json';
 
   <h1 class="text-3xl font-bold mb-2">Personnel Explorer</h1>
   <p class="text-gray-600 mb-6">Search and filter positions across all departments.</p>
+
+  <PersonnelTreemap data={personnelByDept} client:load />
 
   <PersonnelExplorer rows={personnelData} client:load />
 </Base>

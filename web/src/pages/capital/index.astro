@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import capitalData from '../../data/capital-budget-data.json';
+import FundingSourceChart from '../../components/FundingSourceChart.tsx';
+import capitalFunding from '../../data/views/capital-funding-sources.json';
 
 const sections = capitalData.sections;
 
@@ -49,6 +51,10 @@ for (const section of sections) {
     {sections.length} projects across {grouped.size} functional areas.
     {totalFunding > 0 && ` 2026 total: $${(totalFunding / 1_000_000).toFixed(1)}M.`}
   </p>
+
+  <div class="mb-10 p-4 bg-white rounded-lg border">
+    <FundingSourceChart data={capitalFunding} client:load />
+  </div>
 
   {[...grouped.entries()].map(([area, projects]) => (
     <section class="mb-8">

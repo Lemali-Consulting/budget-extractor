@@ -1,0 +1,74 @@
+---
+/**
+ * At-a-glance metrics card for a budget section page.
+ * Only renders if at least one metric is available.
+ */
+
+interface Props {
+  budget2026?: string;
+  budget2025?: string;
+  budgetChange?: string;
+  budgetChangePct?: string;
+  fte2026?: number;
+  fte2025?: number;
+  tableCount: number;
+  pageCount: number;
+}
+
+const {
+  budget2026, budget2025, budgetChange, budgetChangePct,
+  fte2026, fte2025, tableCount, pageCount,
+} = Astro.props;
+
+const hasBudget = !!budget2026;
+const hasFte = fte2026 != null;
+const hasMetrics = hasBudget || hasFte;
+
+// Determine if change is negative for color coding
+const isNegativeChange = budgetChange?.startsWith('(') || budgetChange?.startsWith('-');
+const changeColor = isNegativeChange ? 'text-red-600' : 'text-green-600';
+
+const fteChange = hasFte && fte2025 != null ? fte2026! - fte2025 : null;
+const fteChangeStr = fteChange != null && fteChange !== 0
+  ? (fteChange > 0 ? `+${fteChange}` : `${fteChange}`)
+  : null;
+const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-red-600' : 'text-green-600';
+---
+
+{hasMetrics && (
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 p-4 bg-white rounded-lg border">
+    {hasBudget && (
+      <div>
+        <div class="text-xs text-gray-500 mb-1">2026 Budget</div>
+        <div class="text-lg font-semibold text-gray-900">${budget2026}</div>
+      </div>
+    )}
+    {hasBudget && budgetChange && budgetChange !== '—' && (
+      <div>
+        <div class="text-xs text-gray-500 mb-1">vs 2025</div>
+        <div class={`text-lg font-semibold ${changeColor}`}>
+          {isNegativeChange ? '-' : '+'}{budgetChange.replace(/[()]/g, '')}
+          {budgetChangePct && <span class="text-sm ml-1">({budgetChangePct.replace(/[()]/g, '')})</span>}
+        </div>
+      </div>
+    )}
+    {hasFte && (
+      <div>
+        <div class="text-xs text-gray-500 mb-1">Positions (FTE)</div>
+        <div class="text-lg font-semibold text-gray-900">
+          {fte2026?.toLocaleString()}
+          {fteChangeStr && (
+            <span class={`text-sm ml-1 ${fteChangeColor}`}>{fteChangeStr}</span>
+          )}
+        </div>
+      </div>
+    )}
+    <div>
+      <div class="text-xs text-gray-500 mb-1">Content</div>
+      <div class="text-lg font-semibold text-gray-900">
+        {`${tableCount} ${tableCount === 1 ? 'table' : 'tables'}`}
+        <span class="text-sm text-gray-500 ml-1">{`· ${pageCount} pg`}</span>
+      </div>
+    </div>
+  </div>
+)}

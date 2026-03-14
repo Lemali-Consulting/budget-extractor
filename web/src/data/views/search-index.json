@@ -16,7 +16,7 @@
     "tableId": "s4_p1_t0",
     "tableType": "revenue",
     "headers": "REVENUES 2025 Estimate 2026 Budget 2027 Forecast 2028 Forecast 2029 Forecast 2030 Forecast",
-    "narrative": "",
+    "narrative": "Five-year revenue and expenditure forecast for the City of Pittsburgh, projecting major tax sources and fund balances through fiscal year 2030.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -27,7 +27,7 @@
     "tableId": "s4_p2_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Estimate 2026 Budget 2027 Budget 2028 Budget 2029 Budget 2030 Budget",
-    "narrative": "",
+    "narrative": "By Department The table below illustrates the five-year departmental expenditure forecast through fiscal year 2030. These figures include all known contracted amounts as well as projected salary increases.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -49,7 +49,7 @@
     "tableId": "s7_p0_t0",
     "tableType": "unknown",
     "headers": "Account 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Revenue accounts for Revenue Detail (2026-2030) broken down by TAX REVENUE, LICENSES & PERMITS REVENUE.",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -60,7 +60,7 @@
     "tableId": "s7_p1_t0",
     "tableType": "unknown",
     "headers": "Account 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Account-level detail for Revenue Detail (2026-2030) covering CHARGES FOR SERVICES.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -71,7 +71,7 @@
     "tableId": "s7_p2_t0",
     "tableType": "unknown",
     "headers": "Account 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Account-level detail for Revenue Detail (2026-2030) covering FINES & FORFEITURES, INTERGOVERNMENTAL REVENUE, INTEREST EARNINGS.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -93,7 +93,7 @@
     "tableId": "s9_p0_t0",
     "tableType": "unknown",
     "headers": "Account 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Expenditure accounts for Expenditures Detail (2026-2030) covering PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS, PROFESSIONAL & TECHNICAL SERVICES.",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -104,7 +104,7 @@
     "tableId": "s9_p1_t0",
     "tableType": "unknown",
     "headers": "Account 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Account-level detail for Expenditures Detail (2026-2030) covering PROPERTY SERVICES, OTHER SERVICES, SUPPLIES.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -115,7 +115,7 @@
     "tableId": "s9_p2_t0",
     "tableType": "unknown",
     "headers": "Account 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Account-level detail for Expenditures Detail (2026-2030) covering PROPERTY, MISCELLANEOUS, DEBT SERVICE.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -137,7 +137,7 @@
     "tableId": "s10_p2_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for City Council listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -148,7 +148,7 @@
     "tableId": "s10_p2_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for City Council listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -159,7 +159,7 @@
     "tableId": "s10_p2_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Each of the nine Council Members have discretion on how they would like to budget their staff salary allocations. The proposed budget for each office (not including the Council Member) for 2026 is approximately $222,774.",
     "page": 2,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -170,7 +170,7 @@
     "tableId": "s10_p3_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for City Council comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -181,7 +181,7 @@
     "tableId": "s10_p4_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for City Council (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 6 line items.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -203,7 +203,7 @@
     "tableId": "s11_p2_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of the City Clerk listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -214,7 +214,7 @@
     "tableId": "s11_p2_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of the City Clerk listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -225,7 +225,7 @@
     "tableId": "s11_p3_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Office of the City Clerk comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -236,7 +236,7 @@
     "tableId": "s11_p4_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Office of the City Clerk (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 10 line items.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -258,7 +258,7 @@
     "tableId": "s12_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of the Mayor listing 44 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -269,7 +269,7 @@
     "tableId": "s12_p2_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of the Mayor listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -280,7 +280,7 @@
     "tableId": "s12_p2_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of the Mayor listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -291,7 +291,7 @@
     "tableId": "s12_p2_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Positions in the Office of Equal Protection have shifted into the Department of Law. Some positions in the Office of Communications and the Office of Neighborhood Services have shifted to the Department of Innovation & Performance, the Department of Mobility and Infrastructure, the Department of City Planning, the Department of Permits, Licenses, and Inspections, and the Department of Parks and Recreation cost centers. Positions in the Office of Business Diversity have shifted to the Office of M",
     "page": 2,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -302,7 +302,7 @@
     "tableId": "s12_p3_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Office of the Mayor comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -313,7 +313,7 @@
     "tableId": "s12_p4_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "56 - SUPPLIES 55 - OTHER SERVICES 53 - PROF. & TECHNICAL SERVICES",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -335,7 +335,7 @@
     "tableId": "s13_p4_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of Management and Budget listing 28 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -346,7 +346,7 @@
     "tableId": "s13_p4_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of Management and Budget listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -357,7 +357,7 @@
     "tableId": "s13_p5_t0",
     "tableType": "unknown",
     "headers": "Total Full Time Permanent Positions 35 2,991,603 30 2,587,892",
-    "narrative": "",
+    "narrative": "Community Development positions are described in the appropriate Trust Fund section. The Office of Business Diversity positions have moved from the Mayor's Office to OMB for 2026.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -368,7 +368,7 @@
     "tableId": "s13_p6_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Office of Management and Budget comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -379,7 +379,7 @@
     "tableId": "s13_p7_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "OFFICE MANAGEMENT AND BUDGET 2026 Expenditures by Subclass 58 - MISCELLANEOUS 57 - PROPERTY 51 - PERSONNEL-SALARIES & WAGES 52 - PERSONNEL-EMPLOYEE BENEFITS 56 - SUPPLIES 53 - PROF. & TECHNICAL SERVICES",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -401,7 +401,7 @@
     "tableId": "s14_p3_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Innovation and Performance listing 41 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -412,7 +412,7 @@
     "tableId": "s14_p4_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Innovation and Performance listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -423,7 +423,7 @@
     "tableId": "s14_p4_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Innovation and Performance listing 6 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -434,7 +434,7 @@
     "tableId": "s14_p4_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 4,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -445,7 +445,7 @@
     "tableId": "s14_p5_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Department of Innovation and Performance comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -456,7 +456,7 @@
     "tableId": "s14_p6_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "57 - PROPERTY 56 - SUPPLIES 51 - PERSONNEL-SALARIES & WAGES 55 - OTHER SERVICES 54 - PROPERTY SERVICES",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -478,7 +478,7 @@
     "tableId": "s15_p3_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Commission on Human Relations listing 6 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -489,7 +489,7 @@
     "tableId": "s15_p3_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Commission on Human Relations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -500,7 +500,7 @@
     "tableId": "s15_p3_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 3,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -511,7 +511,7 @@
     "tableId": "s15_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Commission on Human Relations comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -522,7 +522,7 @@
     "tableId": "s15_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "COMMISSION ON HUMAN RELATIONS 2026 Expenditures by Subclass 56 - SUPPLIES 55 - OTHER SERVICES 53 - PROF. & TECHNICAL SERVICES",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -544,7 +544,7 @@
     "tableId": "s17_p4_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Finance listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -555,7 +555,7 @@
     "tableId": "s17_p4_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Finance listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -566,7 +566,7 @@
     "tableId": "s17_p5_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Finance listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -577,7 +577,7 @@
     "tableId": "s17_p5_t1",
     "tableType": "unknown",
     "headers": "2026 Allocations Department of Finance Three Taxing Bodies Trust Fund",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 5,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -588,7 +588,7 @@
     "tableId": "s17_p6_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Department of Finance comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -599,7 +599,7 @@
     "tableId": "s17_p7_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Department of Finance comparing actuals, budgets (2024-2026), covering Expenditures, MISCELLANEOUS, DEBT SERVICE.",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -610,7 +610,7 @@
     "tableId": "s17_p8_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "58 - MISCELLANEOUS 52 - PERSONNEL-EMPLOYEE BENEFITS 56 - SUPPLIES 55 - OTHER SERVICES 54 - PROPERTY SERVICES 53 - PROF. & TECHNICAL SERVICES",
     "page": 8,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -632,7 +632,7 @@
     "tableId": "s18_p3_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Law listing 18 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -643,7 +643,7 @@
     "tableId": "s18_p3_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Law listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -654,7 +654,7 @@
     "tableId": "s18_p3_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change. The Office of Equal Protection moved from the Mayor's Office to the Department of Law for 2026.",
     "page": 3,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -665,7 +665,7 @@
     "tableId": "s18_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Department of Law comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -676,7 +676,7 @@
     "tableId": "s18_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "51 - PERSONNEL-SALARIES & WAGES 56 - SUPPLIES 55 - OTHER SERVICES",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -698,7 +698,7 @@
     "tableId": "s19_p3_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Ethics Hearing Board listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -709,7 +709,7 @@
     "tableId": "s19_p3_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Ethics Hearing Board listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -720,7 +720,7 @@
     "tableId": "s19_p3_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Ethics Hearing Board listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -731,7 +731,7 @@
     "tableId": "s19_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Ethics Hearing Board comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -742,7 +742,7 @@
     "tableId": "s19_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Ethics Hearing Board (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -764,7 +764,7 @@
     "tableId": "s20_p3_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of Municipal Investigations listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -775,7 +775,7 @@
     "tableId": "s20_p3_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Office of Municipal Investigations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -786,7 +786,7 @@
     "tableId": "s20_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Office of Municipal Investigations comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -797,7 +797,7 @@
     "tableId": "s20_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Office of Municipal Investigations (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -819,7 +819,7 @@
     "tableId": "s21_p4_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Human Resources and Civil Service listing 26 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -830,7 +830,7 @@
     "tableId": "s21_p4_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Human Resources and Civil Service listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -841,7 +841,7 @@
     "tableId": "s21_p5_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Human Resources and Civil Service listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -852,7 +852,7 @@
     "tableId": "s21_p6_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Department of Human Resources and Civil Service comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -863,7 +863,7 @@
     "tableId": "s21_p7_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Department of Human Resources and Civil Service comparing actuals, budgets (2024-2026), covering Expenditures, MISCELLANEOUS.",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -874,7 +874,7 @@
     "tableId": "s21_p8_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "58 - MISCELLANEOUS 56 - SUPPLIES 52 - PERSONNEL-EMPLOYEE BENEFITS 55 - OTHER SERVICES 54 - PROPERTY SERVICES 53 - PROF. & TECHNICAL SERVICES",
     "page": 8,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -896,7 +896,7 @@
     "tableId": "s25_p4_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Month s 2025 Budget 2026 FTE Rate/ Grade Hours/ Month s 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Emergency Medical Services listing 11 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -907,7 +907,7 @@
     "tableId": "s25_p4_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Month s 2025 Budget 2026 FTE Rate/ Grade Hours/ Month s 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Emergency Medical Services listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -918,7 +918,7 @@
     "tableId": "s25_p4_t2",
     "tableType": "unknown",
     "headers": "FAPP Hourly Rates 2025 2026",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 4,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -929,7 +929,7 @@
     "tableId": "s25_p5_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Emergency Medical Services comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -940,7 +940,7 @@
     "tableId": "s25_p6_t0",
     "tableType": "financial_summary",
     "headers": "  2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Emergency Medical Services comparing actuals, budgets (2024-2026) across 8 line items.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -951,7 +951,7 @@
     "tableId": "s25_p7_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "57 - PROPERTY 56 - SUPPLIES 55 - OTHER SERVICES 54 - PROPERTY SERVICES 53 - PROF. & TECHNICAL SERVICES 52 - PERSONNEL-EMPLOYEE BENEFITS 51 - PERSONNEL-SALARIES & WAGES",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -973,7 +973,7 @@
     "tableId": "s26_p5_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Police listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -984,7 +984,7 @@
     "tableId": "s26_p5_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Police listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 5,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -995,7 +995,7 @@
     "tableId": "s26_p5_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 5,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1006,7 +1006,7 @@
     "tableId": "s26_p6_t0",
     "tableType": "unknown",
     "headers": "FOP Hourly Rates 2025 2026",
-    "narrative": "",
+    "narrative": "The labor agreement for FOP Ft. Pitt Lodge #1 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1017,7 +1017,7 @@
     "tableId": "s26_p7_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Police comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1028,7 +1028,7 @@
     "tableId": "s26_p8_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Police comparing actuals, budgets (2024-2026), covering Expenditures, OTHER SERVICES, SUPPLIES.",
     "page": 8,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1039,7 +1039,7 @@
     "tableId": "s26_p9_t0",
     "tableType": "unknown",
     "headers": "  2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "BUREAU OF POLICE 2026 Expenditures by Subclass 56 - SUPPLIES 57 - PROPERTY 54 - PROPERTY SERVICES 53 - PROF. & TECHNICAL SERVICES",
     "page": 9,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1061,7 +1061,7 @@
     "tableId": "s27_p3_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Fire listing 14 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1072,7 +1072,7 @@
     "tableId": "s27_p3_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Fire listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1083,7 +1083,7 @@
     "tableId": "s27_p3_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Fire listing 6 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1094,7 +1094,7 @@
     "tableId": "s27_p3_t3",
     "tableType": "unknown",
     "headers": "Master Firefighter 39.04 40.99",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 3,
     "tableIndex": 3,
     "budgetType": "operating"
@@ -1105,7 +1105,7 @@
     "tableId": "s27_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Fire comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1116,7 +1116,7 @@
     "tableId": "s27_p5_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Fire comparing actuals, budgets (2024-2026), covering Expenditures, PROPERTY.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1127,7 +1127,7 @@
     "tableId": "s27_p6_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Bureau of Fire (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 10 line items.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1149,7 +1149,7 @@
     "tableId": "s28_p3_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Animal Care and Control listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1160,7 +1160,7 @@
     "tableId": "s28_p3_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreements for Teamsters members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1171,7 +1171,7 @@
     "tableId": "s28_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Animal Care and Control comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1182,7 +1182,7 @@
     "tableId": "s28_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Bureau of Animal Care and Control (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1204,7 +1204,7 @@
     "tableId": "s29_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Office of Community Health and Safety comparing actuals, budgets (2024-2026), covering Expenditures, PROFESSIONAL & TECHNICAL SERVICES, SUPPLIES.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1215,7 +1215,7 @@
     "tableId": "s29_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Office of Community Health and Safety (2026-2030) covering Expenditures, PROF. & TECHNICAL SERVICES, SUPPLIES across 5 line items.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1237,7 +1237,7 @@
     "tableId": "s31_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Administration (Public Works) listing 24 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1248,7 +1248,7 @@
     "tableId": "s31_p1_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Administration (Public Works) listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1259,7 +1259,7 @@
     "tableId": "s31_p1_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1270,7 +1270,7 @@
     "tableId": "s31_p2_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Administration (Public Works) comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1281,7 +1281,7 @@
     "tableId": "s31_p3_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF  ADMINISTRATION 2026 Expenditures by Subclass 56 - SUPPLIES 55 - OTHER SERVICES 51 - PERSONNEL-SALARIES & WAGES 52 - PERSONNEL-EMPLOYEE BENEFITS 53 - PROF. & TECHNICAL SERVICES",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1303,7 +1303,7 @@
     "tableId": "s32_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Operations listing 32 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1314,7 +1314,7 @@
     "tableId": "s32_p1_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Operations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1325,7 +1325,7 @@
     "tableId": "s32_p2_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change..",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1336,7 +1336,7 @@
     "tableId": "s32_p3_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Operations comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1347,7 +1347,7 @@
     "tableId": "s32_p4_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Operations comparing actuals, budgets (2024-2026), covering Expenditures, PROPERTY.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1358,7 +1358,7 @@
     "tableId": "s32_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Bureau of Operations (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1380,7 +1380,7 @@
     "tableId": "s33_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Environmental Services listing 24 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1391,7 +1391,7 @@
     "tableId": "s33_p1_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Environmental Services listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1402,7 +1402,7 @@
     "tableId": "s33_p1_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreements for AFSCME 2719 and Teamsters members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1413,7 +1413,7 @@
     "tableId": "s33_p2_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Environmental Services comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1424,7 +1424,7 @@
     "tableId": "s33_p3_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "BUREAU OF ENVIRONMENTAL SERVICES 2026 Expenditures by Subclass 56 - SUPPLIES 58 - MISCELLANEOUS 55 - OTHER SERVICES 54 - PROPERTY SERVICES",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1446,7 +1446,7 @@
     "tableId": "s34_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Facilities listing 42 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1457,7 +1457,7 @@
     "tableId": "s34_p2_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Bureau of Facilities listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1468,7 +1468,7 @@
     "tableId": "s34_p2_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1479,7 +1479,7 @@
     "tableId": "s34_p3_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Facilities comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1490,7 +1490,7 @@
     "tableId": "s34_p4_t0",
     "tableType": "financial_summary",
     "headers": "  2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Bureau of Facilities comparing actuals, budgets (2024-2026) across 5 line items.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1501,7 +1501,7 @@
     "tableId": "s34_p5_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Bureau of Facilities (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1523,7 +1523,7 @@
     "tableId": "s36_p10_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "Five-year budget projection for Department of Mobility and Infrastructure (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items.",
     "page": 10,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1534,7 +1534,7 @@
     "tableId": "s36_p6_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Mobility and Infrastructure listing 45 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1545,7 +1545,7 @@
     "tableId": "s36_p7_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Mobility and Infrastructure listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1556,7 +1556,7 @@
     "tableId": "s36_p7_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Department of Mobility and Infrastructure listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 7,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1567,7 +1567,7 @@
     "tableId": "s36_p8_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 8,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1578,7 +1578,7 @@
     "tableId": "s36_p9_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Department of Mobility and Infrastructure comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 9,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1600,7 +1600,7 @@
     "tableId": "s37_p4_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Citizen Police Review Board listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1611,7 +1611,7 @@
     "tableId": "s37_p4_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Citizen Police Review Board listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1622,7 +1622,7 @@
     "tableId": "s37_p4_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 4,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1633,7 +1633,7 @@
     "tableId": "s37_p5_t0",
     "tableType": "financial_summary",
     "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Financial summary for Citizen Police Review Board comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1644,7 +1644,7 @@
     "tableId": "s37_p6_t0",
     "tableType": "unknown",
     "headers": " 2026 2027 2028 2029 2030",
-    "narrative": "",
+    "narrative": "56 - SUPPLIES 55 - OTHER SERVICES 54 - PROPERTY SERVICES",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1666,7 +1666,7 @@
     "tableId": "s38_p1_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 185,381.3",
-    "narrative": "",
+    "narrative": "Department: Commission on Human Relations Authorizing Resolution: 795 of 1981 Description: The Commission on Human Relations has jurisdiction over allegations of housing discrimination occurring throughout the City of Pittsburgh both independently and as a substantially equivalent entity to the U.S. Department of Housing and Urban Development (HUD). The HUD Trust Fund was established to adjudicate housing discrimination cases as a Fair Housing Assistance Program (FHAP). Revenues: Contract and Gr",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1677,7 +1677,7 @@
     "tableId": "s38_p1_t1",
     "tableType": "financial",
     "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for HUD Fair Housing Program Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1688,7 +1688,7 @@
     "tableId": "s38_p1_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 185,381.3",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the HUD Fair Housing Program Trust Fund.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1710,7 +1710,7 @@
     "tableId": "s39_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 251,569",
-    "narrative": "",
+    "narrative": "Department: Commission on Human Relations Authorizing Resolution: 723 of 1984 Description: The Commission on Human Relations has jurisdiction over allegations of employment discrimination occurring throughout the City of Pittsburgh both independently and as a substantially equivalent entity to the Equal Employment Opportunity Commission (EEOC).  The EEOC Trust Fund was established to adjudicate discrimination cases as a certified Fair Employment Practices Agency (FEPA). Revenues: Contract and Gr",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1721,7 +1721,7 @@
     "tableId": "s39_p0_t1",
     "tableType": "financial",
     "headers": "Subclass  2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for EEOC Trust Fund comparing budgets (2025-2026) across 16 line items.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1732,7 +1732,7 @@
     "tableId": "s39_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 250,131",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the EEOC Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1754,7 +1754,7 @@
     "tableId": "s40_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 1,212,710",
-    "narrative": "",
+    "narrative": "Department: Finance Authorizing Resolution: 873 of 1979, as amended by 1030 of 1992, and 390 of 2017 Description: The Three Taxing Bodies are the City of Pittsburgh, Allegheny County, and Pittsburgh Public Schools. The City acts as Trustee/Agent for properties owned jointly by the Three Taxing Bodies. The Three Taxing Bodies Trust Fund was established to pay for costs relating to the administration of these properties. Revenues: Funds received from the Three Taxing Bodies, as well as transfers f",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1765,7 +1765,7 @@
     "tableId": "s40_p0_t1",
     "tableType": "financial",
     "headers": "Subclass Expenditures 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Three Taxing Bodies Trust Fund comparing budgets (2025-2026), covering PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS, PROFESSIONAL & TECHNICAL SERVICES.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1776,7 +1776,7 @@
     "tableId": "s40_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 543,280",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Three Taxing Bodies Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1787,7 +1787,7 @@
     "tableId": "s40_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Three Taxing Bodies Trust Fund listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1798,7 +1798,7 @@
     "tableId": "s40_p1_t1",
     "tableType": "unknown",
     "headers": "2026 Allocations Department of Finance Three Taxing Bodies Trust Fund",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1820,7 +1820,7 @@
     "tableId": "s41_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 4,752,646",
-    "narrative": "",
+    "narrative": "Department: Human Resources and Civil Service Authorizing Resolution: 432 of 1974, as amended by every annual grant application. Description: The Pittsburgh Partnership provides employment and training services designed to help City of Pittsburgh residents become attached or reattached to the labor force. The Pittsburgh Partnership Trust Fund is used to administer these services. This fund was previously known as the Job Training Partnership Act (JTPA) trust fund, the Workforce Investment Act (W",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1831,7 +1831,7 @@
     "tableId": "s41_p0_t1",
     "tableType": "financial",
     "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Pittsburgh Partnership Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1842,7 +1842,7 @@
     "tableId": "s41_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 4,245,017",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Pittsburgh Partnership Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1853,7 +1853,7 @@
     "tableId": "s41_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Pittsburgh Partnership Trust Fund listing 12 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1875,7 +1875,7 @@
     "tableId": "s42_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance \u2014",
-    "narrative": "",
+    "narrative": "Department: Office of Management and Budget Description: The Community Development (CD) Trust Fund was established to facilitate the receipts and disbursements of the programs that are funded by the U.S. Department of Housing & Urban Development (HUD). The fund supports activities that improve the quality of life to low and moderate income persons living in the City of Pittsburgh, as well as administrative costs. Revenues: Received electronically from HUD and deposited into a new job number each",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1886,7 +1886,7 @@
     "tableId": "s42_p0_t1",
     "tableType": "financial",
     "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Community Development Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1897,7 +1897,7 @@
     "tableId": "s42_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance (40,658)",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Community Development Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1908,7 +1908,7 @@
     "tableId": "s42_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1930,7 +1930,7 @@
     "tableId": "s43_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 3,163,185",
-    "narrative": "",
+    "narrative": "Department: Public Safety - Administration Authorizing Resolution: 259 of 2013 Description: When off-duty police officers are hired for special events, several fees are paid to the City, including the officer\u2019s overtime pay and a cost recovery fee. The Police Secondary Employment Trust Fund was created to account for these fees. Revenues: Monies from Police Details, Secondary Employment, Special Events cost recovery, and any and all administrative charges associated with the administration and i",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1941,7 +1941,7 @@
     "tableId": "s43_p0_t1",
     "tableType": "financial",
     "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Police Secondary Employment Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -1952,7 +1952,7 @@
     "tableId": "s43_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 3,325,749",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Police Secondary Employment Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -1963,7 +1963,7 @@
     "tableId": "s43_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1985,7 +1985,7 @@
     "tableId": "s44_p1_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 16,745,000",
-    "narrative": "",
+    "narrative": "Department: Office of Community Health and Safety, Department of Public Safety, Department of Parks and Recreation Authorizing Ordinance: 25 of 2020, as amended by Ordinance 37 of 2020, Ordinance 35 of 2023, Ordinance 18 of 2024, and Ordinance 14 of 2025.  See also Chapter 237 of the City Code. Description: The Stop the Violence fund was created to support services and programs that prevent violence and criminal activities, and also to support community health and safety programs Revenues: In 20",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -1996,7 +1996,7 @@
     "tableId": "s44_p1_t1",
     "tableType": "financial",
     "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Stop the Violence Trust Fund comparing budgets (2025-2026), covering Revenues, TRANSFERS, Expenditures.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2007,7 +2007,7 @@
     "tableId": "s44_p1_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 11,160,239",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Stop the Violence Trust Fund.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2018,7 +2018,7 @@
     "tableId": "s44_p2_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Stop the Violence Trust Fund listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2029,7 +2029,7 @@
     "tableId": "s44_p3_t0",
     "tableType": "unknown",
     "headers": "Assistant Director - Community Affairs 1 32G 12 110,718 \u2014 32G \u2014 \u2014",
-    "narrative": "",
+    "narrative": "Budget detail for Stop the Violence Trust Fund organized by CitiSports, Department of Parks and Recreation with 17 rows.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2040,7 +2040,7 @@
     "tableId": "s44_p3_t1",
     "tableType": "unknown",
     "headers": "Temporary, Part-Time, and Seasonal Allowances        ",
-    "narrative": "",
+    "narrative": "Budget detail for Stop the Violence Trust Fund with 5 line items.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2051,7 +2051,7 @@
     "tableId": "s44_p3_t2",
     "tableType": "unknown",
     "headers": "Total Full-Time Permanent Positions 68 4,614,080 69 4,713,841",
-    "narrative": "",
+    "narrative": "The Assistant Director - Community Affairs and Assistant Director - Community Health and Safety positions were moved to the Department of Public Safety - Bureau of Administration cost center in 2026.",
     "page": 3,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2073,7 +2073,7 @@
     "tableId": "s47_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 3,274,374",
-    "narrative": "",
+    "narrative": "Department: Department of Public Works Authorizing Resolution: 236 of 2006 Description: Established to facilitate the creation and use of intergovernmental cooperative agreements. Revenues: Derived from the execution of cooperation agreements, and subsequent reimbursement under these agreements Expenditures: Road salt, and specific project-related expenditures as defined by the corresponding cooperation agreements",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2084,7 +2084,7 @@
     "tableId": "s47_p0_t1",
     "tableType": "financial",
     "headers": "Subclass Detail  2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Public Works Trust Fund comparing budgets (2025-2026) across 12 line items.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2095,7 +2095,7 @@
     "tableId": "s47_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 3,292,334",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Public Works Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2117,7 +2117,7 @@
     "tableId": "s48_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 964,095",
-    "narrative": "",
+    "narrative": "Department: Public Works Authorizing Resolution: 531 of 1997 Description: The trust fund was established for the deposit of revenue from the outdoor advertising on bus shelters, as well as contributions from private citizens, companies, foundations, and governmental agencies for expenditures involving street trees. Revenues: The current revenue source is the contract for advertising on the City's bus shelters. Expenditures: Any and all expenses incurred during the implementation of tree related ",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2128,7 +2128,7 @@
     "tableId": "s48_p0_t1",
     "tableType": "financial",
     "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Shade Tree Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2139,7 +2139,7 @@
     "tableId": "s48_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 814,095",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Shade Tree Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2161,7 +2161,7 @@
     "tableId": "s50_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 388,359",
-    "narrative": "",
+    "narrative": "Department: Parks & Recreation Authorizing Resolution: 106 of 1979, as amended by 834 of 2017 Description: Special Events Program Trust Fund created in 1979 as a vehicle for large special events that were run by Parks & Recreation. Moved to Public Safety Administration in 2017 to better coordinate provision of Public Safety personnel at large events, before returning to Parks & Recreation in 2023. Revenues:  All revenues related to these events (Community Footraces, Cinema in the Park, Public Co",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2172,7 +2172,7 @@
     "tableId": "s50_p0_t1",
     "tableType": "financial",
     "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Special Events Trust Fund comparing budgets (2025-2026), covering Revenues, LICENSES AND PERMITS REVENUE, CHARGES FOR SERVICES.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2183,7 +2183,7 @@
     "tableId": "s50_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 325,045",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Special Events Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2194,7 +2194,7 @@
     "tableId": "s50_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Special Events Trust Fund listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2205,7 +2205,7 @@
     "tableId": "s50_p1_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Special Events Trust Fund listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2216,7 +2216,7 @@
     "tableId": "s50_p1_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Special Events Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2227,7 +2227,7 @@
     "tableId": "s50_p1_t3",
     "tableType": "unknown",
     "headers": "2026 Allocations Department of Parks & Recreation Special Events Trust Fund",
-    "narrative": "",
+    "narrative": "Budget detail for Special Events Trust Fund (2026) with 1 line item.",
     "page": 1,
     "tableIndex": 3,
     "budgetType": "operating"
@@ -2249,7 +2249,7 @@
     "tableId": "s51_p1_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 1,840,915",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Regional Asset District - Parks and Recreation Trust Fund.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2260,7 +2260,7 @@
     "tableId": "s51_p1_t1",
     "tableType": "financial",
     "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Regional Asset District - Parks and Recreation Trust Fund comparing budgets (2025-2026), covering Revenues, TAX REVENUE, Expenditures.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2271,7 +2271,7 @@
     "tableId": "s51_p1_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 1,840,915",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Regional Asset District - Parks and Recreation Trust Fund.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2282,7 +2282,7 @@
     "tableId": "s51_p2_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 11 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2293,7 +2293,7 @@
     "tableId": "s51_p2_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 13 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2304,7 +2304,7 @@
     "tableId": "s51_p2_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 2,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2315,7 +2315,7 @@
     "tableId": "s51_p2_t3",
     "tableType": "unknown",
     "headers": "2026 Allocations Parks and Recreation General Fund Public Safety Administration General Fund Mellon Park Trust Fund Parks RAD Trust Fund",
-    "narrative": "",
+    "narrative": "Budget detail for Regional Asset District - Parks and Recreation Trust Fund (2026) with 2 line items.",
     "page": 2,
     "tableIndex": 3,
     "budgetType": "operating"
@@ -2337,7 +2337,7 @@
     "tableId": "s52_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 1,779,292",
-    "narrative": "",
+    "narrative": "Department: Department of Parks and Recreation Authorizing Resolution: 633 of 2002, as amended by 753 of 2016 Description: The trust fund pays for tennis instructors, payroll expenses, maintenance to the Bubble, and to supplement the payment of administrative and operational costs in connection improvements to Mellon Park, Citiparks' indoor tennis program, and/or other Citiparks indoor tennis facilities. Revenues: Any funds received from the Mellon Park support structure and indoor tennis facili",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2348,7 +2348,7 @@
     "tableId": "s52_p0_t1",
     "tableType": "financial",
     "headers": "Subclass Details 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Mellon Park Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2359,7 +2359,7 @@
     "tableId": "s52_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 1,652,005",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Mellon Park Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2370,7 +2370,7 @@
     "tableId": "s52_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Mellon Park Trust Fund listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2381,7 +2381,7 @@
     "tableId": "s52_p1_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Mellon Park Trust Fund listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2392,7 +2392,7 @@
     "tableId": "s52_p1_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Mellon Park Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2403,7 +2403,7 @@
     "tableId": "s52_p1_t3",
     "tableType": "unknown",
     "headers": "2026 Allocations Department of Parks & Recreation Mellon Park Trust Fund Parks RAD Trust Fund",
-    "narrative": "",
+    "narrative": "Budget detail for Mellon Park Trust Fund (2026) with 2 line items.",
     "page": 1,
     "tableIndex": 3,
     "budgetType": "operating"
@@ -2425,7 +2425,7 @@
     "tableId": "s53_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 645,064",
-    "narrative": "",
+    "narrative": "Department: Parks & Recreation Authorizing Resolution: 1213 of 1990, as amended by Resolution 119 of 2020 Description: The trust fund oversees year-round daily admissions, various fee-based programs, and special activities for the rink. Revenues: Rink fees, concession revenue, and room rentals from the Schenley Skating Rink Expenditures: Any salary, materials, repairs, equipment, and other miscellaneous service cost incurred while operating the skating rink",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2436,7 +2436,7 @@
     "tableId": "s53_p0_t1",
     "tableType": "financial",
     "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Schenley Park Rink Trust Fund comparing budgets (2025-2026), covering Revenues, LICENSES & PERMITS REVENUE, CHARGES FOR SERVICES.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2447,7 +2447,7 @@
     "tableId": "s53_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 648,064",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Schenley Park Rink Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2469,7 +2469,7 @@
     "tableId": "s54_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 1,169,912",
-    "narrative": "",
+    "narrative": "Department: Parks and Recreation Description: The trust fund is used for operation of the largest Senior Community Center program in the Pittsburgh region. Revenues: Pennsylvania Department of Welfare grant funds, CDBG funds, and program fees Expenditures: Any and all expenses related to the operation of the Senior Citizens Program",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2480,7 +2480,7 @@
     "tableId": "s54_p0_t1",
     "tableType": "financial",
     "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Senior Citizens Program Trust Fund comparing budgets (2025-2026), covering Revenues, LICENSES & PERMITS REVENUE, INTERGOVERNMENTAL REVENUE.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2491,7 +2491,7 @@
     "tableId": "s54_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 252,482",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Senior Citizens Program Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2502,7 +2502,7 @@
     "tableId": "s54_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Senior Citizens Program Trust Fund listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2513,7 +2513,7 @@
     "tableId": "s54_p1_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Senior Citizens Program Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2524,7 +2524,7 @@
     "tableId": "s54_p1_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Senior Citizens Program Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2535,7 +2535,7 @@
     "tableId": "s54_p1_t3",
     "tableType": "unknown",
     "headers": "2026 Allocations Department of Parks & Recreation Senior Citizens Program Trust Fund",
-    "narrative": "",
+    "narrative": "Budget detail for Senior Citizens Program Trust Fund (2026) with 1 line item.",
     "page": 1,
     "tableIndex": 3,
     "budgetType": "operating"
@@ -2557,7 +2557,7 @@
     "tableId": "s55_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 350,184",
-    "narrative": "",
+    "narrative": "Department: Parks and Recreation Authorizing Resolution:  118 of 2019 Description: The Special Summer Food Service program was established in 1975 to provide free meals to the City's children at numerous sites throughout the City. Revenues: Grant from the United States Department of Agriculture and administered by the Department of Education Expenditures: Any and all expenses related to the operation of the Summer Food Program",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2568,7 +2568,7 @@
     "tableId": "s55_p0_t1",
     "tableType": "financial",
     "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Special Food Service Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2579,7 +2579,7 @@
     "tableId": "s55_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 203,856",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Special Food Service Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2590,7 +2590,7 @@
     "tableId": "s55_p1_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Special Food Service Trust Fund listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2601,7 +2601,7 @@
     "tableId": "s55_p1_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Special Food Service Trust Fund listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2612,7 +2612,7 @@
     "tableId": "s55_p1_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for Special Food Service Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations.",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2634,7 +2634,7 @@
     "tableId": "s56_p0_t0",
     "tableType": "unknown",
     "headers": "Projected Beginning Balance 2,035,076",
-    "narrative": "",
+    "narrative": "Department: Parks and Recreation Authorizing Resolution: 616 of 1926 Description: The trust fund was established from an endowment from Henry Clay Frick in 1926. Revenues: Endowment from Henry Clay Frick of $2,000,000 Expenditures: Interest payments on the endowment pay for operational and maintenance expenses of Frick Park",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2645,7 +2645,7 @@
     "tableId": "s56_p0_t1",
     "tableType": "financial",
     "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
-    "narrative": "",
+    "narrative": "Budget detail for Frick Park Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures.",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2656,7 +2656,7 @@
     "tableId": "s56_p0_t2",
     "tableType": "unknown",
     "headers": "Projected Ending Balance 2,163,851",
-    "narrative": "",
+    "narrative": "Projected beginning balance for the Frick Park Trust Fund.",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2678,7 +2678,7 @@
     "tableId": "s57_p0_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Archives and Records Management Trust Fund Department:  City Clerk 1012877000 Authorizing Resolution:  758 of 2018 Description:  Created in 2018 for the immediate need of capturing $40,000 donated by the Bicentennial committee for archives purposes.  Per the recommendation of the Controller\u2019s office, re-used existing account and fund number, formerly the Clerk-Vending Machine trust fund. Revenues:  All money charged in connection with Archives and Records Management activities, including but not",
     "page": 0,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2689,7 +2689,7 @@
     "tableId": "s57_p0_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Bridge Asset Management Program Trust Fund Department: Office of Management & Budget 0222800600 Authorizing Resolution:  414 of 2022 Description:  Created in 2022 for setting the conditions for the deposit of funding into the account and for the expenditure of said funds. Revenues:  ARPA Funds through 12/31/2024. City funds in future years as needed. Expenditures:  The funds deposited in said trust fund shall be used for costs related to the implementation of said program",
     "page": 0,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2700,7 +2700,7 @@
     "tableId": "s57_p0_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Code Trust Fund Department:  Permits, Licenses & Inspections 2700240900 Authorizing Resolution:  965 of 1981.  Renamed \"BOCA TF\" by resolution 895 of 1996. Description: Used by PL&I to capture revenue paid to the City for copies of the building code. Revenues:  Fees paid for purchases of the Building, Fire, Mechanical, and Pittsburgh Supplements to the Code Expenditures:  Expenses to buy copies of the Code for City customers",
     "page": 0,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2711,7 +2711,7 @@
     "tableId": "s57_p10_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "VEBA - Workers' Compensation Department:  HRCS 9993817000 Authorizing Resolution: 823 of 1989 Revenues:  General Fund transfers Expenditures:  WCVEBA is needed to fund and maintain our self-insured status.  The expenses paid from the WCVEBA are all payments concerning Workers Comp including Indemnity payrolls, medical registers, excess insurance premiums, settlements, payments to the state and to the law firm that administers legal services for workers comp. The American Rescue Plan Trust Fund i",
     "page": 10,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2722,7 +2722,7 @@
     "tableId": "s57_p1_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Comcast Franchise Trust Fund Department:  Innovation & Performance 1030281500 Authorizing Resolution:   432 of 2010 Description: This trust fund was created in 2010 to house capital grants made by Comcast, and act as a pass through for funds going to the local public access tv station.  Not to be confused with the franchise fee, that goes directly into the City\u2019s operating budget. Revenues:  Payment of grants from Comcast to the City for public, educational and governmental (\u201cPEG\u201d) access channe",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2733,7 +2733,7 @@
     "tableId": "s57_p1_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Confiscated Narcotics Proceeds Trust Fund Department:  Police 2300241600 Authorizing Resolution:  1265 of 1985.  Amended 1070 of 1987 and 978 of 1989.  Codified in ordinance 232.01 in 2015. Description: Civil asset forfeiture fund Revenues:  Cash and proceeds derived from the confiscation of narcotics and related items of forfeited property Expenditures:  Any and all expenses associated with investigations of narcotics violations, including salaries, supplies, materials, and other miscellaneous ",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2744,7 +2744,7 @@
     "tableId": "s57_p1_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Confiscated Non-Narcotics Proceeds Trust Fund Department:  Police 2300241900 Authorizing Resolution:  1017 of 1991 Description: Civil asset forfeiture fund Revenues:  Cash and proceeds derived from the confiscation of non-narcotics and related items of forfeited property Expenditures:  Any and all expenses associated with investigations of non-narcotics violations, including salaries, supplies, materials, and other miscellaneous expenses",
     "page": 1,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2755,7 +2755,7 @@
     "tableId": "s57_p2_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Crossing Guards Special Events Trust Fund Department: Public Safety 2100240840 Authorizing Resolution:  106 of 2020 Description: This trust fund will provide a more efficient and transparent means for depositing funds collected for crossing guards working special events and for paying premium pay to crossing guards working events and for related administrative costs.  The Police and EMS bureaus have similar trust funds for secondary employment that work well. Revenues:  Any and all monies collec",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2766,7 +2766,7 @@
     "tableId": "s57_p2_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Demolition Trust Fund Department:  Permits, Licenses & Inspections 2700872800 Authorizing Resolution:  1037 of 1982.  Further amended by 836 of 2017 Description: Fund is used to capture liens that were placed against properties when the City had to demolish unsafe structures. Revenues:  Monies received from the demolition of properties condemned under the provisions of the Act of May 13, 1915, P.L. 297 Expenditures:  Expenses incurred by contractors for the demolition of condemned property",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2777,7 +2777,7 @@
     "tableId": "s57_p2_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Emergency Management and Homeland Security Trust Fund Department:  Public Safety 2130246300 Authorizing Resolution:  81 of 1992 as amended by 893 of 2003 and 339 of 2016 Description: Created in 1992 as the \u201cPennsylvania Emergency Management Agency (PEMA) Trust Fund,\u201d it was renamed the \u201cEmergency Management And Homeland Security Trust Fund\"  to include Homeland Security funding and expenses. Revenues:  State reimbursements for costs incurred by City during emergency situations Expenditures:  Any",
     "page": 2,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2788,7 +2788,7 @@
     "tableId": "s57_p3_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "EMS Reimbursable Events Trust Fund Department:  EMS 2200243700 Authorizing Resolution: 1016 of 1991 Description: Created in 1991 to allow reimbursements from events that used the City\u2019s EMS personnel. Cooperation agreements with other EMS organizations allows events to hire additional suburban paramedics, using this trust fund as a pass-through. Revenues:  Monies reimbursed from special events Expenditures:  Payroll reimbursements are to be used for payment of premium pay for EMS personnel only.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2799,7 +2799,7 @@
     "tableId": "s57_p3_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Facilities Trust Fund Department:  OMB 0730125015 Authorizing Resolution: 425 of 2015, as amended by 434 of 2017 Description: Created in 2015 to address the deferred maintenance of City facilities. Revenues:  The Facilities Trust Fund shall be funded from any proceeds received from the disposition or lease of a facility. Expenditures:  Funds to be used for the exclusive and irrevocable purpose of funding the maintenance, capital investment, acquisition, and disposition of City-owned facilities.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2810,7 +2810,7 @@
     "tableId": "s57_p3_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Federal Task Force Trust Fund Department:  Police 2300244000 Authorizing Resolution: 732 of 1995 Description: Created in 1995 to accept a Weed & Seed grant Revenues:  Deposit of monies from various sources, including grants, for the operation of the Weed and Seed Federal Task Force Program. Expenditures: Any and all eligible expenses for the development and operation of the Federal Task Force Program.  Such expenses shall include the purchasing of equipment, materials, supplies and service for t",
     "page": 3,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2821,7 +2821,7 @@
     "tableId": "s57_p4_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Graffiti Trust Fund Department:  Police 2300244200 Authorizing Resolution: Ordinance 11 of 1987 created it in the City Code.  Further amended by ordinances 18 of 1997 and 8 of 2008. Description: The fund was created with the same legislation that made graffiti illegal.  Fines from violating the City\u2019s anti-graffiti law were deposited into the trust fund.  The City's current process for accepting fine revenue no longer allows for differentiation of which fines are part of that monthly check, rend",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2832,7 +2832,7 @@
     "tableId": "s57_p4_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Green Initiatives Trust Fund Department:  According to authorizing legislation, CIS - in practice, City Planning 1020288500 Authorizing Resolution: 393 of 2008 Description: This trust fund was created in 2008 to accept green grants Revenues:  Any funds appropriated for such purpose in the annual Operating Budget, as well as any Grant Funds obtained by the City to advance green initiatives Expenditures: Used to promote energy conservation and efficiency, including but not limited to: Implementati",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2843,7 +2843,7 @@
     "tableId": "s57_p4_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Hazardous Materials Trust Fund Department:  Public Safety 2200244100 Authorizing Resolution: 866 of 2010 Description: Created in 2010 to receive a grant, and used a few times a year to bill responsible parties as recoverable for hazardous materials responses. Revenues:  Funds received from Allegheny County (LEPC) and income generated as a result of direct billing of responsible parties as recoverable for hazardous materials responses. Expenditures: Funds would be utilized for the purchase of equ",
     "page": 4,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2854,7 +2854,7 @@
     "tableId": "s57_p5_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Lead Safety Trust Fund Department: OMB 0222802700 Authorizing Resolution: 265 of 2022 Description: Created in 2022 for setting the conditions for the deposits of funding into the account and for the expenditure of said funds. Revenues:  Funds received from APRA through 12/31/2024, along with private or non-profit contributions. Expenditures: Funds should be related to the implementation and enforcement of the Lead Safe Ordinance (materials, employee costs, safety training, and community outreach",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2865,7 +2865,7 @@
     "tableId": "s57_p5_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Pittsburgh Code Trust Fund Department: City Clerk 1012875000 Authorizing Resolution: 191 of 1982.  Amended by 760 of 2018 Description: Established in 1982 to collect revenue from printing the code and code supplements.  Expanded over the years to house all Clerks revenue.  Amended in 2018 to formally allow the deposit of the revenues already being deposited into the fund. Revenues:  The deposit of money charged for the purchase of all Pittsburgh Codes and Supplements to the Pittsburgh Code, all ",
     "page": 5,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2876,7 +2876,7 @@
     "tableId": "s57_p5_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "PLI Record Storage, Technology, and Operations TF Department:  Permits, Licenses & Inspections 2700244600 Authorizing Resolution: 1167 of 1986.  Amended by 104 of 2015, and further amended by 300 of 2018 Description: The Department of Permits, Licenses, and Inspections Record Storage, Technology, and Operations Trust Fund was created as the Microfilm Permit Plans Trust Fund in 1986.  It collects fees paid by PLI permit applicants for each page of plans which are submitted.  It was used to cover ",
     "page": 5,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2887,7 +2887,7 @@
     "tableId": "s57_p6_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Public Safety Training Trust Fund Department:  Public Safety 2300246900 Authorizing Resolution: 744 of 1979 and 511 of 1986 Description:  The Police Recruit Training Trust Fund was created in 1979.  Amended in 1986 to include all of Public Safety. Revenues:  Any and all state and/or federal funds received by the City as reimbursements for such recruit and in of service training and related expenses, income generated by the public Safety Training Academy, and other such local funds Expenditures: ",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2898,7 +2898,7 @@
     "tableId": "s57_p6_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Verizon Franchise Trust Fund Department:  Innovation & Performance 1030288000 Authorizing Resolution: 552 of 2009.  Amended by 663 of 2013 Description:  Created at the same time Verizon was given a cable franchise to operate in the City.  This fund is for capital grants to the Cable Bureau, and should not be confused with the Verizon revenue that is deposited in the operating budget as Cable Bureau Revenue. Revenues:  Grants paid by Verizon to the City Expenditures: These expenditures will be us",
     "page": 6,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2909,7 +2909,7 @@
     "tableId": "s57_p6_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "YCPC/Mayor's Youth Initiative Department:  Public Safety 2100248100 Authorizing Resolution: 6 of 1996 Description:  \u201cMayor\u2019s youth initiative\u201d trust funds date back to at least the 1960\u2019s. Revenues:  Various public and private grant funds. Expenditures: Receive deposits of various public and private grant funds that are awarded and associated with YCPC and the Mayor\u2019s Youth Initiative and will be used to pay costs associated with same.",
     "page": 6,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2920,7 +2920,7 @@
     "tableId": "s57_p7_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Other Post Employment Benefits (OPEB) Trust Fund Department:  Finance 1070813500 Authorizing Resolution: 17 of 2012.  Companion legislation to Ordinance 1 of 2012 (Chapter 176A) Description:  Created in 2012 to address retiree healthcare expenses.  Created at the urging of Act 47, the ICA, and best practices.  As of 2019, it has not yet been used to pay any retiree benefits. Revenues:  Transfers from the general fund Expenditures: Investment administrative expenses.  When the fund becomes large ",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2931,7 +2931,7 @@
     "tableId": "s57_p7_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Public Safety Support Trust Fund Department:  Public Safety 2102906500 Authorizing Resolution: 761 of 2018 Description: On October 27, 2018, four City of Pittsburgh police officers were injured during the tragic events at Squirrel Hill\u2019s Tree of Life synagogue; and in the wake of this horrific incident, many generous private and corporate citizens and organizations have expressed interest in donating to the Department of Public Safety; and, the City wishes to establish a trust fund in order to r",
     "page": 7,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2942,7 +2942,7 @@
     "tableId": "s57_p7_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Open Space Trust Fund Department:  City Planning 1100280630 Authorizing Resolution: 334 of 2016 Description: Payments in lieu of complying with the City Code. Revenues:  Deposited funds paid to the City by developers in lieu of dedication of an open space.  The amount of the deposits are based upon the value of the land that would otherwise be required to be devoted to open space on the development site, plus the cost that would otherwise be incurred by the applicant for development of that spac",
     "page": 7,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2953,7 +2953,7 @@
     "tableId": "s57_p8_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Stormwater Management Trust Fund Department:  City Planning and the Pittsburgh Water and Sewer Authority (PWSA) 1100280640 Authorizing Resolution: 335 of 2016.  Cooperation agreement with PWSA authorized 765 of 2018. Description: Payments in lieu of complying with the City Code. Revenues:  Deposited funds paid to the City by developers in lieu of constructing on-site stormwater facilities. Expenditures: May only be expended in order to supplement stormwater planning and development projects cond",
     "page": 8,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2964,7 +2964,7 @@
     "tableId": "s57_p8_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Southside Parking Enhancement District Trust Fund Department:  OMB, and also PS Admin, DPW, DOMI, and Parking Authority 2100248000 Authorizing Resolution: 777 of 2016.  Companion resolution to resolution 776 of 2016 that creates the parking enhancement district.  Amended by 131 of 2018.  Governing ordinance is Chapter 546 of City Code. Description: Introduced November of 2016, 9 months after passage of the Parking Enhancements District trust fund ordinance, found at Chapter 546 of the City Code.",
     "page": 8,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -2975,7 +2975,7 @@
     "tableId": "s57_p8_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Mounted Police Trust Fund Department:  Police 2300244900 Authorizing Resolution:  493 of 1995.  Closed by resolutions 857 and 858 of 2011.  Reopened by resolution 200 of 2017.  See also resolution 201 of 2017, which amended 857 of 2011 to un-close the trust fund Description: The Mounted Police Trust Fund was created in 1995 to accept grants and donations for the operation of the mounted police program.  The City's mounted police force was retired a few years later, and the City used the County o",
     "page": 8,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -2986,7 +2986,7 @@
     "tableId": "s57_p9_t0",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "OneStopPGH Permitting Technology Trust Fund Department:  Any department that collects OneStopPGH departments.  Including, but not limited to: PLI; DOMI; Public 1030286600 Works; Innovation & Performance Authorizing Resolution:  776 of 2021 1030286600 Revenues:  Technology fee collected from applicable OneStopPGH permits Expenditures:  Expenses associated with the OneStopPGH permitting platform for ongoing maintenance and enhancements to improve customer and user experience.",
     "page": 9,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -2997,7 +2997,7 @@
     "tableId": "s57_p9_t1",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "Technology Modernization Trust Fund Department:  Innovation & Performance 1030287500 Authorizing Resolution:  826 of 2021 Description: Provides a vehicle for city departments to fund new technology projects, outside of Council oversight and the Operating and Capital Budget. Revenues:  Direct transfers form the city\u2019s general fund balance; Existing grants dedicated to technology related projects; Private charitable donations; Matching funds from charitable entities. Expenditures:  Implementation ",
     "page": 9,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3008,7 +3008,7 @@
     "tableId": "s57_p9_t2",
     "tableType": "revenue",
     "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
-    "narrative": "",
+    "narrative": "VEBA - Health Insurance Department:  HRCS 9993816000 Authorizing Resolution:  Health and Welfare Voluntary Employee Beneficiary trust fund created by Res 207 of 1996. Revenues:  General Fund transfers Expenditures:  Set up to insure timeliness of payments to the Healthcare providers. The funds are transferred from the general fund.  The expenses paid from the HCVEBA are the monthly payments for all employees\u2019 healthcare insurance.",
     "page": 9,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3030,7 +3030,7 @@
     "tableId": "s58_p10_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Position Summary: Inflation Reduction Act - Department of Public Works 4029400461",
     "page": 10,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3041,7 +3041,7 @@
     "tableId": "s58_p10_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for grant-funded positions showing 2 positions with FTE counts, pay grades, and budget allocations.",
     "page": 10,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3052,7 +3052,7 @@
     "tableId": "s58_p10_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for grant-funded positions showing 3 positions with FTE counts, pay grades, and budget allocations.",
     "page": 10,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3063,7 +3063,7 @@
     "tableId": "s58_p10_t3",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for grant-funded positions showing 3 positions with FTE counts, pay grades, and budget allocations.",
     "page": 10,
     "tableIndex": 3,
     "budgetType": "operating"
@@ -3074,7 +3074,7 @@
     "tableId": "s58_p11_t0",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Position Summary: Post-Overdose - Substance Abuse and Mental Health Services Administration 2129400452",
     "page": 11,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3085,7 +3085,7 @@
     "tableId": "s58_p11_t1",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Personnel roster for grant-funded positions showing 2 positions with FTE counts, pay grades, and budget allocations.",
     "page": 11,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3096,7 +3096,7 @@
     "tableId": "s58_p11_t2",
     "tableType": "personnel",
     "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
-    "narrative": "",
+    "narrative": "Position Summary: Safe Passages Program - PA Commission on Crime and Delinquency 2329400437",
     "page": 11,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3107,7 +3107,7 @@
     "tableId": "s58_p2_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 11 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3118,7 +3118,7 @@
     "tableId": "s58_p2_t1",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3129,7 +3129,7 @@
     "tableId": "s58_p2_t2",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 4 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 2,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3140,7 +3140,7 @@
     "tableId": "s58_p3_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3151,7 +3151,7 @@
     "tableId": "s58_p3_t1",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 11 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3162,7 +3162,7 @@
     "tableId": "s58_p4_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 9 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3173,7 +3173,7 @@
     "tableId": "s58_p4_t1",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 12 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3184,7 +3184,7 @@
     "tableId": "s58_p5_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3195,7 +3195,7 @@
     "tableId": "s58_p5_t1",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 9 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 5,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3206,7 +3206,7 @@
     "tableId": "s58_p6_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 22 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3217,7 +3217,7 @@
     "tableId": "s58_p7_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 15 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3228,7 +3228,7 @@
     "tableId": "s58_p7_t1",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 7,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3239,7 +3239,7 @@
     "tableId": "s58_p7_t2",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 5 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 7,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3250,7 +3250,7 @@
     "tableId": "s58_p8_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 24 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 8,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3261,7 +3261,7 @@
     "tableId": "s58_p9_t0",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 17 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 9,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3272,7 +3272,7 @@
     "tableId": "s58_p9_t1",
     "tableType": "unknown",
     "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
-    "narrative": "",
+    "narrative": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances.",
     "page": 9,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3294,7 +3294,7 @@
     "tableId": "s60_p1_t0",
     "tableType": "unknown",
     "headers": "Grade|A Grade|B Grade|C Grade|D Grade|E Grade|F Grade|G Step",
-    "narrative": "",
+    "narrative": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 37 steps.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3305,7 +3305,7 @@
     "tableId": "s60_p2_t0",
     "tableType": "unknown",
     "headers": "Step|A Step|B Step|C Step|D Step|E Grade",
-    "narrative": "",
+    "narrative": "Grade and Step Plan 2026 White Collar Employees Represented By American Federation of State, County, and Municipal Employees Local 2719",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3316,7 +3316,7 @@
     "tableId": "s60_p2_t1",
     "tableType": "unknown",
     "headers": "Step|F Step|G Step|H Step|I Step|J Grade",
-    "narrative": "",
+    "narrative": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 10 steps.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3327,7 +3327,7 @@
     "tableId": "s60_p2_t2",
     "tableType": "unknown",
     "headers": "Step|K Step|L Step|M Step|N Step|O Grade",
-    "narrative": "",
+    "narrative": "The labor agreement for AFSCME 2719 members expires on December 31, 2025. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
     "page": 2,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3338,7 +3338,7 @@
     "tableId": "s60_p3_t0",
     "tableType": "unknown",
     "headers": "Grade and Step Annual Rate",
-    "narrative": "",
+    "narrative": "Grade and Step Plan 2026 Department of Law Solicitors",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3360,7 +3360,7 @@
     "tableId": "s61_p10_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 10,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3371,7 +3371,7 @@
     "tableId": "s61_p11_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 11,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3382,7 +3382,7 @@
     "tableId": "s61_p12_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 12,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3393,7 +3393,7 @@
     "tableId": "s61_p13_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 13,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3404,7 +3404,7 @@
     "tableId": "s61_p14_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 14,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3415,7 +3415,7 @@
     "tableId": "s61_p1_t0",
     "tableType": "unknown",
     "headers": "Date Principal Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3426,7 +3426,7 @@
     "tableId": "s61_p1_t1",
     "tableType": "unknown",
     "headers": "849,270,000.00 418,961,653.28 1,268,231,653.28 1,268,231,653.25",
-    "narrative": "",
+    "narrative": "Debt service totals summary for City of Pittsburgh bond obligations.",
     "page": 1,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3437,7 +3437,7 @@
     "tableId": "s61_p2_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3448,7 +3448,7 @@
     "tableId": "s61_p2_t1",
     "tableType": "unknown",
     "headers": "Date Principal 2017 Bond Issue Coupon Interest Debt Service Annual Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 2,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3459,7 +3459,7 @@
     "tableId": "s61_p3_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3470,7 +3470,7 @@
     "tableId": "s61_p4_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3481,7 +3481,7 @@
     "tableId": "s61_p4_t1",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Refunding Series A of 2020 Interest Debt Service Annual Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 4,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3492,7 +3492,7 @@
     "tableId": "s61_p5_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 5,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3503,7 +3503,7 @@
     "tableId": "s61_p5_t1",
     "tableType": "unknown",
     "headers": "Date Principal Coupon 2021 Bond Issue Interest Debt Service Annual Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 5,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3514,7 +3514,7 @@
     "tableId": "s61_p6_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 6,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3525,7 +3525,7 @@
     "tableId": "s61_p7_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3536,7 +3536,7 @@
     "tableId": "s61_p8_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 8,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3547,7 +3547,7 @@
     "tableId": "s61_p9_t0",
     "tableType": "unknown",
     "headers": "Date Principal Coupon Interest Debt Service Debt Service",
-    "narrative": "",
+    "narrative": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations.",
     "page": 9,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3569,7 +3569,7 @@
     "tableId": "s63_p11_t0",
     "tableType": "unknown",
     "headers": "DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS ",
-    "narrative": "",
+    "narrative": "Fee schedule for DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS listing 94 fee types with 2026 rates.",
     "page": 11,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3580,7 +3580,7 @@
     "tableId": "s63_p14_t0",
     "tableType": "unknown",
     "headers": "DEPARTMENT OF PUBLIC WORKS ",
-    "narrative": "",
+    "narrative": "Fee schedule for DEPARTMENT OF PUBLIC WORKS listing 111 fee types with 2026 rates.",
     "page": 14,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3591,7 +3591,7 @@
     "tableId": "s63_p16_t0",
     "tableType": "unknown",
     "headers": "SPECIAL EVENTS & FILM FEES ",
-    "narrative": "",
+    "narrative": "Fee schedule for SPECIAL EVENTS & FILM FEES listing 116 fee types with 2026 rates.",
     "page": 16,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3602,7 +3602,7 @@
     "tableId": "s63_p19_t0",
     "tableType": "unknown",
     "headers": "ANIMAL CARE AND CONTROL ",
-    "narrative": "",
+    "narrative": "Fee schedule for ANIMAL CARE AND CONTROL listing 11 fee types with 2026 rates.",
     "page": 19,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3613,7 +3613,7 @@
     "tableId": "s63_p1_t0",
     "tableType": "unknown",
     "headers": "BUREAU OF FIRE ",
-    "narrative": "",
+    "narrative": "Fee schedule for BUREAU OF FIRE listing 72 fee types with 2026 rates.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3624,7 +3624,7 @@
     "tableId": "s63_p20_t0",
     "tableType": "unknown",
     "headers": "MISCELLANEOUS ",
-    "narrative": "",
+    "narrative": "Fee schedule for MISCELLANEOUS listing 22 fee types with 2026 rates.",
     "page": 20,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3635,7 +3635,7 @@
     "tableId": "s63_p20_t1",
     "tableType": "unknown",
     "headers": "DEPARTMENT OF FINANCE ",
-    "narrative": "",
+    "narrative": "Fee schedule for DEPARTMENT OF FINANCE listing 4 fee types with 2026 rates.",
     "page": 20,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3646,7 +3646,7 @@
     "tableId": "s63_p20_t2",
     "tableType": "unknown",
     "headers": "HUMAN RESOURCES & CIVIL SERVICE ",
-    "narrative": "",
+    "narrative": "Fee schedule for HUMAN RESOURCES & CIVIL SERVICE listing 5 fee types with 2026 rates.",
     "page": 20,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3657,7 +3657,7 @@
     "tableId": "s63_p21_t0",
     "tableType": "financial",
     "headers": "OFFICE OF MANAGEMENT & BUDGET ",
-    "narrative": "",
+    "narrative": "Fee schedule for OFFICE OF MANAGEMENT & BUDGET listing 4 fee types with 2026 rates.",
     "page": 21,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3668,7 +3668,7 @@
     "tableId": "s63_p21_t1",
     "tableType": "unknown",
     "headers": "BUREAU OF EMERGENCY MEDICAL SERVICES ",
-    "narrative": "",
+    "narrative": "Fee schedule for BUREAU OF EMERGENCY MEDICAL SERVICES listing 9 fee types with 2026 rates.",
     "page": 21,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3679,7 +3679,7 @@
     "tableId": "s63_p21_t2",
     "tableType": "unknown",
     "headers": "BUREAU OF POLICE ",
-    "narrative": "",
+    "narrative": "Fee schedule for BUREAU OF POLICE listing 72 fee types with 2026 rates.",
     "page": 21,
     "tableIndex": 2,
     "budgetType": "operating"
@@ -3690,7 +3690,7 @@
     "tableId": "s63_p3_t0",
     "tableType": "unknown",
     "headers": "DEPARTMENT OF CITY PLANNING ",
-    "narrative": "",
+    "narrative": "Fee schedule for DEPARTMENT OF CITY PLANNING listing 31 fee types with 2026 rates.",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3701,7 +3701,7 @@
     "tableId": "s63_p3_t1",
     "tableType": "unknown",
     "headers": "DEPARTMENT OF MOBILITY & INFRASTRUCTURE ",
-    "narrative": "",
+    "narrative": "Fee schedule for DEPARTMENT OF MOBILITY & INFRASTRUCTURE listing 145 fee types with 2026 rates.",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3712,7 +3712,7 @@
     "tableId": "s63_p7_t0",
     "tableType": "unknown",
     "headers": "Department of Public Safety Reimbursable Events/Secondary Employment|Fee Description 2026 Comments",
-    "narrative": "",
+    "narrative": "Fee schedule for Department of Public Safety Reimbursable Events/Secondary Employment|Fee Description listing 60 fee types with 2026 rates.",
     "page": 7,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3723,7 +3723,7 @@
     "tableId": "s63_p9_t0",
     "tableType": "unknown",
     "headers": "* fees will change according to union contract  ",
-    "narrative": "",
+    "narrative": "Fee schedule for * fees will change according to union contract listing 1 fee types with 2026 rates.",
     "page": 9,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3734,7 +3734,7 @@
     "tableId": "s63_p9_t1",
     "tableType": "unknown",
     "headers": "DEPARTMENT OF PARKS & RECREATION ",
-    "narrative": "",
+    "narrative": "Fee schedule for DEPARTMENT OF PARKS & RECREATION listing 103 fee types with 2026 rates.",
     "page": 9,
     "tableIndex": 1,
     "budgetType": "operating"
@@ -3756,7 +3756,7 @@
     "tableId": "s64_p1_t0",
     "tableType": "unknown",
     "headers": "Deliverable/Objective Number Using Department Funding Source Total Cost",
-    "narrative": "",
+    "narrative": "Appendix 1: Vehicle Acquisition In general, PAYGO funds are used for most vehicle acquisitions. Please see the \"Capital Equipment Acquisition\" project in the 2026 Capital Budget and Six Year Plan. Funds from other sources may be used for purchases. For reference, the table below shows anticipated vehicles purchases across all 2026 funding sources.",
     "page": 1,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3767,7 +3767,7 @@
     "tableId": "s64_p2_t0",
     "tableType": "unknown",
     "headers": "Department Deliverable Funding Source",
-    "narrative": "",
+    "narrative": "Appendix 2: Vision Zero On March 4, 2024, Mayor Ed Gainey, in partnership with the Department of Mobility and Infrastructure (DOMI) and Councilmember Barb Warwick, announced the adoption of Vision Zero via Resolution 193 of 2024. This initiative brings the City and partner organizations together to advance to the shared goal of zero traffic deaths through a holistic approach to roadway design, education, policy, and other changes that uphold a commitment to safety. Vision Zero is an internationa",
     "page": 2,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3778,7 +3778,7 @@
     "tableId": "s64_p3_t0",
     "tableType": "financial",
     "headers": "Department Deliverable Funding Source 2026 Budget",
-    "narrative": "",
+    "narrative": "*  The paving schedule will not be finalized until 2026. DOMI aims to improve street design whenever possible. Approximately $881,000 of the 2025 paving budget went towards traffic calming design. Please see the \"Street Resurfacing\" project in the 2026 Capital Budget and Six Year Plan for more information about the $15.4 million bond deliverable. awards. Active Grants The City also pursues grant funding to advance the Vision Zero mission. The following table shows several recent",
     "page": 3,
     "tableIndex": 0,
     "budgetType": "operating"
@@ -3789,7 +3789,7 @@
     "tableId": "s64_p3_t1",
     "tableType": "unknown",
     "headers": "Department Project and Funder Year Award",
-    "narrative": "",
+    "narrative": "Appendix data with 6 line items (2024).",
     "page": 3,
     "tableIndex": 1,
     "budgetType": "operating"

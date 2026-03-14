@@ -632,6 +632,140 @@ def build_capital_projects(sections: list[dict]) -> list[dict]:
     return projects
 
 
+def build_capital_funding_sources(sections: list[dict]) -> list[dict]:
+    """Aggregate CIP funding by source across all capital projects."""
+    rows: list[dict] = []
+
+    for section in sections:
+        for table in section["tables"]:
+            if table["table_type"] != "cip_funding":
+                continue
+            headers = table["headers"]
+            for row in table["rows"]:
+                source = (row[0] if row else "").strip()
+                if not source or source.upper() == "TOTAL":
+                    continue
+                for i, h in enumerate(headers[1:], start=1):
+                    if i < len(row):
+                        amount = parse_currency(row[i])
+                        year_label = h.strip()
+                        if amount and amount != 0 and "Total" not in year_label:
+                            rows.append({
+                                "project": section["title"],
+                                "source": source,
+                                "year": year_label,
+                                "amount": amount,
+                            })
+
+    return rows
+
+
+def build_personnel_by_department(personnel: list[dict]) -> list[dict]:
+    """Aggregate FTE and budget totals per department from personnel rows."""
+    dept_map: dict[str, dict] = {}
+
+    for row in personnel:
+        dept = row["department"]
+        if dept not in dept_map:
+            dept_map[dept] = {
+                "department": dept,
+                "slug": row["slug"],
+                "totalFte2025": 0.0,
+                "totalFte2026": 0.0,
+                "totalBudget2025": 0.0,
+                "totalBudget2026": 0.0,
+                "positionCount": 0,
+            }
+        d = dept_map[dept]
+        d["positionCount"] += 1
+        if row["fte2025"] is not None:
+            d["totalFte2025"] += row["fte2025"]
+        if row["fte2026"] is not None:
+            d["totalFte2026"] += row["fte2026"]
+        if row["budget2025"] is not None:
+            d["totalBudget2025"] += row["budget2025"]
+        if row["budget2026"] is not None:
+            d["totalBudget2026"] += row["budget2026"]
+
+    return sorted(dept_map.values(), key=lambda d: d["totalBudget2026"], reverse=True)
+
+
+def build_revenue_waterfall(sections: list[dict]) -> list[dict]:
+    """Extract top-level revenue categories with 2026 amounts for waterfall chart."""
+    items: list[dict] = []
+
+    for section in sections:
+        if section["section_number"] != 7:  # Revenue Detail = section 7
+            continue
+        for table in section["tables"]:
+            headers = table["headers"]
+            # Must have Account + 2026 columns
+            if not headers or "Account" not in headers[0]:
+                continue
+
+            col_2026 = -1
+            for i, h in enumerate(headers):
+                if "2026" in h:
+                    col_2026 = i
+                    break
+            if col_2026 < 0:
+                continue
+
+            sections_col = table.get("sections", [])
+            for ri, row in enumerate(table["rows"]):
+                label = (row[0] if row else "").strip()
+                if not label:
+                    continue
+                # Top-level categories: row label matches its section label
+                # AND starts with a 2-digit code (e.g. "41 - TAX REVENUE")
+                section_label = sections_col[ri] if ri < len(sections_col) else ""
+                if label == section_label and re.match(r"^\d{2}\s*-\s*", label):
+                    amount = parse_currency(row[col_2026] if col_2026 < len(row) else "")
+                    if amount and amount > 0:
+                        clean = re.sub(r"^\d+\s*-\s*", "", label).title()
+                        items.append({"label": clean, "amount": amount, "type": "revenue"})
+
+    return items
+
+
+def build_department_forecast(sections: list[dict]) -> list[dict]:
+    """Extract multi-year budget forecast per department from Five-Year Forecast table."""
+    rows: list[dict] = []
+
+    for section in sections:
+        if section["section_number"] != 4:  # Five-Year Financial Forecast
+            continue
+        for table in section["tables"]:
+            headers = table["headers"]
+            # Find year columns
+            year_cols: list[tuple[int, str]] = []
+            for i, h in enumerate(headers):
+                m = re.search(r"(\d{4})", h)
+                if m:
+                    year_cols.append((i, m.group(1)))
+
+            if len(year_cols) < 3:
+                continue
+
+            for row in table["rows"]:
+                label = (row[0] if row else "").strip()
+                if not label or "total" in label.lower():
+                    continue
+                values: list[dict] = []
+                for col_idx, year in year_cols:
+                    amount = parse_currency(row[col_idx] if col_idx < len(row) else "")
+                    if amount is not None:
+                        values.append({"year": year, "amount": amount})
+                if len(values) >= 3:
+                    rows.append({
+                        "department": label,
+                        "slug": slugify(label),
+                        "values": values,
+                    })
+
+    return rows
+
+
 def main() -> None:
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     views_dir = WEB_DATA_DIR / "views"
@@ -663,6 +797,24 @@ def main() -> None:
         json.dump(personnel, f, indent=2)
     print(f"Wrote personnel.json ({len(personnel)} rows)")
 
+    # Personnel by department (for treemap)
+    personnel_by_dept = build_personnel_by_department(personnel)
+    with open(views_dir / "personnel-by-department.json", "w", encoding="utf-8") as f:
+        json.dump(personnel_by_dept, f, indent=2)
+    print(f"Wrote personnel-by-department.json ({len(personnel_by_dept)} departments)")
+
+    # Revenue waterfall
+    revenue_waterfall = build_revenue_waterfall(sections)
+    with open(views_dir / "revenue-waterfall.json", "w", encoding="utf-8") as f:
+        json.dump(revenue_waterfall, f, indent=2)
+    print(f"Wrote revenue-waterfall.json ({len(revenue_waterfall)} categories)")
+
+    # Department forecast (multi-year for sparklines)
+    dept_forecast = build_department_forecast(sections)
+    with open(views_dir / "department-forecast.json", "w", encoding="utf-8") as f:
+        json.dump(dept_forecast, f, indent=2)
+    print(f"Wrote department-forecast.json ({len(dept_forecast)} departments)")
+
     search_index = build_search_index(sections)
 
     # Capital budget data
@@ -679,6 +831,11 @@ def main() -> None:
         with open(views_dir / "capital-projects.json", "w", encoding="utf-8") as f:
             json.dump(capital_projects, f, indent=2)
         print(f"Wrote capital-projects.json ({len(capital_projects)} projects)")
+
+        capital_funding = build_capital_funding_sources(capital_sections)
+        with open(views_dir / "capital-funding-sources.json", "w", encoding="utf-8") as f:
+            json.dump(capital_funding, f, indent=2)
+        print(f"Wrote capital-funding-sources.json ({len(capital_funding)} rows)")
 
         # Add capital sections to search index with budgetType tag
         for item in search_index:

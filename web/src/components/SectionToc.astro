@@ -1,0 +1,47 @@
+---
+/**
+ * Lightweight table of contents for a budget section page.
+ * Lists tables with page numbers, type badges, and anchor links.
+ */
+
+interface TocEntry {
+  label: string;
+  anchor: string;
+  badge?: string;
+  badgeClass?: string;
+  page?: number;
+}
+
+interface Props {
+  items: TocEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <details open class="mb-6 rounded-lg border bg-white text-sm">
+    <summary class="px-4 py-2 cursor-pointer font-medium text-gray-700 hover:text-gray-900 select-none">
+      On this page
+    </summary>
+    <nav class="px-4 pb-3">
+      <ol class="space-y-1">
+        {items.map((item) => (
+          <li class="flex items-center gap-2">
+            <span class="text-gray-400 text-xs tabular-nums w-8 shrink-0">
+              {item.page != null ? `p.${item.page}` : ''}
+            </span>
+            {item.badge && (
+              <span class={`px-1.5 py-0.5 rounded text-[10px] font-medium shrink-0 ${item.badgeClass || 'bg-gray-100 text-gray-600'}`}>
+                {item.badge}
+              </span>
+            )}
+            <a href={`#${item.anchor}`} class="text-blue-600 hover:text-blue-800 hover:underline truncate">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </details>
+)}

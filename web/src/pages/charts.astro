@@ -1,7 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import BudgetChart from '../components/BudgetChart.tsx';
+import WaterfallChart from '../components/WaterfallChart.tsx';
 import departmentBudgets from '../data/views/department-budgets.json';
+import revenueWaterfall from '../data/views/revenue-waterfall.json';
 ---
 
 <Base title="Budget Charts">
@@ -11,8 +13,18 @@ import departmentBudgets from '../data/views/department-budgets.json';
     <span>Charts</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">Budget Comparison</h1>
-  <p class="text-gray-600 mb-6">Top departments by budget total.</p>
+  <h1 class="text-3xl font-bold mb-2">Budget Visualizations</h1>
+  <p class="text-gray-600 mb-8">Overview charts for the FY2026 Operating Budget.</p>
 
-  <BudgetChart data={departmentBudgets} client:load />
+  <div class="space-y-12">
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Department Comparison</h2>
+      <p class="text-gray-600 mb-4">Top departments by budget total.</p>
+      <BudgetChart data={departmentBudgets} client:load />
+    </section>
+
+    <section>
+      <WaterfallChart data={revenueWaterfall} client:load />
+    </section>
+  </div>
 </Base>

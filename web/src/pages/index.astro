@@ -1,8 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
+import Sparkline from '../components/Sparkline.tsx';
 import budgetData from '../data/budget-data.json';
 import searchIndex from '../data/views/search-index.json';
+import departmentBudgets from '../data/views/department-budgets.json';
 
 const sections = budgetData.sections;
 
@@ -42,6 +44,13 @@ function getSummary(section: any): string {
     }
   }
   return '';
+}
+
+// Build sparkline data lookup by slug from department budgets
+const sparklineMap = new Map<string, number[]>();
+for (const row of departmentBudgets as {slug: string; year: string; amount: number}[]) {
+  if (!sparklineMap.has(row.slug)) sparklineMap.set(row.slug, []);
+  sparklineMap.get(row.slug)!.push(row.amount);
 }
 
 // Check if section has chart images
@@ -90,9 +99,14 @@ function hasChart(section: any): boolean {
                   </span>
                 )}
               </div>
-              <div class="text-sm text-gray-500 mt-1">
-                {s.tables.length} {s.tables.length === 1 ? 'table' : 'tables'}
-                {s.start_page && s.end_page ? ` · pp. ${s.start_page}–${s.end_page}` : ''}
+              <div class="text-sm text-gray-500 mt-1 flex items-center gap-2">
+                <span>
+                  {s.tables.length} {s.tables.length === 1 ? 'table' : 'tables'}
+                  {s.start_page && s.end_page ? ` · pp. ${s.start_page}–${s.end_page}` : ''}
+                </span>
+                {sparklineMap.has(s.slug) && sparklineMap.get(s.slug)!.length >= 2 && (
+                  <Sparkline values={sparklineMap.get(s.slug)!} />
+                )}
               </div>
               {summary && (
                 <div class="text-xs text-gray-400 mt-1.5 line-clamp-2">{summary}</div>

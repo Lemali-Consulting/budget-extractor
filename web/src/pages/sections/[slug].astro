@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import TableViewer from '../../components/TableViewer.astro';
+import SummaryCard from '../../components/SummaryCard.astro';
+import SectionToc from '../../components/SectionToc.astro';
 import PageImage from '../../components/PageImage.tsx';
 import PdfSidebar from '../../components/PdfSidebar.tsx';
 import budgetData from '../../data/budget-data.json';
@@ -13,6 +15,68 @@ export function getStaticPaths() {
 }
 
 const { section } = Astro.props;
+
+// Build glossary term dictionary for auto-linking
+const glossary = budgetData.glossary || {};
+interface GlossaryEntry { pattern: RegExp; tooltip: string; anchor: string }
+const glossaryTerms: GlossaryEntry[] = [];
+
+// Fiscal metrics first (more descriptive tooltips; skip abbreviation dupes below)
+const fiscalTermKeys = new Set<string>();
+if (glossary.fiscal_metrics) {
+  for (const item of glossary.fiscal_metrics as { term: string; description: string }[]) {
+    const escaped = item.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    fiscalTermKeys.add(item.term.toUpperCase());
+    glossaryTerms.push({
+      pattern: new RegExp(`\\b${escaped}\\b`, 'i'),
+      tooltip: item.description.length > 120 ? item.description.slice(0, 117) + '...' : item.description,
+      anchor: 'fiscal_metrics',
+    });
+  }
+}
+
+// Abbreviations — skip if already covered by a fiscal metric
+if (glossary.abbreviations) {
+  for (const [abbr, meaning] of Object.entries(glossary.abbreviations)) {
+    if (fiscalTermKeys.has(abbr.toUpperCase())) continue;
+    glossaryTerms.push({
+      pattern: new RegExp(`\\b${abbr}s?\\b`),
+      tooltip: `${abbr}: ${meaning}`,
+      anchor: 'abbreviations',
+    });
+  }
+}
+
+// Sort longer patterns first to avoid partial matches
+glossaryTerms.sort((a, b) => b.pattern.source.length - a.pattern.source.length);
+
+// Replace first occurrence of each glossary term in text with a tooltip link.
+// Uses placeholder tokens to prevent re-matching inside inserted HTML.
+const seenTerms = new Set<string>();
+function linkGlossaryTerms(text: string): string {
+  let html = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const replacements: string[] = [];
+
+  for (const entry of glossaryTerms) {
+    const key = entry.pattern.source;
+    if (seenTerms.has(key)) continue;
+    const match = html.match(entry.pattern);
+    if (match) {
+      seenTerms.add(key);
+      const escapedTooltip = entry.tooltip.replace(/"/g, '&quot;');
+      const link = `<a href="/glossary/#${entry.anchor}" class="glossary-term" data-tooltip="${escapedTooltip}">${match[0]}</a>`;
+      const token = `\x00GLO${replacements.length}\x00`;
+      replacements.push(link);
+      html = html.replace(entry.pattern, token);
+    }
+  }
+
+  // Restore placeholders
+  for (let i = 0; i < replacements.length; i++) {
+    html = html.replace(`\x00GLO${i}\x00`, replacements[i]);
+  }
+  return html;
+}
 
 // Build a unified page-ordered stream of content items
 type ContentItem =
@@ -65,6 +129,211 @@ for (const item of items) {
 
 const hasNarrative = finalItems.some(i => i.kind === 'narrative');
 const hasCharts = finalItems.some(i => i.kind === 'chart');
+
+// --- Extract summary metrics ---
+interface SummaryMetrics {
+  budget2026?: string;
+  budget2025?: string;
+  budgetChange?: string;
+  budgetChangePct?: string;
+  fte2026?: number;
+  fte2025?: number;
+}
+
+function extractMetrics(tables: any[]): SummaryMetrics {
+  const metrics: SummaryMetrics = {};
+
+  for (const table of tables) {
+    const headers: string[] = table.headers || [];
+
+    for (const row of table.rows) {
+      const label = (row[0] || '').trim().toLowerCase();
+
+      // Budget totals from financial_summary tables
+      if (label === 'expenditures total' || label === 'total expenditures') {
+        const col2026 = headers.indexOf('2026 Budget');
+        const col2025 = headers.indexOf('2025 Budget');
+        const colChange = headers.findIndex((h: string) => h.includes('Increase') || h.includes('Decrease'));
+        const colPct = headers.findIndex((h: string) => h.includes('% Change'));
+
+        if (col2026 >= 0 && row[col2026]) metrics.budget2026 = row[col2026].trim();
+        if (col2025 >= 0 && row[col2025]) metrics.budget2025 = row[col2025].trim();
+        if (colChange >= 0 && row[colChange]) metrics.budgetChange = row[colChange].trim();
+        if (colPct >= 0 && row[colPct]) metrics.budgetChangePct = row[colPct].trim();
+      }
+
+      // FTE totals from personnel tables
+      if (label === 'total full-time permanent positions') {
+        const col2026 = headers.indexOf('2026 FTE');
+        const col2025 = headers.indexOf('2025 FTE');
+        if (col2026 >= 0 && row[col2026]) metrics.fte2026 = Math.round(parseFloat(row[col2026].replace(/,/g, '')));
+        if (col2025 >= 0 && row[col2025]) metrics.fte2025 = Math.round(parseFloat(row[col2025].replace(/,/g, '')));
+      }
+    }
+  }
+  return metrics;
+}
+
+const metrics = extractMetrics(section.tables);
+const pageCount = section.start_page && section.end_page
+  ? section.end_page - section.start_page + 1
+  : new Set(finalItems.map((i: ContentItem) => i.page)).size;
+
+// --- Build TOC entries ---
+const typeColors: Record<string, { badge: string; cls: string }> = {
+  personnel: { badge: 'Personnel', cls: 'bg-purple-100 text-purple-700' },
+  financial: { badge: 'Financial', cls: 'bg-green-100 text-green-700' },
+  financial_summary: { badge: 'Summary', cls: 'bg-emerald-100 text-emerald-700' },
+  revenue: { badge: 'Revenue', cls: 'bg-blue-100 text-blue-700' },
+  unknown: { badge: 'Table', cls: 'bg-gray-100 text-gray-600' },
+};
+
+interface TocEntry {
+  label: string;
+  anchor: string;
+  badge?: string;
+  badgeClass?: string;
+  page?: number;
+}
+
+function deriveTableLabel(t: any, heading: string): string {
+  if (t.sections && t.sections.length > 0) {
+    const unique = [...new Set(t.sections.filter(Boolean))] as string[];
+    // Filter out subclass codes (e.g. "52 - PERSONNEL-EMPLOYEE BENEFITS")
+    const cleaned = unique.filter((s: string) => !/^\d{2}\s*-\s/.test(s));
+    if (cleaned.length === 1) return cleaned[0];
+    if (cleaned.length === 2) return cleaned.join(', ');
+    if (cleaned.length > 2) return `${cleaned[0]} + ${cleaned.length - 1} more`;
+    // All were subclass codes — use the heading
+    if (heading) return heading;
+    if (unique.length === 1) return unique[0];
+  }
+  if (heading) return heading;
+  return t.table_type.replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
+}
+
+// Two-pass TOC: first count labels to detect duplicates, then build entries
+const tocEntries: TocEntry[] = [];
+let lastSectionTitle = '';
+const labelCounts = new Map<string, number>();
+const isSubclassCode = (text: string) => /^\d{2}\s*-\s/.test(text);
+
+for (const item of finalItems) {
+  if (item.kind === 'narrative' && (item as any).role === 'section_title') {
+    const title = (item as any).text.replace(/\n/g, ' ').trim();
+    if (!isSubclassCode(title)) lastSectionTitle = title;
+  }
+  if (item.kind === 'table') {
+    const label = deriveTableLabel((item as any).data, lastSectionTitle);
+    labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
+  }
+}
+
+lastSectionTitle = '';
+let tocHeadingCounter = 0;
+const labelSeen = new Map<string, number>();
+
+for (const item of finalItems) {
+  if (item.kind === 'narrative' && (item as any).role === 'section_title') {
+    const title = (item as any).text.replace(/\n/g, ' ').trim();
+    if (!isSubclassCode(title)) lastSectionTitle = title;
+    tocHeadingCounter++;
+  }
+  if (item.kind === 'table') {
+    const t = (item as any).data;
+    const tc = typeColors[t.table_type] || typeColors.unknown;
+    const absPage = section.start_page ? section.start_page + t.relative_page : t.relative_page;
+
+    let label = deriveTableLabel(t, lastSectionTitle);
+    const count = labelCounts.get(label) || 1;
+    if (count > 1) {
+      const seen = (labelSeen.get(label) || 0) + 1;
+      labelSeen.set(label, seen);
+      if (seen > 1) label = `${label} (cont.)`;
+    }
+
+    tocEntries.push({
+      label,
+      anchor: `table-${t.id}`,
+      badge: tc.badge,
+      badgeClass: tc.cls,
+      page: absPage,
+    });
+  }
+}
+
+// Parse raw narrative text into structured segments for rendering
+type Segment =
+  | { type: 'heading'; text: string }
+  | { type: 'paragraph'; text: string }
+  | { type: 'bullets'; items: string[] };
+
+function parseNarrative(raw: string): Segment[] {
+  const lines = raw.split('\n');
+  const segments: Segment[] = [];
+  let pendingProse: string[] = [];
+  let pendingBullets: string[] = [];
+
+  function flushProse() {
+    if (pendingProse.length > 0) {
+      segments.push({ type: 'paragraph', text: pendingProse.join(' ') });
+      pendingProse = [];
+    }
+  }
+  function flushBullets() {
+    if (pendingBullets.length > 0) {
+      segments.push({ type: 'bullets', items: [...pendingBullets] });
+      pendingBullets = [];
+    }
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) { flushProse(); flushBullets(); continue; }
+
+    const isBullet = /^[•◦●▪–-]\s/.test(line) || /^\d+\.\s/.test(line);
+
+    if (isBullet) {
+      flushProse();
+      pendingBullets.push(line);
+    } else if (pendingBullets.length > 0) {
+      // Non-bullet line after bullets = continuation of last bullet (wrapped text)
+      pendingBullets[pendingBullets.length - 1] += ' ' + line;
+    } else {
+      // Is this a sub-heading? Heuristic: short line, not ending with comma/continuation,
+      // and followed by a longer line or is the first line of the block
+      const isShort = line.length < 50;
+      const noTrailingContinuation = !/[,;:\-–]$/.test(line) && !/\b(and|or|the|of|in|to|a|for)$/i.test(line);
+      const nextLine = i + 1 < lines.length ? lines[i + 1].trim() : '';
+      const nextIsLonger = nextLine.length > line.length;
+      const nextIsBullet = /^[•◦●▪–-]\s/.test(nextLine) || /^\d+\.\s/.test(nextLine);
+      const prevLine = pendingProse.length > 0 ? pendingProse[pendingProse.length - 1] : '';
+      const prevEndsSentence = /[.!?]$/.test(prevLine.trim());
+      const proseEmpty = pendingProse.length === 0 || prevEndsSentence;
+      const looksLikeHeading = isShort && noTrailingContinuation && (nextIsLonger || nextIsBullet) && proseEmpty;
+
+      if (looksLikeHeading) {
+        flushProse();
+        flushBullets();
+        segments.push({ type: 'heading', text: line });
+      } else {
+        flushBullets();
+        // Start a new paragraph when the previous line ended a sentence
+        // and the current line begins a new topic (e.g., "Foo Division - ...")
+        if (prevEndsSentence && pendingProse.length > 0) {
+          const startsNewTopic = /^[A-Z][A-Za-z &]+\s[-–—]\s/.test(line);
+          if (startsNewTopic) {
+            flushProse();
+          }
+        }
+        pendingProse.push(line);
+      }
+    }
+  }
+  flushProse();
+  flushBullets();
+  return segments;
+}
 ---
 
 <Base title={section.title}>
@@ -82,13 +351,27 @@ const hasCharts = finalItems.some(i => i.kind === 'chart');
     {hasNarrative ? ' · includes narrative' : ''}
   </p>
 
+  <SummaryCard
+    budget2026={metrics.budget2026}
+    budget2025={metrics.budget2025}
+    budgetChange={metrics.budgetChange}
+    budgetChangePct={metrics.budgetChangePct}
+    fte2026={metrics.fte2026}
+    fte2025={metrics.fte2025}
+    tableCount={section.tables.length}
+    pageCount={pageCount}
+  />
+
+  <SectionToc items={tocEntries} />
+
   {finalItems.length === 0 ? (
     <p class="text-gray-400 italic">No content extracted for this section.</p>
-  ) : (
-    finalItems.map((item) => {
+  ) : (() => {
+    let renderHeadingIdx = 0;
+    return finalItems.map((item) => {
       if (item.kind === 'page_break') {
         return (
-          <div class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
+          <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
             <div class="flex-1 border-t border-gray-200"></div>
             <span class="flex items-center gap-2">
               Page {(item as any).absolutePage}
@@ -101,13 +384,34 @@ const hasCharts = finalItems.some(i => i.kind === 'chart');
 
       if (item.kind === 'narrative') {
         const isTitle = item.role === 'section_title';
-        return isTitle ? (
-          <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">{item.text}</h2>
-        ) : (
+        if (isTitle) {
+          renderHeadingIdx++;
+          const titleHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
+          return <h2 id={`heading-${renderHeadingIdx}`} class="text-xl font-semibold text-gray-800 mt-6 mb-2" set:html={titleHtml} />;
+        }
+        const segments = parseNarrative(item.text);
+        return (
           <div class="prose prose-sm max-w-none mb-4 text-gray-700 leading-relaxed">
-            {item.text.split('\n').map((line: string) => (
-              <p class="mb-1.5">{line}</p>
-            ))}
+            {segments.map((seg) => {
+              if (seg.type === 'heading') {
+                const hHtml = linkGlossaryTerms(seg.text);
+                return <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1" set:html={hHtml} />;
+              }
+              if (seg.type === 'bullets') {
+                return (
+                  <ul class="list-disc list-inside ml-2 mb-2 space-y-0.5">
+                    {seg.items.map((b) => {
+                      const cleaned = b.replace(/^[•◦●▪–-]\s*/, '').replace(/^\d+\.\s*/, '');
+                      const isNested = /^[◦▪]/.test(b);
+                      const liHtml = linkGlossaryTerms(cleaned);
+                      return <li class={isNested ? 'ml-4' : ''} set:html={liHtml} />;
+                    })}
+                  </ul>
+                );
+              }
+              const pHtml = linkGlossaryTerms(seg.text);
+              return <p class="mb-2" set:html={pHtml} />;
+            })}
           </div>
         );
       }
@@ -134,7 +438,7 @@ const hasCharts = finalItems.some(i => i.kind === 'chart');
 
       if (item.kind === 'table') {
         return (
-          <div>
+          <div id={`table-${(item as any).data.id}`}>
             <div class="flex justify-end mb-1">
               <a
                 href={`/explorer/#${(item as any).data.id}`}
@@ -147,8 +451,8 @@ const hasCharts = finalItems.some(i => i.kind === 'chart');
           </div>
         );
       }
-    })
-  )}
+    });
+  })()}
 
   {section.start_page && section.end_page && (
     <PdfSidebar

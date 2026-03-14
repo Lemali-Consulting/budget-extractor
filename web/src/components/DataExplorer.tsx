@@ -3,6 +3,8 @@
 import { useState, useMemo, useEffect, useRef } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import PageImage from './PageImage';
+import TrendChart from './TrendChart';
+import YearChangeChart from './YearChangeChart';
 
 // --- Types ---
 
@@ -42,7 +44,7 @@ interface Props {
   sections: Section[];
 }
 
-type Tab = 'data' | 'chart' | 'compare';
+type Tab = 'data' | 'chart' | 'trend' | 'changes' | 'compare';
 
 const TYPE_COLORS: Record<string, string> = {
   personnel: 'bg-purple-100 text-purple-700',
@@ -444,6 +446,14 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
     );
   }
 
+  // Detect year columns for trend/changes tabs
+  const yearColCount = useMemo(() => {
+    if (!selectedMeta) return 0;
+    return selectedMeta.numericCols.filter((i) =>
+      selectedMeta.headers[i]?.match(/\b20\d{2}\b/)
+    ).length;
+  }, [selectedMeta]);
+
   // --- Chart Tab ---
   function renderChartTab() {
     if (!selectedFull || !selectedMeta) return null;
@@ -456,6 +466,32 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
         numericCols={selectedMeta.numericCols}
         chartCol={chartCol}
         onChartColChange={setChartCol}
+        tableId={selectedId!}
+      />
+    );
+  }
+
+  // --- Trend Tab ---
+  function renderTrendTab() {
+    if (!selectedFull || !selectedMeta) return null;
+    return (
+      <TrendChart
+        headers={selectedFull.table.headers}
+        rows={selectedFull.table.rows}
+        numericCols={selectedMeta.numericCols}
+        tableId={selectedId!}
+      />
+    );
+  }
+
+  // --- Changes Tab ---
+  function renderChangesTab() {
+    if (!selectedFull || !selectedMeta) return null;
+    return (
+      <YearChangeChart
+        headers={selectedFull.table.headers}
+        rows={selectedFull.table.rows}
+        numericCols={selectedMeta.numericCols}
         tableId={selectedId!}
       />
     );
@@ -542,7 +578,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
 
             {/* Tabs */}
             <div class="flex gap-1 border-b mb-4 print:hidden">
-              {(['data', 'chart', 'compare'] as Tab[]).map((t) => (
+              {(['data', 'chart', ...(yearColCount >= 3 ? ['trend'] : []), ...(yearColCount >= 2 ? ['changes'] : []), 'compare'] as Tab[]).map((t) => (
                 <button
                   key={t}
                   class={`px-4 py-2 text-sm font-medium capitalize border-b-2 transition ${
@@ -560,6 +596,8 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             {/* Tab content */}
             {tab === 'data' && renderDataTab()}
             {tab === 'chart' && renderChartTab()}
+            {tab === 'trend' && renderTrendTab()}
+            {tab === 'changes' && renderChangesTab()}
             {tab === 'compare' && renderCompareTab()}
           </div>
         )}
