@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import TableViewer from '../../components/TableViewer.astro';
+import PageImage from '../../components/PageImage.tsx';
+import PdfSidebar from '../../components/PdfSidebar.tsx';
 import budgetData from '../../data/budget-data.json';
 
 export function getStaticPaths() {
@@ -11,6 +13,58 @@ export function getStaticPaths() {
 }
 
 const { section } = Astro.props;
+
+// Build a unified page-ordered stream of content items
+type ContentItem =
+  | { kind: 'table'; page: number; sortKey: number; data: any }
+  | { kind: 'narrative'; page: number; sortKey: number; text: string; role: string }
+  | { kind: 'chart'; page: number; sortKey: number; chartType: string }
+  | { kind: 'page_break'; page: number; sortKey: number; absolutePage: number };
+
+const items: ContentItem[] = [];
+const pagesWithContent = new Set<number>();
+
+// Add tables
+for (const table of section.tables) {
+  pagesWithContent.add(table.relative_page);
+  // Tables sort after narrative on the same page (bbox y is typically lower)
+  items.push({ kind: 'table', page: table.relative_page, sortKey: 500, data: table });
+}
+
+// Add page content (narrative blocks and chart regions)
+const pageContent = (section as any).page_content || [];
+for (const pc of pageContent) {
+  const relPage = pc.relative_page;
+  pagesWithContent.add(relPage);
+
+  for (const block of pc.text_blocks || []) {
+    // Use bbox y0 for ordering within a page
+    const y = block.bbox?.[1] ?? 0;
+    items.push({ kind: 'narrative', page: relPage, sortKey: y, text: block.text, role: block.role });
+  }
+  (pc.chart_regions || []).forEach((chart: any, ci: number) => {
+    const y = chart.bbox?.[1] ?? 0;
+    items.push({ kind: 'chart', page: relPage, sortKey: y, chartType: chart.chart_type, chartIndex: ci });
+  });
+}
+
+// Sort by page, then by y-position within page
+items.sort((a, b) => a.page - b.page || a.sortKey - b.sortKey);
+
+// Insert page breaks between pages
+const finalItems: ContentItem[] = [];
+let lastPage = -1;
+for (const item of items) {
+  if (item.page !== lastPage) {
+    const absPage = section.start_page ? section.start_page + item.page : item.page;
+    finalItems.push({ kind: 'page_break', page: item.page, sortKey: -1, absolutePage: absPage });
+    lastPage = item.page;
+  }
+  finalItems.push(item);
+}
+
+const hasNarrative = finalItems.some(i => i.kind === 'narrative');
+const hasCharts = finalItems.some(i => i.kind === 'chart');
 ---
 
 <Base title={section.title}>
@@ -25,23 +79,83 @@ const { section } = Astro.props;
     Section {section.section_number}
     {section.start_page && section.end_page ? ` · Pages ${section.start_page}–${section.end_page}` : ''}
     · {section.tables.length} {section.tables.length === 1 ? 'table' : 'tables'}
+    {hasNarrative ? ' · includes narrative' : ''}
   </p>
 
-  {section.tables.length === 0 ? (
-    <p class="text-gray-400 italic">No tables extracted for this section.</p>
+  {finalItems.length === 0 ? (
+    <p class="text-gray-400 italic">No content extracted for this section.</p>
   ) : (
-    section.tables.map((table) => (
-      <div>
-        <div class="flex justify-end mb-1">
-          <a
-            href={`/explorer/#${table.id}`}
-            class="text-xs text-blue-500 hover:text-blue-700 hover:underline"
-          >
-            Open in Explorer &rarr;
-          </a>
-        </div>
-        <TableViewer table={table} slug={section.slug} />
-      </div>
-    ))
+    finalItems.map((item) => {
+      if (item.kind === 'page_break') {
+        return (
+          <div class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
+            <div class="flex-1 border-t border-gray-200"></div>
+            <span class="flex items-center gap-2">
+              Page {(item as any).absolutePage}
+              <PageImage client:load slug={section.slug} page={item.page} label="View image" />
+            </span>
+            <div class="flex-1 border-t border-gray-200"></div>
+          </div>
+        );
+      }
+
+      if (item.kind === 'narrative') {
+        const isTitle = item.role === 'section_title';
+        return isTitle ? (
+          <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2">{item.text}</h2>
+        ) : (
+          <div class="prose prose-sm max-w-none mb-4 text-gray-700 leading-relaxed">
+            {item.text.split('\n').map((line: string) => (
+              <p class="mb-1.5">{line}</p>
+            ))}
+          </div>
+        );
+      }
+
+      if (item.kind === 'chart') {
+        const chartSrc = `/charts/${section.slug}/P${item.page}C${(item as any).chartIndex}.png`;
+        const label = (item as any).chartType === 'raster_image' ? 'Organization chart' : 'Chart / diagram';
+        return (
+          <div class="my-4 rounded-lg border overflow-hidden bg-white">
+            <div class="px-4 py-2 bg-blue-50 border-b text-xs text-blue-700 font-medium">
+              {label}
+            </div>
+            <div class="p-4 flex justify-center">
+              <img
+                src={chartSrc}
+                alt={`${label} for ${section.title}`}
+                class="max-w-full max-h-[500px] object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        );
+      }
+
+      if (item.kind === 'table') {
+        return (
+          <div>
+            <div class="flex justify-end mb-1">
+              <a
+                href={`/explorer/#${(item as any).data.id}`}
+                class="text-xs text-blue-500 hover:text-blue-700 hover:underline"
+              >
+                Open in Explorer &rarr;
+              </a>
+            </div>
+            <TableViewer table={(item as any).data} slug={section.slug} />
+          </div>
+        );
+      }
+    })
+  )}
+
+  {section.start_page && section.end_page && (
+    <PdfSidebar
+      client:load
+      slug={section.slug}
+      totalPages={section.end_page - section.start_page + 1}
+      startPage={section.start_page}
+    />
   )}
 </Base>
