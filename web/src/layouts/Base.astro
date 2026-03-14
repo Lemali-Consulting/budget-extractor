@@ -21,7 +21,10 @@ const { title, fullWidth = false } = Astro.props;
       <div class="max-w-6xl mx-auto flex items-center justify-between">
         <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
         <nav class="flex gap-4 text-sm text-blue-200">
-          <a href="/explorer/" class="hover:text-white font-medium">Explorer</a>
+          <a href="/" class="hover:text-white font-medium">Operating</a>
+          <a href="/capital/" class="hover:text-white font-medium">Capital</a>
+          <span class="text-blue-700">|</span>
+          <a href="/explorer/" class="hover:text-white">Explorer</a>
           <a href="/charts/" class="hover:text-white">Charts</a>
           <a href="/personnel/" class="hover:text-white">Personnel</a>
           <a href="/glossary/" class="hover:text-white">Glossary</a>
@@ -32,7 +35,7 @@ const { title, fullWidth = false } = Astro.props;
       <slot />
     </main>
     <footer class="text-center text-sm text-gray-400 py-6">
-      Data extracted from the City of Pittsburgh FY2026 Operating Budget
+      Data extracted from the City of Pittsburgh FY2026 Operating &amp; Capital Budgets
     </footer>
   </body>
 </html>

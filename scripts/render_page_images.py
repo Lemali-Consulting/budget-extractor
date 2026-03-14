@@ -1,6 +1,6 @@
 """Render clean PDF page images for the web app.
 
-Produces one PNG per page that has at least one table in the expected outputs.
+Produces one PNG per page of each section's split PDF.
 Images go to web/public/pages/{section_slug}/P{page}.png.
 """
 
@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 
 INPUT_DIR = Path(__file__).parent.parent / "input"
-EXPECTED_DIR = Path(__file__).parent.parent / "output" / "regression" / "expected"
+EXPECTED_DIR = Path(__file__).parent.parent / "output" / "regression" / "expected" / "operating"
 WEB_PUBLIC_DIR = Path(__file__).parent.parent / "web" / "public" / "pages"
 
 DIR_PATTERN = re.compile(r"^(\d+)_(.+)$")
@@ -24,7 +24,7 @@ def main() -> None:
     import fitz  # PyMuPDF
 
     # Load sections for slug mapping
-    with open(INPUT_DIR / "sections.json", encoding="utf-8") as f:
+    with open(INPUT_DIR / "sections-operating.json", encoding="utf-8") as f:
         sections_list = json.load(f)
     sections_lookup: dict[int, dict] = {}
     for i, s in enumerate(sections_list, start=1):
@@ -44,16 +44,6 @@ def main() -> None:
         title = section_info.get("title", match.group(2).replace("_", " "))
         slug = slugify(title)
 
-        # Collect which pages have tables
-        pages_with_tables: set[int] = set()
-        for csv_file in dir_path.glob("P*T*.csv"):
-            file_match = FILE_PATTERN.match(csv_file.name)
-            if file_match:
-                pages_with_tables.add(int(file_match.group(1)))
-
-        if not pages_with_tables:
-            continue
-
         # Find the split PDF
         pdf_path = None
         for candidate in (INPUT_DIR / "split-pdf").glob(f"*{dir_path.name}*.pdf"):
@@ -70,9 +60,7 @@ def main() -> None:
 
         doc = fitz.open(str(pdf_path))
         rendered = 0
-        for page_idx in sorted(pages_with_tables):
-            if page_idx >= len(doc):
-                continue
+        for page_idx in range(len(doc)):
             out_path = out_dir / f"P{page_idx}.png"
             if out_path.exists():
                 rendered += 1

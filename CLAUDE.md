@@ -1,7 +1,10 @@
 # Project Structure
 
-- `input` directory contains the raw PDF files
+- `input` directory contains the raw PDF files and section definitions
+  - `sections-operating.json` and `sections-capital.json` define section boundaries
+  - `split-pdf/operating/` and `split-pdf/capital/` contain per-section PDFs (gitignored, regenerate with `scripts/split_pdf.py`)
 - `output` directory contains the extracted data
+  - `output/regression/expected/operating/` and `output/regression/expected/capital/` contain test baselines
 - `workflows` directory contains the workflow modules
 - `utils` directory contains the shared utilities
 
@@ -47,10 +50,10 @@ Key concepts:
 
 Run `python3 scripts/test_regression.py` to verify extractor output against expected CSVs.
 
-- Expected outputs live in `output/regression/expected/{pdf_stem}/P{page}T{table}.csv`
+- Expected outputs live in `output/regression/expected/{budget_type}/{pdf_stem}/P{page}T{table}.csv`
 - Debug outputs (regenerated during development) go to `output/regression/debug/{pdf_stem}/`
 - To regenerate debug output for a PDF: `SpatialTableExtractor().render_debug('path/to/pdf', 'output/regression/debug')`
-- After visually confirming debug CSVs are correct, copy them to `output/regression/expected/` and re-run the regression test
+- After visually confirming debug CSVs are correct, copy them to `output/regression/expected/{budget_type}/` and re-run the regression test
 - Always run regression tests after modifying the extractor to catch regressions across all PDFs
 
 # Dev Container Constraints
@@ -62,3 +65,16 @@ This project runs in a devcontainer with limited memory. Follow these rules to a
 - **Never run dev servers as background jobs** (`&`). Use `run_in_background` instead, which is managed properly.
 - **Never spawn multiple dev server instances.** Always confirm the previous one is stopped before starting a new one.
 - To start the web dev server: `cd web && npm run dev` (foreground, or with `run_in_background`)
+
+# Netlify Deployment
+
+The web app is deployed as a static site to Netlify via manual CLI deploy (not git-linked, since the repo is private).
+
+- **Site URL**: https://pgh-budget-explorer.netlify.app
+- **Site ID**: `11c41143-d0e2-4a28-9dde-10e173bf230f`
+- **Auth token**: stored in `.env` as `NETLIFY_AUTH_TOKEN`
+
+**Deploy alongside every git push** by running:
+```bash
+cd web && npm run build && source ../.env && export NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID=11c41143-d0e2-4a28-9dde-10e173bf230f && npx netlify deploy --dir=dist --prod
+```

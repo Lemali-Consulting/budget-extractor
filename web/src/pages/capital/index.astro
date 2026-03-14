@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import capitalData from '../../data/capital-budget-data.json';
+
+const sections = capitalData.sections;
+
+// Group projects by functional area
+const grouped = new Map<string, typeof sections>();
+for (const section of sections) {
+  const fa = (section as any).functional_area || 'Other';
+  if (!grouped.has(fa)) grouped.set(fa, []);
+  grouped.get(fa)!.push(section);
+}
+
+// Helper to parse currency from CIP table cells
+function parseCurrency(s: string): number {
+  if (!s) return 0;
+  return parseFloat(s.replace(/[,$]/g, '')) || 0;
+}
+
+// Helper to extract funding from a project's CIP table TOTAL row
+function getProjectFunding(section: typeof sections[0]): { year2026: number; sixYearTotal: number } {
+  for (const table of section.tables) {
+    if (table.table_type === 'cip_funding') {
+      for (const row of table.rows) {
+        if (row[0]?.trim().toUpperCase() === 'TOTAL' && row.length > 2) {
+          // Columns: Source, 2025, 2026, 2027, 2028, 2029, 2030, 2031, Total 2026-2031
+          return {
+            year2026: parseCurrency(row[2]),
+            sixYearTotal: parseCurrency(row[row.length - 1]),
+          };
+        }
+      }
+    }
+  }
+  return { year2026: 0, sixYearTotal: 0 };
+}
+
+let totalFunding = 0;
+for (const section of sections) {
+  totalFunding += getProjectFunding(section).year2026;
+}
+---
+
+<Base title="Capital Budget">
+  <h1 class="text-3xl font-bold mb-2">Capital Budget & Six Year Plan</h1>
+  <p class="text-gray-600 mb-6">
+    City of Pittsburgh FY2026 Capital Budget.
+    {sections.length} projects across {grouped.size} functional areas.
+    {totalFunding > 0 && ` 2026 total: $${(totalFunding / 1_000_000).toFixed(1)}M.`}
+  </p>
+
+  {[...grouped.entries()].map(([area, projects]) => (
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b pb-1">
+        {area}
+        <span class="text-sm font-normal text-gray-400 ml-2">{projects.length} projects</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {projects.map((s) => {
+          const { year2026, sixYearTotal } = getProjectFunding(s);
+          return (
+            <a
+              href={`/capital/${s.slug}/`}
+              class="block p-4 bg-white rounded-lg border hover:border-blue-400 hover:shadow transition"
+            >
+              <div class="font-medium">{s.title}</div>
+              <div class="text-sm text-gray-500 mt-1">
+                {(s as any).department && <span>{(s as any).department}</span>}
+                {year2026 > 0 ? (
+                  <span class="ml-2 font-medium text-green-700">
+                    ${year2026.toLocaleString('en-US')}
+                    {sixYearTotal > 0 && sixYearTotal !== year2026 && (
+                      <span class="text-gray-400 font-normal"> (${sixYearTotal.toLocaleString('en-US')} 6-yr)</span>
+                    )}
+                  </span>
+                ) : sixYearTotal > 0 ? (
+                  <span class="ml-2 font-medium text-gray-500">
+                    ${sixYearTotal.toLocaleString('en-US')} (6-yr)
+                  </span>
+                ) : null}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+</Base>

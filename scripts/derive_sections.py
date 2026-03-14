@@ -321,7 +321,7 @@ def compare_sections(
 
 def main() -> None:
     pdf_path = "input/2026-operating-budget.pdf"
-    original_path = "input/sections.json"
+    original_path = "input/sections-operating.json"
     output_path = "input/sections_derived.json"
 
     print(f"Scanning {pdf_path}...")

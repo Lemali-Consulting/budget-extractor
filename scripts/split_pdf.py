@@ -1,10 +1,22 @@
-"""Split the full budget PDF into individual section PDFs based on sections.json."""
+"""Split a budget PDF into individual section PDFs based on a sections JSON file."""
 
+import argparse
 import json
 import re
 from pathlib import Path
 
 import pypdf
+
+BUDGET_TYPES = {
+    "operating": {
+        "pdf": "input/2026-operating-budget.pdf",
+        "sections": "input/sections-operating.json",
+    },
+    "capital": {
+        "pdf": "input/2026-capital-budget.pdf",
+        "sections": "input/sections-capital.json",
+    },
+}
 
 
 def sanitize_filename(title: str) -> str:
@@ -48,10 +60,20 @@ def split_pdf(pdf_path: str, sections_path: str, output_dir: str) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Split a budget PDF into section PDFs.")
+    parser.add_argument(
+        "--budget-type",
+        choices=list(BUDGET_TYPES.keys()),
+        default="operating",
+        help="Which budget to split (default: operating)",
+    )
+    args = parser.parse_args()
+
+    config = BUDGET_TYPES[args.budget_type]
     split_pdf(
-        pdf_path="input/2026-operating-budget.pdf",
-        sections_path="input/sections.json",
-        output_dir="input/split-pdf",
+        pdf_path=config["pdf"],
+        sections_path=config["sections"],
+        output_dir=f"input/split-pdf/{args.budget_type}",
     )
 
 

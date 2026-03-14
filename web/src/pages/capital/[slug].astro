@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import TableViewer from '../../components/TableViewer.astro';
+import capitalData from '../../data/capital-budget-data.json';
+
+export function getStaticPaths() {
+  return capitalData.sections.map((s) => ({
+    params: { slug: s.slug },
+    props: { section: s },
+  }));
+}
+
+const { section } = Astro.props;
+const meta = section as any;
+---
+
+<Base title={section.title}>
+  <nav class="text-sm text-gray-500 mb-4">
+    <a href="/capital/" class="hover:text-blue-600">Capital Budget</a>
+    <span class="mx-1">/</span>
+    <span>{section.title}</span>
+  </nav>
+
+  <h1 class="text-3xl font-bold mb-2">{section.title}</h1>
+
+  {(meta.functional_area || meta.department) && (
+    <div class="flex flex-wrap gap-3 text-sm text-gray-600 mb-6">
+      {meta.functional_area && (
+        <span class="px-2 py-0.5 bg-blue-50 text-blue-700 rounded">{meta.functional_area}</span>
+      )}
+      {meta.department && (
+        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded">{meta.department}</span>
+      )}
+      {meta.project_type && (
+        <span class="px-2 py-0.5 bg-green-50 text-green-700 rounded">{meta.project_type}</span>
+      )}
+      {meta.project_manager && (
+        <span class="text-gray-500">PM: {meta.project_manager}</span>
+      )}
+    </div>
+  )}
+
+  <p class="text-gray-500 mb-6">
+    {section.start_page && section.end_page ? `Pages ${section.start_page}–${section.end_page} in Capital Budget` : ''}
+    · {section.tables.length} {section.tables.length === 1 ? 'table' : 'tables'}
+  </p>
+
+  {section.tables.length === 0 ? (
+    <p class="text-gray-400 italic">No tables extracted for this project.</p>
+  ) : (
+    section.tables.map((table) => (
+      <TableViewer table={table} />
+    ))
+  )}
+</Base>

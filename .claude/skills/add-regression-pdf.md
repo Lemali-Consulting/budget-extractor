@@ -5,19 +5,21 @@ description: Add a new split PDF to regression testing — extract, inspect, fix
 
 # Add a PDF Section to Regression Testing
 
-The user wants to run the spatial table extractor on a PDF from `input/split-pdf/`,
+The user wants to run the spatial table extractor on a PDF from `input/split-pdf/{operating,capital}/`,
 inspect the results, iterate on any extraction issues, and optionally promote the
 output to regression baselines.
 
 The PDF to process is: `$ARGUMENTS`
-(If blank, ask the user which PDF from `input/split-pdf/` they want to work on.)
+(If blank, ask the user which PDF from `input/split-pdf/operating/` or `input/split-pdf/capital/` they want to work on.
+Ask which budget type if not obvious from context.)
 
 ## Phase 1: Generate Debug Output
 
 ```python
 from utils.spatial_table_extractor import SpatialTableExtractor
 ext = SpatialTableExtractor()
-ext.render_debug('input/split-pdf/<file>.pdf', 'output/regression/debug', render_images=True)
+# Use input/split-pdf/operating/ or input/split-pdf/capital/ depending on budget type
+ext.render_debug('input/split-pdf/{budget_type}/<file>.pdf', 'output/regression/debug', render_images=True)
 ```
 
 After generation, list the files produced in `output/regression/debug/<pdf_stem>/`.
@@ -55,8 +57,9 @@ Do NOT promote to expected baselines until the user explicitly says the outputs 
 
 When approved:
 ```bash
-mkdir -p output/regression/expected/<pdf_stem>
-cp output/regression/debug/<pdf_stem>/P*T*.csv output/regression/expected/<pdf_stem>/
+# Use operating/ or capital/ depending on budget type
+mkdir -p output/regression/expected/{budget_type}/<pdf_stem>
+cp output/regression/debug/<pdf_stem>/P*T*.csv output/regression/expected/{budget_type}/<pdf_stem>/
 ```
 
 Then register new tables in `status.json` as `unverified`:

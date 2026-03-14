@@ -1,3 +1,5 @@
 node_modules/
 dist/
 src/data/budget-data.json
+src/data/capital-budget-data.json
+public/charts/

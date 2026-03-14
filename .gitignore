@@ -1,4 +1,5 @@
 .devcontainer/.env.secrets
 __pycache__/
 output/regression/debug/
-input/split-pdf/
+input/split-pdf/operating/
+input/split-pdf/capital/

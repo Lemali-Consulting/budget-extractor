@@ -12,7 +12,8 @@ from utils.spatial_table_extractor import SpatialTableExtractor
 
 # Directories to search for source PDFs (in priority order)
 INPUT_DIRS = [
-    "input/split-pdf",
+    "input/split-pdf/operating",
+    "input/split-pdf/capital",
 ]
 
 
@@ -120,44 +121,57 @@ def main() -> None:
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parent.parent
-    expected_dir = project_root / "output" / "regression" / "expected"
+    expected_root = project_root / "output" / "regression" / "expected"
     debug_dir = project_root / "output" / "regression" / "debug"
 
     # When --pdf is passed, generate debug output for ALL split PDFs first
     if args.pdf:
         generate_all_debug_pdfs(project_root, debug_dir)
 
-    if not expected_dir.exists():
+    if not expected_root.exists():
         print("No expected directory found.")
         return
 
-    # Each subdirectory in expected/ corresponds to a PDF stem
-    stems = sorted(
-        d.name for d in expected_dir.iterdir()
-        if d.is_dir() and any(d.glob("P*T*.csv"))
-    )
+    # Scan budget-type subdirectories (operating/, capital/) for test cases
+    all_passed = True
+    total_stems = 0
 
-    if not stems:
+    for budget_type_dir in sorted(expected_root.iterdir()):
+        if not budget_type_dir.is_dir():
+            continue
+
+        budget_type = budget_type_dir.name
+        stems = sorted(
+            d.name for d in budget_type_dir.iterdir()
+            if d.is_dir() and any(d.glob("P*T*.csv"))
+        )
+
+        if not stems:
+            continue
+
+        print(f"\n=== {budget_type.upper()} BUDGET ===")
+        total_stems += len(stems)
+
+        for stem in stems:
+            pdf_path = find_pdf(stem, project_root)
+            if not pdf_path:
+                print(f"WARNING: PDF not found for {stem}")
+                continue
+
+            print(f"Testing {stem} ({pdf_path.name})...")
+            try:
+                if not run_regression_test(pdf_path, budget_type_dir / stem, debug_dir):
+                    all_passed = False
+            except Exception as e:
+                print(f"  ERROR: {e}")
+                all_passed = False
+
+    if total_stems == 0:
         print("No expected test cases found.")
         return
 
-    all_passed = True
-    for stem in stems:
-        pdf_path = find_pdf(stem, project_root)
-        if not pdf_path:
-            print(f"WARNING: PDF not found for {stem}")
-            continue
-
-        print(f"Testing {stem} ({pdf_path.name})...")
-        try:
-            if not run_regression_test(pdf_path, expected_dir / stem, debug_dir):
-                all_passed = False
-        except Exception as e:
-            print(f"  ERROR: {e}")
-            all_passed = False
-
     if all_passed:
-        print(f"\nAll regression tests passed ({len(stems)} PDFs).")
+        print(f"\nAll regression tests passed ({total_stems} PDFs).")
     else:
         print("\nSome tests FAILED.")
         sys.exit(1)

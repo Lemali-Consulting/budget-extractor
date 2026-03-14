@@ -9,8 +9,10 @@ interface SearchItem {
   tableId: string;
   tableType: string;
   headers: string;
+  narrative: string;
   page: number;
   tableIndex: number;
+  budgetType?: string;
 }
 
 interface Props {
@@ -27,6 +29,7 @@ export default function SearchBar({ items }: Props) {
       keys: [
         { name: 'sectionTitle', weight: 2 },
         { name: 'headers', weight: 1.5 },
+        { name: 'narrative', weight: 1 },
       ],
       threshold: 0.3,
       includeMatches: true,
@@ -41,7 +44,7 @@ export default function SearchBar({ items }: Props) {
       <input
         ref={inputRef}
         type="text"
-        placeholder="Search sections, tables, positions..."
+        placeholder="Search sections, tables, narrative content..."
         class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         value={query}
         onInput={(e) => {
@@ -54,23 +57,36 @@ export default function SearchBar({ items }: Props) {
 
       {isOpen && results.length > 0 && (
         <div class="absolute top-full mt-1 w-full bg-white border rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
-          {results.map(({ item }) => (
-            <a
-              key={item.tableId || item.slug}
-              href={`/sections/${item.slug}/`}
-              class="block px-4 py-2 hover:bg-blue-50 border-b last:border-b-0"
-            >
-              <div class="font-medium text-sm">{item.sectionTitle}</div>
-              {item.tableIndex >= 0 && (
-                <div class="text-xs text-gray-500">
-                  Page {item.page}, Table {item.tableIndex}
-                  <span class="ml-2 px-1.5 py-0.5 bg-gray-100 rounded">
-                    {item.tableType}
-                  </span>
+          {results.map(({ item, matches }) => {
+            const narrativeMatch = matches?.find(m => m.key === 'narrative');
+            const isCapital = item.budgetType === 'capital';
+            const href = isCapital ? `/capital/${item.slug}/` : `/sections/${item.slug}/`;
+            return (
+              <a
+                key={item.tableId || item.slug}
+                href={href}
+                class="block px-4 py-2 hover:bg-blue-50 border-b last:border-b-0"
+              >
+                <div class="font-medium text-sm">
+                  {isCapital && <span class="text-xs px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded mr-2">Capital</span>}
+                  {item.sectionTitle}
                 </div>
-              )}
-            </a>
-          ))}
+                {item.tableIndex >= 0 && (
+                  <div class="text-xs text-gray-500">
+                    Page {item.page}, Table {item.tableIndex}
+                    <span class="ml-2 px-1.5 py-0.5 bg-gray-100 rounded">
+                      {item.tableType}
+                    </span>
+                  </div>
+                )}
+                {narrativeMatch && item.narrative && (
+                  <div class="text-xs text-gray-400 mt-0.5 line-clamp-1 italic">
+                    {item.narrative.substring(0, 120)}...
+                  </div>
+                )}
+              </a>
+            );
+          })}
         </div>
       )}
 
