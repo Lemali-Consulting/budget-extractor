@@ -13,9 +13,10 @@ interface Props {
     absolute_page?: number;
   };
   slug?: string;
+  linkCell?: (text: string) => string;
 }
 
-const { table, slug } = Astro.props;
+const { table, slug, linkCell } = Astro.props;
 
 const typeColors: Record<string, string> = {
   personnel: 'bg-purple-100 text-purple-700',
@@ -54,9 +55,9 @@ function isTotalRow(row: string[]): boolean {
         <thead>
           <tr class="bg-gray-50">
             {table.headers.map((h) => (
-              <th class="px-3 py-2 text-left font-medium text-gray-700 border-b whitespace-nowrap">
-                {h}
-              </th>
+              linkCell
+                ? <th class="px-3 py-2 text-left font-medium text-gray-700 border-b whitespace-nowrap" set:html={linkCell(h)} />
+                : <th class="px-3 py-2 text-left font-medium text-gray-700 border-b whitespace-nowrap">{h}</th>
             ))}
           </tr>
         </thead>
@@ -73,9 +74,10 @@ function isTotalRow(row: string[]): boolean {
             <>
               {showDivider && !isSectionRow && (
                 <tr class="bg-amber-50 border-t-2 border-amber-200">
-                  <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">
-                    {section}
-                  </td>
+                  {linkCell
+                    ? <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide" set:html={linkCell(section)} />
+                    : <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">{section}</td>
+                  }
                 </tr>
               )}
               <tr class={
@@ -85,10 +87,10 @@ function isTotalRow(row: string[]): boolean {
                     ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
                     : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
               }>
-                {row.map((cell) => (
-                  <td class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap">
-                    {cell}
-                  </td>
+                {row.map((cell, ci) => (
+                  linkCell && ci === 0
+                    ? <td class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap" set:html={linkCell(cell)} />
+                    : <td class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap">{cell}</td>
                 ))}
               </tr>
             </>

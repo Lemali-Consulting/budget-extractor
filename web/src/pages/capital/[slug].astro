@@ -1,17 +1,131 @@
 ---
 import Base from '../../layouts/Base.astro';
 import TableViewer from '../../components/TableViewer.astro';
+import PageImage from '../../components/PageImage.tsx';
+import PdfSidebar from '../../components/PdfSidebar.tsx';
+import SectionNav from '../../components/SectionNav.astro';
 import capitalData from '../../data/capital-budget-data.json';
+import budgetData from '../../data/budget-data.json';
+import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
 
 export function getStaticPaths() {
-  return capitalData.sections.map((s) => ({
+  return capitalData.sections.map((s, i) => ({
     params: { slug: s.slug },
-    props: { section: s },
+    props: {
+      section: s,
+      prev: i > 0 ? { slug: capitalData.sections[i - 1].slug, title: capitalData.sections[i - 1].title } : null,
+      next: i < capitalData.sections.length - 1 ? { slug: capitalData.sections[i + 1].slug, title: capitalData.sections[i + 1].title } : null,
+    },
   }));
 }
 
-const { section } = Astro.props;
+const { section, prev, next } = Astro.props;
 const meta = section as any;
+
+const glossaryTerms = buildGlossaryTerms(budgetData.glossary || {});
+const linkGlossaryTerms = createGlossaryLinker(glossaryTerms);
+const pageCount = section.start_page && section.end_page
+  ? section.end_page - section.start_page + 1
+  : 0;
+
+// Build a unified page-ordered stream of content items
+type ContentItem =
+  | { kind: 'table'; page: number; sortKey: number; data: any }
+  | { kind: 'narrative'; page: number; sortKey: number; text: string; role: string }
+  | { kind: 'page_break'; page: number; sortKey: number; absolutePage: number };
+
+const items: ContentItem[] = [];
+
+// Add tables
+for (const table of section.tables) {
+  items.push({ kind: 'table', page: table.relative_page, sortKey: 500, data: table });
+}
+
+// Add page content (narrative blocks)
+const pageContent = (section as any).page_content || [];
+for (const pc of pageContent) {
+  const relPage = pc.relative_page;
+  for (const block of pc.text_blocks || []) {
+    const y = block.bbox?.[1] ?? 0;
+    items.push({ kind: 'narrative', page: relPage, sortKey: y, text: block.text, role: block.role });
+  }
+}
+
+// Sort by page, then by y-position within page
+items.sort((a, b) => a.page - b.page || a.sortKey - b.sortKey);
+
+// Insert page breaks between pages
+const finalItems: ContentItem[] = [];
+let lastPage = -1;
+for (const item of items) {
+  if (item.page !== lastPage) {
+    const absPage = section.start_page ? section.start_page + item.page : item.page;
+    finalItems.push({ kind: 'page_break', page: item.page, sortKey: -1, absolutePage: absPage });
+    lastPage = item.page;
+  }
+  finalItems.push(item);
+}
+
+const hasNarrative = finalItems.some(i => i.kind === 'narrative');
+
+// Parse narrative text into structured segments for rendering
+type Segment =
+  | { type: 'heading'; text: string }
+  | { type: 'paragraph'; text: string }
+  | { type: 'bullets'; items: string[] };
+
+function parseNarrative(raw: string): Segment[] {
+  const lines = raw.split('\n');
+  const segments: Segment[] = [];
+  let pendingProse: string[] = [];
+  let pendingBullets: string[] = [];
+
+  function flushProse() {
+    if (pendingProse.length > 0) {
+      segments.push({ type: 'paragraph', text: pendingProse.join(' ') });
+      pendingProse = [];
+    }
+  }
+  function flushBullets() {
+    if (pendingBullets.length > 0) {
+      segments.push({ type: 'bullets', items: [...pendingBullets] });
+      pendingBullets = [];
+    }
+  }
+
+  // Known capital project section headings
+  const knownHeadings = new Set([
+    'project description',
+    'project justification',
+    'operating budget impact',
+    'unexpended/unencumbered prior year funds',
+  ]);
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) { flushProse(); flushBullets(); continue; }
+
+    const isBullet = /^[•◦●▪–-]\s/.test(line) || /^\d+\.\s/.test(line);
+
+    if (isBullet) {
+      flushProse();
+      pendingBullets.push(line);
+    } else if (pendingBullets.length > 0) {
+      pendingBullets[pendingBullets.length - 1] += ' ' + line;
+    } else if (knownHeadings.has(line.toLowerCase())) {
+      flushProse();
+      flushBullets();
+      segments.push({ type: 'heading', text: line });
+    } else {
+      flushBullets();
+      pendingProse.push(line);
+    }
+  }
+  flushProse();
+  flushBullets();
+  return segments;
+}
+
 ---
 
 <Base title={section.title}>
@@ -20,6 +134,8 @@ const meta = section as any;
     <span class="mx-1">/</span>
     <span>{section.title}</span>
   </nav>
+
+  <SectionNav prev={prev} next={next} basePath="/capital" position="top" />
 
   <h1 class="text-3xl font-bold mb-2">{section.title}</h1>
 
@@ -43,13 +159,70 @@ const meta = section as any;
   <p class="text-gray-500 mb-6">
     {section.start_page && section.end_page ? `Pages ${section.start_page}–${section.end_page} in Capital Budget` : ''}
     · {section.tables.length} {section.tables.length === 1 ? 'table' : 'tables'}
+    {hasNarrative ? ' · includes narrative' : ''}
   </p>
 
-  {section.tables.length === 0 ? (
-    <p class="text-gray-400 italic">No tables extracted for this project.</p>
-  ) : (
-    section.tables.map((table) => (
-      <TableViewer table={table} />
-    ))
+  {finalItems.length === 0 ? (
+    <p class="text-gray-400 italic">No content extracted for this project.</p>
+  ) : finalItems.map((item) => {
+    if (item.kind === 'page_break') {
+      return (
+        <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
+          <div class="flex-1 border-t border-gray-200"></div>
+          <span class="flex items-center gap-2">
+            Page {(item as any).absolutePage}
+            <PageImage client:load slug={section.slug} page={item.page} label="View image" />
+          </span>
+          <div class="flex-1 border-t border-gray-200"></div>
+        </div>
+      );
+    }
+
+    if (item.kind === 'narrative') {
+      const isTitle = item.role === 'section_title';
+      if (isTitle) {
+        const titleHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
+        return <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2" set:html={titleHtml} />;
+      }
+      const segments = parseNarrative(item.text);
+      return (
+        <div class="prose prose-sm max-w-none mb-4 text-gray-700 leading-relaxed">
+          {segments.map((seg) => {
+            if (seg.type === 'heading') {
+              const hHtml = linkGlossaryTerms(seg.text);
+              return <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1" set:html={hHtml} />;
+            }
+            if (seg.type === 'bullets') {
+              return (
+                <ul class="list-disc list-inside ml-2 mb-2 space-y-0.5">
+                  {seg.items.map((b) => {
+                    const cleaned = b.replace(/^[•◦●▪–-]\s*/, '').replace(/^\d+\.\s*/, '');
+                    const liHtml = linkGlossaryTerms(cleaned);
+                    return <li set:html={liHtml} />;
+                  })}
+                </ul>
+              );
+            }
+            const pHtml = linkGlossaryTerms(seg.text);
+            return <p class="mb-2" set:html={pHtml} />;
+          })}
+        </div>
+      );
+    }
+
+    if (item.kind === 'table') {
+      return <TableViewer table={(item as any).data} linkCell={linkGlossaryTerms} />;
+    }
+  })}
+
+  <SectionNav prev={prev} next={next} basePath="/capital" />
+
+  {section.start_page && section.end_page && pageCount > 0 && (
+    <PdfSidebar
+      client:load
+      slug={section.slug}
+      totalPages={pageCount}
+      startPage={section.start_page}
+    />
   )}
 </Base>

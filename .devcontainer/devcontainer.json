@@ -1,0 +1,87 @@
+{
+  "name": "budget-extractor",
+  "initializeCommand": "token=$(gh auth token 2>/dev/null) && echo \"GH_TOKEN=$token\" > .devcontainer/.env.secrets || : > .devcontainer/.env.secrets",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/uv:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "hustly.money-theme"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "workbench.colorTheme": "Money Theme",
+        "workbench.colorCustomizations": {
+          "activityBar.background": "#1a2e1a",
+          "activityBar.foreground": "#85bb65",
+          "sideBar.background": "#0d1f0d",
+          "sideBar.foreground": "#a8d5a2",
+          "editor.background": "#0a1a0a",
+          "editor.foreground": "#c8e6c9",
+          "editorLineNumber.foreground": "#4a7a4a",
+          "editorLineNumber.activeForeground": "#85bb65",
+          "titleBar.activeBackground": "#1a2e1a",
+          "titleBar.activeForeground": "#85bb65",
+          "statusBar.background": "#2e4a2e",
+          "statusBar.foreground": "#d4af37",
+          "tab.activeBackground": "#1a2e1a",
+          "tab.activeForeground": "#d4af37",
+          "tab.inactiveBackground": "#0d1f0d",
+          "tab.inactiveForeground": "#6b8f6b",
+          "terminal.background": "#0a1a0a",
+          "terminal.foreground": "#85bb65",
+          "badge.background": "#d4af37",
+          "badge.foreground": "#0a1a0a",
+          "button.background": "#2e7d32",
+          "button.foreground": "#ffffff",
+          "list.activeSelectionBackground": "#2e4a2e",
+          "list.activeSelectionForeground": "#d4af37",
+          "editor.selectionBackground": "#2e4a2e80",
+          "editorCursor.foreground": "#d4af37",
+          "progressBar.background": "#85bb65"
+        },
+        "editor.tokenColorCustomizations": {
+          "comments": "#4a7a4a",
+          "strings": "#85bb65",
+          "numbers": "#d4af37",
+          "keywords": "#66bb6a",
+          "functions": "#a5d6a7",
+          "variables": "#c8e6c9",
+          "types": "#d4af37"
+        }
+      }
+    }
+  },
+  "postCreateCommand": {
+    "cli-tools": "npm install -g @anthropic-ai/claude-code @fission-ai/openspec@latest",
+    "project-deps": "uv sync"
+  },
+  "runArgs": [
+    "--env-file",
+    ".devcontainer/.env.secrets"
+  ],
+  "containerEnv": {
+    "TZ": "America/New_York"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,readonly",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude.json,target=/home/vscode/.claude.json,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind,readonly"
+  ],
+  "forwardPorts": [],
+  "remoteUser": "vscode"
+}

@@ -19,6 +19,7 @@ interface TableIndex {
   headers: string[];
   rowCount: number;
   numericCols: number[];
+  budgetType?: string;
 }
 
 interface Table {
@@ -51,6 +52,8 @@ const TYPE_COLORS: Record<string, string> = {
   financial: 'bg-green-100 text-green-700',
   financial_summary: 'bg-emerald-100 text-emerald-700',
   revenue: 'bg-blue-100 text-blue-700',
+  cip_funding: 'bg-orange-100 text-orange-700',
+  deliverables: 'bg-teal-100 text-teal-700',
   unknown: 'bg-gray-100 text-gray-600',
 };
 
@@ -173,8 +176,9 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
   const [tab, setTab] = useState<Tab>('data');
   const [search, setSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
+  const [budgetFilter, setBudgetFilter] = useState<'' | 'operating' | 'capital'>('');
   const [chartCol, setChartCol] = useState<number>(-1);
-  const [expandedSections, setExpandedSections] = useState<Set<number>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
 
   // Build lookup: table id -> full table data
   const tableData = useMemo(() => {
@@ -187,9 +191,10 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
     return map;
   }, [sections]);
 
-  // Filter tables by search + type
+  // Filter tables by search + type + budget type
   const filtered = useMemo(() => {
     let items = tablesIndex;
+    if (budgetFilter) items = items.filter((t) => (t.budgetType || 'operating') === budgetFilter);
     if (typeFilter) items = items.filter((t) => t.type === typeFilter);
     if (search) {
       const q = search.toLowerCase();
@@ -200,28 +205,51 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
       );
     }
     return items;
-  }, [tablesIndex, search, typeFilter]);
+  }, [tablesIndex, search, typeFilter, budgetFilter]);
 
-  // Group filtered tables by section
+  // Group filtered tables by section (composite key to avoid operating/capital collisions)
   const grouped = useMemo(() => {
-    const map = new Map<number, { title: string; slug: string; tables: TableIndex[] }>();
+    const map = new Map<string, { title: string; slug: string; budgetType: string; tables: TableIndex[] }>();
     for (const t of filtered) {
-      if (!map.has(t.sectionNumber)) {
-        map.set(t.sectionNumber, { title: t.sectionTitle, slug: t.sectionSlug, tables: [] });
+      const bt = t.budgetType || 'operating';
+      const key = `${bt}:${t.sectionNumber}`;
+      if (!map.has(key)) {
+        map.set(key, { title: t.sectionTitle, slug: t.sectionSlug, budgetType: bt, tables: [] });
       }
-      map.get(t.sectionNumber)!.tables.push(t);
+      map.get(key)!.tables.push(t);
     }
-    return [...map.entries()].sort((a, b) => a[0] - b[0]);
+    // Sort: operating first, then capital; within each, by section number
+    return [...map.entries()].sort((a, b) => {
+      const aType = a[1].budgetType;
+      const bType = b[1].budgetType;
+      if (aType !== bType) return aType === 'operating' ? -1 : 1;
+      const aNum = parseInt(a[0].split(':')[1]);
+      const bNum = parseInt(b[0].split(':')[1]);
+      return aNum - bNum;
+    });
   }, [filtered]);
 
-  // Type counts for filter chips
-  const typeCounts = useMemo(() => {
-    const counts = new Map<string, number>();
+  // Budget type counts
+  const budgetCounts = useMemo(() => {
+    const counts = { operating: 0, capital: 0 };
     for (const t of tablesIndex) {
-      counts.set(t.type, (counts.get(t.type) || 0) + 1);
+      const bt = (t.budgetType || 'operating') as keyof typeof counts;
+      if (bt in counts) counts[bt]++;
     }
     return counts;
   }, [tablesIndex]);
+
+  // Type counts for filter chips (scoped to current budget filter)
+  const typeCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    const base = budgetFilter
+      ? tablesIndex.filter((t) => (t.budgetType || 'operating') === budgetFilter)
+      : tablesIndex;
+    for (const t of base) {
+      counts.set(t.type, (counts.get(t.type) || 0) + 1);
+    }
+    return counts;
+  }, [tablesIndex, budgetFilter]);
 
   // Selected table metadata + data
   const selectedMeta = selectedId ? tablesIndex.find((t) => t.id === selectedId) : null;
@@ -235,7 +263,10 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
       setSelectedId(hash);
       // Expand the section containing this table
       const meta = tablesIndex.find((t) => t.id === hash);
-      if (meta) setExpandedSections(new Set([meta.sectionNumber]));
+      if (meta) {
+        const key = `${meta.budgetType || 'operating'}:${meta.sectionNumber}`;
+        setExpandedSections(new Set([key]));
+      }
     }
   }, []);
 
@@ -255,7 +286,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
   // Auto-expand sections when searching
   useEffect(() => {
     if (search) {
-      setExpandedSections(new Set(grouped.map(([num]) => num)));
+      setExpandedSections(new Set(grouped.map(([key]) => key)));
     }
   }, [search, grouped]);
 
@@ -265,11 +296,11 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
     setCompareId(null);
   }
 
-  function toggleSection(num: number) {
+  function toggleSection(key: string) {
     setExpandedSections((prev) => {
       const next = new Set(prev);
-      if (next.has(num)) next.delete(num);
-      else next.add(num);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
       return next;
     });
   }
@@ -286,6 +317,19 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             value={search}
             onInput={(e) => setSearch((e.target as HTMLInputElement).value)}
           />
+          <div class="flex gap-1 mt-2">
+            {(['', 'operating', 'capital'] as const).map((bt) => (
+              <button
+                key={bt || 'all'}
+                class={`px-2 py-0.5 rounded text-xs font-medium transition flex-1 ${
+                  budgetFilter === bt ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                }`}
+                onClick={() => { setBudgetFilter(bt); setTypeFilter(''); }}
+              >
+                {bt === '' ? `All (${tablesIndex.length})` : bt === 'operating' ? `Operating (${budgetCounts.operating})` : `Capital (${budgetCounts.capital})`}
+              </button>
+            ))}
+          </div>
           <div class="flex flex-wrap gap-1 mt-2">
             <button
               class={`px-2 py-0.5 rounded text-xs font-medium transition ${
@@ -293,7 +337,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
               }`}
               onClick={() => setTypeFilter('')}
             >
-              All ({tablesIndex.length})
+              All
             </button>
             {[...typeCounts.entries()].sort((a, b) => b[1] - a[1]).map(([type, count]) => (
               <button
@@ -315,17 +359,22 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
           {grouped.length === 0 && (
             <div class="p-4 text-sm text-gray-400 italic">No tables match your filters.</div>
           )}
-          {grouped.map(([sectionNum, { title, tables }]) => (
-            <div key={sectionNum} class="border-b">
+          {grouped.map(([key, { title, budgetType, tables }]) => (
+            <div key={key} class="border-b">
               <button
                 class="w-full px-3 py-2 text-left text-sm font-medium hover:bg-gray-100 flex items-center gap-2"
-                onClick={() => toggleSection(sectionNum)}
+                onClick={() => toggleSection(key)}
               >
-                <span class="text-gray-400 text-xs">{expandedSections.has(sectionNum) ? '▼' : '▶'}</span>
+                <span class="text-gray-400 text-xs">{expandedSections.has(key) ? '▼' : '▶'}</span>
+                {!budgetFilter && (
+                  <span class={`px-1 py-0.5 rounded text-[9px] font-bold uppercase tracking-wide shrink-0 ${
+                    budgetType === 'capital' ? 'bg-orange-100 text-orange-600' : 'bg-blue-100 text-blue-600'
+                  }`}>{budgetType === 'capital' ? 'CAP' : 'OP'}</span>
+                )}
                 <span class="truncate flex-1">{title}</span>
                 <span class="text-xs text-gray-400">{tables.length}</span>
               </button>
-              {expandedSections.has(sectionNum) && (
+              {expandedSections.has(key) && (
                 <div class="pb-1">
                   {tables.map((t) => (
                     <button
@@ -555,7 +604,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             <div class="text-5xl mb-4 text-gray-300">&#9776;</div>
             <h2 class="text-xl font-semibold text-gray-500 mb-2">Select a table</h2>
             <p class="text-gray-400 max-w-md">
-              Browse {tablesIndex.length} tables across {new Set(tablesIndex.map((t) => t.sectionNumber)).size} sections.
+              Browse {tablesIndex.length} tables across operating and capital budgets.
               Use the search and type filters to find what you need, then click a table to view, chart, compare, or export.
             </p>
           </div>

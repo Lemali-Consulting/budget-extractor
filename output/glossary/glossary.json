@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "City of Pittsburgh 2026 Operating Budget",
+    "source": "City of Pittsburgh 2026 Operating and Capital Budgets",
     "generated_from": "output/extract_full_pdf/2026-operating-budget.json",
     "note": "Some terms may contain extraction artifacts from PDF parsing. Verify against the source PDF when precision is required."
   },
@@ -85,33 +85,108 @@
     }
   ],
   "revenue_line_items": [
-    "Real Estate Tax",
-    "Earned Income Tax",
-    "Payroll Preparation Tax",
-    "Parking Tax",
-    "Regional Asset District Tax Relief",
-    "Deed Transfer Tax",
-    "Amusement Tax",
-    "Local Service Tax",
-    "Facility Usage Fee",
-    "Telecommunications Licensing Tax",
-    "Institution Service Privilege Tax",
-    "Non-Profit Payment for Services",
-    "Other Taxes",
-    "Licenses and Permits",
-    "Charges for Services",
-    "Fines and Forfeitures",
-    "Intergovernmental Revenue",
-    "Interest Earnings",
-    "Miscellaneous Revenues"
+    {
+      "term": "Real Estate Tax",
+      "description": "Tax on the assessed value of property within city limits; the City's largest single revenue source."
+    },
+    {
+      "term": "Earned Income Tax",
+      "description": "Tax on wages and salaries earned by individuals working in the city, applying to both residents and non-residents."
+    },
+    {
+      "term": "Payroll Preparation Tax",
+      "description": "Tax on employers based on the payroll they process; distinct from the earned income tax on individual wages."
+    },
+    {
+      "term": "Parking Tax",
+      "description": "Tax on parking transactions including both on-street metered parking and commercial lot operations."
+    },
+    {
+      "term": "Regional Asset District Tax Relief",
+      "description": "State-distributed revenue compensating the City for sales tax redirected to the Regional Asset District (transit, stadiums, cultural facilities)."
+    },
+    {
+      "term": "Deed Transfer Tax",
+      "description": "Tax assessed on the sale and transfer of real property, collected when ownership changes hands."
+    },
+    {
+      "term": "Amusement Tax",
+      "description": "Tax on admission charges to entertainment venues, sporting events, and recreational facilities."
+    },
+    {
+      "term": "Local Service Tax",
+      "description": "Tax on individuals earning income within the city; applies primarily to self-employed and out-of-state workers."
+    },
+    {
+      "term": "Facility Usage Fee",
+      "description": "Charges for use of city-owned facilities and spaces, including building rentals and park venues."
+    },
+    {
+      "term": "Telecommunications Licensing Tax",
+      "description": "Tax on telecommunications service providers operating within city limits."
+    },
+    {
+      "term": "Institution Service Privilege Tax",
+      "description": "Tax on nonprofit institutions (colleges, hospitals, museums) receiving certain service privileges in the city."
+    },
+    {
+      "term": "Non-Profit Payment for Services",
+      "description": "Voluntary payments from tax-exempt organizations in lieu of property taxes for city services provided to them."
+    },
+    {
+      "term": "Other Taxes",
+      "description": "Miscellaneous tax revenue not classified under other specific categories."
+    },
+    {
+      "term": "Licenses and Permits",
+      "description": "Fees from business licenses (liquor, vending, pawn), construction and building permits, and professional registrations."
+    },
+    {
+      "term": "Charges for Services",
+      "description": "Revenue from city-provided services including parking meter collections, medical services, fire protection, and administrative fees."
+    },
+    {
+      "term": "Fines and Forfeitures",
+      "description": "Revenue from traffic violations, parking tickets (the majority), magistrate fines, and other penalties."
+    },
+    {
+      "term": "Intergovernmental Revenue",
+      "description": "Transfers from state and federal governments, including state pension aid, Local Share of Slots revenue, and federal grants."
+    },
+    {
+      "term": "Interest Earnings",
+      "description": "Income from investing municipal cash reserves and project funds in short-term instruments and bonds."
+    },
+    {
+      "term": "Miscellaneous Revenues",
+      "description": "Minor revenue sources including rebates, incentives, vending commissions, and registration fees."
+    }
   ],
   "expenditure_line_items": [
-    "Salaries",
-    "Health Benefits",
-    "Workers' Comp.",
-    "Pension & OPEB",
-    "Operating Departments",
-    "Debt Service"
+    {
+      "term": "Salaries",
+      "description": "Direct wage and salary costs for city employees, including regular pay, overtime, longevity bonuses, and uniform allowances."
+    },
+    {
+      "term": "Health Benefits",
+      "description": "Health insurance premiums for active employees and retirees, plus dental and vision coverage."
+    },
+    {
+      "term": "Workers' Comp.",
+      "description": "Insurance and claims costs for employee workplace injuries, including medical treatment, indemnity payments, and legal fees."
+    },
+    {
+      "term": "Pension & OPEB",
+      "description": "Mandatory contributions to employee pension plans (police, fire, municipal) and retiree healthcare benefits (Other Post-Employment Benefits)."
+    },
+    {
+      "term": "Operating Departments",
+      "description": "Day-to-day departmental expenses excluding personnel: supplies, utilities, professional services, property maintenance, equipment, and fuel."
+    },
+    {
+      "term": "Debt Service",
+      "description": "Principal and interest payments on municipal bonds issued for capital projects and prior obligations."
+    }
   ],
   "fiscal_metrics": [
     {
@@ -346,6 +421,101 @@
     "EMS": "Emergency Medical Services",
     "JDE": "JD Edwards (the City's enterprise accounting system)",
     "SSP": "Site Safety Plan",
-    "FAS": "Fire Alarm System"
-  }
+    "FAS": "Fire Alarm System",
+    "CDBG": "Community Development Block Grant",
+    "TIP": "Transportation Improvement Program",
+    "HOPWA": "Housing Opportunities for Persons with AIDS",
+    "HOME": "HOME Investment Partnerships Program (federal affordable housing)",
+    "ESG": "Emergency Solutions Grant",
+    "CIP": "Capital Improvement Plan (the City's multi-year capital spending document)",
+    "CPFC": "Capital Program Facilitation Committee (reviews and scores capital project proposals)"
+  },
+  "general_terms": [
+    {
+      "term": "Grade",
+      "description": "Salary classification level assigned to a city position (e.g., 18E, 32G). Determines the pay range for that role."
+    },
+    {
+      "term": "Step",
+      "description": "Pay increment within a salary grade, typically advancing with tenure (e.g., Step A through Step O)."
+    },
+    {
+      "term": "Cost Center",
+      "description": "Numeric code identifying a department or organizational unit in the city's accounting system (e.g., 250000 = Bureau of Police)."
+    },
+    {
+      "term": "Subclass",
+      "description": "Two-digit code classifying a type of revenue or expenditure (e.g., Code 51 = Salaries and Wages, Code 41 = Tax Revenue)."
+    },
+    {
+      "term": "Bond",
+      "description": "Debt instrument issued by the City to finance capital projects. Repaid over time with principal and interest payments from the Debt Service fund."
+    },
+    {
+      "term": "Principal",
+      "description": "The face amount of a bond that is repaid to bondholders over the life of the bond."
+    },
+    {
+      "term": "Interest",
+      "description": "The cost of borrowing paid to bondholders, calculated as a percentage (coupon rate) of outstanding principal."
+    },
+    {
+      "term": "Coupon",
+      "description": "The stated annual interest rate on a bond issue, used to calculate interest payments to bondholders."
+    },
+    {
+      "term": "Longevity",
+      "description": "Additional pay supplement awarded to employees based on years of service with the City."
+    },
+    {
+      "term": "Secondary Employment",
+      "description": "Compensated off-duty work by city employees (particularly police officers) at private events or businesses, administered through a trust fund."
+    },
+    {
+      "term": "Transfer In",
+      "description": "Revenue received by a fund from another city fund, such as General Fund transfers to trust funds or special revenue funds."
+    },
+    {
+      "term": "Transfer Out",
+      "description": "Expenditure representing money moved from one city fund to another (e.g., PAYGO transfer from General Fund to Capital Budget)."
+    },
+    {
+      "term": "Appropriation",
+      "description": "Legal authorization granted by City Council to spend a specific amount of money for a stated purpose during a fiscal year."
+    },
+    {
+      "term": "Allocation",
+      "description": "The distribution of budgeted funds to a specific department, program, or project within an appropriation."
+    },
+    {
+      "term": "Functional Area",
+      "description": "Category grouping capital projects by type of work: Engineering and Construction, Facility Improvement, Neighborhood and Community Development, Public Safety, Vehicles and Equipment, or Administration/Sub-Award."
+    },
+    {
+      "term": "Project Type",
+      "description": "Classification of a capital project by timeline and funding origin. Timeline: New (first-time funded), Continuing (spans multiple years), or Recurring (annual). Origin: Capital Project, Intergovernmental Project, or Special Revenue Project."
+    },
+    {
+      "term": "Deliverable",
+      "description": "A specific work product or outcome within a capital project, with its own location, council district, funding source, and cost."
+    }
+  ],
+  "capital_funding_sources": [
+    {
+      "source": "PAYGO",
+      "description": "Pay-as-you-go funding transferred from the General Fund reserve. Used for projects not eligible for bond or CDBG financing, typically shorter-lived assets like IT improvements, traffic calming, or condemned structure remediation."
+    },
+    {
+      "source": "BOND",
+      "description": "Municipal bond financing that spreads project costs over multiple years. Requires the funded asset to have a minimum useful life of 5 years. Repaid through the Debt Service fund with principal and interest."
+    },
+    {
+      "source": "CDBG",
+      "description": "Community Development Block Grant — federal funds with flexible use, provided the project benefits low- or moderate-income residents, seniors, eliminates blight, or addresses health and safety threats."
+    },
+    {
+      "source": "OTHER",
+      "description": "Funding from federal, state, or local government grants, foundation awards, non-profit donations, or state/federal reimbursement (especially for TIP transportation projects)."
+    }
+  ]
 }

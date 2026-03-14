@@ -5,78 +5,27 @@ import SummaryCard from '../../components/SummaryCard.astro';
 import SectionToc from '../../components/SectionToc.astro';
 import PageImage from '../../components/PageImage.tsx';
 import PdfSidebar from '../../components/PdfSidebar.tsx';
+import SectionNav from '../../components/SectionNav.astro';
+import SectionCharts from '../../components/SectionCharts.tsx';
 import budgetData from '../../data/budget-data.json';
+import departmentBudgets from '../../data/views/department-budgets.json';
+import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
 
 export function getStaticPaths() {
-  return budgetData.sections.map((s) => ({
+  return budgetData.sections.map((s, i) => ({
     params: { slug: s.slug },
-    props: { section: s },
+    props: {
+      section: s,
+      prev: i > 0 ? { slug: budgetData.sections[i - 1].slug, title: budgetData.sections[i - 1].title } : null,
+      next: i < budgetData.sections.length - 1 ? { slug: budgetData.sections[i + 1].slug, title: budgetData.sections[i + 1].title } : null,
+    },
   }));
 }
 
-const { section } = Astro.props;
+const { section, prev, next } = Astro.props;
 
-// Build glossary term dictionary for auto-linking
-const glossary = budgetData.glossary || {};
-interface GlossaryEntry { pattern: RegExp; tooltip: string; anchor: string }
-const glossaryTerms: GlossaryEntry[] = [];
-
-// Fiscal metrics first (more descriptive tooltips; skip abbreviation dupes below)
-const fiscalTermKeys = new Set<string>();
-if (glossary.fiscal_metrics) {
-  for (const item of glossary.fiscal_metrics as { term: string; description: string }[]) {
-    const escaped = item.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    fiscalTermKeys.add(item.term.toUpperCase());
-    glossaryTerms.push({
-      pattern: new RegExp(`\\b${escaped}\\b`, 'i'),
-      tooltip: item.description.length > 120 ? item.description.slice(0, 117) + '...' : item.description,
-      anchor: 'fiscal_metrics',
-    });
-  }
-}
-
-// Abbreviations — skip if already covered by a fiscal metric
-if (glossary.abbreviations) {
-  for (const [abbr, meaning] of Object.entries(glossary.abbreviations)) {
-    if (fiscalTermKeys.has(abbr.toUpperCase())) continue;
-    glossaryTerms.push({
-      pattern: new RegExp(`\\b${abbr}s?\\b`),
-      tooltip: `${abbr}: ${meaning}`,
-      anchor: 'abbreviations',
-    });
-  }
-}
-
-// Sort longer patterns first to avoid partial matches
-glossaryTerms.sort((a, b) => b.pattern.source.length - a.pattern.source.length);
-
-// Replace first occurrence of each glossary term in text with a tooltip link.
-// Uses placeholder tokens to prevent re-matching inside inserted HTML.
-const seenTerms = new Set<string>();
-function linkGlossaryTerms(text: string): string {
-  let html = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const replacements: string[] = [];
-
-  for (const entry of glossaryTerms) {
-    const key = entry.pattern.source;
-    if (seenTerms.has(key)) continue;
-    const match = html.match(entry.pattern);
-    if (match) {
-      seenTerms.add(key);
-      const escapedTooltip = entry.tooltip.replace(/"/g, '&quot;');
-      const link = `<a href="/glossary/#${entry.anchor}" class="glossary-term" data-tooltip="${escapedTooltip}">${match[0]}</a>`;
-      const token = `\x00GLO${replacements.length}\x00`;
-      replacements.push(link);
-      html = html.replace(entry.pattern, token);
-    }
-  }
-
-  // Restore placeholders
-  for (let i = 0; i < replacements.length; i++) {
-    html = html.replace(`\x00GLO${i}\x00`, replacements[i]);
-  }
-  return html;
-}
+const glossaryTerms = buildGlossaryTerms(budgetData.glossary || {});
+const linkGlossaryTerms = createGlossaryLinker(glossaryTerms);
 
 // Build a unified page-ordered stream of content items
 type ContentItem =
@@ -175,6 +124,22 @@ function extractMetrics(tables: any[]): SummaryMetrics {
 }
 
 const metrics = extractMetrics(section.tables);
+
+// Build sparkline values for this section from department budgets
+const sparklineValues: number[] = (departmentBudgets as {slug: string; amount: number}[])
+  .filter((r) => r.slug === section.slug)
+  .map((r) => r.amount);
+
+// Prepare chart table data (serializable subset for client component)
+const chartTables = section.tables
+  .filter((t: any) => ['financial_summary', 'financial'].includes(t.table_type))
+  .map((t: any) => ({
+    id: t.id,
+    table_type: t.table_type,
+    headers: t.headers,
+    rows: t.rows,
+  }));
+
 const pageCount = section.start_page && section.end_page
   ? section.end_page - section.start_page + 1
   : new Set(finalItems.map((i: ContentItem) => i.page)).size;
@@ -343,6 +308,8 @@ function parseNarrative(raw: string): Segment[] {
     <span>{section.title}</span>
   </nav>
 
+  <SectionNav prev={prev} next={next} basePath="/sections" position="top" />
+
   <h1 class="text-3xl font-bold mb-2">{section.title}</h1>
   <p class="text-gray-500 mb-6">
     Section {section.section_number}
@@ -360,9 +327,14 @@ function parseNarrative(raw: string): Segment[] {
     fte2025={metrics.fte2025}
     tableCount={section.tables.length}
     pageCount={pageCount}
+    sparklineValues={sparklineValues.length >= 2 ? sparklineValues : undefined}
   />
 
   <SectionToc items={tocEntries} />
+
+  {chartTables.length > 0 && (
+    <SectionCharts client:load tables={chartTables} sectionTitle={section.title} />
+  )}
 
   {finalItems.length === 0 ? (
     <p class="text-gray-400 italic">No content extracted for this section.</p>
@@ -418,7 +390,22 @@ function parseNarrative(raw: string): Segment[] {
 
       if (item.kind === 'chart') {
         const chartSrc = `/charts/${section.slug}/P${item.page}C${(item as any).chartIndex}.png`;
-        const label = (item as any).chartType === 'raster_image' ? 'Organization chart' : 'Chart / diagram';
+        const cType = (item as any).chartType;
+        const isLogo = cType === 'logo';
+        const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Organization chart' : 'Chart / diagram';
+        if (isLogo) {
+          return (
+            <div class="my-3 flex items-center gap-3">
+              <img
+                src={chartSrc}
+                alt={`${label} for ${section.title}`}
+                class="w-16 h-16 object-contain"
+                loading="lazy"
+              />
+              <span class="text-xs text-gray-400">{section.title}</span>
+            </div>
+          );
+        }
         return (
           <div class="my-4 rounded-lg border overflow-hidden bg-white">
             <div class="px-4 py-2 bg-blue-50 border-b text-xs text-blue-700 font-medium">
@@ -447,12 +434,14 @@ function parseNarrative(raw: string): Segment[] {
                 Open in Explorer &rarr;
               </a>
             </div>
-            <TableViewer table={(item as any).data} slug={section.slug} />
+            <TableViewer table={(item as any).data} slug={section.slug} linkCell={linkGlossaryTerms} />
           </div>
         );
       }
     });
   })()}
+
+  <SectionNav prev={prev} next={next} basePath="/sections" />
 
   {section.start_page && section.end_page && (
     <PdfSidebar

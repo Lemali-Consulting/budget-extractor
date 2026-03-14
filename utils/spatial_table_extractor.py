@@ -127,6 +127,28 @@ def assign_sections(table: "SpatialTable") -> list[str]:
 
         sections.append(current_section)
 
+    # Post-processing: collapse single-row category-code sections.
+    # In summary/forecast tables every row is a category code, making each
+    # row its own section — which is noisy.  A category-code section that
+    # groups only itself (1 row) is demoted back to its parent section.
+    # Text-only header sections (Pattern 2) are kept regardless.
+    if sections:
+        # Build list of (section_label, start_idx, count) runs
+        runs: list[tuple[str, int, int]] = []
+        for i, s in enumerate(sections):
+            if not runs or runs[-1][0] != s:
+                runs.append((s, i, 1))
+            else:
+                runs[-1] = (runs[-1][0], runs[-1][1], runs[-1][2] + 1)
+
+        effective_parent = ""
+        for _run_idx, (label, start, count) in enumerate(runs):
+            if count == 1 and _CATEGORY_CODE_RE.match(label):
+                # Single-row category-code section → demote to parent
+                sections[start] = effective_parent
+            else:
+                effective_parent = label
+
     return sections
 
 
@@ -947,7 +969,9 @@ class SpatialTableExtractor:
                 continue
             bbox = (x0, y0, x1, y1)
             if not _overlaps_table(bbox):
-                regions.append(ChartRegion(bbox=bbox, chart_type="raster_image"))
+                # Small images (both dims ≤220) are logos/seals, not charts
+                ctype = "logo" if w <= 220 and h <= 220 else "raster_image"
+                regions.append(ChartRegion(bbox=bbox, chart_type=ctype))
 
         # Vector chart detection: clusters of drawing objects outside tables
         drawing_objs: list[tuple[float, float, float, float]] = []

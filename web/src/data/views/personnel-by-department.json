@@ -1,0 +1,290 @@
+[
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "totalFte2025": 875.0,
+    "totalFte2026": 844.0,
+    "totalBudget2025": 75423309.0,
+    "totalBudget2026": 79739215.0,
+    "positionCount": 27
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "totalFte2025": 679.0,
+    "totalFte2026": 679.0,
+    "totalBudget2025": 58816829.0,
+    "totalBudget2026": 59960110.0,
+    "positionCount": 17
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "totalFte2025": 286.0,
+    "totalFte2026": 287.0,
+    "totalBudget2025": 17871285.0,
+    "totalBudget2026": 18483107.0,
+    "positionCount": 35
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "totalFte2025": 219.0,
+    "totalFte2026": 219.0,
+    "totalBudget2025": 16857071.0,
+    "totalBudget2026": 17768453.0,
+    "positionCount": 11
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "totalFte2025": 203.0,
+    "totalFte2026": 202.0,
+    "totalBudget2025": 11537484.0,
+    "totalBudget2026": 10998439.0,
+    "positionCount": 28
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "totalFte2025": 122.0,
+    "totalFte2026": 126.0,
+    "totalBudget2025": 9595031.0,
+    "totalBudget2026": 10274282.0,
+    "positionCount": 83
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "totalFte2025": 68.0,
+    "totalFte2026": 77.0,
+    "totalBudget2025": 5781627.0,
+    "totalBudget2026": 6647963.0,
+    "positionCount": 72
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "totalFte2025": 88.0,
+    "totalFte2026": 86.0,
+    "totalBudget2025": 6316810.0,
+    "totalBudget2026": 6373224.0,
+    "positionCount": 45
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "totalFte2025": 40.0,
+    "totalFte2026": 41.0,
+    "totalBudget2025": 3863694.0,
+    "totalBudget2026": 4000394.0,
+    "positionCount": 23
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "totalFte2025": 47.0,
+    "totalFte2026": 48.0,
+    "totalBudget2025": 3194880.0,
+    "totalBudget2026": 3281887.0,
+    "positionCount": 32
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "totalFte2025": 36.0,
+    "totalFte2026": 36.0,
+    "totalBudget2025": 2804838.0,
+    "totalBudget2026": 3115994.0,
+    "positionCount": 6
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "totalFte2025": 37.0,
+    "totalFte2026": 37.0,
+    "totalBudget2025": 2937630.0,
+    "totalBudget2026": 2982127.0,
+    "positionCount": 31
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "totalFte2025": 40.95,
+    "totalFte2026": 42.0,
+    "totalBudget2025": 2702121.0,
+    "totalBudget2026": 2798649.0,
+    "positionCount": 38
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "totalFte2025": 39.0,
+    "totalFte2026": 27.0,
+    "totalBudget2025": 3254047.0,
+    "totalBudget2026": 2781130.0,
+    "positionCount": 56
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "totalFte2025": 13.6,
+    "totalFte2026": 17.479999999999997,
+    "totalBudget2025": 2364249.0,
+    "totalBudget2026": 2726447.0,
+    "positionCount": 23
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "totalFte2025": 35.0,
+    "totalFte2026": 30.0,
+    "totalBudget2025": 2996603.0,
+    "totalBudget2026": 2592892.0,
+    "positionCount": 29
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "totalFte2025": 31.0,
+    "totalFte2026": 29.0,
+    "totalBudget2025": 2296948.0,
+    "totalBudget2026": 2275451.0,
+    "positionCount": 27
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "totalFte2025": 27.5,
+    "totalFte2026": 27.5,
+    "totalBudget2025": 1751743.0,
+    "totalBudget2026": 1871459.0,
+    "positionCount": 9
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "totalFte2025": 21.0,
+    "totalFte2026": 19.0,
+    "totalBudget2025": 1603586.0,
+    "totalBudget2026": 1495517.0,
+    "positionCount": 21
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "totalFte2025": 20.0,
+    "totalFte2026": 20.0,
+    "totalBudget2025": 1289580.0,
+    "totalBudget2026": 1328352.0,
+    "positionCount": 11
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "totalFte2025": 20.0,
+    "totalFte2026": 20.0,
+    "totalBudget2025": 1194576.0,
+    "totalBudget2026": 1230289.0,
+    "positionCount": 12
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "totalFte2025": 17.0,
+    "totalFte2026": 17.0,
+    "totalBudget2025": 949814.0,
+    "totalBudget2026": 954859.0,
+    "positionCount": 4
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "totalFte2025": 11.0,
+    "totalFte2026": 11.0,
+    "totalBudget2025": 804045.0,
+    "totalBudget2026": 813904.0,
+    "positionCount": 8
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "totalFte2025": 9.0,
+    "totalFte2026": 9.0,
+    "totalBudget2025": 604918.0,
+    "totalBudget2026": 614132.0,
+    "positionCount": 9
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "totalFte2025": 8.0,
+    "totalFte2026": 8.0,
+    "totalBudget2025": 588498.0,
+    "totalBudget2026": 605554.0,
+    "positionCount": 5
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "totalFte2025": 8.0,
+    "totalFte2026": 8.0,
+    "totalBudget2025": 570280.0,
+    "totalBudget2026": 579391.0,
+    "positionCount": 8
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "totalFte2025": 3.95,
+    "totalFte2026": 3.95,
+    "totalBudget2025": 277200.0,
+    "totalBudget2026": 387629.0,
+    "positionCount": 9
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "totalFte2025": 1.0,
+    "totalFte2026": 1.0,
+    "totalBudget2025": 295132.0,
+    "totalBudget2026": 303976.0,
+    "positionCount": 6
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "totalFte2025": 4.15,
+    "totalFte2026": 4.9,
+    "totalBudget2025": 316074.0,
+    "totalBudget2026": 302352.0,
+    "positionCount": 6
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "totalFte2025": 1.0,
+    "totalFte2026": 1.0,
+    "totalBudget2025": 140718.0,
+    "totalBudget2026": 184046.0,
+    "positionCount": 4
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "totalFte2025": 1.15,
+    "totalFte2026": 1.15,
+    "totalBudget2025": 118681.0,
+    "totalBudget2026": 133925.0,
+    "positionCount": 7
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "totalFte2025": 1.0,
+    "totalFte2026": 1.0,
+    "totalBudget2025": 39698.0,
+    "totalBudget2026": 40617.0,
+    "positionCount": 2
+  }
+]

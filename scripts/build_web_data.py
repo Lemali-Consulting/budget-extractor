@@ -22,6 +22,7 @@ OPERATING_OUTPUT_DIR = Path(__file__).parent.parent / "output" / "regression" / 
 CAPITAL_OUTPUT_DIR = Path(__file__).parent.parent / "output" / "regression" / "expected" / "capital"
 GLOSSARY_PATH = Path(__file__).parent.parent / "output" / "glossary" / "glossary.json"
 PDF_PATH = INPUT_DIR / "2026-operating-budget.pdf"
+CAPITAL_SPLIT_DIR = INPUT_DIR / "split-pdf" / "capital"
 WEB_DATA_DIR = Path(__file__).parent.parent / "web" / "src" / "data"
 
 # Pattern to extract section number and name from directory names like "10_City_Council"
@@ -422,7 +423,7 @@ def detect_numeric_columns(headers: list[str], rows: list[list[str]]) -> list[in
     ]
 
 
-def build_tables_index(sections: list[dict]) -> list[dict]:
+def build_tables_index(sections: list[dict], budget_type: str = "operating") -> list[dict]:
     """Build lightweight metadata index for all tables (no row data)."""
     items: list[dict] = []
 
@@ -440,6 +441,7 @@ def build_tables_index(sections: list[dict]) -> list[dict]:
                 "headers": table["headers"],
                 "rowCount": len(table["rows"]),
                 "numericCols": numeric_cols,
+                "budgetType": budget_type,
             }
             if "description" in table:
                 entry["description"] = table["description"]
@@ -515,11 +517,74 @@ def classify_capital_table(headers: list[str]) -> str:
     return "unknown"
 
 
+def extract_capital_narrative(
+    sections_lookup: dict[int, dict],
+) -> dict[int, list[dict]]:
+    """Extract narrative text blocks from capital budget split PDFs.
+
+    Returns dict mapping section_number -> list of page content dicts with:
+      relative_page, text_blocks [{text, role, bbox}]
+    """
+    if not CAPITAL_SPLIT_DIR.exists():
+        print(f"  Skipping capital narrative: {CAPITAL_SPLIT_DIR} not found")
+        return {}
+
+    import pdfplumber
+    from utils.spatial_table_extractor import SpatialTableExtractor
+
+    ext = SpatialTableExtractor()
+    result: dict[int, list[dict]] = {}
+
+    USEFUL_ROLES = {"narrative", "section_title", "leading_prose", "trailing_prose",
+                    "mid_table_prose", "footnote"}
+
+    for pdf_path in sorted(CAPITAL_SPLIT_DIR.glob("*.pdf")):
+        match = DIR_PATTERN.match(pdf_path.stem)
+        if not match:
+            continue
+
+        section_num = int(match.group(1))
+        pdf = pdfplumber.open(str(pdf_path))
+        pages_content: list[dict] = []
+
+        for rel_page, page in enumerate(pdf.pages):
+            try:
+                tables, content = ext.extract_page_content(page)
+            except Exception as e:
+                print(f"  Warning: {pdf_path.name} page {rel_page}: {e}")
+                continue
+
+            blocks = [
+                {"text": b.text, "role": b.role, "bbox": [round(v, 1) for v in b.bbox]}
+                for b in content.text_blocks if b.role in USEFUL_ROLES
+            ]
+
+            if blocks:
+                section_info = sections_lookup.get(section_num, {})
+                start_page = section_info.get("start_page", 0)
+                pages_content.append({
+                    "relative_page": rel_page,
+                    "absolute_page": start_page + rel_page if start_page else rel_page,
+                    "text_blocks": blocks,
+                    "chart_regions": [],
+                })
+
+        pdf.close()
+        if pages_content:
+            result[section_num] = pages_content
+
+    return result
+
+
 def build_capital_data() -> dict:
     """Build the capital budget data bundle."""
     sections_lookup = load_capital_sections()
     if not sections_lookup:
         return {"sections": []}
+
+    print("Extracting capital narrative content from split PDFs...")
+    narrative_content = extract_capital_narrative(sections_lookup)
+    print(f"  Found narrative content in {len(narrative_content)} capital sections")
 
     sections: list[dict] = []
 
@@ -583,6 +648,10 @@ def build_capital_data() -> dict:
             section_dict["project_type"] = section_info["project_type"]
         if "project_manager" in section_info:
             section_dict["project_manager"] = section_info["project_manager"]
+
+        # Attach narrative content
+        if section_num in narrative_content:
+            section_dict["page_content"] = narrative_content[section_num]
 
         sections.append(section_dict)
 
@@ -766,6 +835,87 @@ def build_department_forecast(sections: list[dict]) -> list[dict]:
     return rows
 
 
+def build_glossary_backlinks(
+    operating_sections: list[dict],
+    capital_sections: list[dict],
+    glossary: dict,
+) -> dict[str, list[dict]]:
+    """Build a mapping of glossary terms -> sections where they appear.
+
+    Only processes abbreviations and funds. Returns a dict keyed by term
+    (abbreviation key or fund name) with values being lists of
+    {slug, title, budgetType} dicts.
+    """
+    # Collect searchable text per section: (slug, title, budgetType) -> combined text
+    section_texts: list[tuple[dict, str]] = []
+
+    for section in operating_sections:
+        parts: list[str] = [section["title"]]
+        for page in section.get("page_content", []):
+            for block in page.get("text_blocks", []):
+                parts.append(block["text"])
+        for table in section["tables"]:
+            parts.append(" ".join(table["headers"]))
+            if "linked_narrative" in table:
+                parts.append(table["linked_narrative"])
+            # First column of each row (labels)
+            for row in table["rows"]:
+                if row:
+                    parts.append(row[0])
+        meta = {"slug": section["slug"], "title": section["title"], "budgetType": "operating"}
+        section_texts.append((meta, " ".join(parts)))
+
+    for section in capital_sections:
+        parts = [section["title"]]
+        for page in section.get("page_content", []):
+            for block in page.get("text_blocks", []):
+                parts.append(block["text"])
+        for table in section["tables"]:
+            parts.append(" ".join(table["headers"]))
+            for row in table["rows"]:
+                if row:
+                    parts.append(row[0])
+        meta = {"slug": section["slug"], "title": section["title"], "budgetType": "capital"}
+        section_texts.append((meta, " ".join(parts)))
+
+    # Build term patterns
+    terms: list[tuple[str, re.Pattern]] = []
+
+    # Abbreviations: match as whole words
+    for abbr in glossary.get("abbreviations", {}):
+        # Skip very short/common abbreviations that produce noise
+        if len(abbr) <= 2:
+            continue
+        terms.append((abbr, re.compile(r"\b" + re.escape(abbr) + r"\b")))
+
+    # Funds: match by fund name (case-insensitive)
+    for fund in glossary.get("funds", []):
+        name = fund["name"]
+        terms.append((name, re.compile(re.escape(name), re.IGNORECASE)))
+
+    # Capital funding sources: match as whole words
+    for src in glossary.get("capital_funding_sources", []):
+        source = src["source"]
+        terms.append((source, re.compile(r"\b" + re.escape(source) + r"\b")))
+
+    # Scan
+    MAX_SECTIONS = 10
+    backlinks: dict[str, list[dict] | dict] = {}
+    for term_key, pattern in terms:
+        matches: list[dict] = []
+        for meta, text in section_texts:
+            if pattern.search(text):
+                matches.append(meta)
+        if matches:
+            total = len(matches)
+            backlinks[term_key] = {
+                "sections": matches[:MAX_SECTIONS],
+                "total": total,
+            }
+
+    return backlinks
+
+
 def main() -> None:
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     views_dir = WEB_DATA_DIR / "views"
@@ -780,11 +930,8 @@ def main() -> None:
         json.dump(data, f, indent=2)
     print(f"Wrote {out_path} ({len(sections)} sections)")
 
-    # Tables index (lightweight metadata for explorer sidebar)
-    tables_index = build_tables_index(sections)
-    with open(views_dir / "tables-index.json", "w", encoding="utf-8") as f:
-        json.dump(tables_index, f, indent=2)
-    print(f"Wrote tables-index.json ({len(tables_index)} tables)")
+    # Tables index (lightweight metadata for explorer sidebar) — includes both budgets
+    tables_index = build_tables_index(sections, budget_type="operating")
 
     # Pre-computed views for client-side components
     dept_budgets = build_department_budgets(sections)
@@ -837,6 +984,9 @@ def main() -> None:
             json.dump(capital_funding, f, indent=2)
         print(f"Wrote capital-funding-sources.json ({len(capital_funding)} rows)")
 
+        # Add capital tables to the combined tables index
+        tables_index.extend(build_tables_index(capital_sections, budget_type="capital"))
+
         # Add capital sections to search index with budgetType tag
         for item in search_index:
             item["budgetType"] = "operating"
@@ -867,9 +1017,22 @@ def main() -> None:
     else:
         print("No capital budget data found, skipping capital output")
 
+    # Write combined tables index (operating + capital)
+    with open(views_dir / "tables-index.json", "w", encoding="utf-8") as f:
+        json.dump(tables_index, f, indent=2)
+    print(f"Wrote tables-index.json ({len(tables_index)} tables)")
+
     with open(views_dir / "search-index.json", "w", encoding="utf-8") as f:
         json.dump(search_index, f, indent=2)
     print(f"Wrote search-index.json ({len(search_index)} items)")
+
+    # Glossary backlinks (abbreviations + funds -> sections where they appear)
+    glossary_backlinks = build_glossary_backlinks(
+        sections, capital_sections, data.get("glossary", {})
+    )
+    with open(views_dir / "glossary-backlinks.json", "w", encoding="utf-8") as f:
+        json.dump(glossary_backlinks, f, indent=2)
+    print(f"Wrote glossary-backlinks.json ({len(glossary_backlinks)} terms with backlinks)")
 
 
 if __name__ == "__main__":

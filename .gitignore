@@ -1,5 +1,16 @@
 .devcontainer/.env.secrets
 __pycache__/
 output/regression/debug/
+output/regression/debug_*
+output/regression/judge_images/
+output/regression/status.json
 input/split-pdf/operating/
 input/split-pdf/capital/
+input/split-pdf/*.pdf
+.env
+.astro/
+.netlify/
+node_modules/
+web/.astro/
+web/.netlify/
+web/node_modules/

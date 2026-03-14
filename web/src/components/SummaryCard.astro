@@ -4,6 +4,8 @@
  * Only renders if at least one metric is available.
  */
 
+import Sparkline from './Sparkline.tsx';
+
 interface Props {
   budget2026?: string;
   budget2025?: string;
@@ -13,11 +15,12 @@ interface Props {
   fte2025?: number;
   tableCount: number;
   pageCount: number;
+  sparklineValues?: number[];
 }
 
 const {
   budget2026, budget2025, budgetChange, budgetChangePct,
-  fte2026, fte2025, tableCount, pageCount,
+  fte2026, fte2025, tableCount, pageCount, sparklineValues,
 } = Astro.props;
 
 const hasBudget = !!budget2026;
@@ -40,7 +43,12 @@ const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-red-600' : 'te
     {hasBudget && (
       <div>
         <div class="text-xs text-gray-500 mb-1">2026 Budget</div>
-        <div class="text-lg font-semibold text-gray-900">${budget2026}</div>
+        <div class="text-lg font-semibold text-gray-900 flex items-center gap-2">
+          ${budget2026}
+          {sparklineValues && sparklineValues.length >= 2 && (
+            <Sparkline values={sparklineValues} width={72} height={24} />
+          )}
+        </div>
       </div>
     )}
     {hasBudget && budgetChange && budgetChange !== '—' && (

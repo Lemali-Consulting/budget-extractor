@@ -3,8 +3,9 @@ import Base from '../layouts/Base.astro';
 import DataExplorer from '../components/DataExplorer.tsx';
 import tablesIndex from '../data/views/tables-index.json';
 import budgetData from '../data/budget-data.json';
+import capitalData from '../data/capital-budget-data.json';
 
-const sections = budgetData.sections;
+const sections = [...budgetData.sections, ...capitalData.sections];
 ---
 
 <Base title="Data Explorer" fullWidth>
