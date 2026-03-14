@@ -107,16 +107,21 @@ def parse_currency(s: str) -> float | None:
         return None
 
 
-def extract_narrative_content(sections_lookup: dict[int, dict]) -> dict[int, list[dict]]:
-    """Extract narrative text blocks and chart regions from PDF pages per section.
+def extract_narrative_content(
+    sections_lookup: dict[int, dict],
+) -> tuple[dict[int, list[dict]], dict[tuple[int, int, int], list[dict]]]:
+    """Extract narrative text blocks, chart regions, and table bboxes per section.
 
-    Returns dict mapping section_number -> list of page content dicts with:
-      relative_page, absolute_page, text_blocks [{text, role, bbox}],
-      chart_regions [{bbox, chart_type}]
+    Returns:
+      - dict mapping section_number -> list of page content dicts with:
+        relative_page, absolute_page, text_blocks [{text, role, bbox}],
+        chart_regions [{bbox, chart_type}]
+      - dict mapping (section_number, rel_page, table_index) -> list of linked
+        narrative text blocks spatially associated with that table
     """
     if not PDF_PATH.exists():
         print(f"  Skipping narrative extraction: {PDF_PATH} not found")
-        return {}
+        return {}, {}
 
     import pdfplumber
     from utils.spatial_table_extractor import SpatialTableExtractor
@@ -124,9 +129,11 @@ def extract_narrative_content(sections_lookup: dict[int, dict]) -> dict[int, lis
     ext = SpatialTableExtractor()
     pdf = pdfplumber.open(str(PDF_PATH))
     result: dict[int, list[dict]] = {}
+    narrative_links: dict[tuple[int, int, int], list[dict]] = {}
 
     USEFUL_ROLES = {"narrative", "section_title", "leading_prose", "trailing_prose",
                     "mid_table_prose", "footnote"}
+    LINKABLE_ROLES = {"narrative", "leading_prose", "mid_table_prose"}
 
     for sec_num, info in sorted(sections_lookup.items()):
         start = info["start_page"]
@@ -140,7 +147,7 @@ def extract_narrative_content(sections_lookup: dict[int, dict]) -> dict[int, lis
             rel_page = abs_page - start
 
             try:
-                _, content = ext.extract_page_content(page)
+                tables, content = ext.extract_page_content(page)
             except Exception as e:
                 print(f"  Warning: page {abs_page}: {e}")
                 continue
@@ -154,6 +161,40 @@ def extract_narrative_content(sections_lookup: dict[int, dict]) -> dict[int, lis
                 for c in content.chart_regions
             ]
 
+            # Link narrative blocks to their nearest table using spatial proximity.
+            # A text block is linked to the table whose top edge is closest below it,
+            # or above it if no table is below.
+            table_bboxes = [
+                (i, t.bbox) for i, t in enumerate(tables) if t.bbox
+            ]
+            linkable = [b for b in blocks if b["role"] in LINKABLE_ROLES]
+
+            for block in linkable:
+                block_bottom = block["bbox"][3]  # y1 of text block
+                block_top = block["bbox"][1]
+
+                best_table_idx: int | None = None
+                best_dist = float("inf")
+
+                for t_idx, t_bbox in table_bboxes:
+                    table_top = t_bbox[1]
+                    table_bottom = t_bbox[3]
+
+                    # Prefer tables below the text (text introduces the table)
+                    if table_top >= block_top:
+                        dist = table_top - block_bottom
+                    else:
+                        # Table is above — text follows the table
+                        dist = block_top - table_bottom + 1000  # penalize
+
+                    if dist < best_dist:
+                        best_dist = dist
+                        best_table_idx = t_idx
+
+                if best_table_idx is not None and best_dist < 1200:
+                    key = (sec_num, rel_page, best_table_idx)
+                    narrative_links.setdefault(key, []).append(block)
+
             if blocks or charts:
                 pages_content.append({
                     "relative_page": rel_page,
@@ -166,7 +207,16 @@ def extract_narrative_content(sections_lookup: dict[int, dict]) -> dict[int, lis
             result[sec_num] = pages_content
 
     pdf.close()
-    return result
+    return result, narrative_links
+
+
+def load_descriptions() -> dict[str, str]:
+    """Load pre-generated table descriptions if available."""
+    desc_path = Path(__file__).parent.parent / "output" / "table-descriptions.json"
+    if desc_path.exists():
+        with open(desc_path, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
 
 
 def build_data() -> dict:
@@ -174,8 +224,11 @@ def build_data() -> dict:
     sections_lookup = load_sections()
 
     print("Extracting narrative content from PDF...")
-    narrative_content = extract_narrative_content(sections_lookup)
+    narrative_content, narrative_links = extract_narrative_content(sections_lookup)
     print(f"  Found narrative content in {len(narrative_content)} sections")
+    print(f"  Linked narratives to {len(narrative_links)} tables")
+
+    descriptions = load_descriptions()
 
     sections: list[dict] = []
 
@@ -206,8 +259,9 @@ def build_data() -> dict:
             parsed = parse_csv(csv_path)
             table_type = classify_table(parsed["headers"])
 
+            table_id = f"s{section_num}_p{rel_page}_t{table_idx}"
             table: dict = {
-                "id": f"s{section_num}_p{rel_page}_t{table_idx}",
+                "id": table_id,
                 "relative_page": rel_page,
                 "table_index": table_idx,
                 "table_type": table_type,
@@ -219,6 +273,18 @@ def build_data() -> dict:
 
             if start_page is not None:
                 table["absolute_page"] = start_page + rel_page
+
+            # Attach linked narrative text
+            link_key = (section_num, rel_page, table_idx)
+            if link_key in narrative_links:
+                linked = narrative_links[link_key]
+                table["linked_narrative"] = " ".join(
+                    b["text"].replace("\n", " ") for b in linked
+                )
+
+            # Attach pre-generated description
+            if table_id in descriptions:
+                table["description"] = descriptions[table_id]
 
             tables.append(table)
 
@@ -250,7 +316,10 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
     """Extract budget totals per department/year from financial tables."""
     rows: list[dict] = []
 
+    # Skip overview sections (1-9) — they contain citywide summaries, not departments
     for section in sections:
+        if section["section_number"] <= 9:
+            continue
         for table in section["tables"]:
             if table["table_type"] not in ("financial_summary", "financial"):
                 continue
@@ -360,7 +429,7 @@ def build_tables_index(sections: list[dict]) -> list[dict]:
     for section in sections:
         for table in section["tables"]:
             numeric_cols = detect_numeric_columns(table["headers"], table["rows"])
-            items.append({
+            entry: dict = {
                 "id": table["id"],
                 "sectionNumber": section["section_number"],
                 "sectionTitle": section["title"],
@@ -371,7 +440,10 @@ def build_tables_index(sections: list[dict]) -> list[dict]:
                 "headers": table["headers"],
                 "rowCount": len(table["rows"]),
                 "numericCols": numeric_cols,
-            })
+            }
+            if "description" in table:
+                entry["description"] = table["description"]
+            items.append(entry)
 
     return items
 
@@ -402,13 +474,17 @@ def build_search_index(sections: list[dict]) -> list[dict]:
         })
 
         for table in section["tables"]:
+            # Use linked narrative or description for searchability
+            table_narrative = table.get("linked_narrative", "")
+            if not table_narrative:
+                table_narrative = table.get("description", "")
             items.append({
                 "sectionTitle": section["title"],
                 "slug": section["slug"],
                 "tableId": table["id"],
                 "tableType": table["table_type"],
                 "headers": " ".join(table["headers"]),
-                "narrative": "",
+                "narrative": table_narrative[:500],
                 "page": table["relative_page"],
                 "tableIndex": table["table_index"],
             })

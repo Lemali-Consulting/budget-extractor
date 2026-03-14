@@ -1,41 +1,5 @@
 [
   {
-    "department": "Five-Year Financial Forecast",
-    "slug": "five-year-financial-forecast",
-    "year": "2024 Actual",
-    "amount": 658305314.0
-  },
-  {
-    "department": "Five-Year Financial Forecast",
-    "slug": "five-year-financial-forecast",
-    "year": "2026 Budget",
-    "amount": 693235672.0
-  },
-  {
-    "department": "Five-Year Financial Forecast",
-    "slug": "five-year-financial-forecast",
-    "year": "2027 Budget",
-    "amount": 679174172.0
-  },
-  {
-    "department": "Five-Year Financial Forecast",
-    "slug": "five-year-financial-forecast",
-    "year": "2028 Budget",
-    "amount": 701999737.0
-  },
-  {
-    "department": "Five-Year Financial Forecast",
-    "slug": "five-year-financial-forecast",
-    "year": "2029 Budget",
-    "amount": 713307747.0
-  },
-  {
-    "department": "Five-Year Financial Forecast",
-    "slug": "five-year-financial-forecast",
-    "year": "2030 Budget",
-    "amount": 726948083.0
-  },
-  {
     "department": "City Council",
     "slug": "city-council",
     "year": "2024 Actual",
