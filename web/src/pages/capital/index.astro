@@ -65,21 +65,23 @@ for (const section of sections) {
               class="block p-4 bg-white rounded-lg border hover:border-blue-400 hover:shadow transition"
             >
               <div class="font-medium">{s.title}</div>
-              <div class="text-sm text-gray-500 mt-1">
-                {(s as any).department && <span>{(s as any).department}</span>}
-                {year2026 > 0 ? (
-                  <span class="ml-2 font-medium text-green-700">
+              {(s as any).department && (
+                <div class="text-sm text-gray-500 mt-1">{(s as any).department}</div>
+              )}
+              {(year2026 > 0 || sixYearTotal > 0) && (
+                <div class="flex gap-4 mt-1.5 text-xs">
+                  <span class={year2026 > 0 ? 'text-green-700 font-semibold' : 'text-gray-400'}>
+                    <span class="text-gray-400 font-normal">2026 </span>
                     ${year2026.toLocaleString('en-US')}
-                    {sixYearTotal > 0 && sixYearTotal !== year2026 && (
-                      <span class="text-gray-400 font-normal"> (${sixYearTotal.toLocaleString('en-US')} 6-yr)</span>
-                    )}
                   </span>
-                ) : sixYearTotal > 0 ? (
-                  <span class="ml-2 font-medium text-gray-500">
-                    ${sixYearTotal.toLocaleString('en-US')} (6-yr)
-                  </span>
-                ) : null}
-              </div>
+                  {sixYearTotal > 0 && (
+                    <span class="text-gray-500">
+                      <span class="text-gray-400">6-yr </span>
+                      ${sixYearTotal.toLocaleString('en-US')}
+                    </span>
+                  )}
+                </div>
+              )}
             </a>
           );
         })}
