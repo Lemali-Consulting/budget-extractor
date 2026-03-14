@@ -1,9 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PersonnelExplorer from '../components/PersonnelExplorer.tsx';
-import budgetData from '../data/budget-data.json';
-
-const sections = budgetData.sections;
+import personnelData from '../data/views/personnel.json';
 ---
 
 <Base title="Personnel">
@@ -16,5 +14,5 @@ const sections = budgetData.sections;
   <h1 class="text-3xl font-bold mb-2">Personnel Explorer</h1>
   <p class="text-gray-600 mb-6">Search and filter positions across all departments.</p>
 
-  <PersonnelExplorer sections={sections} client:load />
+  <PersonnelExplorer rows={personnelData} client:load />
 </Base>

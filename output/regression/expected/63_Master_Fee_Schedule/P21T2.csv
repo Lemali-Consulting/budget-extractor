@@ -1,74 +1,74 @@
-"C0 (r, x:54-485)","C1 (r, x:485-558)"
-BUREAU OF POLICE,
-Fee Description,2026
-Police Reports,15.00
-Towing,
-"Storage Fee-Vehicle <10,000 lbs September 1st 2026 Onwards (per day)",40.00
-"Storage Fee-Vehicle <10,000 lbs Pre September 1st 2026 (per day)",35.00
-"Storage Fee-Vehicle 10,001-31,000 lbs September 1st 2026 Onwards (per day)",70.00
-"Storage Fee-Vehicle 10,001-31,000 lbs Pre September 1st 2026 (per day)",65.00
-"Storage Fee-Vehicle >31,000 lbs September 1st 2026 Onwards (per day)",80.00
-"Storage Fee-Vehicle >31,000 lbs Pre September 1st 2026 (per day)",75.00
-Storage Fee-Vehicle Semi Trailers September 1st 2026 Onwards (per day),105.00
-Storage Fee-Vehicle Semi Trailers Pre September 1st 2026 (per day),100.00
-EV Accident Towing Rate (per incident),275.00
-EV Accident Storage Rate (per day),95.00
-Towing Fee-Non City Owned Passenger Cars/Trucks September 1st 2026 Onwards,175.00
-Towing Fee-Non City Owned Passenger Cars/Trucks Pre September 1st 2026,155.00
-"Towing Fee-Non City Owned Vehicles <9,000 lbs September 1st 2026 Onwards",175.00
-"Towing Fee-Non City Owned Vehicles <9,000 lbs Pre September 1st 2026",155.00
-"Towing Fee-Non City Owned Vehicles 9,001-20,000 lbs September 1st 2026 Onwards",300.00
-"Towing Fee-Non City Owned Vehicles 9,001-20,000 lbs Pre September 1st 2026",275.00
-"Towing Fee-Non City Owned Vehicles 20,001-40,000 lbs September 1st 2026 Onwards",475.00
-"Towing Fee-Non City Owned Vehicles 20,001-40,000 lbs Pre September 1st 2026",425.00
-"Towing Fee-Non City Owned Vehicles 40,001-56,000 lbs September 1st 2026 Onwards",675.00
-"Towing Fee-Non City Owned Vehicles 40,001-56,000 lbs Pre September 1st 2026",600.00
-"Towing Fee-Non City Owned Vehicles 56,001-80,000 lbs September 1st 2026 Onwards",$825.00
-"Towing Fee-Non City Owned Vehicles 56,001-80,000 lbs Pre September 1st 2026",750.00
-"Towing Fee-Trailer <20,000 lbs September 1st 2026 Onwards",375.00
-"Towing Fee-Trailer <20,000 lbs Pre September 1st 2026",350.00
-"Towing Fee-Trailer 20,001-40,000 lbs September 1st 2026 Onwards",475.00
-"Towing Fee-Trailer 20,001-40,000 lbs Pre September 1st 2026",425.00
-"Towing Fee-Trailer 40,001-56,000 lbs September 1st 2026 Onwards",675.00
-"Towing Fee-Trailer 40,001-56,000 lbs Pre September 1st 2026",600.00
-"Towing Fee-Trailer 56,001-80,000 lbs September 1st 2026 Onwards",825.00
-"Towing Fee-Trailer 56,001-80,000 lbs Pre September 1st 2026",750.00
-Towing Fee-Bus September 1st 2026 Onwards,825.00
-Towing Fee-Bus Pre September 1st 2026,750.00
-Towing Fee-Construction Vehicle September 1st 2026 Onwards,822.00
-Towing Fee-Construction Vehicle Pre September 1st 2026,750.00
-Flatbed or Dolly Tow September 1st 2026 Onwards,210.00
-Flatbed or Dolly Tow Pre September 1st 2026,190.00
-"Recovery up to 11,000GVW September 1st 2026 Onwards (per hour)",220.00
-"Recovery up to 11,000GVW Pre September 1st 2026 (per hour)",200.00
-"Recovery 11,000-31,000GVW September 1st 2026 Onwards (per hour)",375.00
-"Recovery 11,000-31,000GVW Pre September 1st 2026 (per hour)",350.00
-"Recovery 31,000GVW September 1st 2026 Onwards (per hour)",600.00
-"Recovery 31,000GVW Pre September 1st 2026 (per hour)",500.00
-Extra Person September 1st Onwards (per hour),140.00
-Extra Person Pre September 1st (per hour),125.00
-Standby Charge September 1st 2026 Onwards (per hour),135.00
-Standby Charge Pre September 1st 2026 (per hour),125.00
-Excessive Mileage Tows April 1st 2025 Onwards (per hour),145.00
-Excessive Mileage Tows Pre September 1st 2026 (per hour),135.00
-Miscall September 1st 2026 Onwards (per hour),35.00
-Miscall Pre September 1st 2026 (per hour),35.00
-Landoll or Semi Trailer September 1st 2026 Onwards (per hour),325.00
-Landoll or Semi Trailer Pre September 1st 2026 (per hour),300.00
-Service Vehicle September 1st 2026 Onwards (per hour),175.00
-Service Vehicle Pre September 1st 2026 (per hour),150.00
-Recovery Vehicle September 1st 2026 Onwards (per hour),225.00
-Recovery Vehicle Pre September 1st 2026 (per hour),175.00
-"Skid Steer & 5,000 Forklift September 1st 2026 Onwards (per hour)",175.00
-"Skid Steer & 5,000 Forklift Pre September 1st 2026 (per hour)",150.00
-Heavy Duty Forklift September 1st 2026 Onwards (per hour),225.00
-Heavy Duty Forklift Pre September 1st 2026 (per hour),200.00
-Payloader September 1st 2026 Onwards (per hour),225.00
-Payloader Pre September 1st 2026 (per hour),200.00
-Rotating Crane September 1st 2026 Onwards (per hour),"$1,350.00"
-Rotating Crane Pre September 1st 2026 (per hour),"1,250.00"
-Shrink Wrap September 1st 2026 Onwards (per hour),35.00
-Shrink Wrap Pre September 1st 2026 (per hour),30.00
-Debris Cleanup September 1st 2026 Onwards (per hour),165.00
-Debris Cleanup Pre September 1st 2026 (per hour),150.00
-*Note: All towing fees set in contract,
+"C0 (r, x:54-485)","C1 (r, x:485-558)",section
+BUREAU OF POLICE,,section
+Fee Description,2026,
+Police Reports,15.00,
+Towing,,Towing
+"Storage Fee-Vehicle <10,000 lbs September 1st 2026 Onwards (per day)",40.00,Towing
+"Storage Fee-Vehicle <10,000 lbs Pre September 1st 2026 (per day)",35.00,Towing
+"Storage Fee-Vehicle 10,001-31,000 lbs September 1st 2026 Onwards (per day)",70.00,Towing
+"Storage Fee-Vehicle 10,001-31,000 lbs Pre September 1st 2026 (per day)",65.00,Towing
+"Storage Fee-Vehicle >31,000 lbs September 1st 2026 Onwards (per day)",80.00,Towing
+"Storage Fee-Vehicle >31,000 lbs Pre September 1st 2026 (per day)",75.00,Towing
+Storage Fee-Vehicle Semi Trailers September 1st 2026 Onwards (per day),105.00,Towing
+Storage Fee-Vehicle Semi Trailers Pre September 1st 2026 (per day),100.00,Towing
+EV Accident Towing Rate (per incident),275.00,Towing
+EV Accident Storage Rate (per day),95.00,Towing
+Towing Fee-Non City Owned Passenger Cars/Trucks September 1st 2026 Onwards,175.00,Towing
+Towing Fee-Non City Owned Passenger Cars/Trucks Pre September 1st 2026,155.00,Towing
+"Towing Fee-Non City Owned Vehicles <9,000 lbs September 1st 2026 Onwards",175.00,Towing
+"Towing Fee-Non City Owned Vehicles <9,000 lbs Pre September 1st 2026",155.00,Towing
+"Towing Fee-Non City Owned Vehicles 9,001-20,000 lbs September 1st 2026 Onwards",300.00,Towing
+"Towing Fee-Non City Owned Vehicles 9,001-20,000 lbs Pre September 1st 2026",275.00,Towing
+"Towing Fee-Non City Owned Vehicles 20,001-40,000 lbs September 1st 2026 Onwards",475.00,Towing
+"Towing Fee-Non City Owned Vehicles 20,001-40,000 lbs Pre September 1st 2026",425.00,Towing
+"Towing Fee-Non City Owned Vehicles 40,001-56,000 lbs September 1st 2026 Onwards",675.00,Towing
+"Towing Fee-Non City Owned Vehicles 40,001-56,000 lbs Pre September 1st 2026",600.00,Towing
+"Towing Fee-Non City Owned Vehicles 56,001-80,000 lbs September 1st 2026 Onwards",$825.00,Towing
+"Towing Fee-Non City Owned Vehicles 56,001-80,000 lbs Pre September 1st 2026",750.00,Towing
+"Towing Fee-Trailer <20,000 lbs September 1st 2026 Onwards",375.00,Towing
+"Towing Fee-Trailer <20,000 lbs Pre September 1st 2026",350.00,Towing
+"Towing Fee-Trailer 20,001-40,000 lbs September 1st 2026 Onwards",475.00,Towing
+"Towing Fee-Trailer 20,001-40,000 lbs Pre September 1st 2026",425.00,Towing
+"Towing Fee-Trailer 40,001-56,000 lbs September 1st 2026 Onwards",675.00,Towing
+"Towing Fee-Trailer 40,001-56,000 lbs Pre September 1st 2026",600.00,Towing
+"Towing Fee-Trailer 56,001-80,000 lbs September 1st 2026 Onwards",825.00,Towing
+"Towing Fee-Trailer 56,001-80,000 lbs Pre September 1st 2026",750.00,Towing
+Towing Fee-Bus September 1st 2026 Onwards,825.00,Towing
+Towing Fee-Bus Pre September 1st 2026,750.00,Towing
+Towing Fee-Construction Vehicle September 1st 2026 Onwards,822.00,Towing
+Towing Fee-Construction Vehicle Pre September 1st 2026,750.00,Towing
+Flatbed or Dolly Tow September 1st 2026 Onwards,210.00,Towing
+Flatbed or Dolly Tow Pre September 1st 2026,190.00,Towing
+"Recovery up to 11,000GVW September 1st 2026 Onwards (per hour)",220.00,Towing
+"Recovery up to 11,000GVW Pre September 1st 2026 (per hour)",200.00,Towing
+"Recovery 11,000-31,000GVW September 1st 2026 Onwards (per hour)",375.00,Towing
+"Recovery 11,000-31,000GVW Pre September 1st 2026 (per hour)",350.00,Towing
+"Recovery 31,000GVW September 1st 2026 Onwards (per hour)",600.00,Towing
+"Recovery 31,000GVW Pre September 1st 2026 (per hour)",500.00,Towing
+Extra Person September 1st Onwards (per hour),140.00,Towing
+Extra Person Pre September 1st (per hour),125.00,Towing
+Standby Charge September 1st 2026 Onwards (per hour),135.00,Towing
+Standby Charge Pre September 1st 2026 (per hour),125.00,Towing
+Excessive Mileage Tows April 1st 2025 Onwards (per hour),145.00,Towing
+Excessive Mileage Tows Pre September 1st 2026 (per hour),135.00,Towing
+Miscall September 1st 2026 Onwards (per hour),35.00,Towing
+Miscall Pre September 1st 2026 (per hour),35.00,Towing
+Landoll or Semi Trailer September 1st 2026 Onwards (per hour),325.00,Towing
+Landoll or Semi Trailer Pre September 1st 2026 (per hour),300.00,Towing
+Service Vehicle September 1st 2026 Onwards (per hour),175.00,Towing
+Service Vehicle Pre September 1st 2026 (per hour),150.00,Towing
+Recovery Vehicle September 1st 2026 Onwards (per hour),225.00,Towing
+Recovery Vehicle Pre September 1st 2026 (per hour),175.00,Towing
+"Skid Steer & 5,000 Forklift September 1st 2026 Onwards (per hour)",175.00,Towing
+"Skid Steer & 5,000 Forklift Pre September 1st 2026 (per hour)",150.00,Towing
+Heavy Duty Forklift September 1st 2026 Onwards (per hour),225.00,Towing
+Heavy Duty Forklift Pre September 1st 2026 (per hour),200.00,Towing
+Payloader September 1st 2026 Onwards (per hour),225.00,Towing
+Payloader Pre September 1st 2026 (per hour),200.00,Towing
+Rotating Crane September 1st 2026 Onwards (per hour),"$1,350.00",Towing
+Rotating Crane Pre September 1st 2026 (per hour),"1,250.00",Towing
+Shrink Wrap September 1st 2026 Onwards (per hour),35.00,Towing
+Shrink Wrap Pre September 1st 2026 (per hour),30.00,Towing
+Debris Cleanup September 1st 2026 Onwards (per hour),165.00,Towing
+Debris Cleanup Pre September 1st 2026 (per hour),150.00,Towing
+*Note: All towing fees set in contract,,Towing

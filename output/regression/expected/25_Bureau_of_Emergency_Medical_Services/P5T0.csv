@@ -1,42 +1,42 @@
-"C0 (l, x:57-260)","C1 (r, x:260-340)","C2 (r, x:340-406)","C3 (r, x:406-475)","C4 (r, x:475-524)","C5 (r, x:524-553)"
-,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change
-Expenditures,,,,,
-51 - PERSONNEL-SALARIES & WAGES,"22,335,467","20,801,152","26,078,128","5,276,976",25.4%
-51101 - Regular,"13,965,288","16,360,658","17,152,743","792,085",
-51111 - In Grade,271,—,—,—,
-51201 - Longevity,"546,000","558,000","478,000","(80,000)",
-51203 - Allowances,"5,636","7,000","7,000",—,
-51205 - Uniform,"241,200","184,800","186,000","1,200",
-51207 - Leave Buyback,"294,163","100,000","100,000",—,
-51401 - Premium Pay,"7,282,909","3,590,694","8,154,386","4,563,692",
-52 - PERSONNEL-EMPLOYEE BENEFITS,"6,415,843","5,765,549","5,961,312","195,762",3.4%
-52101 - Health Insurance,"2,763,045","2,518,972","2,793,059","274,087",
-52111 - Other Insurance/Benefits,"358,253","364,482","363,392","(1,090)",
-52201 - Social Security,"1,695,246","1,510,084","1,738,325","228,241",
-52301 - Medical-Workers' Compensation,"381,522","379,539","203,241","(176,298)",
-52305 - Indemnity-Workers' Compensation,"928,833","709,723","571,001","(138,722)",
-52315 - Workers' Compensation-Fees,"16,360","21,749","29,064","7,315",
-52601 - Personal Leave Buyback,"218,469","223,000","225,230","2,230",
-52602 - Tuition Reimbursement,"54,114","38,000","38,000",—,
-53 - PROFESSIONAL & TECHNICAL SERVICES,"47,854","91,685","91,685",—,—%
-53101 - Administrative Fees,"3,034","1,000","1,000",—,
-53301 - Workforce Training,"38,457","5,000","5,000",—,
-53509 - Computer Maintenance,"6,000","11,000","11,000",—,
-53701 - Repairs,363,"74,685","74,685",—,
-54 - PROPERTY SERVICES,"1,420","5,500","5,500",—,—%
-54101 - Cleaning,"1,410","5,500","5,500",—,
-54513 - Machinery & Equipment,10,—,—,—,
-55 - OTHER SERVICES,"61,972","73,576","76,595","3,019",4.1%
-55101 - Insurance Premiums,"57,502","60,376","63,395","3,019",
-55201 - Telephone,—,"1,200","1,200",—,
-55301 - Employment Related,650,—,—,—,
-55305 - Promotional,"3,820","12,000","12,000",—,
-56 - SUPPLIES,"709,640","913,580","1,393,937","480,357",52.6%
-56101 - Office Supplies,"19,873","20,000","20,000",—,
-56103 - Freight,"1,075",—,—,—,
-56151 - Operational Supplies,"680,627","815,080","1,295,437","480,357",
-56301 - Parts,102,"4,500","4,500",—,
-56351 - Tools,286,"15,000","15,000",—,
-56401 - Materials,"6,769","5,000","5,000",—,
-56501 - Parts,907,"15,000","15,000",—,
-56503 - Repairs (Vehicles),—,"39,000","39,000",—,
+"C0 (l, x:57-260)","C1 (r, x:260-340)","C2 (r, x:340-406)","C3 (r, x:406-475)","C4 (r, x:475-524)","C5 (r, x:524-553)",section
+,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change,section
+Expenditures,,,,,,Expenditures
+51 - PERSONNEL-SALARIES & WAGES,"22,335,467","20,801,152","26,078,128","5,276,976",25.4%,51 - PERSONNEL-SALARIES & WAGES
+51101 - Regular,"13,965,288","16,360,658","17,152,743","792,085",,51 - PERSONNEL-SALARIES & WAGES
+51111 - In Grade,271,—,—,—,,51 - PERSONNEL-SALARIES & WAGES
+51201 - Longevity,"546,000","558,000","478,000","(80,000)",,51 - PERSONNEL-SALARIES & WAGES
+51203 - Allowances,"5,636","7,000","7,000",—,,51 - PERSONNEL-SALARIES & WAGES
+51205 - Uniform,"241,200","184,800","186,000","1,200",,51 - PERSONNEL-SALARIES & WAGES
+51207 - Leave Buyback,"294,163","100,000","100,000",—,,51 - PERSONNEL-SALARIES & WAGES
+51401 - Premium Pay,"7,282,909","3,590,694","8,154,386","4,563,692",,51 - PERSONNEL-SALARIES & WAGES
+52 - PERSONNEL-EMPLOYEE BENEFITS,"6,415,843","5,765,549","5,961,312","195,762",3.4%,52 - PERSONNEL-EMPLOYEE BENEFITS
+52101 - Health Insurance,"2,763,045","2,518,972","2,793,059","274,087",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52111 - Other Insurance/Benefits,"358,253","364,482","363,392","(1,090)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52201 - Social Security,"1,695,246","1,510,084","1,738,325","228,241",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52301 - Medical-Workers' Compensation,"381,522","379,539","203,241","(176,298)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52305 - Indemnity-Workers' Compensation,"928,833","709,723","571,001","(138,722)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52315 - Workers' Compensation-Fees,"16,360","21,749","29,064","7,315",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52601 - Personal Leave Buyback,"218,469","223,000","225,230","2,230",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52602 - Tuition Reimbursement,"54,114","38,000","38,000",—,,52 - PERSONNEL-EMPLOYEE BENEFITS
+53 - PROFESSIONAL & TECHNICAL SERVICES,"47,854","91,685","91,685",—,—%,53 - PROFESSIONAL & TECHNICAL SERVICES
+53101 - Administrative Fees,"3,034","1,000","1,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53301 - Workforce Training,"38,457","5,000","5,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53509 - Computer Maintenance,"6,000","11,000","11,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53701 - Repairs,363,"74,685","74,685",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+54 - PROPERTY SERVICES,"1,420","5,500","5,500",—,—%,54 - PROPERTY SERVICES
+54101 - Cleaning,"1,410","5,500","5,500",—,,54 - PROPERTY SERVICES
+54513 - Machinery & Equipment,10,—,—,—,,54 - PROPERTY SERVICES
+55 - OTHER SERVICES,"61,972","73,576","76,595","3,019",4.1%,55 - OTHER SERVICES
+55101 - Insurance Premiums,"57,502","60,376","63,395","3,019",,55 - OTHER SERVICES
+55201 - Telephone,—,"1,200","1,200",—,,55 - OTHER SERVICES
+55301 - Employment Related,650,—,—,—,,55 - OTHER SERVICES
+55305 - Promotional,"3,820","12,000","12,000",—,,55 - OTHER SERVICES
+56 - SUPPLIES,"709,640","913,580","1,393,937","480,357",52.6%,56 - SUPPLIES
+56101 - Office Supplies,"19,873","20,000","20,000",—,,56 - SUPPLIES
+56103 - Freight,"1,075",—,—,—,,56 - SUPPLIES
+56151 - Operational Supplies,"680,627","815,080","1,295,437","480,357",,56 - SUPPLIES
+56301 - Parts,102,"4,500","4,500",—,,56 - SUPPLIES
+56351 - Tools,286,"15,000","15,000",—,,56 - SUPPLIES
+56401 - Materials,"6,769","5,000","5,000",—,,56 - SUPPLIES
+56501 - Parts,907,"15,000","15,000",—,,56 - SUPPLIES
+56503 - Repairs (Vehicles),—,"39,000","39,000",—,,56 - SUPPLIES

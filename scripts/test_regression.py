@@ -1,5 +1,6 @@
 """Compare current spatial extractor output against expected CSVs to catch regressions."""
 
+import argparse
 import csv
 import sys
 from pathlib import Path
@@ -92,10 +93,39 @@ def run_regression_test(
     return all_passed
 
 
+def generate_all_debug_pdfs(project_root: Path, debug_dir: Path) -> None:
+    """Generate debug output (CSVs + annotated PDFs) for all split PDFs."""
+    ext = SpatialTableExtractor()
+    all_pdfs = sorted(
+        pdf for input_dir in INPUT_DIRS
+        for pdf in (project_root / input_dir).glob("*.pdf")
+    )
+    if not all_pdfs:
+        print("No PDFs found in input directories.")
+        return
+
+    for pdf_path in all_pdfs:
+        print(f"Generating debug for {pdf_path.name}...")
+        try:
+            ext.render_debug(pdf_path, debug_dir, csv_only=False)
+        except Exception as e:
+            print(f"  ERROR: {e}")
+
+    print(f"\nGenerated debug output for {len(all_pdfs)} PDFs.")
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Run regression tests for the spatial table extractor.")
+    parser.add_argument("--pdf", action="store_true", help="Generate annotated debug PDFs for all split PDFs")
+    args = parser.parse_args()
+
     project_root = Path(__file__).resolve().parent.parent
     expected_dir = project_root / "output" / "regression" / "expected"
     debug_dir = project_root / "output" / "regression" / "debug"
+
+    # When --pdf is passed, generate debug output for ALL split PDFs first
+    if args.pdf:
+        generate_all_debug_pdfs(project_root, debug_dir)
 
     if not expected_dir.exists():
         print("No expected directory found.")
@@ -119,7 +149,11 @@ def main() -> None:
             continue
 
         print(f"Testing {stem} ({pdf_path.name})...")
-        if not run_regression_test(pdf_path, expected_dir / stem, debug_dir):
+        try:
+            if not run_regression_test(pdf_path, expected_dir / stem, debug_dir):
+                all_passed = False
+        except Exception as e:
+            print(f"  ERROR: {e}")
             all_passed = False
 
     if all_passed:

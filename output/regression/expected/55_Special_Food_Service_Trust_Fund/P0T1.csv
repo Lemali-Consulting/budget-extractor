@@ -1,27 +1,27 @@
-"C0 (l, x:76-280)","C1 (r, x:280-359)","C2 (r, x:359-434)","C3 (r, x:434-486)","C4 (l, x:486-517)"
-Subclass Detail,2025 Budget,2026 Budget,Increase/ (Decrease),% Change
-Revenues,,,,
-45 - INTERGOVERNMENTAL REVENUE,"525,000","525,000",—,—%
-45507 - Summer Food Program,"525,000","525,000",—,
-Revenues Total,"525,000","525,000",—,—%
-Expenditures,,,,
-51 - PERSONNEL-SALARIES & WAGES,"189,322","194,992","5,670",3.0%
-51101 - Regular,"83,512","86,008","2,496",
-51103 - Part-Time,"105,810","108,984","3,174",
-52 - PERSONNEL-EMPLOYEE BENEFITS,"43,415","45,336","1,921",4.4%
-52101 - Health Insurance,"27,092","28,616","1,524",
-52111 - Other Insurance/Benefits,"1,840","1,803",(37),
-52201 - Social Security,"14,483","14,917",434,
-53 - PROFESSIONAL & TECHNICAL SERVICES,"175,000","175,000",—,—%
-53907 - Recreational Services,"175,000","175,000",—,
-54 - PROPERTY SERVICES,500,500,—,—%
-54301 - Building - General,500,500,—,
-55 - OTHER SERVICES,"3,000","3,000",—,—%
-55701 - Transportation,"3,000","3,000",—,
-56 - SUPPLIES,"251,500","251,500",—,—%
-56101 - Office Supplies,"1,500","1,500",—,
-56401 - Materials,"250,000","250,000",—,
-57 - PROPERTY,"1,000","1,000",—,—%
-57501 - Machinery And Equipment,"1,000","1,000",—,
-Expenditures Total,"663,737","671,328","7,591",1.1%
-Net Total,"(138,737)","(146,328)","(7,591)",
+"C0 (l, x:76-280)","C1 (r, x:280-359)","C2 (r, x:359-434)","C3 (r, x:434-486)","C4 (l, x:486-517)",section
+Subclass Detail,2025 Budget,2026 Budget,Increase/ (Decrease),% Change,section
+Revenues,,,,,Revenues
+45 - INTERGOVERNMENTAL REVENUE,"525,000","525,000",—,—%,45 - INTERGOVERNMENTAL REVENUE
+45507 - Summer Food Program,"525,000","525,000",—,,45 - INTERGOVERNMENTAL REVENUE
+Revenues Total,"525,000","525,000",—,—%,45 - INTERGOVERNMENTAL REVENUE
+Expenditures,,,,,Expenditures
+51 - PERSONNEL-SALARIES & WAGES,"189,322","194,992","5,670",3.0%,51 - PERSONNEL-SALARIES & WAGES
+51101 - Regular,"83,512","86,008","2,496",,51 - PERSONNEL-SALARIES & WAGES
+51103 - Part-Time,"105,810","108,984","3,174",,51 - PERSONNEL-SALARIES & WAGES
+52 - PERSONNEL-EMPLOYEE BENEFITS,"43,415","45,336","1,921",4.4%,52 - PERSONNEL-EMPLOYEE BENEFITS
+52101 - Health Insurance,"27,092","28,616","1,524",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52111 - Other Insurance/Benefits,"1,840","1,803",(37),,52 - PERSONNEL-EMPLOYEE BENEFITS
+52201 - Social Security,"14,483","14,917",434,,52 - PERSONNEL-EMPLOYEE BENEFITS
+53 - PROFESSIONAL & TECHNICAL SERVICES,"175,000","175,000",—,—%,53 - PROFESSIONAL & TECHNICAL SERVICES
+53907 - Recreational Services,"175,000","175,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+54 - PROPERTY SERVICES,500,500,—,—%,54 - PROPERTY SERVICES
+54301 - Building - General,500,500,—,,54 - PROPERTY SERVICES
+55 - OTHER SERVICES,"3,000","3,000",—,—%,55 - OTHER SERVICES
+55701 - Transportation,"3,000","3,000",—,,55 - OTHER SERVICES
+56 - SUPPLIES,"251,500","251,500",—,—%,56 - SUPPLIES
+56101 - Office Supplies,"1,500","1,500",—,,56 - SUPPLIES
+56401 - Materials,"250,000","250,000",—,,56 - SUPPLIES
+57 - PROPERTY,"1,000","1,000",—,—%,57 - PROPERTY
+57501 - Machinery And Equipment,"1,000","1,000",—,,57 - PROPERTY
+Expenditures Total,"663,737","671,328","7,591",1.1%,57 - PROPERTY
+Net Total,"(138,737)","(146,328)","(7,591)",,57 - PROPERTY

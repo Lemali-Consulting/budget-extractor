@@ -3,74 +3,17 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 
-interface Section {
-  section_number: number;
-  title: string;
-  slug: string;
-  tables: {
-    table_type: string;
-    headers: string[];
-    rows: string[][];
-  }[];
-}
-
 interface BudgetRow {
   department: string;
+  slug: string;
   year: string;
   amount: number;
 }
 
-function parseCurrency(s: string): number | null {
-  if (!s || s === '—') return null;
-  const cleaned = s.replace(/[$,()]/g, '').trim();
-  const num = parseFloat(cleaned);
-  return isNaN(num) ? null : num;
-}
-
-function extractBudgetData(sections: Section[]): BudgetRow[] {
-  const rows: BudgetRow[] = [];
-
-  for (const section of sections) {
-    for (const table of section.tables) {
-      if (table.table_type !== 'financial_summary' && table.table_type !== 'financial') continue;
-
-      const headers = table.headers;
-      const budgetCols: { year: string; idx: number }[] = [];
-
-      for (let i = 0; i < headers.length; i++) {
-        const h = headers[i];
-        if (/\d{4}\s*(budget|actual)/i.test(h)) {
-          const match = h.match(/(\d{4})\s*(Budget|Actual)/i);
-          if (match) budgetCols.push({ year: `${match[1]} ${match[2]}`, idx: i });
-        }
-      }
-
-      if (budgetCols.length === 0) continue;
-
-      // Find a "total" row or use the last row
-      for (const row of table.rows) {
-        const label = (row[0] || '').toLowerCase();
-        if (label.includes('total') && !label.includes('subtotal')) {
-          for (const col of budgetCols) {
-            const amount = parseCurrency(row[col.idx]);
-            if (amount && amount > 0) {
-              rows.push({ department: section.title, year: col.year, amount });
-            }
-          }
-          break;
-        }
-      }
-    }
-  }
-
-  return rows;
-}
-
-export default function BudgetChart({ sections }: { sections: Section[] }) {
+export default function BudgetChart({ data }: { data: BudgetRow[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedYear, setSelectedYear] = useState<string>('');
 
-  const data = extractBudgetData(sections);
   const years = [...new Set(data.map((d) => d.year))].sort();
 
   useEffect(() => {

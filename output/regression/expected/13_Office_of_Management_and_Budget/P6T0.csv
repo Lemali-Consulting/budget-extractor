@@ -1,42 +1,42 @@
-"C0 (l, x:57-260)","C1 (r, x:260-339)","C2 (r, x:339-405)","C3 (r, x:405-472)","C4 (r, x:472-524)","C5 (r, x:524-556)"
-,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change
-Expenditures,,,,,
-51 - PERSONNEL-SALARIES & WAGES,"2,456,001","2,660,724","2,481,131","(179,593)",(6.7)%
-51101 - Regular,"2,446,158","2,655,724","2,476,131","(179,593)",
-51103 - Part Time,—,"5,000","5,000",—,
-51207 - Leave Buyback,"9,842",—,—,—,
-51401 - Premium Pay,1,—,—,—,
-52 - PERSONNEL-EMPLOYEE BENEFITS,"560,316","645,601","600,169","(45,432)",(7.0)%
-52101 - Health Insurance,"260,237","303,051","295,639","(7,412)",
-52111 - Other Insurance/Benefits,"49,859","50,533","45,307","(5,225)",
-52201 - Social Security,"183,723","212,017","195,603","(16,414)",
-52601 - Personal Leave Buyback,"59,680","62,000","62,620",620,
-52602 - Tuition Reimbursement,"6,817","18,000","1,000","(17,000)",
-53 - PROFESSIONAL & TECHNICAL SERVICES,"845,092","888,621","735,218","(153,403)",(17.3)%
-53101 - Administrative Fees,"417,832","511,541","454,888","(56,653)",
-53301 - Workforce Training,"17,679","25,500","12,750","(12,750)",
-53509 - Computer Maintenance,"190,977","229,456","232,756","3,300",
-53725 - Maintenance-Miscellaneous,"17,700","34,824","34,824",—,
-53901 - Professional Services,"200,903","87,300",—,"(87,300)",
-54 - PROPERTY SERVICES,"8,502,778","8,708,376","9,015,214","306,838",3.5%
-54101 - Cleaning,"3,060","3,400","3,400",—,
-54201 - Maintenance,"7,893,317","8,162,590","8,211,206","48,616",
-54501 - Land & Buildings,"485,139","416,387","674,608","258,221",
-54609 - Vehicles,"8,462",—,—,—,
-54513 - Machinery & Equipment,"112,800","126,000","126,000",—,
-55 - OTHER SERVICES,"762,065","734,475","832,247","97,772",13.3%
-55101 - Insurance Premiums,"758,893","731,975","829,747","97,772",
-55309 - Regulatory,"3,000","2,500","2,500",—,
-55501 - Printing & Binding,172,—,—,—,
-56 - SUPPLIES,"6,709,032","7,525,374","6,949,839","(575,535)",(7.6)%
-56101 - Office Supplies,815,"8,000","8,000",—,
-56105 - Postage,—,100,100,—,
-56151 - Operational Supplies,"4,075","12,640","12,640",—,
-56201 - Fuel,"3,272,549","3,804,325","3,044,325","(760,000)",
-56401 - Materials,"10,132","11,000","11,000",—,
-56501 - Parts,"3,421,461","3,689,309","3,873,774","184,465",
-57 - PROPERTY,173,"1,000","1,000",—,—%
-57571- Furniture & Fixtures,173,"1,000","1,000",—,
-58 - MISCELLANEOUS,"36,616","24,000","24,000",—,—%
-58101 - Grants,"36,616","24,000","24,000",—,
-Expenditures Total,"19,872,073","21,188,171","20,638,818","(549,353)",(2.6)%
+"C0 (l, x:57-260)","C1 (r, x:260-339)","C2 (r, x:339-405)","C3 (r, x:405-472)","C4 (r, x:472-524)","C5 (r, x:524-556)",section
+,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change,section
+Expenditures,,,,,,Expenditures
+51 - PERSONNEL-SALARIES & WAGES,"2,456,001","2,660,724","2,481,131","(179,593)",(6.7)%,51 - PERSONNEL-SALARIES & WAGES
+51101 - Regular,"2,446,158","2,655,724","2,476,131","(179,593)",,51 - PERSONNEL-SALARIES & WAGES
+51103 - Part Time,—,"5,000","5,000",—,,51 - PERSONNEL-SALARIES & WAGES
+51207 - Leave Buyback,"9,842",—,—,—,,51 - PERSONNEL-SALARIES & WAGES
+51401 - Premium Pay,1,—,—,—,,51 - PERSONNEL-SALARIES & WAGES
+52 - PERSONNEL-EMPLOYEE BENEFITS,"560,316","645,601","600,169","(45,432)",(7.0)%,52 - PERSONNEL-EMPLOYEE BENEFITS
+52101 - Health Insurance,"260,237","303,051","295,639","(7,412)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52111 - Other Insurance/Benefits,"49,859","50,533","45,307","(5,225)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52201 - Social Security,"183,723","212,017","195,603","(16,414)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52601 - Personal Leave Buyback,"59,680","62,000","62,620",620,,52 - PERSONNEL-EMPLOYEE BENEFITS
+52602 - Tuition Reimbursement,"6,817","18,000","1,000","(17,000)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+53 - PROFESSIONAL & TECHNICAL SERVICES,"845,092","888,621","735,218","(153,403)",(17.3)%,53 - PROFESSIONAL & TECHNICAL SERVICES
+53101 - Administrative Fees,"417,832","511,541","454,888","(56,653)",,53 - PROFESSIONAL & TECHNICAL SERVICES
+53301 - Workforce Training,"17,679","25,500","12,750","(12,750)",,53 - PROFESSIONAL & TECHNICAL SERVICES
+53509 - Computer Maintenance,"190,977","229,456","232,756","3,300",,53 - PROFESSIONAL & TECHNICAL SERVICES
+53725 - Maintenance-Miscellaneous,"17,700","34,824","34,824",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53901 - Professional Services,"200,903","87,300",—,"(87,300)",,53 - PROFESSIONAL & TECHNICAL SERVICES
+54 - PROPERTY SERVICES,"8,502,778","8,708,376","9,015,214","306,838",3.5%,54 - PROPERTY SERVICES
+54101 - Cleaning,"3,060","3,400","3,400",—,,54 - PROPERTY SERVICES
+54201 - Maintenance,"7,893,317","8,162,590","8,211,206","48,616",,54 - PROPERTY SERVICES
+54501 - Land & Buildings,"485,139","416,387","674,608","258,221",,54 - PROPERTY SERVICES
+54609 - Vehicles,"8,462",—,—,—,,54 - PROPERTY SERVICES
+54513 - Machinery & Equipment,"112,800","126,000","126,000",—,,54 - PROPERTY SERVICES
+55 - OTHER SERVICES,"762,065","734,475","832,247","97,772",13.3%,55 - OTHER SERVICES
+55101 - Insurance Premiums,"758,893","731,975","829,747","97,772",,55 - OTHER SERVICES
+55309 - Regulatory,"3,000","2,500","2,500",—,,55 - OTHER SERVICES
+55501 - Printing & Binding,172,—,—,—,,55 - OTHER SERVICES
+56 - SUPPLIES,"6,709,032","7,525,374","6,949,839","(575,535)",(7.6)%,56 - SUPPLIES
+56101 - Office Supplies,815,"8,000","8,000",—,,56 - SUPPLIES
+56105 - Postage,—,100,100,—,,56 - SUPPLIES
+56151 - Operational Supplies,"4,075","12,640","12,640",—,,56 - SUPPLIES
+56201 - Fuel,"3,272,549","3,804,325","3,044,325","(760,000)",,56 - SUPPLIES
+56401 - Materials,"10,132","11,000","11,000",—,,56 - SUPPLIES
+56501 - Parts,"3,421,461","3,689,309","3,873,774","184,465",,56 - SUPPLIES
+57 - PROPERTY,173,"1,000","1,000",—,—%,57 - PROPERTY
+57571- Furniture & Fixtures,173,"1,000","1,000",—,,57 - PROPERTY
+58 - MISCELLANEOUS,"36,616","24,000","24,000",—,—%,58 - MISCELLANEOUS
+58101 - Grants,"36,616","24,000","24,000",—,,58 - MISCELLANEOUS
+Expenditures Total,"19,872,073","21,188,171","20,638,818","(549,353)",(2.6)%,58 - MISCELLANEOUS

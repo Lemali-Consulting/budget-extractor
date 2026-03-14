@@ -1,44 +1,44 @@
-"C0 (l, x:57-222)","C1 (r, x:222-281)","C2 (r, x:281-323)","C3 (r, x:323-358)","C4 (r, x:358-412)","C5 (r, x:412-439)","C6 (r, x:439-480)","C7 (r, x:480-516)","C8 (r, x:516-556)"
-Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget
-Director's Office,,,,,,,,
-Assistant Director - Facilities,1,32G,12,"110,718",1,32G,12,"114,046"
-Facilities Maintenance,,,,,,,,
-Superintendent - Facilities,1,29G,12,"98,571",1,29G,12,"101,525"
-"Electrical Foreman, Second in Command",1,"70,824",12,"70,824",1,"75,878",12,"75,878"
-Plumbing Maintenance Foreman,1,"68,753",12,"68,753",1,"73,632",12,"73,632"
-Carpentry Foreman,1,"68,735",12,"68,735",1,"73,632",12,"73,632"
-H.V.A.C. Foreman,1,"68,735",12,"68,735",1,"73,632",12,"73,632"
-Painter Foreman,1,"67,059",12,"67,059",1,"71,822",12,"71,822"
-Building Maintenance Foreman,1,"66,565",12,"66,565",1,"71,282",12,"71,282"
-Stationary Engineer,1,28.62,"2,080","59,530",2,29.20,"2,080","121,472"
-Electrician,6,30.74,"2,080","383,635",6,31.36,"2,080","391,373"
-Plumber,3,30.74,"2,080","191,818",3,31.36,"2,080","195,686"
-H.V.A.C. Technician,6,29.48,"2,080","367,910",6,30.07,"2,080","375,274"
-Carpenter,10,29.14,"2,080","606,112",10,29.72,"2,080","618,176"
-Painter,5,28.58,"2,080","297,232",5,29.15,"2,080","303,160"
-Glazier,1,28.39,"2,080","59,051",1,28.95,"2,080","60,216"
-Skilled Laborer,—,25.97,—,—,1,26.49,"2,080","55,099"
-General Laborer,3,27.10,"2,080","169,104",3,27.64,"2,080","172,474"
-Construction,,,,,,,,
-Construction Supervisor,1,27G,12,"91,021",1,27G,12,"93,746"
-Construction Foreman,3,22G,12,"222,206",3,22G,12,"231,067"
-Bricklayer,3,29.97,"2,080","187,013",2,30.57,"2,080","127,171"
-Structural Iron Worker,2,30.74,"2,080","127,878",2,31.36,"2,080","130,458"
-Cement Finisher,7,30.74,"2,080","447,574",6,31.36,"2,080","391,373"
-Truck Driver,1,26.98,"2,080","56,118",1,27.52,"2,080","57,242"
-Laborer,6,24.47,"2,080","305,386",5,24.96,"2,080","259,584"
-Architecture,,,,,,,,
-Senior Project Manager,1,30G,12,"102,419",1,30G,12,"105,498"
-Senior Project Architect,2,30G,12,"204,838",2,30G,12,"210,995"
-Project Manager,6,26G,12,"523,910",7,26G,12,"629,574"
-Associate Project Manager 2,2,23G,12,"154,086",1,23G,12,"79,352"
-Associate Project Manager,3,19G,12,"195,998",1,19G,12,"67,288"
-Office of Personnel & Finance,,,,,,,,
-Warehouse Manager,1,24G,12,"80,330",1,24G,12,"82,742"
-Assistant Warehouse Manager,—,21G,—,—,1,21G,1,"73,258"
-Department Business Administrator,1,24G,12,"80,330",1,24G,12,"82,742"
-"Technician, Payroll",1,U02-K,12,"42,788",1,U02-K,12,"42,788"
-Administration,,,,,,,,
-Stores Manager,—,23G,—,—,1,23G,1,"79,352"
-Contract Administrator,1,21G,12,"71,115",1,16G,12,"59,301"
-Administrator 2,1,17G,12,"60,112",—,17G,—,—
+"C0 (l, x:57-222)","C1 (r, x:222-281)","C2 (r, x:281-323)","C3 (r, x:323-358)","C4 (r, x:358-412)","C5 (r, x:412-439)","C6 (r, x:439-480)","C7 (r, x:480-516)","C8 (r, x:516-556)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+Director's Office,,,,,,,,,Director's Office
+Assistant Director - Facilities,1,32G,12,"110,718",1,32G,12,"114,046",Director's Office
+Facilities Maintenance,,,,,,,,,Facilities Maintenance
+Superintendent - Facilities,1,29G,12,"98,571",1,29G,12,"101,525",Facilities Maintenance
+"Electrical Foreman, Second in Command",1,"70,824",12,"70,824",1,"75,878",12,"75,878",Facilities Maintenance
+Plumbing Maintenance Foreman,1,"68,753",12,"68,753",1,"73,632",12,"73,632",Facilities Maintenance
+Carpentry Foreman,1,"68,735",12,"68,735",1,"73,632",12,"73,632",Facilities Maintenance
+H.V.A.C. Foreman,1,"68,735",12,"68,735",1,"73,632",12,"73,632",Facilities Maintenance
+Painter Foreman,1,"67,059",12,"67,059",1,"71,822",12,"71,822",Facilities Maintenance
+Building Maintenance Foreman,1,"66,565",12,"66,565",1,"71,282",12,"71,282",Facilities Maintenance
+Stationary Engineer,1,28.62,"2,080","59,530",2,29.20,"2,080","121,472",Facilities Maintenance
+Electrician,6,30.74,"2,080","383,635",6,31.36,"2,080","391,373",Facilities Maintenance
+Plumber,3,30.74,"2,080","191,818",3,31.36,"2,080","195,686",Facilities Maintenance
+H.V.A.C. Technician,6,29.48,"2,080","367,910",6,30.07,"2,080","375,274",Facilities Maintenance
+Carpenter,10,29.14,"2,080","606,112",10,29.72,"2,080","618,176",Facilities Maintenance
+Painter,5,28.58,"2,080","297,232",5,29.15,"2,080","303,160",Facilities Maintenance
+Glazier,1,28.39,"2,080","59,051",1,28.95,"2,080","60,216",Facilities Maintenance
+Skilled Laborer,—,25.97,—,—,1,26.49,"2,080","55,099",Facilities Maintenance
+General Laborer,3,27.10,"2,080","169,104",3,27.64,"2,080","172,474",Facilities Maintenance
+Construction,,,,,,,,,Construction
+Construction Supervisor,1,27G,12,"91,021",1,27G,12,"93,746",Construction
+Construction Foreman,3,22G,12,"222,206",3,22G,12,"231,067",Construction
+Bricklayer,3,29.97,"2,080","187,013",2,30.57,"2,080","127,171",Construction
+Structural Iron Worker,2,30.74,"2,080","127,878",2,31.36,"2,080","130,458",Construction
+Cement Finisher,7,30.74,"2,080","447,574",6,31.36,"2,080","391,373",Construction
+Truck Driver,1,26.98,"2,080","56,118",1,27.52,"2,080","57,242",Construction
+Laborer,6,24.47,"2,080","305,386",5,24.96,"2,080","259,584",Construction
+Architecture,,,,,,,,,Architecture
+Senior Project Manager,1,30G,12,"102,419",1,30G,12,"105,498",Architecture
+Senior Project Architect,2,30G,12,"204,838",2,30G,12,"210,995",Architecture
+Project Manager,6,26G,12,"523,910",7,26G,12,"629,574",Architecture
+Associate Project Manager 2,2,23G,12,"154,086",1,23G,12,"79,352",Architecture
+Associate Project Manager,3,19G,12,"195,998",1,19G,12,"67,288",Architecture
+Office of Personnel & Finance,,,,,,,,,Office of Personnel & Finance
+Warehouse Manager,1,24G,12,"80,330",1,24G,12,"82,742",Office of Personnel & Finance
+Assistant Warehouse Manager,—,21G,—,—,1,21G,1,"73,258",Office of Personnel & Finance
+Department Business Administrator,1,24G,12,"80,330",1,24G,12,"82,742",Office of Personnel & Finance
+"Technician, Payroll",1,U02-K,12,"42,788",1,U02-K,12,"42,788",Office of Personnel & Finance
+Administration,,,,,,,,,Administration
+Stores Manager,—,23G,—,—,1,23G,1,"79,352",Administration
+Contract Administrator,1,21G,12,"71,115",1,16G,12,"59,301",Administration
+Administrator 2,1,17G,12,"60,112",—,17G,—,—,Administration

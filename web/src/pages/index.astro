@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
 import budgetData from '../data/budget-data.json';
+import searchIndex from '../data/views/search-index.json';
 
 const sections = budgetData.sections;
 
@@ -33,7 +34,7 @@ for (const section of sections) {
   <p class="text-gray-600 mb-4">Browse the City of Pittsburgh FY2026 Operating Budget. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
 
   <div class="mb-8">
-    <SearchBar sections={sections} client:load />
+    <SearchBar items={searchIndex} client:load />
   </div>
 
   {[...grouped.entries()].map(([category, secs]) => (

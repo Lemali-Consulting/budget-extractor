@@ -1,0 +1,3107 @@
+[
+  {
+    "sectionTitle": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "tableId": "s4_p1_t0",
+    "tableType": "revenue",
+    "headers": "REVENUES 2025 Estimate 2026 Budget 2027 Forecast 2028 Forecast 2029 Forecast 2030 Forecast",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "tableId": "s4_p2_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Estimate 2026 Budget 2027 Budget 2028 Budget 2029 Budget 2030 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Revenue Detail",
+    "slug": "revenue-detail",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Revenue Detail",
+    "slug": "revenue-detail",
+    "tableId": "s7_p0_t0",
+    "tableType": "unknown",
+    "headers": "Account 2026 2027 2028 2029 2030",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Revenue Detail",
+    "slug": "revenue-detail",
+    "tableId": "s7_p1_t0",
+    "tableType": "unknown",
+    "headers": "Account 2026 2027 2028 2029 2030",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Revenue Detail",
+    "slug": "revenue-detail",
+    "tableId": "s7_p2_t0",
+    "tableType": "unknown",
+    "headers": "Account 2026 2027 2028 2029 2030",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Expenditures Detail",
+    "slug": "expenditures-detail",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Expenditures Detail",
+    "slug": "expenditures-detail",
+    "tableId": "s9_p0_t0",
+    "tableType": "unknown",
+    "headers": "Account 2026 2027 2028 2029 2030",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Expenditures Detail",
+    "slug": "expenditures-detail",
+    "tableId": "s9_p1_t0",
+    "tableType": "unknown",
+    "headers": "Account 2026 2027 2028 2029 2030",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Expenditures Detail",
+    "slug": "expenditures-detail",
+    "tableId": "s9_p2_t0",
+    "tableType": "unknown",
+    "headers": "Account 2026 2027 2028 2029 2030",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "City Council",
+    "slug": "city-council",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "City Council",
+    "slug": "city-council",
+    "tableId": "s10_p2_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "City Council",
+    "slug": "city-council",
+    "tableId": "s10_p2_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "City Council",
+    "slug": "city-council",
+    "tableId": "s10_p2_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "City Council",
+    "slug": "city-council",
+    "tableId": "s10_p3_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "City Council",
+    "slug": "city-council",
+    "tableId": "s10_p4_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "tableId": "s11_p2_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "tableId": "s11_p2_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "tableId": "s11_p3_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "tableId": "s11_p4_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "tableId": "s12_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "tableId": "s12_p2_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "tableId": "s12_p2_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "tableId": "s12_p2_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "tableId": "s12_p3_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "tableId": "s12_p4_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "tableId": "s13_p4_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "tableId": "s13_p4_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "tableId": "s13_p5_t0",
+    "tableType": "unknown",
+    "headers": "Total Full Time Permanent Positions 35 2,991,603 30 2,587,892",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "tableId": "s13_p6_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "tableId": "s13_p7_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p3_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p4_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p4_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p4_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p5_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p6_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "tableId": "s15_p3_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "tableId": "s15_p3_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "tableId": "s15_p3_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "tableId": "s15_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "tableId": "s15_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p4_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p4_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p5_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p5_t1",
+    "tableType": "unknown",
+    "headers": "2026 Allocations Department of Finance Three Taxing Bodies Trust Fund",
+    "page": 5,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p6_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p7_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p8_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 8,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Law",
+    "slug": "department-of-law",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Department of Law",
+    "slug": "department-of-law",
+    "tableId": "s18_p3_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Law",
+    "slug": "department-of-law",
+    "tableId": "s18_p3_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Department of Law",
+    "slug": "department-of-law",
+    "tableId": "s18_p3_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Department of Law",
+    "slug": "department-of-law",
+    "tableId": "s18_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Law",
+    "slug": "department-of-law",
+    "tableId": "s18_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "tableId": "s19_p3_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "tableId": "s19_p3_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "tableId": "s19_p3_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "tableId": "s19_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "tableId": "s19_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "tableId": "s20_p3_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "tableId": "s20_p3_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "tableId": "s20_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "tableId": "s20_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "tableId": "s21_p4_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "tableId": "s21_p4_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "tableId": "s21_p5_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "tableId": "s21_p6_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "tableId": "s21_p7_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "tableId": "s21_p8_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 8,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "tableId": "s25_p4_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Month s 2025 Budget 2026 FTE Rate/ Grade Hours/ Month s 2026 Budget",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "tableId": "s25_p4_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Month s 2025 Budget 2026 FTE Rate/ Grade Hours/ Month s 2026 Budget",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "tableId": "s25_p4_t2",
+    "tableType": "unknown",
+    "headers": "FAPP Hourly Rates 2025 2026",
+    "page": 4,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "tableId": "s25_p5_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "tableId": "s25_p6_t0",
+    "tableType": "financial_summary",
+    "headers": "  2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "tableId": "s25_p7_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "s26_p5_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "s26_p5_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 5,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "s26_p5_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 5,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "s26_p6_t0",
+    "tableType": "unknown",
+    "headers": "FOP Hourly Rates 2025 2026",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "s26_p7_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "s26_p8_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 8,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "tableId": "s26_p9_t0",
+    "tableType": "unknown",
+    "headers": "  2026 2027 2028 2029 2030",
+    "page": 9,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p3_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p3_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p3_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p3_t3",
+    "tableType": "unknown",
+    "headers": "Master Firefighter 39.04 40.99",
+    "page": 3,
+    "tableIndex": 3
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p5_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p6_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "tableId": "s28_p3_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "tableId": "s28_p3_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "tableId": "s28_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "tableId": "s28_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "tableId": "s29_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "tableId": "s29_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "tableId": "s31_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "tableId": "s31_p1_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "tableId": "s31_p1_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "tableId": "s31_p2_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "tableId": "s31_p3_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "tableId": "s32_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "tableId": "s32_p1_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "tableId": "s32_p2_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "tableId": "s32_p3_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "tableId": "s32_p4_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "tableId": "s32_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "s33_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "s33_p1_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "s33_p1_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "s33_p2_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "s33_p3_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "tableId": "s34_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "tableId": "s34_p2_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "tableId": "s34_p2_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "tableId": "s34_p3_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "tableId": "s34_p4_t0",
+    "tableType": "financial_summary",
+    "headers": "  2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "tableId": "s34_p5_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "s36_p10_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 10,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "s36_p6_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "s36_p7_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "s36_p7_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 7,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "s36_p8_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 8,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "s36_p9_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 9,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "tableId": "s37_p4_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "tableId": "s37_p4_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "tableId": "s37_p4_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 4,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "tableId": "s37_p5_t0",
+    "tableType": "financial_summary",
+    "headers": " 2024 Actual 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "tableId": "s37_p6_t0",
+    "tableType": "unknown",
+    "headers": " 2026 2027 2028 2029 2030",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "tableId": "s38_p1_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 185,381.3",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "tableId": "s38_p1_t1",
+    "tableType": "financial",
+    "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "tableId": "s38_p1_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 185,381.3",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "tableId": "s39_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 251,569",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "tableId": "s39_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass  2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "tableId": "s39_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 250,131",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "tableId": "s40_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 1,212,710",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "tableId": "s40_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass Expenditures 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "tableId": "s40_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 543,280",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "tableId": "s40_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "tableId": "s40_p1_t1",
+    "tableType": "unknown",
+    "headers": "2026 Allocations Department of Finance Three Taxing Bodies Trust Fund",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "tableId": "s41_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 4,752,646",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "tableId": "s41_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "tableId": "s41_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 4,245,017",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "tableId": "s41_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "tableId": "s42_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance \u2014",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "tableId": "s42_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "tableId": "s42_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance (40,658)",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "tableId": "s42_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "tableId": "s43_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 3,163,185",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "tableId": "s43_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "tableId": "s43_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 3,325,749",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "tableId": "s43_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "s44_p1_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 16,745,000",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "s44_p1_t1",
+    "tableType": "financial",
+    "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "s44_p1_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 11,160,239",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "s44_p2_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "s44_p3_t0",
+    "tableType": "unknown",
+    "headers": "Assistant Director - Community Affairs 1 32G 12 110,718 \u2014 32G \u2014 \u2014",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "s44_p3_t1",
+    "tableType": "unknown",
+    "headers": "Temporary, Part-Time, and Seasonal Allowances        ",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "tableId": "s44_p3_t2",
+    "tableType": "unknown",
+    "headers": "Total Full-Time Permanent Positions 68 4,614,080 69 4,713,841",
+    "page": 3,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "tableId": "s47_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 3,274,374",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "tableId": "s47_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass Detail  2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "tableId": "s47_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 3,292,334",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "tableId": "s48_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 964,095",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "tableId": "s48_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "tableId": "s48_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 814,095",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 388,359",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 325,045",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p1_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p1_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p1_t3",
+    "tableType": "unknown",
+    "headers": "2026 Allocations Department of Parks & Recreation Special Events Trust Fund",
+    "page": 1,
+    "tableIndex": 3
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p1_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 1,840,915",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p1_t1",
+    "tableType": "financial",
+    "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p1_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 1,840,915",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p2_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p2_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p2_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 2,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p2_t3",
+    "tableType": "unknown",
+    "headers": "2026 Allocations Parks and Recreation General Fund Public Safety Administration General Fund Mellon Park Trust Fund Parks RAD Trust Fund",
+    "page": 2,
+    "tableIndex": 3
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 1,779,292",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass Details 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 1,652,005",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p1_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p1_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p1_t3",
+    "tableType": "unknown",
+    "headers": "2026 Allocations Department of Parks & Recreation Mellon Park Trust Fund Parks RAD Trust Fund",
+    "page": 1,
+    "tableIndex": 3
+  },
+  {
+    "sectionTitle": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "tableId": "s53_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 645,064",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "tableId": "s53_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "tableId": "s53_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 648,064",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 1,169,912",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 252,482",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p1_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p1_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p1_t3",
+    "tableType": "unknown",
+    "headers": "2026 Allocations Department of Parks & Recreation Senior Citizens Program Trust Fund",
+    "page": 1,
+    "tableIndex": 3
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "s55_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 350,184",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "s55_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass Detail 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "s55_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 203,856",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "s55_p1_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "s55_p1_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "s55_p1_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "tableId": "s56_p0_t0",
+    "tableType": "unknown",
+    "headers": "Projected Beginning Balance 2,035,076",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "tableId": "s56_p0_t1",
+    "tableType": "financial",
+    "headers": "Subclass 2025 Budget 2026 Budget Increase/ (Decrease) % Change",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "tableId": "s56_p0_t2",
+    "tableType": "unknown",
+    "headers": "Projected Ending Balance 2,163,851",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p0_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 0,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p0_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 0,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p0_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 0,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p10_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 10,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p1_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p1_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p1_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 1,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p2_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p2_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p2_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 2,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p3_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p3_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p3_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 3,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p4_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p4_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p4_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 4,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p5_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p5_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 5,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p5_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 5,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p6_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p6_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 6,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p6_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 6,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p7_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p7_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 7,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p7_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 7,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p8_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 8,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p8_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 8,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p8_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 8,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p9_t0",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 9,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p9_t1",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 9,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Other Special Revenue Funds",
+    "slug": "other-special-revenue-funds",
+    "tableId": "s57_p9_t2",
+    "tableType": "revenue",
+    "headers": "Last 12 months* Revenues Last 12 months* Expenditures Spending Authority as of 11/06/25",
+    "page": 9,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p10_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 10,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p10_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 10,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p10_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 10,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p10_t3",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 10,
+    "tableIndex": 3
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p11_t0",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 11,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p11_t1",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 11,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p11_t2",
+    "tableType": "personnel",
+    "headers": "Title 2025 FTE Rate/ Grade Hours/ Months 2025 Budget 2026 FTE Rate/ Grade Hours/ Months 2026 Budget",
+    "page": 11,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p2_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p2_t1",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p2_t2",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 2,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p3_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p3_t1",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p4_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p4_t1",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p5_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p5_t1",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 5,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p6_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p7_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p7_t1",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 7,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p7_t2",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 7,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p8_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 8,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p9_t0",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 9,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p9_t1",
+    "tableType": "unknown",
+    "headers": "Department JDE Number Funder Grant Amount Awarded Amount Spent Remaining Balance",
+    "page": 9,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Salary Tables",
+    "slug": "salary-tables",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Salary Tables",
+    "slug": "salary-tables",
+    "tableId": "s60_p1_t0",
+    "tableType": "unknown",
+    "headers": "Grade|A Grade|B Grade|C Grade|D Grade|E Grade|F Grade|G Step",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Salary Tables",
+    "slug": "salary-tables",
+    "tableId": "s60_p2_t0",
+    "tableType": "unknown",
+    "headers": "Step|A Step|B Step|C Step|D Step|E Grade",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Salary Tables",
+    "slug": "salary-tables",
+    "tableId": "s60_p2_t1",
+    "tableType": "unknown",
+    "headers": "Step|F Step|G Step|H Step|I Step|J Grade",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Salary Tables",
+    "slug": "salary-tables",
+    "tableId": "s60_p2_t2",
+    "tableType": "unknown",
+    "headers": "Step|K Step|L Step|M Step|N Step|O Grade",
+    "page": 2,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Salary Tables",
+    "slug": "salary-tables",
+    "tableId": "s60_p3_t0",
+    "tableType": "unknown",
+    "headers": "Grade and Step Annual Rate",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p10_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 10,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p11_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 11,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p12_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 12,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p13_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 13,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p14_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 14,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p1_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Interest Debt Service Debt Service",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p1_t1",
+    "tableType": "unknown",
+    "headers": "849,270,000.00 418,961,653.28 1,268,231,653.28 1,268,231,653.25",
+    "page": 1,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p2_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p2_t1",
+    "tableType": "unknown",
+    "headers": "Date Principal 2017 Bond Issue Coupon Interest Debt Service Annual Debt Service",
+    "page": 2,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p3_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p4_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 4,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p4_t1",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Refunding Series A of 2020 Interest Debt Service Annual Debt Service",
+    "page": 4,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p5_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 5,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p5_t1",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon 2021 Bond Issue Interest Debt Service Annual Debt Service",
+    "page": 5,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p6_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 6,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p7_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p8_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 8,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Debt Service",
+    "slug": "debt-service",
+    "tableId": "s61_p9_t0",
+    "tableType": "unknown",
+    "headers": "Date Principal Coupon Interest Debt Service Debt Service",
+    "page": 9,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p11_t0",
+    "tableType": "unknown",
+    "headers": "DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS ",
+    "page": 11,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p14_t0",
+    "tableType": "unknown",
+    "headers": "DEPARTMENT OF PUBLIC WORKS ",
+    "page": 14,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p16_t0",
+    "tableType": "unknown",
+    "headers": "SPECIAL EVENTS & FILM FEES ",
+    "page": 16,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p19_t0",
+    "tableType": "unknown",
+    "headers": "ANIMAL CARE AND CONTROL ",
+    "page": 19,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p1_t0",
+    "tableType": "unknown",
+    "headers": "BUREAU OF FIRE ",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p20_t0",
+    "tableType": "unknown",
+    "headers": "MISCELLANEOUS ",
+    "page": 20,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p20_t1",
+    "tableType": "unknown",
+    "headers": "DEPARTMENT OF FINANCE ",
+    "page": 20,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p20_t2",
+    "tableType": "unknown",
+    "headers": "HUMAN RESOURCES & CIVIL SERVICE ",
+    "page": 20,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p21_t0",
+    "tableType": "financial",
+    "headers": "OFFICE OF MANAGEMENT & BUDGET ",
+    "page": 21,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p21_t1",
+    "tableType": "unknown",
+    "headers": "BUREAU OF EMERGENCY MEDICAL SERVICES ",
+    "page": 21,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p21_t2",
+    "tableType": "unknown",
+    "headers": "BUREAU OF POLICE ",
+    "page": 21,
+    "tableIndex": 2
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p3_t0",
+    "tableType": "unknown",
+    "headers": "DEPARTMENT OF CITY PLANNING ",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p3_t1",
+    "tableType": "unknown",
+    "headers": "DEPARTMENT OF MOBILITY & INFRASTRUCTURE ",
+    "page": 3,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p7_t0",
+    "tableType": "unknown",
+    "headers": "Department of Public Safety Reimbursable Events/Secondary Employment|Fee Description 2026 Comments",
+    "page": 7,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p9_t0",
+    "tableType": "unknown",
+    "headers": "* fees will change according to union contract  ",
+    "page": 9,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Master Fee Schedule",
+    "slug": "master-fee-schedule",
+    "tableId": "s63_p9_t1",
+    "tableType": "unknown",
+    "headers": "DEPARTMENT OF PARKS & RECREATION ",
+    "page": 9,
+    "tableIndex": 1
+  },
+  {
+    "sectionTitle": "Appendices",
+    "slug": "appendices",
+    "tableId": "",
+    "tableType": "",
+    "headers": "",
+    "page": 0,
+    "tableIndex": -1
+  },
+  {
+    "sectionTitle": "Appendices",
+    "slug": "appendices",
+    "tableId": "s64_p1_t0",
+    "tableType": "unknown",
+    "headers": "Deliverable/Objective Number Using Department Funding Source Total Cost",
+    "page": 1,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Appendices",
+    "slug": "appendices",
+    "tableId": "s64_p2_t0",
+    "tableType": "unknown",
+    "headers": "Department Deliverable Funding Source",
+    "page": 2,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Appendices",
+    "slug": "appendices",
+    "tableId": "s64_p3_t0",
+    "tableType": "financial",
+    "headers": "Department Deliverable Funding Source 2026 Budget",
+    "page": 3,
+    "tableIndex": 0
+  },
+  {
+    "sectionTitle": "Appendices",
+    "slug": "appendices",
+    "tableId": "s64_p3_t1",
+    "tableType": "unknown",
+    "headers": "Department Project and Funder Year Award",
+    "page": 3,
+    "tableIndex": 1
+  }
+]

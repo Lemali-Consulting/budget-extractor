@@ -1,0 +1,6907 @@
+[
+  {
+    "id": "s4_p1_t0",
+    "sectionNumber": 4,
+    "sectionTitle": "Five-Year Financial Forecast",
+    "sectionSlug": "five-year-financial-forecast",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "REVENUES",
+      "2025 Estimate",
+      "2026 Budget",
+      "2027 Forecast",
+      "2028 Forecast",
+      "2029 Forecast",
+      "2030 Forecast"
+    ],
+    "rowCount": 44,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s4_p2_t0",
+    "sectionNumber": 4,
+    "sectionTitle": "Five-Year Financial Forecast",
+    "sectionSlug": "five-year-financial-forecast",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Estimate",
+      "2026 Budget",
+      "2027 Budget",
+      "2028 Budget",
+      "2029 Budget",
+      "2030 Budget"
+    ],
+    "rowCount": 29,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "s7_p0_t0",
+    "sectionNumber": 7,
+    "sectionTitle": "Revenue Detail",
+    "sectionSlug": "revenue-detail",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Account",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 50,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s7_p1_t0",
+    "sectionNumber": 7,
+    "sectionTitle": "Revenue Detail",
+    "sectionSlug": "revenue-detail",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Account",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 50,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s7_p2_t0",
+    "sectionNumber": 7,
+    "sectionTitle": "Revenue Detail",
+    "sectionSlug": "revenue-detail",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Account",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 49,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s9_p0_t0",
+    "sectionNumber": 9,
+    "sectionTitle": "Expenditures Detail",
+    "sectionSlug": "expenditures-detail",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Account",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 44,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s9_p1_t0",
+    "sectionNumber": 9,
+    "sectionTitle": "Expenditures Detail",
+    "sectionSlug": "expenditures-detail",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Account",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 41,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s9_p2_t0",
+    "sectionNumber": 9,
+    "sectionTitle": "Expenditures Detail",
+    "sectionSlug": "expenditures-detail",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Account",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 13,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s10_p2_t0",
+    "sectionNumber": 10,
+    "sectionTitle": "City Council",
+    "sectionSlug": "city-council",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s10_p2_t1",
+    "sectionNumber": 10,
+    "sectionTitle": "City Council",
+    "sectionSlug": "city-council",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      4,
+      8
+    ]
+  },
+  {
+    "id": "s10_p2_t2",
+    "sectionNumber": 10,
+    "sectionTitle": "City Council",
+    "sectionSlug": "city-council",
+    "page": 2,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s10_p3_t0",
+    "sectionNumber": 10,
+    "sectionTitle": "City Council",
+    "sectionSlug": "city-council",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 16,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s10_p4_t0",
+    "sectionNumber": 10,
+    "sectionTitle": "City Council",
+    "sectionSlug": "city-council",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s11_p2_t0",
+    "sectionNumber": 11,
+    "sectionTitle": "Office of the City Clerk",
+    "sectionSlug": "office-of-the-city-clerk",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 25,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s11_p2_t1",
+    "sectionNumber": 11,
+    "sectionTitle": "Office of the City Clerk",
+    "sectionSlug": "office-of-the-city-clerk",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s11_p3_t0",
+    "sectionNumber": 11,
+    "sectionTitle": "Office of the City Clerk",
+    "sectionSlug": "office-of-the-city-clerk",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 36,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s11_p4_t0",
+    "sectionNumber": 11,
+    "sectionTitle": "Office of the City Clerk",
+    "sectionSlug": "office-of-the-city-clerk",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s12_p1_t0",
+    "sectionNumber": 12,
+    "sectionTitle": "Office of the Mayor",
+    "sectionSlug": "office-of-the-mayor",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 44,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s12_p2_t0",
+    "sectionNumber": 12,
+    "sectionTitle": "Office of the Mayor",
+    "sectionSlug": "office-of-the-mayor",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s12_p2_t1",
+    "sectionNumber": 12,
+    "sectionTitle": "Office of the Mayor",
+    "sectionSlug": "office-of-the-mayor",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      4,
+      8
+    ]
+  },
+  {
+    "id": "s12_p2_t2",
+    "sectionNumber": 12,
+    "sectionTitle": "Office of the Mayor",
+    "sectionSlug": "office-of-the-mayor",
+    "page": 2,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s12_p3_t0",
+    "sectionNumber": 12,
+    "sectionTitle": "Office of the Mayor",
+    "sectionSlug": "office-of-the-mayor",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 27,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s12_p4_t0",
+    "sectionNumber": 12,
+    "sectionTitle": "Office of the Mayor",
+    "sectionSlug": "office-of-the-mayor",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s13_p4_t0",
+    "sectionNumber": 13,
+    "sectionTitle": "Office of Management and Budget",
+    "sectionSlug": "office-of-management-and-budget",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 28,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s13_p4_t1",
+    "sectionNumber": 13,
+    "sectionTitle": "Office of Management and Budget",
+    "sectionSlug": "office-of-management-and-budget",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      4,
+      8
+    ]
+  },
+  {
+    "id": "s13_p5_t0",
+    "sectionNumber": 13,
+    "sectionTitle": "Office of Management and Budget",
+    "sectionSlug": "office-of-management-and-budget",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Total Full Time Permanent Positions",
+      "35",
+      "2,991,603",
+      "30",
+      "2,587,892"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s13_p6_t0",
+    "sectionNumber": 13,
+    "sectionTitle": "Office of Management and Budget",
+    "sectionSlug": "office-of-management-and-budget",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 40,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s13_p7_t0",
+    "sectionNumber": 13,
+    "sectionTitle": "Office of Management and Budget",
+    "sectionSlug": "office-of-management-and-budget",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s14_p3_t0",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 41,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s14_p4_t0",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 25,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s14_p4_t1",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      4,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s14_p4_t2",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 4,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s14_p5_t0",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 38,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s14_p6_t0",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s15_p3_t0",
+    "sectionNumber": 15,
+    "sectionTitle": "Commission on Human Relations",
+    "sectionSlug": "commission-on-human-relations",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s15_p3_t1",
+    "sectionNumber": 15,
+    "sectionTitle": "Commission on Human Relations",
+    "sectionSlug": "commission-on-human-relations",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      4,
+      8
+    ]
+  },
+  {
+    "id": "s15_p3_t2",
+    "sectionNumber": 15,
+    "sectionTitle": "Commission on Human Relations",
+    "sectionSlug": "commission-on-human-relations",
+    "page": 3,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s15_p4_t0",
+    "sectionNumber": 15,
+    "sectionTitle": "Commission on Human Relations",
+    "sectionSlug": "commission-on-human-relations",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 28,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s15_p5_t0",
+    "sectionNumber": 15,
+    "sectionTitle": "Commission on Human Relations",
+    "sectionSlug": "commission-on-human-relations",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s17_p4_t0",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 33,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s17_p4_t1",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      3,
+      4,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s17_p5_t0",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s17_p5_t1",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "2026 Allocations",
+      "Department of Finance",
+      "Three Taxing Bodies Trust Fund"
+    ],
+    "rowCount": 3,
+    "numericCols": []
+  },
+  {
+    "id": "s17_p6_t0",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 43,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s17_p7_t0",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s17_p8_t0",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s18_p3_t0",
+    "sectionNumber": 18,
+    "sectionTitle": "Department of Law",
+    "sectionSlug": "department-of-law",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 18,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s18_p3_t1",
+    "sectionNumber": 18,
+    "sectionTitle": "Department of Law",
+    "sectionSlug": "department-of-law",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s18_p3_t2",
+    "sectionNumber": 18,
+    "sectionTitle": "Department of Law",
+    "sectionSlug": "department-of-law",
+    "page": 3,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s18_p4_t0",
+    "sectionNumber": 18,
+    "sectionTitle": "Department of Law",
+    "sectionSlug": "department-of-law",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 29,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s18_p5_t0",
+    "sectionNumber": 18,
+    "sectionTitle": "Department of Law",
+    "sectionSlug": "department-of-law",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s19_p3_t0",
+    "sectionNumber": 19,
+    "sectionTitle": "Ethics Hearing Board",
+    "sectionSlug": "ethics-hearing-board",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s19_p3_t1",
+    "sectionNumber": 19,
+    "sectionTitle": "Ethics Hearing Board",
+    "sectionSlug": "ethics-hearing-board",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      4,
+      8
+    ]
+  },
+  {
+    "id": "s19_p3_t2",
+    "sectionNumber": 19,
+    "sectionTitle": "Ethics Hearing Board",
+    "sectionSlug": "ethics-hearing-board",
+    "page": 3,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s19_p4_t0",
+    "sectionNumber": 19,
+    "sectionTitle": "Ethics Hearing Board",
+    "sectionSlug": "ethics-hearing-board",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 22,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s19_p5_t0",
+    "sectionNumber": 19,
+    "sectionTitle": "Ethics Hearing Board",
+    "sectionSlug": "ethics-hearing-board",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s20_p3_t0",
+    "sectionNumber": 20,
+    "sectionTitle": "Office of Municipal Investigations",
+    "sectionSlug": "office-of-municipal-investigations",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s20_p3_t1",
+    "sectionNumber": 20,
+    "sectionTitle": "Office of Municipal Investigations",
+    "sectionSlug": "office-of-municipal-investigations",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s20_p4_t0",
+    "sectionNumber": 20,
+    "sectionTitle": "Office of Municipal Investigations",
+    "sectionSlug": "office-of-municipal-investigations",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 23,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s20_p5_t0",
+    "sectionNumber": 20,
+    "sectionTitle": "Office of Municipal Investigations",
+    "sectionSlug": "office-of-municipal-investigations",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s21_p4_t0",
+    "sectionNumber": 21,
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "sectionSlug": "department-of-human-resources-and-civil-service",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 26,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s21_p4_t1",
+    "sectionNumber": 21,
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "sectionSlug": "department-of-human-resources-and-civil-service",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s21_p5_t0",
+    "sectionNumber": 21,
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "sectionSlug": "department-of-human-resources-and-civil-service",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s21_p6_t0",
+    "sectionNumber": 21,
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "sectionSlug": "department-of-human-resources-and-civil-service",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 41,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s21_p7_t0",
+    "sectionNumber": 21,
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "sectionSlug": "department-of-human-resources-and-civil-service",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s21_p8_t0",
+    "sectionNumber": 21,
+    "sectionTitle": "Department of Human Resources and Civil Service",
+    "sectionSlug": "department-of-human-resources-and-civil-service",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s25_p4_t0",
+    "sectionNumber": 25,
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "sectionSlug": "bureau-of-emergency-medical-services",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Month s",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Month s",
+      "2026 Budget"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s25_p4_t1",
+    "sectionNumber": 25,
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "sectionSlug": "bureau-of-emergency-medical-services",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Month s",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Month s",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s25_p4_t2",
+    "sectionNumber": 25,
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "sectionSlug": "bureau-of-emergency-medical-services",
+    "page": 4,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "FAPP Hourly Rates",
+      "2025",
+      "2026"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s25_p5_t0",
+    "sectionNumber": 25,
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "sectionSlug": "bureau-of-emergency-medical-services",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 40,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s25_p6_t0",
+    "sectionNumber": 25,
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "sectionSlug": "bureau-of-emergency-medical-services",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s25_p7_t0",
+    "sectionNumber": 25,
+    "sectionTitle": "Bureau of Emergency Medical Services",
+    "sectionSlug": "bureau-of-emergency-medical-services",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s26_p5_t0",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 25,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s26_p5_t1",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      3,
+      4,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s26_p5_t2",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 5,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s26_p6_t0",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "FOP Hourly Rates",
+      "2025",
+      "2026"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s26_p7_t0",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 37,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s26_p8_t0",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 14,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s26_p9_t0",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s27_p3_t0",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 14,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s27_p3_t1",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      2,
+      4,
+      6,
+      8
+    ]
+  },
+  {
+    "id": "s27_p3_t2",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 3,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s27_p3_t3",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 3,
+    "tableIndex": 3,
+    "type": "unknown",
+    "headers": [
+      "Master Firefighter",
+      "39.04",
+      "40.99"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s27_p4_t0",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 37,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s27_p5_t0",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s27_p6_t0",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s28_p3_t0",
+    "sectionNumber": 28,
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "sectionSlug": "bureau-of-animal-care-and-control",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s28_p3_t1",
+    "sectionNumber": 28,
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "sectionSlug": "bureau-of-animal-care-and-control",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s28_p4_t0",
+    "sectionNumber": 28,
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "sectionSlug": "bureau-of-animal-care-and-control",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 28,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s28_p5_t0",
+    "sectionNumber": 28,
+    "sectionTitle": "Bureau of Animal Care and Control",
+    "sectionSlug": "bureau-of-animal-care-and-control",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s29_p4_t0",
+    "sectionNumber": 29,
+    "sectionTitle": "Office of Community Health and Safety",
+    "sectionSlug": "office-of-community-health-and-safety",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s29_p5_t0",
+    "sectionNumber": 29,
+    "sectionTitle": "Office of Community Health and Safety",
+    "sectionSlug": "office-of-community-health-and-safety",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s31_p1_t0",
+    "sectionNumber": 31,
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "sectionSlug": "bureau-of-administration-public-works",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 24,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s31_p1_t1",
+    "sectionNumber": 31,
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "sectionSlug": "bureau-of-administration-public-works",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s31_p1_t2",
+    "sectionNumber": 31,
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "sectionSlug": "bureau-of-administration-public-works",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s31_p2_t0",
+    "sectionNumber": 31,
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "sectionSlug": "bureau-of-administration-public-works",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 31,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s31_p3_t0",
+    "sectionNumber": 31,
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "sectionSlug": "bureau-of-administration-public-works",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s32_p1_t0",
+    "sectionNumber": 32,
+    "sectionTitle": "Bureau of Operations",
+    "sectionSlug": "bureau-of-operations",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 32,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s32_p1_t1",
+    "sectionNumber": 32,
+    "sectionTitle": "Bureau of Operations",
+    "sectionSlug": "bureau-of-operations",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s32_p2_t0",
+    "sectionNumber": 32,
+    "sectionTitle": "Bureau of Operations",
+    "sectionSlug": "bureau-of-operations",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s32_p3_t0",
+    "sectionNumber": 32,
+    "sectionTitle": "Bureau of Operations",
+    "sectionSlug": "bureau-of-operations",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 43,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s32_p4_t0",
+    "sectionNumber": 32,
+    "sectionTitle": "Bureau of Operations",
+    "sectionSlug": "bureau-of-operations",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s32_p5_t0",
+    "sectionNumber": 32,
+    "sectionTitle": "Bureau of Operations",
+    "sectionSlug": "bureau-of-operations",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s33_p1_t0",
+    "sectionNumber": 33,
+    "sectionTitle": "Bureau of Environmental Services",
+    "sectionSlug": "bureau-of-environmental-services",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 24,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s33_p1_t1",
+    "sectionNumber": 33,
+    "sectionTitle": "Bureau of Environmental Services",
+    "sectionSlug": "bureau-of-environmental-services",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6
+    ]
+  },
+  {
+    "id": "s33_p1_t2",
+    "sectionNumber": 33,
+    "sectionTitle": "Bureau of Environmental Services",
+    "sectionSlug": "bureau-of-environmental-services",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s33_p2_t0",
+    "sectionNumber": 33,
+    "sectionTitle": "Bureau of Environmental Services",
+    "sectionSlug": "bureau-of-environmental-services",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 38,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s33_p3_t0",
+    "sectionNumber": 33,
+    "sectionTitle": "Bureau of Environmental Services",
+    "sectionSlug": "bureau-of-environmental-services",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s34_p1_t0",
+    "sectionNumber": 34,
+    "sectionTitle": "Bureau of Facilities",
+    "sectionSlug": "bureau-of-facilities",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 42,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s34_p2_t0",
+    "sectionNumber": 34,
+    "sectionTitle": "Bureau of Facilities",
+    "sectionSlug": "bureau-of-facilities",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s34_p2_t1",
+    "sectionNumber": 34,
+    "sectionTitle": "Bureau of Facilities",
+    "sectionSlug": "bureau-of-facilities",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s34_p3_t0",
+    "sectionNumber": 34,
+    "sectionTitle": "Bureau of Facilities",
+    "sectionSlug": "bureau-of-facilities",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 41,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s34_p4_t0",
+    "sectionNumber": 34,
+    "sectionTitle": "Bureau of Facilities",
+    "sectionSlug": "bureau-of-facilities",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s34_p5_t0",
+    "sectionNumber": 34,
+    "sectionTitle": "Bureau of Facilities",
+    "sectionSlug": "bureau-of-facilities",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s36_p10_t0",
+    "sectionNumber": 36,
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "sectionSlug": "department-of-mobility-and-infrastructure",
+    "page": 10,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s36_p6_t0",
+    "sectionNumber": 36,
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "sectionSlug": "department-of-mobility-and-infrastructure",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 45,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s36_p7_t0",
+    "sectionNumber": 36,
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "sectionSlug": "department-of-mobility-and-infrastructure",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 33,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s36_p7_t1",
+    "sectionNumber": 36,
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "sectionSlug": "department-of-mobility-and-infrastructure",
+    "page": 7,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s36_p8_t0",
+    "sectionNumber": 36,
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "sectionSlug": "department-of-mobility-and-infrastructure",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s36_p9_t0",
+    "sectionNumber": 36,
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "sectionSlug": "department-of-mobility-and-infrastructure",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 44,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s37_p4_t0",
+    "sectionNumber": 37,
+    "sectionTitle": "Citizen Police Review Board",
+    "sectionSlug": "citizen-police-review-board",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s37_p4_t1",
+    "sectionNumber": 37,
+    "sectionTitle": "Citizen Police Review Board",
+    "sectionSlug": "citizen-police-review-board",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      4,
+      8
+    ]
+  },
+  {
+    "id": "s37_p4_t2",
+    "sectionNumber": 37,
+    "sectionTitle": "Citizen Police Review Board",
+    "sectionSlug": "citizen-police-review-board",
+    "page": 4,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s37_p5_t0",
+    "sectionNumber": 37,
+    "sectionTitle": "Citizen Police Review Board",
+    "sectionSlug": "citizen-police-review-board",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 26,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s37_p6_t0",
+    "sectionNumber": 37,
+    "sectionTitle": "Citizen Police Review Board",
+    "sectionSlug": "citizen-police-review-board",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s38_p1_t0",
+    "sectionNumber": 38,
+    "sectionTitle": "HUD Fair Housing Program Trust Fund",
+    "sectionSlug": "hud-fair-housing-program-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "185,381.3"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s38_p1_t1",
+    "sectionNumber": 38,
+    "sectionTitle": "HUD Fair Housing Program Trust Fund",
+    "sectionSlug": "hud-fair-housing-program-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 18,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s38_p1_t2",
+    "sectionNumber": 38,
+    "sectionTitle": "HUD Fair Housing Program Trust Fund",
+    "sectionSlug": "hud-fair-housing-program-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "185,381.3"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s39_p0_t0",
+    "sectionNumber": 39,
+    "sectionTitle": "EEOC Trust Fund",
+    "sectionSlug": "eeoc-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "251,569"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s39_p0_t1",
+    "sectionNumber": 39,
+    "sectionTitle": "EEOC Trust Fund",
+    "sectionSlug": "eeoc-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 16,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s39_p0_t2",
+    "sectionNumber": 39,
+    "sectionTitle": "EEOC Trust Fund",
+    "sectionSlug": "eeoc-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "250,131"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s40_p0_t0",
+    "sectionNumber": 40,
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "sectionSlug": "three-taxing-bodies-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "1,212,710"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s40_p0_t1",
+    "sectionNumber": 40,
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "sectionSlug": "three-taxing-bodies-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Expenditures",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 19,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s40_p0_t2",
+    "sectionNumber": 40,
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "sectionSlug": "three-taxing-bodies-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "543,280"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s40_p1_t0",
+    "sectionNumber": 40,
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "sectionSlug": "three-taxing-bodies-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s40_p1_t1",
+    "sectionNumber": 40,
+    "sectionTitle": "Three Taxing Bodies Trust Fund",
+    "sectionSlug": "three-taxing-bodies-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "2026 Allocations",
+      "Department of Finance",
+      "Three Taxing Bodies Trust Fund"
+    ],
+    "rowCount": 4,
+    "numericCols": []
+  },
+  {
+    "id": "s41_p0_t0",
+    "sectionNumber": 41,
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "sectionSlug": "pittsburgh-partnership-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "4,752,646"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s41_p0_t1",
+    "sectionNumber": 41,
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "sectionSlug": "pittsburgh-partnership-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 28,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s41_p0_t2",
+    "sectionNumber": 41,
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "sectionSlug": "pittsburgh-partnership-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "4,245,017"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s41_p1_t0",
+    "sectionNumber": 41,
+    "sectionTitle": "Pittsburgh Partnership Trust Fund",
+    "sectionSlug": "pittsburgh-partnership-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 12,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s42_p0_t0",
+    "sectionNumber": 42,
+    "sectionTitle": "Community Development Trust Fund",
+    "sectionSlug": "community-development-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "\u2014"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s42_p0_t1",
+    "sectionNumber": 42,
+    "sectionTitle": "Community Development Trust Fund",
+    "sectionSlug": "community-development-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 15,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s42_p0_t2",
+    "sectionNumber": 42,
+    "sectionTitle": "Community Development Trust Fund",
+    "sectionSlug": "community-development-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "(40,658)"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s42_p1_t0",
+    "sectionNumber": 42,
+    "sectionTitle": "Community Development Trust Fund",
+    "sectionSlug": "community-development-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s43_p0_t0",
+    "sectionNumber": 43,
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "sectionSlug": "police-secondary-employment-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "3,163,185"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s43_p0_t1",
+    "sectionNumber": 43,
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "sectionSlug": "police-secondary-employment-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 22,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s43_p0_t2",
+    "sectionNumber": 43,
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "sectionSlug": "police-secondary-employment-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "3,325,749"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s43_p1_t0",
+    "sectionNumber": 43,
+    "sectionTitle": "Police Secondary Employment Trust Fund",
+    "sectionSlug": "police-secondary-employment-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s44_p1_t0",
+    "sectionNumber": 44,
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "sectionSlug": "stop-the-violence-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "16,745,000"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s44_p1_t1",
+    "sectionNumber": 44,
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "sectionSlug": "stop-the-violence-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 25,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s44_p1_t2",
+    "sectionNumber": 44,
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "sectionSlug": "stop-the-violence-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "11,160,239"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s44_p2_t0",
+    "sectionNumber": 44,
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "sectionSlug": "stop-the-violence-trust-fund",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 33,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s44_p3_t0",
+    "sectionNumber": 44,
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "sectionSlug": "stop-the-violence-trust-fund",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Assistant Director - Community Affairs",
+      "1",
+      "32G",
+      "12",
+      "110,718",
+      "\u2014",
+      "32G",
+      "\u2014",
+      "\u2014"
+    ],
+    "rowCount": 17,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s44_p3_t1",
+    "sectionNumber": 44,
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "sectionSlug": "stop-the-violence-trust-fund",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Temporary, Part-Time, and Seasonal Allowances",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s44_p3_t2",
+    "sectionNumber": 44,
+    "sectionTitle": "Stop the Violence Trust Fund",
+    "sectionSlug": "stop-the-violence-trust-fund",
+    "page": 3,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Total Full-Time Permanent Positions",
+      "68",
+      "4,614,080",
+      "69",
+      "4,713,841"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s47_p0_t0",
+    "sectionNumber": 47,
+    "sectionTitle": "Public Works Trust Fund",
+    "sectionSlug": "public-works-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "3,274,374"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s47_p0_t1",
+    "sectionNumber": 47,
+    "sectionTitle": "Public Works Trust Fund",
+    "sectionSlug": "public-works-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Detail",
+      "",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 12,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s47_p0_t2",
+    "sectionNumber": 47,
+    "sectionTitle": "Public Works Trust Fund",
+    "sectionSlug": "public-works-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "3,292,334"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s48_p0_t0",
+    "sectionNumber": 48,
+    "sectionTitle": "Shade Tree Trust Fund",
+    "sectionSlug": "shade-tree-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "964,095"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s48_p0_t1",
+    "sectionNumber": 48,
+    "sectionTitle": "Shade Tree Trust Fund",
+    "sectionSlug": "shade-tree-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 16,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s48_p0_t2",
+    "sectionNumber": 48,
+    "sectionTitle": "Shade Tree Trust Fund",
+    "sectionSlug": "shade-tree-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "814,095"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s50_p0_t0",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "388,359"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s50_p0_t1",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 29,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s50_p0_t2",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "325,045"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s50_p1_t0",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s50_p1_t1",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s50_p1_t2",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s50_p1_t3",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 1,
+    "tableIndex": 3,
+    "type": "unknown",
+    "headers": [
+      "2026 Allocations",
+      "Department of Parks & Recreation",
+      "Special Events Trust Fund"
+    ],
+    "rowCount": 1,
+    "numericCols": []
+  },
+  {
+    "id": "s51_p1_t0",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "1,840,915"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s51_p1_t1",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 36,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s51_p1_t2",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "1,840,915"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s51_p2_t0",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s51_p2_t1",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 13,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s51_p2_t2",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 2,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s51_p2_t3",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 2,
+    "tableIndex": 3,
+    "type": "unknown",
+    "headers": [
+      "2026 Allocations",
+      "Parks and Recreation General Fund",
+      "Public Safety Administration General Fund",
+      "Mellon Park Trust Fund",
+      "Parks RAD Trust Fund"
+    ],
+    "rowCount": 2,
+    "numericCols": []
+  },
+  {
+    "id": "s52_p0_t0",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "1,779,292"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s52_p0_t1",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Details",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 32,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s52_p0_t2",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "1,652,005"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s52_p1_t0",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s52_p1_t1",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s52_p1_t2",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s52_p1_t3",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 1,
+    "tableIndex": 3,
+    "type": "unknown",
+    "headers": [
+      "2026 Allocations",
+      "Department of Parks & Recreation",
+      "Mellon Park Trust Fund",
+      "Parks RAD Trust Fund"
+    ],
+    "rowCount": 2,
+    "numericCols": []
+  },
+  {
+    "id": "s53_p0_t0",
+    "sectionNumber": 53,
+    "sectionTitle": "Schenley Park Rink Trust Fund",
+    "sectionSlug": "schenley-park-rink-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "645,064"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s53_p0_t1",
+    "sectionNumber": 53,
+    "sectionTitle": "Schenley Park Rink Trust Fund",
+    "sectionSlug": "schenley-park-rink-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 26,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s53_p0_t2",
+    "sectionNumber": 53,
+    "sectionTitle": "Schenley Park Rink Trust Fund",
+    "sectionSlug": "schenley-park-rink-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "648,064"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s54_p0_t0",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "1,169,912"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s54_p0_t1",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 39,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s54_p0_t2",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "252,482"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s54_p1_t0",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s54_p1_t1",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s54_p1_t2",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s54_p1_t3",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 1,
+    "tableIndex": 3,
+    "type": "unknown",
+    "headers": [
+      "2026 Allocations",
+      "Department of Parks & Recreation",
+      "Senior Citizens Program Trust Fund"
+    ],
+    "rowCount": 1,
+    "numericCols": []
+  },
+  {
+    "id": "s55_p0_t0",
+    "sectionNumber": 55,
+    "sectionTitle": "Special Food Service Trust Fund",
+    "sectionSlug": "special-food-service-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "350,184"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s55_p0_t1",
+    "sectionNumber": 55,
+    "sectionTitle": "Special Food Service Trust Fund",
+    "sectionSlug": "special-food-service-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 25,
+    "numericCols": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": "s55_p0_t2",
+    "sectionNumber": 55,
+    "sectionTitle": "Special Food Service Trust Fund",
+    "sectionSlug": "special-food-service-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "203,856"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s55_p1_t0",
+    "sectionNumber": 55,
+    "sectionTitle": "Special Food Service Trust Fund",
+    "sectionSlug": "special-food-service-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s55_p1_t1",
+    "sectionNumber": 55,
+    "sectionTitle": "Special Food Service Trust Fund",
+    "sectionSlug": "special-food-service-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s55_p1_t2",
+    "sectionNumber": 55,
+    "sectionTitle": "Special Food Service Trust Fund",
+    "sectionSlug": "special-food-service-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "id": "s56_p0_t0",
+    "sectionNumber": 56,
+    "sectionTitle": "Frick Park Trust Fund",
+    "sectionSlug": "frick-park-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Projected Beginning Balance",
+      "2,035,076"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s56_p0_t1",
+    "sectionNumber": 56,
+    "sectionTitle": "Frick Park Trust Fund",
+    "sectionSlug": "frick-park-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "headers": [
+      "Subclass",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s56_p0_t2",
+    "sectionNumber": 56,
+    "sectionTitle": "Frick Park Trust Fund",
+    "sectionSlug": "frick-park-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Projected Ending Balance",
+      "2,163,851"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s57_p0_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      2
+    ]
+  },
+  {
+    "id": "s57_p0_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s57_p0_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p10_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 10,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p1_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p1_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p1_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p2_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p2_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p2_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 2,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p3_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p3_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": "s57_p3_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 3,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      2
+    ]
+  },
+  {
+    "id": "s57_p4_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": "s57_p4_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      2
+    ]
+  },
+  {
+    "id": "s57_p4_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 4,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p5_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p5_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p5_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 5,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p6_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p6_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 6,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p6_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 6,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p7_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      2
+    ]
+  },
+  {
+    "id": "s57_p7_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 7,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p7_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 7,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      2
+    ]
+  },
+  {
+    "id": "s57_p8_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p8_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 8,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p8_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 8,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p9_t0",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      2
+    ]
+  },
+  {
+    "id": "s57_p9_t1",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 9,
+    "tableIndex": 1,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s57_p9_t2",
+    "sectionNumber": 57,
+    "sectionTitle": "Other Special Revenue Funds",
+    "sectionSlug": "other-special-revenue-funds",
+    "page": 9,
+    "tableIndex": 2,
+    "type": "revenue",
+    "headers": [
+      "Last 12 months* Revenues",
+      "Last 12 months* Expenditures",
+      "Spending Authority as of 11/06/25"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "id": "s58_p10_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 10,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s58_p10_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 10,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s58_p10_t2",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 10,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s58_p10_t3",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 10,
+    "tableIndex": 3,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s58_p11_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 11,
+    "tableIndex": 0,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s58_p11_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 11,
+    "tableIndex": 1,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s58_p11_t2",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 11,
+    "tableIndex": 2,
+    "type": "personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "s58_p2_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p2_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s58_p2_t2",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 2,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p3_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p3_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p4_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p4_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 12,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p5_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p5_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p6_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 22,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p7_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 15,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p7_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 7,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      4,
+      6
+    ]
+  },
+  {
+    "id": "s58_p7_t2",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 7,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p8_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 24,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p9_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 17,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s58_p9_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 9,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      4,
+      6
+    ]
+  },
+  {
+    "id": "s60_p1_t0",
+    "sectionNumber": 60,
+    "sectionTitle": "Salary Tables",
+    "sectionSlug": "salary-tables",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Grade|A",
+      "Grade|B",
+      "Grade|C",
+      "Grade|D",
+      "Grade|E",
+      "Grade|F",
+      "Grade|G",
+      "Step"
+    ],
+    "rowCount": 37,
+    "numericCols": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "s60_p2_t0",
+    "sectionNumber": 60,
+    "sectionTitle": "Salary Tables",
+    "sectionSlug": "salary-tables",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Step|A",
+      "Step|B",
+      "Step|C",
+      "Step|D",
+      "Step|E",
+      "Grade"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s60_p2_t1",
+    "sectionNumber": 60,
+    "sectionTitle": "Salary Tables",
+    "sectionSlug": "salary-tables",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Step|F",
+      "Step|G",
+      "Step|H",
+      "Step|I",
+      "Step|J",
+      "Grade"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s60_p2_t2",
+    "sectionNumber": 60,
+    "sectionTitle": "Salary Tables",
+    "sectionSlug": "salary-tables",
+    "page": 2,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "Step|K",
+      "Step|L",
+      "Step|M",
+      "Step|N",
+      "Step|O",
+      "Grade"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s60_p3_t0",
+    "sectionNumber": 60,
+    "sectionTitle": "Salary Tables",
+    "sectionSlug": "salary-tables",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Grade and Step",
+      "Annual Rate"
+    ],
+    "rowCount": 13,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s61_p10_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 10,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 42,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p11_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 11,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 42,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p12_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 12,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 42,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p13_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 13,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 42,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p14_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 14,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 42,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p1_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 50,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": "s61_p1_t1",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "849,270,000.00",
+      "418,961,653.28",
+      "1,268,231,653.28",
+      "1,268,231,653.25"
+    ],
+    "rowCount": 0,
+    "numericCols": []
+  },
+  {
+    "id": "s61_p2_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 14,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p2_t1",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "2017 Bond Issue Coupon",
+      "Interest",
+      "Debt Service",
+      "Annual Debt Service"
+    ],
+    "rowCount": 22,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p3_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 28,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p4_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 30,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p4_t1",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Refunding Series A of 2020 Interest",
+      "Debt Service",
+      "Annual Debt Service"
+    ],
+    "rowCount": 16,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p5_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 14,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p5_t1",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "2021 Bond Issue Interest",
+      "Debt Service",
+      "Annual Debt Service"
+    ],
+    "rowCount": 32,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p6_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 34,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p7_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 36,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p8_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 38,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s61_p9_t0",
+    "sectionNumber": 61,
+    "sectionTitle": "Debt Service",
+    "sectionSlug": "debt-service",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Date",
+      "Principal",
+      "Coupon",
+      "Interest",
+      "Debt Service",
+      "Debt Service"
+    ],
+    "rowCount": 40,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "s63_p11_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 11,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS",
+      ""
+    ],
+    "rowCount": 94,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p14_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 14,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "DEPARTMENT OF PUBLIC WORKS",
+      ""
+    ],
+    "rowCount": 111,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p16_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 16,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "SPECIAL EVENTS & FILM FEES",
+      ""
+    ],
+    "rowCount": 116,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p19_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 19,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "ANIMAL CARE AND CONTROL",
+      ""
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p1_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "BUREAU OF FIRE",
+      ""
+    ],
+    "rowCount": 72,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p20_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 20,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "MISCELLANEOUS",
+      ""
+    ],
+    "rowCount": 22,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p20_t1",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 20,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "DEPARTMENT OF FINANCE",
+      ""
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p20_t2",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 20,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "HUMAN RESOURCES & CIVIL SERVICE",
+      ""
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p21_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 21,
+    "tableIndex": 0,
+    "type": "financial",
+    "headers": [
+      "OFFICE OF MANAGEMENT & BUDGET",
+      ""
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p21_t1",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 21,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "BUREAU OF EMERGENCY MEDICAL SERVICES",
+      ""
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p21_t2",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 21,
+    "tableIndex": 2,
+    "type": "unknown",
+    "headers": [
+      "BUREAU OF POLICE",
+      ""
+    ],
+    "rowCount": 72,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p3_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "DEPARTMENT OF CITY PLANNING",
+      ""
+    ],
+    "rowCount": 31,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p3_t1",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "DEPARTMENT OF MOBILITY & INFRASTRUCTURE",
+      ""
+    ],
+    "rowCount": 145,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p7_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department of Public Safety Reimbursable Events/Secondary Employment|Fee Description",
+      "2026",
+      "Comments"
+    ],
+    "rowCount": 60,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s63_p9_t0",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "* fees will change according to union contract",
+      "",
+      ""
+    ],
+    "rowCount": 1,
+    "numericCols": []
+  },
+  {
+    "id": "s63_p9_t1",
+    "sectionNumber": 63,
+    "sectionTitle": "Master Fee Schedule",
+    "sectionSlug": "master-fee-schedule",
+    "page": 9,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "DEPARTMENT OF PARKS & RECREATION",
+      ""
+    ],
+    "rowCount": 103,
+    "numericCols": [
+      1
+    ]
+  },
+  {
+    "id": "s64_p1_t0",
+    "sectionNumber": 64,
+    "sectionTitle": "Appendices",
+    "sectionSlug": "appendices",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Deliverable/Objective",
+      "Number",
+      "Using Department",
+      "Funding Source",
+      "Total Cost"
+    ],
+    "rowCount": 23,
+    "numericCols": [
+      1,
+      4
+    ]
+  },
+  {
+    "id": "s64_p2_t0",
+    "sectionNumber": 64,
+    "sectionTitle": "Appendices",
+    "sectionSlug": "appendices",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "Deliverable",
+      "Funding Source"
+    ],
+    "rowCount": 6,
+    "numericCols": []
+  },
+  {
+    "id": "s64_p3_t0",
+    "sectionNumber": 64,
+    "sectionTitle": "Appendices",
+    "sectionSlug": "appendices",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "financial",
+    "headers": [
+      "Department",
+      "Deliverable",
+      "Funding Source",
+      "2026 Budget"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      3
+    ]
+  },
+  {
+    "id": "s64_p3_t1",
+    "sectionNumber": 64,
+    "sectionTitle": "Appendices",
+    "sectionSlug": "appendices",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "unknown",
+    "headers": [
+      "Department",
+      "Project and Funder",
+      "Year",
+      "Award"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      2,
+      3
+    ]
+  }
+]

@@ -1,34 +1,34 @@
-"C0 (l, x:58-200)","C1 (r, x:200-273)","C2 (r, x:273-314)","C3 (r, x:314-342)","C4 (r, x:342-407)","C5 (r, x:407-434)","C6 (r, x:434-475)","C7 (r, x:475-503)","C8 (r, x:503-555)"
-Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget
-Administration,,,,,,,,
-Manager of Support Services,1,32G,12,"110,718",1,32G,12,"114,046"
-Administrator 2,2,17G,12,"120,224",2,17G,12,"123,843"
-Administrative Aide,1,14G,12,"52,874",1,15G,12,"56,618"
-Neighborhood Engagement Coordinator,—,18G,—,—,1,18G,12,"64,542"
-Office of Personnel & Finance,,,,,,,,
-"Technician, Payroll",6,U02-K,12,"256,730",6,U02-K,12,"256,730"
-Streets Maintenance,,,,,,,,
-Superintendent,1,29G,12,"98,571",1,29G,12,"101,525"
-Assistant Superintendent,1,27G,12,"91,021",1,27G,12,"93,746"
-Streets Maintenance Supervisor,1,27G,12,"91,021",1,27G,12,"93,746"
-Streets Maintenance Supervisor,6,25G,12,"501,072",6,25G,12,"516,048"
-"Foreman, Second In Command",6,"70,013",12,"378,709",6,"71,406",12,"428,438"
-Foreman,22,"67,018",12,"1,337,107",22,"68,349",12,"1,503,674"
-Heavy Equipment Operator,10,30.74,"2,080","639,392",10,31.36,"2,080","652,288"
-Sweeper Operator,9,27.57,"2,080","516,110",9,28.12,"2,080","526,406"
-Truck Driver - Special Operator,8,27.37,"2,080","455,437",8,27.92,"2,080","464,589"
-Truck Driver,45,26.98,"2,080","2,525,328",45,27.52,"2,080","2,575,872"
-Tractor Operator,2,26.76,"2,080","111,322",2,27.30,"2,080","113,568"
-Skilled Laborer,7,25.97,"2,080","378,123",7,26.49,"2,080","385,694"
-Laborer,137,24.47,"2,080","6,972,971",137,24.96,"2,080","7,112,602"
-Parks Maintenance,,,,,,,,
-Superintendent,1,29G,12,"98,571",1,29G,12,"101,525"
-Forestry,,,,,,,,
-City Forester,1,27G,12,"91,021",1,27G,12,"93,746"
-Arborist - Utility Coordinator,1,19G,12,"65,333",1,19G,12,"67,288"
-Tree Pruner,7,27.93,"2,080","406,661",7,28.49,"2,080","414,814"
-Heavy Equipment,,,,,,,,
-Parts Manager,1,22G,12,"74,069",1,22G,12,"76,294"
-Heavy Equipment Repair Specialist,7,30.74,"2,080","447,574",7,31.36,"2,080","456,602"
-Parts Specialist,3,25.35,"2,080","158,184",3,25.86,"2,080","161,366"
-Total Full-Time Permanent Positions,286,,,"15,978,143",287,,,"16,555,610"
+"C0 (l, x:58-200)","C1 (r, x:200-273)","C2 (r, x:273-314)","C3 (r, x:314-342)","C4 (r, x:342-407)","C5 (r, x:407-434)","C6 (r, x:434-475)","C7 (r, x:475-503)","C8 (r, x:503-555)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+Administration,,,,,,,,,Administration
+Manager of Support Services,1,32G,12,"110,718",1,32G,12,"114,046",Administration
+Administrator 2,2,17G,12,"120,224",2,17G,12,"123,843",Administration
+Administrative Aide,1,14G,12,"52,874",1,15G,12,"56,618",Administration
+Neighborhood Engagement Coordinator,—,18G,—,—,1,18G,12,"64,542",Administration
+Office of Personnel & Finance,,,,,,,,,Office of Personnel & Finance
+"Technician, Payroll",6,U02-K,12,"256,730",6,U02-K,12,"256,730",Office of Personnel & Finance
+Streets Maintenance,,,,,,,,,Streets Maintenance
+Superintendent,1,29G,12,"98,571",1,29G,12,"101,525",Streets Maintenance
+Assistant Superintendent,1,27G,12,"91,021",1,27G,12,"93,746",Streets Maintenance
+Streets Maintenance Supervisor,1,27G,12,"91,021",1,27G,12,"93,746",Streets Maintenance
+Streets Maintenance Supervisor,6,25G,12,"501,072",6,25G,12,"516,048",Streets Maintenance
+"Foreman, Second In Command",6,"70,013",12,"378,709",6,"71,406",12,"428,438",Streets Maintenance
+Foreman,22,"67,018",12,"1,337,107",22,"68,349",12,"1,503,674",Streets Maintenance
+Heavy Equipment Operator,10,30.74,"2,080","639,392",10,31.36,"2,080","652,288",Streets Maintenance
+Sweeper Operator,9,27.57,"2,080","516,110",9,28.12,"2,080","526,406",Streets Maintenance
+Truck Driver - Special Operator,8,27.37,"2,080","455,437",8,27.92,"2,080","464,589",Streets Maintenance
+Truck Driver,45,26.98,"2,080","2,525,328",45,27.52,"2,080","2,575,872",Streets Maintenance
+Tractor Operator,2,26.76,"2,080","111,322",2,27.30,"2,080","113,568",Streets Maintenance
+Skilled Laborer,7,25.97,"2,080","378,123",7,26.49,"2,080","385,694",Streets Maintenance
+Laborer,137,24.47,"2,080","6,972,971",137,24.96,"2,080","7,112,602",Streets Maintenance
+Parks Maintenance,,,,,,,,,Parks Maintenance
+Superintendent,1,29G,12,"98,571",1,29G,12,"101,525",Parks Maintenance
+Forestry,,,,,,,,,Forestry
+City Forester,1,27G,12,"91,021",1,27G,12,"93,746",Forestry
+Arborist - Utility Coordinator,1,19G,12,"65,333",1,19G,12,"67,288",Forestry
+Tree Pruner,7,27.93,"2,080","406,661",7,28.49,"2,080","414,814",Forestry
+Heavy Equipment,,,,,,,,,Heavy Equipment
+Parts Manager,1,22G,12,"74,069",1,22G,12,"76,294",Heavy Equipment
+Heavy Equipment Repair Specialist,7,30.74,"2,080","447,574",7,31.36,"2,080","456,602",Heavy Equipment
+Parts Specialist,3,25.35,"2,080","158,184",3,25.86,"2,080","161,366",Heavy Equipment
+Total Full-Time Permanent Positions,286,,,"15,978,143",287,,,"16,555,610",Heavy Equipment

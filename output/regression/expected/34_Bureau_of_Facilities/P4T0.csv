@@ -1,7 +1,7 @@
-"C0 (l, x:57-174)","C1 (l, x:174-260)","C2 (r, x:260-338)","C3 (r, x:338-403)","C4 (r, x:403-485)","C5 (l, x:485-524)","C6 (l, x:524-556)"
-,,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change
-Expenditures,,,,,,
-57 - Property,,"497,841","199,300","100,000","(99,300)",(49.8)%
-57501 - Machinery & Equipment,,"10,266",—,—,—,
-57571 - Furniture & Fixtures,,"487,575","199,300","100,000","(99,300)",
-,Expenditures Total,"12,912,591","12,033,312","11,961,338","(71,974)",(0.6)%
+"C0 (l, x:57-260)","C1 (r, x:260-338)","C2 (r, x:338-403)","C3 (r, x:403-485)","C4 (l, x:485-524)","C5 (l, x:524-556)",section
+,,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change,section
+Expenditures,,,,,,Expenditures
+57 - Property,"497,841","199,300","100,000","(99,300)",(49.8)%,57 - Property
+57501 - Machinery & Equipment,"10,266",—,—,—,,57 - Property
+57571 - Furniture & Fixtures,"487,575","199,300","100,000","(99,300)",,57 - Property
+Expenditures Total,"12,912,591","12,033,312","11,961,338","(71,974)",(0.6)%,57 - Property

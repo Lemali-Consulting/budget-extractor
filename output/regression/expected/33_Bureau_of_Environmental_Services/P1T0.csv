@@ -1,26 +1,26 @@
-"C0 (l, x:57-207)","C1 (r, x:207-283)","C2 (r, x:283-321)","C3 (r, x:321-350)","C4 (r, x:350-412)","C5 (r, x:412-440)","C6 (r, x:440-479)","C7 (r, x:479-508)","C8 (r, x:508-561)"
-Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget
-Environmental Services,,,,,,,,
-Superintendent,1,29G,12,"98,571",1,29G,12,"101,525"
-Assistant Superintendent,1,27G,12,"91,021",1,27G,12,"93,746"
-Refuse Collection Supervisor,2,25G,12,"167,024",2,25G,12,"172,016"
-"Foreman, Second in Command",2,"63,118",12,"126,236",2,"71,406",12,"142,813"
-"Foreman, Environmental Services",11,"60,778",12,"668,554",11,"68,349",12,"751,837"
-Driver,52,25.47,"2,080","2,754,835",52,25.47,"2,080","2,754,835"
-Co-Driver,90,23.54,"2,080","4,408,560",90,23.54,"2,080","4,408,560"
-Loader,28,18.00,"2,080","1,048,320",28,18.00,"2,080","1,048,320"
-Administration,,,,,,,,
-Environmental Enforcement Manager,1,21G,12,"71,115",1,21G,12,"73,258"
-Environmental Enforcement Coordinator,1,18G,12,"62,670",1,18G,12,"64,542"
-Project Coordinator,1,18G,12,"62,670",1,18G,12,"64,542"
-Lot Supervisor,1,16G,12,"57,574",1,16G,12,"59,301"
-Lot Coordinator,4,25.47,12,"211,910",1,25.47,12,"52,978"
-Lot Coordinator,—,25.47,—,—,2,25.47,6,"52,978"
-Recycling Supervisor,1,23G,12,"77,043",1,23G,12,"79,352"
-"Specialist, Environmental Enforcement",1,U07-A,12,"51,635",1,U07-A,12,"51,635"
-Administrator 2,1,19G,12,"65,333",1,19G,12,"67,288"
-Dispatcher,2,U10-D,12,"84,025",2,U10-D,12,"84,025"
-"Assistant I, Administrative",1,U02-G,12,"39,698",1,U02-G,12,"39,698"
-Office of Personnel & Administration,,,,,,,,
-"Technician, Payroll",2,U02-K,12,"85,577",2,U02-K,12,"85,577"
-Total Full-Time Permanent Positions,203,,,"10,232,371",202,,,"10,248,826"
+"C0 (l, x:57-207)","C1 (r, x:207-283)","C2 (r, x:283-321)","C3 (r, x:321-350)","C4 (r, x:350-412)","C5 (r, x:412-440)","C6 (r, x:440-479)","C7 (r, x:479-508)","C8 (r, x:508-561)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+Environmental Services,,,,,,,,,Environmental Services
+Superintendent,1,29G,12,"98,571",1,29G,12,"101,525",Environmental Services
+Assistant Superintendent,1,27G,12,"91,021",1,27G,12,"93,746",Environmental Services
+Refuse Collection Supervisor,2,25G,12,"167,024",2,25G,12,"172,016",Environmental Services
+"Foreman, Second in Command",2,"63,118",12,"126,236",2,"71,406",12,"142,813",Environmental Services
+"Foreman, Environmental Services",11,"60,778",12,"668,554",11,"68,349",12,"751,837",Environmental Services
+Driver,52,25.47,"2,080","2,754,835",52,25.47,"2,080","2,754,835",Environmental Services
+Co-Driver,90,23.54,"2,080","4,408,560",90,23.54,"2,080","4,408,560",Environmental Services
+Loader,28,18.00,"2,080","1,048,320",28,18.00,"2,080","1,048,320",Environmental Services
+Administration,,,,,,,,,Administration
+Environmental Enforcement Manager,1,21G,12,"71,115",1,21G,12,"73,258",Administration
+Environmental Enforcement Coordinator,1,18G,12,"62,670",1,18G,12,"64,542",Administration
+Project Coordinator,1,18G,12,"62,670",1,18G,12,"64,542",Administration
+Lot Supervisor,1,16G,12,"57,574",1,16G,12,"59,301",Administration
+Lot Coordinator,4,25.47,12,"211,910",1,25.47,12,"52,978",Administration
+Lot Coordinator,—,25.47,—,—,2,25.47,6,"52,978",Administration
+Recycling Supervisor,1,23G,12,"77,043",1,23G,12,"79,352",Administration
+"Specialist, Environmental Enforcement",1,U07-A,12,"51,635",1,U07-A,12,"51,635",Administration
+Administrator 2,1,19G,12,"65,333",1,19G,12,"67,288",Administration
+Dispatcher,2,U10-D,12,"84,025",2,U10-D,12,"84,025",Administration
+"Assistant I, Administrative",1,U02-G,12,"39,698",1,U02-G,12,"39,698",Administration
+Office of Personnel & Administration,,,,,,,,,Office of Personnel & Administration
+"Technician, Payroll",2,U02-K,12,"85,577",2,U02-K,12,"85,577",Office of Personnel & Administration
+Total Full-Time Permanent Positions,203,,,"10,232,371",202,,,"10,248,826",Office of Personnel & Administration

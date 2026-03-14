@@ -31,7 +31,17 @@ const { section } = Astro.props;
     <p class="text-gray-400 italic">No tables extracted for this section.</p>
   ) : (
     section.tables.map((table) => (
-      <TableViewer table={table} />
+      <div>
+        <div class="flex justify-end mb-1">
+          <a
+            href={`/explorer/#${table.id}`}
+            class="text-xs text-blue-500 hover:text-blue-700 hover:underline"
+          >
+            Open in Explorer &rarr;
+          </a>
+        </div>
+        <TableViewer table={table} slug={section.slug} />
+      </div>
     ))
   )}
 </Base>

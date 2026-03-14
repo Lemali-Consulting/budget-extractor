@@ -1,96 +1,96 @@
-"C0 (r, x:54-511)","C1 (r, x:511-558)"
-"DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS",
-Fee Description,2026
-OneStopPGH Technology Fees,"See ""Misc."""
-Permit Fees,
-Commercial Permit Base Fee (initial and amended) - based on the value of construction,"8.75/$1,000"
-"Commercial Permit Minimum Base Fee (BDA, MP, EP, FAS, SSP, DP, SWM, LOP)",700.00
-Commercial Permit Minimum Base Fee (SP),350.00
-Commercial Permit Maximum Base Fee (all),"95,000.00"
-Commercial SSP & FAS maintenance Fee - flat fee for each permit,100.00
-Residential Permit Base Fee (initial and amended) based on the value of construction,"7.50/$1,000"
-Residential Permit Minimum Base Fee (all),175.00
-Residential Permit Maximum Base Fee (all),"8,000.00"
-Commercial & Residential Permit License Amendment Fee,50.00
-Floodplain Permit (non-substantial improvement) - flat fee,175.00
-Floodplain Permit (substantial improvement or new construction) - flat fee,$675.00
-Permit Misc Fees,
-Permit Renewal Fee - flat fee,50.00
-Commercial Certificate of Occupancy Fee (permanent use and temporary use pending permit completion),575.00
-"Commercial Certificate of Occupancy Fee (temporary events, structures, and seating)",130.00
-Commercial Certificate of Occupancy Fee (expedited issuance),"1,150.00"
-Residential Certificate of Occupancy Fee,130.00
-Residential Certificate of Occupancy Fee (expedited issuance),300.00
-Commercial Occupant Load Placard (New) - flat fee,375.00
-Commercial Occupant Load Placard (Replacement) - flat fee,100.00
-Stormwater Post Construction Fee - flat fee for each permit,250.00
-Document Retention Fee - flat fee for each permit,5.00
-Hard Copy Document Retention Fee - flat fee for each sheet/page submitted,3.00
-State Education & Training Fund Fee (SETF) - flat fee per permit,4.50
-Third-Party Agent (TPA) Discount,15 %
-Permit Optional Services,
-Commercial Permit Accelerated Plan Review Fee (BDA) - based on the value of construction,1.50 %
-Commercial Permit Accelerated Plan Review Fee Minimum (BDA),"2,500.00"
-Commercial Permit Accelerated Plan Review Fee (All other Permits) - based on the value of construction,1.00 %
-Commercial Permit Accelerated Plan Review Fee Minimum (All other Permits),"1,500.00"
-Commercial Permit Accelerated Plan Review Fee Maximum (All),"80,000.00"
-Residential Permit Accelerated Plan Review Fee (All) - based on the value of construction,1.00 %
-Residential Permit Accelerated Plan Review Fee Minimum (All),500.00
-Residential Permit Accelerated Plan Review Fee Maximum (All),"8,000.00"
-Plan Review Meeting (1 hour),125.00
-Commercial Plan Review Meeting - based on the value of construction,0.25 %
-Commercial Plan Review Meeting Minimum Fee,125.00
-Commercial Plan Review Meeting Maximum Fee,"7,000.00"
-Residential Plan Review Meeting Fee - based on the value of construction,0.25 %
-Residential Plan Review Meeting Minimum Fee,125.00
-Residential Plan Review Meeting Maximum Fee,"3,500.00"
-Plan Review Consultancy - flat hourly rate,125.00
-Code Technical Training - flat fee (per person),75.00
-Commercial Off-hour Inspection Minimum Fee - flat fee,785.00
-Commercial Off-hour Inspection Above Minimum - flat fee for each hour,262.00
-Residential Off-hour Inspection Minimum Fee - flat fee,175.00
-Residential Off-hour Inspection Above Minimum - flat fee for each hour,58.00
-Permit Penalty Fees,
-Commercial Permit Work Penalty Fee - based on the value of construction,"17.50/ $1,000"
-Commercial Permit Work Penalty Minimum Fee,"1,210.00"
-Residential Permit Work Penalty Fee - based on the value of construction,"15/$1,000"
-Residential Permit Work Penalty Minimum Fee,$260.00
-Commercial Permit Plan Review Penalty Fee - flat fee,360.00
-Residential Permit Plan Review Penalty Fee - flat fee,45.00
-Commercial Permit Inspection Penalty Fee - flat fee,525.00
-Residential Permit Inspection Penalty Fee - flat fee,165.00
-Appeal Fees,
-Commercial Board of Appeals Application Fee - flat fee per property,425.00
-Residential Board of Appeals Application Fee - flat fee per property,175.00
-Board of License and Inspection Review Application Fee - flat fee per property,150.00
-Trade Licenses,
-Electrical Trade License (initial and renewal),90.00
-Fire Suppression Trade License (initial and renewal),90.00
-General Contractor License (initial and renewal),90.00
-HVAC Trade License (initial and renewal),90.00
-Sign Contractor License (initial and renewal),90.00
-Special Inspector Registration (initial and renewal),135.00
-Stationary Engineer License (initial and renewal),90.00
-Third-Party Inspector Registration (initial and renewal),120.00
-Business Licenses,
-Bed & Breakfast (initial and renewal),135.00
-Child Care Facility Registration and Inspection,50.00
-Fire & Life Safety Registration & Inspection (initial and renewal),150.00
-Parking Lot (initial and renewal) per location,135.00
-Peddler License (initial and renewal),75.00
-Second Hand Dealers License Fee (initial and renewal),135.00
-Solicitation/Tag Day License Fee (initial and renewal),50.00
-Ticket Reseller License Fee (initial and renewal),75.00
-Towing License Fee (initial and renewal),135.00
-"Vendor License Fee (Mobile Vehicle, initial and renewal)",135.00
-"Vendor License Fee (Stationary, initial and renewal)",135.00
-Vendor License (Mobile Vehicle and Stationary) - Employee Fee,25.00
-Rental Permit Program,
-Rental Permit Program Registration Fee - flat fee per property,16.00
-Rental Permit Program General Inspection Fee - flat fee per property,5.50
-Rental Permit Program Unit Inspection Fee - flat fee per number of units,14.00
-Rental Unit Lead Inspection - flat fee per number of units,8.00
-Misc License Fees,
-Trade License Continuing Education Training - flat fee (per person),50.00
-"License (Trade, Contractor, and Business) Late Fee",50.00
-Note: Third-party payment providers may charge their own processing fee,
+"C0 (r, x:54-511)","C1 (r, x:511-558)",section
+"DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS",,section
+Fee Description,2026,
+OneStopPGH Technology Fees,"See ""Misc.""",
+Permit Fees,,Permit Fees
+Commercial Permit Base Fee (initial and amended) - based on the value of construction,"8.75/$1,000",Permit Fees
+"Commercial Permit Minimum Base Fee (BDA, MP, EP, FAS, SSP, DP, SWM, LOP)",700.00,Permit Fees
+Commercial Permit Minimum Base Fee (SP),350.00,Permit Fees
+Commercial Permit Maximum Base Fee (all),"95,000.00",Permit Fees
+Commercial SSP & FAS maintenance Fee - flat fee for each permit,100.00,Permit Fees
+Residential Permit Base Fee (initial and amended) based on the value of construction,"7.50/$1,000",Permit Fees
+Residential Permit Minimum Base Fee (all),175.00,Permit Fees
+Residential Permit Maximum Base Fee (all),"8,000.00",Permit Fees
+Commercial & Residential Permit License Amendment Fee,50.00,Permit Fees
+Floodplain Permit (non-substantial improvement) - flat fee,175.00,Permit Fees
+Floodplain Permit (substantial improvement or new construction) - flat fee,$675.00,Permit Fees
+Permit Misc Fees,,Permit Misc Fees
+Permit Renewal Fee - flat fee,50.00,Permit Misc Fees
+Commercial Certificate of Occupancy Fee (permanent use and temporary use pending permit completion),575.00,Permit Misc Fees
+"Commercial Certificate of Occupancy Fee (temporary events, structures, and seating)",130.00,Permit Misc Fees
+Commercial Certificate of Occupancy Fee (expedited issuance),"1,150.00",Permit Misc Fees
+Residential Certificate of Occupancy Fee,130.00,Permit Misc Fees
+Residential Certificate of Occupancy Fee (expedited issuance),300.00,Permit Misc Fees
+Commercial Occupant Load Placard (New) - flat fee,375.00,Permit Misc Fees
+Commercial Occupant Load Placard (Replacement) - flat fee,100.00,Permit Misc Fees
+Stormwater Post Construction Fee - flat fee for each permit,250.00,Permit Misc Fees
+Document Retention Fee - flat fee for each permit,5.00,Permit Misc Fees
+Hard Copy Document Retention Fee - flat fee for each sheet/page submitted,3.00,Permit Misc Fees
+State Education & Training Fund Fee (SETF) - flat fee per permit,4.50,Permit Misc Fees
+Third-Party Agent (TPA) Discount,15 %,Permit Misc Fees
+Permit Optional Services,,Permit Optional Services
+Commercial Permit Accelerated Plan Review Fee (BDA) - based on the value of construction,1.50 %,Permit Optional Services
+Commercial Permit Accelerated Plan Review Fee Minimum (BDA),"2,500.00",Permit Optional Services
+Commercial Permit Accelerated Plan Review Fee (All other Permits) - based on the value of construction,1.00 %,Permit Optional Services
+Commercial Permit Accelerated Plan Review Fee Minimum (All other Permits),"1,500.00",Permit Optional Services
+Commercial Permit Accelerated Plan Review Fee Maximum (All),"80,000.00",Permit Optional Services
+Residential Permit Accelerated Plan Review Fee (All) - based on the value of construction,1.00 %,Permit Optional Services
+Residential Permit Accelerated Plan Review Fee Minimum (All),500.00,Permit Optional Services
+Residential Permit Accelerated Plan Review Fee Maximum (All),"8,000.00",Permit Optional Services
+Plan Review Meeting (1 hour),125.00,Permit Optional Services
+Commercial Plan Review Meeting - based on the value of construction,0.25 %,Permit Optional Services
+Commercial Plan Review Meeting Minimum Fee,125.00,Permit Optional Services
+Commercial Plan Review Meeting Maximum Fee,"7,000.00",Permit Optional Services
+Residential Plan Review Meeting Fee - based on the value of construction,0.25 %,Permit Optional Services
+Residential Plan Review Meeting Minimum Fee,125.00,Permit Optional Services
+Residential Plan Review Meeting Maximum Fee,"3,500.00",Permit Optional Services
+Plan Review Consultancy - flat hourly rate,125.00,Permit Optional Services
+Code Technical Training - flat fee (per person),75.00,Permit Optional Services
+Commercial Off-hour Inspection Minimum Fee - flat fee,785.00,Permit Optional Services
+Commercial Off-hour Inspection Above Minimum - flat fee for each hour,262.00,Permit Optional Services
+Residential Off-hour Inspection Minimum Fee - flat fee,175.00,Permit Optional Services
+Residential Off-hour Inspection Above Minimum - flat fee for each hour,58.00,Permit Optional Services
+Permit Penalty Fees,,Permit Penalty Fees
+Commercial Permit Work Penalty Fee - based on the value of construction,"17.50/ $1,000",Permit Penalty Fees
+Commercial Permit Work Penalty Minimum Fee,"1,210.00",Permit Penalty Fees
+Residential Permit Work Penalty Fee - based on the value of construction,"15/$1,000",Permit Penalty Fees
+Residential Permit Work Penalty Minimum Fee,$260.00,Permit Penalty Fees
+Commercial Permit Plan Review Penalty Fee - flat fee,360.00,Permit Penalty Fees
+Residential Permit Plan Review Penalty Fee - flat fee,45.00,Permit Penalty Fees
+Commercial Permit Inspection Penalty Fee - flat fee,525.00,Permit Penalty Fees
+Residential Permit Inspection Penalty Fee - flat fee,165.00,Permit Penalty Fees
+Appeal Fees,,Appeal Fees
+Commercial Board of Appeals Application Fee - flat fee per property,425.00,Appeal Fees
+Residential Board of Appeals Application Fee - flat fee per property,175.00,Appeal Fees
+Board of License and Inspection Review Application Fee - flat fee per property,150.00,Appeal Fees
+Trade Licenses,,Trade Licenses
+Electrical Trade License (initial and renewal),90.00,Trade Licenses
+Fire Suppression Trade License (initial and renewal),90.00,Trade Licenses
+General Contractor License (initial and renewal),90.00,Trade Licenses
+HVAC Trade License (initial and renewal),90.00,Trade Licenses
+Sign Contractor License (initial and renewal),90.00,Trade Licenses
+Special Inspector Registration (initial and renewal),135.00,Trade Licenses
+Stationary Engineer License (initial and renewal),90.00,Trade Licenses
+Third-Party Inspector Registration (initial and renewal),120.00,Trade Licenses
+Business Licenses,,Business Licenses
+Bed & Breakfast (initial and renewal),135.00,Business Licenses
+Child Care Facility Registration and Inspection,50.00,Business Licenses
+Fire & Life Safety Registration & Inspection (initial and renewal),150.00,Business Licenses
+Parking Lot (initial and renewal) per location,135.00,Business Licenses
+Peddler License (initial and renewal),75.00,Business Licenses
+Second Hand Dealers License Fee (initial and renewal),135.00,Business Licenses
+Solicitation/Tag Day License Fee (initial and renewal),50.00,Business Licenses
+Ticket Reseller License Fee (initial and renewal),75.00,Business Licenses
+Towing License Fee (initial and renewal),135.00,Business Licenses
+"Vendor License Fee (Mobile Vehicle, initial and renewal)",135.00,Business Licenses
+"Vendor License Fee (Stationary, initial and renewal)",135.00,Business Licenses
+Vendor License (Mobile Vehicle and Stationary) - Employee Fee,25.00,Business Licenses
+Rental Permit Program,,Rental Permit Program
+Rental Permit Program Registration Fee - flat fee per property,16.00,Rental Permit Program
+Rental Permit Program General Inspection Fee - flat fee per property,5.50,Rental Permit Program
+Rental Permit Program Unit Inspection Fee - flat fee per number of units,14.00,Rental Permit Program
+Rental Unit Lead Inspection - flat fee per number of units,8.00,Rental Permit Program
+Misc License Fees,,Misc License Fees
+Trade License Continuing Education Training - flat fee (per person),50.00,Misc License Fees
+"License (Trade, Contractor, and Business) Late Fee",50.00,Misc License Fees
+Note: Third-party payment providers may charge their own processing fee,,Misc License Fees

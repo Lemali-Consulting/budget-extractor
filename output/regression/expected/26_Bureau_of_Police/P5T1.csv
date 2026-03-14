@@ -1,6 +1,6 @@
-"C0 (l, x:57-212)","C1 (r, x:212-269)","C2 (r, x:269-309)","C3 (r, x:309-346)","C4 (r, x:346-405)","C5 (r, x:405-436)","C6 (r, x:436-477)","C7 (r, x:477-513)","C8 (r, x:513-558)"
-Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget
-"Temporary, Part-Time, and Seasonal Allowances",,,,,,,,
-Police Recruit,—,22.95,—,—,—,23.64,—,—
-"Assistant I, Administrative, Part Time",—,U06-A,"1,500","28,628",—,U06-A,"1,500","28,628"
-,—,,,"28,628",—,,,"28,628"
+"C0 (l, x:57-212)","C1 (r, x:212-269)","C2 (r, x:269-309)","C3 (r, x:309-346)","C4 (r, x:346-405)","C5 (r, x:405-436)","C6 (r, x:436-477)","C7 (r, x:477-513)","C8 (r, x:513-558)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+"Temporary, Part-Time, and Seasonal Allowances",,,,,,,,,"Temporary, Part-Time, and Seasonal Allowances"
+Police Recruit,—,22.95,—,—,—,23.64,—,—,"Temporary, Part-Time, and Seasonal Allowances"
+"Assistant I, Administrative, Part Time",—,U06-A,"1,500","28,628",—,U06-A,"1,500","28,628","Temporary, Part-Time, and Seasonal Allowances"
+,—,,,"28,628",—,,,"28,628","Temporary, Part-Time, and Seasonal Allowances"

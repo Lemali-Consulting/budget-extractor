@@ -1,0 +1,524 @@
+[
+  {
+    "department": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "year": "2024 Actual",
+    "amount": 658305314.0
+  },
+  {
+    "department": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "year": "2026 Budget",
+    "amount": 693235672.0
+  },
+  {
+    "department": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "year": "2027 Budget",
+    "amount": 679174172.0
+  },
+  {
+    "department": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "year": "2028 Budget",
+    "amount": 701999737.0
+  },
+  {
+    "department": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "year": "2029 Budget",
+    "amount": 713307747.0
+  },
+  {
+    "department": "Five-Year Financial Forecast",
+    "slug": "five-year-financial-forecast",
+    "year": "2030 Budget",
+    "amount": 726948083.0
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "year": "2024 Actual",
+    "amount": 3254223.0
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "year": "2025 Budget",
+    "amount": 3539772.0
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "year": "2026 Budget",
+    "amount": 3664835.0
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "year": "2024 Actual",
+    "amount": 3148474.0
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "year": "2025 Budget",
+    "amount": 2542149.0
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "year": "2026 Budget",
+    "amount": 2515537.0
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "year": "2024 Actual",
+    "amount": 4241786.0
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "year": "2025 Budget",
+    "amount": 4963344.0
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "year": "2026 Budget",
+    "amount": 3145158.0
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "year": "2024 Actual",
+    "amount": 19872073.0
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "year": "2025 Budget",
+    "amount": 21188171.0
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "year": "2026 Budget",
+    "amount": 20638818.0
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "year": "2024 Actual",
+    "amount": 657676.0
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "year": "2025 Budget",
+    "amount": 776018.0
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "year": "2026 Budget",
+    "amount": 827516.0
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "year": "2024 Actual",
+    "amount": 10977572.0
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "year": "2025 Budget",
+    "amount": 6989174.0
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "year": "2026 Budget",
+    "amount": 7705822.0
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "year": "2024 Actual",
+    "amount": 145503.0
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "year": "2025 Budget",
+    "amount": 190695.0
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "year": "2026 Budget",
+    "amount": 187735.0
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "year": "2024 Actual",
+    "amount": 34834352.0
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "year": "2025 Budget",
+    "amount": 30822882.0
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "year": "2026 Budget",
+    "amount": 24122782.0
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "year": "2024 Actual",
+    "amount": 27666043.0
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "year": "2025 Budget",
+    "amount": 39005907.0
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "year": "2026 Budget",
+    "amount": 11339864.0
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "year": "2024 Actual",
+    "amount": 118567529.0
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "year": "2025 Budget",
+    "amount": 120642195.0
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "year": "2026 Budget",
+    "amount": 117958522.0
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "year": "2024 Actual",
+    "amount": 101908597.0
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "year": "2025 Budget",
+    "amount": 99021429.0
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "year": "2026 Budget",
+    "amount": 106816658.0
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "year": "2024 Actual",
+    "amount": 1744354.0
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "year": "2025 Budget",
+    "amount": 2337259.0
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "year": "2026 Budget",
+    "amount": 2461494.0
+  },
+  {
+    "department": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "year": "2024 Actual",
+    "amount": 829217.0
+  },
+  {
+    "department": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "year": "2025 Budget",
+    "amount": 58000.0
+  },
+  {
+    "department": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "year": "2026 Budget",
+    "amount": 58000.0
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "year": "2024 Actual",
+    "amount": 13488261.0
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "year": "2025 Budget",
+    "amount": 14269913.0
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "year": "2026 Budget",
+    "amount": 25696815.0
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "year": "2024 Actual",
+    "amount": 26977495.0
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "year": "2025 Budget",
+    "amount": 25312349.0
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "year": "2026 Budget",
+    "amount": 26996116.0
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "year": "2024 Actual",
+    "amount": 18361348.0
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "year": "2025 Budget",
+    "amount": 19541701.0
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "year": "2026 Budget",
+    "amount": 19166722.0
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "year": "2024 Actual",
+    "amount": 12033312.0
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "year": "2025 Budget",
+    "amount": 11961338.0
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "year": "2026 Budget",
+    "amount": 71974.0
+  },
+  {
+    "department": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "year": "2025 Budget",
+    "amount": 70000.0
+  },
+  {
+    "department": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "year": "2026 Budget",
+    "amount": 70000.0
+  },
+  {
+    "department": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "year": "2025 Budget",
+    "amount": 38500.0
+  },
+  {
+    "department": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "year": "2026 Budget",
+    "amount": 3500.0
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "year": "2025 Budget",
+    "amount": 689816.0
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "year": "2026 Budget",
+    "amount": 669430.0
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "year": "2025 Budget",
+    "amount": 2759840.0
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "year": "2026 Budget",
+    "amount": 2759840.0
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "year": "2025 Budget",
+    "amount": 13398170.0
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "year": "2026 Budget",
+    "amount": 13398170.0
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "year": "2025 Budget",
+    "amount": 9196000.0
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "year": "2026 Budget",
+    "amount": 9196000.0
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "year": "2025 Budget",
+    "amount": 11193068.0
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "year": "2026 Budget",
+    "amount": 11780631.0
+  },
+  {
+    "department": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "year": "2025 Budget",
+    "amount": 1000000.0
+  },
+  {
+    "department": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "year": "2025 Budget",
+    "amount": 200000.0
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "year": "2025 Budget",
+    "amount": 175000.0
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "year": "2026 Budget",
+    "amount": 175000.0
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "year": "2025 Budget",
+    "amount": 2362028.0
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "year": "2026 Budget",
+    "amount": 2758358.0
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "year": "2025 Budget",
+    "amount": 228135.0
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "year": "2026 Budget",
+    "amount": 347553.0
+  },
+  {
+    "department": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "year": "2025 Budget",
+    "amount": 160000.0
+  },
+  {
+    "department": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "year": "2026 Budget",
+    "amount": 160000.0
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "year": "2025 Budget",
+    "amount": 1511850.0
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "year": "2026 Budget",
+    "amount": 1511850.0
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "year": "2025 Budget",
+    "amount": 525000.0
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "year": "2026 Budget",
+    "amount": 525000.0
+  },
+  {
+    "department": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "year": "2025 Budget",
+    "amount": 858500.0
+  },
+  {
+    "department": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "year": "2026 Budget",
+    "amount": 858500.0
+  }
+]

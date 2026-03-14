@@ -1,0 +1,7042 @@
+[
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "title": "Member of Council",
+    "fte2025": 9.0,
+    "fte2026": 9.0,
+    "budget2025": 806270.0,
+    "budget2026": 830421.0,
+    "rateGrade": "89,585"
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "title": "Council Staff",
+    "fte2025": 27.0,
+    "fte2026": 27.0,
+    "budget2025": 1946568.0,
+    "budget2026": 2079272.0,
+    "rateGrade": "varies"
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "title": "Administrative/Research",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 26000.0,
+    "budget2026": 65997.0,
+    "rateGrade": "varies"
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 26000.0,
+    "budget2026": 65997.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 74307.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "City Clerk",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129126.0,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Assistant City Clerk",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Deputy City Clerk 2, Secretary",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 54454.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Deputy City Clerk 2, Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Deputy City Clerk 1",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 125340.0,
+    "budget2026": 129084.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Deputy City Clerk 1",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Legislative Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Administrative Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51230.0,
+    "budget2026": 52770.0,
+    "rateGrade": "13G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Records Management Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Archivist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 64542.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Records Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "17F"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Processing Archivist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 45781.0,
+    "budget2026": 50835.0,
+    "rateGrade": "10G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Public Engagement Specialist",
+    "fte2025": 2.0,
+    "fte2026": 1.0,
+    "budget2025": 120224.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Council Budget Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 117312.0,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Council Budget Assistant Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Internal Accounts Monitor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "City Council Solicitor",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 91175.0,
+    "budget2026": null,
+    "rateGrade": "12-1"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Administrative / Research Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57019.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Legislative Projects Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 94806.0,
+    "budget2026": 97656.0,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 29472.0,
+    "budget2026": 30575.0,
+    "rateGrade": "varies"
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Mayor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 136219.0,
+    "budget2026": 140296.0,
+    "rateGrade": "136,219"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Chief of Staff",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 135574.0,
+    "budget2026": 139651.0,
+    "rateGrade": "135,574"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Deputy Chief of Staff",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129938.0,
+    "budget2026": 133827.0,
+    "rateGrade": "129,938"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Assistant Chief of Staff",
+    "fte2025": null,
+    "fte2026": 2.0,
+    "budget2025": null,
+    "budget2026": 195312.0,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Press Secretary",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 133827.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Communications Assistant",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 73258.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Chief Operating Officer",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 133827.0,
+    "rateGrade": "129,938"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Deputy Chief Operating Officer",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 105498.0,
+    "rateGrade": "30G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Director of Economic Development",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Deputy Director of Economic Development",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 97656.0,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Director of Redevelopment",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Director of Community Impact",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Senior Special Assistant",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Special Assistant",
+    "fte2025": null,
+    "fte2026": 3.0,
+    "budget2025": null,
+    "budget2026": 219774.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Receptionist",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Government Affairs Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Policy Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Special Projects Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Policy Analyst",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Immigrant and Refugee Affairs Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Community Affairs Supervisor",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 97656.0,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Community Affairs Liaison",
+    "fte2025": null,
+    "fte2026": 3.0,
+    "budget2025": null,
+    "budget2026": 219774.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Special Assistant to the Mayor",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 94806.0,
+    "budget2026": null,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Executive Administrator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 83512.0,
+    "budget2026": null,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Executive Assistant to COS",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Strategic Projects Administrator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Inclusion, Diversity, Equity, & Access Manager",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 71115.0,
+    "budget2026": null,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Inclusion, Diversity, Equity, & Access Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 68162.0,
+    "budget2026": null,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Manager, Office of Equal Protection",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "ADA and Disability Resources Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 62670.0,
+    "budget2026": null,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Communications Director",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 110718.0,
+    "budget2026": null,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Communications Senior Manager",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 83512.0,
+    "budget2026": null,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Press Officer",
+    "fte2025": 2.0,
+    "fte2026": null,
+    "budget2025": 120224.0,
+    "budget2026": null,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Digital Communications Specialist",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 71115.0,
+    "budget2026": null,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Neighborhood Services Senior Manager",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 83512.0,
+    "budget2026": null,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Engagement Manager",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Infrastructure Engagement Specialist",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Neighborhood Engagement Coordinator",
+    "fte2025": 3.0,
+    "fte2026": null,
+    "budget2025": 188011.0,
+    "budget2026": null,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Manager, 311 Response Line",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 83512.0,
+    "budget2026": null,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Assistant Manager, 311 Response Line",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Performance Operations Analyst",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 68162.0,
+    "budget2026": null,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "311 Call Center Representative",
+    "fte2025": 5.0,
+    "fte2026": null,
+    "budget2025": 211509.0,
+    "budget2026": null,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Digital Engagement Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 62670.0,
+    "budget2026": null,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Manager, Business Diversity",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 87318.0,
+    "budget2026": null,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Business Diversity Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 80330.0,
+    "budget2026": null,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Contract Compliance Analyst",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 57574.0,
+    "budget2026": null,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Manager, Office of Immigrant and Refugee Affairs",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 83512.0,
+    "budget2026": null,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Policy Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 62670.0,
+    "budget2026": null,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Workforce Development & Youth Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 68162.0,
+    "budget2026": null,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Youth Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 68162.0,
+    "budget2026": null,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Communications Coordinator",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 36629.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Pittsburgh Public Schools Interns",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 20000.0,
+    "budget2026": null,
+    "rateGrade": "10.00-15.00"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "311 Call Center Representatives, part-time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 89740.0,
+    "budget2026": null,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 109740.0,
+    "budget2026": 36629.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 118913.0,
+    "budget2026": 120102.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Director, OMB",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 135574.0,
+    "budget2026": 139651.0,
+    "rateGrade": "135,574"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Chief Economic Development Officer",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 129938.0,
+    "budget2026": null,
+    "rateGrade": "129,938"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Chief Operating and Administrative Officer",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 129938.0,
+    "budget2026": null,
+    "rateGrade": "129,938"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Executive Assistant, OMB",
+    "fte2025": 2.0,
+    "fte2026": 1.0,
+    "budget2025": 142230.0,
+    "budget2026": 73258.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Management Analyst",
+    "fte2025": 2.0,
+    "fte2026": null,
+    "budget2025": 148138.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Chief Financial Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129938.0,
+    "budget2026": 133827.0,
+    "rateGrade": "129,938"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Budget Accounts/Technician",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Fiscal and Contracting Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Assistant Director - Capital & Asset Management",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Manager, Capital Budget",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 94806.0,
+    "budget2026": 97656.0,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Budget Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Assistant Director - Operating & Special Revenue",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Senior Budget Analyst",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 174637.0,
+    "budget2026": 179878.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Budget Analyst",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 148138.0,
+    "budget2026": 152588.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Manager, Grants",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 94806.0,
+    "budget2026": 97656.0,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Grants Analyst",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 148138.0,
+    "budget2026": 152588.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Chief Procurement Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129938.0,
+    "budget2026": 133827.0,
+    "rateGrade": "129,938"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Senior Sourcing Specialist",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 174637.0,
+    "budget2026": 179878.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Sourcing Specialist",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 204486.0,
+    "budget2026": 210600.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Sustainable Procurement Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Procurement Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Senior Manager, Fleet Services",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 102419.0,
+    "budget2026": 105498.0,
+    "rateGrade": "30G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Fleet Contract Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Fleet Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Manager, Business Diversity",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 87318.0,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Business Diversity Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Contract Compliance Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 5000.0,
+    "budget2026": 5000.0,
+    "rateGrade": "varies"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "I&P Administration",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Director of Innovation & Performance/Chief Information Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129126.0,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Administration Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Fiscal Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Chief Clerk 1",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Coordinator, Administrative",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 44595.0,
+    "budget2026": 44595.0,
+    "rateGrade": "U04-F"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "IT Operations Reliability",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Assistant Director - IT Operations",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Manager, IT Service Desk",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Assistant Manager, IT Service Desk",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Technology Analyst",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 154086.0,
+    "budget2026": 158704.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Analyst, IT Service",
+    "fte2025": 2.0,
+    "fte2026": 1.0,
+    "budget2025": 138332.0,
+    "budget2026": 138332.0,
+    "rateGrade": "U08-L"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Analyst, IT Service",
+    "fte2025": 2.0,
+    "fte2026": 4.0,
+    "budget2025": 126911.0,
+    "budget2026": 126911.0,
+    "rateGrade": "U07-L"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Service Desk Representative",
+    "fte2025": 2.0,
+    "fte2026": null,
+    "budget2025": 106818.0,
+    "budget2026": null,
+    "rateGrade": "U05-L"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Manager, IT Infrastructure",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Systems Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Systems Administrator",
+    "fte2025": 2.0,
+    "fte2026": 3.0,
+    "budget2025": 154086.0,
+    "budget2026": 238056.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "IAM Systems Administrator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 77043.0,
+    "budget2026": null,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Network Architect",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 91021.0,
+    "budget2026": null,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Network Engineer",
+    "fte2025": 2.0,
+    "fte2026": 3.0,
+    "budget2025": 167024.0,
+    "budget2026": 258024.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Technician, Network",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 130770.0,
+    "budget2026": 130770.0,
+    "rateGrade": "U08-I"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Security & Risk",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Assistant Director, Security/Chief Information Security Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 117312.0,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Cybersecurity Engineer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Noble Reach Fellow in Cybersecurity",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 66127.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Operations Performance Excellence",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Manager, Operations Performance Excellence",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Process Improvement Engineer",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 167024.0,
+    "budget2026": 172016.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Business Technology",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Assistant Director - Business Technology",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Manager, Digital Services/Chief Data Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Data Services Engineer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Data Services Engineer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Data Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Operational Performance  Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Database Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Manager, Innovation",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Project Coordinator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 142230.0,
+    "budget2026": 146515.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Project Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 68162.0,
+    "budget2026": null,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Technology Implementation Specialist",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Business Relationship Manager",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 334048.0,
+    "budget2026": 344032.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Digital Equity Program Analyst",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 68162.0,
+    "budget2026": null,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Civic Technology & Policy Analyst",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Civic Innovation Specialist",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 136323.0,
+    "budget2026": 140400.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Manager, Applications",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Senior Enterprise Applications Administrator",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 250536.0,
+    "budget2026": 258024.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Enterprise Applications Administrator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 154086.0,
+    "budget2026": 158704.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "G.I.S. Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 89939.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "G.I.S. Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Analyst, G.I.S.",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 70635.0,
+    "budget2026": 70635.0,
+    "rateGrade": "D25"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Analyst, G.I.S.",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 67125.0,
+    "budget2026": 67125.0,
+    "rateGrade": "U07-O"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Website Administrator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Communications Design Administrator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Web Developer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Noble Reach Fellow in AI/Data Services",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 66127.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Communications",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Communication Technology Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Editor/Videographer",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 222615.0,
+    "budget2026": 222615.0,
+    "rateGrade": "U07-E"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Manager, Communication Services",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 91021.0,
+    "budget2026": null,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Assistant Manager, Communication Services",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 80330.0,
+    "budget2026": null,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Coordinator, Print Shop",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 53409.0,
+    "budget2026": 63455.0,
+    "rateGrade": "U05-L"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Manager, 311 Response Line",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Assistant Manager, 311 Response Line",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Performance Operations Analyst",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "311 Call Center Representative",
+    "fte2025": null,
+    "fte2026": 5.0,
+    "budget2025": null,
+    "budget2026": 211509.0,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Graphics and Print Technician",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 35951.0,
+    "rateGrade": "U06-L"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "311 Call Center Representative",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 89740.0,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "I&P Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 30000.0,
+    "budget2026": 34000.0,
+    "rateGrade": "15.00"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Cybersecurity Fellow",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 18000.0,
+    "budget2026": 18000.0,
+    "rateGrade": "18.00"
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 48000.0,
+    "budget2026": 177691.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 321828.0,
+    "budget2026": 325049.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Deputy Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Senior Investigator, Field",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 256684.0,
+    "budget2026": 256684.0,
+    "rateGrade": "U08-H"
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Fiscal & Contracting Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Administrative Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 54974.0,
+    "budget2026": 56618.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Student Interns",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 5000.0,
+    "budget2026": 5000.0,
+    "rateGrade": "15.00-20.00"
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 5000.0,
+    "budget2026": 5000.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Administration & Treasury Division",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Director",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "City Treasurer",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Director - City Treasurer*",
+    "fte2025": 0.85,
+    "fte2026": null,
+    "budget2025": 109757.0,
+    "budget2026": null,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Deputy Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 117312.0,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Administrative Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Mailroom Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Financial Analyst",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 204485.0,
+    "budget2026": 210600.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Business Intelligence",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Manager, Finance Operations",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Senior Finance Applications Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Cash Management",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Investment Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Assistant Investment Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Collection Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Remittance Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Technician, Remittance",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 169207.0,
+    "budget2026": 169207.0,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Cashier",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 84604.0,
+    "budget2026": 84604.0,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Cashier II",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 46613.0,
+    "rateGrade": "U02-N"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Tax Compliance  Division",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Tax Compliance Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Assistant Tax Compliance Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Coordinator, Tax Compliance",
+    "fte2025": 2.0,
+    "fte2026": 3.0,
+    "budget2025": 119972.0,
+    "budget2026": 119972.0,
+    "rateGrade": "U07-I"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Specialist, Tax Compliance",
+    "fte2025": 8.0,
+    "fte2026": 8.0,
+    "budget2025": 416196.0,
+    "budget2026": 416196.0,
+    "rateGrade": "U06-F"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Assistant II, Administrative",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 40449.0,
+    "budget2026": null,
+    "rateGrade": "U02-H"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Real Estate Division",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Assistant Real Estate Supervisor*",
+    "fte2025": 0.5,
+    "fte2026": 0.5,
+    "budget2025": 37034.0,
+    "budget2026": 38147.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Land Care and Maintenance Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Senior Assistant, Real Estate*",
+    "fte2025": 0.5,
+    "fte2026": 0.5,
+    "budget2025": 23864.0,
+    "budget2026": 23864.0,
+    "rateGrade": "U05-F"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Specialist, Tax Compliance",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 208098.0,
+    "budget2026": 208098.0,
+    "rateGrade": "U06-F"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Assistant II, Administrative*",
+    "fte2025": 2.1,
+    "fte2026": 2.0,
+    "budget2025": 84943.0,
+    "budget2026": 80898.0,
+    "rateGrade": "U02-H"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Assistant I, Administrative",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 39698.0,
+    "budget2026": null,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Assistant I, Administrative- Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 33817.0,
+    "budget2026": 29488.0,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Cashier, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 36035.0,
+    "budget2026": 36238.0,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Finance Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 15000.0,
+    "budget2026": null,
+    "rateGrade": "15.00"
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 84852.0,
+    "budget2026": 65726.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 97401.0,
+    "budget2026": 98376.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Chief Legal Officer & City Solicitor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 133058.0,
+    "budget2026": 137030.0,
+    "rateGrade": "133,058"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Deputy Solicitor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129126.0,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Associate Solicitor",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 482310.0,
+    "budget2026": 496787.0,
+    "rateGrade": "14-1"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Assistant Solicitor II",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 349939.0,
+    "budget2026": 360422.0,
+    "rateGrade": "13-6"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Assistant Solicitor l",
+    "fte2025": 14.0,
+    "fte2026": 13.0,
+    "budget2025": 1420182.0,
+    "budget2026": 1358219.0,
+    "rateGrade": "12-6"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Contract Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Paralegal",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 125341.0,
+    "budget2026": 129085.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Fiscal & Contracting Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Legal Investigator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Claims Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Claims Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 44158.0,
+    "budget2026": 45490.0,
+    "rateGrade": "09G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Assistant 1, Administrative",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 39698.0,
+    "budget2026": 39698.0,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Legal Secretary",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 54974.0,
+    "budget2026": 56618.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Legal Secretary",
+    "fte2025": 5.0,
+    "fte2026": 5.0,
+    "budget2025": 246792.0,
+    "budget2026": 254175.0,
+    "rateGrade": "12G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Assistant, Real Estate",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 130793.0,
+    "budget2026": 130793.0,
+    "rateGrade": "U02-L"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Manager, Office of Equal Protection",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "A.D.A. and Disability Resources Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Law Clerk, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 109800.0,
+    "budget2026": 109800.0,
+    "rateGrade": "20.00"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Law Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 5000.0,
+    "budget2026": 5000.0,
+    "rateGrade": "15.00"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Record Specialist, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 30900.0,
+    "budget2026": 31827.0,
+    "rateGrade": "20.60"
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 145700.0,
+    "budget2026": 146627.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 170109.0,
+    "budget2026": 171814.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "title": "Executive Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "title": "Intern and Part-Time Law Clerk",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 15000.0,
+    "budget2026": 35000.0,
+    "rateGrade": "varies"
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 15000.0,
+    "budget2026": 35000.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "title": "OMI Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "title": "Intake & Operations Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "title": "OMI Investigator",
+    "fte2025": 5.0,
+    "fte2026": 5.0,
+    "budget2025": 326664.0,
+    "budget2026": 336440.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "title": "Fiscal Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51230.0,
+    "budget2026": 52770.0,
+    "rateGrade": "13G"
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 19556.0,
+    "budget2026": 19556.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Director, Human Resources (EEO Officer)",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129126.0,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Occupational Social Worker",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Executive Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Fiscal & Contracting Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Assistant Director, Employee Compensation & Benefits",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Benefits & Wellness Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 87318.0,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Employee Compensation & Benefits Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Benefits & Wellness Coordinator",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 188011.0,
+    "budget2026": 193627.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Senior Payroll Coordinator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 160659.0,
+    "budget2026": 165485.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Payroll Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Risk Management Officer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 94806.0,
+    "budget2026": 97656.0,
+    "rateGrade": "28G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Risk Management Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Assistant Director, Sec. & Chief Examiner",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Human Resources Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 87318.0,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Senior Human Resources Business Partner",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 240989.0,
+    "budget2026": 248227.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Human Resources Business Partner",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 204485.0,
+    "budget2026": 210600.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Administrative Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Human Resources Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 87318.0,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Senior Human Resources Specialist",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 109949.0,
+    "budget2026": 113235.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Human Resources Specialist",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 98717.0,
+    "budget2026": 101670.0,
+    "rateGrade": "12G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Training and Recruitment Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 87318.0,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Talent Acquisition Coordinator",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 195998.0,
+    "budget2026": 201864.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Training & Development Coordinator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 125341.0,
+    "budget2026": 129085.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Employee Relations Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "DHR Investigator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Member - Civil Service Commission",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 25000.0,
+    "budget2026": 25000.0,
+    "rateGrade": "20.70"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Member - Personnel Appeals Board",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 1800.0,
+    "budget2026": 1800.0,
+    "rateGrade": "20.70"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Human Resources Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 19000.0,
+    "budget2026": null,
+    "rateGrade": "9.00-11.00"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 45800.0,
+    "budget2026": 26800.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 139683.0,
+    "budget2026": 141081.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "EMS Chief",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 154502.0,
+    "budget2026": 159141.0,
+    "rateGrade": "154,502"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Deputy Chief",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 135470.0,
+    "budget2026": 139526.0,
+    "rateGrade": "135,470"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Assistant Chief",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 127691.0,
+    "budget2026": 131518.0,
+    "rateGrade": "127,691"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Division Chief",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 353122.0,
+    "budget2026": 363730.0,
+    "rateGrade": "117,707"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Operations Safety Chief",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 105747.0,
+    "budget2026": 108930.0,
+    "rateGrade": "50.84"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "District Chief",
+    "fte2025": 10.0,
+    "fte2026": 10.0,
+    "budget2025": 1110346.0,
+    "budget2026": 1143761.0,
+    "rateGrade": "50.84"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Crew Chief",
+    "fte2025": 39.0,
+    "fte2026": 39.0,
+    "budget2025": 3432187.0,
+    "budget2026": 3535210.0,
+    "rateGrade": "42.31"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Paramedic",
+    "fte2025": 133.0,
+    "fte2026": 133.0,
+    "budget2025": 9704117.0,
+    "budget2026": 10349466.0,
+    "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Emergency Medical Technician",
+    "fte2025": 28.0,
+    "fte2026": 28.0,
+    "budget2025": 1406286.0,
+    "budget2026": 1507133.0,
+    "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Assistant I, Administrative",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 79396.0,
+    "budget2026": 79396.0,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 248207.0,
+    "budget2026": 250642.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Chief",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 175011.0,
+    "budget2026": 180253.0,
+    "rateGrade": "175,011"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Assistant Chief of Police",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 451152.0,
+    "budget2026": 464693.0,
+    "rateGrade": "150,384"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Commander",
+    "fte2025": 14.0,
+    "fte2026": 14.0,
+    "budget2025": 1986275.0,
+    "budget2026": 2045971.0,
+    "rateGrade": "141,877"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Lieutenant",
+    "fte2025": 30.0,
+    "fte2026": 30.0,
+    "budget2025": 3546822.0,
+    "budget2026": 3546822.0,
+    "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Sergeant",
+    "fte2025": 102.0,
+    "fte2026": 102.0,
+    "budget2025": 10578234.0,
+    "budget2026": 10578234.0,
+    "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Officer - Detective",
+    "fte2025": 176.0,
+    "fte2026": 176.0,
+    "budget2025": 16011131.0,
+    "budget2026": 16011131.0,
+    "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Officer",
+    "fte2025": 474.0,
+    "fte2026": 474.0,
+    "budget2025": 39313433.0,
+    "budget2026": 39313433.0,
+    "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Fleet Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Crime Scene Technician",
+    "fte2025": null,
+    "fte2026": 2.0,
+    "budget2025": null,
+    "budget2026": 109886.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Support Services Shift Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Office Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Administrative Assistant",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 109949.0,
+    "budget2026": 113235.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Property & Evidence Technician",
+    "fte2025": 4.0,
+    "fte2026": 2.0,
+    "budget2025": 219898.0,
+    "budget2026": 84926.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Real Time Crime Specialist",
+    "fte2025": 7.0,
+    "fte2026": 7.0,
+    "budget2025": 370115.0,
+    "budget2026": 381181.0,
+    "rateGrade": "14G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Secretary",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 49358.0,
+    "budget2026": 50835.0,
+    "rateGrade": "12G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Public Safety Ambassador",
+    "fte2025": 12.0,
+    "fte2026": null,
+    "budget2025": 549370.0,
+    "budget2026": null,
+    "rateGrade": "10G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Service Aide",
+    "fte2025": 6.0,
+    "fte2026": null,
+    "budget2025": 160233.0,
+    "budget2026": null,
+    "rateGrade": "10G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Administrative Specialist",
+    "fte2025": 2.0,
+    "fte2026": null,
+    "budget2025": 85488.0,
+    "budget2026": null,
+    "rateGrade": "08G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Cashier",
+    "fte2025": 2.0,
+    "fte2026": 1.0,
+    "budget2025": 84604.0,
+    "budget2026": 42302.0,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Dispatcher",
+    "fte2025": 3.0,
+    "fte2026": 1.0,
+    "budget2025": 124549.0,
+    "budget2026": 41516.0,
+    "rateGrade": "U01-M"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Specialist I, Administrative",
+    "fte2025": 32.0,
+    "fte2026": 24.0,
+    "budget2025": 1299737.0,
+    "budget2026": 974803.0,
+    "rateGrade": "U04-A"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Assistant I, Administrative",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 39698.0,
+    "budget2026": 39698.0,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Police Recruit",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": "22.95"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Assistant I, Administrative, Part Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 28628.0,
+    "budget2026": 28628.0,
+    "rateGrade": "U06-A"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 28628.0,
+    "budget2026": 28628.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 5485722.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Fire Chief",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 154502.0,
+    "budget2026": 156062.0,
+    "rateGrade": "154,502"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Assistant Chief",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 288412.0,
+    "budget2026": 297066.0,
+    "rateGrade": "144,206"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Deputy Chief",
+    "fte2025": 2.0,
+    "fte2026": null,
+    "budget2025": 254916.0,
+    "budget2026": null,
+    "rateGrade": "127,458"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Deputy Chief *",
+    "fte2025": 2.0,
+    "fte2026": 4.0,
+    "budget2025": 235654.0,
+    "budget2026": 471308.0,
+    "rateGrade": "117,827"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Battalion Chief *",
+    "fte2025": 18.0,
+    "fte2026": 18.0,
+    "budget2025": 2000195.0,
+    "budget2026": 2085102.0,
+    "rateGrade": "111,122"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Firefighter Instructor",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 435300.0,
+    "budget2026": 450112.0,
+    "rateGrade": "108,825"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Public Education Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 108826.0,
+    "budget2026": 112528.0,
+    "rateGrade": "108,826"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Fire Captain",
+    "fte2025": 54.0,
+    "fte2026": 54.0,
+    "budget2025": 5342503.0,
+    "budget2026": 5524122.0,
+    "rateGrade": "98,935"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Fire Lieutenant",
+    "fte2025": 112.0,
+    "fte2026": 112.0,
+    "budget2025": 10078455.0,
+    "budget2026": 10415409.0,
+    "rateGrade": "89,937"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Firefighter",
+    "fte2025": 482.0,
+    "fte2026": 482.0,
+    "budget2025": 37677277.0,
+    "budget2026": 39257546.0,
+    "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Deputy Fire Marshal",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 63455.0,
+    "budget2026": 63455.0,
+    "rateGrade": "U07-L"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Firefighter Recruit Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 1081167.0,
+    "budget2026": 556200.0,
+    "rateGrade": "24.14"
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 1081167.0,
+    "budget2026": 556200.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Urban Search and Rescue Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 5000.0,
+    "budget2026": 5000.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Emergency Management Coordinator Bonus",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 10000.0,
+    "budget2026": 10000.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "title": "Animal Care & Control Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "title": "Animal Care & Control Assistant Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "title": "Animal Care & Control Officer",
+    "fte2025": 15.0,
+    "fte2026": 15.0,
+    "budget2025": 775320.0,
+    "budget2026": 775320.0,
+    "rateGrade": "24.85"
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 9404.0,
+    "budget2026": 9499.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Director's Office",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129126.0,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Deputy Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 117312.0,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Assistant Director, Administration",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Executive Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 71115.0,
+    "budget2026": 73258.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Chief Clerk 2",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 68162.0,
+    "budget2026": null,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Office of Personnel & Finance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Manager, Personnel & Finance",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Fiscal Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Department Business Administrator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 160659.0,
+    "budget2026": 165485.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Operational Performance Analyst",
+    "fte2025": 1.0,
+    "fte2026": 2.0,
+    "budget2025": 77043.0,
+    "budget2026": 158704.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Administrator 2",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Fiscal & Contracting Coordinator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 115149.0,
+    "budget2026": 118602.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Administration",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Operations Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Public Works Program Specialist",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 44158.0,
+    "budget2026": null,
+    "rateGrade": "09G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Inspections",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Inspections Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Anti-Litter Inspector",
+    "fte2025": 10.0,
+    "fte2026": null,
+    "budget2025": 575744.0,
+    "budget2026": null,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Operations Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Environmental Enforcement Inspector",
+    "fte2025": null,
+    "fte2026": 10.0,
+    "budget2025": null,
+    "budget2026": 575744.0,
+    "rateGrade": "U07G"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Inspector I",
+    "fte2025": 2.0,
+    "fte2026": null,
+    "budget2025": 95458.0,
+    "budget2026": null,
+    "rateGrade": "U05-F"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Inspector II",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 172039.0,
+    "budget2026": 172039.0,
+    "rateGrade": "U08-B"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 23000.0,
+    "budget2026": 23000.0,
+    "rateGrade": "13.25"
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 23000.0,
+    "budget2026": 23000.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 107188.0,
+    "budget2026": 108264.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Administration",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Manager of Support Services",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Administrator 2",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 120224.0,
+    "budget2026": 123843.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Administrative Aide",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 52874.0,
+    "budget2026": 56618.0,
+    "rateGrade": "14G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Neighborhood Engagement Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Office of Personnel & Finance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Technician, Payroll",
+    "fte2025": 6.0,
+    "fte2026": 6.0,
+    "budget2025": 256730.0,
+    "budget2026": 256730.0,
+    "rateGrade": "U02-K"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Streets Maintenance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Superintendent",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Assistant Superintendent",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Streets Maintenance Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Streets Maintenance Supervisor",
+    "fte2025": 6.0,
+    "fte2026": 6.0,
+    "budget2025": 501072.0,
+    "budget2026": 516048.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Foreman, Second In Command",
+    "fte2025": 6.0,
+    "fte2026": 6.0,
+    "budget2025": 378709.0,
+    "budget2026": 428438.0,
+    "rateGrade": "70,013"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Foreman",
+    "fte2025": 22.0,
+    "fte2026": 22.0,
+    "budget2025": 1337107.0,
+    "budget2026": 1503674.0,
+    "rateGrade": "67,018"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Heavy Equipment Operator",
+    "fte2025": 10.0,
+    "fte2026": 10.0,
+    "budget2025": 639392.0,
+    "budget2026": 652288.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Sweeper Operator",
+    "fte2025": 9.0,
+    "fte2026": 9.0,
+    "budget2025": 516110.0,
+    "budget2026": 526406.0,
+    "rateGrade": "27.57"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Truck Driver - Special Operator",
+    "fte2025": 8.0,
+    "fte2026": 8.0,
+    "budget2025": 455437.0,
+    "budget2026": 464589.0,
+    "rateGrade": "27.37"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Truck Driver",
+    "fte2025": 45.0,
+    "fte2026": 45.0,
+    "budget2025": 2525328.0,
+    "budget2026": 2575872.0,
+    "rateGrade": "26.98"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Tractor Operator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 111322.0,
+    "budget2026": 113568.0,
+    "rateGrade": "26.76"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Skilled Laborer",
+    "fte2025": 7.0,
+    "fte2026": 7.0,
+    "budget2025": 378123.0,
+    "budget2026": 385694.0,
+    "rateGrade": "25.97"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Laborer",
+    "fte2025": 137.0,
+    "fte2026": 137.0,
+    "budget2025": 6972971.0,
+    "budget2026": 7112602.0,
+    "rateGrade": "24.47"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Parks Maintenance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Superintendent",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Forestry",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "City Forester",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Arborist - Utility Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Tree Pruner",
+    "fte2025": 7.0,
+    "fte2026": 7.0,
+    "budget2025": 406661.0,
+    "budget2026": 414814.0,
+    "rateGrade": "27.93"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Heavy Equipment",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Parts Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Heavy Equipment Repair Specialist",
+    "fte2025": 7.0,
+    "fte2026": 7.0,
+    "budget2025": 447574.0,
+    "budget2026": 456602.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Parts Specialist",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 158184.0,
+    "budget2026": 161366.0,
+    "rateGrade": "25.35"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Laborer, Seasonal",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 387336.0,
+    "budget2026": 395092.0,
+    "rateGrade": "24.47"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Temporary, Part-Time & Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 387336.0,
+    "budget2026": 395092.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 1118470.0,
+    "budget2026": 1137313.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Environmental Services",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Superintendent",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Assistant Superintendent",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Refuse Collection Supervisor",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 167024.0,
+    "budget2026": 172016.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Foreman, Second in Command",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 126236.0,
+    "budget2026": 142813.0,
+    "rateGrade": "63,118"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Foreman, Environmental Services",
+    "fte2025": 11.0,
+    "fte2026": 11.0,
+    "budget2025": 668554.0,
+    "budget2026": 751837.0,
+    "rateGrade": "60,778"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Driver",
+    "fte2025": 52.0,
+    "fte2026": 52.0,
+    "budget2025": 2754835.0,
+    "budget2026": 2754835.0,
+    "rateGrade": "25.47"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Co-Driver",
+    "fte2025": 90.0,
+    "fte2026": 90.0,
+    "budget2025": 4408560.0,
+    "budget2026": 4408560.0,
+    "rateGrade": "23.54"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Loader",
+    "fte2025": 28.0,
+    "fte2026": 28.0,
+    "budget2025": 1048320.0,
+    "budget2026": 1048320.0,
+    "rateGrade": "18.00"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Administration",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Environmental Enforcement Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 71115.0,
+    "budget2026": 73258.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Environmental Enforcement Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Project Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 62670.0,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Lot Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Lot Coordinator",
+    "fte2025": 4.0,
+    "fte2026": 1.0,
+    "budget2025": 211910.0,
+    "budget2026": 52978.0,
+    "rateGrade": "25.47"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Lot Coordinator",
+    "fte2025": null,
+    "fte2026": 2.0,
+    "budget2025": null,
+    "budget2026": 52978.0,
+    "rateGrade": "25.47"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Recycling Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Specialist, Environmental Enforcement",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51635.0,
+    "budget2026": 51635.0,
+    "rateGrade": "U07-A"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Administrator 2",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Dispatcher",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 84025.0,
+    "budget2026": 84025.0,
+    "rateGrade": "U10-D"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Assistant I, Administrative",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 39698.0,
+    "budget2026": 39698.0,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Office of Personnel & Administration",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Technician, Payroll",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 85577.0,
+    "budget2026": 85577.0,
+    "rateGrade": "U02-K"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Loader, Seasonal",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 281070.0,
+    "budget2026": null,
+    "rateGrade": "18.00"
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 281070.0,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Loader CDL Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 24960.0,
+    "budget2026": 24960.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 718013.0,
+    "budget2026": 724653.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Director's Office",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Assistant Director - Facilities",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Facilities Maintenance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Superintendent - Facilities",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Electrical Foreman, Second in Command",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 70824.0,
+    "budget2026": 75878.0,
+    "rateGrade": "70,824"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Plumbing Maintenance Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68753.0,
+    "budget2026": 73632.0,
+    "rateGrade": "68,753"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Carpentry Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68735.0,
+    "budget2026": 73632.0,
+    "rateGrade": "68,735"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "H.V.A.C. Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68735.0,
+    "budget2026": 73632.0,
+    "rateGrade": "68,735"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Painter Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 67059.0,
+    "budget2026": 71822.0,
+    "rateGrade": "67,059"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Building Maintenance Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 66565.0,
+    "budget2026": 71282.0,
+    "rateGrade": "66,565"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Stationary Engineer",
+    "fte2025": 1.0,
+    "fte2026": 2.0,
+    "budget2025": 59530.0,
+    "budget2026": 121472.0,
+    "rateGrade": "28.62"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Electrician",
+    "fte2025": 6.0,
+    "fte2026": 6.0,
+    "budget2025": 383635.0,
+    "budget2026": 391373.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Plumber",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 191818.0,
+    "budget2026": 195686.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "H.V.A.C. Technician",
+    "fte2025": 6.0,
+    "fte2026": 6.0,
+    "budget2025": 367910.0,
+    "budget2026": 375274.0,
+    "rateGrade": "29.48"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Carpenter",
+    "fte2025": 10.0,
+    "fte2026": 10.0,
+    "budget2025": 606112.0,
+    "budget2026": 618176.0,
+    "rateGrade": "29.14"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Painter",
+    "fte2025": 5.0,
+    "fte2026": 5.0,
+    "budget2025": 297232.0,
+    "budget2026": 303160.0,
+    "rateGrade": "28.58"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Glazier",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 59051.0,
+    "budget2026": 60216.0,
+    "rateGrade": "28.39"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Skilled Laborer",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 55099.0,
+    "rateGrade": "25.97"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "General Laborer",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 169104.0,
+    "budget2026": 172474.0,
+    "rateGrade": "27.10"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Construction",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Construction Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Construction Foreman",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 222206.0,
+    "budget2026": 231067.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Bricklayer",
+    "fte2025": 3.0,
+    "fte2026": 2.0,
+    "budget2025": 187013.0,
+    "budget2026": 127171.0,
+    "rateGrade": "29.97"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Structural Iron Worker",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 127878.0,
+    "budget2026": 130458.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Cement Finisher",
+    "fte2025": 7.0,
+    "fte2026": 6.0,
+    "budget2025": 447574.0,
+    "budget2026": 391373.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Truck Driver",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 56118.0,
+    "budget2026": 57242.0,
+    "rateGrade": "26.98"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Laborer",
+    "fte2025": 6.0,
+    "fte2026": 5.0,
+    "budget2025": 305386.0,
+    "budget2026": 259584.0,
+    "rateGrade": "24.47"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Architecture",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Senior Project Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 102419.0,
+    "budget2026": 105498.0,
+    "rateGrade": "30G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Senior Project Architect",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 204838.0,
+    "budget2026": 210995.0,
+    "rateGrade": "30G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Project Manager",
+    "fte2025": 6.0,
+    "fte2026": 7.0,
+    "budget2025": 523910.0,
+    "budget2026": 629574.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Associate Project Manager 2",
+    "fte2025": 2.0,
+    "fte2026": 1.0,
+    "budget2025": 154086.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Associate Project Manager",
+    "fte2025": 3.0,
+    "fte2026": 1.0,
+    "budget2025": 195998.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Office of Personnel & Finance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Warehouse Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Assistant Warehouse Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 73258.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Department Business Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Technician, Payroll",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 42788.0,
+    "budget2026": 42788.0,
+    "rateGrade": "U02-K"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Administration",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Stores Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Contract Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 71115.0,
+    "budget2026": 59301.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Administrator 2",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 60112.0,
+    "budget2026": null,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Operations Performance Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Fiscal & Contracting Coordinator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 115149.0,
+    "budget2026": 118602.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 417144.0,
+    "budget2026": 423360.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Director of Mobility & Infrastructure",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 129126.0,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Deputy Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 117312.0,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Fiscal Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Senior Systems Analyst 3",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Infrastructure Engagement and Performance Operations Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Vision Zero Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Contract Administrator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Executive Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Administrator 2",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 60112.0,
+    "budget2026": null,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Operations & Administrative Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Press Officer",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Fiscal & Contracting Coordinator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 115149.0,
+    "budget2026": 118602.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Assistant Director - Policy & Planning",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Senior Manager Right of Way",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Senior Planning Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Utility & Right of Way Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Project Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Data Solutions Architect",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Right of Way Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Inspection Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Operations Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Curbside & Mobility Services Program Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Safe Routes to School Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Principal Planner",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 222206.0,
+    "budget2026": 228883.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Senior Planner",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 213689.0,
+    "budget2026": 213689.0,
+    "rateGrade": "U09-H"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Inspector 3",
+    "fte2025": 1.0,
+    "fte2026": 2.0,
+    "budget2025": 68162.0,
+    "budget2026": 140400.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Policy Analyst",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 136323.0,
+    "budget2026": 140400.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Program Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Engineering Technician 3",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 136323.0,
+    "budget2026": 140400.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "ROW Construction Inspector",
+    "fte2025": 7.0,
+    "fte2026": 7.0,
+    "budget2025": 449196.0,
+    "budget2026": 449196.0,
+    "rateGrade": "U08-H"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Lead Technician, Mobility",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 58431.0,
+    "budget2026": 58431.0,
+    "rateGrade": "U08-C"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Survey Party Chief",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 54974.0,
+    "budget2026": 56618.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Technician, Mobility",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 197388.0,
+    "budget2026": 197388.0,
+    "rateGrade": "U03-O"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Code Enforcement Inspector",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 119972.0,
+    "budget2026": 119972.0,
+    "rateGrade": "U07-I"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Technician, Payroll",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 42789.0,
+    "budget2026": 42789.0,
+    "rateGrade": "U02-K"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Assistant, Land Survey Rod Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 42302.0,
+    "budget2026": 42302.0,
+    "rateGrade": "U01-N"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Chief Engineer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 117312.0,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Deputy Chief Engineer - Structures",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 106475.0,
+    "budget2026": 109678.0,
+    "rateGrade": "31G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Senior Project Manager",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 197142.0,
+    "budget2026": 203050.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Project Manager",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 273063.0,
+    "budget2026": 281238.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Paving Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Construction Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Bridge Maintenance Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 93746.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Project Engineer",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 154086.0,
+    "budget2026": 158704.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Inspector 4",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 71115.0,
+    "budget2026": 73258.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Bridge Maintenance Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 69143.0,
+    "budget2026": 74069.0,
+    "rateGrade": "69,143"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Staff Engineer",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 207498.0,
+    "budget2026": 207498.0,
+    "rateGrade": "U08-L"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Paving Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 67064.0,
+    "budget2026": 71822.0,
+    "rateGrade": "67,064"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Inspector 3",
+    "fte2025": 1.0,
+    "fte2026": 2.0,
+    "budget2025": 68162.0,
+    "budget2026": 140400.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Cement Finisher",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 63939.0,
+    "budget2026": 65229.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Structural Iron Worker",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 63939.0,
+    "budget2026": 65229.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Inspector 2",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57346.0,
+    "budget2026": 57346.0,
+    "rateGrade": "U08-B"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "General Laborer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 56368.0,
+    "budget2026": 57491.0,
+    "rateGrade": "27.10"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Fiscal Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51230.0,
+    "budget2026": 52770.0,
+    "rateGrade": "13G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Inspector 1",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 47729.0,
+    "budget2026": null,
+    "rateGrade": "U05-F"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Assistant 1, Administrative",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 39698.0,
+    "budget2026": null,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Municipal Traffic Engineer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Senior Project Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98571.0,
+    "budget2026": 101525.0,
+    "rateGrade": "29G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Traffic Supervisor",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 182042.0,
+    "budget2026": 187491.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Project Manager",
+    "fte2025": 5.0,
+    "fte2026": 5.0,
+    "budget2025": 455105.0,
+    "budget2026": 468730.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Intelligent Transportation Systems Technology Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 91021.0,
+    "budget2026": 93746.0,
+    "rateGrade": "27G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Traffic Management Center Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Project Engineer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77043.0,
+    "budget2026": 79352.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Traffic Control Foreman, Second In Command",
+    "fte2025": 2.0,
+    "fte2026": 1.0,
+    "budget2025": 138286.0,
+    "budget2026": 74048.0,
+    "rateGrade": "69,143"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Painter Foreman, Second In Command",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 69138.0,
+    "budget2026": 74048.0,
+    "rateGrade": "69,138"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Staff Engineer",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 207498.0,
+    "budget2026": 207498.0,
+    "rateGrade": "U08-L"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Traffic Control Foreman",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 71822.0,
+    "rateGrade": "67,059"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Painter Foreman",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 67059.0,
+    "budget2026": 71822.0,
+    "rateGrade": "67,059"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Engineering Technician 3",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 136324.0,
+    "budget2026": 140400.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Traffic Control Electrician 2",
+    "fte2025": 10.0,
+    "fte2026": 10.0,
+    "budget2025": 639392.0,
+    "budget2026": 652288.0,
+    "rateGrade": "30.74"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Transportation Demand Management Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 63579.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Sign & Paint Maintenance Specialist",
+    "fte2025": 6.0,
+    "fte2026": 6.0,
+    "budget2025": 345446.0,
+    "budget2026": 352435.0,
+    "rateGrade": "27.68"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Sign Painter",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 115149.0,
+    "budget2026": 117478.0,
+    "rateGrade": "27.68"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Truck Driver - Special Operator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 56930.0,
+    "budget2026": 58074.0,
+    "rateGrade": "27.37"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Laborer",
+    "fte2025": 5.0,
+    "fte2026": 5.0,
+    "budget2025": 254488.0,
+    "budget2026": 259584.0,
+    "rateGrade": "24.47"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Technician, Payroll",
+    "fte2025": 1.0,
+    "fte2026": 2.0,
+    "budget2025": 42789.0,
+    "budget2026": 85578.0,
+    "rateGrade": "U02-K"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Assistant 1, Administrative",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 39698.0,
+    "budget2026": null,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Seasonal Laborers",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 101795.0,
+    "budget2026": 155750.0,
+    "rateGrade": "24.47"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Seasonal Truck Driver - Special Operator",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 28465.0,
+    "budget2026": 29037.0,
+    "rateGrade": "27.37"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 19800.0,
+    "budget2026": 23033.0,
+    "rateGrade": "12.00-15.00"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 150060.0,
+    "budget2026": 207820.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 592737.0,
+    "budget2026": 599475.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "CPRB Executive Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Assistant Executive Director",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 87318.0,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Lead Investigator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 59536.0,
+    "budget2026": 59536.0,
+    "rateGrade": "U08-D"
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Investigator",
+    "fte2025": 4.0,
+    "fte2026": 4.0,
+    "budget2025": 228540.0,
+    "budget2026": 228540.0,
+    "rateGrade": "U06-K"
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Community Liaison",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57575.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Administrative Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51231.0,
+    "budget2026": 52770.0,
+    "rateGrade": "13G"
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Intern",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 5000.0,
+    "budget2026": 5000.0,
+    "rateGrade": "12.00-15.00"
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 5000.0,
+    "budget2026": 5000.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "title": "Director - City Treasurer",
+    "fte2025": 0.15,
+    "fte2026": null,
+    "budget2025": 19369.0,
+    "budget2026": null,
+    "rateGrade": "35G"
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "title": "Real Estate Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "27E"
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "title": "Assistant Real Estate Supervisor",
+    "fte2025": 0.5,
+    "fte2026": 0.5,
+    "budget2025": 37034.0,
+    "budget2026": 38147.0,
+    "rateGrade": "24E"
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "title": "Real Estate Sales Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "18E"
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "title": "Senior Assistant, Real Estate",
+    "fte2025": 1.5,
+    "fte2026": 1.5,
+    "budget2025": 71593.0,
+    "budget2026": 71593.0,
+    "rateGrade": "U05-F"
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "title": "Assistant II, Administrative",
+    "fte2025": null,
+    "fte2026": 0.9,
+    "budget2025": 36404.0,
+    "budget2026": 36404.0,
+    "rateGrade": "U02-H"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Assistant Director, Pittsburgh Partnership",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Fiscal & Contracting Services Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Planning & Evaluation Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "R.E.S.E.T. Program Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Youth Program Supervisor",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 160659.0,
+    "budget2026": 165484.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Information Systems Programmer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67288.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Case Manager",
+    "fte2025": 6.0,
+    "fte2026": 6.0,
+    "budget2025": 360672.0,
+    "budget2026": 371532.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Fiscal & Contracting Coordinator",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 120224.0,
+    "budget2026": 123844.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Job Developer",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60112.0,
+    "budget2026": 61922.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Human Resources Specialist",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 132475.0,
+    "budget2026": 136469.0,
+    "rateGrade": "09G"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "title": "Human Resources Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 38397.0,
+    "budget2026": 39541.0,
+    "rateGrade": "04G"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Assistant Director, Community Development",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114026.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Program Supervisor, Community Development",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Fiscal and Contracting Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Fiscal and Contracting Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59301.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Environmental Review Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 73965.0,
+    "budget2026": 73965.0,
+    "rateGrade": "U09-J"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Senior Program Coordinator, CD",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 142460.0,
+    "budget2026": 142460.0,
+    "rateGrade": "U09-H"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Program Coordinator II, CD",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 131758.0,
+    "budget2026": 131758.0,
+    "rateGrade": "U07-N"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "title": "Program Coordinator, Community Development",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 126910.0,
+    "budget2026": 126910.0,
+    "rateGrade": "U07-L"
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "title": "Assistant I, Administrative",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 39698.0,
+    "budget2026": null,
+    "rateGrade": "U02-G"
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "title": "Specialist, Administrative",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 40617.0,
+    "rateGrade": "U04-A"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Community Health and Safety",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Operations",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Assistant Director, Community Health & Safety",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 110718.0,
+    "budget2026": null,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Operations Project Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Department Business Administrator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Senior Project Manager, Diversion & Evaluation",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 80330.0,
+    "budget2026": null,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Community Partnership Specialist",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Administrative Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 42744.0,
+    "budget2026": 44034.0,
+    "rateGrade": "08G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Reaching Out On The Streets (ROOTS) Program",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "ROOTS Program Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "ROOTS Team Lead",
+    "fte2025": 3.0,
+    "fte2026": 4.0,
+    "budget2025": 222206.0,
+    "budget2026": 305178.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "ROOTS Criminal Justice Liaison",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 71115.0,
+    "budget2026": 73258.0,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "ROOTS Senior Outreach Specialist",
+    "fte2025": 3.0,
+    "fte2026": 4.0,
+    "budget2025": 164923.0,
+    "budget2026": 258170.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "ROOTS Outreach Site Manager",
+    "fte2025": 3.0,
+    "fte2026": 4.0,
+    "budget2025": 180336.0,
+    "budget2026": 247686.0,
+    "rateGrade": "17G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "ROOTS Community Health Worker",
+    "fte2025": 3.0,
+    "fte2026": 4.0,
+    "budget2025": 164923.0,
+    "budget2026": 226470.0,
+    "rateGrade": "15G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "ROOTS Outreach Site Support Coordinator",
+    "fte2025": 3.0,
+    "fte2026": 4.0,
+    "budget2025": 148075.0,
+    "budget2026": 203341.0,
+    "rateGrade": "12G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Continuum of Support Program",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Social Work Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Social Worker Team Lead",
+    "fte2025": 3.0,
+    "fte2026": 2.0,
+    "budget2025": 222206.0,
+    "budget2026": 152589.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Crisis Response Program",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Crisis Response Clinician - Second Shift",
+    "fte2025": 5.0,
+    "fte2026": null,
+    "budget2025": 355576.0,
+    "budget2026": null,
+    "rateGrade": "21G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Crisis Response Clinician",
+    "fte2025": 10.0,
+    "fte2026": 12.0,
+    "budget2025": 681616.0,
+    "budget2026": 842400.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Persons In Need of Support (PINS) Program",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Bachelor Social Worker",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 125341.0,
+    "budget2026": 129085.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Community Resilience Program",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Community Resilience Program Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Community Resilience Team Lead",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Community Resilience Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Victim Assistance Case Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Trauma Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Law Enforcement Assisted Division (LEAD)",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Program Manager LEAD",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "title": "Program Coordinator 3*",
+    "fte2025": 0.15,
+    "fte2026": 0.15,
+    "budget2025": 9401.0,
+    "budget2026": 9681.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "title": "Special Events Operations Coordinator",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 42744.0,
+    "budget2026": null,
+    "rateGrade": "8G"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "title": "Program Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 55702.0,
+    "rateGrade": "51,506"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "title": "Special Event AV Technician, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 16630.0,
+    "budget2026": 17129.0,
+    "rateGrade": "18.54"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "title": "Special Event Support, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 16638.0,
+    "budget2026": 17142.0,
+    "rateGrade": "17.00"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 33268.0,
+    "budget2026": 34271.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "RAD Program Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Program Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 2.0,
+    "budget2025": 74069.0,
+    "budget2026": 152589.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Skating Rink Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Skating Rink Operator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 64542.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Senior Park Ranger",
+    "fte2025": 1.0,
+    "fte2026": 1.88,
+    "budget2025": 62670.0,
+    "budget2026": 121340.0,
+    "rateGrade": "18G"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Program Coordinator, RAD",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51506.0,
+    "budget2026": 55702.0,
+    "rateGrade": "51,506"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Program Coordinator, Special Events",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51506.0,
+    "budget2026": 55702.0,
+    "rateGrade": "51,506"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Skating Rink Leader",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 48410.0,
+    "budget2026": 52354.0,
+    "rateGrade": "48,410"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Park Ranger*",
+    "fte2025": 5.6,
+    "fte2026": 5.6,
+    "budget2025": 264615.0,
+    "budget2026": 311933.0,
+    "rateGrade": "47,253"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Recreation Leader",
+    "fte2025": 1.0,
+    "fte2026": 2.0,
+    "budget2025": 41200.0,
+    "budget2026": 89107.0,
+    "rateGrade": "41,200"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Regional Manager",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 26736.0,
+    "budget2026": 27540.0,
+    "rateGrade": "22.28"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Headguard",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 48384.0,
+    "budget2026": 49824.0,
+    "rateGrade": "20.16"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Assistant Headguard",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 43703.0,
+    "budget2026": 45017.0,
+    "rateGrade": "18.58"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Senior Lifeguard",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 152768.0,
+    "budget2026": 157344.0,
+    "rateGrade": "18.03"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "First Year Lifeguard",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 134281.0,
+    "budget2026": 138276.0,
+    "rateGrade": "17.48"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Park Ranger, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 50186.0,
+    "budget2026": 51703.0,
+    "rateGrade": "16.39"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Rink Attendant, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 205416.0,
+    "budget2026": 211557.0,
+    "rateGrade": "16.39"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Rink Attendant, Seasonal",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 61659.0,
+    "budget2026": 63503.0,
+    "rateGrade": "16.39"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Recreation Leader, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 12728.0,
+    "budget2026": 13112.0,
+    "rateGrade": "15.91"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Pool Aide",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 66111.0,
+    "budget2026": 68056.0,
+    "rateGrade": "15.30"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Rink Zamboni Driver",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 4374.0,
+    "budget2026": 4506.0,
+    "rateGrade": "7.29"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 806346.0,
+    "budget2026": 830438.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Operations Administrator",
+    "fte2025": 0.55,
+    "fte2026": 0.55,
+    "budget2025": 48025.0,
+    "budget2026": 49467.0,
+    "rateGrade": "26G"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Program Coordinator, Recreation",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 51506.0,
+    "budget2026": 55702.0,
+    "rateGrade": "51,506"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Park Ranger",
+    "fte2025": 0.4,
+    "fte2026": 0.4,
+    "budget2025": 18901.0,
+    "budget2026": 22281.0,
+    "rateGrade": "47,253"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Recreation Leader 1",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 82400.0,
+    "budget2026": 89107.0,
+    "rateGrade": "41,200"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Recreation Leader, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 38184.0,
+    "budget2026": 39336.0,
+    "rateGrade": "15.91"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Tennis Instructor 1",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 22050.0,
+    "rateGrade": "21.00"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Tennis Instructor 2",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 24150.0,
+    "rateGrade": "23.00"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 38184.0,
+    "budget2026": 85536.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Assistant Director of Administration & Senior Programs*",
+    "fte2025": 0.5,
+    "fte2026": 0.5,
+    "budget2025": 55359.0,
+    "budget2026": 57023.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Manager - Parks",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Program Supervisor - Seniors",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Community Center Director",
+    "fte2025": 12.0,
+    "fte2026": 12.0,
+    "budget2025": 618067.0,
+    "budget2026": 668429.0,
+    "rateGrade": "51,506"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Data Intake Specialist",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 44496.0,
+    "budget2026": 55702.0,
+    "rateGrade": "44,496"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Recreation Leader 1",
+    "fte2025": 12.0,
+    "fte2026": 12.0,
+    "budget2025": 494400.0,
+    "budget2026": 534643.0,
+    "rateGrade": "41,200"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Recreation Leader, Part-Time",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 190920.0,
+    "budget2026": 196680.0,
+    "rateGrade": "15.91"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 190920.0,
+    "budget2026": 196680.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "title": "Program Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 83512.0,
+    "budget2026": 86008.0,
+    "rateGrade": "25G"
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "title": "Site Monitor",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 28318.0,
+    "budget2026": 29167.0,
+    "rateGrade": "13.11"
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "title": "Site Leader",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 59022.0,
+    "budget2026": 60793.0,
+    "rateGrade": "10.93"
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "title": "Administrative Aide",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 18470.0,
+    "budget2026": 19024.0,
+    "rateGrade": "18.47"
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 105810.0,
+    "budget2026": 108984.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Tree Equity Lead",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 60837.0,
+    "budget2026": 62662.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Senior Project Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 98517.0,
+    "budget2026": 101525.0,
+    "rateGrade": "31E"
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Data Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68365.0,
+    "budget2026": 70416.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "CIT Project Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 69811.0,
+    "budget2026": 69811.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Noble Reach Fellow in Cybersecurity",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 19500.0,
+    "budget2026": 19500.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Noble Reach Fellow in AI/Data Science",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 19500.0,
+    "budget2026": 19500.0,
+    "rateGrade": "23G"
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Project Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68365.0,
+    "budget2026": 70416.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Case Manager",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 192753.0,
+    "budget2026": 201626.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Peer Specialist",
+    "fte2025": 3.0,
+    "fte2026": 3.0,
+    "budget2025": 162780.0,
+    "budget2026": 167663.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Peer Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 61590.0,
+    "budget2026": 63438.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Lead Case Manger",
+    "fte2025": 5.0,
+    "fte2026": 5.0,
+    "budget2025": 295325.0,
+    "budget2026": 304185.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "title": "Safe Passages Program Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 77233.0,
+    "budget2026": 79547.0,
+    "rateGrade": ""
+  }
+]

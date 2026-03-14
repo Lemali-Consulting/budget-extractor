@@ -1,7 +1,7 @@
-"C0 (l, x:57-233)","C1 (r, x:233-278)","C2 (r, x:278-323)","C3 (l, x:323-350)","C4 (r, x:350-408)","C5 (r, x:408-436)","C6 (r, x:436-481)","C7 (l, x:481-510)","C8 (r, x:510-556)"
-Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget
-"Temporary, Part-Time, and Seasonal Allowances",,,,,,,,
-"Recreation Leader, Part-Time",—,15.91,"2,400","38,184",—,16.39,"2,400","39,336"
-Tennis Instructor 1,—,21.00,—,—,—,21.00,"1,050","22,050"
-Tennis Instructor 2,—,23.00,—,—,—,23.00,"1,050","24,150"
-,—,,,"38,184",—,,,"85,536"
+"C0 (l, x:57-233)","C1 (r, x:233-278)","C2 (r, x:278-323)","C3 (l, x:323-350)","C4 (r, x:350-408)","C5 (r, x:408-436)","C6 (r, x:436-481)","C7 (l, x:481-510)","C8 (r, x:510-556)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+"Temporary, Part-Time, and Seasonal Allowances",,,,,,,,,"Temporary, Part-Time, and Seasonal Allowances"
+"Recreation Leader, Part-Time",—,15.91,"2,400","38,184",—,16.39,"2,400","39,336","Temporary, Part-Time, and Seasonal Allowances"
+Tennis Instructor 1,—,21.00,—,—,—,21.00,"1,050","22,050","Temporary, Part-Time, and Seasonal Allowances"
+Tennis Instructor 2,—,23.00,—,—,—,23.00,"1,050","24,150","Temporary, Part-Time, and Seasonal Allowances"
+,—,,,"38,184",—,,,"85,536","Temporary, Part-Time, and Seasonal Allowances"

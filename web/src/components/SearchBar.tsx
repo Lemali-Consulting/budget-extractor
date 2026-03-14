@@ -1,23 +1,7 @@
-/**Client-side fuzzy search across all budget tables and sections.*/
+/**Client-side fuzzy search across budget sections and tables.*/
 
 import { useState, useMemo, useRef } from 'preact/hooks';
 import Fuse from 'fuse.js';
-
-interface Table {
-  id: string;
-  relative_page: number;
-  table_index: number;
-  table_type: string;
-  headers: string[];
-  rows: string[][];
-}
-
-interface Section {
-  section_number: number;
-  title: string;
-  slug: string;
-  tables: Table[];
-}
 
 interface SearchItem {
   sectionTitle: string;
@@ -25,64 +9,30 @@ interface SearchItem {
   tableId: string;
   tableType: string;
   headers: string;
-  content: string;
   page: number;
   tableIndex: number;
 }
 
 interface Props {
-  sections: Section[];
+  items: SearchItem[];
 }
 
-function buildSearchIndex(sections: Section[]): SearchItem[] {
-  const items: SearchItem[] = [];
-  for (const section of sections) {
-    // Add section itself as searchable
-    items.push({
-      sectionTitle: section.title,
-      slug: section.slug,
-      tableId: '',
-      tableType: '',
-      headers: '',
-      content: section.title,
-      page: 0,
-      tableIndex: -1,
-    });
-    for (const table of section.tables) {
-      const content = table.rows.map((r) => r.join(' ')).join(' ');
-      items.push({
-        sectionTitle: section.title,
-        slug: section.slug,
-        tableId: table.id,
-        tableType: table.table_type,
-        headers: table.headers.join(' '),
-        content,
-        page: table.relative_page,
-        tableIndex: table.table_index,
-      });
-    }
-  }
-  return items;
-}
-
-export default function SearchBar({ sections }: Props) {
+export default function SearchBar({ items }: Props) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const fuse = useMemo(() => {
-    const items = buildSearchIndex(sections);
     return new Fuse(items, {
       keys: [
         { name: 'sectionTitle', weight: 2 },
         { name: 'headers', weight: 1.5 },
-        { name: 'content', weight: 1 },
       ],
       threshold: 0.3,
       includeMatches: true,
       minMatchCharLength: 2,
     });
-  }, [sections]);
+  }, [items]);
 
   const results = query.length >= 2 ? fuse.search(query, { limit: 15 }) : [];
 

@@ -59,6 +59,13 @@ mkdir -p output/regression/expected/<pdf_stem>
 cp output/regression/debug/<pdf_stem>/P*T*.csv output/regression/expected/<pdf_stem>/
 ```
 
+Then register new tables in `status.json` as `unverified`:
+```bash
+python3 scripts/llm_judge.py mark <pdf_stem> --status unverified
+```
+
 Then run `python3 scripts/test_regression.py` to confirm the new baselines pass.
 
-Report the final count of PDFs and tables in the regression suite.
+Report the final count of PDFs and tables in the regression suite, and remind the
+user to run `python3 scripts/llm_judge.py judge <pdf_stem>` (via API or Claude Code
+agents) to validate the new tables before marking them verified.

@@ -1,4 +1,6 @@
 ---
+import PageImage from './PageImage.tsx';
+
 interface Props {
   table: {
     id: string;
@@ -7,11 +9,13 @@ interface Props {
     table_type: string;
     headers: string[];
     rows: string[][];
+    sections?: string[];
     absolute_page?: number;
   };
+  slug?: string;
 }
 
-const { table } = Astro.props;
+const { table, slug } = Astro.props;
 
 const typeColors: Record<string, string> = {
   personnel: 'bg-purple-100 text-purple-700',
@@ -22,6 +26,13 @@ const typeColors: Record<string, string> = {
 };
 
 const badgeClass = typeColors[table.table_type] || typeColors.unknown;
+const sections = table.sections || [];
+const colCount = table.headers.length;
+
+function isTotalRow(row: string[]): boolean {
+  const cell = (row[0] || '').trim().toLowerCase();
+  return cell.startsWith('total') || cell.endsWith('total');
+}
 ---
 
 <div class="mb-8 bg-white rounded-lg border overflow-hidden">
@@ -33,6 +44,9 @@ const badgeClass = typeColors[table.table_type] || typeColors.unknown;
       Page {table.relative_page}, Table {table.table_index}
       {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
     </span>
+    {slug && (
+      <PageImage client:load slug={slug} page={table.relative_page} />
+    )}
   </div>
   <div class="overflow-x-auto">
     <table class="w-full text-sm">
@@ -48,15 +62,38 @@ const badgeClass = typeColors[table.table_type] || typeColors.unknown;
         </thead>
       )}
       <tbody>
-        {table.rows.map((row, i) => (
-          <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-            {row.map((cell) => (
-              <td class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap">
-                {cell}
-              </td>
-            ))}
-          </tr>
-        ))}
+        {table.rows.map((row, i) => {
+          const section = sections[i] || '';
+          const prevSection = i > 0 ? (sections[i - 1] || '') : '';
+          const showDivider = section && section !== prevSection;
+          const isSectionRow = showDivider && row[0]?.trim() === section;
+          const isTotal = isTotalRow(row);
+
+          return (
+            <>
+              {showDivider && !isSectionRow && (
+                <tr class="bg-amber-50 border-t-2 border-amber-200">
+                  <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">
+                    {section}
+                  </td>
+                </tr>
+              )}
+              <tr class={
+                isSectionRow
+                  ? 'bg-amber-50 border-t-2 border-amber-200 font-semibold text-amber-900'
+                  : isTotal
+                    ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
+                    : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+              }>
+                {row.map((cell) => (
+                  <td class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap">
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            </>
+          );
+        })}
       </tbody>
     </table>
   </div>

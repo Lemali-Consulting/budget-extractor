@@ -1,31 +1,31 @@
-"C0 (l, x:76-280)","C1 (r, x:280-359)","C2 (r, x:359-429)","C3 (r, x:429-486)","C4 (l, x:486-520)"
-Subclass,2025 Budget,2026 Budget,Increase/ (Decrease),% Change
-Revenues,,,,
-42 - LICENSES AND PERMITS REVENUE,"35,000","35,000",—,—%
-42375 - Farmers Markets,"35,000","35,000",—,
-43 - CHARGES FOR SERVICES,"100,000","100,000",—,—%
-43166 - Great Race,"100,000","100,000",—,
-48 - MISCELLANEOUS REVENUE,"40,000","40,000",—,—%
-48106 - Donations,"40,000","40,000",—,
-Revenues Total,"175,000","175,000",—,—%
-Expenditures,,,,
-51 - PERSONNEL-SALARIES & WAGES,"90,413","104,655","14,242.00",15.8%
-51101 - Regular,"52,145","65,384","13,239",
-51103 - Part-Time,"33,268","34,271","1,003",
-51401 - Premium Pay,"5,000","5,000",—,
-52 - PERSONNEL-EMPLOYEE BENEFITS,"9,271","10,659","1,388",15.0%
-52101 - Health Insurance,"1,299","1,431",132,
-52111 - Other Insurance/Benefits,"1,055","1,222",167,
-52201 - Social Security,"6,917","8,006","1,090",
-53 - PROFESSIONAL & TECHNICAL SERVICES,"43,000","43,000",—,—%
-55301 - Workforce Training,"5,000","5,000",—,
-53907 - Recreational Services,"38,000","38,000",—,
-55 - OTHER SERVICES,"50,000","50,000",—,—%
-55305 - Promotional,"25,000","25,000",—,
-55701 - Transportation,"25,000","25,000",—,
-56 - SUPPLIES,"25,000","25,000",—,—%
-56151 - Operational Supplies,"25,000","25,000",—,
-57 - PROPERTY,"5,000","5,000",—,—%
-57501 - Machinery & Equipment,"5,000","5,000",—,
-Expenditures Total,"222,684","238,314","15,630",7.0%
-Net Total,"(47,684)","(63,314)","(15,630)",
+"C0 (l, x:76-280)","C1 (r, x:280-359)","C2 (r, x:359-429)","C3 (r, x:429-486)","C4 (l, x:486-520)",section
+Subclass,2025 Budget,2026 Budget,Increase/ (Decrease),% Change,section
+Revenues,,,,,Revenues
+42 - LICENSES AND PERMITS REVENUE,"35,000","35,000",—,—%,42 - LICENSES AND PERMITS REVENUE
+42375 - Farmers Markets,"35,000","35,000",—,,42 - LICENSES AND PERMITS REVENUE
+43 - CHARGES FOR SERVICES,"100,000","100,000",—,—%,43 - CHARGES FOR SERVICES
+43166 - Great Race,"100,000","100,000",—,,43 - CHARGES FOR SERVICES
+48 - MISCELLANEOUS REVENUE,"40,000","40,000",—,—%,48 - MISCELLANEOUS REVENUE
+48106 - Donations,"40,000","40,000",—,,48 - MISCELLANEOUS REVENUE
+Revenues Total,"175,000","175,000",—,—%,48 - MISCELLANEOUS REVENUE
+Expenditures,,,,,Expenditures
+51 - PERSONNEL-SALARIES & WAGES,"90,413","104,655","14,242.00",15.8%,51 - PERSONNEL-SALARIES & WAGES
+51101 - Regular,"52,145","65,384","13,239",,51 - PERSONNEL-SALARIES & WAGES
+51103 - Part-Time,"33,268","34,271","1,003",,51 - PERSONNEL-SALARIES & WAGES
+51401 - Premium Pay,"5,000","5,000",—,,51 - PERSONNEL-SALARIES & WAGES
+52 - PERSONNEL-EMPLOYEE BENEFITS,"9,271","10,659","1,388",15.0%,52 - PERSONNEL-EMPLOYEE BENEFITS
+52101 - Health Insurance,"1,299","1,431",132,,52 - PERSONNEL-EMPLOYEE BENEFITS
+52111 - Other Insurance/Benefits,"1,055","1,222",167,,52 - PERSONNEL-EMPLOYEE BENEFITS
+52201 - Social Security,"6,917","8,006","1,090",,52 - PERSONNEL-EMPLOYEE BENEFITS
+53 - PROFESSIONAL & TECHNICAL SERVICES,"43,000","43,000",—,—%,53 - PROFESSIONAL & TECHNICAL SERVICES
+55301 - Workforce Training,"5,000","5,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53907 - Recreational Services,"38,000","38,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+55 - OTHER SERVICES,"50,000","50,000",—,—%,55 - OTHER SERVICES
+55305 - Promotional,"25,000","25,000",—,,55 - OTHER SERVICES
+55701 - Transportation,"25,000","25,000",—,,55 - OTHER SERVICES
+56 - SUPPLIES,"25,000","25,000",—,—%,56 - SUPPLIES
+56151 - Operational Supplies,"25,000","25,000",—,,56 - SUPPLIES
+57 - PROPERTY,"5,000","5,000",—,—%,57 - PROPERTY
+57501 - Machinery & Equipment,"5,000","5,000",—,,57 - PROPERTY
+Expenditures Total,"222,684","238,314","15,630",7.0%,57 - PROPERTY
+Net Total,"(47,684)","(63,314)","(15,630)",,57 - PROPERTY

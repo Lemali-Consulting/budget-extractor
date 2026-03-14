@@ -2,17 +2,6 @@
 
 import { useState, useMemo } from 'preact/hooks';
 
-interface Section {
-  section_number: number;
-  title: string;
-  slug: string;
-  tables: {
-    table_type: string;
-    headers: string[];
-    rows: string[][];
-  }[];
-}
-
 interface PersonnelRow {
   department: string;
   slug: string;
@@ -24,53 +13,6 @@ interface PersonnelRow {
   rateGrade: string;
 }
 
-function parseCurrency(s: string): number | null {
-  if (!s || s === '—' || s === 'varies') return null;
-  const cleaned = s.replace(/[$,()]/g, '').trim();
-  const num = parseFloat(cleaned);
-  return isNaN(num) ? null : num;
-}
-
-function extractPersonnel(sections: Section[]): PersonnelRow[] {
-  const rows: PersonnelRow[] = [];
-
-  for (const section of sections) {
-    for (const table of section.tables) {
-      if (table.table_type !== 'personnel') continue;
-
-      const headers = table.headers.map((h) => h.toLowerCase());
-
-      // Find column indices
-      const titleIdx = headers.findIndex((h) => h.includes('title'));
-      const fte2025Idx = headers.findIndex((h) => h.includes('2025') && h.includes('fte'));
-      const fte2026Idx = headers.findIndex((h) => h.includes('2026') && h.includes('fte'));
-      const budget2025Idx = headers.findIndex((h) => h.includes('2025') && h.includes('budget'));
-      const budget2026Idx = headers.findIndex((h) => h.includes('2026') && h.includes('budget'));
-      const rateIdx = headers.findIndex((h) => h.includes('rate') || h.includes('grade'));
-
-      if (titleIdx < 0) continue;
-
-      for (const row of table.rows) {
-        const title = row[titleIdx] || '';
-        if (!title || title.toLowerCase().includes('total')) continue;
-
-        rows.push({
-          department: section.title,
-          slug: section.slug,
-          title,
-          fte2025: fte2025Idx >= 0 ? parseCurrency(row[fte2025Idx]) : null,
-          fte2026: fte2026Idx >= 0 ? parseCurrency(row[fte2026Idx]) : null,
-          budget2025: budget2025Idx >= 0 ? parseCurrency(row[budget2025Idx]) : null,
-          budget2026: budget2026Idx >= 0 ? parseCurrency(row[budget2026Idx]) : null,
-          rateGrade: rateIdx >= 0 ? (row[rateIdx] || '') : '',
-        });
-      }
-    }
-  }
-
-  return rows;
-}
-
 type SortKey = 'title' | 'department' | 'fte2026' | 'budget2026';
 
 function formatCurrency(n: number | null): string {
@@ -78,28 +20,27 @@ function formatCurrency(n: number | null): string {
   return `$${n.toLocaleString()}`;
 }
 
-export default function PersonnelExplorer({ sections }: { sections: Section[] }) {
+export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
   const [search, setSearch] = useState('');
   const [deptFilter, setDeptFilter] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('department');
   const [sortAsc, setSortAsc] = useState(true);
 
-  const allRows = useMemo(() => extractPersonnel(sections), [sections]);
   const departments = useMemo(
-    () => [...new Set(allRows.map((r) => r.department))].sort(),
-    [allRows],
+    () => [...new Set(rows.map((r) => r.department))].sort(),
+    [rows],
   );
 
   const filtered = useMemo(() => {
-    let rows = allRows;
-    if (deptFilter) rows = rows.filter((r) => r.department === deptFilter);
+    let result = rows;
+    if (deptFilter) result = result.filter((r) => r.department === deptFilter);
     if (search) {
       const q = search.toLowerCase();
-      rows = rows.filter(
+      result = result.filter(
         (r) => r.title.toLowerCase().includes(q) || r.department.toLowerCase().includes(q),
       );
     }
-    rows = [...rows].sort((a, b) => {
+    result = [...result].sort((a, b) => {
       let av: string | number | null, bv: string | number | null;
       if (sortKey === 'title') { av = a.title; bv = b.title; }
       else if (sortKey === 'department') { av = a.department; bv = b.department; }
@@ -110,8 +51,8 @@ export default function PersonnelExplorer({ sections }: { sections: Section[] })
       const cmp = av < bv ? -1 : av > bv ? 1 : 0;
       return sortAsc ? cmp : -cmp;
     });
-    return rows;
-  }, [allRows, search, deptFilter, sortKey, sortAsc]);
+    return result;
+  }, [rows, search, deptFilter, sortKey, sortAsc]);
 
   function toggleSort(key: SortKey) {
     if (sortKey === key) setSortAsc(!sortAsc);

@@ -1,5 +1,5 @@
-"C0 (l, x:57-240)","C1 (l, x:240-284)","C2 (l, x:284-314)","C3 (l, x:314-350)","C4 (l, x:350-412)","C5 (l, x:412-441)","C6 (l, x:441-471)","C7 (l, x:471-510)","C8 (l, x:510-556)"
-Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget
-"Temporary, Part-Time, and Seasonal Allowances",,,,,,,,
-Intern and Part-Time Law Clerk,—,varies,,"15,000",—,varies,,"35,000"
-,—,,,"15,000",—,,,"35,000"
+"C0 (l, x:57-240)","C1 (l, x:240-284)","C2 (l, x:284-314)","C3 (l, x:314-350)","C4 (l, x:350-412)","C5 (l, x:412-441)","C6 (l, x:441-471)","C7 (l, x:471-510)","C8 (l, x:510-556)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+"Temporary, Part-Time, and Seasonal Allowances",,,,,,,,,"Temporary, Part-Time, and Seasonal Allowances"
+Intern and Part-Time Law Clerk,—,varies,,"15,000",—,varies,,"35,000","Temporary, Part-Time, and Seasonal Allowances"
+,—,,,"15,000",—,,,"35,000","Temporary, Part-Time, and Seasonal Allowances"

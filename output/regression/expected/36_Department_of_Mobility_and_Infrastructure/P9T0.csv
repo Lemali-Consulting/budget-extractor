@@ -1,46 +1,46 @@
-"C0 (l, x:57-260)","C1 (r, x:260-340)","C2 (r, x:340-404)","C3 (r, x:404-475)","C4 (r, x:475-523)","C5 (r, x:523-553)"
-,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change
-Expenditures,,,,,
-51 - PERSONNEL-SALARIES & WAGES,"7,509,150","8,415,850","9,084,700","668,850",7.9%
-51101 - Regular,"7,265,266","8,109,433","8,710,182","600,749",
-51103 - Part-Time,—,"150,060","207,821","57,761",
-51111 - In Grade,709,—,—,—,
-51201 - Longevity,"5,750","5,750","9,500","3,750",
-51203 - Allowances,345,500,"3,146","2,646",
-51205 - Uniform,—,"7,150","7,150",—,
-51207 - Leave Buyback,"35,049",—,—,—,
-51401 - Premium Pay,"202,031","142,956","146,901","3,944",
-52 - PERSONNEL-EMPLOYEE BENEFITS,"1,990,952","2,137,890","2,370,446","232,556",10.9%
-52101 - Health Insurance,"1,133,242","1,178,195","1,370,486","192,291",
-52111 - Other Insurance/Benefits,"152,108","171,237","174,953","3,716",
-52201 - Social Security,"556,144","647,633","700,777","53,144",
-52301 - Medical W/C,"11,088","11,666",—,"(11,666)",
-52305 - Indemnity - Workers Compensation,—,"6,159",—,"(6,159)",
-52601 - Personal Leave Buyback,"118,414","123,000","124,230","1,230",
-52602 - Tuition Reimbursement,"19,956",—,—,—,
-53 - PROFESSIONAL & TECHNICAL SERVICES,"365,188","209,000","256,000","47,000",22.5%
-53101 - Administrative Fees,"83,352","82,000","84,000","2,000",
-53301 - Workforce Training,"54,017","20,000","20,000",—,
-53509 - Computer Maintenance,"222,288","50,000","95,000","45,000",
-53901 - Professional Services,"5,531","57,000","57,000",—,
-54 - PROPERTY SERVICES,"936,705","2,353,000","3,021,832","668,832",28.4%
-54201 - Maintenance,"869,377","1,100,000","1,100,000",—,
-54204 - Demolition,"18,933",—,—,—,
-54205 - Engineering,"14,218","50,000","50,000",—,
-54207 - Construction,"28,038",—,—,—,
-54513 - Machinery & Equipment,"6,139","1,203,000","1,871,832","668,832",
-55 - OTHER SERVICES,"13,843","15,500","20,500","5,000",32.3%
-55309 - Regulatory,—,500,500,—,
-55501 - Printing & Binding,—,—,"5,000","5,000",
-55701 - Transportation,"13,843","15,000","15,000",—,
-56 - SUPPLIES,"583,837","533,125","533,125",—,—%
-56101 - Office Supplies,"9,019","18,000","18,000",—,
-56103 - Freight,506,—,—,—,
-56105 - Postage,115,—,—,—,
-56151 - Operational Supplies,"223,538","120,125","120,125",—,
-56301 - Parts,"4,988",—,—,—,
-56351 - Tools,"11,574","45,000","45,000",—,
-56401 - Materials,"334,097","350,000","350,000",—,
-57 - PROPERTY,"4,009",—,—,—,—%
-57501 - Machinery & Equipment,"4,009",—,—,—,
-,"11,403,684","13,664,365","15,286,603","1,622,238",11.9%
+"C0 (l, x:57-260)","C1 (r, x:260-340)","C2 (r, x:340-404)","C3 (r, x:404-475)","C4 (r, x:475-523)","C5 (r, x:523-553)",section
+,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change,section
+Expenditures,,,,,,Expenditures
+51 - PERSONNEL-SALARIES & WAGES,"7,509,150","8,415,850","9,084,700","668,850",7.9%,51 - PERSONNEL-SALARIES & WAGES
+51101 - Regular,"7,265,266","8,109,433","8,710,182","600,749",,51 - PERSONNEL-SALARIES & WAGES
+51103 - Part-Time,—,"150,060","207,821","57,761",,51 - PERSONNEL-SALARIES & WAGES
+51111 - In Grade,709,—,—,—,,51 - PERSONNEL-SALARIES & WAGES
+51201 - Longevity,"5,750","5,750","9,500","3,750",,51 - PERSONNEL-SALARIES & WAGES
+51203 - Allowances,345,500,"3,146","2,646",,51 - PERSONNEL-SALARIES & WAGES
+51205 - Uniform,—,"7,150","7,150",—,,51 - PERSONNEL-SALARIES & WAGES
+51207 - Leave Buyback,"35,049",—,—,—,,51 - PERSONNEL-SALARIES & WAGES
+51401 - Premium Pay,"202,031","142,956","146,901","3,944",,51 - PERSONNEL-SALARIES & WAGES
+52 - PERSONNEL-EMPLOYEE BENEFITS,"1,990,952","2,137,890","2,370,446","232,556",10.9%,52 - PERSONNEL-EMPLOYEE BENEFITS
+52101 - Health Insurance,"1,133,242","1,178,195","1,370,486","192,291",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52111 - Other Insurance/Benefits,"152,108","171,237","174,953","3,716",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52201 - Social Security,"556,144","647,633","700,777","53,144",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52301 - Medical W/C,"11,088","11,666",—,"(11,666)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52305 - Indemnity - Workers Compensation,—,"6,159",—,"(6,159)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52601 - Personal Leave Buyback,"118,414","123,000","124,230","1,230",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52602 - Tuition Reimbursement,"19,956",—,—,—,,52 - PERSONNEL-EMPLOYEE BENEFITS
+53 - PROFESSIONAL & TECHNICAL SERVICES,"365,188","209,000","256,000","47,000",22.5%,53 - PROFESSIONAL & TECHNICAL SERVICES
+53101 - Administrative Fees,"83,352","82,000","84,000","2,000",,53 - PROFESSIONAL & TECHNICAL SERVICES
+53301 - Workforce Training,"54,017","20,000","20,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53509 - Computer Maintenance,"222,288","50,000","95,000","45,000",,53 - PROFESSIONAL & TECHNICAL SERVICES
+53901 - Professional Services,"5,531","57,000","57,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+54 - PROPERTY SERVICES,"936,705","2,353,000","3,021,832","668,832",28.4%,54 - PROPERTY SERVICES
+54201 - Maintenance,"869,377","1,100,000","1,100,000",—,,54 - PROPERTY SERVICES
+54204 - Demolition,"18,933",—,—,—,,54 - PROPERTY SERVICES
+54205 - Engineering,"14,218","50,000","50,000",—,,54 - PROPERTY SERVICES
+54207 - Construction,"28,038",—,—,—,,54 - PROPERTY SERVICES
+54513 - Machinery & Equipment,"6,139","1,203,000","1,871,832","668,832",,54 - PROPERTY SERVICES
+55 - OTHER SERVICES,"13,843","15,500","20,500","5,000",32.3%,55 - OTHER SERVICES
+55309 - Regulatory,—,500,500,—,,55 - OTHER SERVICES
+55501 - Printing & Binding,—,—,"5,000","5,000",,55 - OTHER SERVICES
+55701 - Transportation,"13,843","15,000","15,000",—,,55 - OTHER SERVICES
+56 - SUPPLIES,"583,837","533,125","533,125",—,—%,56 - SUPPLIES
+56101 - Office Supplies,"9,019","18,000","18,000",—,,56 - SUPPLIES
+56103 - Freight,506,—,—,—,,56 - SUPPLIES
+56105 - Postage,115,—,—,—,,56 - SUPPLIES
+56151 - Operational Supplies,"223,538","120,125","120,125",—,,56 - SUPPLIES
+56301 - Parts,"4,988",—,—,—,,56 - SUPPLIES
+56351 - Tools,"11,574","45,000","45,000",—,,56 - SUPPLIES
+56401 - Materials,"334,097","350,000","350,000",—,,56 - SUPPLIES
+57 - PROPERTY,"4,009",—,—,—,—%,57 - PROPERTY
+57501 - Machinery & Equipment,"4,009",—,—,—,,57 - PROPERTY
+,"11,403,684","13,664,365","15,286,603","1,622,238",11.9%,57 - PROPERTY

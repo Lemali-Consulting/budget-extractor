@@ -1,9 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import BudgetChart from '../components/BudgetChart.tsx';
-import budgetData from '../data/budget-data.json';
-
-const sections = budgetData.sections;
+import departmentBudgets from '../data/views/department-budgets.json';
 ---
 
 <Base title="Budget Charts">
@@ -16,5 +14,5 @@ const sections = budgetData.sections;
   <h1 class="text-3xl font-bold mb-2">Budget Comparison</h1>
   <p class="text-gray-600 mb-6">Top departments by budget total.</p>
 
-  <BudgetChart sections={sections} client:load />
+  <BudgetChart data={departmentBudgets} client:load />
 </Base>

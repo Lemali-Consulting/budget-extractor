@@ -1,118 +1,118 @@
-"C0 (r, x:54-484)","C1 (r, x:484-557)"
-SPECIAL EVENTS & FILM FEES,
-Fee Description,2026
-Special Event Permit Processing Fee,25.00
-Special Event Permit Fee - Charitable,75.00
-Special Event Permit Fee - General,200.00
-Special Event Permit Fee - Commercial,675.00
-Block Party Permit Fee,25.00
-Revision Fee,25.00
-Undefined Property Use Fee- Charitable (per day),25.00
-Undefined Property Use Fee- General (per day),50.00
-Undefined Property Use Fee- Commercial (per day),100.00
-Public Park Use Fee- Regional/Charitable (per day),50.00
-Public Park Use Fee- Regional/General (per day),$300.00
-Public Park Use Fee- Regional/Commercial (per day),450.00
-Public Park Use Fee- Charitable (per day),35.00
-Public Park Use Fee- General (per day),100.00
-Public Park Use Fee- Commercial (per day),150.00
-Right Of Way- Minor Arterial- Charitable (per block),75.00
-Right Of Way- Minor Arterial- General (per block),100.00
-Right Of Way- Minor Arterial- Commercial (per block),175.00
-Right of Way -Collector- Charitable (per block),37.50
-Right of Way -Collector- General (per block),50.00
-Right of Way -Collector- Commercial (per block),87.50
-Right of Way- Park Road- Charitable (per block),18.75
-Right of Way- Park Road- General (per block),25.00
-Right of Way- Park Road- Commercial (per block),43.75
-Right of Way -Local- Charitable (per block),20.00
-Right of Way -Local- General (per block),40.00
-Right of Way -Local- Commercial (per block),80.00
-Right of Way- Alley- Charitable (per block),10.00
-Right of Way- Alley- General (per block),12.50
-Right of Way- Alley- Commercial (per block),22.00
-Right of Way- Sidewalk- Charitable (per block),10.00
-Right of Way- Sidewalk- General (per block),12.50
-Right of Way- Sidewalk- Commercial (per block),22.00
-Run/Walk/Ride Permit- Park & Trail Only- Charitable,75.00
-Run/Walk/Ride Permit- Park & Trail Only- General,150.00
-Run/Walk/Ride Permit- Park & Trail Only-Commercial,250.00
-Run/Walk/Ride Permit- Park/Trail & ROW- Charitable- park/local,125.00
-Run/Walk/Ride Permit- Park/Trail & ROW- Charitable- Collector,200.00
-Run/Walk/Ride Permit- Park/Trail & ROW- Charitable- Arterial,275.00
-Run/Walk/Ride Permit- Park/Trail & ROW- General- park/local,200.00
-Run/Walk/Ride Permit- Park/Trail & ROW- General- Collector,275.00
-Run/Walk/Ride Permit- Park/Trail & ROW- General- Arterial,350.00
-Run/Walk/Ride Permit- Park/Trail & ROW- Commercial- park/local,325.00
-Run/Walk/Ride Permit- Park/Trail & ROW- Commercial- Collector,425.00
-Run/Walk/Ride Permit- Park/Trail & ROW- Commercial- Arterial,525.00
-Run/Walk/Ride Permit- ROW Only- Charitable- park/local,200.00
-Run/Walk/Ride Permit- ROW Only- Charitable- Collector,275.00
-Run/Walk/Ride Permit- ROW Only- Charitable- Arterial,350.00
-Run/Walk/Ride Permit- ROW Only- General- park/local,275.00
-Run/Walk/Ride Permit- ROW Only- General- Collector,350.00
-Run/Walk/Ride Permit- ROW Only- General- Arterial,425.00
-Run/Walk/Ride Permit- ROW Only- Commercial- park/local,425.00
-Run/Walk/Ride Permit-ROW Only- Commercial- Collector,$525.00
-Run/Walk/Ride Permit- ROW Only- Commercial- Arterial,625.00
-Parade - less than 2 hours on weekday,500.00
-Parade - less than 2 hours on weekend or City holiday,"1,000.00"
-Parade - more than 2 hours on weekday,"2,000.00"
-Parade - more than 2 hours on weekend or City holiday,"3,000.00"
-Parade - Veterans Day,0.00
-Film Permit Fees,
-Film Permit Fee,525.00
-Commercial Still Photography Permit Fee (3 day permit),50.00
-Additional Shoot Review Fee,75.00
-Drone Filming Fee (per shoot),75.00
-City-Owned Building/Structure/Facility Usage Fee (per day),"2,000.00"
-City-County Building Filming Cost (per day),"2,500.00"
-Public Park - Regional - per day,450.00
-Public Park - per day,300.00
-General Property - undefined,100.00
-Right of Way Closure - Arterial - per day,"1,250.00"
-Right of Way Closure - Collector - per day,"1,000.00"
-Right of Way Closure - Local - per day,900.00
-Right of Way Closure - Park Road - per day,750.00
-Right of Way Closure - Alley - per day,600.00
-Right of Way Closure - Sidewalk - per day,100.00
-Additional Block Closure - per day,10% of base
-Intermittent Traffic Control - Arterial - per block,625.00
-Intermittent Traffic Control - Collector - per block,500.00
-Intermittent Traffic Control - Local - per block,450.00
-Intermittent Traffic Control - Park Road - per block,375.00
-Intermittent Traffic Control - Alley - per block,300.00
-Intermittent Traffic Control - Sidewalk - per block,50.00
-Additional Block ITC - per day,10% of base
-STUDENT Film Permit Fee,100.00
-STUDENT Public Park - Regional - per day,115.00
-STUDENT Public Park - per day,75.00
-STUDENT General Property - undefined,25.00
-STUDENT Right of Way Closure - Arterial - per day,300.00
-STUDENT Right of Way Closure - Collector - per day,250.00
-STUDENT Right of Way Closure - Local - per day,200.00
-STUDENT Right of Way Closure - Park Road - per day,175.00
-STUDENT Right of Way Closure - Alley - per day,150.00
-STUDENT Right of Way Closure - Sidewalk - per day,20.00
-STUDENT Additional Block Closure - per day,10% of base
-STUDENT Intermittent Traffic Control - Arterial - per block,$150.00
-STUDENT Intermittent Traffic Control - Collector - per block,125.00
-STUDENT Intermittent Traffic Control - Local - per block,100.00
-STUDENT Intermittent Traffic Control - Park Road - per block,87.50
-STUDENT Intermittent Traffic Control - Alley - per block,75.00
-STUDENT Intermittent Traffic Control - Sidewalk - per black,10.00
-STUDENT Additional Block ITC - per day,10% of base
-STUDENT City owned Building or Facility Use - per day,250.00
-STUDENT City-County Building (City Hall) - per day,500.00
-STUDENT Drone Filming Permit (per shoot),25.00
-STUDENT Still Photography Permit,20.00
-Fines,
-Fine- Premature Set Up/ Overextension of Stay (per day),"1,000.00"
-Fine- Unauthorized Vehicles on Grass (per vehicle),20.00
-Fine- Signage left on site 48 hr post event (per unit),25.00
-Fine- Portable toilets left on site 48 hr post event (per unit),25.00
-Fine- Equipment left on site 48 hr post event (per unit),25.00
-Fine- Damage to City Property,Cost of Repair
-Fine - Deviation from Permitted Activity,250.00
-Fine- Unpermitted event or filming activity,Cost of fees plus 25%
-Note: Third-party payment providers may charge their own processing fee,
+"C0 (r, x:54-484)","C1 (r, x:484-557)",section
+SPECIAL EVENTS & FILM FEES,,section
+Fee Description,2026,
+Special Event Permit Processing Fee,25.00,
+Special Event Permit Fee - Charitable,75.00,
+Special Event Permit Fee - General,200.00,
+Special Event Permit Fee - Commercial,675.00,
+Block Party Permit Fee,25.00,
+Revision Fee,25.00,
+Undefined Property Use Fee- Charitable (per day),25.00,
+Undefined Property Use Fee- General (per day),50.00,
+Undefined Property Use Fee- Commercial (per day),100.00,
+Public Park Use Fee- Regional/Charitable (per day),50.00,
+Public Park Use Fee- Regional/General (per day),$300.00,
+Public Park Use Fee- Regional/Commercial (per day),450.00,
+Public Park Use Fee- Charitable (per day),35.00,
+Public Park Use Fee- General (per day),100.00,
+Public Park Use Fee- Commercial (per day),150.00,
+Right Of Way- Minor Arterial- Charitable (per block),75.00,
+Right Of Way- Minor Arterial- General (per block),100.00,
+Right Of Way- Minor Arterial- Commercial (per block),175.00,
+Right of Way -Collector- Charitable (per block),37.50,
+Right of Way -Collector- General (per block),50.00,
+Right of Way -Collector- Commercial (per block),87.50,
+Right of Way- Park Road- Charitable (per block),18.75,
+Right of Way- Park Road- General (per block),25.00,
+Right of Way- Park Road- Commercial (per block),43.75,
+Right of Way -Local- Charitable (per block),20.00,
+Right of Way -Local- General (per block),40.00,
+Right of Way -Local- Commercial (per block),80.00,
+Right of Way- Alley- Charitable (per block),10.00,
+Right of Way- Alley- General (per block),12.50,
+Right of Way- Alley- Commercial (per block),22.00,
+Right of Way- Sidewalk- Charitable (per block),10.00,
+Right of Way- Sidewalk- General (per block),12.50,
+Right of Way- Sidewalk- Commercial (per block),22.00,
+Run/Walk/Ride Permit- Park & Trail Only- Charitable,75.00,
+Run/Walk/Ride Permit- Park & Trail Only- General,150.00,
+Run/Walk/Ride Permit- Park & Trail Only-Commercial,250.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- Charitable- park/local,125.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- Charitable- Collector,200.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- Charitable- Arterial,275.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- General- park/local,200.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- General- Collector,275.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- General- Arterial,350.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- Commercial- park/local,325.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- Commercial- Collector,425.00,
+Run/Walk/Ride Permit- Park/Trail & ROW- Commercial- Arterial,525.00,
+Run/Walk/Ride Permit- ROW Only- Charitable- park/local,200.00,
+Run/Walk/Ride Permit- ROW Only- Charitable- Collector,275.00,
+Run/Walk/Ride Permit- ROW Only- Charitable- Arterial,350.00,
+Run/Walk/Ride Permit- ROW Only- General- park/local,275.00,
+Run/Walk/Ride Permit- ROW Only- General- Collector,350.00,
+Run/Walk/Ride Permit- ROW Only- General- Arterial,425.00,
+Run/Walk/Ride Permit- ROW Only- Commercial- park/local,425.00,
+Run/Walk/Ride Permit-ROW Only- Commercial- Collector,$525.00,
+Run/Walk/Ride Permit- ROW Only- Commercial- Arterial,625.00,
+Parade - less than 2 hours on weekday,500.00,
+Parade - less than 2 hours on weekend or City holiday,"1,000.00",
+Parade - more than 2 hours on weekday,"2,000.00",
+Parade - more than 2 hours on weekend or City holiday,"3,000.00",
+Parade - Veterans Day,0.00,
+Film Permit Fees,,Film Permit Fees
+Film Permit Fee,525.00,Film Permit Fees
+Commercial Still Photography Permit Fee (3 day permit),50.00,Film Permit Fees
+Additional Shoot Review Fee,75.00,Film Permit Fees
+Drone Filming Fee (per shoot),75.00,Film Permit Fees
+City-Owned Building/Structure/Facility Usage Fee (per day),"2,000.00",Film Permit Fees
+City-County Building Filming Cost (per day),"2,500.00",Film Permit Fees
+Public Park - Regional - per day,450.00,Film Permit Fees
+Public Park - per day,300.00,Film Permit Fees
+General Property - undefined,100.00,Film Permit Fees
+Right of Way Closure - Arterial - per day,"1,250.00",Film Permit Fees
+Right of Way Closure - Collector - per day,"1,000.00",Film Permit Fees
+Right of Way Closure - Local - per day,900.00,Film Permit Fees
+Right of Way Closure - Park Road - per day,750.00,Film Permit Fees
+Right of Way Closure - Alley - per day,600.00,Film Permit Fees
+Right of Way Closure - Sidewalk - per day,100.00,Film Permit Fees
+Additional Block Closure - per day,10% of base,Film Permit Fees
+Intermittent Traffic Control - Arterial - per block,625.00,Film Permit Fees
+Intermittent Traffic Control - Collector - per block,500.00,Film Permit Fees
+Intermittent Traffic Control - Local - per block,450.00,Film Permit Fees
+Intermittent Traffic Control - Park Road - per block,375.00,Film Permit Fees
+Intermittent Traffic Control - Alley - per block,300.00,Film Permit Fees
+Intermittent Traffic Control - Sidewalk - per block,50.00,Film Permit Fees
+Additional Block ITC - per day,10% of base,Film Permit Fees
+STUDENT Film Permit Fee,100.00,Film Permit Fees
+STUDENT Public Park - Regional - per day,115.00,Film Permit Fees
+STUDENT Public Park - per day,75.00,Film Permit Fees
+STUDENT General Property - undefined,25.00,Film Permit Fees
+STUDENT Right of Way Closure - Arterial - per day,300.00,Film Permit Fees
+STUDENT Right of Way Closure - Collector - per day,250.00,Film Permit Fees
+STUDENT Right of Way Closure - Local - per day,200.00,Film Permit Fees
+STUDENT Right of Way Closure - Park Road - per day,175.00,Film Permit Fees
+STUDENT Right of Way Closure - Alley - per day,150.00,Film Permit Fees
+STUDENT Right of Way Closure - Sidewalk - per day,20.00,Film Permit Fees
+STUDENT Additional Block Closure - per day,10% of base,Film Permit Fees
+STUDENT Intermittent Traffic Control - Arterial - per block,$150.00,Film Permit Fees
+STUDENT Intermittent Traffic Control - Collector - per block,125.00,Film Permit Fees
+STUDENT Intermittent Traffic Control - Local - per block,100.00,Film Permit Fees
+STUDENT Intermittent Traffic Control - Park Road - per block,87.50,Film Permit Fees
+STUDENT Intermittent Traffic Control - Alley - per block,75.00,Film Permit Fees
+STUDENT Intermittent Traffic Control - Sidewalk - per black,10.00,Film Permit Fees
+STUDENT Additional Block ITC - per day,10% of base,Film Permit Fees
+STUDENT City owned Building or Facility Use - per day,250.00,Film Permit Fees
+STUDENT City-County Building (City Hall) - per day,500.00,Film Permit Fees
+STUDENT Drone Filming Permit (per shoot),25.00,Film Permit Fees
+STUDENT Still Photography Permit,20.00,Film Permit Fees
+Fines,,Fines
+Fine- Premature Set Up/ Overextension of Stay (per day),"1,000.00",Fines
+Fine- Unauthorized Vehicles on Grass (per vehicle),20.00,Fines
+Fine- Signage left on site 48 hr post event (per unit),25.00,Fines
+Fine- Portable toilets left on site 48 hr post event (per unit),25.00,Fines
+Fine- Equipment left on site 48 hr post event (per unit),25.00,Fines
+Fine- Damage to City Property,Cost of Repair,Fines
+Fine - Deviation from Permitted Activity,250.00,Fines
+Fine- Unpermitted event or filming activity,Cost of fees plus 25%,Fines
+Note: Third-party payment providers may charge their own processing fee,,Fines

@@ -1,45 +1,45 @@
-"C0 (l, x:57-260)","C1 (r, x:260-340)","C2 (r, x:340-406)","C3 (r, x:406-472)","C4 (r, x:472-524)","C5 (r, x:524-559)"
-,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change
-Expenditures,,,,,
-51 - PERSONNEL-SALARIES & WAGES,"17,727,083","16,614,364","17,568,039","953,676",5.7%
-51101 - Regular,"15,471,808","14,859,673","15,448,153","588,480",
-51103 - Part-Time,—,"387,336","395,092","7,756",
-51111 - In Grade,235,—,—,—,
-51201 - Longevity,"77,000","67,500","99,000","31,500",
-51203 - Allowances,"68,741","65,000","70,231","5,231",
-51205 - Uniform,—,"11,050","11,050",—,
-51207 - Leave Buyback,"157,954",—,—,—,
-51401 - Premium Pay,"1,951,345","1,223,805","1,544,513","320,708",
-52 - PERSONNEL-EMPLOYEE BENEFITS,"5,205,766","5,075,440","5,558,180","482,740",9.5%
-52101 - Health Insurance,"2,546,791","2,641,679","2,961,032","319,353",
-52111 - Other Insurance/Benefits,"356,368","343,186","337,114","(6,072)",
-52201 - Social Security,"1,337,787","1,295,830","1,366,868","71,038",
-52301 - Medical - Workers' Compensation,"246,895","189,317","239,591","50,274",
-52305 - Indemnity - Workers' Compensation,"503,566","407,727","438,805","31,078",
-52315 - Workers' Compensation-Fees,"29,151","11,701","26,910","15,209",
-52601 - Personal Leave Buyback,"181,504","186,000","187,860","1,860",
-53 - PROFESSIONAL & TECHNICAL SERVICES,"85,054","81,000","1,000","(80,000)",(98.8)%
-53101 - Administrative Fees,230,"1,000","1,000",—,
-53301 - Workforce Training,"3,266",—,—,—,
-53501 - Auditing & Accounting Services,—,"50,000",—,"(50,000)",
-53545 - Towing Services,"6,195",—,—,—,
-53701 - Repairs,"59,908",—,—,—,
-53725 - Maintenance-Miscellaneous,"1,159",—,—,—,
-53901 - Professional Services,"14,296","30,000",—,"(30,000)",
-54 - PROPERTY SERVICES,"2,454,052","2,234,122","1,789,122","(445,000)",(19.9)%
-54101 - Cleaning,"1,441,604","1,358,122","1,288,122","(70,000)",
-54105 - Landscaping,"732,217","130,000","5,000","(125,000)",
-54201 - Maintenance,"97,947","140,000","140,000",—,
-54207 - Construction,—,"20,000","20,000",—,
-54301 - Building-General,825,—,—,—,
-54305 - Building-Systems,"18,579","65,000","65,000",—,
-54513 - Machinery & Equipment,"162,880","521,000","271,000","(250,000)",
-55 - OTHER SERVICES,"12,320","15,000",—,"(15,000)",(100.0)%
-55701 - Transportation,"12,320","15,000",—,"(15,000)",
-56 - SUPPLIES,"1,399,936","1,192,423","1,132,423","(60,000)",(5.0)%
-56101 - Office Supplies,173,"40,000","40,000",—,
-56103 - Freight Charges,"2,966",—,—,—,
-56151 - Operational Supplies,"557,941","357,600","297,600","(60,000)",
-56301 - Parts (Equipment),"346,622","160,000","160,000",—,
-56351 - Tools,"49,701","75,000","75,000",—,
-56401 - Materials,"242,514","449,823","449,823",—,
+"C0 (l, x:57-260)","C1 (r, x:260-340)","C2 (r, x:340-406)","C3 (r, x:406-472)","C4 (r, x:472-524)","C5 (r, x:524-559)",section
+,2024 Actual,2025 Budget,2026 Budget,Increase/ (Decrease),% Change,section
+Expenditures,,,,,,Expenditures
+51 - PERSONNEL-SALARIES & WAGES,"17,727,083","16,614,364","17,568,039","953,676",5.7%,51 - PERSONNEL-SALARIES & WAGES
+51101 - Regular,"15,471,808","14,859,673","15,448,153","588,480",,51 - PERSONNEL-SALARIES & WAGES
+51103 - Part-Time,—,"387,336","395,092","7,756",,51 - PERSONNEL-SALARIES & WAGES
+51111 - In Grade,235,—,—,—,,51 - PERSONNEL-SALARIES & WAGES
+51201 - Longevity,"77,000","67,500","99,000","31,500",,51 - PERSONNEL-SALARIES & WAGES
+51203 - Allowances,"68,741","65,000","70,231","5,231",,51 - PERSONNEL-SALARIES & WAGES
+51205 - Uniform,—,"11,050","11,050",—,,51 - PERSONNEL-SALARIES & WAGES
+51207 - Leave Buyback,"157,954",—,—,—,,51 - PERSONNEL-SALARIES & WAGES
+51401 - Premium Pay,"1,951,345","1,223,805","1,544,513","320,708",,51 - PERSONNEL-SALARIES & WAGES
+52 - PERSONNEL-EMPLOYEE BENEFITS,"5,205,766","5,075,440","5,558,180","482,740",9.5%,52 - PERSONNEL-EMPLOYEE BENEFITS
+52101 - Health Insurance,"2,546,791","2,641,679","2,961,032","319,353",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52111 - Other Insurance/Benefits,"356,368","343,186","337,114","(6,072)",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52201 - Social Security,"1,337,787","1,295,830","1,366,868","71,038",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52301 - Medical - Workers' Compensation,"246,895","189,317","239,591","50,274",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52305 - Indemnity - Workers' Compensation,"503,566","407,727","438,805","31,078",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52315 - Workers' Compensation-Fees,"29,151","11,701","26,910","15,209",,52 - PERSONNEL-EMPLOYEE BENEFITS
+52601 - Personal Leave Buyback,"181,504","186,000","187,860","1,860",,52 - PERSONNEL-EMPLOYEE BENEFITS
+53 - PROFESSIONAL & TECHNICAL SERVICES,"85,054","81,000","1,000","(80,000)",(98.8)%,53 - PROFESSIONAL & TECHNICAL SERVICES
+53101 - Administrative Fees,230,"1,000","1,000",—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53301 - Workforce Training,"3,266",—,—,—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53501 - Auditing & Accounting Services,—,"50,000",—,"(50,000)",,53 - PROFESSIONAL & TECHNICAL SERVICES
+53545 - Towing Services,"6,195",—,—,—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53701 - Repairs,"59,908",—,—,—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53725 - Maintenance-Miscellaneous,"1,159",—,—,—,,53 - PROFESSIONAL & TECHNICAL SERVICES
+53901 - Professional Services,"14,296","30,000",—,"(30,000)",,53 - PROFESSIONAL & TECHNICAL SERVICES
+54 - PROPERTY SERVICES,"2,454,052","2,234,122","1,789,122","(445,000)",(19.9)%,54 - PROPERTY SERVICES
+54101 - Cleaning,"1,441,604","1,358,122","1,288,122","(70,000)",,54 - PROPERTY SERVICES
+54105 - Landscaping,"732,217","130,000","5,000","(125,000)",,54 - PROPERTY SERVICES
+54201 - Maintenance,"97,947","140,000","140,000",—,,54 - PROPERTY SERVICES
+54207 - Construction,—,"20,000","20,000",—,,54 - PROPERTY SERVICES
+54301 - Building-General,825,—,—,—,,54 - PROPERTY SERVICES
+54305 - Building-Systems,"18,579","65,000","65,000",—,,54 - PROPERTY SERVICES
+54513 - Machinery & Equipment,"162,880","521,000","271,000","(250,000)",,54 - PROPERTY SERVICES
+55 - OTHER SERVICES,"12,320","15,000",—,"(15,000)",(100.0)%,55 - OTHER SERVICES
+55701 - Transportation,"12,320","15,000",—,"(15,000)",,55 - OTHER SERVICES
+56 - SUPPLIES,"1,399,936","1,192,423","1,132,423","(60,000)",(5.0)%,56 - SUPPLIES
+56101 - Office Supplies,173,"40,000","40,000",—,,56 - SUPPLIES
+56103 - Freight Charges,"2,966",—,—,—,,56 - SUPPLIES
+56151 - Operational Supplies,"557,941","357,600","297,600","(60,000)",,56 - SUPPLIES
+56301 - Parts (Equipment),"346,622","160,000","160,000",—,,56 - SUPPLIES
+56351 - Tools,"49,701","75,000","75,000",—,,56 - SUPPLIES
+56401 - Materials,"242,514","449,823","449,823",—,,56 - SUPPLIES

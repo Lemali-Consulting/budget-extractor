@@ -1,5 +1,7 @@
 "C0 (l, x:57-190)","C1 (l, x:190-263)","C2 (l, x:263-303)"
-FOP Hourly Rates Police Lieutenant Police Sergeant,2025 56.84 49.86,2026 56.84 49.86
+FOP Hourly Rates,2025,2026
+Police Lieutenant,56.84,56.84
+Police Sergeant,49.86,49.86
 Police Officer - Detective,43.74,43.74
 Master Police Officer,43.74,43.74
 Police Officer - Fourth Year,40.80,40.80
