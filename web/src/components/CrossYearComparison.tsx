@@ -86,7 +86,7 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
   const comparison = buildComparison(proposed, adopted);
 
   let filtered = showOnlyChanges
-    ? comparison.filter(r => Math.abs(r.difference) > 0.01)
+    ? comparison.filter(r => Math.abs(r.difference) > 10)
     : comparison;
 
   const sorted = [...filtered].sort((a, b) => {
@@ -102,8 +102,8 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
   const totalProposed = comparison.reduce((s, r) => s + r.proposed, 0);
   const totalAdopted = comparison.reduce((s, r) => s + r.adopted, 0);
   const totalDiff = totalAdopted - totalProposed;
-  const changed = comparison.filter(r => Math.abs(r.difference) > 0.01);
-  const unchanged = comparison.filter(r => Math.abs(r.difference) <= 0.01);
+  const changed = comparison.filter(r => Math.abs(r.difference) > 10);
+  const unchanged = comparison.filter(r => Math.abs(r.difference) <= 10);
 
   function handleSort(key: SortKey) {
     if (sortBy === key) {
@@ -212,17 +212,17 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
           </thead>
           <tbody>
             {sorted.map(row => (
-              <tr key={row.department} class={`border-b hover:bg-gray-50 ${Math.abs(row.difference) > 0.01 ? 'font-medium' : 'text-gray-500'}`}>
+              <tr key={row.department} class={`border-b hover:bg-gray-50 ${Math.abs(row.difference) > 10 ? 'font-medium' : 'text-gray-500'}`}>
                 <td class="p-2">
                   <a href={`/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
                 </td>
                 <td class="text-right p-2 font-mono">{formatDollar(row.proposed)}</td>
                 <td class="text-right p-2 font-mono">{formatDollar(row.adopted)}</td>
-                <td class={`text-right p-2 font-mono ${row.difference > 0.01 ? 'text-green-600' : row.difference < -0.01 ? 'text-red-600' : ''}`}>
-                  {Math.abs(row.difference) > 0.01 ? `${row.difference > 0 ? '+' : ''}${formatDollar(row.difference)}` : '\u2014'}
+                <td class={`text-right p-2 font-mono ${row.difference > 10 ? 'text-green-600' : row.difference < -10 ? 'text-red-600' : ''}`}>
+                  {Math.abs(row.difference) > 10 ? `${row.difference > 0 ? '+' : ''}${formatDollar(row.difference)}` : '\u2014'}
                 </td>
-                <td class={`text-right p-2 font-mono ${row.pctChange > 0.01 ? 'text-green-600' : row.pctChange < -0.01 ? 'text-red-600' : ''}`}>
-                  {Math.abs(row.pctChange) > 0.01 ? `${row.pctChange > 0 ? '+' : ''}${row.pctChange.toFixed(1)}%` : '\u2014'}
+                <td class={`text-right p-2 font-mono ${row.difference > 10 ? 'text-green-600' : row.difference < -10 ? 'text-red-600' : ''}`}>
+                  {Math.abs(row.difference) > 10 ? `${row.pctChange > 0 ? '+' : ''}${row.pctChange.toFixed(1)}%` : '\u2014'}
                 </td>
               </tr>
             ))}
