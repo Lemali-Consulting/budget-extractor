@@ -107,3 +107,12 @@ The web app is deployed as a static site to Netlify via manual CLI deploy (not g
 # Regenerate images (WebP) from source PDFs, then build and deploy
 python3 scripts/render_page_images.py && python3 scripts/extract_chart_images.py && cd web && npm test && npm run build && source ../.env && export NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID=11c41143-d0e2-4a28-9dde-10e173bf230f && npx netlify deploy --dir=dist --prod
 ```
+
+# Playwright MCP Server
+
+The Playwright MCP server is configured in `.mcp.json`. It requires `--no-sandbox` because the devcontainer doesn't allow PID namespace creation (Chrome's sandbox needs it).
+
+**Key points:**
+- The `--no-sandbox` flag in `.mcp.json` is required — without it Chrome crashes with `Operation not permitted`
+- **Changes to `.mcp.json` require restarting the MCP server** via `/mcp` in Claude Code. Without a restart, old args stay in effect and Chrome will keep crashing regardless of config changes.
+- If Chrome fails repeatedly with namespace errors, the fix is always: verify `--no-sandbox` is in `.mcp.json`, then restart the MCP server
