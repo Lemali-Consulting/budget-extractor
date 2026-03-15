@@ -1,0 +1,73 @@
+"C0 (r, x:54-485)","C1 (r, x:485-558)",section
+BUREAU OF POLICE,,section
+Fee Description,2025,
+Police Reports,15.00,
+Towing,,Towing
+"Storage Fee-Vehicle <10,000 lbs April 1st 2025 Onwards (per day)",35.00,Towing
+"Storage Fee-Vehicle <10,000 lbs Pre April 1st 2025 (per day)",25.00,Towing
+"Storage Fee-Vehicle 10,001-31,000 lbs April 1st 2025 Onwards (per day)",65.00,Towing
+"Storage Fee-Vehicle 10,001-31,000 lbs Pre April 1st 2025 (per day)",60.00,Towing
+"Storage Fee-Vehicle >31,000 lbs April 1st 2025 Onwards (per day)",75.00,Towing
+"Storage Fee-Vehicle >31,000 lbs Pre April 1st 2025 (per day)",75.00,Towing
+Storage Fee-Vehicle Semi Trailers April 1st 2025 Onwards (per day),100.00,Towing
+Storage Fee-Vehicle Semi Trailers Pre April 1st 2025 (per day),100.00,Towing
+EV Accident Towing Rate (per incident),275.00,Towing
+EV Accident Storage Rate (per day),95.00,Towing
+Towing Fee-Non City Owned Passenger Cars/Trucks April 1st 2025 Onwards,155.00,Towing
+Towing Fee-Non City Owned Passenger Cars/Trucks Pre April 1st 2025,135.00,Towing
+"Towing Fee-Non City Owned Vehicles <9,000 lbs April 1st 2025 Onwards",155.00,Towing
+"Towing Fee-Non City Owned Vehicles <9,000 lbs Pre April 1st 2025",$135.00,Towing
+"Towing Fee-Non City Owned Vehicles 9,001-20,000 lbs April 1st 2025 Onwards",275.00,Towing
+"Towing Fee-Non City Owned Vehicles 9,001-20,000 lbs Pre April 1st 2025",250.00,Towing
+"Towing Fee-Non City Owned Vehicles 20,001-40,000 lbs April 1st 2025 Onwards",425.00,Towing
+"Towing Fee-Non City Owned Vehicles 20,001-40,000 lbs Pre April 1st 2025",350.00,Towing
+"Towing Fee-Non City Owned Vehicles 40,001-60,000 lbs April 1st 2025 Onwards",600.00,Towing
+"Towing Fee-Non City Owned Vehicles 40,001-60,000 lbs Pre April 1st 2025",350.00,Towing
+"Towing Fee-Non City Owned Vehicles 60,001-80,000 lbs April 1st 2025 Onwards",750.00,Towing
+"Towing Fee-Non City Owned Vehicles 60,001-80,000 lbs Pre April 1st 2025",450.00,Towing
+"Towing Fee-Trailer <20,000 lbs April 1st 2025 Onwards",350.00,Towing
+"Towing Fee-Trailer <20,000 lbs Pre April 1st 2025",175.00,Towing
+"Towing Fee-Trailer 20,001-40,000 lbs April 1st 2025 Onwards",425.00,Towing
+"Towing Fee-Trailer 20,001-40,000 lbs Pre April 1st 2025",250.00,Towing
+"Towing Fee-Trailer 40,001-56,000 lbs April 1st 2025 Onwards",600.00,Towing
+"Towing Fee-Trailer 40,001-56,000 lbs Pre April 1st 2025",350.00,Towing
+"Towing Fee-Trailer 56,001-80,000 lbs April 1st 2025 Onwards",750.00,Towing
+"Towing Fee-Trailer 56,001-80,000 lbs Pre April 1st 2025",350.00,Towing
+Towing Fee-Bus April 1st 2025 Onwards,750.00,Towing
+Towing Fee-Bus Pre April 1st 2025,500.00,Towing
+Towing Fee-Construction Vehicle April 1st 2025 Onwards,750.00,Towing
+Towing Fee-Construction Vehicle Pre April 1st 2025,500.00,Towing
+Flatbed or Dolly Tow April 1st 2025 Onwards,190.00,Towing
+Flatbed or Dolly Tow Pre April 1st 2025,160.00,Towing
+"Recovery up to 11,000GVW April 1st 2025 Onwards (per hour)",200.00,Towing
+"Recovery up to 11,000GVW Pre April 1st 2025 (per hour)",120.00,Towing
+"Recovery 11,000-31,000GVW April 1st 2025 Onwards (per hour)",350.00,Towing
+"Recovery 11,000-31,000GVW Pre April 1st 2025 (per hour)",175.00,Towing
+"Recovery 31,000GVW April 1st 2025 Onwards (per hour)",500.00,Towing
+"Recovery 31,000GVW Pre April 1st 2025 (per hour)",350.00,Towing
+Extra Person April 1st Onwards (per hour),125.00,Towing
+Extra Person Pre April 1st (per hour),75.00,Towing
+Standby Charge April 1st 2025 Onwards (per hour),125.00,Towing
+Standby Charge Pre April 1st 2025 (per hour),100.00,Towing
+Excessive Mileage Tows April 1st 2025 Onwards (per hour),135.00,Towing
+Excessive Mileage Tows Pre April 1st 2025 (per hour),95.00,Towing
+Miscall April 1st 2025 Onwards (per hour),35.00,Towing
+Miscall Pre April 1st 2025 (per hour),25.00,Towing
+Landoll or Semi Trailer April 1st 2025 Onwards (per hour),300.00,Towing
+Landoll or Semi Trailer Pre April 1st 2025 (per hour),200.00,Towing
+Service Vehicle April 1st 2025 Onwards (per hour),150.00,Towing
+Service Vehicle Pre April 1st 2025 (per hour),95.00,Towing
+Recovery Vehicle April 1st 2025 Onwards (per hour),175.00,Towing
+Recovery Vehicle Pre April 1st 2025 (per hour),$150.00,Towing
+"Skid Steer & 5,000 Forklift April 1st 2025 Onwards (per hour)",150.00,Towing
+"Skid Steer & 5,000 Forklift Pre April 1st 2025 (per hour)",100.00,Towing
+Heavy Duty Forklift April 1st 2025 Onwards (per hour),200.00,Towing
+Heavy Duty Forklift Pre April 1st 2025 (per hour),125.00,Towing
+Payloader April 1st 2025 Onwards (per hour),200.00,Towing
+Payloader Pre April 1st 2025 (per hour),150.00,Towing
+Rotating Crane April 1st 2025 Onwards (per hour),"1,250.00",Towing
+Rotating Crane Pre April 1st 2025 (per hour),750.00,Towing
+Shrink Wrap April 1st 2025 Onwards (per hour),30.00,Towing
+Debris Cleanup April 1st 2025 Onwards (per hour),150.00,Towing
+Debris Cleanup Pre April 1st 2025 (per hour),15.00,Towing
+Note: Third-party payment providers may charge their own processing fee,,Towing
