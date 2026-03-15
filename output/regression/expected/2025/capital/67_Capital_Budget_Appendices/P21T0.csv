@@ -1,0 +1,69 @@
+"C0 (l, x:19-110)","C1 (l, x:110-204)","C2 (l, x:204-277)","C3 (r, x:277-312)","C4 (r, x:312-328)","C5 (r, x:328-375)","C6 (l, x:375-401)","C7 (l, x:401-434)","C8 (l, x:434-470)","C9 (l, x:470-493)","C10 (l, x:493-534)","C11 (r, x:534-562)","C12 (r, x:562-589)"
+Capital Project,Project Deliverable,Requesting Department,City,CDBG,City or CDBG $ Other,OMB 1 Y/N,OMB 2 Y/N,OMB 3 Y/NCC 1 Y/N,CC 2 Y/N,CO 1 Y/N,Total,Adjusted Total
+5000 - PARK RECONSTRUCTION,McKinley Park Retaining Wall,City Council,"500,000",0,"500,000",0Y,N,N N,N,N,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"DOMI, Bucket Truck (2)",Equipment Leasing Authority,"500,000",0,"500,000",0N,N,N Y,N,N,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"DPW, ES, Code Enforcement Vehicles (10)",Equipment Leasing Authority,"330,000",0,"330,000",0N,N,N N,N,Y,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"DPW, PM&HE, Crew Cab Dump Trucks (2)",Equipment Leasing Authority,"240,000",0,"240,000",0N,N,N N,N,Y,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"DPW, PM&HE, Ground Master Mowers (5)",Equipment Leasing Authority,"875,000",0,"875,000",0N,N,N N,N,Y,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"DPW, PM&HE, Rat Packer (2)",Equipment Leasing Authority,"350,000",0,"350,000",0N,N,N N,N,Y,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"DPW, Streets, Pickup Truck (5)",Equipment Leasing Authority,"400,000",0,"400,000",0N,N,N Y,N,N,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PLI, Inspector Vehicles (16)",Equipment Leasing Authority,"528,000",0,"528,000",0Y,N,N N,N,N,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, Animal C&C, LIVE ANIMAL TRUCK (2)",Equipment Leasing Authority,"180,000",0,"180,000",0N,N,N N,N,Y,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,Radiation Detection/Classification Equipment,Public Safety,"67,100",0,"67,100",0N,N,N N,N,Y,1,1
+7340 - HOUSING DEVELOPMENT,Bedford Choice - Targeted Facade Repair,Urban Redevelopment Authority,0,"400,000","400,000",0Y,N,N N,N,N,1,1
+7340 - HOUSING DEVELOPMENT,Home Accessibility Program for Independence (HAPI),Urban Redevelopment Authority,"275,000",0,"275,000",0N,Y,Y N,N,N,2,1
+7401 - COMPLETE STREETS,Fifth Ave Cycletrack Connection,Mobility & Infrastructure,"496,892",0,"496,892",0N,Y,Y N,N,N,2,1
+7430 - WAR MEMORIALS AND PUBLIC ART,Percent for Art - Manchester,City Planning,"100,000",0,"100,000",0N,N,N N,Y,N,1,1
+7491 - PUBLIC SAFETY CAMERAS,Public Safety - Security Camera Initiative,Public Safety,"1,500,000",0,"1,500,000",0N,Y,Y N,N,N,2,1
+7501 - RAMP AND PUBLIC SIDEWALK,Critical Sidewalk Gaps,Mobility & Infrastructure,"750,000",0,"750,000",0N,N,N N,N,Y,1,1
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Lookout Playground,Public Works,"400,000",0,"400,000",0N,N,N N,N,Y,1,1
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,McCandless Playground,Public Works,"150,000",0,"150,000",0N,N,N N,N,Y,1,1
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Parking Lot Repaving,Public Safety,"131,000",0,"131,000",0Y,N,N N,N,N,1,1
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Parking Lot Repaving,Public Safety,"271,000",0,"271,000",0Y,N,N N,N,N,1,1
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Thaddeus Stevens Building - Construction,Public Works,"7,745,649",0,"7,745,649",0N,N,N N,Y,N,1,1
+9000 - STREET RESURFACING,City Parking Lot Resurfacing,Mobility & Infrastructure,"450,000",0,"450,000",0N,N,N N,N,Y,1,1
+9000 - STREET RESURFACING,Grant Street Repairs,Mobility & Infrastructure,"500,000",0,"500,000",0N,N,N N,N,Y,1,1
+9103 - SLOPE FAILURE REMEDIATION,Urgent Wall Repairs - City Wide,Mobility & Infrastructure,"1,000,000",0,"1,000,000",0N,Y,Y N,N,N,2,1
+0018 - URBAN REDEVELOPMENT AUTHORITY PERSONNEL,Program and Project Delivery,Urban Redevelopment Authority,"575,000",0,"575,000",0N,N,Y N,N,N,1,0.5
+0036 - STEP REPAIR AND REPLACEMENT,Rising Main Concrete Step Repair,City Council,"450,000",0,"450,000",0N,Y,N N,N,N,1,0.5
+0090 - FLOOD CONTROL PROJECTS,GLASS RUN & UNT CHARTIERS CREEK STREAM RESTORATION,Pittsburgh Water & Sewer Authority,"475,969",0,"475,969",0N,Y,N N,N,N,1,0.5
+1151 - ADA COMPLIANCE,2025- Homewood HALC Design & Construction Documents,Public Works,"250,000",0,"250,000",0N,N,Y N,N,N,1,0.5
+1200 - FIREFIGHTING EQUIPMENT,Attack Hose Replacement,Public Safety,"113,090",0,"113,090",0N,N,Y N,N,N,1,0.5
+1200 - FIREFIGHTING EQUIPMENT,SCBA Telemetry/Cradle Points,Public Safety,"180,000",0,"180,000",0N,Y,N N,N,N,1,0.5
+1200 - FIREFIGHTING EQUIPMENT,Supply Hose,Public Safety,"360,000",0,"360,000",0N,N,Y N,N,N,1,0.5
+1200 - FIREFIGHTING EQUIPMENT,Swift Water Rescue Boats & Engines,Public Safety,"81,000",0,"81,000",0N,N,Y N,N,N,1,0.5
+5000 - PARK RECONSTRUCTION,Arsenal Park - Phase II Design & Construction,City Council,"1,000,000",0,"1,000,000",0N,N,Y N,N,N,1,0.5
+5000 - PARK RECONSTRUCTION,Spring Hill Park - Construction Supplemental,Public Works,"1,280,834",0,"1,280,834",0N,Y,N N,N,N,1,0.5
+5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR,Bloomfield Recreation Center Rehabilitation,City Council,"100,000",0,"100,000",0N,N,Y N,N,N,1,0.5
+5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR,Cowley Recreation Center - Construction,Public Works,0,0,0,0N,N,Y N,N,N,1,0.5
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, Fire, Boat Trailer (1)",Equipment Leasing Authority,"35,000",0,"35,000",0N,N,Y N,N,N,1,0.5
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, Fire, Foam Pumper (1)",Equipment Leasing Authority,"2,500,000",0,"2,500,000",0N,N,Y N,N,N,1,0.5
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, Fire, Foam Tender Rebuild (2)",Equipment Leasing Authority,"850,000",0,"850,000",0N,N,Y N,N,N,1,0.5
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, Fire, Logistics Van (1)",Equipment Leasing Authority,"85,000",0,"85,000",0N,N,Y N,N,N,1,0.5
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, Fire, Mobile Air Compressor Vehicle (1)",Equipment Leasing Authority,"1,200,000",0,"1,200,000",0N,N,Y N,N,N,1,0.5
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, Fire, SUV (High Utilizer Program, 1)",Equipment Leasing Authority,"100,000",0,"100,000",0N,N,Y N,N,N,1,0.5
+7325 - SMALL BUSINESS DEVELOPMENT,Small Business Support (Loans & Technical Assistance),Urban Redevelopment Authority,"500,000",0,"500,000",0N,N,Y N,N,N,1,0.5
+7401 - COMPLETE STREETS,Craig & Bayard Traffic Signal,City Council,"335,000",0,"335,000",0N,Y,N N,N,N,1,0.5
+7401 - COMPLETE STREETS,Herron/Melwood Pedestrian Crossing,City Council,"200,000",0,"200,000",0N,N,Y N,N,N,1,0.5
+7401 - COMPLETE STREETS,Safer Crossing at 40th & Foster,City Council,"250,000",0,"250,000",0N,N,Y N,N,N,1,0.5
+7491 - PUBLIC SAFETY CAMERAS,McKinley Rec Center Cameras,City Council,"200,000",0,"200,000",0N,Y,N N,N,N,1,0.5
+7500 - FACILITY IMPROVEMENTS - CITY FACILITIES,62nd St. Warehouse Consolidation,Public Works,0,0,0,0N,N,Y N,N,N,1,0.5
+7500 - FACILITY IMPROVEMENTS - CITY FACILITIES,Bathroom Remodel,Public Safety,"100,000",0,"100,000",0N,N,Y N,N,N,1,0.5
+7500 - FACILITY IMPROVEMENTS - CITY FACILITIES,Kitchen / Bathroom (x2) Project,Public Safety,"100,000",0,"100,000",0N,N,Y N,N,N,1,0.5
+7500 - FACILITY IMPROVEMENTS - CITY FACILITIES,Kitchen remodel,Public Safety,"100,000",0,"100,000",0N,N,Y N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Burgwin Court Upgrades,Public Works,"754,100",0,"754,100",0N,Y,N N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,EMERALD VIEW - PHASE II DESIGN,Public Works,0,0,0,0N,Y,N N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Fire Bureau Office Furniture,Public Safety,"85,000",0,"85,000",0N,N,Y N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Fire Headquarters HVAC Improvements,Public Safety,"1,300,000",0,"1,300,000",0N,N,Y N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Fire warehouse/headquarters siding repair,Public Safety,"200,000",0,"200,000",0N,N,Y N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Fort Pitt Park Construction- Phase I/II,Public Works,0,0,0,0N,Y,N N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Kennard Park Construction,Public Works,0,0,0,0N,Y,N N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Police Firing Range,Public Works,"4,764,507",0,"4,764,507",0N,Y,N N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Public Safety Station Kitchen & Bath Upgrades,Public Works,"619,000",0,"619,000",0N,N,Y N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Public Safety Training Campus Master Plan,Public Works,"900,000",0,"900,000",0N,N,Y N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,SHERADEN PARK - PHASE II DESIGN,Public Works,0,0,0,0N,Y,N N,N,N,1,0.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,SOUTH SIDE PARK - PHASE II DESIGN,Public Works,0,0,0,0N,Y,N N,N,N,1,0.5
+7558 - PUBLIC SAFETY EQUIPMENT,Power Stretchers and Power Loaders,Public Safety,"650,000",0,"650,000",0N,Y,N N,N,N,1,0.5
+9103 - SLOPE FAILURE REMEDIATION,Gershon Street,Mobility & Infrastructure,"300,000",0,"300,000",0N,Y,N N,N,N,1,0.5
+0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT,Community Development Investment Fund,Urban Redevelopment Authority,0,"500,000","500,000",0N,N,N N,N,N,0,0
+0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT,Neighborhood Initiative Fund,Urban Redevelopment Authority,"1,000,000",0,"1,000,000",0N,N,N N,N,N,0,0
