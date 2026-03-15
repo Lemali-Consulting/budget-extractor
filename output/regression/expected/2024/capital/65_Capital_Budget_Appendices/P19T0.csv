@@ -1,0 +1,6 @@
+"C0 (l, x:63-89)","C1 (l, x:89-162)","C2 (l, x:162-275)","C3 (l, x:275-438)"
+*,Criteria Mandates,Definition The CPFC members shall prioritize projects that meet specific Federal or State statutory mandates.,Weight Scoring Values Y: Include in budget Y/N N: Subject to scoring
+,,,0: Could create a negative impact on health and safety
+,,Projects that will resolve an imminent,1: Neutral - no impact on health or safety
+1,Safety,threat to public or employee safety or,5
+,,health should receive first priority.,2: Significant hazard mitigation

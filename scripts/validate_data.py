@@ -162,18 +162,23 @@ def validate_csv_structural(csv_path: Path, pdf_stem: str, year: int) -> list[Fi
             continue
         break
 
-    # Check 9: Year header sanity — financial tables should reference the document year
-    header_text = " ".join(headers).lower()
-    has_budget = "budget" in header_text or "actual" in header_text
-    if has_budget and str(year) not in header_text and str(year - 1) not in header_text:
-        # This table has budget/actual columns but no reference to the expected years
-        found_years = re.findall(r"\b20\d{2}\b", " ".join(headers))
-        findings.append(Finding(
-            "ERROR", "STRUCTURAL", loc,
-            f"year headers {found_years} don't match document year {year}",
-        ))
+    # Check 9: Year header sanity — financial tables with year+Budget/Actual columns
+    # should reference the document year. Only trigger if headers contain a pattern
+    # like "2024 Actual" or "2025 Budget" (year followed by Budget/Actual).
+    year_budget_re = re.compile(r"\b(20\d{2})\s+(Budget|Actual)", re.IGNORECASE)
+    year_budget_matches = year_budget_re.findall(" ".join(headers))
+    if year_budget_matches:
+        found_years = {int(m[0]) for m in year_budget_matches}
+        expected_years = {year, year - 1, year - 2}
+        if not found_years & expected_years:
+            findings.append(Finding(
+                "ERROR", "STRUCTURAL", loc,
+                f"year headers {sorted(found_years)} don't match document year {year}",
+            ))
 
     # Check 10: Total row quality — financial tables should have a parseable total
+    header_text = " ".join(headers).lower()
+    has_budget = bool(year_budget_matches)
     if has_budget and "fte" not in header_text:
         has_good_total = False
         for row in data_rows:

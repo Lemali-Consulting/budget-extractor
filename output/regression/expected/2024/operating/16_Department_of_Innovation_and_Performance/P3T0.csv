@@ -1,0 +1,67 @@
+"C0 (l, x:61-225)","C1 (r, x:225-280)","C2 (r, x:280-320)","C3 (r, x:320-355)","C4 (r, x:355-408)","C5 (r, x:408-437)","C6 (r, x:437-477)","C7 (r, x:477-513)","C8 (r, x:513-553)",section
+Title,2023 FTE,Rate/ Grade,Hours/ Months,2023 Budget,2024 FTE,Rate/ Grade,Hours/ Months,2024 Budget,section
+Director of Innovation & Performance/Chief Information Officer IT Operations Reliability,1,35G,12,"121,707",1,35G,12,"125,358",
+Assistant Director - IT Operations,1,32G,12,"104,360",1,32G,12,"107,490",
+"Senior Manager, IT Service Desk",1,29G,12,"92,910",1,29G,12,"95,697",
+"Assistant Manager, IT Service Desk",1,26E,12,"75,713",1,26E,12,"77,981",
+Technology Analyst,—,25E,12,—,1,25E,12,"74,806",
+Mobile & IoT Devices Administrator,1,25E,12,"72,627",1,25E,12,"74,806",
+"Senior Analyst, IT Service",2,U08-L,12,"130,391",2,U08-L,12,"134,303",
+"Analyst, IT Service",3,U07-L,12,"179,438",3,U07-L,12,"184,821",
+Service Desk Representative,1,U05-L,12,"50,343",2,U05-L,12,"103,707",
+"Senior Manager, IT Infrastructure",1,29G,12,"92,910",1,29G,12,"95,697",
+Senior Systems Administrator,1,25G,12,"78,713",1,25G,12,"81,074",
+Systems Administrator,2,25E,12,"145,253",2,25E,12,"149,611",
+IAM Systems Administrator,1,25E,12,"72,627",1,25E,12,"74,806",
+Senior Network Engineer,1,27G,12,"85,801",1,27G,12,"88,375",
+Network Engineer,1,27E,12,"78,713",1,27E,12,"81,074",
+Telecommunications Analyst,1,23C,12,"61,590",1,23C,12,"63,437",
+"Technician, Network",1,U08-H,12,"60,487",1,U08-H,12,"62,302",
+Security & Risk,,,,,,,,,Security & Risk
+"Assistant Director, Security/Chief Information Security Officer",1,34F,12,"110,579",1,34F,12,"113,897",Security & Risk
+Cybersecurity Engineer,1,27E,12,"78,713",1,27E,12,"81,074",Security & Risk
+Operations Performance Excellence,,,,,,,,,Operations Performance Excellence
+"Manager, Innovation",1,29E,12,"85,801",—,29E,—,—,Operations Performance Excellence
+"Manager, Operations Performance Excellence",—,29E,—,—,1,29E,12,"88,375",Operations Performance Excellence
+Process Improvement Engineer,1,27E,12,"78,713",2,27E,12,"162,148",Operations Performance Excellence
+Business Technology,,,,,,,,,Business Technology
+Assistant Director - Technology,1,32G,12,"104,360",1,32G,12,"107,490",Business Technology
+"Senior Manager, Digital Services/Chief Data",,,,,,,,,"Senior Manager, Digital Services/Chief Data"
+Officer,1,29G,12,"92,910",1,29G,12,"95,697","Senior Manager, Digital Services/Chief Data"
+Senior Data Services Engineer,1,27E,12,"78,713",1,27E,12,"81,074","Senior Manager, Digital Services/Chief Data"
+Data Services Engineer,1,25E,12,"72,627",1,25E,12,"74,806","Senior Manager, Digital Services/Chief Data"
+Senior Data Analyst,1,27E,12,"78,713",1,27E,12,"81,074","Senior Manager, Digital Services/Chief Data"
+Operational Performance  Analyst,1,25E,12,"72,627",1,25E,12,"74,806","Senior Manager, Digital Services/Chief Data"
+Database Administrator,—,27G,—,—,1,27G,12,"88,375","Senior Manager, Digital Services/Chief Data"
+"Senior Manager, Innovation",—,29G,—,—,1,29G,12,"95,697","Senior Manager, Digital Services/Chief Data"
+"Manager, Project Management Office",1,29E,12,"85,801",—,29E,—,—,"Senior Manager, Digital Services/Chief Data"
+Senior Project Coordinator,2,23E,12,"134,049",2,23E,12,"138,070","Senior Manager, Digital Services/Chief Data"
+Business Relationship Manager,4,27E,12,"314,851",4,27E,12,"324,295","Senior Manager, Digital Services/Chief Data"
+Digital Equity Program Analyst,—,20G,—,—,1,20G,12,"66,179","Senior Manager, Digital Services/Chief Data"
+Senior Civic Innovation Specialist,1,24E,12,"69,811",—,24E,—,—,"Senior Manager, Digital Services/Chief Data"
+Civic Innovation Specialist,1,21F,12,"64,251",2,21F,12,"132,357","Senior Manager, Digital Services/Chief Data"
+Training Coordinator,1,17E,12,"51,824",1,17E,12,"53,380","Senior Manager, Digital Services/Chief Data"
+"Senior Manager, Applications",1,29G,12,"92,910",1,29G,12,"95,697","Senior Manager, Digital Services/Chief Data"
+Senior Enterprise Applications Administrator,3,27E,12,"236,138",3,27E,12,"243,221","Senior Manager, Digital Services/Chief Data"
+Enterprise Applications Administrator,2,25E,12,"145,253",2,25E,12,"149,611","Senior Manager, Digital Services/Chief Data"
+G.I.S. Administrator,1,27E,12,"78,713",1,27E,12,"81,074","Senior Manager, Digital Services/Chief Data"
+G.I.S. Coordinator,—,25E,—,—,1,25E,12,"74,806","Senior Manager, Digital Services/Chief Data"
+"Analyst, G.I.S.",1,25D,12,"66,580",1,25D,12,"68,578","Senior Manager, Digital Services/Chief Data"
+"Analyst, G.I.S.",1,U07-O,12,"63,272",—,U07-O,—,—,"Senior Manager, Digital Services/Chief Data"
+Applications Specialist,1,23E,12,"67,025",—,23E,—,—,"Senior Manager, Digital Services/Chief Data"
+Devices Specialist,1,22E,12,"64,251",—,22E,—,—,"Senior Manager, Digital Services/Chief Data"
+Computer Devices Administrator,1,25E,12,"72,627",—,25E,—,—,"Senior Manager, Digital Services/Chief Data"
+Communications,,,,,,,,,Communications
+Communication Technology Manager,1,27E,12,"78,713",1,29E,12,"88,375",Communications
+Editor/Videographer,3,U07-E,12,"157,377",4,U07-E,12,"216,131",Communications
+"Manager, Communication Services",1,27E,12,"78,713",1,29E,12,"88,375",Communications
+"Assistant Manager, Communication Services",1,26E,12,"75,710",1,26E,12,"77,981",Communications
+"Coordinator, Print Shop",1,U05-L,12,"50,343",1,U05-L,12,"51,853",Communications
+Web Developer,1,26E,12,"75,710",1,26E,12,"77,981",Communications
+I&P Administration,,,,,,,,,I&P Administration
+Administration Manager,1,27E,12,"78,713",1,29E,12,"88,375",I&P Administration
+Senior Fiscal Administrator,1,20E,12,"59,065",1,22E,12,"66,179",I&P Administration
+Chief Clerk 1,1,16E,12,"49,836",1,18E,12,"55,888",I&P Administration
+"Coordinator, Administrative",1,U04-F,12,"42,046",1,U04-F,12,"43,307",I&P Administration
+Administrative Aide,1,U08-E,12,"38,073",—,U08-E,—,—,I&P Administration
+Total Full-Time Permanent Positions,65,,,"4,748,994",67,,,"5,101,571",I&P Administration

@@ -4021,7 +4021,17 @@ class SpatialTableExtractor:
                         header.append("section")
                     writer.writerow(header)
                     if table.headers:
-                        row_with_section = table.headers + (["section"] if has_sections else [])
+                        # Fix header/column count mismatch: strip extra empty
+                        # headers that don't correspond to data columns.
+                        out_headers = table.headers
+                        num_cols = len(table.columns)
+                        if len(out_headers) > num_cols:
+                            empty_idxs = [i for i, h in enumerate(out_headers) if not h.strip()]
+                            extra = len(out_headers) - num_cols
+                            if len(empty_idxs) >= extra:
+                                remove = set(empty_idxs[:extra])
+                                out_headers = [h for i, h in enumerate(out_headers) if i not in remove]
+                        row_with_section = out_headers + (["section"] if has_sections else [])
                         writer.writerow(row_with_section)
                     for row, section in zip(table.rows, sections):
                         row_data = row.cells + ([section] if has_sections else [])
