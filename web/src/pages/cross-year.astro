@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import SearchBar from '../components/SearchBar.tsx';
+import CrossYearComparison from '../components/CrossYearComparison.tsx';
+import searchIndex from '../data/views/search-index.json';
+import proposedBudgets from '../data/views/2025-department-budgets.json';
+import adoptedBudgets from '../data/views/department-budgets.json';
+---
+
+<Base title="Proposed vs Adopted" description="Compare the mayor's proposed 2025 budget to what council adopted — department by department.">
+  <h1 class="text-3xl font-bold mb-2">2025: Proposed vs. Adopted</h1>
+  <p class="text-gray-600 mb-4">
+    The mayor proposes a budget; council amends and adopts it. This page compares
+    the <strong>2025 proposed budget</strong> (from the 2025 budget document) to the
+    <strong>2025 adopted budget</strong> (as reported in the 2026 budget document),
+    showing where council made changes.
+  </p>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} client:load />
+  </div>
+
+  <CrossYearComparison
+    client:load
+    proposed={proposedBudgets}
+    adopted={adoptedBudgets}
+  />
+</Base>

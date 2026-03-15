@@ -1,0 +1,362 @@
+[
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "totalFte2024": 909.0,
+    "totalFte2025": 875.0,
+    "totalBudget2024": 77041060.0,
+    "totalBudget2025": 75423309.0,
+    "positionCount": 26
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "totalFte2024": 680.0,
+    "totalFte2025": 679.0,
+    "totalBudget2024": 56508687.0,
+    "totalBudget2025": 58816829.0,
+    "positionCount": 18
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "totalFte2024": 316.0,
+    "totalFte2025": 286.0,
+    "totalBudget2024": 19180367.0,
+    "totalBudget2025": 17871285.0,
+    "positionCount": 28
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "totalFte2024": 219.0,
+    "totalFte2025": 219.0,
+    "totalBudget2024": 15295729.0,
+    "totalBudget2025": 16857071.0,
+    "positionCount": 12
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "totalFte2024": 118.0,
+    "totalFte2025": 122.0,
+    "totalBudget2024": 9018268.0,
+    "totalBudget2025": 9595032.0,
+    "positionCount": 83
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "totalFte2024": 120.0,
+    "totalFte2025": 120.0,
+    "totalBudget2024": 8207610.0,
+    "totalBudget2025": 8547889.0,
+    "positionCount": 35
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "totalFte2024": 90.0,
+    "totalFte2025": 88.0,
+    "totalBudget2024": 6103353.0,
+    "totalBudget2025": 6316810.0,
+    "positionCount": 38
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "totalFte2024": 53.8,
+    "totalFte2025": 52.8,
+    "totalBudget2024": 6172587.0,
+    "totalBudget2025": 6032875.0,
+    "positionCount": 30
+  },
+  {
+    "department": "Bureau of Administration (Public Safety)",
+    "slug": "bureau-of-administration-public-safety",
+    "totalFte2024": 135.0,
+    "totalFte2025": 134.0,
+    "totalBudget2024": 5538237.0,
+    "totalBudget2025": 5867234.0,
+    "positionCount": 44
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "totalFte2024": 67.0,
+    "totalFte2025": 68.0,
+    "totalBudget2024": 5576182.0,
+    "totalBudget2025": 5781627.0,
+    "positionCount": 67
+  },
+  {
+    "department": "Office of the City Controller",
+    "slug": "office-of-the-city-controller",
+    "totalFte2024": 58.0,
+    "totalFte2025": 57.0,
+    "totalBudget2024": 4831812.0,
+    "totalBudget2025": 4643262.0,
+    "positionCount": 56
+  },
+  {
+    "department": "Regional Asset District - Public Works Trust Fund",
+    "slug": "regional-asset-district-public-works-trust-fund",
+    "totalFte2024": 73.0,
+    "totalFte2025": 86.0,
+    "totalBudget2024": 3933817.0,
+    "totalBudget2025": 4616747.0,
+    "positionCount": 10
+  },
+  {
+    "department": "Department of City Planning",
+    "slug": "department-of-city-planning",
+    "totalFte2024": 56.0,
+    "totalFte2025": 54.0,
+    "totalBudget2024": 4365820.0,
+    "totalBudget2025": 4416974.0,
+    "positionCount": 40
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "totalFte2024": 40.0,
+    "totalFte2025": 40.0,
+    "totalBudget2024": 3680790.0,
+    "totalBudget2025": 3863694.0,
+    "positionCount": 21
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "totalFte2024": 46.0,
+    "totalFte2025": 41.0,
+    "totalBudget2024": 3727584.0,
+    "totalBudget2025": 3415829.0,
+    "positionCount": 53
+  },
+  {
+    "department": "Parks Tax Trust Fund",
+    "slug": "parks-tax-trust-fund",
+    "totalFte2024": 54.0,
+    "totalFte2025": 57.0,
+    "totalBudget2024": 3167631.0,
+    "totalBudget2025": 3399285.0,
+    "positionCount": 25
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "totalFte2024": 38.0,
+    "totalFte2025": 47.0,
+    "totalBudget2024": 2522208.0,
+    "totalBudget2025": 3194880.0,
+    "positionCount": 31
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "totalFte2024": 38.0,
+    "totalFte2025": 38.0,
+    "totalBudget2024": 2873991.0,
+    "totalBudget2025": 3024948.0,
+    "positionCount": 39
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "totalFte2024": 32.0,
+    "totalFte2025": 32.0,
+    "totalBudget2024": 2759033.0,
+    "totalBudget2025": 2887036.0,
+    "positionCount": 29
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "totalFte2024": 0.0,
+    "totalFte2025": 0.0,
+    "totalBudget2024": 2942730.0,
+    "totalBudget2025": 2804838.0,
+    "positionCount": 6
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "totalFte2024": 39.95,
+    "totalFte2025": 40.95,
+    "totalBudget2024": 2716832.0,
+    "totalBudget2025": 2702121.0,
+    "positionCount": 35
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "totalFte2024": 13.6,
+    "totalFte2025": 13.6,
+    "totalBudget2024": 2484654.0,
+    "totalBudget2025": 2364249.0,
+    "positionCount": 22
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "totalFte2024": 24.0,
+    "totalFte2025": 31.0,
+    "totalBudget2024": 1756823.0,
+    "totalBudget2025": 2296948.0,
+    "positionCount": 25
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "totalFte2024": 27.5,
+    "totalFte2025": 27.5,
+    "totalBudget2024": 1734487.0,
+    "totalBudget2025": 1751743.0,
+    "positionCount": 9
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "totalFte2024": 21.0,
+    "totalFte2025": 21.0,
+    "totalBudget2024": 1578924.0,
+    "totalBudget2025": 1603586.0,
+    "positionCount": 25
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "totalFte2024": 20.0,
+    "totalFte2025": 20.0,
+    "totalBudget2024": 1251895.0,
+    "totalBudget2025": 1289580.0,
+    "positionCount": 11
+  },
+  {
+    "department": "Grants",
+    "slug": "grants",
+    "totalFte2024": 9.0,
+    "totalFte2025": 20.0,
+    "totalBudget2024": 410781.0,
+    "totalBudget2025": 1251669.22,
+    "positionCount": 14
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "totalFte2024": 16.0,
+    "totalFte2025": 17.0,
+    "totalBudget2024": 841231.0,
+    "totalBudget2025": 949814.0,
+    "positionCount": 4
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "totalFte2024": 11.0,
+    "totalFte2025": 11.0,
+    "totalBudget2024": 773032.0,
+    "totalBudget2025": 804045.0,
+    "positionCount": 8
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "totalFte2024": 9.0,
+    "totalFte2025": 9.0,
+    "totalBudget2024": 587587.0,
+    "totalBudget2025": 604918.0,
+    "positionCount": 9
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "totalFte2024": 8.0,
+    "totalFte2025": 8.0,
+    "totalBudget2024": 571951.0,
+    "totalBudget2025": 588498.0,
+    "positionCount": 5
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "totalFte2024": 8.0,
+    "totalFte2025": 8.0,
+    "totalBudget2024": 553947.0,
+    "totalBudget2025": 570280.0,
+    "positionCount": 8
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "totalFte2024": 8.5,
+    "totalFte2025": 5.050000000000001,
+    "totalBudget2024": 434203.0,
+    "totalBudget2025": 306862.0,
+    "positionCount": 8
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "totalFte2024": 1.0,
+    "totalFte2025": 1.0,
+    "totalBudget2024": 297421.0,
+    "totalBudget2025": 295132.0,
+    "positionCount": 6
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "totalFte2024": 3.95,
+    "totalFte2025": 3.95,
+    "totalBudget2024": 273598.0,
+    "totalBudget2025": 277200.0,
+    "positionCount": 7
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "totalFte2024": 1.0,
+    "totalFte2025": 1.0,
+    "totalBudget2024": 107490.0,
+    "totalBudget2025": 140718.0,
+    "positionCount": 4
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "totalFte2024": 1.15,
+    "totalFte2025": 1.15,
+    "totalBudget2024": 115215.0,
+    "totalBudget2025": 118681.0,
+    "positionCount": 6
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "totalFte2024": 1.0,
+    "totalFte2025": 1.0,
+    "totalBudget2024": 38542.0,
+    "totalBudget2025": 39698.0,
+    "positionCount": 1
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "totalFte2024": 203.0,
+    "totalFte2025": 0.0,
+    "totalBudget2024": 11537484.0,
+    "totalBudget2025": 0.0,
+    "positionCount": 24
+  },
+  {
+    "department": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "totalFte2024": 1.0,
+    "totalFte2025": 0.0,
+    "totalBudget2024": 63437.0,
+    "totalBudget2025": 0.0,
+    "positionCount": 1
+  }
+]

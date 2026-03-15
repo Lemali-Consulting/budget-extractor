@@ -42,6 +42,7 @@ function navClass(href: string): string {
         <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
         <nav class="flex gap-4 text-sm" aria-label="Main navigation">
           <a href="/changes/" class={navClass('/changes/')}>What Changed</a>
+          <a href="/cross-year/" class={navClass('/cross-year/')}>Proposed vs Adopted</a>
           <a href="/operating/" class={navClass('/operating/')}>Operating</a>
           <a href="/capital/" class={navClass('/capital/')}>Capital</a>
           <span class="text-blue-600" aria-hidden="true">|</span>
@@ -57,7 +58,8 @@ function navClass(href: string): string {
       <slot />
     </main>
     <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-200">
-      Data extracted from the City of Pittsburgh FY2026 Operating &amp; Capital Budgets
+      <p>Data extracted from the City of Pittsburgh FY2026 Operating &amp; Capital Budgets</p>
+      <p class="mt-1"><a href="/about/" class="hover:text-blue-600 underline">About this site</a> &mdash; how it was built, the role of AI, and important caveats</p>
     </footer>
   </body>
 </html>

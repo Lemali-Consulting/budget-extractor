@@ -1,0 +1,2037 @@
+[
+  {
+    "title": "Capital Budget Introduction",
+    "slug": "capital-budget-introduction",
+    "functionalArea": "",
+    "department": "",
+    "projectType": ""
+  },
+  {
+    "title": "28TH STREET BRIDGE (TIP)",
+    "slug": "28th-street-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 460000.0,
+      "2025": 0.0,
+      "2026": 0.0,
+      "2027": 5000000.0,
+      "2028": 5000000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 10000000.0
+    }
+  },
+  {
+    "title": "BEAVER AVENUE TWO-WAY CONVERSION (TIP)",
+    "slug": "beaver-avenue-two-way-conversion-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 0.0,
+      "2026": 750000.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 750000.0
+    }
+  },
+  {
+    "title": "BLOOMFIELD BRIDGE (TIP)",
+    "slug": "bloomfield-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1200000.0,
+      "2025": 0.0,
+      "2026": 850000.0,
+      "2027": 0.0,
+      "2028": 7000000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 7850000.0
+    }
+  },
+  {
+    "title": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
+    "slug": "bridge-preservation-and-restoration-fund-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 3431050.0,
+      "2025": 2000000.0,
+      "2026": 2500000.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 4500000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "2025 BRIDGE PRESERVATION AND RESTORATION FUND",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "100,000"
+      },
+      {
+        "Deliverable/Objective": "2025 BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "OTHER",
+        "Cost": "1,900,000"
+      }
+    ]
+  },
+  {
+    "title": "BRIDGE UPGRADES",
+    "slug": "bridge-upgrades",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 132950.0,
+      "2025": 700000.0,
+      "2026": 300000.0,
+      "2027": 500000.0,
+      "2028": 500000.0,
+      "2029": 500000.0,
+      "2030": 500000.0,
+      "Total 2025-2030": 3000000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CRITICAL BRIDGE UPGRADES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "700,000"
+      }
+    ]
+  },
+  {
+    "title": "CALERA STREET BRIDGE (TIP)",
+    "slug": "calera-street-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 550000.0,
+      "2025": 200000.0,
+      "2026": 0.0,
+      "2027": 4000000.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 4200000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CALERA ST BRIDGE - FINAL DESIGN (TIP)",
+        "Location": "Calera St & Corley St",
+        "District": "District 5",
+        "Fund": "OTHER",
+        "Cost": "200,000"
+      }
+    ]
+  },
+  {
+    "title": "CALIFORNIA AVENUE BRIDGE (TIP)",
+    "slug": "california-avenue-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 0.0,
+      "2026": 1100000.0,
+      "2027": 450000.0,
+      "2028": 23550000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 25100000.0
+    }
+  },
+  {
+    "title": "CHARLES ANDERSON BRIDGE (TIP)",
+    "slug": "charles-anderson-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 48600000.0,
+      "2025": 6100000.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 6100000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CHARLES ANDERSON BRIDGE - CONSTRUCTION (TIP)",
+        "Location": "Blvd of the Allies & Parkview Ave",
+        "District": "District 3",
+        "Fund": "OTHER",
+        "Cost": "6,100,000"
+      }
+    ]
+  },
+  {
+    "title": "COMPLETE STREETS",
+    "slug": "complete-streets",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 16086734.0,
+      "2025": 3706661.0,
+      "2026": 3100000.0,
+      "2027": 888813.0,
+      "2028": 4014606.0,
+      "2029": 800000.0,
+      "2030": 900000.0,
+      "Total 2025-2030": 13410079.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "E OHIO ST SAFETY AND STREETSCAPE IMPROVEMENTS (TASA)",
+        "Location": "Cedar Ave & E Ohio St",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "1,500,000"
+      },
+      {
+        "Deliverable/Objective": "NEIGHBORHOOD TRAFFIC CALMING",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "1,075,000"
+      },
+      {
+        "Deliverable/Objective": "E LIBERTY-NEGLEY AVE SAFETY IMPROVEMENTS (TASA)",
+        "Location": "Penn Ave & N Negley Ave",
+        "District": "District 9",
+        "Fund": "OTHER",
+        "Cost": "1,071,661"
+      },
+      {
+        "Deliverable/Objective": "CALIFORNIA AVE/TERMON AVE/BRIGHTON HEIGHTS BLVD FIVE POINTS INTERSECTION EVALUATION",
+        "Location": "Termon Ave & California Ave",
+        "District": "District 1",
+        "Fund": "PAYGO",
+        "Cost": "60,000"
+      }
+    ]
+  },
+  {
+    "title": "CORLEY STREET BRIDGE (TIP)",
+    "slug": "corley-street-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 550000.0,
+      "2025": 0.0,
+      "2026": 250000.0,
+      "2027": 0.0,
+      "2028": 5000000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 5250000.0
+    }
+  },
+  {
+    "title": "CORLISS STREET TUNNEL (TIP)",
+    "slug": "corliss-street-tunnel-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 0.0,
+      "2026": 1000000.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 1000000.0
+    }
+  },
+  {
+    "title": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
+    "slug": "design-construction-and-inspection-services",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 692500.0,
+      "2025": 100000.0,
+      "2026": 100000.0,
+      "2027": 100000.0,
+      "2028": 100000.0,
+      "2029": 100000.0,
+      "2030": 100000.0,
+      "Total 2025-2030": 600000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CONSTRUCTION MANAGEMENT/CONSTRUCTION INSPECTION SERVICES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "100,000"
+      }
+    ]
+  },
+  {
+    "title": "EAST SYCAMORE STREET BRIDGE (TIP)",
+    "slug": "east-sycamore-street-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 600000.0,
+      "2025": 0.0,
+      "2026": 550000.0,
+      "2027": 4000000.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 4550000.0
+    }
+  },
+  {
+    "title": "ELIZABETH STREET BRIDGE (TIP)",
+    "slug": "elizabeth-street-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 550000.0,
+      "2025": 75000.0,
+      "2026": 200000.0,
+      "2027": 0.0,
+      "2028": 5000000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 5275000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "ELIZABETH ST BRIDGE - FINAL DESIGN",
+        "Location": "E Elizabeth St & Second Avenue",
+        "District": "District 5",
+        "Fund": "BOND",
+        "Cost": "75,000"
+      }
+    ]
+  },
+  {
+    "title": "FLEX BEAM GUIDERAILS AND FENCING",
+    "slug": "flex-beam-guiderails-and-fencing",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 100000.0,
+      "2025": 100000.0,
+      "2026": 100000.0,
+      "2027": 100000.0,
+      "2028": 100000.0,
+      "2029": 100000.0,
+      "2030": 100000.0,
+      "Total 2025-2030": 600000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "FLEX BEAM GUIDERAILS AND FENCING",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "100,000"
+      }
+    ]
+  },
+  {
+    "title": "FLOOD CONTROL PROJECTS",
+    "slug": "flood-control-projects",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 5965862.0,
+      "2025": 700000.0,
+      "2026": 1100000.0,
+      "2027": 900000.0,
+      "2028": 1800000.0,
+      "2029": 2000000.0,
+      "2030": 2000000.0,
+      "Total 2025-2030": 8500000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "STREETS RUN STREAM BANK - CONSTRUCTION",
+        "Location": "Calera St & Corley St",
+        "District": "District 5",
+        "Fund": "BOND",
+        "Cost": "400,000"
+      },
+      {
+        "Deliverable/Objective": "URGENT FLOOD CONTROL REMEDIATION",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "300,000"
+      }
+    ]
+  },
+  {
+    "title": "FRANKSTOWN AVENUE SIGNAL IMPROVEMENTS (TIP)",
+    "slug": "frankstown-avenue-signal-improvements-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 3800286.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 3800286.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "FRANKSTOWN AVE SIGNAL IMPROVEMENTS - CONSTRUCTION",
+        "Location": "Frankstown Ave & N Murtland St",
+        "District": "District 9",
+        "Fund": "BOND",
+        "Cost": "760,000"
+      },
+      {
+        "Deliverable/Objective": "FRANKSTOWN AVE SIGNAL IMPROVEMENTS - CONSTRUCTION (TIP)",
+        "Location": "Frankstown Ave & N Murtland St",
+        "District": "District 9",
+        "Fund": "OTHER",
+        "Cost": "3,040,286"
+      }
+    ]
+  },
+  {
+    "title": "HERRON AVENUE BRIDGE (TIP)",
+    "slug": "herron-avenue-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 50000.0,
+      "2025": 0.0,
+      "2026": 250000.0,
+      "2027": 0.0,
+      "2028": 6000000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 6250000.0
+    }
+  },
+  {
+    "title": "LARIMER BRIDGE (TIP)",
+    "slug": "larimer-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 100000.0,
+      "2025": 0.0,
+      "2026": 900000.0,
+      "2027": 4062500.0,
+      "2028": 6062500.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 11025000.0
+    }
+  },
+  {
+    "title": "LIBERTY AVENUE (HSIP)",
+    "slug": "liberty-avenue-hsip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 2370000.0,
+      "2025": 2030000.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 2030000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "LIBERTY AVE - CONSTRUCTION",
+        "Location": "Liberty Ave & 21st St",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "626,000"
+      },
+      {
+        "Deliverable/Objective": "LIBERTY AVE - CONSTRUCTION (HSIP)",
+        "Location": "Liberty Ave & 21st St",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "1,404,000"
+      }
+    ]
+  },
+  {
+    "title": "MAPLE AVENUE BRIDGE (TIP)",
+    "slug": "maple-avenue-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 550000.0,
+      "2025": 0.0,
+      "2026": 100000.0,
+      "2027": 3000000.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 3100000.0
+    }
+  },
+  {
+    "title": "P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)",
+    "slug": "p-j-mcardle-roadway-bridge-over-hillside-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 750000.0,
+      "2025": 0.0,
+      "2026": 650000.0,
+      "2027": 0.0,
+      "2028": 5000000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 5650000.0
+    }
+  },
+  {
+    "title": "P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)",
+    "slug": "p-j-mcardle-roadway-bridge-over-sycamore-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 600000.0,
+      "2025": 0.0,
+      "2026": 550000.0,
+      "2027": 0.0,
+      "2028": 5500000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 6050000.0
+    }
+  },
+  {
+    "title": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
+    "slug": "penn-avenue-reconstruction-phase-ii-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1180000.0,
+      "2025": 4000000.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 4000000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "PENN AVE, PHASE II - CONSTRUCTION",
+        "Location": "Penn Ave & S Aiken Ave",
+        "District": "District 9",
+        "Fund": "BOND",
+        "Cost": "800,000"
+      },
+      {
+        "Deliverable/Objective": "PENN AVE, PHASE II - CONSTRUCTION (TIP)",
+        "Location": "Penn Ave & S Aiken Ave",
+        "District": "District 9",
+        "Fund": "OTHER",
+        "Cost": "3,200,000"
+      }
+    ]
+  },
+  {
+    "title": "PENN AVENUE SIGNAL IMPROVEMENTS (TIP)",
+    "slug": "penn-avenue-signal-improvements-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 230000.0,
+      "2025": 1100000.0,
+      "2026": 1875000.0,
+      "2027": 3060720.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 6035720.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "PENN AVE SIGNAL IMPROVEMENTS - FINAL DESIGN",
+        "Location": "Penn Ave & 17th St",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "200,000"
+      },
+      {
+        "Deliverable/Objective": "PENN AVE SIGNAL IMPROVEMENTS - FINAL DESIGN (TIP)",
+        "Location": "Penn Ave & 17th St",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "800,000"
+      },
+      {
+        "Deliverable/Objective": "PENN AVE SIGNAL IMPROVEMENTS - RIGHT OF WAY ACQUISITION",
+        "Location": "Penn Ave & 17th St",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "20,000"
+      },
+      {
+        "Deliverable/Objective": "PENN AVE SIGNAL IMPROVEMENTS - RIGHT OF WAY ACQUISITION (TIP)",
+        "Location": "Penn Ave & 17th St",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "80,000"
+      }
+    ]
+  },
+  {
+    "title": "RAMP AND PUBLIC SIDEWALK",
+    "slug": "ramp-and-public-sidewalk",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1400000.0,
+      "2025": 810000.0,
+      "2026": 400000.0,
+      "2027": 700000.0,
+      "2028": 800000.0,
+      "2029": 1000000.0,
+      "2030": 1000000.0,
+      "Total 2025-2030": 4710000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "BUS SHELTER/TRANSIT STOP IMPROVEMENTS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "110,000"
+      },
+      {
+        "Deliverable/Objective": "CRITICAL SIDEWALK GAPS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "700,000"
+      }
+    ]
+  },
+  {
+    "title": "SLOPE FAILURE REMEDIATION",
+    "slug": "slope-failure-remediation",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 6259038.0,
+      "2025": 4200000.0,
+      "2026": 1700000.0,
+      "2027": 2500000.0,
+      "2028": 1500000.0,
+      "2029": 3000000.0,
+      "2030": 3000000.0,
+      "Total 2025-2030": 15900000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "SPRING GARDEN LANDSLIDE - DESIGN",
+        "Location": "1520 Spring Garden Ave",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "200,000"
+      },
+      {
+        "Deliverable/Objective": "BOGGSTON ST - WALL UPGRADE",
+        "Location": "Boggston St & Warrington Ave",
+        "District": "District 3",
+        "Fund": "BOND",
+        "Cost": "300,000"
+      },
+      {
+        "Deliverable/Objective": "RAPID RESPONSE UPGRADES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "500,000"
+      },
+      {
+        "Deliverable/Objective": "HERNDON ST - SLOPE UPGRADES",
+        "Location": "Herndon St & Furley St",
+        "District": "District 2",
+        "Fund": "BOND",
+        "Cost": "1,200,000"
+      },
+      {
+        "Deliverable/Objective": "OPORTO ST - LANDSLIDE REMEDIATION",
+        "Location": "Oporto St & Huron St",
+        "District": "District 3",
+        "Fund": "BOND",
+        "Cost": "500,000"
+      },
+      {
+        "Deliverable/Objective": "RIVERVIEW PARK S1 & S3 - CONSTRUCTION",
+        "Location": "Riverview Ave at Perrysville Ave",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "1,500,000"
+      }
+    ]
+  },
+  {
+    "title": "SOUTH NEGLEY AVENUE BRIDGE (TIP)",
+    "slug": "south-negley-avenue-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 415000.0,
+      "2026": 0.0,
+      "2027": 1900000.0,
+      "2028": 3500000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 5815000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "S NEGLEY AVE BRIDGE - RIGHT OF WAY ACQUISITION",
+        "Location": "S Negley Ave & Centre Ave",
+        "District": "District 8",
+        "Fund": "BOND",
+        "Cost": "20,750"
+      },
+      {
+        "Deliverable/Objective": "S NEGLEY AVE BRIDGE - RIGHT OF WAY ACQUISITION (TIP)",
+        "Location": "S Negley Ave & Centre Ave",
+        "District": "District 8",
+        "Fund": "OTHER",
+        "Cost": "394,250"
+      }
+    ]
+  },
+  {
+    "title": "STEP REPAIR AND REPLACEMENT",
+    "slug": "step-repair-and-replacement",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 4760225.0,
+      "2025": 650000.0,
+      "2026": 895000.0,
+      "2027": 6765000.0,
+      "2028": 600000.0,
+      "2029": 1000000.0,
+      "2030": 1000000.0,
+      "Total 2025-2030": 10910000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "URGENT STEP UPGRADES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "650,000"
+      }
+    ]
+  },
+  {
+    "title": "STREET RESURFACING",
+    "slug": "street-resurfacing",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 16995704.0,
+      "2025": 19647000.0,
+      "2026": 16520000.0,
+      "2027": 13655000.0,
+      "2028": 16100000.0,
+      "2029": 19600000.0,
+      "2030": 19000000.0,
+      "Total 2025-2030": 104522000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "ASPHALT REPLACEMENT",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "17,357,000"
+      },
+      {
+        "Deliverable/Objective": "BRICK AND BLOCKSTONE STREET REPAIRS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "800,000"
+      },
+      {
+        "Deliverable/Objective": "CONCRETE STREET REPAIRS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "800,000"
+      },
+      {
+        "Deliverable/Objective": "PAVEMENT MARKINGS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "690,000"
+      }
+    ]
+  },
+  {
+    "title": "SWINDELL BRIDGE (TIP)",
+    "slug": "swindell-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 2100000.0,
+      "2026": 8000000.0,
+      "2027": 22000000.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 32100000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "SWINDELL BRIDGE - FINAL DESIGN",
+        "Location": "Swindell Br",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "100,000"
+      },
+      {
+        "Deliverable/Objective": "SWINDELL BRIDGE - FINAL DESIGN (TIP)",
+        "Location": "Swindell Br",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "1,900,000"
+      },
+      {
+        "Deliverable/Objective": "SWINDELL BRIDGE - RIGHT OF WAY ACQUISITION",
+        "Location": "Swindell Br",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "5,000"
+      },
+      {
+        "Deliverable/Objective": "SWINDELL BRIDGE - RIGHT OF WAY ACQUISITION (TIP)",
+        "Location": "Swindell Br",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "95,000"
+      }
+    ]
+  },
+  {
+    "title": "TRAIL DEVELOPMENT",
+    "slug": "trail-development",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 200000.0,
+      "2025": 550000.0,
+      "2026": 100000.0,
+      "2027": 500000.0,
+      "2028": 3800000.0,
+      "2029": 1100000.0,
+      "2030": 1100000.0,
+      "Total 2025-2030": 7150000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "WEST END TROLLEY TRAIL - CONSTRUCTION",
+        "Location": "Noblestown Rd & Crafton Blvd",
+        "District": "District 2",
+        "Fund": "BOND",
+        "Cost": "550,000"
+      }
+    ]
+  },
+  {
+    "title": "WEST CARSON STREET BRIDGE (TIP)",
+    "slug": "west-carson-street-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 0.0,
+      "2026": 750000.0,
+      "2027": 10000000.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 10750000.0
+    }
+  },
+  {
+    "title": "SWINBURNE BRIDGE (TIP)",
+    "slug": "swinburne-bridge-tip",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 0.0,
+      "2026": 0.0,
+      "2027": 8281251.0,
+      "2028": 4018749.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 12300000.0
+    }
+  },
+  {
+    "title": "BOB O'CONNOR GOLF COURSE",
+    "slug": "bob-o-connor-golf-course",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 44000.0,
+      "2025": 44000.0,
+      "2026": 44000.0,
+      "2027": 44000.0,
+      "2028": 44000.0,
+      "2029": 44000.0,
+      "2030": 44000.0,
+      "Total 2025-2030": 264000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "BOB O'CONNOR GOLF COURSE",
+        "Location": "Schenley Dr & Darlington Rd",
+        "District": "District 5",
+        "Fund": "PAYGO",
+        "Cost": "44,000"
+      }
+    ]
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - CITY FACILITIES",
+    "slug": "facility-improvements-city-facilities",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 2092515.0,
+      "2025": 3408000.0,
+      "2026": 3935000.0,
+      "2027": 8543000.0,
+      "2028": 2672000.0,
+      "2029": 5200000.0,
+      "2030": 3000000.0,
+      "Total 2025-2030": 26758000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CITY-COUNTY BUILDING ELEVATOR REPLACEMENT - GRANT AND FOURTH",
+        "Location": "414 Grant St",
+        "District": "District 6",
+        "Fund": "BOND",
+        "Cost": "2,500,000"
+      },
+      {
+        "Deliverable/Objective": "STREETS DIVISIONS REQUIRED UPGRADES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "408,000"
+      },
+      {
+        "Deliverable/Objective": "SCHENLEY DIVISION - DESIGN",
+        "Location": "Schenley Park",
+        "District": "District 5",
+        "Fund": "BOND",
+        "Cost": "500,000"
+      }
+    ]
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
+    "slug": "facility-improvements-public-safety-facilities",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 9560000.0,
+      "2025": 18905327.0,
+      "2026": 6239600.0,
+      "2027": 3000000.0,
+      "2028": 3000000.0,
+      "2029": 4800000.0,
+      "2030": 5600000.0,
+      "Total 2025-2030": 41544927.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "FIRE STATION 20/MEDIC 12 - CONSTRUCTION",
+        "Location": "1233 Mifflin Rd",
+        "District": "District 5",
+        "Fund": "BOND",
+        "Cost": "12,250,000"
+      },
+      {
+        "Deliverable/Objective": "FIRE STATION 35 - CONSTRUCTION",
+        "Location": "1519 Orchlee St",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "1,508,320"
+      },
+      {
+        "Deliverable/Objective": "POLICE FIRING RANGE - CONSTRUCTION",
+        "Location": "1928 Washington Blvd",
+        "District": "District 9",
+        "Fund": "BOND",
+        "Cost": "4,764,507"
+      },
+      {
+        "Deliverable/Objective": "STRUCTURAL REPAIRS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "BOND",
+        "Cost": "382,500"
+      }
+    ]
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
+    "slug": "facility-improvements-recreation-and-senior-centers",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 12715521.0,
+      "2025": 4300000.0,
+      "2026": 3000000.0,
+      "2027": 17725649.0,
+      "2028": 2000000.0,
+      "2029": 3000000.0,
+      "2030": 3000000.0,
+      "Total 2025-2030": 33025649.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "FOWLER RECREATION CENTER - FACILITY UPGRADES - CONSTRUCTION",
+        "Location": "2435 Wilson Ave",
+        "District": "District 6",
+        "Fund": "BOND",
+        "Cost": "300,000"
+      },
+      {
+        "Deliverable/Objective": "WARRINGTON RECREATION CENTER - CONSTRUCTION",
+        "Location": "329 E Warrington Ave",
+        "District": "District 3",
+        "Fund": "BOND",
+        "Cost": "4,000,000"
+      }
+    ]
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
+    "slug": "facility-improvements-sport-facilities",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 3648485.0,
+      "2025": 1254100.0,
+      "2026": 300000.0,
+      "2027": 350000.0,
+      "2028": 300000.0,
+      "2029": 400000.0,
+      "2030": 400000.0,
+      "Total 2025-2030": 3004100.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "FOWLER FIELD DESIGN (PARKS TAX)",
+        "Location": "2435 Wilson Ave",
+        "District": "District 6",
+        "Fund": "OTHER",
+        "Cost": "250,000"
+      },
+      {
+        "Deliverable/Objective": "BLOOMFIELD SKATEPARK UPGRADES (PARKS TAX)",
+        "Location": "Ella St & Mott Way",
+        "District": "District 7",
+        "Fund": "OTHER",
+        "Cost": "250,000"
+      },
+      {
+        "Deliverable/Objective": "BURGWIN COURT UPGRADES (PARKS TAX)",
+        "Location": "Johnston Ave & Mansion St",
+        "District": "District 5",
+        "Fund": "OTHER",
+        "Cost": "754,100"
+      }
+    ]
+  },
+  {
+    "title": "PARK RECONSTRUCTION",
+    "slug": "park-reconstruction",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 4698000.0,
+      "2025": 6323834.0,
+      "2026": 13410000.0,
+      "2027": 15120000.0,
+      "2028": 10740000.0,
+      "2029": 13200000.0,
+      "2030": 9000000.0,
+      "Total 2025-2030": 67793834.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "ANDERSON FARMS",
+        "Location": "1399 Oakridge St",
+        "District": "District 4",
+        "Fund": "BOND",
+        "Cost": "83,000"
+      },
+      {
+        "Deliverable/Objective": "SOUTH SIDE PARK - PHASE I CONSTRUCTION SUPPLEMENTAL",
+        "Location": "2000 Julia St",
+        "District": "District 3",
+        "Fund": "BOND",
+        "Cost": "1,000,000"
+      },
+      {
+        "Deliverable/Objective": "MARMADUKE PAVING UPGRADES (PARKS TAX)",
+        "Location": "3915 Oswald St",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "100,000"
+      },
+      {
+        "Deliverable/Objective": "ARSENAL PARK - PHASE II DESIGN",
+        "Location": "40th St & Butler St",
+        "District": "District 7",
+        "Fund": "BOND",
+        "Cost": "360,000"
+      },
+      {
+        "Deliverable/Objective": "McKINLEY PARK RETAINING WALL (PARKS TAX)",
+        "Location": "600 Bausman St",
+        "District": "District 3",
+        "Fund": "OTHER",
+        "Cost": "500,000"
+      },
+      {
+        "Deliverable/Objective": "EAST HILLS PARK - CONSTRUCTION",
+        "Location": "E Hills Dr & Wilner Dr",
+        "District": "District 9",
+        "Fund": "BOND",
+        "Cost": "2,500,000"
+      },
+      {
+        "Deliverable/Objective": "SPRING HILL PARK - CONSTRUCTION SUPPLEMENTAL",
+        "Location": "S Side Ave. & Hespen St",
+        "District": "District 1",
+        "Fund": "BOND",
+        "Cost": "1,280,834"
+      },
+      {
+        "Deliverable/Objective": "SHERADEN PARK - PHASE I CONSTRUCTION SUPPLEMENTAL",
+        "Location": "Thornton St & Surban St",
+        "District": "District 2",
+        "Fund": "BOND",
+        "Cost": "500,000"
+      }
+    ]
+  },
+  {
+    "title": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
+    "slug": "park-reconstruction-regional-asset-district-parks",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 2780000.0,
+      "2025": 2300000.0,
+      "2026": 2500000.0,
+      "2027": 2500000.0,
+      "2028": 2500000.0,
+      "2029": 2500000.0,
+      "2030": 2500000.0,
+      "Total 2025-2030": 14800000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "GRANDVIEW PARK BANDSHELL - DESIGN (RAD)",
+        "Location": "664 Science St",
+        "District": "District 2",
+        "Fund": "OTHER",
+        "Cost": "250,000"
+      },
+      {
+        "Deliverable/Objective": "SERPENTINE DR WALL - CONSTRUCTION (RAD)",
+        "Location": "Serpentine Dr & Bartlett St",
+        "District": "District 5",
+        "Fund": "OTHER",
+        "Cost": "2,050,000"
+      }
+    ]
+  },
+  {
+    "title": "PLAY AREA IMPROVEMENTS",
+    "slug": "play-area-improvements",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1100000.0,
+      "2025": 550000.0,
+      "2026": 300000.0,
+      "2027": 250000.0,
+      "2028": 300000.0,
+      "2029": 300000.0,
+      "2030": 300000.0,
+      "Total 2025-2030": 2000000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "McCANDLESS PLAYGROUND UPGRADES (PARKS TAX)",
+        "Location": "112 McCandless Ave",
+        "District": "District 7",
+        "Fund": "OTHER",
+        "Cost": "150,000"
+      },
+      {
+        "Deliverable/Objective": "LOOKOUT PLAYGROUND UPGRADES (PARKS TAX)",
+        "Location": "1904 Lookout St",
+        "District": "District 1",
+        "Fund": "OTHER",
+        "Cost": "400,000"
+      }
+    ]
+  },
+  {
+    "title": "PUBLIC SAFETY TRAINING FACILITY",
+    "slug": "public-safety-training-facility",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 900000.0,
+      "2026": 500000.0,
+      "2027": 5000000.0,
+      "2028": 12007558.0,
+      "2029": 33800000.0,
+      "2030": 33800000.0,
+      "Total 2025-2030": 86007558.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "PUBLIC SAFETY TRAINING FACILITY",
+        "Location": "7180 Highland Dr",
+        "District": "District 9",
+        "Fund": "BOND",
+        "Cost": "900,000"
+      }
+    ]
+  },
+  {
+    "title": "BEDFORD DWELLINGS CHOICE NEIGHBORHOOD",
+    "slug": "bedford-dwellings-choice-neighborhood",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 5921000.0,
+      "2025": 5275000.0,
+      "2026": 5225000.0,
+      "2027": 5000000.0,
+      "2028": 5000000.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 20500000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "HOUSING LEVERAGE",
+        "Location": "Bedford Ave & Chauncey Dr",
+        "District": "District 6",
+        "Fund": "CDBG",
+        "Cost": "5,000,000"
+      },
+      {
+        "Deliverable/Objective": "STREET LEVEL COMMERCIAL ACTIVATION",
+        "Location": "Bedford Ave & Chauncey Dr",
+        "District": "District 6",
+        "Fund": "PAYGO",
+        "Cost": "100,000"
+      },
+      {
+        "Deliverable/Objective": "TARGETED FA\u00c7ADE REPAIR/RENOVATION",
+        "Location": "Bedford Ave & Chauncey Dr",
+        "District": "District 6",
+        "Fund": "CDBG",
+        "Cost": "175,000"
+      }
+    ]
+  },
+  {
+    "title": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
+    "slug": "home-investment-partnerships-program",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1995569.0,
+      "2025": 1995569.0,
+      "2026": 1995569.0,
+      "2027": 1995569.0,
+      "2028": 1995569.0,
+      "2029": 1995569.0,
+      "2030": 1995569.0,
+      "Total 2025-2030": 11973414.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "HOME PROGRAM",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "OTHER",
+        "Cost": "1,995,569"
+      }
+    ]
+  },
+  {
+    "title": "HOUSING DEVELOPMENT",
+    "slug": "housing-development",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 845000.0,
+      "2025": 600000.0,
+      "2026": 1000000.0,
+      "2027": 800000.0,
+      "2028": 900000.0,
+      "2029": 4000000.0,
+      "2030": 4100000.0,
+      "Total 2025-2030": 11400000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "AFFORDABLE AND WORKFORCE HOMEOWNERSHIP",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "300,000"
+      },
+      {
+        "Deliverable/Objective": "AFFORDABLE RENTAL DEVELOPMENT",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "300,000"
+      }
+    ]
+  },
+  {
+    "title": "SMALL BUSINESS DEVELOPMENT",
+    "slug": "small-business-development",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 550000.0,
+      "2025": 500000.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 500000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "NEIGHBORHOOD BUSINESS DISTRICT SUPPORT",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "500,000"
+      }
+    ]
+  },
+  {
+    "title": "WAR MEMORIALS AND PUBLIC ART",
+    "slug": "war-memorials-and-public-art",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 120000.0,
+      "2025": 100000.0,
+      "2026": 100000.0,
+      "2027": 100000.0,
+      "2028": 100000.0,
+      "2029": 100000.0,
+      "2030": 100000.0,
+      "Total 2025-2030": 600000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "ONE PERCENT FOR ART",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "100,000"
+      }
+    ]
+  },
+  {
+    "title": "PUBLIC SAFETY EQUIPMENT",
+    "slug": "public-safety-equipment",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 820000.0,
+      "2025": 610000.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 610000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "BUREAU OF FIRE - SUPPLY HOSES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "360,000"
+      },
+      {
+        "Deliverable/Objective": "BUREAU OF FIRE - THERMAL IMAGING SYSTEM",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "200,000"
+      },
+      {
+        "Deliverable/Objective": "POLICE CAMERAS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "50,000"
+      }
+    ]
+  },
+  {
+    "title": "REMEDIATION OF CONDEMNED BUILDINGS",
+    "slug": "remediation-of-condemned-buildings",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 2929000.0,
+      "2025": 5268842.0,
+      "2026": 3411695.0,
+      "2027": 4008583.0,
+      "2028": 3633583.0,
+      "2029": 5408583.0,
+      "2030": 5008583.0,
+      "Total 2025-2030": 26739869.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "DEMOLITION OF BERG PLACE",
+        "Location": "",
+        "District": "District 4",
+        "Fund": "PAYGO",
+        "Cost": "547,000"
+      },
+      {
+        "Deliverable/Objective": "DECONSTRUCTION OF DANGEROUS BUILDINGS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "2,560,500"
+      },
+      {
+        "Deliverable/Objective": "DEMOLITION OF STRUCTURES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "2,161,342"
+      }
+    ]
+  },
+  {
+    "title": "CAPITAL EQUIPMENT ACQUISITION",
+    "slug": "capital-equipment-acquisition",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 9546342.0,
+      "2025": 6024658.0,
+      "2026": 3094305.0,
+      "2027": 2747417.0,
+      "2028": 2647417.0,
+      "2029": 2447417.0,
+      "2030": 2447417.0,
+      "Total 2025-2030": 19408633.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "DPW CREW CAB DUMP TRUCKS (2) (PARKS TAX)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "OTHER",
+        "Cost": "240,000"
+      },
+      {
+        "Deliverable/Objective": "DPW GROUND MASTER MOWERS (5) (PARKS TAX)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "OTHER",
+        "Cost": "875,000"
+      },
+      {
+        "Deliverable/Objective": "DPW RAT PACKER (2) (PARKS TAX)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "OTHER",
+        "Cost": "350,000"
+      },
+      {
+        "Deliverable/Objective": "DPW, ES, 25 YARD REFUSE PACKER (1)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "420,000"
+      },
+      {
+        "Deliverable/Objective": "DPW, ES, 25 YARD WASTE RECYCLING PACKER (1)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "420,000"
+      },
+      {
+        "Deliverable/Objective": "DPW, STREETS, ONE TON DUMP TRUCKS (1)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "120,000"
+      },
+      {
+        "Deliverable/Objective": "FIRE AERIAL APPARATUS (1)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "1,500,000"
+      },
+      {
+        "Deliverable/Objective": "FIRE PUMPER LEASE (4)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "547,418"
+      },
+      {
+        "Deliverable/Objective": "FIRE TRUCK LEASE",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "977,240"
+      },
+      {
+        "Deliverable/Objective": "PS, EMS, ALS Ambulance (1)",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "575,000"
+      }
+    ]
+  },
+  {
+    "title": "CDBG ADMINISTRATION",
+    "slug": "cdbg-administration",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 244750.0,
+      "2025": 220000.0,
+      "2026": 220000.0,
+      "2027": 220000.0,
+      "2028": 220000.0,
+      "2029": 280000.0,
+      "2030": 220000.0,
+      "Total 2025-2030": 1380000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CDBG PROGRAM ADMINISTRATION",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "220,000"
+      }
+    ]
+  },
+  {
+    "title": "CDBG PERSONNEL",
+    "slug": "cdbg-personnel",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 997990.0,
+      "2025": 1100000.0,
+      "2026": 1100000.0,
+      "2027": 1100000.0,
+      "2028": 1100000.0,
+      "2029": 1100000.0,
+      "2030": 1100000.0,
+      "Total 2025-2030": 6600000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CDBG PERSONNEL",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "1,100,000"
+      }
+    ]
+  },
+  {
+    "title": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
+    "slug": "city-council-s-public-service-grants",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 650000.0,
+      "2026": 650000.0,
+      "2027": 650000.0,
+      "2028": 650000.0,
+      "2029": 650000.0,
+      "2030": 650000.0,
+      "Total 2025-2030": 3900000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "450,000"
+      },
+      {
+        "Deliverable/Objective": "HUNGER SERVICES",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "200,000"
+      }
+    ]
+  },
+  {
+    "title": "EMERGENCY SOLUTIONS GRANT",
+    "slug": "emergency-solutions-grant",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1195104.0,
+      "2025": 1195104.0,
+      "2026": 1195104.0,
+      "2027": 1195104.0,
+      "2028": 1195104.0,
+      "2029": 1195104.0,
+      "2030": 1195104.0,
+      "Total 2025-2030": 7170624.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "EMERGENCY SOLUTIONS GRANT",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "OTHER",
+        "Cost": "1,195,104"
+      }
+    ]
+  },
+  {
+    "title": "FAIR HOUSING",
+    "slug": "fair-housing",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 60000.0,
+      "2025": 94500.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 94500.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 189000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "FAIR HOUSING ADMINISTRATION AND TRAINING",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "94,500"
+      }
+    ]
+  },
+  {
+    "title": "HOUSING COUNSELING",
+    "slug": "housing-counseling",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 100000.0,
+      "2025": 100000.0,
+      "2026": 100000.0,
+      "2027": 100000.0,
+      "2028": 100000.0,
+      "2029": 100000.0,
+      "2030": 100000.0,
+      "Total 2025-2030": 600000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "HOUSING COUNSELING",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "100,000"
+      }
+    ]
+  },
+  {
+    "title": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
+    "slug": "housing-opportunities-for-persons-with-aids",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1409836.0,
+      "2025": 1409836.0,
+      "2026": 1409836.0,
+      "2027": 1409836.0,
+      "2028": 1409836.0,
+      "2029": 1409836.0,
+      "2030": 1409836.0,
+      "Total 2025-2030": 8459016.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "OTHER",
+        "Cost": "1,409,836"
+      }
+    ]
+  },
+  {
+    "title": "INFORMATION SYSTEMS MODERNIZATION",
+    "slug": "information-systems-modernization",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 3000000.0,
+      "2025": 1500000.0,
+      "2026": 0.0,
+      "2027": 0.0,
+      "2028": 0.0,
+      "2029": 0.0,
+      "2030": 0.0,
+      "Total 2025-2030": 1500000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "FACILITY REWIRING FOR NETPGH",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "700,000"
+      },
+      {
+        "Deliverable/Objective": "NETWORK EQUIPMENT FOR NETPGH",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "800,000"
+      }
+    ]
+  },
+  {
+    "title": "MAYOR'S PUBLIC SERVICE GRANTS",
+    "slug": "mayor-s-public-service-grants",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 0.0,
+      "2025": 100000.0,
+      "2026": 100000.0,
+      "2027": 100000.0,
+      "2028": 100000.0,
+      "2029": 100000.0,
+      "2030": 100000.0,
+      "Total 2025-2030": 600000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "MAYOR'S PUBLIC SERVICE GRANTS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "100,000"
+      }
+    ]
+  },
+  {
+    "title": "NEIGHBORHOOD ECONOMIC DEVELOPMENT",
+    "slug": "neighborhood-economic-development",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 720000.0,
+      "2025": 720000.0,
+      "2026": 720000.0,
+      "2027": 720000.0,
+      "2028": 720000.0,
+      "2029": 720000.0,
+      "2030": 720000.0,
+      "Total 2025-2030": 4320000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "NEIGHBORHOOD ECONOMIC DEVELOPMENT GRANTS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "720,000"
+      }
+    ]
+  },
+  {
+    "title": "NEIGHBORHOOD EMPLOYMENT CENTERS",
+    "slug": "neighborhood-employment-centers",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 210000.0,
+      "2025": 210000.0,
+      "2026": 210000.0,
+      "2027": 210000.0,
+      "2028": 210000.0,
+      "2029": 210000.0,
+      "2030": 210000.0,
+      "Total 2025-2030": 1260000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "NEIGHBORHOOD EMPLOYMENT CENTERS",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "210,000"
+      }
+    ]
+  },
+  {
+    "title": "PITTSBURGH EMPLOYMENT PROGRAM",
+    "slug": "pittsburgh-employment-program",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 300000.0,
+      "2025": 320000.0,
+      "2026": 330000.0,
+      "2027": 340000.0,
+      "2028": 350000.0,
+      "2029": 360000.0,
+      "2030": 370000.0,
+      "Total 2025-2030": 2070000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "PITTSBURGH EMPLOYMENT PROGRAM",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "320,000"
+      }
+    ]
+  },
+  {
+    "title": "SENIOR COMMUNITY PROGRAM",
+    "slug": "senior-community-program",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 1000000.0,
+      "2025": 1000000.0,
+      "2026": 1000000.0,
+      "2027": 1000000.0,
+      "2028": 1000000.0,
+      "2029": 1000000.0,
+      "2030": 1000000.0,
+      "Total 2025-2030": 6000000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "SENIOR COMMUNITY PROGRAM",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "CDBG",
+        "Cost": "1,000,000"
+      }
+    ]
+  },
+  {
+    "title": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
+    "slug": "urban-redevelopment-authority-personnel",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "funding": {
+      "2024": 575000.0,
+      "2025": 657175.0,
+      "2026": 159117.0,
+      "2027": 164087.0,
+      "2028": 169200.0,
+      "2029": 174466.0,
+      "2030": 0.0,
+      "Total 2025-2030": 1324045.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "LAND BANK PERSONNEL",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "157,175"
+      },
+      {
+        "Deliverable/Objective": "URA PROGRAM AND PROJECT DELIVERY PERSONNEL",
+        "Location": "City-Wide",
+        "District": "City-Wide",
+        "Fund": "PAYGO",
+        "Cost": "500,000"
+      }
+    ]
+  },
+  {
+    "title": "Capital Budget Appendices",
+    "slug": "capital-budget-appendices",
+    "functionalArea": "",
+    "department": "",
+    "projectType": "",
+    "deliverables": [
+      {
+        "Project": "PARK RECONSTRUCTION",
+        "Deliverable": "MARMADUKE PAVING UPGRADES (PARKS TAX)",
+        "Location": "3915 Oswald St",
+        "District": "District 1",
+        "2025": "100,000"
+      },
+      {
+        "Project": "PARK RECONSTRUCTION",
+        "Deliverable": "McKINLEY PARK RETAINING WALL (PARKS TAX)",
+        "Location": "600 Bausman St",
+        "District": "District 3",
+        "2025": "500,000"
+      },
+      {
+        "Project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
+        "Deliverable": "BURGWIN COURT UPGRADES (PARKS TAX)",
+        "Location": "Johnston Ave & Mansion St",
+        "District": "District 5",
+        "2025": "754,100"
+      },
+      {
+        "Project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
+        "Deliverable": "BLOOMFIELD SKATEPARK UPGRADES (PARKS TAX)",
+        "Location": "Ella St & Mott Way",
+        "District": "District 7",
+        "2025": "250,000"
+      },
+      {
+        "Project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
+        "Deliverable": "FOWLER FIELD DESIGN (PARKS TAX)",
+        "Location": "2435 Wilson Ave",
+        "District": "District 6",
+        "2025": "250,000"
+      }
+    ]
+  }
+]

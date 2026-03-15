@@ -1534,7 +1534,9 @@ def main() -> None:
 
     parser = argparse.ArgumentParser(description="Build web data JSON bundles from extracted CSVs.")
     parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
+    parser.add_argument("--output-prefix", type=str, default="", help="Prefix for output filenames (e.g., '2025' → '2025-budget-data.json')")
     args = parser.parse_args()
+    prefix = f"{args.output_prefix}-" if args.output_prefix else ""
 
     # Reinitialize globals for the requested year
     global BUDGET_YEAR, PRIOR_YEAR, INPUT_DIR, OPERATING_OUTPUT_DIR, CAPITAL_OUTPUT_DIR
@@ -1565,7 +1567,7 @@ def main() -> None:
     print(f"Generated highlights for {highlights_count} sections")
 
     # Full data bundle (for Astro build-time rendering of section detail pages)
-    out_path = WEB_DATA_DIR / "budget-data.json"
+    out_path = WEB_DATA_DIR / f"{prefix}budget-data.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
     print(f"Wrote {out_path} ({len(sections)} sections)")
@@ -1575,40 +1577,40 @@ def main() -> None:
 
     # Pre-computed views for client-side components
     dept_budgets = build_department_budgets(sections)
-    with open(views_dir / "department-budgets.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}department-budgets.json", "w", encoding="utf-8") as f:
         json.dump(dept_budgets, f, indent=2)
-    print(f"Wrote department-budgets.json ({len(dept_budgets)} rows)")
+    print(f"Wrote {prefix}department-budgets.json ({len(dept_budgets)} rows)")
 
     personnel = build_personnel(sections)
-    with open(views_dir / "personnel.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}personnel.json", "w", encoding="utf-8") as f:
         json.dump(personnel, f, indent=2)
-    print(f"Wrote personnel.json ({len(personnel)} rows)")
+    print(f"Wrote {prefix}personnel.json ({len(personnel)} rows)")
 
     # Budget changes view (for "What Changed?" page)
     budget_changes = build_budget_changes(sections, personnel)
-    with open(views_dir / "budget-changes.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}budget-changes.json", "w", encoding="utf-8") as f:
         json.dump(budget_changes, f, indent=2)
-    print(f"Wrote budget-changes.json ({len(budget_changes['departmentChanges'])} departments, "
+    print(f"Wrote {prefix}budget-changes.json ({len(budget_changes['departmentChanges'])} departments, "
           f"{len(budget_changes['newPositions'])} new positions, "
           f"{len(budget_changes['eliminatedPositions'])} eliminated)")
 
     # Personnel by department (for treemap)
     personnel_by_dept = build_personnel_by_department(personnel)
-    with open(views_dir / "personnel-by-department.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}personnel-by-department.json", "w", encoding="utf-8") as f:
         json.dump(personnel_by_dept, f, indent=2)
-    print(f"Wrote personnel-by-department.json ({len(personnel_by_dept)} departments)")
+    print(f"Wrote {prefix}personnel-by-department.json ({len(personnel_by_dept)} departments)")
 
     # Revenue waterfall
     revenue_waterfall = build_revenue_waterfall(sections)
-    with open(views_dir / "revenue-waterfall.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}revenue-waterfall.json", "w", encoding="utf-8") as f:
         json.dump(revenue_waterfall, f, indent=2)
-    print(f"Wrote revenue-waterfall.json ({len(revenue_waterfall)} categories)")
+    print(f"Wrote {prefix}revenue-waterfall.json ({len(revenue_waterfall)} categories)")
 
     # Department forecast (multi-year for sparklines)
     dept_forecast = build_department_forecast(sections)
-    with open(views_dir / "department-forecast.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}department-forecast.json", "w", encoding="utf-8") as f:
         json.dump(dept_forecast, f, indent=2)
-    print(f"Wrote department-forecast.json ({len(dept_forecast)} departments)")
+    print(f"Wrote {prefix}department-forecast.json ({len(dept_forecast)} departments)")
 
     search_index = build_search_index(sections)
 
@@ -1617,20 +1619,20 @@ def main() -> None:
     capital_sections = capital_data["sections"]
 
     if capital_sections:
-        out_path = WEB_DATA_DIR / "capital-budget-data.json"
+        out_path = WEB_DATA_DIR / f"{prefix}capital-budget-data.json"
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(capital_data, f, indent=2)
         print(f"Wrote {out_path} ({len(capital_sections)} sections)")
 
         capital_projects = build_capital_projects(capital_sections)
-        with open(views_dir / "capital-projects.json", "w", encoding="utf-8") as f:
+        with open(views_dir / f"{prefix}capital-projects.json", "w", encoding="utf-8") as f:
             json.dump(capital_projects, f, indent=2)
-        print(f"Wrote capital-projects.json ({len(capital_projects)} projects)")
+        print(f"Wrote {prefix}capital-projects.json ({len(capital_projects)} projects)")
 
         capital_funding = build_capital_funding_sources(capital_sections)
-        with open(views_dir / "capital-funding-sources.json", "w", encoding="utf-8") as f:
+        with open(views_dir / f"{prefix}capital-funding-sources.json", "w", encoding="utf-8") as f:
             json.dump(capital_funding, f, indent=2)
-        print(f"Wrote capital-funding-sources.json ({len(capital_funding)} rows)")
+        print(f"Wrote {prefix}capital-funding-sources.json ({len(capital_funding)} rows)")
 
         # Add capital tables to the combined tables index
         tables_index.extend(build_tables_index(capital_sections, budget_type="capital"))
@@ -1643,9 +1645,9 @@ def main() -> None:
         print("No capital budget data found, skipping capital output")
 
     # Write combined tables index (operating + capital)
-    with open(views_dir / "tables-index.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}tables-index.json", "w", encoding="utf-8") as f:
         json.dump(tables_index, f, indent=2)
-    print(f"Wrote tables-index.json ({len(tables_index)} tables)")
+    print(f"Wrote {prefix}tables-index.json ({len(tables_index)} tables)")
 
     # Add glossary terms to search index
     glossary = data.get("glossary", {})
@@ -1658,15 +1660,15 @@ def main() -> None:
     search_index.extend(changes_items)
     print(f"  Added {len(changes_items)} budget change items to search index")
 
-    with open(views_dir / "search-index.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}search-index.json", "w", encoding="utf-8") as f:
         json.dump(search_index, f, indent=2)
-    print(f"Wrote search-index.json ({len(search_index)} items)")
+    print(f"Wrote {prefix}search-index.json ({len(search_index)} items)")
 
     # Glossary backlinks (abbreviations + funds -> sections where they appear)
     glossary_backlinks = build_glossary_backlinks(
         sections, capital_sections, data.get("glossary", {})
     )
-    with open(views_dir / "glossary-backlinks.json", "w", encoding="utf-8") as f:
+    with open(views_dir / f"{prefix}glossary-backlinks.json", "w", encoding="utf-8") as f:
         json.dump(glossary_backlinks, f, indent=2)
     print(f"Wrote glossary-backlinks.json ({len(glossary_backlinks)} terms with backlinks)")
 
