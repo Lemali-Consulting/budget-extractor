@@ -2,9 +2,14 @@
 
 import csv
 import re
+import sys
 from pathlib import Path
 
-EXPECTED_DIR = Path("output/regression/expected")
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from utils.paths import expected_dir
+
+EXPECTED_DIR = expected_dir()
 
 # Pattern A: Expense/revenue category codes like "51 - PERSONNEL-SALARIES & WAGES"
 CATEGORY_CODE_RE = re.compile(r"^\d{2}\s*-\s+[A-Z]")

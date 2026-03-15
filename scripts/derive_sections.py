@@ -320,12 +320,22 @@ def compare_sections(
 
 
 def main() -> None:
-    pdf_path = "input/2026-operating-budget.pdf"
-    original_path = "input/sections-operating.json"
-    output_path = "input/sections_derived.json"
+    import argparse
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from utils.paths import DEFAULT_YEAR, input_dir, pdf_path as get_pdf_path, sections_path
 
-    print(f"Scanning {pdf_path}...")
-    derived = derive_sections(pdf_path)
+    parser = argparse.ArgumentParser(description="Derive section boundaries from a budget PDF.")
+    parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
+    parser.add_argument("--budget-type", default="operating", choices=["operating", "capital"])
+    args = parser.parse_args()
+
+    source_pdf = str(get_pdf_path(args.year, args.budget_type))
+    original_path = str(sections_path(args.year, args.budget_type))
+    output_path = str(input_dir(args.year) / "sections_derived.json")
+
+    print(f"Scanning {source_pdf}...")
+    derived = derive_sections(source_pdf)
     print(f"Found {len(derived)} sections.\n")
 
     # Save derived sections
