@@ -4,7 +4,7 @@ Extracts tabular data from City of Pittsburgh 2026 budget PDFs (operating and ca
 
 Key components:
 - **Spatial table extractor** (`utils/spatial_table_extractor.py`) — core PDF-to-CSV engine using pdfplumber word positions
-- **Workflows** (`workflows/`) — extraction pipelines (currently only `extract_full_pdf`)
+- **Workflows** (`workflows/`) — extraction pipelines (currently empty; all extraction is done via `utils/spatial_table_extractor.py`)
 - **Scripts** (`scripts/`) — utilities for splitting PDFs, regression testing, building web data, extracting chart images, LLM-based content judging, and rendering page images
 - **Web app** (`web/`) — Astro + Preact + Tailwind static site deployed to Netlify; visualizes extracted budget data with Observable Plot charts
 - **Regression suite** — expected CSV baselines for 111 PDFs (47 operating + 64 capital) to catch extractor regressions

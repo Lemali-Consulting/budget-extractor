@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "City of Pittsburgh 2026 Operating and Capital Budgets",
-    "generated_from": "output/extract_full_pdf/2026-operating-budget.json",
+    "generated_from": "2026-operating-budget.pdf",
     "note": "Some terms may contain extraction artifacts from PDF parsing. Verify against the source PDF when precision is required."
   },
   "revenue_subclasses": [
