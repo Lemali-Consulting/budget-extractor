@@ -1,0 +1,317 @@
+[
+  {
+    "title": "Budget Authorizing Legislation",
+    "start_page": 5,
+    "end_page": 9
+  },
+  {
+    "title": "American Rescue Plan",
+    "start_page": 10,
+    "end_page": 16
+  },
+  {
+    "title": "Budget Guide",
+    "start_page": 17,
+    "end_page": 28
+  },
+  {
+    "title": "Five-Year Financial Forecast",
+    "start_page": 29,
+    "end_page": 31
+  },
+  {
+    "title": "Revenue Summary",
+    "start_page": 33,
+    "end_page": 38
+  },
+  {
+    "title": "Revenue Narrative",
+    "start_page": 39,
+    "end_page": 43
+  },
+  {
+    "title": "Revenue Detail",
+    "start_page": 44,
+    "end_page": 47
+  },
+  {
+    "title": "Expenditure Summary",
+    "start_page": 49,
+    "end_page": 54
+  },
+  {
+    "title": "Expenditures Detail",
+    "start_page": 55,
+    "end_page": 57
+  },
+  {
+    "title": "City Council",
+    "start_page": 58,
+    "end_page": 62
+  },
+  {
+    "title": "Office of the City Clerk",
+    "start_page": 63,
+    "end_page": 67
+  },
+  {
+    "title": "Office of the Mayor",
+    "start_page": 68,
+    "end_page": 73
+  },
+  {
+    "title": "Office of Management and Budget",
+    "start_page": 74,
+    "end_page": 80
+  },
+  {
+    "title": "Department of Innovation and Performance",
+    "start_page": 81,
+    "end_page": 87
+  },
+  {
+    "title": "Commission on Human Relations",
+    "start_page": 88,
+    "end_page": 93
+  },
+  {
+    "title": "Office of the City Controller",
+    "start_page": 94,
+    "end_page": 100
+  },
+  {
+    "title": "Department of Finance",
+    "start_page": 101,
+    "end_page": 109
+  },
+  {
+    "title": "Department of Law",
+    "start_page": 110,
+    "end_page": 115
+  },
+  {
+    "title": "Ethics Hearing Board",
+    "start_page": 116,
+    "end_page": 121
+  },
+  {
+    "title": "Office of Municipal Investigations",
+    "start_page": 122,
+    "end_page": 127
+  },
+  {
+    "title": "Department of Human Resources and Civil Service",
+    "start_page": 128,
+    "end_page": 136
+  },
+  {
+    "title": "Department of City Planning",
+    "start_page": 137,
+    "end_page": 143
+  },
+  {
+    "title": "Department of Permits, Licenses, and Inspections",
+    "start_page": 144,
+    "end_page": 151
+  },
+  {
+    "title": "Bureau of Administration (Public Safety)",
+    "start_page": 153,
+    "end_page": 161
+  },
+  {
+    "title": "Bureau of Emergency Medical Services",
+    "start_page": 162,
+    "end_page": 169
+  },
+  {
+    "title": "Bureau of Police",
+    "start_page": 170,
+    "end_page": 179
+  },
+  {
+    "title": "Bureau of Fire",
+    "start_page": 180,
+    "end_page": 186
+  },
+  {
+    "title": "Bureau of Animal Care and Control",
+    "start_page": 187,
+    "end_page": 192
+  },
+  {
+    "title": "Office of Community Health and Safety",
+    "start_page": 193,
+    "end_page": 199
+  },
+  {
+    "title": "Department of Public Works",
+    "start_page": 200,
+    "end_page": 204
+  },
+  {
+    "title": "Bureau of Administration (Public Works)",
+    "start_page": 205,
+    "end_page": 208
+  },
+  {
+    "title": "Bureau of Operations",
+    "start_page": 209,
+    "end_page": 213
+  },
+  {
+    "title": "Bureau of Environmental Services",
+    "start_page": 214,
+    "end_page": 217
+  },
+  {
+    "title": "Bureau of Facilities",
+    "start_page": 218,
+    "end_page": 222
+  },
+  {
+    "title": "Department of Parks and Recreation",
+    "start_page": 223,
+    "end_page": 231
+  },
+  {
+    "title": "Department of Mobility and Infrastructure",
+    "start_page": 232,
+    "end_page": 240
+  },
+  {
+    "title": "Citizen Police Review Board",
+    "start_page": 241,
+    "end_page": 247
+  },
+  {
+    "title": "HUD Fair Housing Program Trust Fund",
+    "start_page": 249,
+    "end_page": 249
+  },
+  {
+    "title": "EEOC Trust Fund",
+    "start_page": 250,
+    "end_page": 250
+  },
+  {
+    "title": "Three Taxing Bodies Trust Fund",
+    "start_page": 251,
+    "end_page": 252
+  },
+  {
+    "title": "Pittsburgh Partnership Trust Fund",
+    "start_page": 253,
+    "end_page": 254
+  },
+  {
+    "title": "Community Development Trust Fund",
+    "start_page": 255,
+    "end_page": 256
+  },
+  {
+    "title": "Police Secondary Employment Trust Fund",
+    "start_page": 257,
+    "end_page": 258
+  },
+  {
+    "title": "Stop the Violence Trust Fund",
+    "start_page": 259,
+    "end_page": 262
+  },
+  {
+    "title": "Liquid Fuels Trust Fund",
+    "start_page": 263,
+    "end_page": 263
+  },
+  {
+    "title": "Regional Asset District - Public Works Trust Fund",
+    "start_page": 264,
+    "end_page": 265
+  },
+  {
+    "title": "Public Works Trust Fund",
+    "start_page": 266,
+    "end_page": 266
+  },
+  {
+    "title": "Shade Tree Trust Fund",
+    "start_page": 267,
+    "end_page": 268
+  },
+  {
+    "title": "Parks Tax Trust Fund",
+    "start_page": 269,
+    "end_page": 271
+  },
+  {
+    "title": "Special Events Trust Fund",
+    "start_page": 272,
+    "end_page": 273
+  },
+  {
+    "title": "Regional Asset District - Parks and Recreation Trust Fund",
+    "start_page": 274,
+    "end_page": 275
+  },
+  {
+    "title": "Mellon Park Trust Fund",
+    "start_page": 276,
+    "end_page": 277
+  },
+  {
+    "title": "Schenley Park Rink Trust Fund",
+    "start_page": 278,
+    "end_page": 278
+  },
+  {
+    "title": "Senior Citizens Program Trust Fund",
+    "start_page": 279,
+    "end_page": 280
+  },
+  {
+    "title": "Special Food Service Trust Fund",
+    "start_page": 281,
+    "end_page": 282
+  },
+  {
+    "title": "Frick Park Trust Fund",
+    "start_page": 283,
+    "end_page": 283
+  },
+  {
+    "title": "Other Special Revenue Funds",
+    "start_page": 284,
+    "end_page": 294
+  },
+  {
+    "title": "Grants",
+    "start_page": 295,
+    "end_page": 306
+  },
+  {
+    "title": "City of Pittsburgh Organization Chart",
+    "start_page": 307,
+    "end_page": 308
+  },
+  {
+    "title": "Salary Tables",
+    "start_page": 309,
+    "end_page": 312
+  },
+  {
+    "title": "Debt Service",
+    "start_page": 313,
+    "end_page": 327
+  },
+  {
+    "title": "Pension Funding",
+    "start_page": 328,
+    "end_page": 331
+  },
+  {
+    "title": "Master Fee Schedule",
+    "start_page": 332,
+    "end_page": 354
+  }
+]

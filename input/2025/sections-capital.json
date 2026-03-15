@@ -1,0 +1,337 @@
+[
+  {
+    "title": "Capital Budget Introduction",
+    "start_page": 1,
+    "end_page": 23
+  },
+  {
+    "title": "28TH STREET BRIDGE (TIP)",
+    "start_page": 24,
+    "end_page": 25
+  },
+  {
+    "title": "BEAVER AVENUE TWO-WAY CONVERSION (TIP)",
+    "start_page": 26,
+    "end_page": 27
+  },
+  {
+    "title": "BLOOMFIELD BRIDGE (TIP)",
+    "start_page": 28,
+    "end_page": 29
+  },
+  {
+    "title": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
+    "start_page": 30,
+    "end_page": 31
+  },
+  {
+    "title": "BRIDGE UPGRADES",
+    "start_page": 32,
+    "end_page": 33
+  },
+  {
+    "title": "CALERA STREET BRIDGE (TIP)",
+    "start_page": 34,
+    "end_page": 35
+  },
+  {
+    "title": "CALIFORNIA AVENUE BRIDGE (TIP)",
+    "start_page": 36,
+    "end_page": 37
+  },
+  {
+    "title": "CHARLES ANDERSON BRIDGE (TIP)",
+    "start_page": 38,
+    "end_page": 39
+  },
+  {
+    "title": "COMPLETE STREETS",
+    "start_page": 40,
+    "end_page": 41
+  },
+  {
+    "title": "CORLEY STREET BRIDGE (TIP)",
+    "start_page": 42,
+    "end_page": 43
+  },
+  {
+    "title": "CORLISS STREET TUNNEL (TIP)",
+    "start_page": 44,
+    "end_page": 45
+  },
+  {
+    "title": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
+    "start_page": 46,
+    "end_page": 47
+  },
+  {
+    "title": "EAST SYCAMORE STREET BRIDGE (TIP)",
+    "start_page": 48,
+    "end_page": 49
+  },
+  {
+    "title": "ELIZABETH STREET BRIDGE (TIP)",
+    "start_page": 50,
+    "end_page": 51
+  },
+  {
+    "title": "FLEX BEAM GUIDERAILS AND FENCING",
+    "start_page": 52,
+    "end_page": 53
+  },
+  {
+    "title": "FLOOD CONTROL PROJECTS",
+    "start_page": 54,
+    "end_page": 55
+  },
+  {
+    "title": "FRANKSTOWN AVENUE SIGNAL IMPROVEMENTS (TIP)",
+    "start_page": 56,
+    "end_page": 57
+  },
+  {
+    "title": "HERRON AVENUE BRIDGE (TIP)",
+    "start_page": 58,
+    "end_page": 59
+  },
+  {
+    "title": "LARIMER BRIDGE (TIP)",
+    "start_page": 60,
+    "end_page": 61
+  },
+  {
+    "title": "LIBERTY AVENUE (HSIP)",
+    "start_page": 62,
+    "end_page": 63
+  },
+  {
+    "title": "MAPLE AVENUE BRIDGE (TIP)",
+    "start_page": 64,
+    "end_page": 65
+  },
+  {
+    "title": "P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)",
+    "start_page": 66,
+    "end_page": 67
+  },
+  {
+    "title": "P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)",
+    "start_page": 68,
+    "end_page": 69
+  },
+  {
+    "title": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
+    "start_page": 70,
+    "end_page": 71
+  },
+  {
+    "title": "PENN AVENUE SIGNAL IMPROVEMENTS (TIP)",
+    "start_page": 72,
+    "end_page": 73
+  },
+  {
+    "title": "RAMP AND PUBLIC SIDEWALK",
+    "start_page": 74,
+    "end_page": 75
+  },
+  {
+    "title": "SLOPE FAILURE REMEDIATION",
+    "start_page": 76,
+    "end_page": 77
+  },
+  {
+    "title": "SOUTH NEGLEY AVENUE BRIDGE (TIP)",
+    "start_page": 78,
+    "end_page": 79
+  },
+  {
+    "title": "STEP REPAIR AND REPLACEMENT",
+    "start_page": 80,
+    "end_page": 81
+  },
+  {
+    "title": "STREET RESURFACING",
+    "start_page": 82,
+    "end_page": 83
+  },
+  {
+    "title": "SWINDELL BRIDGE (TIP)",
+    "start_page": 84,
+    "end_page": 85
+  },
+  {
+    "title": "TRAIL DEVELOPMENT",
+    "start_page": 86,
+    "end_page": 87
+  },
+  {
+    "title": "WEST CARSON STREET BRIDGE (TIP)",
+    "start_page": 88,
+    "end_page": 89
+  },
+  {
+    "title": "SWINBURNE BRIDGE (TIP)",
+    "start_page": 90,
+    "end_page": 91
+  },
+  {
+    "title": "BOB O'CONNOR GOLF COURSE",
+    "start_page": 94,
+    "end_page": 95
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - CITY FACILITIES",
+    "start_page": 96,
+    "end_page": 97
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
+    "start_page": 98,
+    "end_page": 99
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
+    "start_page": 100,
+    "end_page": 101
+  },
+  {
+    "title": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
+    "start_page": 102,
+    "end_page": 103
+  },
+  {
+    "title": "PARK RECONSTRUCTION",
+    "start_page": 104,
+    "end_page": 105
+  },
+  {
+    "title": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
+    "start_page": 106,
+    "end_page": 107
+  },
+  {
+    "title": "PLAY AREA IMPROVEMENTS",
+    "start_page": 108,
+    "end_page": 109
+  },
+  {
+    "title": "PUBLIC SAFETY TRAINING FACILITY",
+    "start_page": 110,
+    "end_page": 113
+  },
+  {
+    "title": "BEDFORD DWELLINGS CHOICE NEIGHBORHOOD",
+    "start_page": 114,
+    "end_page": 115
+  },
+  {
+    "title": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
+    "start_page": 116,
+    "end_page": 117
+  },
+  {
+    "title": "HOUSING DEVELOPMENT",
+    "start_page": 118,
+    "end_page": 119
+  },
+  {
+    "title": "SMALL BUSINESS DEVELOPMENT",
+    "start_page": 120,
+    "end_page": 121
+  },
+  {
+    "title": "WAR MEMORIALS AND PUBLIC ART",
+    "start_page": 122,
+    "end_page": 125
+  },
+  {
+    "title": "PUBLIC SAFETY EQUIPMENT",
+    "start_page": 126,
+    "end_page": 127
+  },
+  {
+    "title": "REMEDIATION OF CONDEMNED BUILDINGS",
+    "start_page": 128,
+    "end_page": 131
+  },
+  {
+    "title": "CAPITAL EQUIPMENT ACQUISITION",
+    "start_page": 132,
+    "end_page": 135
+  },
+  {
+    "title": "CDBG ADMINISTRATION",
+    "start_page": 136,
+    "end_page": 137
+  },
+  {
+    "title": "CDBG PERSONNEL",
+    "start_page": 138,
+    "end_page": 139
+  },
+  {
+    "title": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
+    "start_page": 140,
+    "end_page": 141
+  },
+  {
+    "title": "EMERGENCY SOLUTIONS GRANT",
+    "start_page": 142,
+    "end_page": 143
+  },
+  {
+    "title": "FAIR HOUSING",
+    "start_page": 144,
+    "end_page": 145
+  },
+  {
+    "title": "HOUSING COUNSELING",
+    "start_page": 146,
+    "end_page": 147
+  },
+  {
+    "title": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
+    "start_page": 148,
+    "end_page": 149
+  },
+  {
+    "title": "INFORMATION SYSTEMS MODERNIZATION",
+    "start_page": 150,
+    "end_page": 151
+  },
+  {
+    "title": "MAYOR'S PUBLIC SERVICE GRANTS",
+    "start_page": 152,
+    "end_page": 153
+  },
+  {
+    "title": "NEIGHBORHOOD ECONOMIC DEVELOPMENT",
+    "start_page": 154,
+    "end_page": 155
+  },
+  {
+    "title": "NEIGHBORHOOD EMPLOYMENT CENTERS",
+    "start_page": 156,
+    "end_page": 157
+  },
+  {
+    "title": "PITTSBURGH EMPLOYMENT PROGRAM",
+    "start_page": 158,
+    "end_page": 159
+  },
+  {
+    "title": "SENIOR COMMUNITY PROGRAM",
+    "start_page": 160,
+    "end_page": 161
+  },
+  {
+    "title": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
+    "start_page": 162,
+    "end_page": 164
+  },
+  {
+    "title": "Capital Budget Appendices",
+    "start_page": 165,
+    "end_page": 196
+  }
+]
