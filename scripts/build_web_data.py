@@ -23,16 +23,22 @@ from utils.paths import (
     glossary_path,
     input_dir,
     pdf_path,
+    sections_path,
     split_pdf_dir,
     web_data_dir,
 )
 
-INPUT_DIR = input_dir(DEFAULT_YEAR)
-OPERATING_OUTPUT_DIR = expected_dir(DEFAULT_YEAR, "operating")
-CAPITAL_OUTPUT_DIR = expected_dir(DEFAULT_YEAR, "capital")
+# Budget year — set from CLI or default. PRIOR_YEAR is always BUDGET_YEAR - 1.
+BUDGET_YEAR: int = DEFAULT_YEAR
+PRIOR_YEAR: int = BUDGET_YEAR - 1
+
+# Derived paths (re-initialized in main() if --year is passed)
+INPUT_DIR = input_dir(BUDGET_YEAR)
+OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "operating")
+CAPITAL_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "capital")
 GLOSSARY_PATH = glossary_path()
-PDF_PATH = pdf_path(DEFAULT_YEAR, "operating")
-CAPITAL_SPLIT_DIR = split_pdf_dir(DEFAULT_YEAR, "capital")
+PDF_PATH = pdf_path(BUDGET_YEAR, "operating")
+CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, "capital")
 WEB_DATA_DIR = web_data_dir()
 
 # Pattern to extract section number and name from directory names like "10_City_Council"
@@ -492,40 +498,40 @@ def build_section_highlights(section: dict) -> list[str]:
         if table.get("table_type") not in ("financial_summary", "financial"):
             continue
         headers = table.get("headers", [])
-        col_2026 = -1
-        col_2025 = -1
+        col_current = -1
+        col_prior = -1
         for i, h in enumerate(headers):
-            if "2026" in h and "Budget" in h:
-                col_2026 = i
-            elif "2025" in h and "Budget" in h:
-                col_2025 = i
-        if col_2026 < 0 or col_2025 < 0:
+            if str(BUDGET_YEAR) in h and "Budget" in h:
+                col_current = i
+            elif str(PRIOR_YEAR) in h and "Budget" in h:
+                col_prior = i
+        if col_current < 0 or col_prior < 0:
             continue
 
         # Find total row and line-item changes
-        total_2026: float | None = None
-        total_2025: float | None = None
+        total_current: float | None = None
+        total_prior: float | None = None
         line_changes: list[tuple[str, float]] = []
 
         for row in table.get("rows", []):
             label = (row[0] if row else "").strip()
             if not label:
                 continue
-            val_2026 = parse_currency(row[col_2026] if col_2026 < len(row) else "")
-            val_2025 = parse_currency(row[col_2025] if col_2025 < len(row) else "")
+            val_current = parse_currency(row[col_current] if col_current < len(row) else "")
+            val_prior = parse_currency(row[col_prior] if col_prior < len(row) else "")
 
             label_lower = label.lower()
             if label_lower in ("expenditures total", "total expenditures", "total"):
-                total_2026 = val_2026
-                total_2025 = val_2025
-            elif val_2026 is not None and val_2025 is not None and "total" not in label_lower:
-                change = val_2026 - val_2025
+                total_current = val_current
+                total_prior = val_prior
+            elif val_current is not None and val_prior is not None and "total" not in label_lower:
+                change = val_current - val_prior
                 if abs(change) > 0:
                     line_changes.append((label, change))
 
-        if total_2026 is not None and total_2025 is not None and total_2025 > 0:
-            dollar_change = total_2026 - total_2025
-            pct_change = (dollar_change / total_2025) * 100
+        if total_current is not None and total_prior is not None and total_prior > 0:
+            dollar_change = total_current - total_prior
+            pct_change = (dollar_change / total_prior) * 100
             direction = "increases" if dollar_change > 0 else "decreases"
             msg = f"Budget {direction} {abs(pct_change):.1f}% ({_format_dollar(abs(dollar_change))})"
 
@@ -546,24 +552,24 @@ def build_section_highlights(section: dict) -> list[str]:
             continue
         headers = table.get("headers", [])
         headers_lower = [h.lower() for h in headers]
-        fte_2026_idx = next((i for i, h in enumerate(headers_lower) if "2026" in h and "fte" in h), -1)
-        fte_2025_idx = next((i for i, h in enumerate(headers_lower) if "2025" in h and "fte" in h), -1)
-        if fte_2026_idx < 0 or fte_2025_idx < 0:
+        fte_current_idx = next((i for i, h in enumerate(headers_lower) if str(BUDGET_YEAR) in h and "fte" in h), -1)
+        fte_prior_idx = next((i for i, h in enumerate(headers_lower) if str(PRIOR_YEAR) in h and "fte" in h), -1)
+        if fte_current_idx < 0 or fte_prior_idx < 0:
             continue
 
         for row in table.get("rows", []):
             label = (row[0] if row else "").strip().lower()
             if label == "total full-time permanent positions":
-                fte_2026 = parse_currency(row[fte_2026_idx] if fte_2026_idx < len(row) else "")
-                fte_2025 = parse_currency(row[fte_2025_idx] if fte_2025_idx < len(row) else "")
-                if fte_2026 is not None and fte_2025 is not None:
-                    diff = int(fte_2026 - fte_2025)
+                fte_current = parse_currency(row[fte_current_idx] if fte_current_idx < len(row) else "")
+                fte_prior = parse_currency(row[fte_prior_idx] if fte_prior_idx < len(row) else "")
+                if fte_current is not None and fte_prior is not None:
+                    diff = int(fte_current - fte_prior)
                     if diff > 0:
-                        highlights.append(f"Adds {diff} position{'s' if diff != 1 else ''} ({int(fte_2025)} \u2192 {int(fte_2026)} FTE)")
+                        highlights.append(f"Adds {diff} position{'s' if diff != 1 else ''} ({int(fte_prior)} \u2192 {int(fte_current)} FTE)")
                     elif diff < 0:
-                        highlights.append(f"Reduces by {abs(diff)} position{'s' if abs(diff) != 1 else ''} ({int(fte_2025)} \u2192 {int(fte_2026)} FTE)")
+                        highlights.append(f"Reduces by {abs(diff)} position{'s' if abs(diff) != 1 else ''} ({int(fte_prior)} \u2192 {int(fte_current)} FTE)")
                     else:
-                        highlights.append(f"Staffing unchanged at {int(fte_2026)} FTE")
+                        highlights.append(f"Staffing unchanged at {int(fte_current)} FTE")
                 break
         break
 
@@ -578,50 +584,50 @@ def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
         if section["section_number"] <= 9:
             continue
 
-        budget_2025: float | None = None
-        budget_2026: float | None = None
-        fte_2025: float | None = None
-        fte_2026: float | None = None
+        budget_prior: float | None = None
+        budget_current: float | None = None
+        fte_prior: float | None = None
+        fte_current: float | None = None
 
         for table in section["tables"]:
             headers = table.get("headers", [])
             if table["table_type"] in ("financial_summary", "financial"):
-                col_2026 = next((i for i, h in enumerate(headers) if "2026" in h and "Budget" in h), -1)
-                col_2025 = next((i for i, h in enumerate(headers) if "2025" in h and "Budget" in h), -1)
-                if col_2026 >= 0 and col_2025 >= 0:
+                col_current = next((i for i, h in enumerate(headers) if str(BUDGET_YEAR) in h and "Budget" in h), -1)
+                col_prior = next((i for i, h in enumerate(headers) if str(PRIOR_YEAR) in h and "Budget" in h), -1)
+                if col_current >= 0 and col_prior >= 0:
                     for row in table["rows"]:
                         label = (row[0] if row else "").strip().lower()
                         if label in ("expenditures total", "total expenditures", "total"):
-                            budget_2026 = parse_currency(row[col_2026] if col_2026 < len(row) else "")
-                            budget_2025 = parse_currency(row[col_2025] if col_2025 < len(row) else "")
+                            budget_current = parse_currency(row[col_current] if col_current < len(row) else "")
+                            budget_prior = parse_currency(row[col_prior] if col_prior < len(row) else "")
                             break
 
             if table["table_type"] == "personnel":
                 headers_lower = [h.lower() for h in headers]
-                fi26 = next((i for i, h in enumerate(headers_lower) if "2026" in h and "fte" in h), -1)
-                fi25 = next((i for i, h in enumerate(headers_lower) if "2025" in h and "fte" in h), -1)
-                if fi26 >= 0 and fi25 >= 0:
+                fi_current = next((i for i, h in enumerate(headers_lower) if str(BUDGET_YEAR) in h and "fte" in h), -1)
+                fi_prior = next((i for i, h in enumerate(headers_lower) if str(PRIOR_YEAR) in h and "fte" in h), -1)
+                if fi_current >= 0 and fi_prior >= 0:
                     for row in table["rows"]:
                         if (row[0] if row else "").strip().lower() == "total full-time permanent positions":
-                            fte_2026 = parse_currency(row[fi26] if fi26 < len(row) else "")
-                            fte_2025 = parse_currency(row[fi25] if fi25 < len(row) else "")
+                            fte_current = parse_currency(row[fi_current] if fi_current < len(row) else "")
+                            fte_prior = parse_currency(row[fi_prior] if fi_prior < len(row) else "")
                             break
 
-        if budget_2025 and budget_2026 and budget_2025 > 0:
-            dollar_change = budget_2026 - budget_2025
-            pct_change = (dollar_change / budget_2025) * 100
+        if budget_prior and budget_current and budget_prior > 0:
+            dollar_change = budget_current - budget_prior
+            pct_change = (dollar_change / budget_prior) * 100
             entry: dict = {
                 "department": section["title"],
                 "slug": section["slug"],
-                "budget2025": budget_2025,
-                "budget2026": budget_2026,
+                f"budget{PRIOR_YEAR}": budget_prior,
+                f"budget{BUDGET_YEAR}": budget_current,
                 "dollarChange": dollar_change,
                 "pctChange": round(pct_change, 1),
             }
-            if fte_2025 is not None:
-                entry["fte2025"] = fte_2025
-            if fte_2026 is not None:
-                entry["fte2026"] = fte_2026
+            if fte_prior is not None:
+                entry[f"fte{PRIOR_YEAR}"] = fte_prior
+            if fte_current is not None:
+                entry[f"fte{BUDGET_YEAR}"] = fte_current
             dept_changes.append(entry)
 
     dept_changes.sort(key=lambda x: x["dollarChange"], reverse=True)
@@ -630,34 +636,34 @@ def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
     new_positions: list[dict] = []
     eliminated_positions: list[dict] = []
     for p in personnel:
-        fte25 = p.get("fte2025") or 0
-        fte26 = p.get("fte2026") or 0
-        if fte26 > 0 and fte25 == 0:
+        fte_prior_val = p.get(f"fte{PRIOR_YEAR}") or 0
+        fte_current_val = p.get(f"fte{BUDGET_YEAR}") or 0
+        if fte_current_val > 0 and fte_prior_val == 0:
             new_positions.append({
                 "department": p["department"],
                 "title": p["title"],
-                "fte": fte26,
-                "budget": p.get("budget2026") or 0,
+                "fte": fte_current_val,
+                "budget": p.get(f"budget{BUDGET_YEAR}") or 0,
             })
-        elif fte25 > 0 and fte26 == 0:
+        elif fte_prior_val > 0 and fte_current_val == 0:
             eliminated_positions.append({
                 "department": p["department"],
                 "title": p["title"],
-                "fte": fte25,
-                "budget": p.get("budget2025") or 0,
+                "fte": fte_prior_val,
+                "budget": p.get(f"budget{PRIOR_YEAR}") or 0,
             })
 
     # Compute totals
-    total_2025 = sum(d["budget2025"] for d in dept_changes)
-    total_2026 = sum(d["budget2026"] for d in dept_changes)
-    total_fte_2025 = sum(d.get("fte2025", 0) or 0 for d in dept_changes)
-    total_fte_2026 = sum(d.get("fte2026", 0) or 0 for d in dept_changes)
+    total_prior = sum(d[f"budget{PRIOR_YEAR}"] for d in dept_changes)
+    total_current = sum(d[f"budget{BUDGET_YEAR}"] for d in dept_changes)
+    total_fte_prior = sum(d.get(f"fte{PRIOR_YEAR}", 0) or 0 for d in dept_changes)
+    total_fte_current = sum(d.get(f"fte{BUDGET_YEAR}", 0) or 0 for d in dept_changes)
 
     return {
-        "totalBudget2025": total_2025,
-        "totalBudget2026": total_2026,
-        "totalFte2025": total_fte_2025,
-        "totalFte2026": total_fte_2026,
+        f"totalBudget{PRIOR_YEAR}": total_prior,
+        f"totalBudget{BUDGET_YEAR}": total_current,
+        f"totalFte{PRIOR_YEAR}": total_fte_prior,
+        f"totalFte{BUDGET_YEAR}": total_fte_current,
         "departmentChanges": dept_changes,
         "topIncreases": [d for d in dept_changes if d["dollarChange"] > 0][:10],
         "topDecreases": list(reversed([d for d in dept_changes if d["dollarChange"] < 0]))[:10],
@@ -722,10 +728,10 @@ def build_personnel(sections: list[dict]) -> list[dict]:
             headers = [h.lower() for h in table["headers"]]
 
             title_idx = next((i for i, h in enumerate(headers) if "title" in h), -1)
-            fte_2025_idx = next((i for i, h in enumerate(headers) if "2025" in h and "fte" in h), -1)
-            fte_2026_idx = next((i for i, h in enumerate(headers) if "2026" in h and "fte" in h), -1)
-            budget_2025_idx = next((i for i, h in enumerate(headers) if "2025" in h and "budget" in h), -1)
-            budget_2026_idx = next((i for i, h in enumerate(headers) if "2026" in h and "budget" in h), -1)
+            fte_prior_idx = next((i for i, h in enumerate(headers) if str(PRIOR_YEAR) in h and "fte" in h), -1)
+            fte_current_idx = next((i for i, h in enumerate(headers) if str(BUDGET_YEAR) in h and "fte" in h), -1)
+            budget_prior_idx = next((i for i, h in enumerate(headers) if str(PRIOR_YEAR) in h and "budget" in h), -1)
+            budget_current_idx = next((i for i, h in enumerate(headers) if str(BUDGET_YEAR) in h and "budget" in h), -1)
             rate_idx = next((i for i, h in enumerate(headers) if "rate" in h or "grade" in h), -1)
 
             if title_idx < 0:
@@ -743,10 +749,10 @@ def build_personnel(sections: list[dict]) -> list[dict]:
                     "department": section["title"],
                     "slug": section["slug"],
                     "title": title,
-                    "fte2025": parse_currency(cell(fte_2025_idx)),
-                    "fte2026": parse_currency(cell(fte_2026_idx)),
-                    "budget2025": parse_currency(cell(budget_2025_idx)),
-                    "budget2026": parse_currency(cell(budget_2026_idx)),
+                    f"fte{PRIOR_YEAR}": parse_currency(cell(fte_prior_idx)),
+                    f"fte{BUDGET_YEAR}": parse_currency(cell(fte_current_idx)),
+                    f"budget{PRIOR_YEAR}": parse_currency(cell(budget_prior_idx)),
+                    f"budget{BUDGET_YEAR}": parse_currency(cell(budget_current_idx)),
                     "rateGrade": cell(rate_idx),
                 })
 
@@ -1024,7 +1030,7 @@ def build_changes_search_items(budget_changes: dict) -> list[dict]:
 
     # Department changes
     for dept in budget_changes.get("departmentChanges", []):
-        change_desc = f"2025: ${dept['budget2025']:,.0f} → 2026: ${dept['budget2026']:,.0f} ({dept['pctChange']}%)"
+        change_desc = f"{PRIOR_YEAR}: ${dept[f'budget{PRIOR_YEAR}']:,.0f} → {BUDGET_YEAR}: ${dept[f'budget{BUDGET_YEAR}']:,.0f} ({dept['pctChange']}%)"
         items.append({
             "sectionTitle": dept["department"],
             "slug": dept.get("slug", ""),
@@ -1090,12 +1096,12 @@ def load_capital_sections() -> dict[int, dict]:
 def classify_capital_table(headers: list[str], section_title: str = "") -> str:
     """Classify a capital budget table by its header pattern and section context."""
     header_text = " ".join(headers).lower()
-    if "source" in header_text and "2026" in header_text:
+    if "source" in header_text and str(BUDGET_YEAR) in header_text:
         return "cip_funding"
     if "deliverable" in header_text or "objective" in header_text:
         return "deliverables"
     # Functional area summary tables from the introduction
-    if "functional area" in header_text or "2026 total" in header_text:
+    if "functional area" in header_text or f"{BUDGET_YEAR} total" in header_text:
         return "capital_summary"
     if "total:" in header_text:
         return "capital_summary"
@@ -1346,24 +1352,24 @@ def build_personnel_by_department(personnel: list[dict]) -> list[dict]:
             dept_map[dept] = {
                 "department": dept,
                 "slug": row["slug"],
-                "totalFte2025": 0.0,
-                "totalFte2026": 0.0,
-                "totalBudget2025": 0.0,
-                "totalBudget2026": 0.0,
+                f"totalFte{PRIOR_YEAR}": 0.0,
+                f"totalFte{BUDGET_YEAR}": 0.0,
+                f"totalBudget{PRIOR_YEAR}": 0.0,
+                f"totalBudget{BUDGET_YEAR}": 0.0,
                 "positionCount": 0,
             }
         d = dept_map[dept]
         d["positionCount"] += 1
-        if row["fte2025"] is not None:
-            d["totalFte2025"] += row["fte2025"]
-        if row["fte2026"] is not None:
-            d["totalFte2026"] += row["fte2026"]
-        if row["budget2025"] is not None:
-            d["totalBudget2025"] += row["budget2025"]
-        if row["budget2026"] is not None:
-            d["totalBudget2026"] += row["budget2026"]
+        if row[f"fte{PRIOR_YEAR}"] is not None:
+            d[f"totalFte{PRIOR_YEAR}"] += row[f"fte{PRIOR_YEAR}"]
+        if row[f"fte{BUDGET_YEAR}"] is not None:
+            d[f"totalFte{BUDGET_YEAR}"] += row[f"fte{BUDGET_YEAR}"]
+        if row[f"budget{PRIOR_YEAR}"] is not None:
+            d[f"totalBudget{PRIOR_YEAR}"] += row[f"budget{PRIOR_YEAR}"]
+        if row[f"budget{BUDGET_YEAR}"] is not None:
+            d[f"totalBudget{BUDGET_YEAR}"] += row[f"budget{BUDGET_YEAR}"]
 
-    return sorted(dept_map.values(), key=lambda d: d["totalBudget2026"], reverse=True)
+    return sorted(dept_map.values(), key=lambda d: d[f"totalBudget{BUDGET_YEAR}"], reverse=True)
 
 
 def build_revenue_waterfall(sections: list[dict]) -> list[dict]:
@@ -1379,12 +1385,12 @@ def build_revenue_waterfall(sections: list[dict]) -> list[dict]:
             if not headers or "Account" not in headers[0]:
                 continue
 
-            col_2026 = -1
+            col_current = -1
             for i, h in enumerate(headers):
-                if "2026" in h:
-                    col_2026 = i
+                if str(BUDGET_YEAR) in h:
+                    col_current = i
                     break
-            if col_2026 < 0:
+            if col_current < 0:
                 continue
 
             sections_col = table.get("sections", [])
@@ -1396,7 +1402,7 @@ def build_revenue_waterfall(sections: list[dict]) -> list[dict]:
                 # AND starts with a 2-digit code (e.g. "41 - TAX REVENUE")
                 section_label = sections_col[ri] if ri < len(sections_col) else ""
                 if label == section_label and re.match(r"^\d{2}\s*-\s*", label):
-                    amount = parse_currency(row[col_2026] if col_2026 < len(row) else "")
+                    amount = parse_currency(row[col_current] if col_current < len(row) else "")
                     if amount and amount > 0:
                         clean = re.sub(r"^\d+\s*-\s*", "", label).title()
                         items.append({"label": clean, "amount": amount, "type": "revenue"})
@@ -1524,6 +1530,25 @@ def build_glossary_backlinks(
 
 
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Build web data JSON bundles from extracted CSVs.")
+    parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
+    args = parser.parse_args()
+
+    # Reinitialize globals for the requested year
+    global BUDGET_YEAR, PRIOR_YEAR, INPUT_DIR, OPERATING_OUTPUT_DIR, CAPITAL_OUTPUT_DIR
+    global PDF_PATH, CAPITAL_SPLIT_DIR
+    BUDGET_YEAR = args.year
+    PRIOR_YEAR = BUDGET_YEAR - 1
+    INPUT_DIR = input_dir(BUDGET_YEAR)
+    OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "operating")
+    CAPITAL_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "capital")
+    PDF_PATH = pdf_path(BUDGET_YEAR, "operating")
+    CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, "capital")
+
+    print(f"Building web data for {BUDGET_YEAR} budget (prior year: {PRIOR_YEAR})")
+
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     views_dir = WEB_DATA_DIR / "views"
     views_dir.mkdir(parents=True, exist_ok=True)
