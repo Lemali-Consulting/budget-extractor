@@ -1,0 +1,27 @@
+---
+/**
+ * Plain-language summary of key budget changes for a section.
+ * Only renders if highlights are available.
+ */
+interface Props {
+  highlights: string[];
+}
+
+const { highlights } = Astro.props;
+---
+
+{highlights.length > 0 && (
+  <div class="mb-6 border-l-4 border-blue-400 bg-blue-50 rounded-r-lg p-4 print:break-inside-avoid">
+    <div class="flex items-start gap-2">
+      <span class="text-blue-500 text-lg leading-none" aria-hidden="true">&#x1f4a1;</span>
+      <div>
+        <p class="text-sm font-semibold text-blue-900 mb-1">Key changes</p>
+        <ul class="text-sm text-blue-800 space-y-0.5">
+          {highlights.map((h) => (
+            <li>{h}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+)}

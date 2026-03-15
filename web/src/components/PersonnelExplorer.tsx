@@ -75,7 +75,7 @@ export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
           onInput={(e) => setSearch((e.target as HTMLInputElement).value)}
         />
         <select
-          class="border rounded px-2 py-1.5 text-sm"
+          class="border rounded px-2 py-1 text-sm"
           value={deptFilter}
           onChange={(e) => setDeptFilter((e.target as HTMLSelectElement).value)}
         >

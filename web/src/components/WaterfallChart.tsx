@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { CHART_COLORS } from '../lib/chart-colors';
+import { useContainerWidth } from '../lib/hooks';
 
 interface WaterfallItem {
   label: string;
@@ -11,6 +13,8 @@ interface WaterfallItem {
 
 export default function WaterfallChart({ data }: { data: WaterfallItem[] }) {
   const chartRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
 
   useEffect(() => {
     if (!chartRef.current || data.length === 0) return;
@@ -41,7 +45,7 @@ export default function WaterfallChart({ data }: { data: WaterfallItem[] }) {
     });
 
     const chart = Plot.plot({
-      width: 700,
+      width: containerWidth,
       height: 400,
       marginBottom: 80,
       marginLeft: 80,
@@ -59,7 +63,7 @@ export default function WaterfallChart({ data }: { data: WaterfallItem[] }) {
           x: 'label',
           y1: 'y1',
           y2: 'y2',
-          fill: (d: typeof bars[0]) => (d.isTotal ? '#2563eb' : '#16a34a'),
+          fill: (d: typeof bars[0]) => (d.isTotal ? CHART_COLORS.primary : CHART_COLORS.positive),
           fillOpacity: (d: typeof bars[0]) => (d.isTotal ? 0.8 : 0.7),
         }),
         Plot.text(bars, {
@@ -76,14 +80,14 @@ export default function WaterfallChart({ data }: { data: WaterfallItem[] }) {
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [data]);
+  }, [data, containerWidth]);
 
   if (data.length === 0) {
     return <div class="text-gray-400 italic py-4">No revenue data available.</div>;
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       <h3 class="text-lg font-semibold mb-2">2026 Revenue Breakdown</h3>
       <p class="text-sm text-gray-500 mb-4">
         How the city's projected revenue builds up from its component sources.

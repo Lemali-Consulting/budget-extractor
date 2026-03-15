@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import TableViewer from '../../components/TableViewer.astro';
 import SummaryCard from '../../components/SummaryCard.astro';
 import SectionToc from '../../components/SectionToc.astro';
+import HighlightsCallout from '../../components/HighlightsCallout.astro';
+import ShareButton from '../../components/ShareButton.tsx';
 import PageImage from '../../components/PageImage.tsx';
 import PdfSidebar from '../../components/PdfSidebar.tsx';
 import SectionNav from '../../components/SectionNav.astro';
@@ -124,6 +126,8 @@ function extractMetrics(tables: any[]): SummaryMetrics {
 }
 
 const metrics = extractMetrics(section.tables);
+const highlights: string[] = (section as any).highlights || [];
+const ogDesc = highlights.length > 0 ? highlights.join('. ') : undefined;
 
 // Build sparkline values for this section from department budgets
 const sparklineValues: number[] = (departmentBudgets as {slug: string; amount: number}[])
@@ -145,13 +149,11 @@ const pageCount = section.start_page && section.end_page
   : new Set(finalItems.map((i: ContentItem) => i.page)).size;
 
 // --- Build TOC entries ---
-const typeColors: Record<string, { badge: string; cls: string }> = {
-  personnel: { badge: 'Personnel', cls: 'bg-purple-100 text-purple-700' },
-  financial: { badge: 'Financial', cls: 'bg-green-100 text-green-700' },
-  financial_summary: { badge: 'Summary', cls: 'bg-emerald-100 text-emerald-700' },
-  revenue: { badge: 'Revenue', cls: 'bg-blue-100 text-blue-700' },
-  unknown: { badge: 'Table', cls: 'bg-gray-100 text-gray-600' },
-};
+import { TYPE_COLORS, typeLabel as getTypeLabel } from '../../lib/type-colors';
+
+const typeColors = Object.fromEntries(
+  Object.entries(TYPE_COLORS).map(([k, cls]) => [k, { badge: getTypeLabel(k), cls }])
+) as Record<string, { badge: string; cls: string }>;
 
 interface TocEntry {
   label: string;
@@ -301,16 +303,24 @@ function parseNarrative(raw: string): Segment[] {
 }
 ---
 
-<Base title={section.title}>
+<Base title={section.title} ogTitle={section.title} ogDescription={ogDesc}>
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-blue-600">Home</a>
-    <span class="mx-1">/</span>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <a href="/operating/" class="hover:text-blue-600">Operating Budget</a>
+    <span class="mx-1" aria-hidden="true">/</span>
     <span>{section.title}</span>
   </nav>
 
   <SectionNav prev={prev} next={next} basePath="/sections" position="top" />
 
-  <h1 class="text-3xl font-bold mb-2">{section.title}</h1>
+  <div class="flex items-center gap-3 mb-2">
+    <h1 class="text-3xl font-bold">{section.title}</h1>
+    <ShareButton client:load url={`/sections/${section.slug}/`} />
+    <button class="text-xs text-gray-400 hover:text-blue-600 print:hidden" onclick="window.print()" title="Print this section" aria-label="Print">
+      Print
+    </button>
+  </div>
   <p class="text-gray-500 mb-6">
     Section {section.section_number}
     {section.start_page && section.end_page ? ` · Pages ${section.start_page}–${section.end_page}` : ''}
@@ -329,6 +339,8 @@ function parseNarrative(raw: string): Segment[] {
     pageCount={pageCount}
     sparklineValues={sparklineValues.length >= 2 ? sparklineValues : undefined}
   />
+
+  <HighlightsCallout highlights={highlights} />
 
   <SectionToc items={tocEntries} />
 
@@ -363,7 +375,7 @@ function parseNarrative(raw: string): Segment[] {
         }
         const segments = parseNarrative(item.text);
         return (
-          <div class="prose prose-sm max-w-none mb-4 text-gray-700 leading-relaxed">
+          <div class="prose prose-sm max-w-3xl mb-4 text-gray-700 leading-relaxed">
             {segments.map((seg) => {
               if (seg.type === 'heading') {
                 const hHtml = linkGlossaryTerms(seg.text);
@@ -424,17 +436,19 @@ function parseNarrative(raw: string): Segment[] {
       }
 
       if (item.kind === 'table') {
+        const tableData = (item as any).data;
         return (
-          <div id={`table-${(item as any).data.id}`}>
-            <div class="flex justify-end mb-1">
+          <div id={`table-${tableData.id}`}>
+            <div class="flex justify-end gap-3 mb-1">
+              <ShareButton client:load url={`/sections/${section.slug}/#table-${tableData.id}`} label="Share table" />
               <a
-                href={`/explorer/#${(item as any).data.id}`}
+                href={`/explorer/#${tableData.id}`}
                 class="text-xs text-blue-500 hover:text-blue-700 hover:underline"
               >
                 Open in Explorer &rarr;
               </a>
             </div>
-            <TableViewer table={(item as any).data} slug={section.slug} linkCell={linkGlossaryTerms} />
+            <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} />
           </div>
         );
       }

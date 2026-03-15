@@ -75,7 +75,7 @@ export function createGlossaryLinker(terms: GlossaryEntry[]) {
       if (match) {
         linked.add(key);
         const escapedTooltip = entry.tooltip.replace(/"/g, '&quot;');
-        const link = `<a href="/glossary/#${entry.anchor}" class="glossary-term" data-tooltip="${escapedTooltip}">${match[0]}</a>`;
+        const link = `<a href="/glossary/#${entry.anchor}" class="glossary-term" tabindex="0" data-tooltip="${escapedTooltip}">${match[0]}</a>`;
         const token = `\x00GLO${replacements.length}\x00`;
         replacements.push(link);
         html = html.replace(entry.pattern, token);

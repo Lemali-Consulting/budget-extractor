@@ -1,9 +1,11 @@
-"C0 (l, x:57-236)","C1 (r, x:236-282)","C2 (l, x:282-322)","C3 (l, x:322-350)","C4 (r, x:350-409)","C5 (r, x:409-442)","C6 (r, x:442-482)","C7 (l, x:482-510)","C8 (r, x:510-558)"
-Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget
-Business Diversity Coordinator,1,24G,12,"80,330",—,24G,—,—
-Contract Compliance Analyst,1,16G,12,"57,574",—,16G,—,—
-"Manager, Office of Immigrant and Refugee Affairs",1,25G,12,"83,512",—,25G,—,—
-Policy Coordinator,1,18G,12,"62,670",—,20G,—,—
-Workforce Development & Youth Coordinator,1,20G,12,"68,162",—,20G,—,—
-Youth Coordinator,1,20G,12,"68,162",—,0,—,—
-Total Full-Time Permanent Positions,39,,,"2,915,654",27,,,"2,587,770"
+"C0 (l, x:57-236)","C1 (r, x:236-282)","C2 (l, x:282-322)","C3 (l, x:322-350)","C4 (r, x:350-409)","C5 (r, x:409-442)","C6 (r, x:442-482)","C7 (l, x:482-510)","C8 (r, x:510-558)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+"Temporary, Part-Time, and Seasonal Allowances",,,,,,,,,"Temporary, Part-Time, and Seasonal Allowances"
+Communications Coordinator,—,21G,—,—,—,21G,—,"36,629","Temporary, Part-Time, and Seasonal Allowances"
+Pittsburgh Public Schools Interns,—,10.00-15.00,—,"20,000",—,10.00-15.00,—,—,"Temporary, Part-Time, and Seasonal Allowances"
+"311 Call Center Representatives, part-time",—,U01-N,—,"89,740",—,U01-N,—,—,"Temporary, Part-Time, and Seasonal Allowances"
+,—,,,"109,740",—,,,"36,629","Temporary, Part-Time, and Seasonal Allowances"
+Total Full-Time Permanent Positions,39,,,"2,915,654",27,,,"2,587,770","Temporary, Part-Time, and Seasonal Allowances"
+"Temporary, Part-Time, and Seasonal Allowances",—,,,"109,740",—,,,"36,629","Temporary, Part-Time, and Seasonal Allowances"
+Vacancy Allowance,—,,,"(118,913)",—,,,"(120,102)","Temporary, Part-Time, and Seasonal Allowances"
+Total Full-Time Positions and Net Salaries,39,,,"2,906,481",27,,,"2,504,297","Temporary, Part-Time, and Seasonal Allowances"

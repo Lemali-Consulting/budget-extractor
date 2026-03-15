@@ -21,7 +21,10 @@ const { items } = Astro.props;
 
 {items.length > 0 && (
   <details open class="mb-6 rounded-lg border bg-white text-sm">
-    <summary class="px-4 py-2 cursor-pointer font-medium text-gray-700 hover:text-gray-900 select-none">
+    <summary class="px-4 py-2 cursor-pointer font-medium text-gray-700 hover:text-gray-900 select-none flex items-center gap-2 list-none [&::-webkit-details-marker]:hidden">
+      <svg class="w-4 h-4 transition-transform toc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
       On this page
     </summary>
     <nav class="px-4 pb-3">

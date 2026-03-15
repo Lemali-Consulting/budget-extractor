@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { useContainerWidth } from '../lib/hooks';
 
 interface DeptData {
   department: string;
@@ -17,6 +18,8 @@ type SizeBy = 'fte' | 'budget';
 
 export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
   const chartRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
   const [sizeBy, setSizeBy] = useState<SizeBy>('fte');
 
   useEffect(() => {
@@ -44,7 +47,7 @@ export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
 
     const chart = Plot.plot({
       marginLeft: 220,
-      width: 700,
+      width: containerWidth,
       height: Math.max(300, chartData.length * 28),
       x: {
         label: sizeBy === 'fte' ? 'FTE Count' : 'Budget ($)',
@@ -83,14 +86,14 @@ export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [data, sizeBy]);
+  }, [data, sizeBy, containerWidth]);
 
   if (data.length === 0) {
     return <div class="text-gray-400 italic py-4">No personnel data available.</div>;
   }
 
   return (
-    <div class="mb-8">
+    <div class="mb-8" ref={containerRef}>
       <div class="flex items-center gap-3 mb-4">
         <h3 class="text-lg font-semibold">Staffing Distribution</h3>
         <select

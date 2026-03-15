@@ -61,20 +61,23 @@ export default function PdfSidebar({ slug, totalPages, startPage }: Props) {
               <button
                 onClick={() => setCurrentPage(Math.max(0, currentPage - 1))}
                 disabled={currentPage <= 0}
-                class="px-2 py-0.5 rounded hover:bg-gray-200 disabled:opacity-30"
+                aria-label="Previous page"
+                class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded hover:bg-gray-200 disabled:opacity-30"
               >
                 &larr;
               </button>
               <button
                 onClick={() => setCurrentPage(Math.min(totalPages - 1, currentPage + 1))}
                 disabled={currentPage >= totalPages - 1}
-                class="px-2 py-0.5 rounded hover:bg-gray-200 disabled:opacity-30"
+                aria-label="Next page"
+                class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded hover:bg-gray-200 disabled:opacity-30"
               >
                 &rarr;
               </button>
               <button
                 onClick={() => setOpen(false)}
-                class="ml-2 px-2 py-0.5 rounded hover:bg-gray-200 text-gray-500"
+                aria-label="Close PDF viewer"
+                class="ml-2 min-h-[44px] min-w-[44px] flex items-center justify-center rounded hover:bg-gray-200 text-gray-500"
               >
                 &times;
               </button>

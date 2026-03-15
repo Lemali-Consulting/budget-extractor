@@ -1,120 +1,92 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
-import Sparkline from '../components/Sparkline.tsx';
 import budgetData from '../data/budget-data.json';
+import capitalData from '../data/capital-budget-data.json';
 import searchIndex from '../data/views/search-index.json';
-import departmentBudgets from '../data/views/department-budgets.json';
 
-const sections = budgetData.sections;
+const operatingSections = budgetData.sections;
+const capitalSections = capitalData.sections;
+const operatingTables = operatingSections.reduce((n: number, s: any) => n + s.tables.length, 0);
 
-// Group sections by rough category based on section number
-const categories = [
-  { label: 'Overview', range: [1, 9] },
-  { label: 'Departments', range: [10, 39] },
-  { label: 'Trust Funds', range: [40, 57] },
-  { label: 'Other', range: [58, 99] },
-];
+// Count capital functional areas
+const capitalAreas = new Set(capitalSections.map((s: any) => s.functional_area || 'Other'));
 
-function getSectionCategory(num: number): string {
-  for (const cat of categories) {
-    if (num >= cat.range[0] && num <= cat.range[1]) return cat.label;
-  }
-  return 'Other';
+// Helper to parse currency from CIP table cells
+function parseCurrency(s: string): number {
+  if (!s) return 0;
+  return parseFloat(s.replace(/[,$]/g, '')) || 0;
 }
 
-const grouped = new Map<string, typeof sections>();
-for (const section of sections) {
-  const cat = getSectionCategory(section.section_number);
-  if (!grouped.has(cat)) grouped.set(cat, []);
-  grouped.get(cat)!.push(section);
-}
-
-// Extract first narrative snippet for each section
-function getSummary(section: any): string {
-  const pages = section.page_content || [];
-  for (const page of pages) {
-    for (const block of page.text_blocks || []) {
-      if (block.role === 'narrative' || block.role === 'leading_prose' || block.role === 'trailing_prose') {
-        // Take first ~120 chars, break at word boundary
-        const text = block.text.replace(/\n/g, ' ').trim();
-        if (text.length <= 120) return text;
-        return text.substring(0, 120).replace(/\s\S*$/, '') + '...';
+// Sum capital 2026 funding
+let capitalTotal = 0;
+for (const section of capitalSections) {
+  for (const table of (section as any).tables || []) {
+    if (table.table_type === 'cip_funding') {
+      for (const row of table.rows) {
+        if (row[0]?.trim().toUpperCase() === 'TOTAL' && row.length > 2) {
+          capitalTotal += parseCurrency(row[2]);
+        }
       }
     }
   }
-  return '';
-}
-
-// Build sparkline data lookup by slug from department budgets
-const sparklineMap = new Map<string, number[]>();
-for (const row of departmentBudgets as {slug: string; year: string; amount: number}[]) {
-  if (!sparklineMap.has(row.slug)) sparklineMap.set(row.slug, []);
-  sparklineMap.get(row.slug)!.push(row.amount);
-}
-
-// Check if section has chart images
-function hasChart(section: any): boolean {
-  for (const page of section.page_content || []) {
-    if ((page.chart_regions || []).length > 0) return true;
-  }
-  return false;
 }
 ---
 
 <Base title="Home">
   <h1 class="text-3xl font-bold mb-2">Pittsburgh Budget Explorer</h1>
-  <p class="text-gray-600 mb-4">Browse the City of Pittsburgh FY2026 Operating Budget. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
-
-  <div class="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-    <a href="/capital/" class="text-blue-700 font-medium hover:underline">
-      View the Capital Budget &rarr;
-    </a>
-    <span class="text-blue-600 text-sm ml-2">62 capital projects with funding and deliverables</span>
-  </div>
+  <p class="text-gray-600 mb-6">Browse the City of Pittsburgh FY2026 Budget — operating and capital.</p>
 
   <div class="mb-8">
     <SearchBar items={searchIndex} client:load />
   </div>
 
-  {[...grouped.entries()].map(([category, secs]) => (
-    <section class="mb-8">
-      <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b pb-1">{category}</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {secs.map((s) => {
-          const summary = getSummary(s);
-          const hasChartImg = hasChart(s);
-          return (
-            <a
-              href={`/sections/${s.slug}/`}
-              class="block p-4 bg-white rounded-lg border hover:border-blue-400 hover:shadow transition"
-            >
-              <div class="font-medium flex items-center gap-2">
-                {s.title}
-                {hasChartImg && (
-                  <span class="text-xs text-blue-500" title="Includes org chart">
-                    <svg class="w-3.5 h-3.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </span>
-                )}
-              </div>
-              <div class="text-sm text-gray-500 mt-1 flex items-center gap-2">
-                <span>
-                  {s.tables.length} {s.tables.length === 1 ? 'table' : 'tables'}
-                  {s.start_page && s.end_page ? ` · pp. ${s.start_page}–${s.end_page}` : ''}
-                </span>
-                {sparklineMap.has(s.slug) && sparklineMap.get(s.slug)!.length >= 2 && (
-                  <Sparkline values={sparklineMap.get(s.slug)!} />
-                )}
-              </div>
-              {summary && (
-                <div class="text-xs text-gray-400 mt-1.5 line-clamp-2">{summary}</div>
-              )}
-            </a>
-          );
-        })}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <a href="/operating/" class="block p-6 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition">
+      <h2 class="text-2xl font-bold text-blue-900 mb-2">Operating Budget</h2>
+      <p class="text-gray-600 mb-3">Department budgets, revenue, trust funds, and financial forecasts for day-to-day city operations.</p>
+      <div class="flex gap-4 text-sm text-gray-500">
+        <span class="font-medium">{operatingSections.length} sections</span>
+        <span>{operatingTables} tables</span>
       </div>
-    </section>
-  ))}
+    </a>
+
+    <a href="/capital/" class="block p-6 bg-white rounded-lg border-2 border-green-200 ring-0 hover:ring-2 hover:ring-green-400 hover:shadow-lg transition">
+      <h2 class="text-2xl font-bold text-green-900 mb-2">Capital Budget</h2>
+      <p class="text-gray-600 mb-3">Six-year capital improvement plan covering infrastructure, facilities, and major projects.</p>
+      <div class="flex gap-4 text-sm text-gray-500">
+        <span class="font-medium">{capitalSections.length} projects</span>
+        <span>{capitalAreas.size} functional areas</span>
+        {capitalTotal > 0 && <span>2026: ${(capitalTotal / 1_000_000).toFixed(1)}M</span>}
+      </div>
+    </a>
+  </div>
+
+  <a href="/changes/" class="block p-5 mb-6 bg-amber-50 rounded-lg border-2 border-amber-200 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition">
+    <h2 class="text-lg font-bold text-amber-900 mb-1">What Changed in FY2026?</h2>
+    <p class="text-sm text-amber-700">The biggest budget increases, decreases, new positions, and eliminated positions — the view you need before a budget hearing.</p>
+  </a>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+    <a href="/changes/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">What Changed</div>
+      <div class="text-xs text-gray-400 mt-1">Key budget changes</div>
+    </a>
+    <a href="/compare/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">Compare</div>
+      <div class="text-xs text-gray-400 mt-1">Departments side by side</div>
+    </a>
+    <a href="/explorer/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">Data Explorer</div>
+      <div class="text-xs text-gray-400 mt-1">Search all tables</div>
+    </a>
+    <a href="/charts/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">Dashboard</div>
+      <div class="text-xs text-gray-400 mt-1">Budget at a glance</div>
+    </a>
+    <a href="/personnel/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">Personnel</div>
+      <div class="text-xs text-gray-400 mt-1">Positions by department</div>
+    </a>
+  </div>
 </Base>

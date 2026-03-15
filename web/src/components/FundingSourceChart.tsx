@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { SOURCE_COLORS } from '../lib/chart-colors';
+import { useContainerWidth } from '../lib/hooks';
 
 interface FundingRow {
   project: string;
@@ -10,15 +12,10 @@ interface FundingRow {
   amount: number;
 }
 
-const SOURCE_COLORS: Record<string, string> = {
-  CDBG: '#f59e0b',
-  BOND: '#2563eb',
-  PAYGO: '#16a34a',
-  OTHER: '#6b7280',
-};
-
 export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
   const chartRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
 
   useEffect(() => {
     if (!chartRef.current || data.length === 0) return;
@@ -46,7 +43,7 @@ export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
     const sources = [...new Set(chartData.map((d) => d.source))];
 
     const chart = Plot.plot({
-      width: 700,
+      width: containerWidth,
       height: 350,
       marginBottom: 40,
       x: { label: 'Year', padding: 0.3 },
@@ -67,14 +64,14 @@ export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [data]);
+  }, [data, containerWidth]);
 
   if (data.length === 0) {
     return <div class="text-gray-400 italic py-4">No capital funding data available.</div>;
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       <h3 class="text-lg font-semibold mb-3">Funding by Source (2026-2031)</h3>
       <div ref={chartRef} />
     </div>

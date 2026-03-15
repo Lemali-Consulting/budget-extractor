@@ -45,6 +45,12 @@ for (const section of sections) {
 ---
 
 <Base title="Capital Budget">
+  <nav class="text-sm text-gray-500 mb-4">
+    <a href="/" class="hover:text-blue-600">Home</a>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <span>Capital Budget</span>
+  </nav>
+
   <h1 class="text-3xl font-bold mb-2">Capital Budget & Six Year Plan</h1>
   <p class="text-gray-600 mb-6">
     City of Pittsburgh FY2026 Capital Budget.
@@ -68,7 +74,7 @@ for (const section of sections) {
           return (
             <a
               href={`/capital/${s.slug}/`}
-              class="block p-4 bg-white rounded-lg border hover:border-blue-400 hover:shadow transition"
+              class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition"
             >
               <div class="font-medium">{s.title}</div>
               {(s as any).department && (

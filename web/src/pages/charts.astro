@@ -2,29 +2,118 @@
 import Base from '../layouts/Base.astro';
 import BudgetChart from '../components/BudgetChart.tsx';
 import WaterfallChart from '../components/WaterfallChart.tsx';
+import FundingSourceChart from '../components/FundingSourceChart.tsx';
+import PersonnelTreemap from '../components/PersonnelTreemap.tsx';
 import departmentBudgets from '../data/views/department-budgets.json';
 import revenueWaterfall from '../data/views/revenue-waterfall.json';
+import capitalFunding from '../data/views/capital-funding-sources.json';
+import personnelByDept from '../data/views/personnel-by-department.json';
+
+// Compute summary stats
+const budgetRows = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const total2026 = budgetRows.filter(r => r.year === '2026 Budget').reduce((s, r) => s + r.amount, 0);
+const total2025 = budgetRows.filter(r => r.year === '2025 Budget').reduce((s, r) => s + r.amount, 0);
+const budgetChange = total2025 > 0 ? ((total2026 - total2025) / total2025 * 100) : 0;
+const deptCount = new Set(budgetRows.map(r => r.slug)).size;
+
+const revenueTotal = (revenueWaterfall as { amount: number }[]).reduce((s, r) => s + r.amount, 0);
+
+const capitalRows = capitalFunding as { amount: number }[];
+const capitalTotal = capitalRows.reduce((s, r) => s + r.amount, 0);
+// 2026 only
+const capital2026 = (capitalFunding as { year: string; amount: number }[])
+  .filter(r => r.year === '2026')
+  .reduce((s, r) => s + r.amount, 0);
+
+const personnelData = personnelByDept as { totalFte2026: number; totalBudget2026: number }[];
+const totalFte = personnelData.reduce((s, r) => s + r.totalFte2026, 0);
+const totalPersonnelBudget = personnelData.reduce((s, r) => s + r.totalBudget2026, 0);
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
 ---
 
-<Base title="Budget Charts">
+<Base title="Budget Dashboard">
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-blue-600">Home</a>
-    <span class="mx-1">/</span>
-    <span>Charts</span>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <span>Dashboard</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">Budget Visualizations</h1>
-  <p class="text-gray-600 mb-8">Overview charts for the FY2026 Operating Budget.</p>
+  <h1 class="text-3xl font-bold mb-2">FY2026 Budget Dashboard</h1>
+  <p class="text-gray-600 mb-6">City of Pittsburgh budget at a glance — operating, capital, and personnel.</p>
 
-  <div class="space-y-12">
-    <section>
-      <h2 class="text-xl font-semibold mb-4">Department Comparison</h2>
-      <p class="text-gray-600 mb-4">Top departments by budget total.</p>
-      <BudgetChart data={departmentBudgets} client:load />
-    </section>
+  <!-- Summary stats -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Operating Budget</div>
+      <div class="text-2xl font-bold text-blue-900 mt-1">{fmtM(total2026)}</div>
+      <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {budgetChange >= 0 ? '↑ +' : '↓ '}{budgetChange.toFixed(1)}% vs 2025
+      </div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Projected Revenue</div>
+      <div class="text-2xl font-bold text-green-900 mt-1">{fmtM(revenueTotal)}</div>
+      <div class="text-sm text-gray-500 mt-0.5">{(revenueWaterfall as any[]).length} sources</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Capital (2026)</div>
+      <div class="text-2xl font-bold text-amber-900 mt-1">{fmtM(capital2026)}</div>
+      <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Personnel</div>
+      <div class="text-2xl font-bold text-purple-900 mt-1">{totalFte.toLocaleString('en-US')} FTE</div>
+      <div class="text-sm text-gray-500 mt-0.5">{fmtM(totalPersonnelBudget)} payroll</div>
+    </div>
+  </div>
 
-    <section>
-      <WaterfallChart data={revenueWaterfall} client:load />
-    </section>
+  <!-- Operating Budget section -->
+  <div class="mb-12">
+    <div class="flex items-baseline justify-between mb-1">
+      <h2 class="text-2xl font-semibold">Operating Budget</h2>
+      <a href="/operating/" class="text-sm text-blue-500 hover:text-blue-700">Browse all {deptCount} departments &rarr;</a>
+    </div>
+    <p class="text-gray-500 text-sm mb-6">Department spending and revenue for day-to-day city operations.</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="bg-white rounded-lg border p-5">
+        <h3 class="text-lg font-semibold mb-1">Department Comparison</h3>
+        <p class="text-sm text-gray-500 mb-3">Top departments by budget total.</p>
+        <BudgetChart data={departmentBudgets} client:load />
+      </div>
+
+      <div class="bg-white rounded-lg border p-5">
+        <WaterfallChart data={revenueWaterfall} client:load />
+      </div>
+    </div>
+  </div>
+
+  <!-- Capital Budget section -->
+  <div class="mb-12">
+    <div class="flex items-baseline justify-between mb-1">
+      <h2 class="text-2xl font-semibold">Capital Budget</h2>
+      <a href="/capital/" class="text-sm text-blue-500 hover:text-blue-700">Browse all projects &rarr;</a>
+    </div>
+    <p class="text-gray-500 text-sm mb-6">Six-year capital improvement plan — infrastructure, facilities, and major projects.</p>
+
+    <div class="bg-white rounded-lg border p-5 max-w-3xl">
+      <FundingSourceChart data={capitalFunding} client:load />
+    </div>
+  </div>
+
+  <!-- Personnel section -->
+  <div class="mb-12">
+    <div class="flex items-baseline justify-between mb-1">
+      <h2 class="text-2xl font-semibold">Personnel</h2>
+      <a href="/personnel/" class="text-sm text-blue-500 hover:text-blue-700">Explore all positions &rarr;</a>
+    </div>
+    <p class="text-gray-500 text-sm mb-6">Staffing levels and payroll across city departments.</p>
+
+    <div class="bg-white rounded-lg border p-5">
+      <PersonnelTreemap data={personnelByDept} client:load />
+    </div>
   </div>
 </Base>

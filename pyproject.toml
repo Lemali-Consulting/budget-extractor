@@ -8,3 +8,8 @@ dependencies = [
     "pdfplumber>=0.11.9",
     "pypdf>=6.6.2",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]

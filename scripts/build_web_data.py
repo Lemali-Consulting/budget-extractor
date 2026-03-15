@@ -66,10 +66,18 @@ def parse_csv(path: Path) -> dict:
     return {"headers": headers, "rows": data_rows, "sections": sections}
 
 
-def classify_table(headers: list[str]) -> str:
-    """Classify a table by its header pattern."""
+def classify_table(headers: list[str], section_title: str = "") -> str:
+    """Classify a table by its header pattern and section context."""
     header_text = " ".join(headers).lower()
+    title_lower = section_title.lower()
     if "fte" in header_text and ("rate" in header_text or "grade" in header_text):
+        return "personnel"
+    if ("total full time" in header_text or "total full-time" in header_text
+            or ("part-time" in header_text and "allowance" in header_text)):
+        return "personnel"
+    # Personnel rows with grade codes like "32G"
+    if any(h.strip() and len(h.strip()) <= 4 and h.strip()[-1].isalpha()
+           and h.strip()[:-1].isdigit() for h in headers):
         return "personnel"
     if "revenue" in header_text:
         return "revenue"
@@ -77,6 +85,46 @@ def classify_table(headers: list[str]) -> str:
         return "financial_summary"
     if "budget" in header_text:
         return "financial"
+    # Grant tables
+    if "grant" in header_text and ("funder" in header_text or "amount awarded" in header_text):
+        return "grant"
+    if "department" in header_text and "project and funder" in header_text:
+        return "grant"
+    # Debt service tables
+    if "principal" in header_text and ("interest" in header_text or "debt service" in header_text):
+        return "debt_service"
+    if "debt service" in title_lower:
+        return "debt_service"
+    # Forecast tables (year-only columns like ['', '2026', '2027', ...])
+    year_count = sum(1 for h in headers if h.strip() and len(h.strip()) == 4 and h.strip().startswith("20"))
+    if year_count >= 3:
+        return "forecast"
+    if "account" in header_text and year_count >= 2:
+        return "forecast"
+    # Trust fund balance tables
+    if "projected" in header_text and ("balance" in header_text or "beginning" in header_text
+                                       or "ending" in header_text):
+        return "fund_balance"
+    # Allocation tables
+    if "allocation" in header_text:
+        return "allocation"
+    # Salary / rate tables
+    if "grade" in header_text and "step" in header_text:
+        return "salary"
+    if "hourly rate" in header_text or "annual rate" in header_text:
+        return "salary"
+    if "salary" in title_lower and ("grade" in header_text or "step" in header_text):
+        return "salary"
+    if "firefighter" in header_text or "hourly rates" in header_text:
+        return "salary"
+    # Fee schedule tables
+    if "fee" in title_lower and "schedule" in title_lower:
+        return "fee_schedule"
+    if "fee description" in header_text:
+        return "fee_schedule"
+    # Deliverables / objectives
+    if "deliverable" in header_text or "objective" in header_text:
+        return "deliverables"
     return "unknown"
 
 
@@ -211,6 +259,108 @@ def extract_narrative_content(
     return result, narrative_links
 
 
+def generate_table_label(table: dict, section_title: str) -> str:
+    """Generate a short human-readable label for a table from its description or metadata."""
+    desc: str = table.get("description", "")
+
+    if desc:
+        # Extract fund/entity name from common description patterns
+        # "Financial snapshot for X showing..." → X
+        m = re.match(r"Financial snapshot for (.+?) showing", desc)
+        if m:
+            return m.group(1)
+
+        # "Personnel roster for X listing N positions..." → first section group or "N positions"
+        m = re.match(r"Personnel roster for .+? listing (\d+) (?:staff )?positions?", desc)
+        if m:
+            sections = table.get("sections", [])
+            unique_sections = list(dict.fromkeys(s for s in sections if s))
+            if unique_sections:
+                if len(unique_sections) <= 2:
+                    return ", ".join(unique_sections)
+                return f"{unique_sections[0]} + {len(unique_sections) - 1} more"
+            return f"{m.group(1)} positions"
+
+        # "Financial summary for X comparing ..., covering Y, Z" → extract topics
+        if desc.startswith("Financial summary"):
+            m2 = re.search(r"covering (.+?)\.?$", desc)
+            if m2:
+                topics = m2.group(1)
+                # Extract first major category after "Expenditures, "
+                parts = [p.strip() for p in topics.split(",")]
+                # Skip generic "Expenditures" lead-in, show first specific category
+                specific = [p for p in parts if p not in ("Expenditures", "Revenues")]
+                if specific:
+                    if len(specific) <= 2:
+                        return ", ".join(specific)
+                    return f"{specific[0]} + {len(specific) - 1} more"
+            return "Financial Summary"
+
+        # "Five-year budget projection for X..." → "5-Year Projection"
+        if desc.startswith("Five-year budget projection"):
+            return "5-Year Projection"
+
+        # "Five-year revenue and expenditure forecast..." → "5-Year Forecast"
+        if desc.startswith("Five-year") and "forecast" in desc:
+            return "5-Year Forecast"
+
+        # "Five-year departmental expenditure forecast..." → "Departmental Forecast"
+        if "departmental expenditure forecast" in desc:
+            return "Departmental Forecast"
+
+        # "Budget detail for X comparing..." → X
+        m = re.match(r"Budget detail for (.+?) comparing", desc)
+        if m:
+            return m.group(1)
+
+        # "Revenue accounts for X covering Y" → Y (topics)
+        m = re.match(r"(?:Revenue|Expenditure) accounts? for .+? (?:covering|broken down by) (.+?)\.?$", desc)
+        if m:
+            topics = m.group(1)
+            # Truncate if too long
+            if len(topics) > 50:
+                parts = [p.strip() for p in topics.split(",")]
+                return ", ".join(parts[:2]) + f" + {len(parts) - 2} more"
+            return topics
+
+        # "Account-level detail for X covering Y" → Y
+        m = re.match(r"Account-level detail for .+? covering (.+?)\.?$", desc)
+        if m:
+            topics = m.group(1)
+            if len(topics) > 50:
+                parts = [p.strip() for p in topics.split(",")]
+                return ", ".join(parts[:2]) + f" + {len(parts) - 2} more"
+            return topics
+
+        # "Grant inventory listing N grants..." → "Grant Inventory"
+        if desc.startswith("Grant inventory"):
+            return "Grant Inventory"
+
+        # "Projected beginning balance for X" → "Beginning Balance"
+        if "Projected beginning balance" in desc:
+            return "Beginning Balance"
+
+        # "Budget data for X (years) with N line items" → first header or "N line items"
+        m = re.match(r"Budget data for .+? \(.+?\) with (\d+) line items", desc)
+        if m:
+            h0 = table.get("headers", [""])[0]
+            if h0 and h0 not in ("", "Account", "Subclass", "Title"):
+                return h0[:50]
+            return f"{m.group(1)} line items"
+
+    # Fallback: use first header if it's descriptive
+    headers = table.get("headers", [])
+    if headers and headers[0] and headers[0] not in ("", "Account", "Subclass", "Title"):
+        h0 = headers[0]
+        if len(h0) <= 50:
+            return h0
+
+    # Fallback: prettify the type
+    table_type: str = table.get("table_type", "unknown")
+    label = table_type.replace("_", " ").title()
+    return label
+
+
 def load_descriptions() -> dict[str, str]:
     """Load pre-generated table descriptions if available."""
     desc_path = Path(__file__).parent.parent / "output" / "table-descriptions.json"
@@ -258,7 +408,7 @@ def build_data() -> dict:
             rel_page = int(file_match.group(1))
             table_idx = int(file_match.group(2))
             parsed = parse_csv(csv_path)
-            table_type = classify_table(parsed["headers"])
+            table_type = classify_table(parsed["headers"], section_title=title)
 
             table_id = f"s{section_num}_p{rel_page}_t{table_idx}"
             table: dict = {
@@ -311,6 +461,199 @@ def build_data() -> dict:
         glossary.pop("metadata", None)
 
     return {"sections": sections, "glossary": glossary}
+
+
+def _format_dollar(amount: float) -> str:
+    """Format a dollar amount for display (e.g. '$4.1M' or '$850K')."""
+    if abs(amount) >= 1_000_000:
+        return f"${amount / 1_000_000:,.1f}M"
+    if abs(amount) >= 1_000:
+        return f"${amount / 1_000:,.0f}K"
+    return f"${amount:,.0f}"
+
+
+def build_section_highlights(section: dict) -> list[str]:
+    """Generate plain-language highlight strings for a section."""
+    highlights: list[str] = []
+    tables = section.get("tables", [])
+
+    # --- Budget change highlight ---
+    for table in tables:
+        if table.get("table_type") not in ("financial_summary", "financial"):
+            continue
+        headers = table.get("headers", [])
+        col_2026 = -1
+        col_2025 = -1
+        for i, h in enumerate(headers):
+            if "2026" in h and "Budget" in h:
+                col_2026 = i
+            elif "2025" in h and "Budget" in h:
+                col_2025 = i
+        if col_2026 < 0 or col_2025 < 0:
+            continue
+
+        # Find total row and line-item changes
+        total_2026: float | None = None
+        total_2025: float | None = None
+        line_changes: list[tuple[str, float]] = []
+
+        for row in table.get("rows", []):
+            label = (row[0] if row else "").strip()
+            if not label:
+                continue
+            val_2026 = parse_currency(row[col_2026] if col_2026 < len(row) else "")
+            val_2025 = parse_currency(row[col_2025] if col_2025 < len(row) else "")
+
+            label_lower = label.lower()
+            if label_lower in ("expenditures total", "total expenditures", "total"):
+                total_2026 = val_2026
+                total_2025 = val_2025
+            elif val_2026 is not None and val_2025 is not None and "total" not in label_lower:
+                change = val_2026 - val_2025
+                if abs(change) > 0:
+                    line_changes.append((label, change))
+
+        if total_2026 is not None and total_2025 is not None and total_2025 > 0:
+            dollar_change = total_2026 - total_2025
+            pct_change = (dollar_change / total_2025) * 100
+            direction = "increases" if dollar_change > 0 else "decreases"
+            msg = f"Budget {direction} {abs(pct_change):.1f}% ({_format_dollar(abs(dollar_change))})"
+
+            # Find top driver
+            line_changes.sort(key=lambda x: abs(x[1]), reverse=True)
+            if line_changes and abs(line_changes[0][1]) > abs(dollar_change) * 0.2:
+                driver_label, driver_change = line_changes[0]
+                # Clean subclass codes like "51 - PERSONNEL-SALARIES & WAGES" -> "Personnel - Salaries & Wages"
+                driver_label = re.sub(r"^\d+\s*-\s*", "", driver_label).title()
+                driver_dir = "more" if driver_change > 0 else "less"
+                msg += f", led by {_format_dollar(abs(driver_change))} {driver_dir} in {driver_label}"
+            highlights.append(msg)
+            break
+
+    # --- FTE change highlight ---
+    for table in tables:
+        if table.get("table_type") != "personnel":
+            continue
+        headers = table.get("headers", [])
+        headers_lower = [h.lower() for h in headers]
+        fte_2026_idx = next((i for i, h in enumerate(headers_lower) if "2026" in h and "fte" in h), -1)
+        fte_2025_idx = next((i for i, h in enumerate(headers_lower) if "2025" in h and "fte" in h), -1)
+        if fte_2026_idx < 0 or fte_2025_idx < 0:
+            continue
+
+        for row in table.get("rows", []):
+            label = (row[0] if row else "").strip().lower()
+            if label == "total full-time permanent positions":
+                fte_2026 = parse_currency(row[fte_2026_idx] if fte_2026_idx < len(row) else "")
+                fte_2025 = parse_currency(row[fte_2025_idx] if fte_2025_idx < len(row) else "")
+                if fte_2026 is not None and fte_2025 is not None:
+                    diff = int(fte_2026 - fte_2025)
+                    if diff > 0:
+                        highlights.append(f"Adds {diff} position{'s' if diff != 1 else ''} ({int(fte_2025)} \u2192 {int(fte_2026)} FTE)")
+                    elif diff < 0:
+                        highlights.append(f"Reduces by {abs(diff)} position{'s' if abs(diff) != 1 else ''} ({int(fte_2025)} \u2192 {int(fte_2026)} FTE)")
+                    else:
+                        highlights.append(f"Staffing unchanged at {int(fte_2026)} FTE")
+                break
+        break
+
+    return highlights
+
+
+def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
+    """Build a summary of the biggest changes across the whole budget."""
+    dept_changes: list[dict] = []
+
+    for section in sections:
+        if section["section_number"] <= 9:
+            continue
+
+        budget_2025: float | None = None
+        budget_2026: float | None = None
+        fte_2025: float | None = None
+        fte_2026: float | None = None
+
+        for table in section["tables"]:
+            headers = table.get("headers", [])
+            if table["table_type"] in ("financial_summary", "financial"):
+                col_2026 = next((i for i, h in enumerate(headers) if "2026" in h and "Budget" in h), -1)
+                col_2025 = next((i for i, h in enumerate(headers) if "2025" in h and "Budget" in h), -1)
+                if col_2026 >= 0 and col_2025 >= 0:
+                    for row in table["rows"]:
+                        label = (row[0] if row else "").strip().lower()
+                        if label in ("expenditures total", "total expenditures", "total"):
+                            budget_2026 = parse_currency(row[col_2026] if col_2026 < len(row) else "")
+                            budget_2025 = parse_currency(row[col_2025] if col_2025 < len(row) else "")
+                            break
+
+            if table["table_type"] == "personnel":
+                headers_lower = [h.lower() for h in headers]
+                fi26 = next((i for i, h in enumerate(headers_lower) if "2026" in h and "fte" in h), -1)
+                fi25 = next((i for i, h in enumerate(headers_lower) if "2025" in h and "fte" in h), -1)
+                if fi26 >= 0 and fi25 >= 0:
+                    for row in table["rows"]:
+                        if (row[0] if row else "").strip().lower() == "total full-time permanent positions":
+                            fte_2026 = parse_currency(row[fi26] if fi26 < len(row) else "")
+                            fte_2025 = parse_currency(row[fi25] if fi25 < len(row) else "")
+                            break
+
+        if budget_2025 and budget_2026 and budget_2025 > 0:
+            dollar_change = budget_2026 - budget_2025
+            pct_change = (dollar_change / budget_2025) * 100
+            entry: dict = {
+                "department": section["title"],
+                "slug": section["slug"],
+                "budget2025": budget_2025,
+                "budget2026": budget_2026,
+                "dollarChange": dollar_change,
+                "pctChange": round(pct_change, 1),
+            }
+            if fte_2025 is not None:
+                entry["fte2025"] = fte_2025
+            if fte_2026 is not None:
+                entry["fte2026"] = fte_2026
+            dept_changes.append(entry)
+
+    dept_changes.sort(key=lambda x: x["dollarChange"], reverse=True)
+
+    # New and eliminated positions
+    new_positions: list[dict] = []
+    eliminated_positions: list[dict] = []
+    for p in personnel:
+        fte25 = p.get("fte2025") or 0
+        fte26 = p.get("fte2026") or 0
+        if fte26 > 0 and fte25 == 0:
+            new_positions.append({
+                "department": p["department"],
+                "title": p["title"],
+                "fte": fte26,
+                "budget": p.get("budget2026") or 0,
+            })
+        elif fte25 > 0 and fte26 == 0:
+            eliminated_positions.append({
+                "department": p["department"],
+                "title": p["title"],
+                "fte": fte25,
+                "budget": p.get("budget2025") or 0,
+            })
+
+    # Compute totals
+    total_2025 = sum(d["budget2025"] for d in dept_changes)
+    total_2026 = sum(d["budget2026"] for d in dept_changes)
+    total_fte_2025 = sum(d.get("fte2025", 0) or 0 for d in dept_changes)
+    total_fte_2026 = sum(d.get("fte2026", 0) or 0 for d in dept_changes)
+
+    return {
+        "totalBudget2025": total_2025,
+        "totalBudget2026": total_2026,
+        "totalFte2025": total_fte_2025,
+        "totalFte2026": total_fte_2026,
+        "departmentChanges": dept_changes,
+        "topIncreases": [d for d in dept_changes if d["dollarChange"] > 0][:10],
+        "topDecreases": list(reversed([d for d in dept_changes if d["dollarChange"] < 0]))[:10],
+        "newPositions": new_positions,
+        "eliminatedPositions": eliminated_positions,
+    }
 
 
 def build_department_budgets(sections: list[dict]) -> list[dict]:
@@ -423,6 +766,26 @@ def detect_numeric_columns(headers: list[str], rows: list[list[str]]) -> list[in
     ]
 
 
+def _deduplicate_labels(items: list[dict]) -> None:
+    """Append numbering to duplicate labels within the same section."""
+    from collections import Counter
+
+    # Group items by section
+    section_items: dict[int, list[dict]] = {}
+    for item in items:
+        section_items.setdefault(item["sectionNumber"], []).append(item)
+
+    for section_tables in section_items.values():
+        label_counts = Counter(t["label"] for t in section_tables)
+        # For labels that appear more than once, append a counter
+        label_seen: dict[str, int] = {}
+        for t in section_tables:
+            if label_counts[t["label"]] > 1:
+                label_seen.setdefault(t["label"], 0)
+                label_seen[t["label"]] += 1
+                t["label"] = f"{t['label']} ({label_seen[t['label']]})"
+
+
 def build_tables_index(sections: list[dict], budget_type: str = "operating") -> list[dict]:
     """Build lightweight metadata index for all tables (no row data)."""
     items: list[dict] = []
@@ -430,6 +793,7 @@ def build_tables_index(sections: list[dict], budget_type: str = "operating") -> 
     for section in sections:
         for table in section["tables"]:
             numeric_cols = detect_numeric_columns(table["headers"], table["rows"])
+            label = generate_table_label(table, section["title"])
             entry: dict = {
                 "id": table["id"],
                 "sectionNumber": section["section_number"],
@@ -438,6 +802,7 @@ def build_tables_index(sections: list[dict], budget_type: str = "operating") -> 
                 "page": table["relative_page"],
                 "tableIndex": table["table_index"],
                 "type": table["table_type"],
+                "label": label,
                 "headers": table["headers"],
                 "rowCount": len(table["rows"]),
                 "numericCols": numeric_cols,
@@ -447,6 +812,7 @@ def build_tables_index(sections: list[dict], budget_type: str = "operating") -> 
                 entry["description"] = table["description"]
             items.append(entry)
 
+    _deduplicate_labels(items)
     return items
 
 
@@ -480,11 +846,13 @@ def build_search_index(sections: list[dict]) -> list[dict]:
             table_narrative = table.get("linked_narrative", "")
             if not table_narrative:
                 table_narrative = table.get("description", "")
+            label = generate_table_label(table, section["title"])
             items.append({
                 "sectionTitle": section["title"],
                 "slug": section["slug"],
                 "tableId": table["id"],
                 "tableType": table["table_type"],
+                "label": label,
                 "headers": " ".join(table["headers"]),
                 "narrative": table_narrative[:500],
                 "page": table["relative_page"],
@@ -507,13 +875,36 @@ def load_capital_sections() -> dict[int, dict]:
     return result
 
 
-def classify_capital_table(headers: list[str]) -> str:
-    """Classify a capital budget table by its header pattern."""
+def classify_capital_table(headers: list[str], section_title: str = "") -> str:
+    """Classify a capital budget table by its header pattern and section context."""
     header_text = " ".join(headers).lower()
     if "source" in header_text and "2026" in header_text:
         return "cip_funding"
     if "deliverable" in header_text or "objective" in header_text:
         return "deliverables"
+    # Functional area summary tables from the introduction
+    if "functional area" in header_text or "2026 total" in header_text:
+        return "capital_summary"
+    if "total:" in header_text:
+        return "capital_summary"
+    # CPFC scoring tables
+    if "cpfc" in header_text and "scoring" in header_text:
+        return "capital_summary"
+    # Glossary / acronym tables
+    if "acronym" in header_text or "term" in header_text:
+        return "glossary"
+    # Capital project detail tables (project code pattern like "1234 -")
+    first_header = (headers[0] if headers else "").strip()
+    import re
+    if re.match(r"\d{4}\s*-\s*", first_header):
+        return "capital_project"
+    # Multi-year funding overview (year rows like '2025', '$...')
+    if re.match(r"^20\d{2}$", first_header):
+        return "capital_summary"
+    # Appendices context
+    title_lower = section_title.lower()
+    if "appendic" in title_lower or "introduction" in title_lower:
+        return "capital_summary"
     return "unknown"
 
 
@@ -558,15 +949,19 @@ def extract_capital_narrative(
                 {"text": b.text, "role": b.role, "bbox": [round(v, 1) for v in b.bbox]}
                 for b in content.text_blocks if b.role in USEFUL_ROLES
             ]
+            charts = [
+                {"bbox": [round(v, 1) for v in c.bbox], "chart_type": c.chart_type}
+                for c in content.chart_regions
+            ]
 
-            if blocks:
+            if blocks or charts:
                 section_info = sections_lookup.get(section_num, {})
                 start_page = section_info.get("start_page", 0)
                 pages_content.append({
                     "relative_page": rel_page,
                     "absolute_page": start_page + rel_page if start_page else rel_page,
                     "text_blocks": blocks,
-                    "chart_regions": [],
+                    "chart_regions": charts,
                 })
 
         pdf.close()
@@ -615,7 +1010,7 @@ def build_capital_data() -> dict:
             rel_page = int(file_match.group(1))
             table_idx = int(file_match.group(2))
             parsed = parse_csv(csv_path)
-            table_type = classify_capital_table(parsed["headers"])
+            table_type = classify_capital_table(parsed["headers"], section_title=title)
 
             table: dict = {
                 "id": f"cap_s{section_num}_p{rel_page}_t{table_idx}",
@@ -924,6 +1319,14 @@ def main() -> None:
     data = build_data()
     sections = data["sections"]
 
+    # Generate highlights for each section
+    for section in sections:
+        hl = build_section_highlights(section)
+        if hl:
+            section["highlights"] = hl
+    highlights_count = sum(1 for s in sections if s.get("highlights"))
+    print(f"Generated highlights for {highlights_count} sections")
+
     # Full data bundle (for Astro build-time rendering of section detail pages)
     out_path = WEB_DATA_DIR / "budget-data.json"
     with open(out_path, "w", encoding="utf-8") as f:
@@ -943,6 +1346,14 @@ def main() -> None:
     with open(views_dir / "personnel.json", "w", encoding="utf-8") as f:
         json.dump(personnel, f, indent=2)
     print(f"Wrote personnel.json ({len(personnel)} rows)")
+
+    # Budget changes view (for "What Changed?" page)
+    budget_changes = build_budget_changes(sections, personnel)
+    with open(views_dir / "budget-changes.json", "w", encoding="utf-8") as f:
+        json.dump(budget_changes, f, indent=2)
+    print(f"Wrote budget-changes.json ({len(budget_changes['departmentChanges'])} departments, "
+          f"{len(budget_changes['newPositions'])} new positions, "
+          f"{len(budget_changes['eliminatedPositions'])} eliminated)")
 
     # Personnel by department (for treemap)
     personnel_by_dept = build_personnel_by_department(personnel)

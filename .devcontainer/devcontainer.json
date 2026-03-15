@@ -80,7 +80,11 @@
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,readonly",
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude.json,target=/home/vscode/.claude.json,type=bind,consistency=cached",
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind,readonly"
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind,readonly",
+    // Mount claude-toolbox at the same absolute path as on the host so that
+    // symlinks inside ~/.claude (agents, commands, skills, CLAUDE.md, etc.)
+    // continue to resolve correctly inside the container.
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/Desktop/coding-projects/claude-toolbox,target=/home/max/Desktop/coding-projects/claude-toolbox,type=bind,readonly"
   ],
   "forwardPorts": [],
   "remoteUser": "vscode"

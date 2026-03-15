@@ -5,6 +5,11 @@ import * as Plot from '@observablehq/plot';
 import PageImage from './PageImage';
 import TrendChart from './TrendChart';
 import YearChangeChart from './YearChangeChart';
+import FundingStackedBar from './FundingStackedBar';
+import { parseCurrency } from '../lib/currency';
+import { TYPE_COLORS, TYPE_LABELS, typeLabel } from '../lib/type-colors';
+import { CHART_COLORS } from '../lib/chart-colors';
+import { useContainerWidth } from '../lib/hooks';
 
 // --- Types ---
 
@@ -16,6 +21,7 @@ interface TableIndex {
   page: number;
   tableIndex: number;
   type: string;
+  label?: string;
   headers: string[];
   rowCount: number;
   numericCols: number[];
@@ -45,28 +51,18 @@ interface Props {
   sections: Section[];
 }
 
-type Tab = 'data' | 'chart' | 'trend' | 'changes' | 'compare';
+type Tab = 'data' | 'chart' | 'funding' | 'trend' | 'changes' | 'compare';
 
-const TYPE_COLORS: Record<string, string> = {
-  personnel: 'bg-purple-100 text-purple-700',
-  financial: 'bg-green-100 text-green-700',
-  financial_summary: 'bg-emerald-100 text-emerald-700',
-  revenue: 'bg-blue-100 text-blue-700',
-  cip_funding: 'bg-orange-100 text-orange-700',
-  deliverables: 'bg-teal-100 text-teal-700',
-  unknown: 'bg-gray-100 text-gray-600',
+const TAB_LABELS: Record<Tab, string> = {
+  data: 'Table Data',
+  chart: 'Chart',
+  funding: 'Funding',
+  trend: 'Trend',
+  changes: 'Changes',
+  compare: 'Compare',
 };
 
 // --- Helpers ---
-
-function parseCurrency(s: string): number | null {
-  if (!s || s === '—' || s === 'varies') return null;
-  const neg = s.includes('(') && s.includes(')');
-  const cleaned = s.replace(/[$,()]/g, '').trim();
-  const num = parseFloat(cleaned);
-  if (isNaN(num)) return null;
-  return neg ? -num : num;
-}
 
 function downloadCsv(headers: string[], rows: string[][], filename: string) {
   const lines = [headers, ...rows].map((r) =>
@@ -98,6 +94,8 @@ function ChartPanel({
   tableId: string;
 }) {
   const chartRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
   const labelCol = table.headers.findIndex((_, i) => !numericCols.includes(i));
 
   useEffect(() => {
@@ -120,7 +118,7 @@ function ChartPanel({
 
     const chart = Plot.plot({
       marginLeft: Math.min(250, Math.max(120, ...sliced.map((d) => d.label.length * 7))),
-      width: 700,
+      width: containerWidth,
       height: Math.max(300, sliced.length * 28),
       x: {
         label: table.headers[chartCol],
@@ -136,7 +134,7 @@ function ChartPanel({
         Plot.barX(sliced, {
           x: 'value',
           y: 'label',
-          fill: (d: { value: number }) => (d.value >= 0 ? '#2563eb' : '#dc2626'),
+          fill: (d: { value: number }) => (d.value >= 0 ? CHART_COLORS.primary : CHART_COLORS.negative),
           sort: { y: '-x' },
         }),
         Plot.ruleX([0]),
@@ -145,10 +143,10 @@ function ChartPanel({
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [chartCol, tableId]);
+  }, [chartCol, tableId, containerWidth]);
 
   return (
-    <div>
+    <div ref={containerRef}>
       <div class="flex items-center gap-3 mb-4">
         <label class="text-sm font-medium text-gray-700">Column:</label>
         <select
@@ -179,6 +177,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
   const [budgetFilter, setBudgetFilter] = useState<'' | 'operating' | 'capital'>('');
   const [chartCol, setChartCol] = useState<number>(-1);
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Build lookup: table id -> full table data
   const tableData = useMemo(() => {
@@ -294,6 +293,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
     setSelectedId(id);
     setTab('data');
     setCompareId(null);
+    setSidebarOpen(false); // close sidebar on mobile after selection
   }
 
   function toggleSection(key: string) {
@@ -308,9 +308,11 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
   // --- Sidebar ---
   function renderSidebar() {
     return (
-      <div class="w-72 lg:w-80 border-r bg-gray-50 flex flex-col overflow-hidden shrink-0">
+      <>
         <div class="p-3 border-b bg-white">
+          <label for="explorer-search" class="sr-only">Search tables</label>
           <input
+            id="explorer-search"
             type="text"
             placeholder="Search tables..."
             class="w-full px-3 py-1.5 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -321,7 +323,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             {(['', 'operating', 'capital'] as const).map((bt) => (
               <button
                 key={bt || 'all'}
-                class={`px-2 py-0.5 rounded text-xs font-medium transition flex-1 ${
+                class={`px-2 py-1.5 rounded text-xs font-medium transition flex-1 ${
                   budgetFilter === bt ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                 }`}
                 onClick={() => { setBudgetFilter(bt); setTypeFilter(''); }}
@@ -332,7 +334,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
           </div>
           <div class="flex flex-wrap gap-1 mt-2">
             <button
-              class={`px-2 py-0.5 rounded text-xs font-medium transition ${
+              class={`px-2 py-1.5 rounded text-xs font-medium transition ${
                 !typeFilter ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
               }`}
               onClick={() => setTypeFilter('')}
@@ -342,14 +344,14 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             {[...typeCounts.entries()].sort((a, b) => b[1] - a[1]).map(([type, count]) => (
               <button
                 key={type}
-                class={`px-2 py-0.5 rounded text-xs font-medium transition ${
+                class={`px-2 py-1.5 rounded text-xs font-medium transition ${
                   typeFilter === type
                     ? 'bg-blue-600 text-white'
                     : `${TYPE_COLORS[type] || TYPE_COLORS.unknown} hover:opacity-80`
                 }`}
                 onClick={() => setTypeFilter(typeFilter === type ? '' : type)}
               >
-                {type} ({count})
+                {typeLabel(type)} ({count})
               </button>
             ))}
           </div>
@@ -365,7 +367,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
                 class="w-full px-3 py-2 text-left text-sm font-medium hover:bg-gray-100 flex items-center gap-2"
                 onClick={() => toggleSection(key)}
               >
-                <span class="text-gray-400 text-xs">{expandedSections.has(key) ? '▼' : '▶'}</span>
+                <span class="text-gray-400 text-xs" aria-hidden="true">{expandedSections.has(key) ? '▼' : '▶'}</span>
                 {!budgetFilter && (
                   <span class={`px-1 py-0.5 rounded text-[9px] font-bold uppercase tracking-wide shrink-0 ${
                     budgetType === 'capital' ? 'bg-orange-100 text-orange-600' : 'bg-blue-100 text-blue-600'
@@ -385,12 +387,12 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
                       onClick={() => selectTable(t.id)}
                     >
                       <span class={`px-1.5 py-0.5 rounded text-[10px] font-medium ${TYPE_COLORS[t.type] || TYPE_COLORS.unknown}`}>
-                        {t.type}
+                        {typeLabel(t.type)}
                       </span>
-                      <span class="truncate">
-                        P{t.page}T{t.tableIndex}
+                      <span class="truncate" title={t.label || `P${t.page}T${t.tableIndex}`}>
+                        {t.label || `P${t.page}T${t.tableIndex}`}
                       </span>
-                      <span class="text-gray-400 ml-auto">{t.rowCount}r</span>
+                      <span class="text-gray-400 ml-auto" title={`${t.rowCount} rows`}>{t.rowCount} rows</span>
                     </button>
                   ))}
                 </div>
@@ -402,7 +404,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
         <div class="p-2 border-t bg-white text-xs text-gray-400 text-center">
           {filtered.length} of {tablesIndex.length} tables
         </div>
-      </div>
+      </>
     );
   }
 
@@ -428,14 +430,15 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             Print
           </button>
         </div>
-        {renderTable(table)}
+        {renderTable(table, selectedMeta?.numericCols)}
       </div>
     );
   }
 
-  function renderTable(table: Table) {
+  function renderTable(table: Table, numericCols?: number[]) {
     const sections = table.sections || [];
     const colCount = table.headers.length;
+    const numSet = new Set(numericCols || []);
 
     function isTotalRow(row: string[]): boolean {
       const cell = (row[0] || '').trim().toLowerCase();
@@ -449,7 +452,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             <thead>
               <tr class="bg-gray-50">
                 {table.headers.map((h, i) => (
-                  <th key={i} class="px-3 py-2 text-left font-medium text-gray-700 border-b whitespace-nowrap">
+                  <th key={i} class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${numSet.has(i) ? 'text-right tabular-nums' : 'text-left'}`}>
                     {h}
                   </th>
                 ))}
@@ -481,7 +484,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
                         : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
                   }>
                     {row.map((cell, j) => (
-                      <td key={j} class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap">
+                      <td key={j} class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${numSet.has(j) ? 'text-right tabular-nums' : ''}`}>
                         {cell}
                       </td>
                     ))}
@@ -576,7 +579,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
           <div>
             <h3 class="text-sm font-semibold text-gray-600 mb-2">{selectedMeta.sectionTitle}</h3>
-            {renderTable(selectedFull.table)}
+            {renderTable(selectedFull.table, selectedMeta.numericCols)}
           </div>
           {compareFull && (
             <div>
@@ -594,14 +597,41 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
   // --- Main Render ---
   return (
     <div class="flex print:block" style={{ height: 'calc(100vh - 7rem)' }}>
-      <div class="print:hidden">
+      {/* Mobile sidebar toggle */}
+      <button
+        class="md:hidden fixed bottom-4 left-4 z-40 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg text-sm font-medium"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        {sidebarOpen ? 'Close' : 'Filter'}
+      </button>
+
+      {/* Sidebar — hidden on mobile unless toggled */}
+      <div class={`
+        print:hidden
+        w-72 lg:w-80 border-r bg-gray-50 flex flex-col overflow-hidden shrink-0
+        fixed md:static inset-0 z-30
+        transition-transform md:transition-none md:translate-x-0
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+      `}>
         {renderSidebar()}
       </div>
+
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div
+          class="md:hidden fixed inset-0 bg-black/30 z-20"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
       <div class="flex-1 overflow-y-auto p-6">
         {!selectedFull ? (
           <div class="flex flex-col items-center justify-center h-full text-center">
-            <div class="text-5xl mb-4 text-gray-300">&#9776;</div>
+            <div class="text-5xl mb-4 text-gray-300" aria-hidden="true">
+              <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M3 14h18M3 6h18M3 18h18" />
+              </svg>
+            </div>
             <h2 class="text-xl font-semibold text-gray-500 mb-2">Select a table</h2>
             <p class="text-gray-400 max-w-md">
               Browse {tablesIndex.length} tables across operating and capital budgets.
@@ -615,9 +645,12 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
               <h2 class="text-xl font-bold">{selectedMeta!.sectionTitle}</h2>
               <div class="flex items-center gap-2 mt-1 text-sm text-gray-500">
                 <span class={`px-2 py-0.5 rounded text-xs font-medium ${TYPE_COLORS[selectedMeta!.type] || TYPE_COLORS.unknown}`}>
-                  {selectedMeta!.type}
+                  {typeLabel(selectedMeta!.type)}
                 </span>
-                <span>Page {selectedMeta!.page}, Table {selectedMeta!.tableIndex}</span>
+                {selectedMeta!.label && (
+                  <span class="font-medium text-gray-700">{selectedMeta!.label}</span>
+                )}
+                <span>Page {selectedMeta!.page + 1}, Table {selectedMeta!.tableIndex + 1}</span>
                 <span>&middot; {selectedMeta!.rowCount} rows, {selectedMeta!.headers.length} columns</span>
                 {selectedFull && (
                   <PageImage slug={selectedFull.slug} page={selectedMeta!.page} />
@@ -626,18 +659,20 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             </div>
 
             {/* Tabs */}
-            <div class="flex gap-1 border-b mb-4 print:hidden">
-              {(['data', 'chart', ...(yearColCount >= 3 ? ['trend'] : []), ...(yearColCount >= 2 ? ['changes'] : []), 'compare'] as Tab[]).map((t) => (
+            <div class="flex gap-1 border-b mb-4 print:hidden" role="tablist">
+              {(['data', 'chart', ...(selectedMeta?.type === 'cip_funding' ? ['funding'] : []), ...(yearColCount >= 3 ? ['trend'] : []), ...(yearColCount >= 2 ? ['changes'] : []), 'compare'] as Tab[]).map((t) => (
                 <button
                   key={t}
-                  class={`px-4 py-2 text-sm font-medium capitalize border-b-2 transition ${
+                  role="tab"
+                  aria-selected={tab === t}
+                  class={`px-4 py-2 text-sm font-medium border-b-2 transition ${
                     tab === t
                       ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                   onClick={() => setTab(t)}
                 >
-                  {t}
+                  {TAB_LABELS[t]}
                 </button>
               ))}
             </div>
@@ -645,6 +680,13 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
             {/* Tab content */}
             {tab === 'data' && renderDataTab()}
             {tab === 'chart' && renderChartTab()}
+            {tab === 'funding' && selectedFull && (
+              <FundingStackedBar
+                headers={selectedFull.table.headers}
+                rows={selectedFull.table.rows}
+                tableId={selectedId!}
+              />
+            )}
             {tab === 'trend' && renderTrendTab()}
             {tab === 'changes' && renderChangesTab()}
             {tab === 'compare' && renderCompareTab()}

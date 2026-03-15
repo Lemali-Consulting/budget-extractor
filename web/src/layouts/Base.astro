@@ -3,10 +3,24 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
   fullWidth?: boolean;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
-const { title, fullWidth = false } = Astro.props;
+const { title, description = 'Explore the City of Pittsburgh FY2026 Operating and Capital Budget data.', fullWidth = false, ogTitle, ogDescription } = Astro.props;
+const resolvedOgTitle = ogTitle || `${title} | Pittsburgh Budget Explorer`;
+const resolvedOgDescription = ogDescription || description;
+const canonicalUrl = Astro.url.href;
+
+const path = Astro.url.pathname;
+function navClass(href: string): string {
+  const active = path === href || path.startsWith(href) && href !== '/';
+  return active
+    ? 'text-white font-semibold border-b-2 border-white pb-0.5'
+    : 'text-blue-300 hover:text-white';
+}
 ---
 
 <!doctype html>
@@ -14,27 +28,35 @@ const { title, fullWidth = false } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={resolvedOgTitle} />
+    <meta property="og:description" content={resolvedOgDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231e3a5f'/><text x='16' y='23' font-size='20' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>P</text></svg>" />
     <title>{title} | Pittsburgh Budget Explorer</title>
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-900">
     <header class="bg-blue-900 text-white px-6 py-4">
       <div class="max-w-6xl mx-auto flex items-center justify-between">
         <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
-        <nav class="flex gap-4 text-sm text-blue-200">
-          <a href="/" class="hover:text-white font-medium">Operating</a>
-          <a href="/capital/" class="hover:text-white font-medium">Capital</a>
-          <span class="text-blue-700">|</span>
-          <a href="/explorer/" class="hover:text-white">Explorer</a>
-          <a href="/charts/" class="hover:text-white">Charts</a>
-          <a href="/personnel/" class="hover:text-white">Personnel</a>
-          <a href="/glossary/" class="hover:text-white">Glossary</a>
+        <nav class="flex gap-4 text-sm" aria-label="Main navigation">
+          <a href="/changes/" class={navClass('/changes/')}>What Changed</a>
+          <a href="/operating/" class={navClass('/operating/')}>Operating</a>
+          <a href="/capital/" class={navClass('/capital/')}>Capital</a>
+          <span class="text-blue-600" aria-hidden="true">|</span>
+          <a href="/compare/" class={navClass('/compare/')}>Compare</a>
+          <a href="/explorer/" class={navClass('/explorer/')}>Explorer</a>
+          <a href="/charts/" class={navClass('/charts/')}>Charts</a>
+          <a href="/personnel/" class={navClass('/personnel/')}>Personnel</a>
+          <a href="/glossary/" class={navClass('/glossary/')}>Glossary</a>
         </nav>
       </div>
     </header>
     <main class={fullWidth ? '' : 'max-w-6xl mx-auto px-6 py-8'}>
       <slot />
     </main>
-    <footer class="text-center text-sm text-gray-400 py-6">
+    <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-200">
       Data extracted from the City of Pittsburgh FY2026 Operating &amp; Capital Budgets
     </footer>
   </body>

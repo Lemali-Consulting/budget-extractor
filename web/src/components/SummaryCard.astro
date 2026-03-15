@@ -55,6 +55,7 @@ const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-red-600' : 'te
       <div>
         <div class="text-xs text-gray-500 mb-1">vs 2025</div>
         <div class={`text-lg font-semibold ${changeColor}`}>
+          <span aria-hidden="true">{isNegativeChange ? '↓' : '↑'}</span>{' '}
           {isNegativeChange ? '-' : '+'}{budgetChange.replace(/[()]/g, '')}
           {budgetChangePct && <span class="text-sm ml-1">({budgetChangePct.replace(/[()]/g, '')})</span>}
         </div>
@@ -66,7 +67,7 @@ const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-red-600' : 'te
         <div class="text-lg font-semibold text-gray-900">
           {fte2026?.toLocaleString()}
           {fteChangeStr && (
-            <span class={`text-sm ml-1 ${fteChangeColor}`}>{fteChangeStr}</span>
+            <span class={`text-sm ml-1 ${fteChangeColor}`}><span aria-hidden="true">{fteChange! < 0 ? '↓' : '↑'}</span> {fteChangeStr}</span>
           )}
         </div>
       </div>

@@ -1102,6 +1102,11 @@ class SpatialTableExtractor:
             words=words,
         )
 
+        # Compute background bands for use in continuation-table merging
+        bg_bands = self._find_background_bands(
+            target, content_x0, content_width, content_y0, content_y1,
+        )
+
         # Build sub-regions
         region_bounds = self._build_sub_regions(split_ys, content_y0, content_y1)
 
@@ -1173,6 +1178,13 @@ class SpatialTableExtractor:
 
         # Merge small header-like sub-tables into the following data table
         tables = self._merge_header_tables(tables)
+
+        # Merge continuation tables: consecutive sub-tables with the same
+        # headers that were separated only by a horizontal rule (not a
+        # colored band). This handles personnel pages where the summary
+        # totals are visually separated from the detail rows but belong
+        # to the same logical table.
+        tables = self._merge_continuation_tables(tables, bg_bands)
 
         # For tables without headers, check if the first rows are internal
         # headers (multi-line column labels within the table itself)
@@ -1584,6 +1596,100 @@ class SpatialTableExtractor:
 
         for ht in pending_header_tables:
             merged.append(ht)
+
+        return merged
+
+    @staticmethod
+    def _is_summary_only_table(table: SpatialTable) -> bool:
+        """
+        Check if a table contains only summary/total rows.
+
+        A summary-only table has all first-cell values starting with
+        keywords like "Total" or "Vacancy", indicating it is a
+        continuation of the preceding table's totals rather than a
+        new section with detail rows.
+        """
+        summary_prefixes = ("Total", "Vacancy", "Temporary")
+        if not table.rows:
+            return False
+        for row in table.rows:
+            first_cell = row.cells[0] if row.cells else ""
+            if not any(first_cell.startswith(p) for p in summary_prefixes):
+                return False
+        return True
+
+    def _merge_continuation_tables(
+        self,
+        tables: list[SpatialTable],
+        bg_bands: list[tuple[float, float]],
+    ) -> list[SpatialTable]:
+        """
+        Merge a summary-only sub-table into the preceding data table.
+
+        Personnel pages often have a detail table followed by a summary
+        section (Total Full-Time Permanent Positions, Vacancy Allowance,
+        Total Full-Time Positions and Net Salaries) separated by a
+        horizontal rule. These are logically one table.
+
+        A table is merged only when:
+        1. It shares the same headers as the preceding table.
+        2. No background-colored band separates them (bands indicate
+           section breaks, as on Grants pages).
+        3. Every row in the candidate table is a summary/total row
+           (no position-detail rows).
+
+        Args:
+            tables: List of sub-tables after header merging.
+            bg_bands: List of (top, bottom) y-positions for colored bands
+                on this page.
+        """
+        if len(tables) < 2:
+            return tables
+
+        merged: list[SpatialTable] = []
+        i = 0
+
+        while i < len(tables):
+            current = tables[i]
+
+            # Try to merge subsequent summary-only tables into current
+            while i + 1 < len(tables):
+                next_table = tables[i + 1]
+
+                # Must have the same headers
+                if current.headers != next_table.headers:
+                    break
+                if not current.headers:
+                    break
+
+                # Only merge if the next table is summary-only
+                if not self._is_summary_only_table(next_table):
+                    break
+
+                # Check for a colored band between the two tables
+                gap_top = current.bbox[3]   # bottom of current
+                gap_bottom = next_table.bbox[1]  # top of next
+                has_band_between = any(
+                    band_top >= gap_top - 5 and band_bottom <= gap_bottom + 5
+                    for band_top, band_bottom in bg_bands
+                )
+                if has_band_between:
+                    break
+
+                # Merge: append next_table's rows and words into current
+                current.rows.extend(next_table.rows)
+                current._words.extend(next_table._words)
+                # Expand bbox
+                current.bbox = (
+                    min(current.bbox[0], next_table.bbox[0]),
+                    current.bbox[1],
+                    max(current.bbox[2], next_table.bbox[2]),
+                    next_table.bbox[3],
+                )
+                i += 1
+
+            merged.append(current)
+            i += 1
 
         return merged
 
@@ -3637,42 +3743,63 @@ class SpatialTableExtractor:
 
             first_table = tables[0]
 
-            # Try to merge the first table on this page into the active chain
-            if active_table is not None and SpatialTableExtractor._columns_match(
-                active_table.columns, first_table.columns
-            ):
-                headers = first_table.headers or []
-
-                # A continuation table's "header" is really a data row.
-                # Detect this by checking for dollar-amount cells — real
-                # column headers (like "Fee Description", "2026") won't
-                # match, but data rows ("105.6.43 Tent...", "$32.96") will.
-                is_data_header = any(
-                    _dollar_value_re.match(cell.strip())
-                    for cell in headers if cell
+            # Try to merge the first table on this page into the active chain.
+            # Two paths: (1) columns match exactly (within tolerance), or
+            # (2) column count matches and headers are identical text
+            # (the PDF reprinted headers on a continuation page whose
+            # columns shifted slightly due to different word widths).
+            if active_table is not None:
+                cols_match = SpatialTableExtractor._columns_match(
+                    active_table.columns, first_table.columns
                 )
-                # Also treat completely empty headers as continuation
+                same_col_count = len(active_table.columns) == len(first_table.columns)
+
+                headers = first_table.headers or []
+                active_headers = active_table.headers or []
                 has_content = any(cell.strip() for cell in headers)
-                is_continuation = is_data_header or not has_content
 
-                if is_continuation:
-                    # Merge: append continuation rows to the active table
-                    if has_content:
-                        # Header row is actually data — prepend it as a row
-                        active_table.rows.append(SpatialRow(
-                            y0=0, y1=0, cells=headers,
-                        ))
-                    active_table.rows.extend(first_table.rows)
+                # Repeated headers: same text as the active table
+                is_repeated_header = (
+                    has_content
+                    and len(headers) == len(active_headers)
+                    and all(
+                        h.strip() == ah.strip()
+                        for h, ah in zip(headers, active_headers)
+                    )
+                )
 
-                    # Remove the merged table from this page
-                    tables.pop(0)
-                    page_tables[page_idx] = tables
+                can_merge = cols_match or (same_col_count and is_repeated_header)
 
-                    # If this page still has tables, the last one becomes
-                    # the new active candidate; otherwise keep chaining
-                    if tables:
-                        active_table = tables[-1]
-                    continue
+                if can_merge:
+                    # A continuation table's "header" is really a data row.
+                    # Detect this by checking for dollar-amount cells — real
+                    # column headers (like "Fee Description", "2026") won't
+                    # match, but data rows ("105.6.43 Tent...", "$32.96") will.
+                    is_data_header = any(
+                        _dollar_value_re.match(cell.strip())
+                        for cell in headers if cell
+                    )
+                    # Also treat completely empty headers as continuation
+                    is_continuation = is_data_header or not has_content or is_repeated_header
+
+                    if is_continuation:
+                        # Merge: append continuation rows to the active table
+                        if has_content and not is_repeated_header:
+                            # Header row is actually data — prepend it as a row
+                            active_table.rows.append(SpatialRow(
+                                y0=0, y1=0, cells=headers,
+                            ))
+                        active_table.rows.extend(first_table.rows)
+
+                        # Remove the merged table from this page
+                        tables.pop(0)
+                        page_tables[page_idx] = tables
+
+                        # If this page still has tables, the last one becomes
+                        # the new active candidate; otherwise keep chaining
+                        if tables:
+                            active_table = tables[-1]
+                        continue
 
             # No merge happened — set the active table to the last on this page
             active_table = tables[-1] if tables else None

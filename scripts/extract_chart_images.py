@@ -1,7 +1,8 @@
 """Extract detected chart/image regions from budget PDF pages as cropped PNGs.
 
-Reads chart region data from budget-data.json and crops the corresponding
-regions from the PDF, saving them to web/public/charts/{slug}/.
+Reads chart region data from budget-data.json and capital-budget-data.json,
+then crops the corresponding regions from the PDFs, saving them to
+web/public/charts/{slug}/.
 """
 
 import json
@@ -10,18 +11,24 @@ from pathlib import Path
 import pdfplumber
 from PIL import Image
 
-PDF_PATH = Path(__file__).parent.parent / "input" / "2026-operating-budget.pdf"
-DATA_PATH = Path(__file__).parent.parent / "web" / "src" / "data" / "budget-data.json"
-OUTPUT_DIR = Path(__file__).parent.parent / "web" / "public" / "charts"
+BASE_DIR = Path(__file__).parent.parent
+OUTPUT_DIR = BASE_DIR / "web" / "public" / "charts"
 
 DPI = 200  # render resolution
 
 
-def main() -> None:
-    data = json.load(open(DATA_PATH, encoding="utf-8"))
-    pdf = pdfplumber.open(str(PDF_PATH))
+def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
+    """Extract chart images for all sections in a budget data bundle.
 
+    Returns the number of chart images extracted.
+    """
+    if not pdf_path.exists():
+        print(f"  Skipping {pdf_path.name}: file not found")
+        return 0
+
+    pdf = pdfplumber.open(str(pdf_path))
     total = 0
+
     for section in data["sections"]:
         slug = section["slug"]
         for pc in section.get("page_content", []):
@@ -59,7 +66,31 @@ def main() -> None:
                 total += 1
 
     pdf.close()
-    print(f"Extracted {total} chart images to {OUTPUT_DIR}")
+    return total
+
+
+def main() -> None:
+    total = 0
+
+    # Operating budget
+    operating_data_path = BASE_DIR / "web" / "src" / "data" / "budget-data.json"
+    operating_pdf_path = BASE_DIR / "input" / "2026-operating-budget.pdf"
+    if operating_data_path.exists():
+        data = json.load(open(operating_data_path, encoding="utf-8"))
+        count = extract_charts_from_data(data, operating_pdf_path)
+        print(f"  Operating: {count} chart images")
+        total += count
+
+    # Capital budget
+    capital_data_path = BASE_DIR / "web" / "src" / "data" / "capital-budget-data.json"
+    capital_pdf_path = BASE_DIR / "input" / "2026-capital-budget.pdf"
+    if capital_data_path.exists():
+        data = json.load(open(capital_data_path, encoding="utf-8"))
+        count = extract_charts_from_data(data, capital_pdf_path)
+        print(f"  Capital: {count} chart images")
+        total += count
+
+    print(f"Extracted {total} chart images total to {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { parseCurrency, formatDollar } from '../lib/currency';
+import { CHART_COLORS } from '../lib/chart-colors';
+import { useContainerWidth } from '../lib/hooks';
 
 interface TableData {
   id: string;
@@ -15,27 +18,13 @@ interface Props {
   sectionTitle: string;
 }
 
-function parseCurrency(s: string): number | null {
-  if (!s || s === '—' || s === 'varies') return null;
-  const neg = s.includes('(') && s.includes(')');
-  const cleaned = s.replace(/[$,()]/g, '').trim();
-  const num = parseFloat(cleaned);
-  if (isNaN(num)) return null;
-  return neg ? -num : num;
-}
-
-function formatDollar(d: number): string {
-  const abs = Math.abs(d);
-  if (abs >= 1_000_000) return `$${(d / 1_000_000).toFixed(1)}M`;
-  if (abs >= 1_000) return `$${(d / 1_000).toFixed(0)}K`;
-  return `$${d}`;
-}
-
 type Tab = 'trend' | 'changes' | 'breakdown';
 
 export default function SectionCharts({ tables, sectionTitle }: Props) {
   const [tab, setTab] = useState<Tab>('trend');
   const chartRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
 
   // Find the best table for charts: prefer financial_summary, then financial
   const summaryTable =
@@ -94,7 +83,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
     } else if (activeTab === 'breakdown') {
       renderBreakdown(chartRef.current);
     }
-  }, [activeTab]);
+  }, [activeTab, containerWidth]);
 
   function renderTrend(el: HTMLDivElement) {
     const data: { label: string; year: number; value: number }[] = [];
@@ -125,7 +114,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
     const filtered = data.filter((d) => topSet.has(d.label));
 
     const chart = Plot.plot({
-      width: 600,
+      width: containerWidth,
       height: 350,
       marginRight: 100,
       x: { label: 'Year', tickFormat: (d: number) => String(d) },
@@ -180,7 +169,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
 
     const chart = Plot.plot({
       marginLeft: Math.min(220, Math.max(100, ...sliced.map((d) => d.label.length * 6.5))),
-      width: 600,
+      width: containerWidth,
       height: Math.max(250, sliced.length * 26),
       x: {
         label: `Change (${from.year} \u2192 ${to.year})`,
@@ -191,7 +180,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
         Plot.barX(sliced, {
           x: 'delta',
           y: 'label',
-          fill: (d: { delta: number }) => (d.delta >= 0 ? '#16a34a' : '#dc2626'),
+          fill: (d: { delta: number }) => (d.delta >= 0 ? CHART_COLORS.positive : CHART_COLORS.negative),
           sort: { y: 'x' },
         }),
         Plot.text(sliced, {
@@ -202,7 +191,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
           dx: (d: { delta: number }) => (d.delta >= 0 ? 4 : -4),
           textAnchor: (d: { delta: number }) => (d.delta >= 0 ? 'start' : 'end'),
           fontSize: 10,
-          fill: '#666',
+          fill: CHART_COLORS.annotation,
         }),
         Plot.ruleX([0]),
       ],
@@ -230,7 +219,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
 
     const chart = Plot.plot({
       marginLeft: Math.min(220, Math.max(100, ...sliced.map((d) => d.label.length * 6.5))),
-      width: 600,
+      width: containerWidth,
       height: Math.max(250, sliced.length * 26),
       x: { label: colHeader, tickFormat: formatDollar },
       y: { label: null },
@@ -238,7 +227,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
         Plot.barX(sliced, {
           x: 'amount',
           y: 'label',
-          fill: '#2563eb',
+          fill: CHART_COLORS.primary,
           sort: { y: '-x' },
         }),
         Plot.text(sliced, {
@@ -256,11 +245,13 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
   }
 
   return (
-    <div class="mb-8 bg-white rounded-lg border overflow-hidden">
-      <div class="flex border-b bg-gray-50">
+    <div class="mb-8 bg-white rounded-lg border overflow-hidden" ref={containerRef}>
+      <div class="flex border-b bg-gray-50" role="tablist">
         {availableTabs.map((t) => (
           <button
             key={t.key}
+            role="tab"
+            aria-selected={activeTab === t.key}
             class={`px-4 py-2 text-sm font-medium transition ${
               activeTab === t.key
                 ? 'text-blue-700 border-b-2 border-blue-600 bg-white'
@@ -272,7 +263,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
           </button>
         ))}
       </div>
-      <div class="p-4" ref={chartRef} />
+      <div class="p-4 min-h-[300px]" ref={chartRef} />
     </div>
   );
 }

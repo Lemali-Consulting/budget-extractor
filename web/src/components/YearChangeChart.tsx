@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { parseCurrency } from '../lib/currency';
+import { CHART_COLORS } from '../lib/chart-colors';
+import { useContainerWidth } from '../lib/hooks';
 
 interface Props {
   headers: string[];
@@ -10,17 +13,10 @@ interface Props {
   tableId: string;
 }
 
-function parseCurrency(s: string): number | null {
-  if (!s || s === '—' || s === 'varies') return null;
-  const neg = s.includes('(') && s.includes(')');
-  const cleaned = s.replace(/[$,()]/g, '').trim();
-  const num = parseFloat(cleaned);
-  if (isNaN(num)) return null;
-  return neg ? -num : num;
-}
-
 export default function YearChangeChart({ headers, rows, numericCols, tableId }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
 
   // Find consecutive year-column pairs
   const yearCols = numericCols
@@ -73,7 +69,7 @@ export default function YearChangeChart({ headers, rows, numericCols, tableId }:
 
     const chart = Plot.plot({
       marginLeft: Math.min(250, Math.max(120, ...sliced.map((d) => d.label.length * 7))),
-      width: 700,
+      width: containerWidth,
       height: Math.max(300, sliced.length * 28),
       x: {
         label: `Change (${pair.from.year} → ${pair.to.year})`,
@@ -89,7 +85,7 @@ export default function YearChangeChart({ headers, rows, numericCols, tableId }:
         Plot.barX(sliced, {
           x: 'delta',
           y: 'label',
-          fill: (d: { delta: number }) => (d.delta >= 0 ? '#16a34a' : '#dc2626'),
+          fill: (d: { delta: number }) => (d.delta >= 0 ? CHART_COLORS.positive : CHART_COLORS.negative),
           sort: { y: 'x' },
         }),
         Plot.text(sliced, {
@@ -100,7 +96,7 @@ export default function YearChangeChart({ headers, rows, numericCols, tableId }:
           dx: (d: { delta: number }) => (d.delta >= 0 ? 4 : -4),
           textAnchor: (d: { delta: number }) => (d.delta >= 0 ? 'start' : 'end'),
           fontSize: 10,
-          fill: '#666',
+          fill: CHART_COLORS.annotation,
         }),
         Plot.ruleX([0]),
       ],
@@ -108,14 +104,14 @@ export default function YearChangeChart({ headers, rows, numericCols, tableId }:
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [tableId, pairIdx]);
+  }, [tableId, pairIdx, containerWidth]);
 
   if (pairs.length === 0) {
     return <div class="text-gray-400 italic py-4">Need 2+ year columns to show changes.</div>;
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       <div class="flex items-center gap-3 mb-4">
         <label class="text-sm font-medium text-gray-700">Compare:</label>
         <select

@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { CHART_COLORS } from '../lib/chart-colors';
+import { useContainerWidth } from '../lib/hooks';
 
 interface BudgetRow {
   department: string;
@@ -12,6 +14,7 @@ interface BudgetRow {
 
 export default function BudgetChart({ data }: { data: BudgetRow[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
   const [selectedYear, setSelectedYear] = useState<string>('');
 
   const years = [...new Set(data.map((d) => d.year))].sort();
@@ -37,7 +40,7 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
 
     const chart = Plot.plot({
       marginLeft: 220,
-      width: 700,
+      width: containerWidth,
       height: Math.max(300, filtered.length * 30),
       x: { label: 'Amount ($)', tickFormat: (d: number) => `$${(d / 1_000_000).toFixed(1)}M` },
       y: { label: null },
@@ -45,7 +48,7 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
         Plot.barX(filtered, {
           x: 'amount',
           y: 'department',
-          fill: '#2563eb',
+          fill: CHART_COLORS.primary,
           sort: { y: '-x' },
         }),
         Plot.text(filtered, {
@@ -60,9 +63,13 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
       ],
     });
 
-    containerRef.current.replaceChildren(chart);
+    // Insert chart before the controls
+    const chartContainer = containerRef.current.querySelector('[data-chart]');
+    if (chartContainer) {
+      chartContainer.replaceChildren(chart);
+    }
     return () => chart.remove();
-  }, [selectedYear, data]);
+  }, [selectedYear, data, containerWidth]);
 
   if (data.length === 0) {
     return (
@@ -73,7 +80,7 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       <div class="flex items-center gap-3 mb-4">
         <label class="text-sm font-medium text-gray-700">Year:</label>
         <select
@@ -86,7 +93,7 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
           ))}
         </select>
       </div>
-      <div ref={containerRef} />
+      <div data-chart />
     </div>
   );
 }

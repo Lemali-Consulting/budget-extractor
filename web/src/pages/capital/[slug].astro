@@ -32,6 +32,7 @@ const pageCount = section.start_page && section.end_page
 type ContentItem =
   | { kind: 'table'; page: number; sortKey: number; data: any }
   | { kind: 'narrative'; page: number; sortKey: number; text: string; role: string }
+  | { kind: 'chart'; page: number; sortKey: number; chartType: string; chartIndex: number }
   | { kind: 'page_break'; page: number; sortKey: number; absolutePage: number };
 
 const items: ContentItem[] = [];
@@ -49,6 +50,10 @@ for (const pc of pageContent) {
     const y = block.bbox?.[1] ?? 0;
     items.push({ kind: 'narrative', page: relPage, sortKey: y, text: block.text, role: block.role });
   }
+  (pc.chart_regions || []).forEach((chart: any, ci: number) => {
+    const y = chart.bbox?.[1] ?? 0;
+    items.push({ kind: 'chart', page: relPage, sortKey: y, chartType: chart.chart_type, chartIndex: ci });
+  });
 }
 
 // Sort by page, then by y-position within page
@@ -130,8 +135,10 @@ function parseNarrative(raw: string): Segment[] {
 
 <Base title={section.title}>
   <nav class="text-sm text-gray-500 mb-4">
+    <a href="/" class="hover:text-blue-600">Home</a>
+    <span class="mx-1" aria-hidden="true">/</span>
     <a href="/capital/" class="hover:text-blue-600">Capital Budget</a>
-    <span class="mx-1">/</span>
+    <span class="mx-1" aria-hidden="true">/</span>
     <span>{section.title}</span>
   </nav>
 
@@ -186,7 +193,7 @@ function parseNarrative(raw: string): Segment[] {
       }
       const segments = parseNarrative(item.text);
       return (
-        <div class="prose prose-sm max-w-none mb-4 text-gray-700 leading-relaxed">
+        <div class="prose prose-sm max-w-3xl mb-4 text-gray-700 leading-relaxed">
           {segments.map((seg) => {
             if (seg.type === 'heading') {
               const hHtml = linkGlossaryTerms(seg.text);
@@ -206,6 +213,41 @@ function parseNarrative(raw: string): Segment[] {
             const pHtml = linkGlossaryTerms(seg.text);
             return <p class="mb-2" set:html={pHtml} />;
           })}
+        </div>
+      );
+    }
+
+    if (item.kind === 'chart') {
+      const chartSrc = `/charts/${section.slug}/P${item.page}C${(item as any).chartIndex}.png`;
+      const cType = (item as any).chartType;
+      const isLogo = cType === 'logo';
+      const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Organization chart' : 'Chart / diagram';
+      if (isLogo) {
+        return (
+          <div class="my-3 flex items-center gap-3">
+            <img
+              src={chartSrc}
+              alt={`${label} for ${section.title}`}
+              class="w-16 h-16 object-contain"
+              loading="lazy"
+            />
+            <span class="text-xs text-gray-400">{section.title}</span>
+          </div>
+        );
+      }
+      return (
+        <div class="my-4 rounded-lg border overflow-hidden bg-white">
+          <div class="px-4 py-2 bg-blue-50 border-b text-xs text-blue-700 font-medium">
+            {label}
+          </div>
+          <div class="p-4 flex justify-center">
+            <img
+              src={chartSrc}
+              alt={`${label} for ${section.title}`}
+              class="max-w-full max-h-[500px] object-contain"
+              loading="lazy"
+            />
+          </div>
         </div>
       );
     }

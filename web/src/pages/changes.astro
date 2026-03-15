@@ -1,0 +1,148 @@
+---
+import Base from '../layouts/Base.astro';
+import ChangesChart from '../components/ChangesChart.tsx';
+import budgetChanges from '../data/views/budget-changes.json';
+
+const data = budgetChanges as any;
+const totalChange = data.totalBudget2026 - data.totalBudget2025;
+const totalPct = data.totalBudget2025 > 0 ? ((totalChange / data.totalBudget2025) * 100).toFixed(1) : '0';
+const fteChange = (data.totalFte2026 || 0) - (data.totalFte2025 || 0);
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
+---
+
+<Base title="What Changed" description="Biggest budget changes in the FY2026 Pittsburgh budget vs. 2025." ogDescription={`Total operating budget ${totalChange > 0 ? 'increases' : 'decreases'} ${totalPct}% (${fmtM(Math.abs(totalChange))}). ${data.newPositions.length} new positions, ${data.eliminatedPositions.length} eliminated.`}>
+  <h1 class="text-3xl font-bold mb-2">What Changed in FY2026?</h1>
+  <p class="text-gray-600 mb-6">Biggest budget changes compared to FY2025 — the view you need before a budget hearing.</p>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">2026 Operating Budget</div>
+      <div class="text-lg font-semibold">{fmtM(data.totalBudget2026)}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">vs. 2025</div>
+      <div class={`text-lg font-semibold ${totalChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {totalChange >= 0 ? '+' : ''}{totalPct}% ({fmtM(Math.abs(totalChange))})
+      </div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">New Positions</div>
+      <div class="text-lg font-semibold text-green-600">+{data.newPositions.length}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">Eliminated Positions</div>
+      <div class="text-lg font-semibold text-red-600">-{data.eliminatedPositions.length}</div>
+    </div>
+  </div>
+
+  <ChangesChart
+    client:load
+    data={data.topIncreases}
+    title="Biggest Budget Increases"
+    color="#16a34a"
+  />
+
+  <ChangesChart
+    client:load
+    data={data.topDecreases}
+    title="Biggest Budget Decreases"
+    color="#dc2626"
+  />
+
+  {data.newPositions.length > 0 && (
+    <div class="bg-white rounded-lg border p-4 mb-6">
+      <h3 class="text-lg font-semibold mb-3">New Positions</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Title</th>
+              <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Department</th>
+              <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">FTE</th>
+              <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Budget</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.newPositions.map((p: any, i: number) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="px-3 py-1.5 border-b border-gray-100">{p.title}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100">{p.department}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.fte}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">
+                  {p.budget > 0 ? `$${p.budget.toLocaleString()}` : '—'}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  {data.eliminatedPositions.length > 0 && (
+    <div class="bg-white rounded-lg border p-4 mb-6">
+      <h3 class="text-lg font-semibold mb-3">Eliminated Positions</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Title</th>
+              <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Department</th>
+              <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">FTE (2025)</th>
+              <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Budget (2025)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.eliminatedPositions.map((p: any, i: number) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="px-3 py-1.5 border-b border-gray-100">{p.title}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100">{p.department}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.fte}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">
+                  {p.budget > 0 ? `$${p.budget.toLocaleString()}` : '—'}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  <div class="bg-white rounded-lg border p-4">
+    <h3 class="text-lg font-semibold mb-3">All Department Changes</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Department</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">2025 Budget</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">2026 Budget</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Change</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">%</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.departmentChanges.map((d: any, i: number) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <td class="px-3 py-1.5 border-b border-gray-100">
+                <a href={`/sections/${d.slug}/`} class="text-blue-600 hover:underline">{d.department}</a>
+              </td>
+              <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${d.budget2025.toLocaleString()}</td>
+              <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${d.budget2026.toLocaleString()}</td>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {d.dollarChange >= 0 ? '+' : ''}{d.dollarChange.toLocaleString()}
+              </td>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.pctChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {d.pctChange >= 0 ? '+' : ''}{d.pctChange}%
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>

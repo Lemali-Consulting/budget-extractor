@@ -1,3 +1,48 @@
 "C0 (l, x:0-1)","C1 (l, x:54-107)","C2 (l, x:107-212)","C3 (l, x:212-407)","C4 (r, x:407-458)","C5 (r, x:458-508)","C6 (r, x:508-558)"
 Department,JDE Number,Funder,Grant,Amount Awarded,Amount Spent,Remaining Balance
-Department of Public Safety - Bureau of Emergency Services,2229400468,Office of the State Fire Commissioner,Freedom House Training Materials,"15,000","8,386","6,614"
+Department of Public Safety - Bureau of Fire,2529400333,Federal Emergency Management Agency,Supplemental assistance to fire fighters,"113,711","96,775","16,936"
+Department of Public Safety - Bureau of Fire,2529400352,PA Office of the State Fire commissioner,Equipment purchase,"14,999",—,"14,999"
+Department of Public Safety - Bureau of Fire,2529400404,Federal Emergency Management Agency,Purchase of Self-Contained Breathing Apparatus,"1,718,182","1,717,575",607
+Department of Public Safety - Bureau of Fire,2529400405,Federal Emergency Management Agency,Purchase of Attack Hoses,"280,000","279,808",192
+Department of Public Safety - Bureau of Fire,2529400439,Office of the State Fire Commissioner,Purchase of Rescue Equipment,"15,000","7,210","7,790"
+Department of Public Safety - Bureau of Fire,2529400450,Federal Emergency Management Agency,Purchase of Ventilation saws and fans,"269,955","263,912","6,043"
+Department of Public Safety - Bureau of Fire,2529400469,Office of the State Fire Commissioner,Purchase of Handtools,"20,000","16,368","3,632"
+Department of Public Safety - Bureau of Fire,2529400482,Norfolk Southern,Purchase of non toxic foam,"15,000",—,"15,000"
+Department of Public Safety - Bureau of Fire,2529400509,Office of the State Fire Commission,Trauma Bags,"15,676","15,840",—
+Department of Public Works,4029400285,Pennsylvania Historical and Museum Commission,Highland Park Pedestrian Tunnel,"100,000","100,000",—
+Department of Public Works,4029400294,PA Department of Community and Economic Development,Highland Park Pedestrian Tunnel,"75,000","75,000",—
+Department of Public Works,4029400303,The Recycling Partnership,Blue Bin Distribution Grant,"1,150,000","1,121,697","28,303"
+Department of Public Works,4029400320,PA Department of Aging,Hazelwood Senior Center,"65,000","53,244","11,756"
+Department of Public Works,4029400321,PA Department of Aging,Sheridan Senior Center,"45,000","41,081","3,919"
+Department of Public Works,4029400322,PA Department of Aging,South Side Market Senior Center,"51,000","49,732","1,268"
+Department of Public Works,4029400338,Redevelopment Assistance Capital Program,Homewood Park Grant,"1,500,000","1,500,000",—
+Department of Public Works,4029400339,PA Museum and Historical Commission,Oliver Bathhouse Windows,"100,000","100,000",—
+Department of Public Works,4029400344,PA Department of Conservation Partnerships,Southside Park,"400,000",—,"400,000"
+Department of Public Works,4029400381,PA Department of Community and Economic Development,Phillips Playground,"30,000",—,"30,000"
+Department of Public Works,4029400383,Redevelopment Assistance Capital Program,Oliver Bath House Funding,"2,000,000","1,865,842","134,158"
+Department of Public Works,4029400396,PA Department of Environmental Protection,State Recycling Support,"349,557",—,"349,557"
+Department of Public Works,4029400400,Urban Redevelopment Authority,Resurfacing of Washington's Landing Tennis Courts,"500,000","499,092",908
+Department of Public Works,4029400407,Heinz Endowments,Support construction at Homewood Field,"2,000,000","1,998,150","1,850"
+Department of Public Works,4029400421,Redevelopment Assistance Capital Program,First Division,"500,000",—,"500,000"
+Department of Public Works,4029400422,Redevelopment Assistance Capital Program,Warrington Rec Center,"1,500,000",—,"1,500,000"
+Department of Public Works,4029400423,Redevelopment Assistance Capital Program,Sheraden Park,"1,229,987",—,"1,229,987"
+Department of Public Works,4029400426,Department of Conservation and Natural Resources,Allegheny Landing Park Renovation,"499,900",—,"499,900"
+Department of Public Works,4029400429,Redevelopment Assistance Capital Program,Brighton Heights Healthy Active Living Center,"2,229,987",—,"2,229,987"
+Department of Public Works,4029400430,Redevelopment Assistance Capital Program,Homewood Park,"1,000,000",—,"1,000,000"
+Department of Public Works,4029400432,Redevelopment Assistance Capital Program,Jefferson Recreation Center,"500,000",—,"500,000"
+Department of Public Works,4029400434,Redevelopment Assistance Capital Program,Thaddeus Stevens Elementary School,"1,500,000",—,"1,500,000"
+Department of Public Works,4029400438,Office of the State Fire Commissioner,Medic 10 Repairs,"10,000",—,"10,000"
+Department of Public Works,4029400444,Department of Conservation and Natural Resources,Treevitalize Program,"500,000","356,179","143,821"
+Department of Public Works,4029400445,PA Department of Aging,Mt. Washington Healthy Active Living Center,"50,000","38,762","11,238"
+Department of Public Works,4029400446,PA Department of Aging,West End Healthy Active Living Center,"90,200","83,594","90,200"
+Department of Public Works,4029400447,Department of Community and Economic Development,Leslie Park Planning,"250,000","60,374","189,626"
+Department of Public Works,4029400450,Department of Conservation and Natural Resources,Rehabilitation of Riverfront Park,"250,000",—,"250,000"
+Department of Public Works,4029400461,US Forest Service,Implementation of an equitable tree plan,"1,000,000","58,282","941,718"
+Department of Public Works,4029400466,Pittsburgh Arena Development LLC,Ammon Rec Center,"500,000",—,"500,000"
+Department of Public Works,4029400480,PA Department of Aging,South Side Market House Doors,"30,000",—,"30,000"
+Department of Public Works,4029400492,US Dept. of Energy,4th division solar panels,"337,960",—,"337,960"
+Department of Public Works,4029400497,The Recycling Partnership,Recycling Outreach,"125,000","48,486","76,514"
+Department of Public Works,4029400498,Department of Community and Economic Development,Lewis Playground,"50,000",—,"50,000"
+Department of Public Works,4029400503,Department of Conservation and Natural Resources,Spring Hill Park,"249,000",—,"249,000"
+Department of Public Works,4029400504,PA Department of Environmental Protection,902 Recycling Reimbursement,"200,000",—,"200,000"
+Department of Public Works,4029400517,Department of Housing and Urban Development,Homewood Park,"1,666,297",—,"1,666,297"

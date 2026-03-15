@@ -11,6 +11,7 @@ interface Props {
     rows: string[][];
     sections?: string[];
     absolute_page?: number;
+    description?: string;
   };
   slug?: string;
   linkCell?: (text: string) => string;
@@ -18,17 +19,26 @@ interface Props {
 
 const { table, slug, linkCell } = Astro.props;
 
-const typeColors: Record<string, string> = {
-  personnel: 'bg-purple-100 text-purple-700',
-  financial: 'bg-green-100 text-green-700',
-  financial_summary: 'bg-emerald-100 text-emerald-700',
-  revenue: 'bg-blue-100 text-blue-700',
-  unknown: 'bg-gray-100 text-gray-600',
-};
+import { TYPE_COLORS, typeDescription } from '../lib/type-colors';
 
-const badgeClass = typeColors[table.table_type] || typeColors.unknown;
+const badgeClass = TYPE_COLORS[table.table_type] || TYPE_COLORS.unknown;
+const annotation = table.description || typeDescription(table.table_type);
 const sections = table.sections || [];
 const colCount = table.headers.length;
+
+// Detect numeric columns: columns where >50% of non-empty values look numeric/currency
+const numericColSet = new Set<number>();
+for (let ci = 0; ci < colCount; ci++) {
+  let numCount = 0;
+  let total = 0;
+  for (const row of table.rows) {
+    const cell = (row[ci] || '').trim();
+    if (!cell) continue;
+    total++;
+    if (/^[\$\(]?[\d,]+(\.\d+)?[\)]?$/.test(cell) || cell === '—') numCount++;
+  }
+  if (total > 0 && numCount / total > 0.5) numericColSet.add(ci);
+}
 
 function isTotalRow(row: string[]): boolean {
   const cell = (row[0] || '').trim().toLowerCase();
@@ -36,29 +46,41 @@ function isTotalRow(row: string[]): boolean {
 }
 ---
 
-<div class="mb-8 bg-white rounded-lg border overflow-hidden">
-  <div class="px-4 py-3 bg-gray-50 border-b flex items-center gap-3 text-sm">
-    <span class={`px-2 py-0.5 rounded text-xs font-medium ${badgeClass}`}>
-      {table.table_type}
-    </span>
-    <span class="text-gray-500">
-      Page {table.relative_page}, Table {table.table_index}
-      {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
-    </span>
-    {slug && (
-      <PageImage client:load slug={slug} page={table.relative_page} />
-    )}
+<div class="mb-8 bg-white rounded-lg border overflow-hidden" id={`table-container-${table.id}`}>
+  <div class="px-4 py-3 bg-gray-50 border-b text-sm">
+    <div class="flex items-center gap-3">
+      <span class={`px-2 py-0.5 rounded text-xs font-medium ${badgeClass}`}>
+        {table.table_type}
+      </span>
+      <span class="text-gray-500">
+        Page {table.relative_page}, Table {table.table_index}
+        {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
+      </span>
+      {slug && (
+        <PageImage client:load slug={slug} page={table.relative_page} />
+      )}
+      <button
+        class="ml-auto text-xs text-gray-400 hover:text-blue-600 print:hidden copy-table-btn"
+        data-table-id={table.id}
+        title="Copy table as tab-separated text"
+        aria-label="Copy table"
+      >
+        Copy table
+      </button>
+    </div>
+    <p class="text-xs text-gray-400 italic mt-1">{annotation}</p>
   </div>
   <div class="overflow-x-auto">
     <table class="w-full text-sm">
       {table.headers.length > 0 && (
         <thead>
           <tr class="bg-gray-50">
-            {table.headers.map((h) => (
-              linkCell
-                ? <th class="px-3 py-2 text-left font-medium text-gray-700 border-b whitespace-nowrap" set:html={linkCell(h)} />
-                : <th class="px-3 py-2 text-left font-medium text-gray-700 border-b whitespace-nowrap">{h}</th>
-            ))}
+            {table.headers.map((h, hi) => {
+              const align = numericColSet.has(hi) ? 'text-right tabular-nums' : 'text-left';
+              return linkCell
+                ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${align}`} set:html={linkCell(h)} />
+                : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${align}`}>{h}</th>;
+            })}
           </tr>
         </thead>
       )}
@@ -87,11 +109,12 @@ function isTotalRow(row: string[]): boolean {
                     ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
                     : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
               }>
-                {row.map((cell, ci) => (
-                  linkCell && ci === 0
-                    ? <td class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap" set:html={linkCell(cell)} />
-                    : <td class="px-3 py-1.5 border-b border-gray-100 whitespace-nowrap">{cell}</td>
-                ))}
+                {row.map((cell, ci) => {
+                  const align = numericColSet.has(ci) ? 'text-right tabular-nums' : '';
+                  return linkCell && ci === 0
+                    ? <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align}`} set:html={linkCell(cell)} />
+                    : <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align}`}>{cell}</td>;
+                })}
               </tr>
             </>
           );
@@ -100,3 +123,28 @@ function isTotalRow(row: string[]): boolean {
     </table>
   </div>
 </div>
+
+<script>
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.copy-table-btn') as HTMLButtonElement | null;
+    if (!btn) return;
+    const tableId = btn.dataset.tableId;
+    const container = document.getElementById(`table-container-${tableId}`);
+    const table = container?.querySelector('table');
+    if (!table) return;
+
+    const rows: string[] = [];
+    for (const tr of table.querySelectorAll('tr')) {
+      const cells: string[] = [];
+      for (const cell of tr.querySelectorAll('th, td')) {
+        cells.push((cell as HTMLElement).innerText.trim());
+      }
+      if (cells.some(c => c)) rows.push(cells.join('\t'));
+    }
+    navigator.clipboard.writeText(rows.join('\n')).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = orig; }, 1500);
+    });
+  });
+</script>

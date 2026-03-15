@@ -7,6 +7,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "5-Year Forecast (1)",
     "headers": [
       "REVENUES",
       "2025 Estimate",
@@ -36,6 +37,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "5-Year Forecast (2)",
     "headers": [
       "",
       "2024 Actual",
@@ -66,7 +68,8 @@
     "sectionSlug": "revenue-detail",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "TAX REVENUE, LICENSES & PERMITS REVENUE",
     "headers": [
       "Account",
       "2026",
@@ -75,7 +78,7 @@
       "2029",
       "2030"
     ],
-    "rowCount": 50,
+    "rowCount": 149,
     "numericCols": [
       1,
       2,
@@ -87,67 +90,14 @@
     "description": "Revenue accounts for Revenue Detail (2026-2030) broken down by TAX REVENUE, LICENSES & PERMITS REVENUE."
   },
   {
-    "id": "s7_p1_t0",
-    "sectionNumber": 7,
-    "sectionTitle": "Revenue Detail",
-    "sectionSlug": "revenue-detail",
-    "page": 1,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Account",
-      "2026",
-      "2027",
-      "2028",
-      "2029",
-      "2030"
-    ],
-    "rowCount": 50,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Account-level detail for Revenue Detail (2026-2030) covering CHARGES FOR SERVICES."
-  },
-  {
-    "id": "s7_p2_t0",
-    "sectionNumber": 7,
-    "sectionTitle": "Revenue Detail",
-    "sectionSlug": "revenue-detail",
-    "page": 2,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Account",
-      "2026",
-      "2027",
-      "2028",
-      "2029",
-      "2030"
-    ],
-    "rowCount": 49,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Account-level detail for Revenue Detail (2026-2030) covering FINES & FORFEITURES, INTERGOVERNMENTAL REVENUE, INTEREST EARNINGS."
-  },
-  {
     "id": "s9_p0_t0",
     "sectionNumber": 9,
     "sectionTitle": "Expenditures Detail",
     "sectionSlug": "expenditures-detail",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS + 1 more",
     "headers": [
       "Account",
       "2026",
@@ -156,7 +106,7 @@
       "2029",
       "2030"
     ],
-    "rowCount": 44,
+    "rowCount": 98,
     "numericCols": [
       1,
       2,
@@ -168,60 +118,6 @@
     "description": "Expenditure accounts for Expenditures Detail (2026-2030) covering PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS, PROFESSIONAL & TECHNICAL SERVICES."
   },
   {
-    "id": "s9_p1_t0",
-    "sectionNumber": 9,
-    "sectionTitle": "Expenditures Detail",
-    "sectionSlug": "expenditures-detail",
-    "page": 1,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Account",
-      "2026",
-      "2027",
-      "2028",
-      "2029",
-      "2030"
-    ],
-    "rowCount": 41,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Account-level detail for Expenditures Detail (2026-2030) covering PROPERTY SERVICES, OTHER SERVICES, SUPPLIES."
-  },
-  {
-    "id": "s9_p2_t0",
-    "sectionNumber": 9,
-    "sectionTitle": "Expenditures Detail",
-    "sectionSlug": "expenditures-detail",
-    "page": 2,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Account",
-      "2026",
-      "2027",
-      "2028",
-      "2029",
-      "2030"
-    ],
-    "rowCount": 13,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Account-level detail for Expenditures Detail (2026-2030) covering PROPERTY, MISCELLANEOUS, DEBT SERVICE."
-  },
-  {
     "id": "s10_p2_t0",
     "sectionNumber": 10,
     "sectionTitle": "City Council",
@@ -229,6 +125,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "3 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -260,6 +157,7 @@
     "page": 2,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -271,34 +169,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 2,
-    "numericCols": [
-      4,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for City Council listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s10_p2_t2",
-    "sectionNumber": 10,
-    "sectionTitle": "City Council",
-    "sectionSlug": "city-council",
-    "page": 2,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
+    "rowCount": 6,
     "numericCols": [
       1,
       4,
@@ -306,7 +177,7 @@
       8
     ],
     "budgetType": "operating",
-    "description": "Personnel roster for City Council listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "description": "Personnel roster for City Council listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s10_p3_t0",
@@ -316,6 +187,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -341,7 +213,8 @@
     "sectionSlug": "city-council",
     "page": 4,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -369,6 +242,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "25 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -380,7 +254,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 25,
+    "rowCount": 29,
     "numericCols": [
       1,
       3,
@@ -393,35 +267,6 @@
     "description": "Personnel roster for Office of the City Clerk listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
-    "id": "s11_p2_t1",
-    "sectionNumber": 11,
-    "sectionTitle": "Office of the City Clerk",
-    "sectionSlug": "office-of-the-city-clerk",
-    "page": 2,
-    "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of the City Clerk listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
     "id": "s11_p3_t0",
     "sectionNumber": 11,
     "sectionTitle": "Office of the City Clerk",
@@ -429,6 +274,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -454,7 +300,8 @@
     "sectionSlug": "office-of-the-city-clerk",
     "page": 4,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -482,6 +329,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "44 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -493,7 +341,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 44,
+    "rowCount": 51,
     "numericCols": [
       1,
       3,
@@ -513,6 +361,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -524,72 +373,15 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 7,
+    "rowCount": 9,
     "numericCols": [
       1,
-      3,
       4,
       5,
       8
     ],
     "budgetType": "operating",
     "description": "Personnel roster for Office of the Mayor listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s12_p2_t1",
-    "sectionNumber": 12,
-    "sectionTitle": "Office of the Mayor",
-    "sectionSlug": "office-of-the-mayor",
-    "page": 2,
-    "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 5,
-    "numericCols": [
-      4,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of the Mayor listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s12_p2_t2",
-    "sectionNumber": 12,
-    "sectionTitle": "Office of the Mayor",
-    "sectionSlug": "office-of-the-mayor",
-    "page": 2,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of the Mayor listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s12_p3_t0",
@@ -599,6 +391,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -624,7 +417,8 @@
     "sectionSlug": "office-of-the-mayor",
     "page": 4,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -652,6 +446,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "28 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -683,6 +478,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -709,7 +505,8 @@
     "sectionSlug": "office-of-management-and-budget",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "personnel",
+    "label": "Total Full Time Permanent Positions",
     "headers": [
       "Total Full Time Permanent Positions",
       "35",
@@ -735,6 +532,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -760,7 +558,8 @@
     "sectionSlug": "office-of-management-and-budget",
     "page": 7,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -788,6 +587,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "I&P Administration + 5 more",
     "headers": [
       "Title",
       "2025 FTE",
@@ -799,7 +599,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 41,
+    "rowCount": 66,
     "numericCols": [
       1,
       3,
@@ -819,6 +619,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -830,10 +631,9 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 25,
+    "rowCount": 10,
     "numericCols": [
       1,
-      3,
       4,
       5,
       7,
@@ -843,63 +643,6 @@
     "description": "Personnel roster for Department of Innovation and Performance listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
-    "id": "s14_p4_t1",
-    "sectionNumber": 14,
-    "sectionTitle": "Department of Innovation and Performance",
-    "sectionSlug": "department-of-innovation-and-performance",
-    "page": 4,
-    "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 6,
-    "numericCols": [
-      4,
-      7,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Innovation and Performance listing 6 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s14_p4_t2",
-    "sectionNumber": 14,
-    "sectionTitle": "Department of Innovation and Performance",
-    "sectionSlug": "department-of-innovation-and-performance",
-    "page": 4,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Innovation and Performance listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
     "id": "s14_p5_t0",
     "sectionNumber": 14,
     "sectionTitle": "Department of Innovation and Performance",
@@ -907,6 +650,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -932,7 +676,8 @@
     "sectionSlug": "department-of-innovation-and-performance",
     "page": 6,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -960,6 +705,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "6 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -991,6 +737,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1002,34 +749,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 3,
-    "numericCols": [
-      4,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Commission on Human Relations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s15_p3_t2",
-    "sectionNumber": 15,
-    "sectionTitle": "Commission on Human Relations",
-    "sectionSlug": "commission-on-human-relations",
-    "page": 3,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
+    "rowCount": 6,
     "numericCols": [
       1,
       4,
@@ -1047,6 +767,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -1072,7 +793,8 @@
     "sectionSlug": "commission-on-human-relations",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -1100,6 +822,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Administration & Treasury Division + 4 more",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1131,6 +854,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1142,10 +866,12 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 5,
+    "rowCount": 9,
     "numericCols": [
+      1,
       3,
       4,
+      5,
       7,
       8
     ],
@@ -1159,36 +885,8 @@
     "sectionSlug": "department-of-finance",
     "page": 5,
     "tableIndex": 0,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Finance listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s17_p5_t1",
-    "sectionNumber": 17,
-    "sectionTitle": "Department of Finance",
-    "sectionSlug": "department-of-finance",
-    "page": 5,
-    "tableIndex": 1,
-    "type": "unknown",
+    "type": "allocation",
+    "label": "4 positions",
     "headers": [
       "2026 Allocations",
       "Department of Finance",
@@ -1197,7 +895,7 @@
     "rowCount": 3,
     "numericCols": [],
     "budgetType": "operating",
-    "description": "Budget data for Department of Finance (2026) with 3 line items."
+    "description": "Personnel roster for Department of Finance listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s17_p6_t0",
@@ -1207,6 +905,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -1215,7 +914,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 43,
+    "rowCount": 54,
     "numericCols": [
       1,
       2,
@@ -1226,39 +925,14 @@
     "description": "Financial summary for Department of Finance comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
   },
   {
-    "id": "s17_p7_t0",
-    "sectionNumber": 17,
-    "sectionTitle": "Department of Finance",
-    "sectionSlug": "department-of-finance",
-    "page": 7,
-    "tableIndex": 0,
-    "type": "financial_summary",
-    "headers": [
-      "",
-      "2024 Actual",
-      "2025 Budget",
-      "2026 Budget",
-      "Increase/ (Decrease)",
-      "% Change"
-    ],
-    "rowCount": 11,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "budgetType": "operating",
-    "description": "Financial summary for Department of Finance comparing actuals, budgets (2024-2026), covering Expenditures, MISCELLANEOUS, DEBT SERVICE."
-  },
-  {
     "id": "s17_p8_t0",
     "sectionNumber": 17,
     "sectionTitle": "Department of Finance",
     "sectionSlug": "department-of-finance",
     "page": 8,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -1286,6 +960,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "18 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1317,6 +992,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1328,46 +1004,19 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 5,
+    "rowCount": 9,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
     ],
     "budgetType": "operating",
     "description": "Personnel roster for Department of Law listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s18_p3_t2",
-    "sectionNumber": 18,
-    "sectionTitle": "Department of Law",
-    "sectionSlug": "department-of-law",
-    "page": 3,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Law listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s18_p4_t0",
@@ -1377,6 +1026,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -1402,7 +1052,8 @@
     "sectionSlug": "department-of-law",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -1430,6 +1081,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "2 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1461,6 +1113,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1488,6 +1141,7 @@
     "page": 3,
     "tableIndex": 2,
     "type": "personnel",
+    "label": "3 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1517,6 +1171,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -1542,7 +1197,8 @@
     "sectionSlug": "ethics-hearing-board",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -1570,6 +1226,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "5 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1581,7 +1238,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 5,
+    "rowCount": 8,
     "numericCols": [
       1,
       3,
@@ -1594,35 +1251,6 @@
     "description": "Personnel roster for Office of Municipal Investigations listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
-    "id": "s20_p3_t1",
-    "sectionNumber": 20,
-    "sectionTitle": "Office of Municipal Investigations",
-    "sectionSlug": "office-of-municipal-investigations",
-    "page": 3,
-    "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of Municipal Investigations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
     "id": "s20_p4_t0",
     "sectionNumber": 20,
     "sectionTitle": "Office of Municipal Investigations",
@@ -1630,6 +1258,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -1655,7 +1284,8 @@
     "sectionSlug": "office-of-municipal-investigations",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -1683,6 +1313,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "26 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1714,6 +1345,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1725,46 +1357,19 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 5,
+    "rowCount": 9,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
     ],
     "budgetType": "operating",
     "description": "Personnel roster for Department of Human Resources and Civil Service listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s21_p5_t0",
-    "sectionNumber": 21,
-    "sectionTitle": "Department of Human Resources and Civil Service",
-    "sectionSlug": "department-of-human-resources-and-civil-service",
-    "page": 5,
-    "tableIndex": 0,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Human Resources and Civil Service listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s21_p6_t0",
@@ -1774,6 +1379,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -1782,7 +1388,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 41,
+    "rowCount": 45,
     "numericCols": [
       1,
       2,
@@ -1793,39 +1399,14 @@
     "description": "Financial summary for Department of Human Resources and Civil Service comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
   },
   {
-    "id": "s21_p7_t0",
-    "sectionNumber": 21,
-    "sectionTitle": "Department of Human Resources and Civil Service",
-    "sectionSlug": "department-of-human-resources-and-civil-service",
-    "page": 7,
-    "tableIndex": 0,
-    "type": "financial_summary",
-    "headers": [
-      "",
-      "2024 Actual",
-      "2025 Budget",
-      "2026 Budget",
-      "Increase/ (Decrease)",
-      "% Change"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "budgetType": "operating",
-    "description": "Financial summary for Department of Human Resources and Civil Service comparing actuals, budgets (2024-2026), covering Expenditures, MISCELLANEOUS."
-  },
-  {
     "id": "s21_p8_t0",
     "sectionNumber": 21,
     "sectionTitle": "Department of Human Resources and Civil Service",
     "sectionSlug": "department-of-human-resources-and-civil-service",
     "page": 8,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -1853,6 +1434,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "11 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1864,7 +1446,7 @@
       "Hours/ Month s",
       "2026 Budget"
     ],
-    "rowCount": 11,
+    "rowCount": 14,
     "numericCols": [
       1,
       2,
@@ -1885,36 +1467,8 @@
     "sectionSlug": "bureau-of-emergency-medical-services",
     "page": 4,
     "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Month s",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Month s",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Emergency Medical Services listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s25_p4_t2",
-    "sectionNumber": 25,
-    "sectionTitle": "Bureau of Emergency Medical Services",
-    "sectionSlug": "bureau-of-emergency-medical-services",
-    "page": 4,
-    "tableIndex": 2,
-    "type": "unknown",
+    "type": "salary",
+    "label": "3 positions",
     "headers": [
       "FAPP Hourly Rates",
       "2025",
@@ -1926,7 +1480,7 @@
       2
     ],
     "budgetType": "operating",
-    "description": "Budget data for Bureau of Emergency Medical Services (2025-2026) with 10 line items."
+    "description": "Personnel roster for Bureau of Emergency Medical Services listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s25_p5_t0",
@@ -1936,6 +1490,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -1962,6 +1517,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "Financial Summary",
     "headers": [
       "",
       "",
@@ -1988,7 +1544,8 @@
     "sectionSlug": "bureau-of-emergency-medical-services",
     "page": 7,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -2016,6 +1573,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "25 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2047,6 +1605,7 @@
     "page": 5,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2058,40 +1617,13 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 4,
-    "numericCols": [
-      3,
-      4,
-      7,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Police listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s26_p5_t2",
-    "sectionNumber": 26,
-    "sectionTitle": "Bureau of Police",
-    "sectionSlug": "bureau-of-police",
-    "page": 5,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
+    "rowCount": 8,
     "numericCols": [
       1,
+      3,
       4,
       5,
+      7,
       8
     ],
     "budgetType": "operating",
@@ -2104,7 +1636,8 @@
     "sectionSlug": "bureau-of-police",
     "page": 6,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "salary",
+    "label": "FOP Hourly Rates",
     "headers": [
       "FOP Hourly Rates",
       "2025",
@@ -2126,6 +1659,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -2134,7 +1668,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 37,
+    "rowCount": 51,
     "numericCols": [
       1,
       2,
@@ -2145,39 +1679,14 @@
     "description": "Financial summary for Bureau of Police comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
   },
   {
-    "id": "s26_p8_t0",
-    "sectionNumber": 26,
-    "sectionTitle": "Bureau of Police",
-    "sectionSlug": "bureau-of-police",
-    "page": 8,
-    "tableIndex": 0,
-    "type": "financial_summary",
-    "headers": [
-      "",
-      "2024 Actual",
-      "2025 Budget",
-      "2026 Budget",
-      "Increase/ (Decrease)",
-      "% Change"
-    ],
-    "rowCount": 14,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Police comparing actuals, budgets (2024-2026), covering Expenditures, OTHER SERVICES, SUPPLIES."
-  },
-  {
     "id": "s26_p9_t0",
     "sectionNumber": 26,
     "sectionTitle": "Bureau of Police",
     "sectionSlug": "bureau-of-police",
     "page": 9,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "10 line items",
     "headers": [
       "",
       "",
@@ -2206,6 +1715,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "14 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2239,6 +1749,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2268,6 +1779,7 @@
     "page": 3,
     "tableIndex": 2,
     "type": "personnel",
+    "label": "6 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2296,7 +1808,8 @@
     "sectionSlug": "bureau-of-fire",
     "page": 3,
     "tableIndex": 3,
-    "type": "unknown",
+    "type": "salary",
+    "label": "Master Firefighter",
     "headers": [
       "Master Firefighter",
       "39.04",
@@ -2318,6 +1831,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -2326,7 +1840,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 37,
+    "rowCount": 45,
     "numericCols": [
       1,
       2,
@@ -2337,39 +1851,14 @@
     "description": "Financial summary for Bureau of Fire comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
   },
   {
-    "id": "s27_p5_t0",
-    "sectionNumber": 27,
-    "sectionTitle": "Bureau of Fire",
-    "sectionSlug": "bureau-of-fire",
-    "page": 5,
-    "tableIndex": 0,
-    "type": "financial_summary",
-    "headers": [
-      "",
-      "2024 Actual",
-      "2025 Budget",
-      "2026 Budget",
-      "Increase/ (Decrease)",
-      "% Change"
-    ],
-    "rowCount": 8,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Fire comparing actuals, budgets (2024-2026), covering Expenditures, PROPERTY."
-  },
-  {
     "id": "s27_p6_t0",
     "sectionNumber": 27,
     "sectionTitle": "Bureau of Fire",
     "sectionSlug": "bureau-of-fire",
     "page": 6,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -2397,6 +1886,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "4 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2408,7 +1898,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 4,
+    "rowCount": 7,
     "numericCols": [
       1,
       3,
@@ -2421,35 +1911,6 @@
     "description": "Personnel roster for Bureau of Animal Care and Control listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
-    "id": "s28_p3_t1",
-    "sectionNumber": 28,
-    "sectionTitle": "Bureau of Animal Care and Control",
-    "sectionSlug": "bureau-of-animal-care-and-control",
-    "page": 3,
-    "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Animal Care and Control listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
     "id": "s28_p4_t0",
     "sectionNumber": 28,
     "sectionTitle": "Bureau of Animal Care and Control",
@@ -2457,6 +1918,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -2482,7 +1944,8 @@
     "sectionSlug": "bureau-of-animal-care-and-control",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -2510,6 +1973,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PROFESSIONAL & TECHNICAL SERVICES, SUPPLIES",
     "headers": [
       "",
       "2024 Actual",
@@ -2534,7 +1998,8 @@
     "sectionSlug": "office-of-community-health-and-safety",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -2562,6 +2027,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Director's Office + 3 more",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2593,6 +2059,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2604,46 +2071,19 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 3,
+    "rowCount": 7,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
     ],
     "budgetType": "operating",
     "description": "Personnel roster for Bureau of Administration (Public Works) listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s31_p1_t2",
-    "sectionNumber": 31,
-    "sectionTitle": "Bureau of Administration (Public Works)",
-    "sectionSlug": "bureau-of-administration-public-works",
-    "page": 1,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Administration (Public Works) listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s31_p2_t0",
@@ -2653,6 +2093,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -2678,7 +2119,8 @@
     "sectionSlug": "bureau-of-administration-public-works",
     "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -2706,6 +2148,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Administration + 5 more",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2737,6 +2180,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2748,46 +2192,19 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 3,
+    "rowCount": 7,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
     ],
     "budgetType": "operating",
     "description": "Personnel roster for Bureau of Operations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s32_p2_t0",
-    "sectionNumber": 32,
-    "sectionTitle": "Bureau of Operations",
-    "sectionSlug": "bureau-of-operations",
-    "page": 2,
-    "tableIndex": 0,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Operations listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s32_p3_t0",
@@ -2797,6 +2214,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -2805,7 +2223,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 43,
+    "rowCount": 51,
     "numericCols": [
       1,
       2,
@@ -2816,39 +2234,14 @@
     "description": "Financial summary for Bureau of Operations comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
   },
   {
-    "id": "s32_p4_t0",
-    "sectionNumber": 32,
-    "sectionTitle": "Bureau of Operations",
-    "sectionSlug": "bureau-of-operations",
-    "page": 4,
-    "tableIndex": 0,
-    "type": "financial_summary",
-    "headers": [
-      "",
-      "2024 Actual",
-      "2025 Budget",
-      "2026 Budget",
-      "Increase/ (Decrease)",
-      "% Change"
-    ],
-    "rowCount": 8,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Operations comparing actuals, budgets (2024-2026), covering Expenditures, PROPERTY."
-  },
-  {
     "id": "s32_p5_t0",
     "sectionNumber": 32,
     "sectionTitle": "Bureau of Operations",
     "sectionSlug": "bureau-of-operations",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -2876,6 +2269,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Environmental Services + 2 more",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2907,6 +2301,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2936,6 +2331,7 @@
     "page": 1,
     "tableIndex": 2,
     "type": "personnel",
+    "label": "5 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2965,6 +2361,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -2990,7 +2387,8 @@
     "sectionSlug": "bureau-of-environmental-services",
     "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -3018,6 +2416,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Director's Office + 5 more",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3029,7 +2428,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 42,
+    "rowCount": 48,
     "numericCols": [
       1,
       2,
@@ -3044,66 +2443,6 @@
     "description": "Personnel roster for Bureau of Facilities listing 42 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
-    "id": "s34_p2_t0",
-    "sectionNumber": 34,
-    "sectionTitle": "Bureau of Facilities",
-    "sectionSlug": "bureau-of-facilities",
-    "page": 2,
-    "tableIndex": 0,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5,
-      7,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Facilities listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s34_p2_t1",
-    "sectionNumber": 34,
-    "sectionTitle": "Bureau of Facilities",
-    "sectionSlug": "bureau-of-facilities",
-    "page": 2,
-    "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Facilities listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
     "id": "s34_p3_t0",
     "sectionNumber": 34,
     "sectionTitle": "Bureau of Facilities",
@@ -3111,6 +2450,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -3137,6 +2477,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "Financial Summary",
     "headers": [
       "",
       "",
@@ -3163,7 +2504,8 @@
     "sectionSlug": "bureau-of-facilities",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -3190,7 +2532,8 @@
     "sectionSlug": "department-of-mobility-and-infrastructure",
     "page": 10,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -3218,6 +2561,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "45 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3229,7 +2573,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 45,
+    "rowCount": 78,
     "numericCols": [
       1,
       3,
@@ -3249,6 +2593,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3260,77 +2605,19 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 33,
+    "rowCount": 9,
     "numericCols": [
       1,
-      3,
-      4,
-      5,
-      7,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Mobility and Infrastructure listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s36_p7_t1",
-    "sectionNumber": 36,
-    "sectionTitle": "Department of Mobility and Infrastructure",
-    "sectionSlug": "department-of-mobility-and-infrastructure",
-    "page": 7,
-    "tableIndex": 1,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 5,
-    "numericCols": [
       2,
       3,
       4,
+      5,
       6,
       7,
       8
     ],
     "budgetType": "operating",
-    "description": "Personnel roster for Department of Mobility and Infrastructure listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s36_p8_t0",
-    "sectionNumber": 36,
-    "sectionTitle": "Department of Mobility and Infrastructure",
-    "sectionSlug": "department-of-mobility-and-infrastructure",
-    "page": 8,
-    "tableIndex": 0,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Mobility and Infrastructure listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "description": "Personnel roster for Department of Mobility and Infrastructure listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s36_p9_t0",
@@ -3340,6 +2627,7 @@
     "page": 9,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -3366,6 +2654,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "7 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3397,6 +2686,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3408,34 +2698,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 3,
-    "numericCols": [
-      4,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Citizen Police Review Board listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s37_p4_t2",
-    "sectionNumber": 37,
-    "sectionTitle": "Citizen Police Review Board",
-    "sectionSlug": "citizen-police-review-board",
-    "page": 4,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
+    "rowCount": 6,
     "numericCols": [
       1,
       4,
@@ -3453,6 +2716,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "financial_summary",
+    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
     "headers": [
       "",
       "2024 Actual",
@@ -3478,7 +2742,8 @@
     "sectionSlug": "citizen-police-review-board",
     "page": 6,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "forecast",
+    "label": "5-Year Projection",
     "headers": [
       "",
       "2026",
@@ -3505,7 +2770,8 @@
     "sectionSlug": "hud-fair-housing-program-trust-fund",
     "page": 1,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "185,381.3"
@@ -3523,6 +2789,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "financial",
+    "label": "HUD Fair Housing Program Trust Fund",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3545,7 +2812,8 @@
     "sectionSlug": "hud-fair-housing-program-trust-fund",
     "page": 1,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "185,381.3"
@@ -3562,7 +2830,8 @@
     "sectionSlug": "eeoc-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "251,569"
@@ -3580,6 +2849,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "EEOC Trust Fund",
     "headers": [
       "Subclass",
       "",
@@ -3604,7 +2874,8 @@
     "sectionSlug": "eeoc-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "250,131"
@@ -3621,7 +2892,8 @@
     "sectionSlug": "three-taxing-bodies-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "1,212,710"
@@ -3639,6 +2911,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Three Taxing Bodies Trust Fund",
     "headers": [
       "Subclass Expenditures",
       "2025 Budget",
@@ -3662,7 +2935,8 @@
     "sectionSlug": "three-taxing-bodies-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "543,280"
@@ -3680,6 +2954,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "7 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3710,7 +2985,8 @@
     "sectionSlug": "three-taxing-bodies-trust-fund",
     "page": 1,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "allocation",
+    "label": "2026 Allocations",
     "headers": [
       "2026 Allocations",
       "Department of Finance",
@@ -3728,7 +3004,8 @@
     "sectionSlug": "pittsburgh-partnership-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "4,752,646"
@@ -3746,6 +3023,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Pittsburgh Partnership Trust Fund",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3769,7 +3047,8 @@
     "sectionSlug": "pittsburgh-partnership-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "4,245,017"
@@ -3787,6 +3066,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "12 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3817,7 +3097,8 @@
     "sectionSlug": "community-development-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "\u2014"
@@ -3835,6 +3116,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Community Development Trust Fund",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3858,7 +3140,8 @@
     "sectionSlug": "community-development-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "(40,658)"
@@ -3876,6 +3159,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "9 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3906,7 +3190,8 @@
     "sectionSlug": "police-secondary-employment-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "3,163,185"
@@ -3924,6 +3209,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Police Secondary Employment Trust Fund",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3947,7 +3233,8 @@
     "sectionSlug": "police-secondary-employment-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "3,325,749"
@@ -3965,6 +3252,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "3 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3995,7 +3283,8 @@
     "sectionSlug": "stop-the-violence-trust-fund",
     "page": 1,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "16,745,000"
@@ -4013,6 +3302,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Stop the Violence Trust Fund",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -4036,7 +3326,8 @@
     "sectionSlug": "stop-the-violence-trust-fund",
     "page": 1,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "11,160,239"
@@ -4054,6 +3345,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Community Health and Safety + 7 more",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4084,7 +3376,8 @@
     "sectionSlug": "stop-the-violence-trust-fund",
     "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "personnel",
+    "label": "Assistant Director - Community Affairs",
     "headers": [
       "Assistant Director - Community Affairs",
       "1",
@@ -4115,7 +3408,8 @@
     "sectionSlug": "stop-the-violence-trust-fund",
     "page": 3,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Temporary, Part-Time, and Seasonal Allowances",
       "",
@@ -4146,7 +3440,8 @@
     "sectionSlug": "stop-the-violence-trust-fund",
     "page": 3,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "personnel",
+    "label": "Total Full-Time Permanent Positions",
     "headers": [
       "Total Full-Time Permanent Positions",
       "68",
@@ -4171,7 +3466,8 @@
     "sectionSlug": "public-works-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "3,274,374"
@@ -4189,6 +3485,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Public Works Trust Fund",
     "headers": [
       "Subclass Detail",
       "",
@@ -4212,7 +3509,8 @@
     "sectionSlug": "public-works-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "3,292,334"
@@ -4229,7 +3527,8 @@
     "sectionSlug": "shade-tree-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "964,095"
@@ -4247,6 +3546,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Shade Tree Trust Fund",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -4270,7 +3570,8 @@
     "sectionSlug": "shade-tree-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "814,095"
@@ -4287,7 +3588,8 @@
     "sectionSlug": "special-events-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "388,359"
@@ -4305,6 +3607,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Special Events Trust Fund",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -4328,7 +3631,8 @@
     "sectionSlug": "special-events-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "325,045"
@@ -4346,6 +3650,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "4 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4377,6 +3682,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4388,11 +3694,13 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 4,
+    "rowCount": 7,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
@@ -4407,36 +3715,8 @@
     "sectionSlug": "special-events-trust-fund",
     "page": 1,
     "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Special Events Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s50_p1_t3",
-    "sectionNumber": 50,
-    "sectionTitle": "Special Events Trust Fund",
-    "sectionSlug": "special-events-trust-fund",
-    "page": 1,
-    "tableIndex": 3,
-    "type": "unknown",
+    "type": "allocation",
+    "label": "3 positions",
     "headers": [
       "2026 Allocations",
       "Department of Parks & Recreation",
@@ -4445,7 +3725,7 @@
     "rowCount": 1,
     "numericCols": [],
     "budgetType": "operating",
-    "description": "Budget detail for Special Events Trust Fund (2026) with 1 line item."
+    "description": "Personnel roster for Special Events Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s51_p1_t0",
@@ -4454,7 +3734,8 @@
     "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
     "page": 1,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "1,840,915"
@@ -4472,6 +3753,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Regional Asset District - Parks and Recreation Trust Fund",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -4495,7 +3777,8 @@
     "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
     "page": 1,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "1,840,915"
@@ -4513,6 +3796,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "11 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4544,6 +3828,7 @@
     "page": 2,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4555,11 +3840,13 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 13,
+    "rowCount": 16,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
@@ -4574,36 +3861,8 @@
     "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
     "page": 2,
     "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s51_p2_t3",
-    "sectionNumber": 51,
-    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
-    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
-    "page": 2,
-    "tableIndex": 3,
-    "type": "unknown",
+    "type": "allocation",
+    "label": "3 positions",
     "headers": [
       "2026 Allocations",
       "Parks and Recreation General Fund",
@@ -4614,7 +3873,7 @@
     "rowCount": 2,
     "numericCols": [],
     "budgetType": "operating",
-    "description": "Budget detail for Regional Asset District - Parks and Recreation Trust Fund (2026) with 2 line items."
+    "description": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s52_p0_t0",
@@ -4623,7 +3882,8 @@
     "sectionSlug": "mellon-park-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "1,779,292"
@@ -4641,6 +3901,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Mellon Park Trust Fund",
     "headers": [
       "Subclass Details",
       "2025 Budget",
@@ -4664,7 +3925,8 @@
     "sectionSlug": "mellon-park-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "1,652,005"
@@ -4682,6 +3944,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "5 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4715,6 +3978,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4726,11 +3990,13 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 5,
+    "rowCount": 8,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
@@ -4745,36 +4011,8 @@
     "sectionSlug": "mellon-park-trust-fund",
     "page": 1,
     "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Mellon Park Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s52_p1_t3",
-    "sectionNumber": 52,
-    "sectionTitle": "Mellon Park Trust Fund",
-    "sectionSlug": "mellon-park-trust-fund",
-    "page": 1,
-    "tableIndex": 3,
-    "type": "unknown",
+    "type": "allocation",
+    "label": "3 positions",
     "headers": [
       "2026 Allocations",
       "Department of Parks & Recreation",
@@ -4784,7 +4022,7 @@
     "rowCount": 2,
     "numericCols": [],
     "budgetType": "operating",
-    "description": "Budget detail for Mellon Park Trust Fund (2026) with 2 line items."
+    "description": "Personnel roster for Mellon Park Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s53_p0_t0",
@@ -4793,7 +4031,8 @@
     "sectionSlug": "schenley-park-rink-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "645,064"
@@ -4811,6 +4050,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Schenley Park Rink Trust Fund",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -4833,7 +4073,8 @@
     "sectionSlug": "schenley-park-rink-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "648,064"
@@ -4850,7 +4091,8 @@
     "sectionSlug": "senior-citizens-program-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "1,169,912"
@@ -4868,6 +4110,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Senior Citizens Program Trust Fund",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -4891,7 +4134,8 @@
     "sectionSlug": "senior-citizens-program-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "252,482"
@@ -4909,6 +4153,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "7 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4940,6 +4185,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4951,11 +4197,13 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 3,
+    "rowCount": 6,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
@@ -4970,36 +4218,8 @@
     "sectionSlug": "senior-citizens-program-trust-fund",
     "page": 1,
     "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Senior Citizens Program Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
-    "id": "s54_p1_t3",
-    "sectionNumber": 54,
-    "sectionTitle": "Senior Citizens Program Trust Fund",
-    "sectionSlug": "senior-citizens-program-trust-fund",
-    "page": 1,
-    "tableIndex": 3,
-    "type": "unknown",
+    "type": "allocation",
+    "label": "3 positions",
     "headers": [
       "2026 Allocations",
       "Department of Parks & Recreation",
@@ -5008,7 +4228,7 @@
     "rowCount": 1,
     "numericCols": [],
     "budgetType": "operating",
-    "description": "Budget detail for Senior Citizens Program Trust Fund (2026) with 1 line item."
+    "description": "Personnel roster for Senior Citizens Program Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
     "id": "s55_p0_t0",
@@ -5017,7 +4237,8 @@
     "sectionSlug": "special-food-service-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "350,184"
@@ -5035,6 +4256,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Special Food Service Trust Fund",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -5058,7 +4280,8 @@
     "sectionSlug": "special-food-service-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "203,856"
@@ -5076,6 +4299,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "2 positions",
     "headers": [
       "Title",
       "2025 FTE",
@@ -5107,6 +4331,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
       "Title",
       "2025 FTE",
@@ -5118,11 +4343,13 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 5,
+    "rowCount": 8,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
@@ -5131,42 +4358,14 @@
     "description": "Personnel roster for Special Food Service Trust Fund listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
   },
   {
-    "id": "s55_p1_t2",
-    "sectionNumber": 55,
-    "sectionTitle": "Special Food Service Trust Fund",
-    "sectionSlug": "special-food-service-trust-fund",
-    "page": 1,
-    "tableIndex": 2,
-    "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      4,
-      5,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Special Food Service Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
-  },
-  {
     "id": "s56_p0_t0",
     "sectionNumber": 56,
     "sectionTitle": "Frick Park Trust Fund",
     "sectionSlug": "frick-park-trust-fund",
     "page": 0,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (1)",
     "headers": [
       "Projected Beginning Balance",
       "2,035,076"
@@ -5184,6 +4383,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
+    "label": "Frick Park Trust Fund",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -5206,7 +4406,8 @@
     "sectionSlug": "frick-park-trust-fund",
     "page": 0,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fund_balance",
+    "label": "Beginning Balance (2)",
     "headers": [
       "Projected Ending Balance",
       "2,163,851"
@@ -5224,6 +4425,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Archives and Records Management Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5244,6 +4446,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Bridge Asset Management Program Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5264,12 +4467,13 @@
     "page": 0,
     "tableIndex": 2,
     "type": "revenue",
+    "label": "Code Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       0,
       1,
@@ -5279,28 +4483,6 @@
     "description": "Financial snapshot for Code Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
   },
   {
-    "id": "s57_p10_t0",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 10,
-    "tableIndex": 0,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      0,
-      1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for The American Rescue Plan Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
     "id": "s57_p1_t0",
     "sectionNumber": 57,
     "sectionTitle": "Other Special Revenue Funds",
@@ -5308,6 +4490,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Comcast Franchise Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5330,12 +4513,13 @@
     "page": 1,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Confiscated Narcotics Proceeds Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       0,
       1,
@@ -5345,27 +4529,6 @@
     "description": "Financial snapshot for Confiscated Narcotics Proceeds Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
   },
   {
-    "id": "s57_p1_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 1,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Confiscated Non-Narcotics Proceeds Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
     "id": "s57_p2_t0",
     "sectionNumber": 57,
     "sectionTitle": "Other Special Revenue Funds",
@@ -5373,6 +4536,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Crossing Guards Special Events Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5380,7 +4544,6 @@
     ],
     "rowCount": 1,
     "numericCols": [
-      0,
       1,
       2
     ],
@@ -5395,39 +4558,20 @@
     "page": 2,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Demolition Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
+      0,
       1,
       2
     ],
     "budgetType": "operating",
     "description": "Financial snapshot for Demolition Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
-    "id": "s57_p2_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 2,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Emergency Management and Homeland Security Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
   },
   {
     "id": "s57_p3_t0",
@@ -5437,6 +4581,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "EMS Reimbursable Events Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5445,7 +4590,6 @@
     "rowCount": 1,
     "numericCols": [
       0,
-      1,
       2
     ],
     "budgetType": "operating",
@@ -5459,38 +4603,19 @@
     "page": 3,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Facilities Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       0,
       2
     ],
     "budgetType": "operating",
     "description": "Financial snapshot for Facilities Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
-    "id": "s57_p3_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 3,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Federal Task Force Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
   },
   {
     "id": "s57_p4_t0",
@@ -5500,6 +4625,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Graffiti Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5507,7 +4633,6 @@
     ],
     "rowCount": 1,
     "numericCols": [
-      0,
       2
     ],
     "budgetType": "operating",
@@ -5521,38 +4646,20 @@
     "page": 4,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Green Initiatives Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Green Initiatives Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
-    "id": "s57_p4_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 4,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
-    "numericCols": [
+      0,
       1,
       2
     ],
     "budgetType": "operating",
-    "description": "Financial snapshot for Hazardous Materials Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "description": "Financial snapshot for Green Initiatives Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
   },
   {
     "id": "s57_p5_t0",
@@ -5562,6 +4669,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Lead Safety Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5584,34 +4692,13 @@
     "page": 5,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Pittsburgh Code Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
-    "numericCols": [
-      0,
-      1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Pittsburgh Code Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
-    "id": "s57_p5_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 5,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       0,
       1,
@@ -5628,6 +4715,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Public Safety Training Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5635,6 +4723,7 @@
     ],
     "rowCount": 1,
     "numericCols": [
+      0,
       1,
       2
     ],
@@ -5649,34 +4738,13 @@
     "page": 6,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Verizon Franchise Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
-    "numericCols": [
-      0,
-      1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Verizon Franchise Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
-    "id": "s57_p6_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 6,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       1,
       2
@@ -5692,6 +4760,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Public Safety Support Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5699,6 +4768,7 @@
     ],
     "rowCount": 1,
     "numericCols": [
+      1,
       2
     ],
     "budgetType": "operating",
@@ -5712,34 +4782,15 @@
     "page": 7,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Open Space Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Open Space Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
-    "id": "s57_p7_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 7,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
-    "numericCols": [
       2
     ],
     "budgetType": "operating",
@@ -5753,6 +4804,7 @@
     "page": 8,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "Stormwater Management Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5760,6 +4812,7 @@
     ],
     "rowCount": 1,
     "numericCols": [
+      0,
       1,
       2
     ],
@@ -5774,12 +4827,13 @@
     "page": 8,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Southside Parking Enhancement District Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       0,
       1,
@@ -5789,28 +4843,6 @@
     "description": "Financial snapshot for Southside Parking Enhancement District Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
   },
   {
-    "id": "s57_p8_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 8,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      0,
-      1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Mounted Police Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
     "id": "s57_p9_t0",
     "sectionNumber": 57,
     "sectionTitle": "Other Special Revenue Funds",
@@ -5818,6 +4850,7 @@
     "page": 9,
     "tableIndex": 0,
     "type": "revenue",
+    "label": "OneStopPGH Permitting Technology Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -5825,7 +4858,7 @@
     ],
     "rowCount": 1,
     "numericCols": [
-      0,
+      1,
       2
     ],
     "budgetType": "operating",
@@ -5839,33 +4872,13 @@
     "page": 9,
     "tableIndex": 1,
     "type": "revenue",
+    "label": "Technology Modernization Trust Fund",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
       "Spending Authority as of 11/06/25"
     ],
-    "rowCount": 1,
-    "numericCols": [
-      1,
-      2
-    ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Technology Modernization Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
-  },
-  {
-    "id": "s57_p9_t2",
-    "sectionNumber": 57,
-    "sectionTitle": "Other Special Revenue Funds",
-    "sectionSlug": "other-special-revenue-funds",
-    "page": 9,
-    "tableIndex": 2,
-    "type": "revenue",
-    "headers": [
-      "Last 12 months* Revenues",
-      "Last 12 months* Expenditures",
-      "Spending Authority as of 11/06/25"
-    ],
-    "rowCount": 1,
+    "rowCount": 2,
     "numericCols": [
       0,
       1,
@@ -5882,6 +4895,7 @@
     "page": 10,
     "tableIndex": 0,
     "type": "personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -5913,6 +4927,7 @@
     "page": 10,
     "tableIndex": 1,
     "type": "personnel",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -5944,6 +4959,7 @@
     "page": 10,
     "tableIndex": 2,
     "type": "personnel",
+    "label": "Personnel (3)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -5975,6 +4991,7 @@
     "page": 10,
     "tableIndex": 3,
     "type": "personnel",
+    "label": "Personnel (4)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -5986,7 +5003,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 3,
+    "rowCount": 8,
     "numericCols": [
       1,
       3,
@@ -6006,37 +5023,7 @@
     "page": 11,
     "tableIndex": 0,
     "type": "personnel",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 5,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5,
-      7,
-      8
-    ],
-    "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 5 positions with FTE counts, pay grades, and budget allocations."
-  },
-  {
-    "id": "s58_p11_t1",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 11,
-    "tableIndex": 1,
-    "type": "personnel",
+    "label": "Personnel (5)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -6058,16 +5045,17 @@
       8
     ],
     "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 2 positions with FTE counts, pay grades, and budget allocations."
+    "description": "Personnel roster for grant-funded positions showing 5 positions with FTE counts, pay grades, and budget allocations."
   },
   {
-    "id": "s58_p11_t2",
+    "id": "s58_p11_t1",
     "sectionNumber": 58,
     "sectionTitle": "Grants",
     "sectionSlug": "grants",
     "page": 11,
-    "tableIndex": 2,
+    "tableIndex": 1,
     "type": "personnel",
+    "label": "Personnel (6)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -6098,7 +5086,8 @@
     "sectionSlug": "grants",
     "page": 2,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "grant",
+    "label": "Grant Inventory (1)",
     "headers": [
       "Department",
       "JDE Number",
@@ -6125,7 +5114,8 @@
     "sectionSlug": "grants",
     "page": 2,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "grant",
+    "label": "Grant Inventory (2)",
     "headers": [
       "Department",
       "JDE Number",
@@ -6151,276 +5141,8 @@
     "sectionSlug": "grants",
     "page": 2,
     "tableIndex": 2,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 4,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 4 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p3_t0",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 3,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p3_t1",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 3,
-    "tableIndex": 1,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 11,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 11 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p4_t0",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 4,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 9,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 9 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p4_t1",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 4,
-    "tableIndex": 1,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 12,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 12 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p5_t0",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 5,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p5_t1",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 5,
-    "tableIndex": 1,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 9,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 9 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p6_t0",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 6,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 22,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 22 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p7_t0",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 7,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 15,
-    "numericCols": [
-      1,
-      4,
-      5,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 15 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p7_t1",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 7,
-    "tableIndex": 1,
-    "type": "unknown",
-    "headers": [
-      "Department",
-      "JDE Number",
-      "Funder",
-      "Grant",
-      "Amount Awarded",
-      "Amount Spent",
-      "Remaining Balance"
-    ],
-    "rowCount": 1,
-    "numericCols": [
-      1,
-      4,
-      6
-    ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
-  },
-  {
-    "id": "s58_p7_t2",
-    "sectionNumber": 58,
-    "sectionTitle": "Grants",
-    "sectionSlug": "grants",
-    "page": 7,
-    "tableIndex": 2,
-    "type": "unknown",
+    "type": "grant",
+    "label": "Grant Inventory (3)",
     "headers": [
       "Department",
       "JDE Number",
@@ -6438,16 +5160,17 @@
       6
     ],
     "budgetType": "operating",
-    "description": "Grant inventory listing 5 grants with department, funder, award amounts, spending, and remaining balances."
+    "description": "Grant inventory listing 4 grants with department, funder, award amounts, spending, and remaining balances."
   },
   {
-    "id": "s58_p8_t0",
+    "id": "s58_p3_t0",
     "sectionNumber": 58,
     "sectionTitle": "Grants",
     "sectionSlug": "grants",
-    "page": 8,
+    "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "grant",
+    "label": "Grant Inventory (4)",
     "headers": [
       "Department",
       "JDE Number",
@@ -6457,7 +5180,7 @@
       "Amount Spent",
       "Remaining Balance"
     ],
-    "rowCount": 24,
+    "rowCount": 20,
     "numericCols": [
       1,
       4,
@@ -6465,16 +5188,17 @@
       6
     ],
     "budgetType": "operating",
-    "description": "Grant inventory listing 24 grants with department, funder, award amounts, spending, and remaining balances."
+    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
   },
   {
-    "id": "s58_p9_t0",
+    "id": "s58_p4_t0",
     "sectionNumber": 58,
     "sectionTitle": "Grants",
     "sectionSlug": "grants",
-    "page": 9,
+    "page": 4,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "grant",
+    "label": "Grant Inventory (5)",
     "headers": [
       "Department",
       "JDE Number",
@@ -6484,7 +5208,7 @@
       "Amount Spent",
       "Remaining Balance"
     ],
-    "rowCount": 17,
+    "rowCount": 13,
     "numericCols": [
       1,
       4,
@@ -6492,16 +5216,45 @@
       6
     ],
     "budgetType": "operating",
-    "description": "Grant inventory listing 17 grants with department, funder, award amounts, spending, and remaining balances."
+    "description": "Grant inventory listing 9 grants with department, funder, award amounts, spending, and remaining balances."
   },
   {
-    "id": "s58_p9_t1",
+    "id": "s58_p5_t0",
     "sectionNumber": 58,
     "sectionTitle": "Grants",
     "sectionSlug": "grants",
-    "page": 9,
-    "tableIndex": 1,
-    "type": "unknown",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "grant",
+    "label": "Grant Inventory (6)",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 46,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ],
+    "budgetType": "operating",
+    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
+  },
+  {
+    "id": "s58_p7_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "grant",
+    "label": "Grant Inventory (7)",
     "headers": [
       "Department",
       "JDE Number",
@@ -6518,7 +5271,62 @@
       6
     ],
     "budgetType": "operating",
+    "description": "Grant inventory listing 15 grants with department, funder, award amounts, spending, and remaining balances."
+  },
+  {
+    "id": "s58_p7_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 7,
+    "tableIndex": 1,
+    "type": "grant",
+    "label": "Grant Inventory (8)",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 46,
+    "numericCols": [
+      1,
+      4,
+      5,
+      6
+    ],
+    "budgetType": "operating",
     "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
+  },
+  {
+    "id": "s58_p9_t0",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "grant",
+    "label": "Grant Inventory (9)",
+    "headers": [
+      "Department",
+      "JDE Number",
+      "Funder",
+      "Grant",
+      "Amount Awarded",
+      "Amount Spent",
+      "Remaining Balance"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      4,
+      6
+    ],
+    "budgetType": "operating",
+    "description": "Grant inventory listing 17 grants with department, funder, award amounts, spending, and remaining balances."
   },
   {
     "id": "s60_p1_t0",
@@ -6527,7 +5335,8 @@
     "sectionSlug": "salary-tables",
     "page": 1,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "salary",
+    "label": "Grade|A",
     "headers": [
       "Grade|A",
       "Grade|B",
@@ -6559,7 +5368,8 @@
     "sectionSlug": "salary-tables",
     "page": 2,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "salary",
+    "label": "Step|A",
     "headers": [
       "Step|A",
       "Step|B",
@@ -6586,7 +5396,8 @@
     "sectionSlug": "salary-tables",
     "page": 2,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "salary",
+    "label": "Step|F",
     "headers": [
       "Step|F",
       "Step|G",
@@ -6613,7 +5424,8 @@
     "sectionSlug": "salary-tables",
     "page": 2,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "salary",
+    "label": "Step|K",
     "headers": [
       "Step|K",
       "Step|L",
@@ -6640,7 +5452,8 @@
     "sectionSlug": "salary-tables",
     "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "salary",
+    "label": "Grade and Step",
     "headers": [
       "Grade and Step",
       "Annual Rate"
@@ -6653,143 +5466,14 @@
     "description": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 13 steps."
   },
   {
-    "id": "s61_p10_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 10,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 42,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p11_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 11,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 42,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p12_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 12,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 42,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p13_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 13,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 42,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p14_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 14,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 42,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
     "id": "s61_p1_t0",
     "sectionNumber": 61,
     "sectionTitle": "Debt Service",
     "sectionSlug": "debt-service",
     "page": 1,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (1)",
     "headers": [
       "Date",
       "Principal",
@@ -6814,7 +5498,8 @@
     "sectionSlug": "debt-service",
     "page": 1,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "849,270,000.00",
     "headers": [
       "849,270,000.00",
       "418,961,653.28",
@@ -6833,7 +5518,8 @@
     "sectionSlug": "debt-service",
     "page": 2,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (2)",
     "headers": [
       "Date",
       "Principal",
@@ -6859,7 +5545,8 @@
     "sectionSlug": "debt-service",
     "page": 2,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (3)",
     "headers": [
       "Date",
       "Principal",
@@ -6885,7 +5572,8 @@
     "sectionSlug": "debt-service",
     "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (4)",
     "headers": [
       "Date",
       "Principal",
@@ -6894,7 +5582,7 @@
       "Debt Service",
       "Debt Service"
     ],
-    "rowCount": 28,
+    "rowCount": 58,
     "numericCols": [
       1,
       3,
@@ -6911,33 +5599,8 @@
     "sectionSlug": "debt-service",
     "page": 4,
     "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 30,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p4_t1",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 4,
-    "tableIndex": 1,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (5)",
     "headers": [
       "Date",
       "Principal",
@@ -6963,7 +5626,8 @@
     "sectionSlug": "debt-service",
     "page": 5,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (6)",
     "headers": [
       "Date",
       "Principal",
@@ -6989,7 +5653,8 @@
     "sectionSlug": "debt-service",
     "page": 5,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (7)",
     "headers": [
       "Date",
       "Principal",
@@ -7015,7 +5680,8 @@
     "sectionSlug": "debt-service",
     "page": 6,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "debt_service",
+    "label": "Date (8)",
     "headers": [
       "Date",
       "Principal",
@@ -7024,85 +5690,7 @@
       "Debt Service",
       "Debt Service"
     ],
-    "rowCount": 34,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p7_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 7,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 36,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p8_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 8,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 38,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5
-    ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
-  },
-  {
-    "id": "s61_p9_t0",
-    "sectionNumber": 61,
-    "sectionTitle": "Debt Service",
-    "sectionSlug": "debt-service",
-    "page": 9,
-    "tableIndex": 0,
-    "type": "unknown",
-    "headers": [
-      "Date",
-      "Principal",
-      "Coupon",
-      "Interest",
-      "Debt Service",
-      "Debt Service"
-    ],
-    "rowCount": 40,
+    "rowCount": 358,
     "numericCols": [
       1,
       3,
@@ -7119,7 +5707,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 11,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS",
     "headers": [
       "DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS",
       ""
@@ -7138,7 +5727,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 14,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "DEPARTMENT OF PUBLIC WORKS",
     "headers": [
       "DEPARTMENT OF PUBLIC WORKS",
       ""
@@ -7157,7 +5747,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 16,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "SPECIAL EVENTS & FILM FEES",
     "headers": [
       "SPECIAL EVENTS & FILM FEES",
       ""
@@ -7176,7 +5767,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 19,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "ANIMAL CARE AND CONTROL",
     "headers": [
       "ANIMAL CARE AND CONTROL",
       ""
@@ -7195,7 +5787,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 1,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "BUREAU OF FIRE",
     "headers": [
       "BUREAU OF FIRE",
       ""
@@ -7214,7 +5807,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 20,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "MISCELLANEOUS",
     "headers": [
       "MISCELLANEOUS",
       ""
@@ -7233,7 +5827,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 20,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "DEPARTMENT OF FINANCE",
     "headers": [
       "DEPARTMENT OF FINANCE",
       ""
@@ -7252,7 +5847,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 20,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "HUMAN RESOURCES & CIVIL SERVICE",
     "headers": [
       "HUMAN RESOURCES & CIVIL SERVICE",
       ""
@@ -7272,6 +5868,7 @@
     "page": 21,
     "tableIndex": 0,
     "type": "financial",
+    "label": "OFFICE OF MANAGEMENT & BUDGET",
     "headers": [
       "OFFICE OF MANAGEMENT & BUDGET",
       ""
@@ -7290,7 +5887,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 21,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "BUREAU OF EMERGENCY MEDICAL SERVICES",
     "headers": [
       "BUREAU OF EMERGENCY MEDICAL SERVICES",
       ""
@@ -7309,7 +5907,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 21,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "BUREAU OF POLICE",
     "headers": [
       "BUREAU OF POLICE",
       ""
@@ -7328,7 +5927,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "DEPARTMENT OF CITY PLANNING",
     "headers": [
       "DEPARTMENT OF CITY PLANNING",
       ""
@@ -7347,7 +5947,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 3,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "DEPARTMENT OF MOBILITY & INFRASTRUCTURE",
     "headers": [
       "DEPARTMENT OF MOBILITY & INFRASTRUCTURE",
       ""
@@ -7366,7 +5967,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 7,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "Fee Schedule",
     "headers": [
       "Department of Public Safety Reimbursable Events/Secondary Employment|Fee Description",
       "2026",
@@ -7386,7 +5988,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 9,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "* fees will change according to union contract",
     "headers": [
       "* fees will change according to union contract",
       "",
@@ -7404,7 +6007,8 @@
     "sectionSlug": "master-fee-schedule",
     "page": 9,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "fee_schedule",
+    "label": "DEPARTMENT OF PARKS & RECREATION",
     "headers": [
       "DEPARTMENT OF PARKS & RECREATION",
       ""
@@ -7423,7 +6027,8 @@
     "sectionSlug": "appendices",
     "page": 1,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Number",
@@ -7446,7 +6051,8 @@
     "sectionSlug": "appendices",
     "page": 2,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "deliverables",
+    "label": "Department (1)",
     "headers": [
       "Department",
       "Deliverable",
@@ -7465,6 +6071,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial",
+    "label": "Department (2)",
     "headers": [
       "Department",
       "Deliverable",
@@ -7485,7 +6092,8 @@
     "sectionSlug": "appendices",
     "page": 3,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "grant",
+    "label": "Department (3)",
     "headers": [
       "Department",
       "Project and Funder",
@@ -7507,7 +6115,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 17,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Capital Summary (1)",
     "headers": [
       "Project Name Functional Area: Engineering and Construction",
       "2026 Total"
@@ -7525,7 +6134,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 17,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Functional Area: Facility Improvement",
     "headers": [
       "Functional Area: Facility Improvement",
       ""
@@ -7543,7 +6153,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 17,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Capital Summary (2)",
     "headers": [
       "Functional Area: Neighborhood and Community Development",
       ""
@@ -7561,7 +6172,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 18,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Total:  Neighborhood and Community Development",
     "headers": [
       "Total:  Neighborhood and Community Development",
       "8,195,569"
@@ -7577,7 +6189,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 18,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Functional Area: Public Safety",
     "headers": [
       "Functional Area: Public Safety",
       ""
@@ -7595,7 +6208,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 18,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Functional Area: Vehicles and Equipment",
     "headers": [
       "Functional Area: Vehicles and Equipment",
       ""
@@ -7613,7 +6227,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 18,
     "tableIndex": 3,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Functional Area: Administration/Sub-Award (1)",
     "headers": [
       "Functional Area: Administration/Sub-Award",
       ""
@@ -7631,7 +6246,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 18,
     "tableIndex": 4,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Functional Area: Administration/Sub-Award (2)",
     "headers": [
       "Functional Area: Administration/Sub-Award",
       ""
@@ -7649,7 +6265,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 22,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "2025",
     "headers": [
       "2025",
       "$12,852,093",
@@ -7676,7 +6293,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 2,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Capital Summary (3)",
     "headers": [
       "(cid:53)(cid:17) (cid:39)(cid:68)(cid:81)(cid:76)(cid:72)(cid:79)(cid:3)(cid:47)(cid:68)(cid:89)(cid:72)(cid:79)(cid:79)(cid:72)(cid:11)(cid:1)(cid:51)(cid:85)(cid:72)(cid:86)(cid:76)(cid:71)(cid:72)(cid:81)(cid:87) (cid:27)(cid:65)(cid:52)(cid:52)(cid:75)(cid:1)(cid:47)(cid:59)(cid:62)(cid:69)(cid:65)(cid:64)(cid:11)(cid:1)(cid:47)(cid:68)(cid:81)(cid:71)(cid:3)(cid:56)(cid:86)(cid:72)(cid:3)(cid:9)(cid:3)(cid:40)(cid:70)(cid:82)(cid:81)(cid:82)(cid:80)(cid:76)(cid:70)(cid:3)(cid:39)(cid:72)(cid:89)(cid:72)(cid:79)(cid:82)(cid:83)(cid:80)(cid:72)(cid:81)(cid:87) (cid:55)(cid:75)(cid:72)(cid:85)(cid:72)(cid:86)(cid:68)(cid:3)(cid:46)(cid:68)(cid:76)(cid:79)(cid:16)(cid:54)(cid:80)(cid:76)(cid:87)(cid:75)(cid:11)(cid:1)(cid:53)(cid:72)(cid:70)(cid:85)(cid:72)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)(cid:15)(cid:3)(cid:60)(cid:82)(cid:88)(cid:87)(cid:75)(cid:15)(cid:3)(cid:9)(cid:3)(cid:54)(cid:72)(cid:81)(cid:76)(cid:82)(cid:85)(cid:3)(cid:54)(cid:72)(cid:85)(cid:89)(cid:76)(cid:70)(cid:72)(cid:86)",
       "(cid:31)(cid:61)(cid:71)(cid:72)(cid:70)(cid:61)(cid:55)(cid:72)(cid:1)(cid:25) (cid:31)(cid:61)(cid:71)(cid:72)(cid:70)(cid:61)(cid:55)(cid:72)(cid:1)(cid:16) (cid:31)(cid:61)(cid:71)(cid:72)(cid:70)(cid:61)(cid:55)(cid:72)(cid:1)(cid:21)"
@@ -7692,7 +6310,8 @@
     "sectionSlug": "capital-budget-introduction",
     "page": 8,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "Capital Summary (4)",
     "headers": [
       "historically disadvantaged Pittsburghers. Departments were also asked to consider: \uf0b7 Has the department taken taking current market conditions, particularly anticipated increases",
       ""
@@ -7711,6 +6330,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -7743,6 +6363,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -7775,6 +6396,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -7796,6 +6418,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -7828,6 +6451,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -7860,6 +6484,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -7881,6 +6506,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -7913,6 +6539,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -7934,6 +6561,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -7966,6 +6594,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -7998,6 +6627,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8019,6 +6649,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8051,6 +6682,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8072,6 +6704,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8104,6 +6737,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8125,6 +6759,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8157,6 +6792,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8178,6 +6814,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8210,6 +6847,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8231,6 +6869,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8263,6 +6902,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8295,6 +6935,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8316,6 +6957,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8348,6 +6990,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8369,6 +7012,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8401,6 +7045,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8422,6 +7067,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8454,6 +7100,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8486,6 +7133,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8518,6 +7166,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8550,6 +7199,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8571,6 +7221,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8603,6 +7254,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8635,6 +7287,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8667,6 +7320,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8699,6 +7353,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8720,6 +7375,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8752,6 +7408,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8773,6 +7430,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8805,6 +7463,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8837,6 +7496,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8858,6 +7518,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8890,6 +7551,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8911,6 +7573,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8943,6 +7606,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -8975,6 +7639,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -8996,6 +7661,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9028,6 +7694,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9049,6 +7716,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9081,6 +7749,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9113,6 +7782,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9134,6 +7804,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9166,6 +7837,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9187,6 +7859,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9219,6 +7892,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9240,6 +7914,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9272,6 +7947,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9293,6 +7969,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9325,6 +8002,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9346,6 +8024,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9378,6 +8057,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9399,6 +8079,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9431,6 +8112,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9452,6 +8134,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9484,6 +8167,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9505,6 +8189,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9537,6 +8222,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9569,6 +8255,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9590,6 +8277,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9622,6 +8310,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9643,6 +8332,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9675,6 +8365,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9696,6 +8387,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9728,6 +8420,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9749,6 +8442,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9781,6 +8475,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9802,6 +8497,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9834,6 +8530,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9855,6 +8552,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9887,6 +8585,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9908,6 +8607,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9940,6 +8640,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -9961,6 +8662,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -9993,6 +8695,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10014,6 +8717,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10046,6 +8750,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10067,6 +8772,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10099,6 +8805,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10120,6 +8827,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10152,6 +8860,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10173,6 +8882,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10205,6 +8915,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10226,6 +8937,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10258,6 +8970,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10279,6 +8992,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10311,6 +9025,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10332,6 +9047,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10364,6 +9080,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10385,6 +9102,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10417,6 +9135,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10438,6 +9157,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10470,6 +9190,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10491,6 +9212,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10523,6 +9245,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10544,6 +9267,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10576,6 +9300,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10597,6 +9322,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10629,6 +9355,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10650,6 +9377,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "cip_funding",
+    "label": "Source",
     "headers": [
       "Source",
       "2025",
@@ -10682,6 +9410,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverable/Objective",
     "headers": [
       "Deliverable/Objective",
       "Location",
@@ -10702,7 +9431,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 12,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "glossary",
+    "label": "ACRONYM/TERM 311",
     "headers": [
       "ACRONYM/TERM 311",
       "NAME 311",
@@ -10719,7 +9449,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 13,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "HOPWA",
     "headers": [
       "HOPWA",
       "Housing Opportunities for Persons with AIDS",
@@ -10737,6 +9468,7 @@
     "page": 18,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverables (1)",
     "headers": [
       "Project CAPITAL EQUIPMENT ACQUISITION CAPITAL EQUIPMENT ACQUISITION CAPITAL EQUIPMENT ACQUISITION PARK RECONSTRUCTION",
       "Deliverable P&R OLYMPIA TRADE-IN (PARKS TAX) P&R RANGER MIDSIZE TRUCK (PARKS TAX) P&R SENIOR SHUTTLE REPLACEMENT (PARKS TAX) ACCESSIBILITY AT FRICK ENVIRONMENTAL CENTER (PARKS TAX)",
@@ -10756,7 +9488,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 18,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "PARK RECONSTRUCTION (1)",
     "headers": [
       "PARK RECONSTRUCTION",
       "MOORE PARK UPGRADES (PARKS TAX)",
@@ -10775,7 +9508,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 18,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "PARK RECONSTRUCTION (2)",
     "headers": [
       "PARK RECONSTRUCTION",
       "WATSON'S CABIN IMPROVEMENT PLAN (PARKS TAX)",
@@ -10794,7 +9528,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 2,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "CITY COUNCIL",
     "headers": [
       "CITY COUNCIL",
       "",
@@ -10820,7 +9555,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 3,
     "tableIndex": 0,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "EQUIPMENT LEASING AUTHORITY",
     "headers": [
       "EQUIPMENT LEASING AUTHORITY",
       "",
@@ -10847,6 +9583,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Project",
     "headers": [
       "Project",
       "Deliverable City",
@@ -10879,7 +9616,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "9000 - STREET RESURFACING",
     "headers": [
       "9000 - STREET RESURFACING",
       "ADA Ramps",
@@ -10910,7 +9648,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 10,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (1)",
     "headers": [
       "3031 - HOUSING COUNSELING 0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT 0011 - REMEDIATION OF CONDEMNED BUILDINGS 8889 - FAIR HOUSING 6322 - PITTSBURGH EMPLOYMENT PROGRAM 7501 - RAMP AND PUBLIC SIDEWALK",
       "Housing Counseling NEIGHBORHOOD ECONOMIC DEVELOPMENT Program Building demolitions Fair Housing Collaboration Support of Learn and Earn Program-Partnership Employment Program ADA Ramps",
@@ -10943,7 +9682,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 11,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (2)",
     "headers": [
       "3031 - HOUSING COUNSELING 0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT 0011 - REMEDIATION OF CONDEMNED BUILDINGS 8889 - FAIR HOUSING 6322 - PITTSBURGH EMPLOYMENT PROGRAM 7501 - RAMP AND PUBLIC SIDEWALK",
       "Housing Counseling NEIGHBORHOOD ECONOMIC DEVELOPMENT Program Building demolitions Fair Housing Collaboration Support of Learn and Earn Program-Partnership Employment Program ADA Ramps",
@@ -10976,7 +9716,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 12,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (3)",
     "headers": [
       "3031 - HOUSING COUNSELING 0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT 0011 - REMEDIATION OF CONDEMNED BUILDINGS 8889 - FAIR HOUSING 6322 - PITTSBURGH EMPLOYMENT PROGRAM 7501 - RAMP AND PUBLIC SIDEWALK",
       "Housing Counseling NEIGHBORHOOD ECONOMIC DEVELOPMENT Program Building demolitions Fair Housing Collaboration Support of Learn and Earn Program-Partnership Employment Program ADA Ramps",
@@ -11009,7 +9750,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 13,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (4)",
     "headers": [
       "3031 - HOUSING COUNSELING 0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT 0011 - REMEDIATION OF CONDEMNED BUILDINGS 8889 - FAIR HOUSING 6322 - PITTSBURGH EMPLOYMENT PROGRAM 7501 - RAMP AND PUBLIC SIDEWALK",
       "Housing Counseling NEIGHBORHOOD ECONOMIC DEVELOPMENT Program Building demolitions Fair Housing Collaboration Support of Learn and Earn Program-Partnership Employment Program ADA Ramps",
@@ -11042,7 +9784,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 14,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (5)",
     "headers": [
       "7401 - COMPLETE STREETS 6332 - CDBG ADMINISTRATION 6332 - CDBG ADMINISTRATION 1009 - BEDFORD DWELLINGS CHOICE NEIGHBORHOOD 9103 - SLOPE FAILURE REMEDIATION 5899 - CAPITAL EQUIPMENT ACQUISITION",
       "Darragh at Terrace Traffic Signal Replacement MAYOR'S PUBLIC SERVICE GRANTS City Council's Public Service Grants Targeted Facade Repair Slope Rapid Response Upgrades Parks & Rec Olympia Trade-in",
@@ -11075,7 +9818,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 15,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (6)",
     "headers": [
       "7401 - COMPLETE STREETS 6332 - CDBG ADMINISTRATION 6332 - CDBG ADMINISTRATION 1009 - BEDFORD DWELLINGS CHOICE NEIGHBORHOOD 9103 - SLOPE FAILURE REMEDIATION 5899 - CAPITAL EQUIPMENT ACQUISITION",
       "Darragh at Terrace Traffic Signal Replacement MAYOR'S PUBLIC SERVICE GRANTS City Council's Public Service Grants Targeted Facade Repair Slope Rapid Response Upgrades Parks & Rec Olympia Trade-in",
@@ -11108,7 +9852,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 16,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "3101 - BRIDGE UPGRADES (1)",
     "headers": [
       "3101 - BRIDGE UPGRADES",
       "Brighton Heights Blvd Deck Substructure Preservation",
@@ -11138,7 +9883,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 17,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "5899 - CAPITAL EQUIPMENT ACQUISITION",
     "headers": [
       "5899 - CAPITAL EQUIPMENT ACQUISITION",
       "Parks & Rec Senior Shuttle Replacement",
@@ -11169,7 +9915,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 18,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "2026 CPFC Scoring (1)",
     "headers": [
       "2026 CPFC Scoring",
       "1"
@@ -11185,7 +9932,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (7)",
     "headers": [
       "6332 - CDBG ADMINISTRATION 6132 - CDBG PERSONNEL 6332 - CDBG ADMINISTRATION 5015 - EMERGENCY SOLUTIONS GRANT",
       "HOME INVESTMENT PARTNERSHIPS PROGRAM PERSONNEL Costs of the CDBG Program Administrative Costs of the CDBG Program EMERGENCY SOLUTIONS GRANT",
@@ -11218,7 +9966,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 3,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (8)",
     "headers": [
       "6332 - CDBG ADMINISTRATION 6132 - CDBG PERSONNEL 6332 - CDBG ADMINISTRATION 5015 - EMERGENCY SOLUTIONS GRANT",
       "HOME INVESTMENT PARTNERSHIPS PROGRAM PERSONNEL Costs of the CDBG Program Administrative Costs of the CDBG Program EMERGENCY SOLUTIONS GRANT",
@@ -11251,7 +10000,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 4,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (9)",
     "headers": [
       "6332 - CDBG ADMINISTRATION 6132 - CDBG PERSONNEL 6332 - CDBG ADMINISTRATION 5015 - EMERGENCY SOLUTIONS GRANT",
       "HOME INVESTMENT PARTNERSHIPS PROGRAM PERSONNEL Costs of the CDBG Program Administrative Costs of the CDBG Program EMERGENCY SOLUTIONS GRANT",
@@ -11284,7 +10034,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 5,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (10)",
     "headers": [
       "6332 - CDBG ADMINISTRATION 6132 - CDBG PERSONNEL 6332 - CDBG ADMINISTRATION 5015 - EMERGENCY SOLUTIONS GRANT",
       "HOME INVESTMENT PARTNERSHIPS PROGRAM PERSONNEL Costs of the CDBG Program Administrative Costs of the CDBG Program EMERGENCY SOLUTIONS GRANT",
@@ -11317,7 +10068,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 6,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (11)",
     "headers": [
       "6332 - CDBG ADMINISTRATION 6132 - CDBG PERSONNEL 6332 - CDBG ADMINISTRATION 5015 - EMERGENCY SOLUTIONS GRANT",
       "HOME INVESTMENT PARTNERSHIPS PROGRAM PERSONNEL Costs of the CDBG Program Administrative Costs of the CDBG Program EMERGENCY SOLUTIONS GRANT",
@@ -11350,7 +10102,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 7,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (12)",
     "headers": [
       "6332 - CDBG ADMINISTRATION 6132 - CDBG PERSONNEL 6332 - CDBG ADMINISTRATION 5015 - EMERGENCY SOLUTIONS GRANT",
       "HOME INVESTMENT PARTNERSHIPS PROGRAM PERSONNEL Costs of the CDBG Program Administrative Costs of the CDBG Program EMERGENCY SOLUTIONS GRANT",
@@ -11383,7 +10136,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 8,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (13)",
     "headers": [
       "3031 - HOUSING COUNSELING 0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT 0011 - REMEDIATION OF CONDEMNED BUILDINGS 8889 - FAIR HOUSING 6322 - PITTSBURGH EMPLOYMENT PROGRAM 7501 - RAMP AND PUBLIC SIDEWALK",
       "Housing Counseling NEIGHBORHOOD ECONOMIC DEVELOPMENT Program Building demolitions Fair Housing Collaboration Support of Learn and Earn Program-Partnership Employment Program ADA Ramps",
@@ -11416,7 +10170,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 6,
     "tableIndex": 9,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (14)",
     "headers": [
       "3031 - HOUSING COUNSELING 0001 - NEIGHBORHOOD ECONOMIC DEVELOPMENT 0011 - REMEDIATION OF CONDEMNED BUILDINGS 8889 - FAIR HOUSING 6322 - PITTSBURGH EMPLOYMENT PROGRAM 7501 - RAMP AND PUBLIC SIDEWALK",
       "Housing Counseling NEIGHBORHOOD ECONOMIC DEVELOPMENT Program Building demolitions Fair Housing Collaboration Support of Learn and Earn Program-Partnership Employment Program ADA Ramps",
@@ -11450,6 +10205,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverables (2)",
     "headers": [
       "Project 9000 - STREET RESURFACING 1002 - PLAY AREA IMPROVEMENTS 5899 - CAPITAL EQUIPMENT ACQUISITION",
       "Deliverable Parking Lot at City Garage Brookline Memorial Playground DPW Construction Heavy-Duty Pickup",
@@ -11482,7 +10238,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (15)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -11515,7 +10272,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 10,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (16)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -11548,7 +10306,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 11,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "3101 - BRIDGE UPGRADES (2)",
     "headers": [
       "3101 - BRIDGE UPGRADES",
       "River Ave Viaduct & 30th Street Bridge Substructure Preservation",
@@ -11581,7 +10340,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 12,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "3101 - BRIDGE UPGRADES (3)",
     "headers": [
       "3101 - BRIDGE UPGRADES",
       "River Ave Viaduct & 30th Street Bridge Substructure Preservation",
@@ -11614,7 +10374,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 13,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (17)",
     "headers": [
       "5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS 5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS 7325 - SMALL BUSINESS DEVELOPMENT 7342 - HOMEOWNER ASSISTANCE 7321 - ECONOMIC DEVELOPMENT AND HOUSING 7558 - PUBLIC SAFETY EQUIPMENT 5000 - PARK RECONSTRUCTION 5905 - TRAIL DEVELOPMENT 5905 - TRAIL DEVELOPMENT",
       "Troy Hill New Community Building and Site Renovations Cowley Recreation Center Facility Construction Small Business Support Housing Facades Small Business Technical Assistance Swift Water Rescue Boats & Engines ARSENAL PARK - PHASE II CONSTRUCTION Strip District Trail under I-579 Improvements Strip District Trail Under I-579",
@@ -11647,7 +10408,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 14,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (18)",
     "headers": [
       "9103 - SLOPE FAILURE REMEDIATION 5905 - TRAIL DEVELOPMENT 1200 - FIREFIGHTING EQUIPMENT 5905 - TRAIL DEVELOPMENT 5000 - PARK RECONSTRUCTION 5905 - TRAIL DEVELOPMENT 9000 - STREET RESURFACING 0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 9103 - SLOPE FAILURE REMEDIATION 5905 - TRAIL DEVELOPMENT 3101 - BRIDGE UPGRADES 3101 - BRIDGE UPGRADES 3101 - BRIDGE UPGRADES 3101 - BRIDGE UPGRADES 7325 - SMALL BUSINESS DEVELOPMENT 5000 - PARK RECONSTRUCTION 5000 - PARK RECONSTRUCTION",
       "Riverview Avenue Landslide Slide S4 Three Rivers Heritage Trail Repaving - Eliza at Second Firefighting Foam Replacement Duck Hollow Hazelwood to Carrie Furnace Reconstruction of Critical Infrastructure in Flagstaff Hill Trail Lighting Program Repairs to 11th Street Reservoir Drive Greening and Improvements Oporto Street Landslide Brady Street Connector Shaler St Bridge Floorbeam Repair Second Ave & Herr Island Bridge Underwater Inspection & Repairs River Ave Viaduct Herr's Island Pedestrian Bridge Substructure Repairs Downtown Facade Funding Emerald View Park \u2013 Phase II Design Fort Pitt \u2013 Phase I and II Construction",
@@ -11681,7 +10443,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 15,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "5000 - PARK RECONSTRUCTION (1)",
     "headers": [
       "5000 - PARK RECONSTRUCTION",
       "KENNARD PARK - CONSTRUCTION",
@@ -11708,7 +10471,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 16,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "5000 - PARK RECONSTRUCTION (2)",
     "headers": [
       "5000 - PARK RECONSTRUCTION",
       "Sheraden Park \u2013 Phase II Design",
@@ -11734,7 +10498,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 17,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "5000 - PARK RECONSTRUCTION (3)",
     "headers": [
       "5000 - PARK RECONSTRUCTION",
       "South Side Park \u2013 Phase II Design",
@@ -11760,7 +10525,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 18,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "5000 - PARK RECONSTRUCTION (4)",
     "headers": [
       "5000 - PARK RECONSTRUCTION",
       "Westinghouse Park Design",
@@ -11787,7 +10553,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 19,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "5000 - PARK RECONSTRUCTION (5)",
     "headers": [
       "5000 - PARK RECONSTRUCTION",
       "Moore Park Improvements",
@@ -11818,7 +10585,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (19)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -11851,7 +10619,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 20,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES",
     "headers": [
       "7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES",
       "Armstrong Park",
@@ -11881,7 +10650,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 21,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "2026 CPFC Scoring (2)",
     "headers": [
       "2026 CPFC Scoring",
       "2"
@@ -11897,7 +10667,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 3,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (20)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -11930,7 +10701,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 4,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (21)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -11963,7 +10735,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 5,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (22)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -11996,7 +10769,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 6,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (23)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -12029,7 +10803,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 7,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (24)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -12062,7 +10837,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 8,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (25)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -12095,7 +10871,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 7,
     "tableIndex": 9,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (26)",
     "headers": [
       "7342 - HOMEOWNER ASSISTANCE 5899 - CAPITAL EQUIPMENT ACQUISITION 7430 - WAR MEMORIALS AND PUBLIC ART",
       "Home Accessibility Program for Independence (HAPI) 2026 DPLI SEDAN REPLACEMENT Public Art Collection Care & Responsive Action",
@@ -12129,6 +10906,7 @@
     "page": 8,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverables (3)",
     "headers": [
       "Project 7401 - COMPLETE STREETS 0036 - STEP REPAIR AND REPLACEMENT 3101 - BRIDGE UPGRADES 3101 - BRIDGE UPGRADES 7501 - RAMP AND PUBLIC SIDEWALK 9000 - STREET RESURFACING 5002 - PARK RECONSTRUCTION - PARKS TAX 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 7500 - FACILITY IMPROVEMENTS - CITY FACILITIES 7500 - FACILITY IMPROVEMENTS - CITY FACILITIES 7500 - FACILITY IMPROVEMENTS - CITY FACILITIES 7401 - COMPLETE STREETS 0036 - STEP REPAIR AND REPLACEMENT 9103 - SLOPE FAILURE REMEDIATION 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 0036 - STEP REPAIR AND REPLACEMENT 9000 - STREET RESURFACING 0881 - 28TH STREET BRIDGE (TIP)",
       "Deliverable Department of Mobility and Infrastructure - Complete Streets Step Railing Upgrades Anderson Playground Pedestrian Tunnel Preservation Northside Bridges over I-279 Liberty Ave at Amtrak Station Sidewalk 11th Street Repairs Lewis Park Improvements Shady and Forbes Traffic Signal Replacement Wilkins and Murray Avenue Traffic Signal Replacement Asbestos Testing & Remediation Program Roof Replacements - City Facilities RTU & Boiler Replacements Schenley Park Traffic Calming Bike Runnels for Existing Brahm Street Wall Repairs Armstrong Field Rising Main City Step Replacement Parking Lot at City Garage at Eazor Square Repaving Shadeland Avenue, Davis Ave, Legion Park Streetscape Plan",
@@ -12161,7 +10939,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 8,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (27)",
     "headers": [
       "0029 - URBAN REDEVELOPMENT AUTHORITY PROPERTY MAINTENANCE 7558 - PUBLIC SAFETY EQUIPMENT 7558 - PUBLIC SAFETY EQUIPMENT 7325 - SMALL BUSINESS DEVELOPMENT 0018 - URBAN REDEVELOPMENT AUTHORITY PERSONNEL 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 3101 - BRIDGE UPGRADES 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS 7401 - COMPLETE STREETS 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 7401 - COMPLETE STREETS 1002 - PLAY AREA IMPROVEMENTS 1002 - PLAY AREA IMPROVEMENTS 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 5899 - CAPITAL EQUIPMENT ACQUISITION 7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES 7500 - FACILITY IMPROVEMENTS - CITY FACILITIES 0036 - STEP REPAIR AND REPLACEMENT",
       "Blight Remediation Parking Lot Repaving Parking Lot Repaving Business District Facade Funding Program Delivery Stanton Ave Phase 3 Greenfield - Murray Ave. Safe Intersections Bates Street Safe Crossings Lowrie St Bridge Substructure Repairs Liberty/ Pacific pedestrian safety Centre and S. Highland Intersection Improvements Brighton Heights HALC Basement & 2nd Floor Renovations 40th & Foster improvements Allegheny Commons Tennis Courts Traffic Calming and Neighborhood Gateway - Polish Hill Marshall-California Playground Davis Playground Craig & Bayard Traffic Signal Shady and Beacon Signal Upgrade Baum/Graham pedestrian crossing DPW Construction Heavy-Duty Utility Body Pickup Public Safety Station Kitchen & Bath Upgrades Interior Furniture & Renovations Projects California Ave (Eckert to Knapp)",
@@ -12194,7 +10973,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 8,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (28)",
     "headers": [
       "0029 - URBAN REDEVELOPMENT AUTHORITY PROPERTY MAINTENANCE 7558 - PUBLIC SAFETY EQUIPMENT 7558 - PUBLIC SAFETY EQUIPMENT 7325 - SMALL BUSINESS DEVELOPMENT 0018 - URBAN REDEVELOPMENT AUTHORITY PERSONNEL 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 3101 - BRIDGE UPGRADES 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS 7401 - COMPLETE STREETS 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 7401 - COMPLETE STREETS 1002 - PLAY AREA IMPROVEMENTS 1002 - PLAY AREA IMPROVEMENTS 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 5899 - CAPITAL EQUIPMENT ACQUISITION 7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES 7500 - FACILITY IMPROVEMENTS - CITY FACILITIES 0036 - STEP REPAIR AND REPLACEMENT",
       "Blight Remediation Parking Lot Repaving Parking Lot Repaving Business District Facade Funding Program Delivery Stanton Ave Phase 3 Greenfield - Murray Ave. Safe Intersections Bates Street Safe Crossings Lowrie St Bridge Substructure Repairs Liberty/ Pacific pedestrian safety Centre and S. Highland Intersection Improvements Brighton Heights HALC Basement & 2nd Floor Renovations 40th & Foster improvements Allegheny Commons Tennis Courts Traffic Calming and Neighborhood Gateway - Polish Hill Marshall-California Playground Davis Playground Craig & Bayard Traffic Signal Shady and Beacon Signal Upgrade Baum/Graham pedestrian crossing DPW Construction Heavy-Duty Utility Body Pickup Public Safety Station Kitchen & Bath Upgrades Interior Furniture & Renovations Projects California Ave (Eckert to Knapp)",
@@ -12227,7 +11007,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 8,
     "tableIndex": 3,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (29)",
     "headers": [
       "0029 - URBAN REDEVELOPMENT AUTHORITY PROPERTY MAINTENANCE 7558 - PUBLIC SAFETY EQUIPMENT 7558 - PUBLIC SAFETY EQUIPMENT 7325 - SMALL BUSINESS DEVELOPMENT 0018 - URBAN REDEVELOPMENT AUTHORITY PERSONNEL 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 3101 - BRIDGE UPGRADES 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS 7401 - COMPLETE STREETS 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 7401 - COMPLETE STREETS 1002 - PLAY AREA IMPROVEMENTS 1002 - PLAY AREA IMPROVEMENTS 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS 5899 - CAPITAL EQUIPMENT ACQUISITION 7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES 7500 - FACILITY IMPROVEMENTS - CITY FACILITIES 0036 - STEP REPAIR AND REPLACEMENT",
       "Blight Remediation Parking Lot Repaving Parking Lot Repaving Business District Facade Funding Program Delivery Stanton Ave Phase 3 Greenfield - Murray Ave. Safe Intersections Bates Street Safe Crossings Lowrie St Bridge Substructure Repairs Liberty/ Pacific pedestrian safety Centre and S. Highland Intersection Improvements Brighton Heights HALC Basement & 2nd Floor Renovations 40th & Foster improvements Allegheny Commons Tennis Courts Traffic Calming and Neighborhood Gateway - Polish Hill Marshall-California Playground Davis Playground Craig & Bayard Traffic Signal Shady and Beacon Signal Upgrade Baum/Graham pedestrian crossing DPW Construction Heavy-Duty Utility Body Pickup Public Safety Station Kitchen & Bath Upgrades Interior Furniture & Renovations Projects California Ave (Eckert to Knapp)",
@@ -12260,7 +11041,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 8,
     "tableIndex": 4,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "7430 - WAR MEMORIALS AND PUBLIC ART",
     "headers": [
       "7430 - WAR MEMORIALS AND PUBLIC ART",
       "Percent for Art - Larimer",
@@ -12286,7 +11068,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 8,
     "tableIndex": 5,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "9103 - SLOPE FAILURE REMEDIATION",
     "headers": [
       "9103 - SLOPE FAILURE REMEDIATION",
       "Spring Garden Ave Landslide",
@@ -12317,6 +11100,7 @@
     "page": 9,
     "tableIndex": 0,
     "type": "deliverables",
+    "label": "Deliverables (4)",
     "headers": [
       "Project 0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 5899 - CAPITAL EQUIPMENT ACQUISITION 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 0036 - STEP REPAIR AND REPLACEMENT 5899 - CAPITAL EQUIPMENT ACQUISITION 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 0036 - STEP REPAIR AND REPLACEMENT",
       "Deliverable S. 18th Street Lighting Restoration Dallas Basketball Court Paulson Basketball Court DOMI HEAVY DUTY TRUCK PURCHASE Riverview Park Tennis Courts Portman Avenue Step Repair DOMI FOREMAN TRUCK PURCHASE Dunbar Basketball Court Portman Ave",
@@ -12350,7 +11134,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 9,
     "tableIndex": 1,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (30)",
     "headers": [
       "0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 7321 - ECONOMIC DEVELOPMENT AND HOUSING 9103 - SLOPE FAILURE REMEDIATION",
       "Barry Street Steps Community Development Investment Fund Parkwood Rd Landslide",
@@ -12383,7 +11168,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 9,
     "tableIndex": 2,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (31)",
     "headers": [
       "3101 - BRIDGE UPGRADES 7500 - FACILITY IMPROVEMENTS - CITY FACILITIES 5000 - PARK RECONSTRUCTION 7401 - COMPLETE STREETS 7401 - COMPLETE STREETS",
       "Fritz St Bridge Replacement Marshall Mansion Restroom Renovations Ormsby Master Plan + Lighting Federal Street Streetscape Design Plan Spring Garden Avenue Streetscape Design Plan",
@@ -12416,7 +11202,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 9,
     "tableIndex": 3,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (32)",
     "headers": [
       "7501 - RAMP AND PUBLIC SIDEWALK 9103 - SLOPE FAILURE REMEDIATION 7492 - LED STREETLIGHT UPGRADE 7401 - COMPLETE STREETS 0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 5899 - CAPITAL EQUIPMENT ACQUISITION 7499 - PUBLIC SAFETY TRAINING FACILITY 5000 - PARK RECONSTRUCTION 5001 - PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS 5002 - PARK RECONSTRUCTION - PARKS TAX 5899 - CAPITAL EQUIPMENT ACQUISITION 5899 - CAPITAL EQUIPMENT ACQUISITION 5899 - CAPITAL EQUIPMENT ACQUISITION 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 5000 - PARK RECONSTRUCTION 5000 - PARK RECONSTRUCTION 1002 - PLAY AREA IMPROVEMENTS 5000 - PARK RECONSTRUCTION",
       "Citywide Sidewalk Assessment Overbeck St. Landslide Decorative Lighting Modernization Ormsby Park Traffic Calming 400 Block Rochelle St Retaining Wall Repair City Planning Mid-Size SUV Purchase Public Safety Training Campus Design Watson\u2019s Cabin Improvement Plan Farmhouse Playground Improvements Watson\u2019s Cabin Improvement Plan PS EMS R4 Rescue Replacement PS EMS R5 Rescue Replacement DOMI PAINT TRUCK REPLACEMENT Jack Stack Park Pool & Baseball Building Facility Upgrades Jack Stack Baseball Fields 1, 3, 4 Lighting Upgrades West Allegheny Commons Park Improvements South West Commons near Foster Square Pathway Upgrades Jack Stack Playground Improvements East Commons Pickleball Courts",
@@ -12449,7 +11236,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 9,
     "tableIndex": 4,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (33)",
     "headers": [
       "7501 - RAMP AND PUBLIC SIDEWALK 9103 - SLOPE FAILURE REMEDIATION 7492 - LED STREETLIGHT UPGRADE 7401 - COMPLETE STREETS 0990 - DESIGN, CONSTRUCTION, AND INSPECTION SERVICES 5899 - CAPITAL EQUIPMENT ACQUISITION 7499 - PUBLIC SAFETY TRAINING FACILITY 5000 - PARK RECONSTRUCTION 5001 - PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS 5002 - PARK RECONSTRUCTION - PARKS TAX 5899 - CAPITAL EQUIPMENT ACQUISITION 5899 - CAPITAL EQUIPMENT ACQUISITION 5899 - CAPITAL EQUIPMENT ACQUISITION 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 5000 - PARK RECONSTRUCTION 5000 - PARK RECONSTRUCTION 1002 - PLAY AREA IMPROVEMENTS 5000 - PARK RECONSTRUCTION",
       "Citywide Sidewalk Assessment Overbeck St. Landslide Decorative Lighting Modernization Ormsby Park Traffic Calming 400 Block Rochelle St Retaining Wall Repair City Planning Mid-Size SUV Purchase Public Safety Training Campus Design Watson\u2019s Cabin Improvement Plan Farmhouse Playground Improvements Watson\u2019s Cabin Improvement Plan PS EMS R4 Rescue Replacement PS EMS R5 Rescue Replacement DOMI PAINT TRUCK REPLACEMENT Jack Stack Park Pool & Baseball Building Facility Upgrades Jack Stack Baseball Fields 1, 3, 4 Lighting Upgrades West Allegheny Commons Park Improvements South West Commons near Foster Square Pathway Upgrades Jack Stack Playground Improvements East Commons Pickleball Courts",
@@ -12482,7 +11270,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 9,
     "tableIndex": 5,
-    "type": "unknown",
+    "type": "capital_project",
+    "label": "Capital Project (34)",
     "headers": [
       "5000 - PARK RECONSTRUCTION 5000 - PARK RECONSTRUCTION 7401 - COMPLETE STREETS 5905 - TRAIL DEVELOPMENT 7501 - RAMP AND PUBLIC SIDEWALK 9103 - SLOPE FAILURE REMEDIATION 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES 9103 - SLOPE FAILURE REMEDIATION 5000 - PARK RECONSTRUCTION 5001 - PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS 5000 - PARK RECONSTRUCTION",
       "Enhancing the Health and Beauty of Pittsburgh\u2019s Parks Arlington Baseball Field Upkeep Lawn Street Promenade Sidewalk Continuation Heth's Run Trail Building Lawn Street Promenade Phase 2 Gershon St Landslide Chartiers Field Heths Field Gershon St Landslide Riverview Park Dog Park Fence Replacement Highland Park Benches Arco Park upgrades",
@@ -12514,7 +11303,8 @@
     "sectionSlug": "capital-budget-appendices",
     "page": 9,
     "tableIndex": 6,
-    "type": "unknown",
+    "type": "capital_summary",
+    "label": "2026 CPFC Scoring (3)",
     "headers": [
       "2026 CPFC Scoring",
       "4"

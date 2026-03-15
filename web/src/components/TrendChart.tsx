@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { parseCurrency } from '../lib/currency';
+import { useContainerWidth } from '../lib/hooks';
 
 interface Props {
   headers: string[];
@@ -10,17 +12,10 @@ interface Props {
   tableId: string;
 }
 
-function parseCurrency(s: string): number | null {
-  if (!s || s === '—' || s === 'varies') return null;
-  const neg = s.includes('(') && s.includes(')');
-  const cleaned = s.replace(/[$,()]/g, '').trim();
-  const num = parseFloat(cleaned);
-  if (isNaN(num)) return null;
-  return neg ? -num : num;
-}
-
 export default function TrendChart({ headers, rows, numericCols, tableId }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
   const [mode, setMode] = useState<'line' | 'area'>('line');
 
   // Detect year columns among numeric columns
@@ -109,10 +104,10 @@ export default function TrendChart({ headers, rows, numericCols, tableId }: Prop
     marks.push(Plot.ruleY([0]));
 
     const chart = Plot.plot({
-      width: 700,
+      width: containerWidth,
       height: 400,
       marginRight: 120,
-      x: { label: 'Year', tickFormat: (d: number) => String(d) },
+      x: { label: 'Year', tickFormat: (d: number) => String(d), ticks: yearCols.map((c) => c.year) },
       y: {
         label: 'Amount ($)',
         tickFormat: (d: number) =>
@@ -128,14 +123,14 @@ export default function TrendChart({ headers, rows, numericCols, tableId }: Prop
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [tableId, mode]);
+  }, [tableId, mode, containerWidth]);
 
   if (yearCols.length < 3) {
     return <div class="text-gray-400 italic py-4">Need 3+ year columns for trend chart.</div>;
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       <div class="flex items-center gap-3 mb-4">
         <label class="text-sm font-medium text-gray-700">Style:</label>
         <select

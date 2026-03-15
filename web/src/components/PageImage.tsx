@@ -1,6 +1,6 @@
 /**Lightbox component for viewing PDF page images alongside extracted tables.*/
 
-import { useState } from 'preact/hooks';
+import { useState, useEffect } from 'preact/hooks';
 
 interface Props {
   slug: string;
@@ -12,10 +12,19 @@ export default function PageImage({ slug, page, label }: Props) {
   const [open, setOpen] = useState(false);
   const src = `/pages/${slug}/P${page}.png`;
 
+  useEffect(() => {
+    if (!open) return;
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false);
+    }
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [open]);
+
   return (
     <>
       <button
-        class="inline-flex items-center gap-1 px-2 py-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition"
+        class="inline-flex items-center gap-1 px-2 py-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1"
         onClick={() => setOpen(true)}
         title="View original PDF page"
       >
@@ -33,8 +42,9 @@ export default function PageImage({ slug, page, label }: Props) {
         >
           <div class="relative max-w-[90vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
             <button
-              class="absolute -top-3 -right-3 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 z-10"
+              class="absolute -top-3 -right-3 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               onClick={() => setOpen(false)}
+              aria-label="Close image viewer"
             >
               &times;
             </button>
