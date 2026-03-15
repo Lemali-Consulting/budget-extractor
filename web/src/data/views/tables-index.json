@@ -7,7 +7,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "5-Year Forecast (1)",
+    "label": "REVENUES",
     "headers": [
       "REVENUES",
       "2025 Estimate",
@@ -26,8 +26,7 @@
       5,
       6
     ],
-    "budgetType": "operating",
-    "description": "Five-year revenue and expenditure forecast for the City of Pittsburgh, projecting major tax sources and fund balances through fiscal year 2030."
+    "budgetType": "operating"
   },
   {
     "id": "s4_p2_t0",
@@ -37,7 +36,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "5-Year Forecast (2)",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -58,8 +57,219 @@
       6,
       7
     ],
-    "budgetType": "operating",
-    "description": "Five-year departmental expenditure forecast (2024-2030) showing projected spending by department including contracted amounts and salary increases."
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p1_t0",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Forecast",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030",
+      "CAGR*"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p1_t1",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "revenue",
+    "label": "Annual Growth Rate Tax Revenue (1)",
+    "headers": [
+      "Annual Growth Rate Tax Revenue",
+      "2026",
+      "1.3% 2027",
+      "1.2% 2028",
+      "1.2% 2029",
+      "1.2% 2030",
+      "CAGR*"
+    ],
+    "rowCount": 13,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p1_t2",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "revenue",
+    "label": "Annual Growth Rate Tax Revenue (2)",
+    "headers": [
+      "Annual Growth Rate Tax Revenue",
+      "2026",
+      "1.3% 2027",
+      "1.2% 2028",
+      "1.2% 2029",
+      "1.2% 2030",
+      "CAGR*"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p2_t0",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Unknown (1)",
+    "headers": [
+      "",
+      "2020 Actual",
+      "2021 Actual",
+      "2022 Actual",
+      "2023 Actual",
+      "2024 Actual",
+      "CAGR*"
+    ],
+    "rowCount": 21,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p3_t0",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Real Estate Tax Parking Tax Amusement Tax",
+    "headers": [
+      "Real Estate Tax Parking Tax Amusement Tax",
+      "Earned Income Tax Act 77 - Tax Relief Local Service Tax",
+      "Payroll Preparation Tax Deed Transfer Tax Facility Usage Fee"
+    ],
+    "rowCount": 1,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p4_t0",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Unknown (2)",
+    "headers": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rowCount": 5,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p4_t1",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "unknown",
+    "label": "Unknown (3)",
+    "headers": [
+      ""
+    ],
+    "rowCount": 8,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p5_t0",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Unknown (4)",
+    "headers": [
+      "",
+      "35.6%",
+      "Fees"
+    ],
+    "rowCount": 5,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s5_p6_t0",
+    "sectionNumber": 5,
+    "sectionTitle": "Revenue Summary",
+    "sectionSlug": "revenue-summary",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "revenue",
+    "label": "Revenue",
+    "headers": [
+      "",
+      "2.5% 6.9%",
+      "2026 Fines and Forfeiture Revenue"
+    ],
+    "rowCount": 3,
+    "numericCols": [],
+    "budgetType": "operating"
   },
   {
     "id": "s7_p0_t0",
@@ -69,7 +279,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "TAX REVENUE, LICENSES & PERMITS REVENUE",
+    "label": "Forecast",
     "headers": [
       "Account",
       "2026",
@@ -86,8 +296,210 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Revenue accounts for Revenue Detail (2026-2030) broken down by TAX REVENUE, LICENSES & PERMITS REVENUE."
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p1_t0",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Expenditures (1)",
+    "headers": [
+      "Expenditures",
+      "",
+      "",
+      "",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 27,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p1_t1",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "unknown",
+    "label": "Unknown (1)",
+    "headers": [
+      "Total Expenditures $ 658,305,314 Expenditures by Subclass",
+      "$ 665,619,090",
+      "",
+      "$ 693,235,672",
+      "27,616,582",
+      "4.1%"
+    ],
+    "rowCount": 3,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p1_t2",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "unknown",
+    "label": "Expenditures (2)",
+    "headers": [
+      "Expenditures",
+      "",
+      "",
+      "",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p1_t3",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 1,
+    "tableIndex": 3,
+    "type": "unknown",
+    "label": "Total Expenditures",
+    "headers": [
+      "Total Expenditures",
+      "658,305,314  $ 665,619,090  $ 693,235,671",
+      "27,616,581  4.1%"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p5_t0",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Unknown (2)",
+    "headers": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rowCount": 12,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p5_t1",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "unknown",
+    "label": "Unknown (3)",
+    "headers": [
+      ""
+    ],
+    "rowCount": 8,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p6_t0",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Unknown (4)",
+    "headers": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rowCount": 5,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s8_p6_t1",
+    "sectionNumber": 8,
+    "sectionTitle": "Expenditure Summary",
+    "sectionSlug": "expenditure-summary",
+    "page": 6,
+    "tableIndex": 1,
+    "type": "unknown",
+    "label": "Unknown (5)",
+    "headers": [
+      ""
+    ],
+    "rowCount": 1,
+    "numericCols": [],
+    "budgetType": "operating"
   },
   {
     "id": "s9_p0_t0",
@@ -97,7 +509,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS + 1 more",
+    "label": "Forecast",
     "headers": [
       "Account",
       "2026",
@@ -114,8 +526,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Expenditure accounts for Expenditures Detail (2026-2030) covering PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS, PROFESSIONAL & TECHNICAL SERVICES."
+    "budgetType": "operating"
   },
   {
     "id": "s10_p2_t0",
@@ -125,7 +536,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "3 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -146,8 +557,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for City Council listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s10_p2_t1",
@@ -157,7 +567,7 @@
     "page": 2,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -176,8 +586,7 @@
       5,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for City Council listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s10_p3_t0",
@@ -187,7 +596,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -203,8 +612,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for City Council comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s10_p4_t0",
@@ -214,7 +622,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -231,8 +639,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for City Council (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 6 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s11_p2_t0",
@@ -242,7 +649,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "25 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -263,8 +670,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of the City Clerk listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s11_p3_t0",
@@ -274,7 +680,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -290,8 +696,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Office of the City Clerk comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s11_p4_t0",
@@ -301,7 +706,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -318,8 +723,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Office of the City Clerk (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 10 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s12_p1_t0",
@@ -329,7 +733,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "44 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -350,8 +754,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of the Mayor listing 44 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s12_p2_t0",
@@ -361,7 +764,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -380,8 +783,7 @@
       5,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of the Mayor listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s12_p3_t0",
@@ -391,7 +793,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -407,8 +809,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Office of the Mayor comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s12_p4_t0",
@@ -418,7 +819,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -435,8 +836,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Office of the Mayor (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s13_p4_t0",
@@ -446,7 +846,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "28 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -467,8 +867,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of Management and Budget listing 28 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s13_p4_t1",
@@ -478,7 +877,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -495,8 +894,7 @@
       4,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of Management and Budget listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s13_p5_t0",
@@ -521,8 +919,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Personnel summary for Office of Management and Budget showing total full-time positions, part-time allowances, and net salary totals."
+    "budgetType": "operating"
   },
   {
     "id": "s13_p6_t0",
@@ -532,7 +929,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -548,8 +945,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Office of Management and Budget comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s13_p7_t0",
@@ -559,7 +955,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -576,8 +972,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Office of Management and Budget (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 11 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s14_p3_t0",
@@ -587,7 +982,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "I&P Administration + 5 more",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -608,8 +1003,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Innovation and Performance listing 41 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s14_p4_t0",
@@ -619,7 +1013,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -639,8 +1033,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Innovation and Performance listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s14_p5_t0",
@@ -650,7 +1043,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -666,8 +1059,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Department of Innovation and Performance comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s14_p6_t0",
@@ -677,7 +1069,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -694,8 +1086,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Department of Innovation and Performance (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 10 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s15_p3_t0",
@@ -705,7 +1096,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "6 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -726,8 +1117,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Commission on Human Relations listing 6 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s15_p3_t1",
@@ -737,7 +1127,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -756,8 +1146,7 @@
       5,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Commission on Human Relations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s15_p4_t0",
@@ -767,7 +1156,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -783,8 +1172,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Commission on Human Relations comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s15_p5_t0",
@@ -794,7 +1182,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -811,8 +1199,137 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Commission on Human Relations (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items."
+    "budgetType": "operating"
+  },
+  {
+    "id": "s16_p3_t0",
+    "sectionNumber": 16,
+    "sectionTitle": "Office of the City Controller",
+    "sectionSlug": "office-of-the-city-controller",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (1)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 50,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s16_p4_t0",
+    "sectionNumber": 16,
+    "sectionTitle": "Office of the City Controller",
+    "sectionSlug": "office-of-the-city-controller",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      4,
+      5,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s16_p5_t0",
+    "sectionNumber": 16,
+    "sectionTitle": "Office of the City Controller",
+    "sectionSlug": "office-of-the-city-controller",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "label": "Financial Summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 32,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s16_p6_t0",
+    "sectionNumber": 16,
+    "sectionTitle": "Office of the City Controller",
+    "sectionSlug": "office-of-the-city-controller",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Forecast",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s16_p6_t1",
+    "sectionNumber": 16,
+    "sectionTitle": "Office of the City Controller",
+    "sectionSlug": "office-of-the-city-controller",
+    "page": 6,
+    "tableIndex": 1,
+    "type": "unknown",
+    "label": "Unknown",
+    "headers": [
+      "",
+      "OFFICE OF THE CITY CONTROLLER 2026 Expenditures by Subclass 54 - PROPERTY SERVICES 56 - SUPPLIES"
+    ],
+    "rowCount": 1,
+    "numericCols": [],
+    "budgetType": "operating"
   },
   {
     "id": "s17_p4_t0",
@@ -822,7 +1339,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Administration & Treasury Division + 4 more",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -843,8 +1360,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Finance listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s17_p4_t1",
@@ -854,7 +1370,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -875,8 +1391,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Finance listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s17_p5_t0",
@@ -886,7 +1401,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "allocation",
-    "label": "4 positions",
+    "label": "2026 Allocations",
     "headers": [
       "2026 Allocations",
       "Department of Finance",
@@ -894,8 +1409,7 @@
     ],
     "rowCount": 3,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Finance listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s17_p6_t0",
@@ -905,7 +1419,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -921,8 +1435,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Department of Finance comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s17_p8_t0",
@@ -932,7 +1445,7 @@
     "page": 8,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -949,8 +1462,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Department of Finance (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 11 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s18_p3_t0",
@@ -960,7 +1472,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "18 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -981,8 +1493,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Law listing 18 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s18_p3_t1",
@@ -992,7 +1503,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1015,8 +1526,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Law listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s18_p4_t0",
@@ -1026,7 +1536,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1042,8 +1552,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Department of Law comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s18_p5_t0",
@@ -1053,7 +1562,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -1070,8 +1579,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Department of Law (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s19_p3_t0",
@@ -1081,7 +1589,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "2 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1102,8 +1610,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Ethics Hearing Board listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s19_p3_t1",
@@ -1113,7 +1620,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1130,8 +1637,7 @@
       4,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Ethics Hearing Board listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s19_p3_t2",
@@ -1141,7 +1647,7 @@
     "page": 3,
     "tableIndex": 2,
     "type": "personnel",
-    "label": "3 positions",
+    "label": "Personnel (3)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1160,8 +1666,7 @@
       5,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Ethics Hearing Board listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s19_p4_t0",
@@ -1171,7 +1676,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1187,8 +1692,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Ethics Hearing Board comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s19_p5_t0",
@@ -1198,7 +1702,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -1215,8 +1719,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Ethics Hearing Board (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s20_p3_t0",
@@ -1226,7 +1729,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "5 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1247,8 +1750,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Office of Municipal Investigations listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s20_p4_t0",
@@ -1258,7 +1760,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1274,8 +1776,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Office of Municipal Investigations comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s20_p5_t0",
@@ -1285,7 +1786,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -1302,8 +1803,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Office of Municipal Investigations (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s21_p4_t0",
@@ -1313,7 +1813,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "26 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1334,8 +1834,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Human Resources and Civil Service listing 26 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s21_p4_t1",
@@ -1345,7 +1844,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1368,8 +1867,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Human Resources and Civil Service listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s21_p6_t0",
@@ -1379,7 +1877,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1395,8 +1893,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Department of Human Resources and Civil Service comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s21_p8_t0",
@@ -1406,7 +1903,7 @@
     "page": 8,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -1423,8 +1920,401 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Department of Human Resources and Civil Service (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 10 line items."
+    "budgetType": "operating"
+  },
+  {
+    "id": "s22_p4_t0",
+    "sectionNumber": 22,
+    "sectionTitle": "Department of City Planning",
+    "sectionSlug": "department-of-city-planning",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 39,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s22_p5_t0",
+    "sectionNumber": 22,
+    "sectionTitle": "Department of City Planning",
+    "sectionSlug": "department-of-city-planning",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "2025 Title FTE",
+    "headers": [
+      "2025 Title FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 Rate/ FTE Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s22_p6_t0",
+    "sectionNumber": 22,
+    "sectionTitle": "Department of City Planning",
+    "sectionSlug": "department-of-city-planning",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "label": "Financial Summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 32,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s22_p7_t0",
+    "sectionNumber": 22,
+    "sectionTitle": "Department of City Planning",
+    "sectionSlug": "department-of-city-planning",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Forecast",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s23_p4_t0",
+    "sectionNumber": 23,
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "sectionSlug": "department-of-permits-licenses-and-inspections",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (1)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 39,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s23_p4_t1",
+    "sectionNumber": 23,
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "sectionSlug": "department-of-permits-licenses-and-inspections",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      4,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s23_p5_t0",
+    "sectionNumber": 23,
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "sectionSlug": "department-of-permits-licenses-and-inspections",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "\u2014",
+    "headers": [
+      "\u2014",
+      "5,000",
+      "\u2014",
+      "5,000"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s23_p5_t1",
+    "sectionNumber": 23,
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "sectionSlug": "department-of-permits-licenses-and-inspections",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Total Full-Time Permanent Positions",
+    "headers": [
+      "Total Full-Time Permanent Positions",
+      "120",
+      "8,542,894",
+      "121",
+      "8,736,495"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s23_p6_t0",
+    "sectionNumber": 23,
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "sectionSlug": "department-of-permits-licenses-and-inspections",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "label": "Financial Summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 34,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s23_p7_t0",
+    "sectionNumber": 23,
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "sectionSlug": "department-of-permits-licenses-and-inspections",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Forecast",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s24_p10_t0",
+    "sectionNumber": 24,
+    "sectionTitle": "Bureau of Administration (Public Safety)",
+    "sectionSlug": "bureau-of-administration-public-safety",
+    "page": 10,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "label": "Financial Summary (1)",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s24_p11_t0",
+    "sectionNumber": 24,
+    "sectionTitle": "Bureau of Administration (Public Safety)",
+    "sectionSlug": "bureau-of-administration-public-safety",
+    "page": 11,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Forecast",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s24_p7_t0",
+    "sectionNumber": 24,
+    "sectionTitle": "Bureau of Administration (Public Safety)",
+    "sectionSlug": "bureau-of-administration-public-safety",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 50,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s24_p8_t0",
+    "sectionNumber": 24,
+    "sectionTitle": "Bureau of Administration (Public Safety)",
+    "sectionSlug": "bureau-of-administration-public-safety",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "allocation",
+    "label": "2026 Allocations",
+    "headers": [
+      "2026 Allocations",
+      "Public Safety Administration General Fund",
+      "Parks RAD Trust Fund"
+    ],
+    "rowCount": 1,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s24_p9_t0",
+    "sectionNumber": 24,
+    "sectionTitle": "Bureau of Administration (Public Safety)",
+    "sectionSlug": "bureau-of-administration-public-safety",
+    "page": 9,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "label": "Financial Summary (2)",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 40,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
   },
   {
     "id": "s25_p4_t0",
@@ -1434,7 +2324,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "11 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1457,8 +2347,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Emergency Medical Services listing 11 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s25_p4_t1",
@@ -1468,7 +2357,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "salary",
-    "label": "3 positions",
+    "label": "FAPP Hourly Rates",
     "headers": [
       "FAPP Hourly Rates",
       "2025",
@@ -1479,8 +2368,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Emergency Medical Services listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s25_p5_t0",
@@ -1490,7 +2378,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary (1)",
     "headers": [
       "",
       "2024 Actual",
@@ -1506,8 +2394,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Emergency Medical Services comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s25_p6_t0",
@@ -1517,9 +2404,8 @@
     "page": 6,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "Financial Summary",
+    "label": "Financial Summary (2)",
     "headers": [
-      "",
       "",
       "2024 Actual",
       "2025 Budget",
@@ -1534,8 +2420,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Emergency Medical Services comparing actuals, budgets (2024-2026) across 8 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s25_p7_t0",
@@ -1545,7 +2430,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -1562,8 +2447,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Bureau of Emergency Medical Services (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 11 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s26_p5_t0",
@@ -1573,7 +2457,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "25 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1594,8 +2478,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Police listing 25 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s26_p5_t1",
@@ -1605,7 +2488,7 @@
     "page": 5,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1626,8 +2509,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Police listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s26_p6_t0",
@@ -1648,8 +2530,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Pay rate table for Bureau of Police showing hourly rates by rank and experience level."
+    "budgetType": "operating"
   },
   {
     "id": "s26_p7_t0",
@@ -1659,7 +2540,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1675,8 +2556,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Police comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s26_p9_t0",
@@ -1686,9 +2566,8 @@
     "page": 9,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "10 line items",
+    "label": "Forecast",
     "headers": [
-      "",
       "",
       "2026",
       "2027",
@@ -1704,8 +2583,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Budget data for Bureau of Police (2026-2030) with 10 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s27_p3_t0",
@@ -1715,7 +2593,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "14 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1738,8 +2616,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Fire listing 14 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s27_p3_t1",
@@ -1749,7 +2626,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1768,8 +2645,7 @@
       6,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Fire listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s27_p3_t2",
@@ -1779,7 +2655,7 @@
     "page": 3,
     "tableIndex": 2,
     "type": "personnel",
-    "label": "6 positions",
+    "label": "Personnel (3)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1798,8 +2674,7 @@
       5,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Fire listing 6 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s27_p3_t3",
@@ -1820,8 +2695,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Pay rate table for Bureau of Fire showing hourly rates by rank and experience level."
+    "budgetType": "operating"
   },
   {
     "id": "s27_p4_t0",
@@ -1831,7 +2705,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1847,8 +2721,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Fire comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s27_p6_t0",
@@ -1858,7 +2731,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -1875,8 +2748,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Bureau of Fire (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 10 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s28_p3_t0",
@@ -1886,7 +2758,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "4 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1907,8 +2779,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Animal Care and Control listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s28_p4_t0",
@@ -1918,7 +2789,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1934,8 +2805,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Animal Care and Control comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s28_p5_t0",
@@ -1945,7 +2815,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -1962,8 +2832,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Bureau of Animal Care and Control (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 8 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s29_p4_t0",
@@ -1973,7 +2842,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PROFESSIONAL & TECHNICAL SERVICES, SUPPLIES",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -1988,8 +2857,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Office of Community Health and Safety comparing actuals, budgets (2024-2026), covering Expenditures, PROFESSIONAL & TECHNICAL SERVICES, SUPPLIES."
+    "budgetType": "operating"
   },
   {
     "id": "s29_p5_t0",
@@ -1999,7 +2867,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -2016,8 +2884,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Office of Community Health and Safety (2026-2030) covering Expenditures, PROF. & TECHNICAL SERVICES, SUPPLIES across 5 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s31_p1_t0",
@@ -2027,7 +2894,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Director's Office + 3 more",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2048,8 +2915,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Administration (Public Works) listing 24 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s31_p1_t1",
@@ -2059,7 +2925,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2082,8 +2948,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Administration (Public Works) listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s31_p2_t0",
@@ -2093,7 +2958,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -2109,8 +2974,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Administration (Public Works) comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s31_p3_t0",
@@ -2120,7 +2984,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -2137,8 +3001,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Bureau of Administration (Public Works) (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s32_p1_t0",
@@ -2148,7 +3011,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Administration + 5 more",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2169,8 +3032,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Operations listing 32 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s32_p1_t1",
@@ -2180,7 +3042,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2203,8 +3065,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Operations listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s32_p3_t0",
@@ -2214,7 +3075,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -2230,8 +3091,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Operations comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s32_p5_t0",
@@ -2241,7 +3101,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -2258,8 +3118,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Bureau of Operations (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s33_p1_t0",
@@ -2269,7 +3128,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Environmental Services + 2 more",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2290,8 +3149,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Environmental Services listing 24 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s33_p1_t1",
@@ -2301,7 +3159,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2320,8 +3178,7 @@
       4,
       6
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Environmental Services listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s33_p1_t2",
@@ -2331,7 +3188,7 @@
     "page": 1,
     "tableIndex": 2,
     "type": "personnel",
-    "label": "5 positions",
+    "label": "Personnel (3)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2350,8 +3207,7 @@
       5,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Environmental Services listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s33_p2_t0",
@@ -2361,7 +3217,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -2377,8 +3233,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Environmental Services comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s33_p3_t0",
@@ -2388,7 +3243,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -2405,8 +3260,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Bureau of Environmental Services (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s34_p1_t0",
@@ -2416,7 +3270,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Director's Office + 5 more",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2439,8 +3293,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Bureau of Facilities listing 42 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s34_p3_t0",
@@ -2450,7 +3303,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary (1)",
     "headers": [
       "",
       "2024 Actual",
@@ -2466,8 +3319,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Facilities comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s34_p4_t0",
@@ -2477,9 +3329,8 @@
     "page": 4,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "Financial Summary",
+    "label": "Financial Summary (2)",
     "headers": [
-      "",
       "",
       "2024 Actual",
       "2025 Budget",
@@ -2494,8 +3345,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Bureau of Facilities comparing actuals, budgets (2024-2026) across 5 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s34_p5_t0",
@@ -2505,7 +3355,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -2522,8 +3372,192 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Bureau of Facilities (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items."
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p4_t0",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (1)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 28,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p4_t1",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p5_t0",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "2025 Rate/ Title FTE Grade",
+    "headers": [
+      "2025 Rate/ Title FTE Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 1,
+    "numericCols": [
+      2,
+      6
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p5_t1",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Total Full-Time Permanent Positions",
+    "headers": [
+      "Total Full-Time Permanent Positions",
+      "52.80",
+      "2,895,806",
+      "54.80",
+      "3,216,755"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p5_t2",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 5,
+    "tableIndex": 2,
+    "type": "allocation",
+    "label": "2026 Allocations",
+    "headers": [
+      "2026 Allocations",
+      "Department of Parks & Recreation",
+      "Mellon Park Trust Fund",
+      "Senior Citizens Program Trust Fund",
+      "Special Events Trust Fund"
+    ],
+    "rowCount": 3,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p6_t0",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "financial_summary",
+    "label": "Financial Summary",
+    "headers": [
+      "",
+      "2024 Actual",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 46,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p8_t0",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 8,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Forecast",
+    "headers": [
+      "",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "budgetType": "operating"
   },
   {
     "id": "s36_p10_t0",
@@ -2533,7 +3567,7 @@
     "page": 10,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -2550,8 +3584,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Department of Mobility and Infrastructure (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s36_p6_t0",
@@ -2561,7 +3594,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "45 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2582,8 +3615,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Mobility and Infrastructure listing 45 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s36_p7_t0",
@@ -2593,7 +3625,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2616,8 +3648,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Department of Mobility and Infrastructure listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s36_p9_t0",
@@ -2627,7 +3658,7 @@
     "page": 9,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -2643,8 +3674,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Department of Mobility and Infrastructure comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s37_p4_t0",
@@ -2654,7 +3684,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "7 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2675,8 +3705,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Citizen Police Review Board listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s37_p4_t1",
@@ -2686,7 +3715,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2705,8 +3734,7 @@
       5,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Citizen Police Review Board listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s37_p5_t0",
@@ -2716,7 +3744,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -2732,8 +3760,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Financial summary for Citizen Police Review Board comparing actuals, budgets (2024-2026), covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS."
+    "budgetType": "operating"
   },
   {
     "id": "s37_p6_t0",
@@ -2743,7 +3770,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "forecast",
-    "label": "5-Year Projection",
+    "label": "Forecast",
     "headers": [
       "",
       "2026",
@@ -2760,8 +3787,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Five-year budget projection for Citizen Police Review Board (2026-2030) covering Expenditures, PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS across 9 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s38_p1_t0",
@@ -2771,15 +3797,14 @@
     "page": 1,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "185,381.3"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the HUD Fair Housing Program Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s38_p1_t1",
@@ -2789,7 +3814,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "financial",
-    "label": "HUD Fair Housing Program Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -2802,8 +3827,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for HUD Fair Housing Program Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s38_p1_t2",
@@ -2813,15 +3837,14 @@
     "page": 1,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "185,381.3"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the HUD Fair Housing Program Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s39_p0_t0",
@@ -2831,15 +3854,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "251,569"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the EEOC Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s39_p0_t1",
@@ -2849,10 +3871,9 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "EEOC Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
-      "",
       "2025 Budget",
       "2026 Budget",
       "Increase/ (Decrease)",
@@ -2864,8 +3885,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for EEOC Trust Fund comparing budgets (2025-2026) across 16 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s39_p0_t2",
@@ -2875,15 +3895,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "250,131"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the EEOC Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s40_p0_t0",
@@ -2893,15 +3912,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "1,212,710"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Three Taxing Bodies Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s40_p0_t1",
@@ -2911,7 +3929,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Three Taxing Bodies Trust Fund",
+    "label": "Subclass Expenditures",
     "headers": [
       "Subclass Expenditures",
       "2025 Budget",
@@ -2925,8 +3943,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Three Taxing Bodies Trust Fund comparing budgets (2025-2026), covering PERSONNEL-SALARIES & WAGES, PERSONNEL-EMPLOYEE BENEFITS, PROFESSIONAL & TECHNICAL SERVICES."
+    "budgetType": "operating"
   },
   {
     "id": "s40_p0_t2",
@@ -2936,15 +3953,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "543,280"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Three Taxing Bodies Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s40_p1_t0",
@@ -2954,7 +3970,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "7 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -2975,8 +3991,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Three Taxing Bodies Trust Fund listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s40_p1_t1",
@@ -2994,8 +4009,7 @@
     ],
     "rowCount": 4,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Budget detail for Three Taxing Bodies Trust Fund (2026) with 4 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s41_p0_t0",
@@ -3005,15 +4019,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "4,752,646"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Pittsburgh Partnership Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s41_p0_t1",
@@ -3023,7 +4036,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Pittsburgh Partnership Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3037,8 +4050,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Pittsburgh Partnership Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s41_p0_t2",
@@ -3048,15 +4060,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "4,245,017"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Pittsburgh Partnership Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s41_p1_t0",
@@ -3066,7 +4077,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "12 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3087,8 +4098,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Pittsburgh Partnership Trust Fund listing 12 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s42_p0_t0",
@@ -3098,15 +4108,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "\u2014"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Community Development Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s42_p0_t1",
@@ -3116,7 +4125,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Community Development Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3130,8 +4139,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Community Development Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s42_p0_t2",
@@ -3141,15 +4149,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "(40,658)"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Community Development Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s42_p1_t0",
@@ -3159,7 +4166,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "9 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3180,8 +4187,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Community Development Trust Fund listing 9 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s43_p0_t0",
@@ -3191,15 +4197,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "3,163,185"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Police Secondary Employment Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s43_p0_t1",
@@ -3209,7 +4214,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Police Secondary Employment Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3223,8 +4228,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Police Secondary Employment Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s43_p0_t2",
@@ -3234,15 +4238,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "3,325,749"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Police Secondary Employment Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s43_p1_t0",
@@ -3252,7 +4255,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "3 positions",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3273,8 +4276,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Police Secondary Employment Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s44_p1_t0",
@@ -3284,15 +4286,14 @@
     "page": 1,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "16,745,000"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Stop the Violence Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s44_p1_t1",
@@ -3302,7 +4303,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Stop the Violence Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3316,8 +4317,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Stop the Violence Trust Fund comparing budgets (2025-2026), covering Revenues, TRANSFERS, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s44_p1_t2",
@@ -3327,15 +4327,14 @@
     "page": 1,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "11,160,239"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Stop the Violence Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s44_p2_t0",
@@ -3345,7 +4344,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Community Health and Safety + 7 more",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3366,8 +4365,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Stop the Violence Trust Fund listing 33 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s44_p3_t0",
@@ -3398,8 +4396,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Stop the Violence Trust Fund organized by CitiSports, Department of Parks and Recreation with 17 rows."
+    "budgetType": "operating"
   },
   {
     "id": "s44_p3_t1",
@@ -3430,8 +4427,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Stop the Violence Trust Fund with 5 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s44_p3_t2",
@@ -3456,8 +4452,156 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Personnel summary for Stop the Violence Trust Fund showing total full-time positions, part-time allowances, and net salary totals."
+    "budgetType": "operating"
+  },
+  {
+    "id": "s45_p0_t0",
+    "sectionNumber": 45,
+    "sectionTitle": "Liquid Fuels Trust Fund",
+    "sectionSlug": "liquid-fuels-trust-fund",
+    "page": 0,
+    "tableIndex": 0,
+    "type": "fund_balance",
+    "label": "Projected Beginning Balance",
+    "headers": [
+      "Projected Beginning Balance",
+      "12,022,082"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s45_p0_t1",
+    "sectionNumber": 45,
+    "sectionTitle": "Liquid Fuels Trust Fund",
+    "sectionSlug": "liquid-fuels-trust-fund",
+    "page": 0,
+    "tableIndex": 1,
+    "type": "financial",
+    "label": "Subclass Detail",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 12,
+    "numericCols": [
+      1,
+      2,
+      3
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s45_p0_t2",
+    "sectionNumber": 45,
+    "sectionTitle": "Liquid Fuels Trust Fund",
+    "sectionSlug": "liquid-fuels-trust-fund",
+    "page": 0,
+    "tableIndex": 2,
+    "type": "fund_balance",
+    "label": "Projected Ending Balance",
+    "headers": [
+      "Projected Ending Balance",
+      "14,249,434"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s46_p1_t0",
+    "sectionNumber": 46,
+    "sectionTitle": "Regional Asset District - Public Works Trust Fund",
+    "sectionSlug": "regional-asset-district-public-works-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "fund_balance",
+    "label": "Projected Beginning Balance",
+    "headers": [
+      "Projected Beginning Balance",
+      "285,950"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s46_p1_t1",
+    "sectionNumber": 46,
+    "sectionTitle": "Regional Asset District - Public Works Trust Fund",
+    "sectionSlug": "regional-asset-district-public-works-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "financial",
+    "label": "Subclass Detail",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 36,
+    "numericCols": [
+      1,
+      2,
+      3
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s46_p1_t2",
+    "sectionNumber": 46,
+    "sectionTitle": "Regional Asset District - Public Works Trust Fund",
+    "sectionSlug": "regional-asset-district-public-works-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "fund_balance",
+    "label": "Projected Ending Balance",
+    "headers": [
+      "Projected Ending Balance",
+      "285,950"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s46_p2_t0",
+    "sectionNumber": 46,
+    "sectionTitle": "Regional Asset District - Public Works Trust Fund",
+    "sectionSlug": "regional-asset-district-public-works-trust-fund",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
   },
   {
     "id": "s47_p0_t0",
@@ -3467,15 +4611,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "3,274,374"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Public Works Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s47_p0_t1",
@@ -3485,10 +4628,9 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Public Works Trust Fund",
+    "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
-      "",
       "2025 Budget",
       "2026 Budget",
       "Increase/ (Decrease)",
@@ -3499,8 +4641,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Public Works Trust Fund comparing budgets (2025-2026) across 12 line items."
+    "budgetType": "operating"
   },
   {
     "id": "s47_p0_t2",
@@ -3510,15 +4651,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "3,292,334"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Public Works Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s48_p0_t0",
@@ -3528,15 +4668,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "964,095"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Shade Tree Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s48_p0_t1",
@@ -3546,7 +4685,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Shade Tree Trust Fund",
+    "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -3560,8 +4699,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Shade Tree Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s48_p0_t2",
@@ -3571,15 +4709,159 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "814,095"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Shade Tree Trust Fund."
+    "budgetType": "operating"
+  },
+  {
+    "id": "s49_p1_t0",
+    "sectionNumber": 49,
+    "sectionTitle": "Parks Tax Trust Fund",
+    "sectionSlug": "parks-tax-trust-fund",
+    "page": 1,
+    "tableIndex": 0,
+    "type": "fund_balance",
+    "label": "Projected Beginning Balance",
+    "headers": [
+      "Projected Beginning Balance",
+      "1,408,710"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s49_p1_t1",
+    "sectionNumber": 49,
+    "sectionTitle": "Parks Tax Trust Fund",
+    "sectionSlug": "parks-tax-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "financial",
+    "label": "Subclass Detail",
+    "headers": [
+      "Subclass Detail",
+      "2025 Budget",
+      "2026 Budget",
+      "Increase/ (Decrease)",
+      "% Change"
+    ],
+    "rowCount": 29,
+    "numericCols": [
+      1,
+      2,
+      3
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s49_p1_t2",
+    "sectionNumber": 49,
+    "sectionTitle": "Parks Tax Trust Fund",
+    "sectionSlug": "parks-tax-trust-fund",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "fund_balance",
+    "label": "Projected Ending Balance",
+    "headers": [
+      "Projected Ending Balance",
+      "1,409,142"
+    ],
+    "rowCount": 0,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s49_p2_t0",
+    "sectionNumber": 49,
+    "sectionTitle": "Parks Tax Trust Fund",
+    "sectionSlug": "parks-tax-trust-fund",
+    "page": 2,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (1)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 39,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s49_p2_t1",
+    "sectionNumber": 49,
+    "sectionTitle": "Parks Tax Trust Fund",
+    "sectionSlug": "parks-tax-trust-fund",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget",
+      "2026 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2026 Budget"
+    ],
+    "rowCount": 4,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s49_p3_t0",
+    "sectionNumber": 49,
+    "sectionTitle": "Parks Tax Trust Fund",
+    "sectionSlug": "parks-tax-trust-fund",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Total Full-Time Permanent Positions (DPW)",
+    "headers": [
+      "Total Full-Time Permanent Positions (DPW)",
+      "38",
+      "2,348,031",
+      "38",
+      "2,472,829"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgetType": "operating"
   },
   {
     "id": "s50_p0_t0",
@@ -3589,15 +4871,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "388,359"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Special Events Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s50_p0_t1",
@@ -3607,7 +4888,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Special Events Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -3621,8 +4902,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Special Events Trust Fund comparing budgets (2025-2026), covering Revenues, LICENSES AND PERMITS REVENUE, CHARGES FOR SERVICES."
+    "budgetType": "operating"
   },
   {
     "id": "s50_p0_t2",
@@ -3632,15 +4912,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "325,045"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Special Events Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s50_p1_t0",
@@ -3650,7 +4929,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "4 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3671,8 +4950,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Special Events Trust Fund listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s50_p1_t1",
@@ -3682,7 +4960,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3705,8 +4983,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Special Events Trust Fund listing 4 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s50_p1_t2",
@@ -3716,7 +4993,7 @@
     "page": 1,
     "tableIndex": 2,
     "type": "allocation",
-    "label": "3 positions",
+    "label": "2026 Allocations",
     "headers": [
       "2026 Allocations",
       "Department of Parks & Recreation",
@@ -3724,8 +5001,7 @@
     ],
     "rowCount": 1,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Personnel roster for Special Events Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s51_p1_t0",
@@ -3735,15 +5011,14 @@
     "page": 1,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "1,840,915"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Regional Asset District - Parks and Recreation Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s51_p1_t1",
@@ -3753,7 +5028,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Regional Asset District - Parks and Recreation Trust Fund",
+    "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -3767,8 +5042,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Regional Asset District - Parks and Recreation Trust Fund comparing budgets (2025-2026), covering Revenues, TAX REVENUE, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s51_p1_t2",
@@ -3778,15 +5052,14 @@
     "page": 1,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "1,840,915"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Regional Asset District - Parks and Recreation Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s51_p2_t0",
@@ -3796,7 +5069,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "11 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3817,8 +5090,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 11 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s51_p2_t1",
@@ -3828,7 +5100,7 @@
     "page": 2,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3851,8 +5123,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 13 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s51_p2_t2",
@@ -3862,7 +5133,7 @@
     "page": 2,
     "tableIndex": 2,
     "type": "allocation",
-    "label": "3 positions",
+    "label": "2026 Allocations",
     "headers": [
       "2026 Allocations",
       "Parks and Recreation General Fund",
@@ -3872,8 +5143,7 @@
     ],
     "rowCount": 2,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Personnel roster for Regional Asset District - Parks and Recreation Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s52_p0_t0",
@@ -3883,15 +5153,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "1,779,292"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Mellon Park Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s52_p0_t1",
@@ -3901,7 +5170,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Mellon Park Trust Fund",
+    "label": "Subclass Details",
     "headers": [
       "Subclass Details",
       "2025 Budget",
@@ -3915,8 +5184,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Mellon Park Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s52_p0_t2",
@@ -3926,15 +5194,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "1,652,005"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Mellon Park Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s52_p1_t0",
@@ -3944,7 +5211,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "5 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -3967,8 +5234,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Mellon Park Trust Fund listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s52_p1_t1",
@@ -3978,7 +5244,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4001,8 +5267,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Mellon Park Trust Fund listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s52_p1_t2",
@@ -4012,7 +5277,7 @@
     "page": 1,
     "tableIndex": 2,
     "type": "allocation",
-    "label": "3 positions",
+    "label": "2026 Allocations",
     "headers": [
       "2026 Allocations",
       "Department of Parks & Recreation",
@@ -4021,8 +5286,7 @@
     ],
     "rowCount": 2,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Personnel roster for Mellon Park Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s53_p0_t0",
@@ -4032,15 +5296,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "645,064"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Schenley Park Rink Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s53_p0_t1",
@@ -4050,7 +5313,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Schenley Park Rink Trust Fund",
+    "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -4063,8 +5326,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Schenley Park Rink Trust Fund comparing budgets (2025-2026), covering Revenues, LICENSES & PERMITS REVENUE, CHARGES FOR SERVICES."
+    "budgetType": "operating"
   },
   {
     "id": "s53_p0_t2",
@@ -4074,15 +5336,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "648,064"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Schenley Park Rink Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s54_p0_t0",
@@ -4092,15 +5353,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "1,169,912"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Senior Citizens Program Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s54_p0_t1",
@@ -4110,7 +5370,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Senior Citizens Program Trust Fund",
+    "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -4124,8 +5384,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Senior Citizens Program Trust Fund comparing budgets (2025-2026), covering Revenues, LICENSES & PERMITS REVENUE, INTERGOVERNMENTAL REVENUE."
+    "budgetType": "operating"
   },
   {
     "id": "s54_p0_t2",
@@ -4135,15 +5394,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "252,482"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Senior Citizens Program Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s54_p1_t0",
@@ -4153,7 +5411,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "7 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4174,8 +5432,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Senior Citizens Program Trust Fund listing 7 staff positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s54_p1_t1",
@@ -4185,7 +5442,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4208,8 +5465,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Senior Citizens Program Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s54_p1_t2",
@@ -4219,7 +5475,7 @@
     "page": 1,
     "tableIndex": 2,
     "type": "allocation",
-    "label": "3 positions",
+    "label": "2026 Allocations",
     "headers": [
       "2026 Allocations",
       "Department of Parks & Recreation",
@@ -4227,8 +5483,7 @@
     ],
     "rowCount": 1,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Personnel roster for Senior Citizens Program Trust Fund listing 3 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s55_p0_t0",
@@ -4238,15 +5493,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "350,184"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Special Food Service Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s55_p0_t1",
@@ -4256,7 +5510,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Special Food Service Trust Fund",
+    "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
       "2025 Budget",
@@ -4270,8 +5524,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Special Food Service Trust Fund comparing budgets (2025-2026), covering Revenues, INTERGOVERNMENTAL REVENUE, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s55_p0_t2",
@@ -4281,15 +5534,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "203,856"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Special Food Service Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s55_p1_t0",
@@ -4299,7 +5551,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "2 positions",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4320,8 +5572,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Special Food Service Trust Fund listing 2 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s55_p1_t1",
@@ -4331,7 +5582,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Temporary, Part-Time, and Seasonal Allowances",
+    "label": "Personnel (2)",
     "headers": [
       "Title",
       "2025 FTE",
@@ -4354,8 +5605,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for Special Food Service Trust Fund listing 5 positions with FTE counts, pay grades, pay rates, 2025-2026 budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s56_p0_t0",
@@ -4365,15 +5615,14 @@
     "page": 0,
     "tableIndex": 0,
     "type": "fund_balance",
-    "label": "Beginning Balance (1)",
+    "label": "Projected Beginning Balance",
     "headers": [
       "Projected Beginning Balance",
       "2,035,076"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Frick Park Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s56_p0_t1",
@@ -4383,7 +5632,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "financial",
-    "label": "Frick Park Trust Fund",
+    "label": "Financial",
     "headers": [
       "Subclass",
       "2025 Budget",
@@ -4396,8 +5645,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Budget detail for Frick Park Trust Fund comparing budgets (2025-2026), covering Revenues, CHARGES FOR SERVICES, Expenditures."
+    "budgetType": "operating"
   },
   {
     "id": "s56_p0_t2",
@@ -4407,15 +5655,14 @@
     "page": 0,
     "tableIndex": 2,
     "type": "fund_balance",
-    "label": "Beginning Balance (2)",
+    "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
       "2,163,851"
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Projected beginning balance for the Frick Park Trust Fund."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p0_t0",
@@ -4425,7 +5672,7 @@
     "page": 0,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Archives and Records Management Trust Fund",
+    "label": "Last 12 months* Revenues (1)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4435,8 +5682,7 @@
     "numericCols": [
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Archives and Records Management Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p0_t1",
@@ -4446,7 +5692,7 @@
     "page": 0,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Bridge Asset Management Program Trust Fund",
+    "label": "Last 12 months* Revenues (2)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4456,8 +5702,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Bridge Asset Management Program Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p0_t2",
@@ -4467,7 +5712,7 @@
     "page": 0,
     "tableIndex": 2,
     "type": "revenue",
-    "label": "Code Trust Fund",
+    "label": "Last 12 months* Revenues (3)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4479,8 +5724,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Code Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p1_t0",
@@ -4490,7 +5734,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Comcast Franchise Trust Fund",
+    "label": "Last 12 months* Revenues (4)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4502,8 +5746,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Comcast Franchise Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p1_t1",
@@ -4513,7 +5756,7 @@
     "page": 1,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Confiscated Narcotics Proceeds Trust Fund",
+    "label": "Last 12 months* Revenues (5)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4525,8 +5768,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Confiscated Narcotics Proceeds Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p2_t0",
@@ -4536,7 +5778,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Crossing Guards Special Events Trust Fund",
+    "label": "Last 12 months* Revenues (6)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4547,8 +5789,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Crossing Guards Special Events Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p2_t1",
@@ -4558,7 +5799,7 @@
     "page": 2,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Demolition Trust Fund",
+    "label": "Last 12 months* Revenues (7)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4570,8 +5811,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Demolition Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p3_t0",
@@ -4581,7 +5821,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "EMS Reimbursable Events Trust Fund",
+    "label": "Last 12 months* Revenues (8)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4592,8 +5832,7 @@
       0,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for EMS Reimbursable Events Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p3_t1",
@@ -4603,7 +5842,7 @@
     "page": 3,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Facilities Trust Fund",
+    "label": "Last 12 months* Revenues (9)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4614,8 +5853,7 @@
       0,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Facilities Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p4_t0",
@@ -4625,7 +5863,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Graffiti Trust Fund",
+    "label": "Last 12 months* Revenues (10)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4635,8 +5873,7 @@
     "numericCols": [
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Graffiti Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p4_t1",
@@ -4646,7 +5883,7 @@
     "page": 4,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Green Initiatives Trust Fund",
+    "label": "Last 12 months* Revenues (11)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4658,8 +5895,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Green Initiatives Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p5_t0",
@@ -4669,7 +5905,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Lead Safety Trust Fund",
+    "label": "Last 12 months* Revenues (12)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4681,8 +5917,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Lead Safety Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p5_t1",
@@ -4692,7 +5927,7 @@
     "page": 5,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Pittsburgh Code Trust Fund",
+    "label": "Last 12 months* Revenues (13)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4704,8 +5939,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Pittsburgh Code Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p6_t0",
@@ -4715,7 +5949,7 @@
     "page": 6,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Public Safety Training Trust Fund",
+    "label": "Last 12 months* Revenues (14)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4727,8 +5961,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Public Safety Training Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p6_t1",
@@ -4738,7 +5971,7 @@
     "page": 6,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Verizon Franchise Trust Fund",
+    "label": "Last 12 months* Revenues (15)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4749,8 +5982,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Verizon Franchise Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p7_t0",
@@ -4760,7 +5992,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Public Safety Support Trust Fund",
+    "label": "Last 12 months* Revenues (16)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4771,8 +6003,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Public Safety Support Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p7_t1",
@@ -4782,7 +6013,7 @@
     "page": 7,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Open Space Trust Fund",
+    "label": "Last 12 months* Revenues (17)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4793,8 +6024,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Open Space Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p8_t0",
@@ -4804,7 +6034,7 @@
     "page": 8,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "Stormwater Management Trust Fund",
+    "label": "Last 12 months* Revenues (18)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4816,8 +6046,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Stormwater Management Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p8_t1",
@@ -4827,7 +6056,7 @@
     "page": 8,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Southside Parking Enhancement District Trust Fund",
+    "label": "Last 12 months* Revenues (19)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4839,8 +6068,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Southside Parking Enhancement District Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p9_t0",
@@ -4850,7 +6078,7 @@
     "page": 9,
     "tableIndex": 0,
     "type": "revenue",
-    "label": "OneStopPGH Permitting Technology Trust Fund",
+    "label": "Last 12 months* Revenues (20)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4861,8 +6089,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for OneStopPGH Permitting Technology Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s57_p9_t1",
@@ -4872,7 +6099,7 @@
     "page": 9,
     "tableIndex": 1,
     "type": "revenue",
-    "label": "Technology Modernization Trust Fund",
+    "label": "Last 12 months* Revenues (21)",
     "headers": [
       "Last 12 months* Revenues",
       "Last 12 months* Expenditures",
@@ -4884,8 +6111,7 @@
       1,
       2
     ],
-    "budgetType": "operating",
-    "description": "Financial snapshot for Technology Modernization Trust Fund showing trailing 12-month revenues, expenditures, and remaining spending authority."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p10_t0",
@@ -4916,8 +6142,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 2 positions with FTE counts, pay grades, and budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p10_t1",
@@ -4948,8 +6173,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 2 positions with FTE counts, pay grades, and budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p10_t2",
@@ -4980,8 +6204,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 3 positions with FTE counts, pay grades, and budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p10_t3",
@@ -5012,8 +6235,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 3 positions with FTE counts, pay grades, and budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p11_t0",
@@ -5044,8 +6266,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 5 positions with FTE counts, pay grades, and budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p11_t1",
@@ -5076,8 +6297,7 @@
       7,
       8
     ],
-    "budgetType": "operating",
-    "description": "Personnel roster for grant-funded positions showing 2 positions with FTE counts, pay grades, and budget allocations."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p2_t0",
@@ -5087,7 +6307,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "grant",
-    "label": "Grant Inventory (1)",
+    "label": "Department (1)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5104,8 +6324,7 @@
       5,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 11 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p2_t1",
@@ -5115,7 +6334,7 @@
     "page": 2,
     "tableIndex": 1,
     "type": "grant",
-    "label": "Grant Inventory (2)",
+    "label": "Department (2)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5131,8 +6350,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p2_t2",
@@ -5142,7 +6360,7 @@
     "page": 2,
     "tableIndex": 2,
     "type": "grant",
-    "label": "Grant Inventory (3)",
+    "label": "Department (3)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5159,8 +6377,7 @@
       5,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 4 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p3_t0",
@@ -5170,7 +6387,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "grant",
-    "label": "Grant Inventory (4)",
+    "label": "Department (4)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5187,8 +6404,7 @@
       5,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p4_t0",
@@ -5198,7 +6414,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "grant",
-    "label": "Grant Inventory (5)",
+    "label": "Department (5)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5215,8 +6431,7 @@
       5,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 9 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p5_t0",
@@ -5226,7 +6441,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "grant",
-    "label": "Grant Inventory (6)",
+    "label": "Department (6)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5243,8 +6458,7 @@
       5,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p7_t0",
@@ -5254,7 +6468,7 @@
     "page": 7,
     "tableIndex": 0,
     "type": "grant",
-    "label": "Grant Inventory (7)",
+    "label": "Department (7)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5270,8 +6484,7 @@
       4,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 15 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p7_t1",
@@ -5281,7 +6494,7 @@
     "page": 7,
     "tableIndex": 1,
     "type": "grant",
-    "label": "Grant Inventory (8)",
+    "label": "Department (8)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5298,8 +6511,7 @@
       5,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 1 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s58_p9_t0",
@@ -5309,7 +6521,7 @@
     "page": 9,
     "tableIndex": 0,
     "type": "grant",
-    "label": "Grant Inventory (9)",
+    "label": "Department (9)",
     "headers": [
       "Department",
       "JDE Number",
@@ -5325,8 +6537,7 @@
       4,
       6
     ],
-    "budgetType": "operating",
-    "description": "Grant inventory listing 17 grants with department, funder, award amounts, spending, and remaining balances."
+    "budgetType": "operating"
   },
   {
     "id": "s60_p1_t0",
@@ -5358,8 +6569,7 @@
       6,
       7
     ],
-    "budgetType": "operating",
-    "description": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 37 steps."
+    "budgetType": "operating"
   },
   {
     "id": "s60_p2_t0",
@@ -5386,8 +6596,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 10 steps."
+    "budgetType": "operating"
   },
   {
     "id": "s60_p2_t1",
@@ -5414,8 +6623,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 10 steps."
+    "budgetType": "operating"
   },
   {
     "id": "s60_p2_t2",
@@ -5442,8 +6650,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 10 steps."
+    "budgetType": "operating"
   },
   {
     "id": "s60_p3_t0",
@@ -5462,8 +6669,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Salary step table showing annual compensation rates by pay grade (A through G) and step level for 13 steps."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p1_t0",
@@ -5488,8 +6694,7 @@
       3,
       4
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p1_t1",
@@ -5508,8 +6713,7 @@
     ],
     "rowCount": 0,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Debt service totals summary for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p2_t0",
@@ -5535,8 +6739,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p2_t1",
@@ -5562,8 +6765,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p3_t0",
@@ -5589,8 +6791,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p4_t0",
@@ -5616,8 +6817,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p5_t0",
@@ -5643,8 +6843,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p5_t1",
@@ -5670,8 +6869,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s61_p6_t0",
@@ -5697,8 +6895,7 @@
       4,
       5
     ],
-    "budgetType": "operating",
-    "description": "Debt service payment schedule showing principal, interest, and total payments by date for City of Pittsburgh bond obligations."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p11_t0",
@@ -5717,8 +6914,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for DEPARTMENT OF PERMITS, LICENSES, and INSPECTIONS listing 94 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p14_t0",
@@ -5737,8 +6933,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for DEPARTMENT OF PUBLIC WORKS listing 111 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p16_t0",
@@ -5757,8 +6952,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for SPECIAL EVENTS & FILM FEES listing 116 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p19_t0",
@@ -5777,8 +6971,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for ANIMAL CARE AND CONTROL listing 11 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p1_t0",
@@ -5797,8 +6990,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for BUREAU OF FIRE listing 72 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p20_t0",
@@ -5817,8 +7009,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for MISCELLANEOUS listing 22 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p20_t1",
@@ -5837,8 +7028,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for DEPARTMENT OF FINANCE listing 4 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p20_t2",
@@ -5857,8 +7047,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for HUMAN RESOURCES & CIVIL SERVICE listing 5 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p21_t0",
@@ -5877,8 +7066,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for OFFICE OF MANAGEMENT & BUDGET listing 4 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p21_t1",
@@ -5897,8 +7085,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for BUREAU OF EMERGENCY MEDICAL SERVICES listing 9 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p21_t2",
@@ -5917,8 +7104,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for BUREAU OF POLICE listing 72 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p3_t0",
@@ -5937,8 +7123,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for DEPARTMENT OF CITY PLANNING listing 31 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p3_t1",
@@ -5957,8 +7142,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for DEPARTMENT OF MOBILITY & INFRASTRUCTURE listing 145 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p7_t0",
@@ -5978,8 +7162,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for Department of Public Safety Reimbursable Events/Secondary Employment|Fee Description listing 60 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p9_t0",
@@ -5997,8 +7180,7 @@
     ],
     "rowCount": 1,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Fee schedule for * fees will change according to union contract listing 1 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s63_p9_t1",
@@ -6017,8 +7199,7 @@
     "numericCols": [
       1
     ],
-    "budgetType": "operating",
-    "description": "Fee schedule for DEPARTMENT OF PARKS & RECREATION listing 103 fee types with 2026 rates."
+    "budgetType": "operating"
   },
   {
     "id": "s64_p1_t0",
@@ -6041,8 +7222,7 @@
       1,
       4
     ],
-    "budgetType": "operating",
-    "description": "Vehicle and equipment acquisition plan listing 23 items with quantities, using departments, funding sources, and costs."
+    "budgetType": "operating"
   },
   {
     "id": "s64_p2_t0",
@@ -6060,8 +7240,7 @@
     ],
     "rowCount": 6,
     "numericCols": [],
-    "budgetType": "operating",
-    "description": "Vehicle and equipment acquisition plan listing 6 items with quantities, using departments, funding sources, and costs."
+    "budgetType": "operating"
   },
   {
     "id": "s64_p3_t0",
@@ -6082,8 +7261,7 @@
     "numericCols": [
       3
     ],
-    "budgetType": "operating",
-    "description": "Vehicle and equipment acquisition plan listing 8 items with quantities, using departments, funding sources, and costs."
+    "budgetType": "operating"
   },
   {
     "id": "s64_p3_t1",
@@ -6105,8 +7283,7 @@
       2,
       3
     ],
-    "budgetType": "operating",
-    "description": "Appendix data with 6 line items (2024)."
+    "budgetType": "operating"
   },
   {
     "id": "cap_s1_p17_t0",

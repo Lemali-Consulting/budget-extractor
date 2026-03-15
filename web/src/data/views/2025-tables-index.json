@@ -1513,7 +1513,6 @@
     "label": "Forecast",
     "headers": [
       "",
-      "",
       "2025",
       "2026",
       "2027",
@@ -2721,7 +2720,6 @@
     "label": "Forecast",
     "headers": [
       "",
-      "",
       "2025",
       "2026",
       "2027",
@@ -2978,7 +2976,6 @@
     "label": "Forecast",
     "headers": [
       "",
-      "",
       "2025",
       "2026",
       "2027",
@@ -3143,7 +3140,6 @@
     "type": "financial_summary",
     "label": "Financial Summary (2)",
     "headers": [
-      "",
       "",
       "2023 Actual",
       "2024 Budget",
@@ -3787,7 +3783,6 @@
     "label": "Financial Summary (2)",
     "headers": [
       "",
-      "",
       "2023 Actual",
       "2024 Budget",
       "2025 Budget",
@@ -3813,7 +3808,6 @@
     "type": "forecast",
     "label": "Forecast",
     "headers": [
-      "",
       "",
       "2025",
       "2026",
@@ -4926,7 +4920,6 @@
     "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
-      "",
       "2024 Budget",
       "2025 Budget",
       "Increase/ (Decrease)",
@@ -5076,7 +5069,6 @@
     "label": "Subclass Detail",
     "headers": [
       "Subclass Detail",
-      "",
       "2024 Budget",
       "2025 Budget",
       "Increase/ (Decrease)",

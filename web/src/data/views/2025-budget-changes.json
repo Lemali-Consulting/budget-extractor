@@ -1,6 +1,6 @@
 {
-  "totalBudget2024": 489311503.0,
-  "totalBudget2025": 361305762.0,
+  "totalBudget2024": 498142625.0,
+  "totalBudget2025": 473414619.0,
   "totalFte2024": 2728.0,
   "totalFte2025": 2761.0,
   "departmentChanges": [
@@ -13,6 +13,16 @@
       "pctChange": 57.7,
       "fte2024": 53.8,
       "fte2025": 52.8
+    },
+    {
+      "department": "Bureau of Fire",
+      "slug": "bureau-of-fire",
+      "budget2024": 96827568.0,
+      "budget2025": 99021429.0,
+      "dollarChange": 2193861.0,
+      "pctChange": 2.3,
+      "fte2024": 679.0,
+      "fte2025": 679.0
     },
     {
       "department": "Regional Asset District - Public Works Trust Fund",
@@ -89,6 +99,14 @@
       "fte2025": 21.0
     },
     {
+      "department": "Public Works Trust Fund",
+      "slug": "public-works-trust-fund",
+      "budget2024": 935000.0,
+      "budget2025": 982040.0,
+      "dollarChange": 47040.0,
+      "pctChange": 5.0
+    },
+    {
       "department": "Commission on Human Relations",
       "slug": "commission-on-human-relations",
       "budget2024": 748300.0,
@@ -157,6 +175,14 @@
       "slug": "eeoc-trust-fund",
       "budget2024": 38500.0,
       "budget2025": 38500.0,
+      "dollarChange": 0.0,
+      "pctChange": 0.0
+    },
+    {
+      "department": "Liquid Fuels Trust Fund",
+      "slug": "liquid-fuels-trust-fund",
+      "budget2024": 6692500.0,
+      "budget2025": 6692500.0,
       "dollarChange": 0.0,
       "pctChange": 0.0
     },
@@ -269,14 +295,6 @@
       "fte2025": 286.0
     },
     {
-      "department": "Public Works Trust Fund",
-      "slug": "public-works-trust-fund",
-      "budget2024": 982040.0,
-      "budget2025": 47040.0,
-      "dollarChange": -935000.0,
-      "pctChange": -95.2
-    },
-    {
       "department": "Bureau of Emergency Medical Services",
       "slug": "bureau-of-emergency-medical-services",
       "budget2024": 29187223.0,
@@ -316,6 +334,16 @@
       "fte2025": 54.0
     },
     {
+      "department": "Bureau of Facilities",
+      "slug": "bureau-of-facilities",
+      "budget2024": 16412835.0,
+      "budget2025": 12033312.0,
+      "dollarChange": -4379523.0,
+      "pctChange": -26.7,
+      "fte2024": 90.0,
+      "fte2025": 88.0
+    },
+    {
       "department": "Department of Law",
       "slug": "department-of-law",
       "budget2024": 12990528.0,
@@ -326,16 +354,6 @@
       "fte2025": 40.0
     },
     {
-      "department": "Bureau of Facilities",
-      "slug": "bureau-of-facilities",
-      "budget2024": 12033312.0,
-      "budget2025": 4379523.0,
-      "dollarChange": -7653789.0,
-      "pctChange": -63.6,
-      "fte2024": 90.0,
-      "fte2025": 88.0
-    },
-    {
       "department": "Department of Human Resources and Civil Service",
       "slug": "department-of-human-resources-and-civil-service",
       "budget2024": 40915851.0,
@@ -343,16 +361,6 @@
       "dollarChange": -10092969.0,
       "pctChange": -24.7,
       "fte2025": 38.0
-    },
-    {
-      "department": "Bureau of Fire",
-      "slug": "bureau-of-fire",
-      "budget2024": 99021429.0,
-      "budget2025": 2193861.0,
-      "dollarChange": -96827568.0,
-      "pctChange": -97.8,
-      "fte2024": 679.0,
-      "fte2025": 679.0
     }
   ],
   "topIncreases": [
@@ -365,6 +373,16 @@
       "pctChange": 57.7,
       "fte2024": 53.8,
       "fte2025": 52.8
+    },
+    {
+      "department": "Bureau of Fire",
+      "slug": "bureau-of-fire",
+      "budget2024": 96827568.0,
+      "budget2025": 99021429.0,
+      "dollarChange": 2193861.0,
+      "pctChange": 2.3,
+      "fte2024": 679.0,
+      "fte2025": 679.0
     },
     {
       "department": "Regional Asset District - Public Works Trust Fund",
@@ -439,29 +457,9 @@
       "pctChange": 2.7,
       "fte2024": 21.0,
       "fte2025": 21.0
-    },
-    {
-      "department": "Commission on Human Relations",
-      "slug": "commission-on-human-relations",
-      "budget2024": 748300.0,
-      "budget2025": 776018.0,
-      "dollarChange": 27718.0,
-      "pctChange": 3.7,
-      "fte2024": 8.0,
-      "fte2025": 8.0
     }
   ],
   "topDecreases": [
-    {
-      "department": "Bureau of Fire",
-      "slug": "bureau-of-fire",
-      "budget2024": 99021429.0,
-      "budget2025": 2193861.0,
-      "dollarChange": -96827568.0,
-      "pctChange": -97.8,
-      "fte2024": 679.0,
-      "fte2025": 679.0
-    },
     {
       "department": "Department of Human Resources and Civil Service",
       "slug": "department-of-human-resources-and-civil-service",
@@ -472,16 +470,6 @@
       "fte2025": 38.0
     },
     {
-      "department": "Bureau of Facilities",
-      "slug": "bureau-of-facilities",
-      "budget2024": 12033312.0,
-      "budget2025": 4379523.0,
-      "dollarChange": -7653789.0,
-      "pctChange": -63.6,
-      "fte2024": 90.0,
-      "fte2025": 88.0
-    },
-    {
       "department": "Department of Law",
       "slug": "department-of-law",
       "budget2024": 12990528.0,
@@ -490,6 +478,16 @@
       "pctChange": -46.2,
       "fte2024": 40.0,
       "fte2025": 40.0
+    },
+    {
+      "department": "Bureau of Facilities",
+      "slug": "bureau-of-facilities",
+      "budget2024": 16412835.0,
+      "budget2025": 12033312.0,
+      "dollarChange": -4379523.0,
+      "pctChange": -26.7,
+      "fte2024": 90.0,
+      "fte2025": 88.0
     },
     {
       "department": "Department of City Planning",
@@ -531,14 +529,6 @@
       "fte2025": 219.0
     },
     {
-      "department": "Public Works Trust Fund",
-      "slug": "public-works-trust-fund",
-      "budget2024": 982040.0,
-      "budget2025": 47040.0,
-      "dollarChange": -935000.0,
-      "pctChange": -95.2
-    },
-    {
       "department": "Bureau of Operations",
       "slug": "bureau-of-operations",
       "budget2024": 26027954.0,
@@ -547,6 +537,26 @@
       "pctChange": -2.7,
       "fte2024": 316.0,
       "fte2025": 286.0
+    },
+    {
+      "department": "Parks Tax Trust Fund",
+      "slug": "parks-tax-trust-fund",
+      "budget2024": 10449052.0,
+      "budget2025": 9851973.0,
+      "dollarChange": -597079.0,
+      "pctChange": -5.7,
+      "fte2024": 37.0,
+      "fte2025": 38.0
+    },
+    {
+      "department": "Regional Asset District - Parks and Recreation Trust Fund",
+      "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+      "budget2024": 2440079.0,
+      "budget2025": 2231219.0,
+      "dollarChange": -208860.0,
+      "pctChange": -8.6,
+      "fte2024": 7.6,
+      "fte2025": 13.6
     }
   ],
   "newPositions": [

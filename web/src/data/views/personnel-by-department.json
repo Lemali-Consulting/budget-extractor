@@ -54,6 +54,15 @@
     "positionCount": 83
   },
   {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "totalFte2025": 120.0,
+    "totalFte2026": 121.0,
+    "totalBudget2025": 8547889.0,
+    "totalBudget2026": 8741494.0,
+    "positionCount": 40
+  },
+  {
     "department": "Department of Innovation and Performance",
     "slug": "department-of-innovation-and-performance",
     "totalFte2025": 68.0,
@@ -70,6 +79,60 @@
     "totalBudget2025": 6316810.0,
     "totalBudget2026": 6373224.0,
     "positionCount": 45
+  },
+  {
+    "department": "Bureau of Administration (Public Safety)",
+    "slug": "bureau-of-administration-public-safety",
+    "totalFte2025": 134.0,
+    "totalFte2026": 136.12,
+    "totalBudget2025": 5867234.0,
+    "totalBudget2026": 6362563.0,
+    "positionCount": 47
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "totalFte2025": 52.800000000000004,
+    "totalFte2026": 54.800000000000004,
+    "totalBudget2025": 5830170.0,
+    "totalBudget2026": 6238563.0,
+    "positionCount": 39
+  },
+  {
+    "department": "Regional Asset District - Public Works Trust Fund",
+    "slug": "regional-asset-district-public-works-trust-fund",
+    "totalFte2025": 86.0,
+    "totalFte2026": 86.0,
+    "totalBudget2025": 4616747.0,
+    "totalBudget2026": 4738760.0,
+    "positionCount": 8
+  },
+  {
+    "department": "Office of the City Controller",
+    "slug": "office-of-the-city-controller",
+    "totalFte2025": 57.0,
+    "totalFte2026": 56.0,
+    "totalBudget2025": 4643262.0,
+    "totalBudget2026": 4720610.0,
+    "positionCount": 53
+  },
+  {
+    "department": "Department of City Planning",
+    "slug": "department-of-city-planning",
+    "totalFte2025": 54.0,
+    "totalFte2026": 56.0,
+    "totalBudget2025": 4416974.0,
+    "totalBudget2026": 4626966.0,
+    "positionCount": 43
+  },
+  {
+    "department": "Parks Tax Trust Fund",
+    "slug": "parks-tax-trust-fund",
+    "totalFte2025": 57.0,
+    "totalFte2026": 58.0,
+    "totalBudget2025": 4116344.0,
+    "totalBudget2026": 4426450.0,
+    "positionCount": 40
   },
   {
     "department": "Department of Law",

@@ -32,6 +32,11 @@
         "budgetType": "operating"
       },
       {
+        "slug": "office-of-the-city-controller",
+        "title": "Office of the City Controller",
+        "budgetType": "operating"
+      },
+      {
         "slug": "department-of-finance",
         "title": "Department of Finance",
         "budgetType": "operating"
@@ -45,14 +50,9 @@
         "slug": "ethics-hearing-board",
         "title": "Ethics Hearing Board",
         "budgetType": "operating"
-      },
-      {
-        "slug": "office-of-municipal-investigations",
-        "title": "Office of Municipal Investigations",
-        "budgetType": "operating"
       }
     ],
-    "total": 32
+    "total": 39
   },
   "OPEB": {
     "sections": [
@@ -84,6 +84,11 @@
       {
         "slug": "five-year-financial-forecast",
         "title": "Five-Year Financial Forecast",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "expenditure-summary",
+        "title": "Expenditure Summary",
         "budgetType": "operating"
       },
       {
@@ -125,17 +130,17 @@
         "slug": "calera-street-bridge-tip",
         "title": "CALERA STREET BRIDGE (TIP)",
         "budgetType": "capital"
-      },
-      {
-        "slug": "california-avenue-bridge-tip",
-        "title": "CALIFORNIA AVENUE BRIDGE (TIP)",
-        "budgetType": "capital"
       }
     ],
-    "total": 66
+    "total": 67
   },
   "RAD": {
     "sections": [
+      {
+        "slug": "bureau-of-administration-public-safety",
+        "title": "Bureau of Administration (Public Safety)",
+        "budgetType": "operating"
+      },
       {
         "slug": "regional-asset-district-parks-and-recreation-trust-fund",
         "title": "Regional Asset District - Parks and Recreation Trust Fund",
@@ -152,23 +157,38 @@
         "budgetType": "capital"
       }
     ],
-    "total": 3
+    "total": 4
   },
   "DCP": {
     "sections": [
+      {
+        "slug": "department-of-city-planning",
+        "title": "Department of City Planning",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-permits-licenses-and-inspections",
+        "title": "Department of Permits, Licenses, and Inspections",
+        "budgetType": "operating"
+      },
       {
         "slug": "capital-budget-appendices",
         "title": "Capital Budget Appendices",
         "budgetType": "capital"
       }
     ],
-    "total": 1
+    "total": 3
   },
   "OMB": {
     "sections": [
       {
         "slug": "revenue-detail",
         "title": "Revenue Detail",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "expenditure-summary",
+        "title": "Expenditure Summary",
         "budgetType": "operating"
       },
       {
@@ -187,10 +207,15 @@
         "budgetType": "capital"
       }
     ],
-    "total": 4
+    "total": 5
   },
   "DOMI": {
     "sections": [
+      {
+        "slug": "department-of-city-planning",
+        "title": "Department of City Planning",
+        "budgetType": "operating"
+      },
       {
         "slug": "department-of-mobility-and-infrastructure",
         "title": "Department of Mobility and Infrastructure",
@@ -237,13 +262,23 @@
         "budgetType": "capital"
       }
     ],
-    "total": 9
+    "total": 10
   },
   "PLI": {
     "sections": [
       {
         "slug": "revenue-detail",
         "title": "Revenue Detail",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-city-planning",
+        "title": "Department of City Planning",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-permits-licenses-and-inspections",
+        "title": "Department of Permits, Licenses, and Inspections",
         "budgetType": "operating"
       },
       {
@@ -262,7 +297,7 @@
         "budgetType": "capital"
       }
     ],
-    "total": 4
+    "total": 6
   },
   "EMS": {
     "sections": [
@@ -274,6 +309,11 @@
       {
         "slug": "department-of-human-resources-and-civil-service",
         "title": "Department of Human Resources and Civil Service",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "bureau-of-administration-public-safety",
+        "title": "Bureau of Administration (Public Safety)",
         "budgetType": "operating"
       },
       {
@@ -312,7 +352,7 @@
         "budgetType": "capital"
       }
     ],
-    "total": 9
+    "total": 10
   },
   "JDE": {
     "sections": [
@@ -562,8 +602,18 @@
   "General Fund": {
     "sections": [
       {
+        "slug": "expenditure-summary",
+        "title": "Expenditure Summary",
+        "budgetType": "operating"
+      },
+      {
         "slug": "department-of-human-resources-and-civil-service",
         "title": "Department of Human Resources and Civil Service",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "bureau-of-administration-public-safety",
+        "title": "Bureau of Administration (Public Safety)",
         "budgetType": "operating"
       },
       {
@@ -597,7 +647,7 @@
         "budgetType": "capital"
       }
     ],
-    "total": 7
+    "total": 9
   },
   "Reserve Fund": {
     "sections": [
@@ -772,6 +822,11 @@
         "budgetType": "operating"
       },
       {
+        "slug": "office-of-the-city-controller",
+        "title": "Office of the City Controller",
+        "budgetType": "operating"
+      },
+      {
         "slug": "department-of-finance",
         "title": "Department of Finance",
         "budgetType": "operating"
@@ -785,13 +840,8 @@
         "slug": "ethics-hearing-board",
         "title": "Ethics Hearing Board",
         "budgetType": "operating"
-      },
-      {
-        "slug": "office-of-municipal-investigations",
-        "title": "Office of Municipal Investigations",
-        "budgetType": "operating"
       }
     ],
-    "total": 92
+    "total": 97
   }
 }

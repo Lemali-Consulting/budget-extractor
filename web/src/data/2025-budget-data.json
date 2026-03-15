@@ -12799,7 +12799,6 @@
           "table_type": "forecast",
           "headers": [
             "",
-            "",
             "2025",
             "2026",
             "2027",
@@ -23219,7 +23218,6 @@
           "table_type": "forecast",
           "headers": [
             "",
-            "",
             "2025",
             "2026",
             "2027",
@@ -25551,7 +25549,6 @@
           "table_type": "forecast",
           "headers": [
             "",
-            "",
             "2025",
             "2026",
             "2027",
@@ -26617,7 +26614,6 @@
           "table_type": "financial_summary",
           "headers": [
             "",
-            "",
             "2023 Actual",
             "2024 Budget",
             "2025 Budget",
@@ -26992,7 +26988,7 @@
         }
       ],
       "highlights": [
-        "Budget decreases 97.8% ($96.8M)",
+        "Budget increases 2.3% ($2.2M)",
         "Staffing unchanged at 679 FTE"
       ]
     },
@@ -31741,7 +31737,6 @@
           "table_type": "financial_summary",
           "headers": [
             "",
-            "",
             "2023 Actual",
             "2024 Budget",
             "2025 Budget",
@@ -31803,7 +31798,6 @@
           "table_index": 0,
           "table_type": "forecast",
           "headers": [
-            "",
             "",
             "2025",
             "2026",
@@ -32005,7 +31999,7 @@
         }
       ],
       "highlights": [
-        "Budget decreases 63.6% ($7.7M)",
+        "Budget decreases 26.7% ($4.4M)",
         "Reduces by 2 positions (90 \u2192 88 FTE)"
       ]
     },
@@ -38925,7 +38919,6 @@
           "table_type": "financial",
           "headers": [
             "Subclass Detail",
-            "",
             "2024 Budget",
             "2025 Budget",
             "Increase/ (Decrease)",
@@ -39062,6 +39055,9 @@
           ],
           "chart_regions": []
         }
+      ],
+      "highlights": [
+        "Budget decreases 0.0% ($0), led by $82K less in Intergovernmental Revenue"
       ]
     },
     {
@@ -39614,7 +39610,6 @@
           "table_type": "financial",
           "headers": [
             "Subclass Detail",
-            "",
             "2024 Budget",
             "2025 Budget",
             "Increase/ (Decrease)",
@@ -39753,7 +39748,7 @@
         }
       ],
       "highlights": [
-        "Budget decreases 95.2% ($935K)"
+        "Budget increases 5.0% ($47K), led by $47K more in Prof. & Technical Services"
       ]
     },
     {

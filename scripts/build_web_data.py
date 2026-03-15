@@ -79,6 +79,21 @@ def parse_csv(path: Path) -> dict:
         headers = headers[:-1]  # strip "section" from display headers
         sections = [row.pop() if len(row) > len(headers) else "" for row in data_rows]
 
+    # Fix header/data column mismatch: if the header row has more columns than
+    # the coord row (column metadata), strip empty header columns to realign.
+    # The extractor sometimes produces headers with extra empty columns that
+    # don't correspond to data columns.
+    num_data_cols = len(coord_row)
+    if len(headers) > num_data_cols:
+        # Remove empty columns from the header to match data column count
+        non_empty_indices = [i for i, h in enumerate(headers) if h.strip()]
+        empty_indices = [i for i, h in enumerate(headers) if not h.strip()]
+        extra = len(headers) - num_data_cols
+        if len(empty_indices) >= extra:
+            # Remove the first N empty columns
+            to_remove = set(empty_indices[:extra])
+            headers = [h for i, h in enumerate(headers) if i not in to_remove]
+
     return {"headers": headers, "rows": data_rows, "sections": sections}
 
 
@@ -698,20 +713,35 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
             if not budget_cols:
                 continue
 
-            # Find a "total" row
+            # Find a "total" row — prefer "Expenditures Total" over generic totals,
+            # and skip total rows where all budget values are zero/dash
+            best_total: list | None = None
             for row in table["rows"]:
                 label = (row[0] if row else "").lower()
-                if "total" in label and "subtotal" not in label:
-                    for col in budget_cols:
-                        amount = parse_currency(row[col["idx"]] if col["idx"] < len(row) else "")
-                        if amount and amount > 0:
-                            rows.append({
-                                "department": section["title"],
-                                "slug": section["slug"],
-                                "year": col["year"],
-                                "amount": amount,
-                            })
-                    break
+                if "total" not in label or "subtotal" in label:
+                    continue
+                # Check if this row has any parseable budget amounts
+                has_amount = any(
+                    parse_currency(row[col["idx"]] if col["idx"] < len(row) else "") is not None
+                    for col in budget_cols
+                )
+                if not has_amount:
+                    continue
+                if "expenditures total" in label or "total expenditures" in label:
+                    best_total = row
+                    break  # This is the best match, stop looking
+                if best_total is None:
+                    best_total = row
+            if best_total:
+                for col in budget_cols:
+                    amount = parse_currency(best_total[col["idx"]] if col["idx"] < len(best_total) else "")
+                    if amount and amount > 0:
+                        rows.append({
+                            "department": section["title"],
+                            "slug": section["slug"],
+                            "year": col["year"],
+                            "amount": amount,
+                        })
 
     return rows
 

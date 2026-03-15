@@ -237,19 +237,19 @@
     "department": "Bureau of Fire",
     "slug": "bureau-of-fire",
     "year": "2023 Actual",
-    "amount": 96827568.0
+    "amount": 96332292.0
   },
   {
     "department": "Bureau of Fire",
     "slug": "bureau-of-fire",
     "year": "2024 Budget",
-    "amount": 99021429.0
+    "amount": 96827568.0
   },
   {
     "department": "Bureau of Fire",
     "slug": "bureau-of-fire",
     "year": "2025 Budget",
-    "amount": 2193861.0
+    "amount": 99021429.0
   },
   {
     "department": "Bureau of Animal Care and Control",
@@ -345,19 +345,19 @@
     "department": "Bureau of Facilities",
     "slug": "bureau-of-facilities",
     "year": "2023 Actual",
-    "amount": 16412835.0
+    "amount": 17270800.0
   },
   {
     "department": "Bureau of Facilities",
     "slug": "bureau-of-facilities",
     "year": "2024 Budget",
-    "amount": 12033312.0
+    "amount": 16412835.0
   },
   {
     "department": "Bureau of Facilities",
     "slug": "bureau-of-facilities",
     "year": "2025 Budget",
-    "amount": 4379523.0
+    "amount": 12033312.0
   },
   {
     "department": "Department of Parks and Recreation",
@@ -381,7 +381,7 @@
     "department": "HUD Fair Housing Program Trust Fund",
     "slug": "hud-fair-housing-program-trust-fund",
     "year": "2024 Budget",
-    "amount": 70000.0
+    "amount": 70016.0
   },
   {
     "department": "HUD Fair Housing Program Trust Fund",
@@ -393,7 +393,7 @@
     "department": "EEOC Trust Fund",
     "slug": "eeoc-trust-fund",
     "year": "2024 Budget",
-    "amount": 35000.0
+    "amount": 38500.0
   },
   {
     "department": "EEOC Trust Fund",
@@ -402,189 +402,207 @@
     "amount": 38500.0
   },
   {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "year": "2024 Budget",
+    "amount": 670314.0
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "year": "2025 Budget",
+    "amount": 689816.0
+  },
+  {
     "department": "Pittsburgh Partnership Trust Fund",
     "slug": "pittsburgh-partnership-trust-fund",
     "year": "2024 Budget",
-    "amount": 3278594.0
+    "amount": 3110513.0
   },
   {
     "department": "Pittsburgh Partnership Trust Fund",
     "slug": "pittsburgh-partnership-trust-fund",
     "year": "2025 Budget",
-    "amount": 2759840.0
+    "amount": 3204206.0
   },
   {
     "department": "Community Development Trust Fund",
     "slug": "community-development-trust-fund",
     "year": "2024 Budget",
-    "amount": 13500000.0
+    "amount": 13499999.0
   },
   {
     "department": "Community Development Trust Fund",
     "slug": "community-development-trust-fund",
     "year": "2025 Budget",
-    "amount": 13398170.0
+    "amount": 13400860.0
   },
   {
     "department": "Police Secondary Employment Trust Fund",
     "slug": "police-secondary-employment-trust-fund",
     "year": "2024 Budget",
-    "amount": 9196000.0
+    "amount": 9029266.0
   },
   {
     "department": "Police Secondary Employment Trust Fund",
     "slug": "police-secondary-employment-trust-fund",
     "year": "2025 Budget",
-    "amount": 9196000.0
+    "amount": 9030633.0
   },
   {
     "department": "Stop the Violence Trust Fund",
     "slug": "stop-the-violence-trust-fund",
     "year": "2024 Budget",
-    "amount": 10842685.0
+    "amount": 11095749.0
   },
   {
     "department": "Stop the Violence Trust Fund",
     "slug": "stop-the-violence-trust-fund",
     "year": "2025 Budget",
-    "amount": 11193068.0
+    "amount": 11841651.0
   },
   {
     "department": "Liquid Fuels Trust Fund",
     "slug": "liquid-fuels-trust-fund",
     "year": "2024 Budget",
-    "amount": 8118845.0
+    "amount": 6692500.0
   },
   {
     "department": "Liquid Fuels Trust Fund",
     "slug": "liquid-fuels-trust-fund",
     "year": "2025 Budget",
-    "amount": 81506.0
+    "amount": 6692500.0
   },
   {
     "department": "Regional Asset District - Public Works Trust Fund",
     "slug": "regional-asset-district-public-works-trust-fund",
     "year": "2024 Budget",
-    "amount": 6082120.0
+    "amount": 5680532.0
   },
   {
     "department": "Regional Asset District - Public Works Trust Fund",
     "slug": "regional-asset-district-public-works-trust-fund",
     "year": "2025 Budget",
-    "amount": 6386226.0
+    "amount": 6819898.0
   },
   {
     "department": "Public Works Trust Fund",
     "slug": "public-works-trust-fund",
     "year": "2024 Budget",
-    "amount": 1000000.0
+    "amount": 935000.0
+  },
+  {
+    "department": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "year": "2025 Budget",
+    "amount": 982040.0
   },
   {
     "department": "Shade Tree Trust Fund",
     "slug": "shade-tree-trust-fund",
     "year": "2024 Budget",
+    "amount": 227687.0
+  },
+  {
+    "department": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "year": "2025 Budget",
     "amount": 150000.0
   },
   {
-    "department": "Shade Tree Trust Fund",
-    "slug": "shade-tree-trust-fund",
-    "year": "2025 Budget",
-    "amount": 200000.0
-  },
-  {
     "department": "Parks Tax Trust Fund",
     "slug": "parks-tax-trust-fund",
     "year": "2024 Budget",
-    "amount": 10068713.0
+    "amount": 10449052.0
   },
   {
     "department": "Parks Tax Trust Fund",
     "slug": "parks-tax-trust-fund",
     "year": "2025 Budget",
-    "amount": 9844580.0
+    "amount": 9851973.0
   },
   {
     "department": "Special Events Trust Fund",
     "slug": "special-events-trust-fund",
     "year": "2024 Budget",
-    "amount": 175000.0
+    "amount": 219161.0
   },
   {
     "department": "Special Events Trust Fund",
     "slug": "special-events-trust-fund",
     "year": "2025 Budget",
-    "amount": 175000.0
+    "amount": 222684.0
   },
   {
     "department": "Regional Asset District - Parks and Recreation Trust Fund",
     "slug": "regional-asset-district-parks-and-recreation-trust-fund",
     "year": "2024 Budget",
-    "amount": 2249550.0
+    "amount": 2440079.0
   },
   {
     "department": "Regional Asset District - Parks and Recreation Trust Fund",
     "slug": "regional-asset-district-parks-and-recreation-trust-fund",
     "year": "2025 Budget",
-    "amount": 2362028.0
+    "amount": 2231219.0
   },
   {
     "department": "Mellon Park Trust Fund",
     "slug": "mellon-park-trust-fund",
     "year": "2024 Budget",
-    "amount": 228135.0
+    "amount": 449667.0
   },
   {
     "department": "Mellon Park Trust Fund",
     "slug": "mellon-park-trust-fund",
     "year": "2025 Budget",
-    "amount": 347553.0
+    "amount": 414215.0
   },
   {
     "department": "Schenley Park Rink Trust Fund",
     "slug": "schenley-park-rink-trust-fund",
     "year": "2024 Budget",
-    "amount": 160000.0
+    "amount": 157000.0
   },
   {
     "department": "Schenley Park Rink Trust Fund",
     "slug": "schenley-park-rink-trust-fund",
     "year": "2025 Budget",
-    "amount": 160000.0
+    "amount": 157000.0
   },
   {
     "department": "Senior Citizens Program Trust Fund",
     "slug": "senior-citizens-program-trust-fund",
     "year": "2024 Budget",
-    "amount": 1511850.0
+    "amount": 2380319.0
   },
   {
     "department": "Senior Citizens Program Trust Fund",
     "slug": "senior-citizens-program-trust-fund",
     "year": "2025 Budget",
-    "amount": 1511850.0
+    "amount": 2300565.0
   },
   {
     "department": "Special Food Service Trust Fund",
     "slug": "special-food-service-trust-fund",
     "year": "2024 Budget",
-    "amount": 525000.0
+    "amount": 648782.0
   },
   {
     "department": "Special Food Service Trust Fund",
     "slug": "special-food-service-trust-fund",
     "year": "2025 Budget",
-    "amount": 525000.0
+    "amount": 663737.0
   },
   {
     "department": "Frick Park Trust Fund",
     "slug": "frick-park-trust-fund",
     "year": "2024 Budget",
-    "amount": 858500.0
+    "amount": 729725.0
   },
   {
     "department": "Frick Park Trust Fund",
     "slug": "frick-park-trust-fund",
     "year": "2025 Budget",
-    "amount": 858500.0
+    "amount": 729725.0
   }
 ]
