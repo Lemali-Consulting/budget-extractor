@@ -1,0 +1,68 @@
+"C0 (l, x:60-224)","C1 (r, x:224-281)","C2 (r, x:281-320)","C3 (r, x:320-355)","C4 (r, x:355-409)","C5 (r, x:409-438)","C6 (r, x:438-477)","C7 (r, x:477-513)","C8 (r, x:513-553)",section
+Title,2025 FTE,Rate/ Grade,Hours/ Months,2025 Budget,2026 FTE,Rate/ Grade,Hours/ Months,2026 Budget,section
+I&P Administration,,,,,,,,,I&P Administration
+Director of Innovation & Performance/Chief Information Officer,1,35G,12,"129,126",1,35G,12,"132,995",I&P Administration
+Administration Manager,1,27G,12,"91,021",1,27G,12,"93,746",I&P Administration
+Senior Fiscal Administrator,1,20G,12,"68,162",1,20G,12,"70,200",I&P Administration
+Chief Clerk 1,1,16G,12,"57,574",1,16G,12,"59,301",I&P Administration
+"Coordinator, Administrative",1,U04-F,12,"44,595",1,U04-F,12,"44,595",I&P Administration
+IT Operations Reliability,,,,,,,,,IT Operations Reliability
+Assistant Director - IT Operations,1,32G,12,"110,718",1,32G,12,"114,046",IT Operations Reliability
+"Senior Manager, IT Service Desk",1,29G,12,"98,571",1,29G,12,"101,525",IT Operations Reliability
+"Assistant Manager, IT Service Desk",1,24G,12,"80,330",1,24G,12,"82,742",IT Operations Reliability
+Technology Analyst,2,23G,12,"154,086",2,23G,12,"158,704",IT Operations Reliability
+"Senior Analyst, IT Service",2,U08-L,12,"138,332",1,U08-L,12,"138,332",IT Operations Reliability
+"Analyst, IT Service",2,U07-L,12,"126,911",4,U07-L,12,"126,911",IT Operations Reliability
+Service Desk Representative,2,U05-L,12,"106,818",—,U05-L,—,—,IT Operations Reliability
+"Senior Manager, IT Infrastructure",1,29G,12,"98,571",1,29G,12,"101,525",IT Operations Reliability
+Senior Systems Administrator,1,27G,12,"91,021",1,27G,12,"93,746",IT Operations Reliability
+Systems Administrator,2,23G,12,"154,086",3,23G,12,"238,056",IT Operations Reliability
+IAM Systems Administrator,1,23G,12,"77,043",—,23G,—,—,IT Operations Reliability
+Network Architect,1,27G,12,"91,021",—,27G,—,—,IT Operations Reliability
+Network Engineer,2,25G,12,"167,024",3,25G,12,"258,024",IT Operations Reliability
+"Technician, Network",2,U08-I,12,"130,770",2,U08-I,12,"130,770",IT Operations Reliability
+Security & Risk,,,,,,,,,Security & Risk
+"Assistant Director, Security/Chief Information Security Officer",1,33G,12,"117,312",1,33G,12,"120,827",Security & Risk
+Cybersecurity Engineer,1,25G,12,"83,512",1,25G,12,"86,008",Security & Risk
+Noble Reach Fellow in Cybersecurity,—,23G,—,—,1,23G,10,"66,127",Security & Risk
+Operations Performance Excellence,,,,,,,,,Operations Performance Excellence
+"Manager, Operations Performance Excellence",1,27G,12,"91,021",1,27G,12,"93,746",Operations Performance Excellence
+Process Improvement Engineer,2,25G,12,"167,024",2,25G,12,"172,016",Operations Performance Excellence
+Business Technology,,,,,,,,,Business Technology
+Assistant Director - Business Technology,1,32G,12,"110,718",1,32G,12,"114,046",Business Technology
+"Senior Manager, Digital Services/Chief Data Officer",1,29G,12,"98,571",1,29G,12,"101,525",Business Technology
+Senior Data Services Engineer,1,25G,12,"83,512",1,25G,12,"86,008",Business Technology
+Data Services Engineer,1,23G,12,"77,043",1,23G,12,"79,352",Business Technology
+Senior Data Analyst,1,25G,12,"83,512",1,25G,12,"86,008",Business Technology
+Operational Performance  Analyst,1,23G,12,"77,043",1,23G,12,"79,352",Business Technology
+Database Administrator,1,27G,12,"91,021",1,27G,12,"93,746",Business Technology
+"Senior Manager, Innovation",1,29G,12,"98,571",1,29G,12,"101,525",Business Technology
+Senior Project Coordinator,2,21G,12,"142,230",2,21G,12,"146,515",Business Technology
+Project Coordinator,1,20G,12,"68,162",—,20G,—,—,Business Technology
+Technology Implementation Specialist,—,20G,—,—,1,20G,12,"70,200",Business Technology
+Business Relationship Manager,4,25G,12,"334,048",4,25G,12,"344,032",Business Technology
+Digital Equity Program Analyst,1,20G,12,"68,162",—,20G,—,—,Business Technology
+Civic Technology & Policy Analyst,—,20G,—,—,1,20G,12,"70,200",Business Technology
+Civic Innovation Specialist,2,20G,12,"136,323",2,20G,12,"140,400",Business Technology
+"Senior Manager, Applications",1,29G,12,"98,571",1,29G,12,"101,525",Business Technology
+Senior Enterprise Applications Administrator,3,25G,12,"250,536",3,25G,12,"258,024",Business Technology
+Enterprise Applications Administrator,2,23G,12,"154,086",2,23G,12,"158,704",Business Technology
+G.I.S. Administrator,1,25G,12,"83,512",1,26G,12,"89,939",Business Technology
+G.I.S. Coordinator,1,23G,12,"77,043",1,23G,12,"79,352",Business Technology
+"Analyst, G.I.S.",1,D25,12,"70,635",1,D25,12,"70,635",Business Technology
+"Analyst, G.I.S.",1,U07-O,12,"67,125",1,U07-O,12,"67,125",Business Technology
+Website Administrator,—,26G,—,—,1,26G,12,"89,939",Business Technology
+Communications Design Administrator,—,24G,—,—,1,24G,12,"82,742",Business Technology
+Web Developer,1,24G,12,"80,330",1,24G,12,"82,742",Business Technology
+Noble Reach Fellow in AI/Data Services,—,23G,—,—,1,23G,10,"66,127",Business Technology
+Communications,,,,,,,,,Communications
+Communication Technology Manager,1,27G,12,"91,021",1,27G,12,"93,746",Communications
+Editor/Videographer,4,U07-E,12,"222,615",4,U07-E,12,"222,615",Communications
+"Manager, Communication Services",1,27G,12,"91,021",—,27G,—,—,Communications
+"Assistant Manager, Communication Services",1,24G,12,"80,330",—,24G,—,—,Communications
+"Coordinator, Print Shop",1,U05-L,12,"53,409",1,U07-L,12,"63,455",Communications
+"Manager, 311 Response Line",—,25G,—,—,1,25G,12,"86,008",Communications
+"Assistant Manager, 311 Response Line",—,22G,—,—,1,22G,12,"76,294",Communications
+Performance Operations Analyst,—,20G,—,—,1,20G,12,"70,200",Communications
+311 Call Center Representative,—,U01-N,—,—,5,U01-N,12,"211,509",Communications
+Total Full-Time Permanent Positions,68,,,"5,363,799",77,,,"5,967,532",Communications

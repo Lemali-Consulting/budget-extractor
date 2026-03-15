@@ -1,0 +1,24 @@
+"C0 (r, x:54-485)","C1 (r, x:485-558)",section
+MISCELLANEOUS,,section
+Fee Description,2026,
+OneStopPGH,,OneStopPGH
+Technology Fee- DOMI $25.00 Application Fee,2.00,OneStopPGH
+Technology Fee- DOMI $75.00 Application Fee,5.00,OneStopPGH
+Technology Fee- DOMI $150.00 Application Fee,15.00,OneStopPGH
+Technology Fee- DOMI >$150.00 Application Fee,25.00,OneStopPGH
+Technology Fee- PLI $0 to $200 Application Fee,2.00,OneStopPGH
+"Technology Fee- PLI $200.01 to $1,000 Application Fee",5.00,OneStopPGH
+"Technology Fee- PLI $1000.01 to $10,000 Application Fee",15.00,OneStopPGH
+"Technology Fee- PLI $10,000.01 +",25.00,OneStopPGH
+Technology Fee- City Planning $0 to $200 Application Fee,2.00,OneStopPGH
+"Technology Fee- City Planning $200.01 to $1,000",5.00,OneStopPGH
+"Technology Fee- City Planning $1,000.01 to $10,000",15.00,OneStopPGH
+"Technology Fee- City Planning $10,000.01 +",25.00,OneStopPGH
+Technology Fee- Public Safety $0 to $200 Application Fee,2.00,OneStopPGH
+"Technology Fee- Public Safety- $200.01 to $1,000",5.00,OneStopPGH
+"Technology Fee- Public Safety $1,000.01 to $10,000",15.00,OneStopPGH
+"Technology Fee- Public Safety $10,000.01 +",25.00,OneStopPGH
+Technology Fee- DPW- $0 to $200 Application Fee,2.00,OneStopPGH
+"Technology Fee- DPW- $200.01 to $1,000",5.00,OneStopPGH
+"Technology Fee- DPW- $1,000.01 to $10,000",15.00,OneStopPGH
+"Technology Fee- DPW $10,000.01 +",25.00,OneStopPGH

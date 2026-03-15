@@ -5,16 +5,10 @@ import csv
 import sys
 from pathlib import Path
 
-# Add project root to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from utils.paths import available_years, debug_dir, expected_dir, split_pdf_dir
 from utils.spatial_table_extractor import SpatialTableExtractor
-
-# Directories to search for source PDFs (in priority order)
-INPUT_DIRS = [
-    "input/split-pdf/operating",
-    "input/split-pdf/capital",
-]
 
 
 def load_csv(path: Path) -> list[list[str]]:
@@ -23,15 +17,16 @@ def load_csv(path: Path) -> list[list[str]]:
         return list(csv.reader(f))
 
 
-def find_pdf(stem: str, project_root: Path) -> Path | None:
-    """Find a PDF matching the stem across input directories."""
-    for input_dir in INPUT_DIRS:
-        # Try exact match first, then glob for numbered prefix variants
-        candidates = list((project_root / input_dir).glob(f"*{stem}*.pdf"))
+def find_pdf(stem: str, year: int) -> Path | None:
+    """Find a PDF matching the stem across budget types for a given year."""
+    for budget_type in ("operating", "capital"):
+        input_dir = split_pdf_dir(year, budget_type)
+        if not input_dir.exists():
+            continue
+        candidates = list(input_dir.glob(f"*{stem}*.pdf"))
         if not candidates:
-            candidates = list((project_root / input_dir).glob(f"*_{stem}.pdf"))
+            candidates = list(input_dir.glob(f"*_{stem}.pdf"))
         for c in candidates:
-            # Ensure the stem is a suffix match (e.g., "52_Mellon..." matches "Mellon...")
             if stem in c.stem:
                 return c
     return None
@@ -39,32 +34,25 @@ def find_pdf(stem: str, project_root: Path) -> Path | None:
 
 def run_regression_test(
     pdf_path: Path,
-    expected_dir: Path,
-    debug_dir: Path,
+    expected: Path,
+    debug: Path,
 ) -> bool:
-    """
-    Run the extractor on a PDF and compare against expected CSVs.
-
-    Regenerates debug CSVs via render_debug, then compares them against
-    expected outputs. Returns True if all expected files match.
-    """
+    """Run the extractor on a PDF and compare against expected CSVs."""
     ext = SpatialTableExtractor()
-
-    # Regenerate debug CSVs (skip the annotated PDF for speed)
-    ext.render_debug(pdf_path, debug_dir, csv_only=True)
+    ext.render_debug(pdf_path, debug, csv_only=True)
 
     stem = pdf_path.stem
-    actual_dir = debug_dir / stem
+    actual_dir = debug / stem
 
     all_passed = True
-    expected_files = sorted(expected_dir.glob("P*T*.csv"))
+    expected_files = sorted(expected.glob("P*T*.csv"))
 
     if not expected_files:
-        print(f"  No expected files found in {expected_dir}")
+        print(f"  No expected files found in {expected}")
         return True
 
     for expected_path in expected_files:
-        tag = expected_path.stem  # e.g., "P0T1"
+        tag = expected_path.stem
 
         actual_path = actual_dir / expected_path.name
         if not actual_path.exists():
@@ -81,11 +69,10 @@ def run_regression_test(
             print(f"  FAIL {tag}")
             all_passed = False
 
-            # Show first difference
-            for i, (actual, expected) in enumerate(zip(actual_rows, expected_rows)):
-                if actual != expected:
+            for i, (actual, expected_row) in enumerate(zip(actual_rows, expected_rows)):
+                if actual != expected_row:
                     print(f"    Row {i} differs:")
-                    print(f"      expected: {expected}")
+                    print(f"      expected: {expected_row}")
                     print(f"      actual:   {actual}")
                     break
             if len(actual_rows) != len(expected_rows):
@@ -94,21 +81,24 @@ def run_regression_test(
     return all_passed
 
 
-def generate_all_debug_pdfs(project_root: Path, debug_dir: Path) -> None:
-    """Generate debug output (CSVs + annotated PDFs) for all split PDFs."""
+def generate_all_debug_pdfs(year: int) -> None:
+    """Generate debug output (CSVs + annotated PDFs) for all split PDFs of a year."""
     ext = SpatialTableExtractor()
-    all_pdfs = sorted(
-        pdf for input_dir in INPUT_DIRS
-        for pdf in (project_root / input_dir).glob("*.pdf")
-    )
+    all_pdfs = []
+    for budget_type in ("operating", "capital"):
+        pdf_dir = split_pdf_dir(year, budget_type)
+        if pdf_dir.exists():
+            all_pdfs.extend(sorted(pdf_dir.glob("*.pdf")))
+
     if not all_pdfs:
-        print("No PDFs found in input directories.")
+        print(f"No PDFs found for year {year}.")
         return
 
+    dbg = debug_dir(year)
     for pdf_path in all_pdfs:
         print(f"Generating debug for {pdf_path.name}...")
         try:
-            ext.render_debug(pdf_path, debug_dir, csv_only=False)
+            ext.render_debug(pdf_path, dbg, csv_only=False)
         except Exception as e:
             print(f"  ERROR: {e}")
 
@@ -118,53 +108,60 @@ def generate_all_debug_pdfs(project_root: Path, debug_dir: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run regression tests for the spatial table extractor.")
     parser.add_argument("--pdf", action="store_true", help="Generate annotated debug PDFs for all split PDFs")
+    parser.add_argument("--year", type=int, default=None, help="Test a specific year (default: all years)")
     args = parser.parse_args()
 
-    project_root = Path(__file__).resolve().parent.parent
-    expected_root = project_root / "output" / "regression" / "expected"
-    debug_dir = project_root / "output" / "regression" / "debug"
-
-    # When --pdf is passed, generate debug output for ALL split PDFs first
-    if args.pdf:
-        generate_all_debug_pdfs(project_root, debug_dir)
-
-    if not expected_root.exists():
-        print("No expected directory found.")
+    years = [args.year] if args.year else available_years()
+    if not years:
+        print("No budget years found.")
         return
 
-    # Scan budget-type subdirectories (operating/, capital/) for test cases
+    if args.pdf:
+        for year in years:
+            generate_all_debug_pdfs(year)
+
     all_passed = True
     total_stems = 0
 
-    for budget_type_dir in sorted(expected_root.iterdir()):
-        if not budget_type_dir.is_dir():
+    for year in years:
+        year_expected = expected_dir(year)
+        if not year_expected.exists():
             continue
 
-        budget_type = budget_type_dir.name
-        stems = sorted(
-            d.name for d in budget_type_dir.iterdir()
-            if d.is_dir() and any(d.glob("P*T*.csv"))
-        )
+        print(f"\n{'='*60}")
+        print(f"  YEAR {year}")
+        print(f"{'='*60}")
 
-        if not stems:
-            continue
-
-        print(f"\n=== {budget_type.upper()} BUDGET ===")
-        total_stems += len(stems)
-
-        for stem in stems:
-            pdf_path = find_pdf(stem, project_root)
-            if not pdf_path:
-                print(f"WARNING: PDF not found for {stem}")
+        for budget_type_dir in sorted(year_expected.iterdir()):
+            if not budget_type_dir.is_dir():
                 continue
 
-            print(f"Testing {stem} ({pdf_path.name})...")
-            try:
-                if not run_regression_test(pdf_path, budget_type_dir / stem, debug_dir):
+            budget_type = budget_type_dir.name
+            stems = sorted(
+                d.name for d in budget_type_dir.iterdir()
+                if d.is_dir() and any(d.glob("P*T*.csv"))
+            )
+
+            if not stems:
+                continue
+
+            print(f"\n=== {budget_type.upper()} BUDGET ===")
+            total_stems += len(stems)
+
+            dbg = debug_dir(year)
+            for stem in stems:
+                pdf = find_pdf(stem, year)
+                if not pdf:
+                    print(f"WARNING: PDF not found for {stem}")
+                    continue
+
+                print(f"Testing {stem} ({pdf.name})...")
+                try:
+                    if not run_regression_test(pdf, budget_type_dir / stem, dbg):
+                        all_passed = False
+                except Exception as e:
+                    print(f"  ERROR: {e}")
                     all_passed = False
-            except Exception as e:
-                print(f"  ERROR: {e}")
-                all_passed = False
 
     if total_stems == 0:
         print("No expected test cases found.")

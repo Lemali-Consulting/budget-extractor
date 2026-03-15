@@ -4,9 +4,7 @@ output/regression/debug/
 output/regression/debug_*
 output/regression/judge_images/
 output/regression/status.json
-input/split-pdf/operating/
-input/split-pdf/capital/
-input/split-pdf/*.pdf
+input/*/split-pdf/
 .env
 .astro/
 .netlify/

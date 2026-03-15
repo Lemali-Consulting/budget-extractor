@@ -3,20 +3,14 @@
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import pypdf
 
-BUDGET_TYPES = {
-    "operating": {
-        "pdf": "input/2026-operating-budget.pdf",
-        "sections": "input/sections-operating.json",
-    },
-    "capital": {
-        "pdf": "input/2026-capital-budget.pdf",
-        "sections": "input/sections-capital.json",
-    },
-}
+from utils.paths import DEFAULT_YEAR, pdf_path, sections_path, split_pdf_dir
 
 
 def sanitize_filename(title: str) -> str:
@@ -27,12 +21,12 @@ def sanitize_filename(title: str) -> str:
     return name
 
 
-def split_pdf(pdf_path: str, sections_path: str, output_dir: str) -> None:
+def split_pdf(pdf_file: str, sections_file: str, output_dir: str) -> None:
     """Split a PDF into sections based on a sections JSON file."""
-    reader = pypdf.PdfReader(pdf_path)
+    reader = pypdf.PdfReader(pdf_file)
     total_pages = len(reader.pages)
 
-    with open(sections_path) as f:
+    with open(sections_file) as f:
         sections: list[dict] = json.load(f)
 
     output = Path(output_dir)
@@ -63,17 +57,22 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Split a budget PDF into section PDFs.")
     parser.add_argument(
         "--budget-type",
-        choices=list(BUDGET_TYPES.keys()),
+        choices=["operating", "capital"],
         default="operating",
         help="Which budget to split (default: operating)",
     )
+    parser.add_argument(
+        "--year",
+        type=int,
+        default=DEFAULT_YEAR,
+        help=f"Budget year (default: {DEFAULT_YEAR})",
+    )
     args = parser.parse_args()
 
-    config = BUDGET_TYPES[args.budget_type]
     split_pdf(
-        pdf_path=config["pdf"],
-        sections_path=config["sections"],
-        output_dir=f"input/split-pdf/{args.budget_type}",
+        pdf_file=str(pdf_path(args.year, args.budget_type)),
+        sections_file=str(sections_path(args.year, args.budget_type)),
+        output_dir=str(split_pdf_dir(args.year, args.budget_type)),
     )
 
 
