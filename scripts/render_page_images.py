@@ -8,10 +8,13 @@ Supports both operating and capital budget types.
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 
-INPUT_DIR = Path(__file__).parent.parent / "input"
-EXPECTED_DIR = Path(__file__).parent.parent / "output" / "regression" / "expected"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from utils.paths import DEFAULT_YEAR, expected_dir, input_dir, sections_path, split_pdf_dir
+
 WEB_PUBLIC_DIR = Path(__file__).parent.parent / "web" / "public" / "pages"
 
 DIR_PATTERN = re.compile(r"^(\d+)_(.+)$")
@@ -22,13 +25,13 @@ def slugify(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
 
 
-def render_budget_type(budget_type: str) -> int:
+def render_budget_type(budget_type: str, year: int = DEFAULT_YEAR) -> int:
     """Render page images for a single budget type. Returns total image count."""
     import fitz  # PyMuPDF
 
-    sections_file = INPUT_DIR / f"sections-{budget_type}.json"
-    expected_dir = EXPECTED_DIR / budget_type
-    split_pdf_dir = INPUT_DIR / "split-pdf" / budget_type
+    sections_file = sections_path(year, budget_type)
+    exp_dir = expected_dir(year, budget_type)
+    split_dir = split_pdf_dir(year, budget_type)
 
     if not sections_file.exists():
         print(f"  SKIP {budget_type}: no sections file at {sections_file}")
@@ -43,8 +46,8 @@ def render_budget_type(budget_type: str) -> int:
     total_images = 0
 
     # Determine source directories: expected dir (if it exists) or split-pdf dir
-    if expected_dir.exists():
-        source_dirs = sorted(expected_dir.iterdir())
+    if exp_dir.exists():
+        source_dirs = sorted(exp_dir.iterdir())
     else:
         # For budget types without expected CSVs, derive from split PDFs directly
         source_dirs = []
@@ -64,32 +67,32 @@ def render_budget_type(budget_type: str) -> int:
             slug = slugify(title)
 
             # Find the split PDF
-            pdf_path = None
-            for candidate in split_pdf_dir.glob(f"*{dir_path.name}*.pdf"):
+            found_pdf = None
+            for candidate in split_dir.glob(f"*{dir_path.name}*.pdf"):
                 if dir_path.name in candidate.stem:
-                    pdf_path = candidate
+                    found_pdf = candidate
                     break
 
-            if not pdf_path or not pdf_path.exists():
+            if not found_pdf or not found_pdf.exists():
                 print(f"  SKIP {dir_path.name}: no PDF found")
                 continue
 
-            total_images += _render_pdf(pdf_path, slug)
+            total_images += _render_pdf(found_pdf, slug)
     else:
         # No expected dir — render all split PDFs directly
-        if not split_pdf_dir.exists():
-            print(f"  SKIP {budget_type}: no split PDFs at {split_pdf_dir}")
+        if not split_dir.exists():
+            print(f"  SKIP {budget_type}: no split PDFs at {split_dir}")
             return 0
 
-        for pdf_path in sorted(split_pdf_dir.glob("*.pdf")):
-            match = DIR_PATTERN.match(pdf_path.stem)
+        for found_pdf in sorted(split_dir.glob("*.pdf")):
+            match = DIR_PATTERN.match(found_pdf.stem)
             if not match:
                 continue
             section_num = int(match.group(1))
             section_info = sections_lookup.get(section_num, {})
             title = section_info.get("title", match.group(2).replace("_", " "))
             slug = slugify(title)
-            total_images += _render_pdf(pdf_path, slug)
+            total_images += _render_pdf(found_pdf, slug)
 
     return total_images
 
@@ -130,6 +133,12 @@ def main() -> None:
         default="all",
         help="Which budget type to render (default: all)",
     )
+    parser.add_argument(
+        "--year",
+        type=int,
+        default=DEFAULT_YEAR,
+        help=f"Budget year (default: {DEFAULT_YEAR})",
+    )
     args = parser.parse_args()
 
     budget_types = ["operating", "capital"] if args.budget_type == "all" else [args.budget_type]
@@ -137,7 +146,7 @@ def main() -> None:
     total = 0
     for bt in budget_types:
         print(f"\n=== {bt.upper()} BUDGET ===")
-        total += render_budget_type(bt)
+        total += render_budget_type(bt, args.year)
 
     print(f"\nRendered {total} total page images to {WEB_PUBLIC_DIR}")
 

@@ -17,13 +17,23 @@ from pathlib import Path
 # Allow importing from project root
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-INPUT_DIR = Path(__file__).parent.parent / "input"
-OPERATING_OUTPUT_DIR = Path(__file__).parent.parent / "output" / "regression" / "expected" / "operating"
-CAPITAL_OUTPUT_DIR = Path(__file__).parent.parent / "output" / "regression" / "expected" / "capital"
-GLOSSARY_PATH = Path(__file__).parent.parent / "output" / "glossary" / "glossary.json"
-PDF_PATH = INPUT_DIR / "2026-operating-budget.pdf"
-CAPITAL_SPLIT_DIR = INPUT_DIR / "split-pdf" / "capital"
-WEB_DATA_DIR = Path(__file__).parent.parent / "web" / "src" / "data"
+from utils.paths import (
+    DEFAULT_YEAR,
+    expected_dir,
+    glossary_path,
+    input_dir,
+    pdf_path,
+    split_pdf_dir,
+    web_data_dir,
+)
+
+INPUT_DIR = input_dir(DEFAULT_YEAR)
+OPERATING_OUTPUT_DIR = expected_dir(DEFAULT_YEAR, "operating")
+CAPITAL_OUTPUT_DIR = expected_dir(DEFAULT_YEAR, "capital")
+GLOSSARY_PATH = glossary_path()
+PDF_PATH = pdf_path(DEFAULT_YEAR, "operating")
+CAPITAL_SPLIT_DIR = split_pdf_dir(DEFAULT_YEAR, "capital")
+WEB_DATA_DIR = web_data_dir()
 
 # Pattern to extract section number and name from directory names like "10_City_Council"
 DIR_PATTERN = re.compile(r"^(\d+)_(.+)$")

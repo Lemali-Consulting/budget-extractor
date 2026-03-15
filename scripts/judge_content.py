@@ -15,7 +15,7 @@ import fitz  # PyMuPDF
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-INPUT_DIRS = ["input/split-pdf"]
+from utils.paths import available_years, split_pdf_dir
 
 JUDGE_PROMPT = """\
 You are evaluating the accuracy of non-table content extracted from a budget PDF page.
@@ -60,15 +60,19 @@ Use FAIL if significant text is missing, text is hallucinated, or charts are und
 """
 
 
-def find_pdf(stem: str, project_root: Path) -> Path | None:
-    """Find a PDF matching the stem across input directories."""
-    for input_dir in INPUT_DIRS:
-        candidates = list((project_root / input_dir).glob(f"*{stem}*.pdf"))
-        if not candidates:
-            candidates = list((project_root / input_dir).glob(f"*_{stem}.pdf"))
-        for c in candidates:
-            if stem in c.stem:
-                return c
+def find_pdf(stem: str) -> Path | None:
+    """Find a PDF matching the stem across budget types and years."""
+    for year in available_years():
+        for budget_type in ("operating", "capital"):
+            pdf_dir = split_pdf_dir(year, budget_type)
+            if not pdf_dir.exists():
+                continue
+            candidates = list(pdf_dir.glob(f"*{stem}*.pdf"))
+            if not candidates:
+                candidates = list(pdf_dir.glob(f"*_{stem}.pdf"))
+            for c in candidates:
+                if stem in c.stem:
+                    return c
     return None
 
 
@@ -204,7 +208,7 @@ async def run(
     minors: list[tuple[str, dict]] = []
 
     for stem in stems:
-        pdf_path = find_pdf(stem, project_root)
+        pdf_path = find_pdf(stem)
         if not pdf_path:
             print(f"  SKIP {stem} (PDF not found)")
             continue

@@ -1,5 +1,6 @@
 """Batch-run the spatial extractor on all split PDFs and flag tables needing manual review."""
 
+import argparse
 import csv
 import re
 import sys
@@ -8,6 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from utils.paths import DEFAULT_YEAR, available_years, debug_dir, expected_dir, split_pdf_dir
 from utils.spatial_table_extractor import SpatialTableExtractor
 
 
@@ -129,20 +131,34 @@ def validate_csv(path: Path, pdf_stem: str, page: int, table: int) -> TableRepor
 
 
 def main() -> None:
-    project_root = Path(__file__).resolve().parent.parent
-    split_pdf_dir = project_root / "input" / "split-pdf"
-    debug_dir = project_root / "output" / "regression" / "debug"
-    expected_dir = project_root / "output" / "regression" / "expected"
+    parser = argparse.ArgumentParser(description="Batch-validate spatial extractor output.")
+    parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
+    args = parser.parse_args()
 
-    if not split_pdf_dir.exists():
-        print("No split-pdf directory found. Run scripts/split_pdf.py first.")
+    year = args.year
+    dbg = debug_dir(year)
+
+    # Collect all split PDFs for this year
+    pdfs = []
+    for budget_type in ("operating", "capital"):
+        pdf_dir = split_pdf_dir(year, budget_type)
+        if pdf_dir.exists():
+            pdfs.extend(sorted(pdf_dir.glob("*.pdf")))
+
+    if not pdfs:
+        print(f"No split PDFs found for year {year}. Run scripts/split_pdf.py first.")
         sys.exit(1)
 
-    pdfs = sorted(split_pdf_dir.glob("*.pdf"))
     print(f"Found {len(pdfs)} split PDFs.\n")
 
     ext = SpatialTableExtractor()
-    already_baselined = {d.name for d in expected_dir.iterdir() if d.is_dir()} if expected_dir.exists() else set()
+
+    # Collect all baselined stems across budget types
+    already_baselined: set[str] = set()
+    for budget_type in ("operating", "capital"):
+        exp = expected_dir(year, budget_type)
+        if exp.exists():
+            already_baselined.update(d.name for d in exp.iterdir() if d.is_dir())
 
     all_reports: list[TableReport] = []
     pdf_summaries: list[tuple[str, int, int, bool]] = []  # (stem, tables, warnings, baselined)
@@ -154,14 +170,14 @@ def main() -> None:
 
         # Generate debug CSVs
         try:
-            ext.render_debug(pdf_path, debug_dir, csv_only=True)
+            ext.render_debug(pdf_path, dbg, csv_only=True)
         except Exception as e:
             print(f"ERROR extracting {stem}: {e}")
             pdf_summaries.append((stem, 0, 1, is_baselined))
             continue
 
         # Find generated CSVs
-        csv_dir = debug_dir / stem
+        csv_dir = dbg / stem
         if not csv_dir.exists():
             pdf_summaries.append((stem, 0, 0, is_baselined))
             continue

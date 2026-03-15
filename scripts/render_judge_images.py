@@ -7,39 +7,55 @@ import fitz
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-INPUT_DIRS = ["input/split-pdf"]
+from utils.paths import available_years, expected_dir, split_pdf_dir
 
 
-def find_pdf(stem: str, project_root: Path) -> Path | None:
-    for input_dir in INPUT_DIRS:
-        candidates = list((project_root / input_dir).glob(f"*{stem}*.pdf"))
-        if not candidates:
-            candidates = list((project_root / input_dir).glob(f"*_{stem}.pdf"))
-        for c in candidates:
-            if stem in c.stem:
-                return c
+def find_pdf(stem: str) -> Path | None:
+    """Find a PDF matching the stem across budget types and years."""
+    for year in available_years():
+        for budget_type in ("operating", "capital"):
+            pdf_dir = split_pdf_dir(year, budget_type)
+            if not pdf_dir.exists():
+                continue
+            candidates = list(pdf_dir.glob(f"*{stem}*.pdf"))
+            if not candidates:
+                candidates = list(pdf_dir.glob(f"*_{stem}.pdf"))
+            for c in candidates:
+                if stem in c.stem:
+                    return c
     return None
 
 
 def main() -> None:
     project_root = Path(__file__).resolve().parent.parent
-    expected_root = project_root / "output" / "regression" / "expected"
     image_dir = project_root / "output" / "regression" / "judge_images"
 
-    stems = sorted(
-        d.name for d in expected_root.iterdir()
-        if d.is_dir() and any(d.glob("P*T*.csv"))
-    )
+    # Collect all stems across years and budget types
+    stems: list[str] = []
+    for year in available_years():
+        for budget_type in ("operating", "capital"):
+            exp = expected_dir(year, budget_type)
+            if exp.exists():
+                stems.extend(
+                    d.name for d in exp.iterdir()
+                    if d.is_dir() and any(d.glob("P*T*.csv"))
+                )
+    stems = sorted(set(stems))
 
     total_images = 0
     for stem in stems:
-        pdf_path = find_pdf(stem, project_root)
+        pdf_path = find_pdf(stem)
         if not pdf_path:
             print(f"WARNING: PDF not found for {stem}")
             continue
 
-        # Find which pages have tables
-        csv_files = sorted((expected_root / stem).glob("P*T*.csv"))
+        # Find which pages have tables — search across all years/types
+        csv_files = []
+        for year in available_years():
+            for budget_type in ("operating", "capital"):
+                stem_dir_candidate = expected_dir(year, budget_type) / stem
+                if stem_dir_candidate.exists():
+                    csv_files.extend(sorted(stem_dir_candidate.glob("P*T*.csv")))
         pages_needed: set[int] = set()
         for csv_file in csv_files:
             tag = csv_file.stem

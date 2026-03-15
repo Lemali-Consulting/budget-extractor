@@ -19,7 +19,7 @@ import fitz  # PyMuPDF
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-INPUT_DIRS = ["input/split-pdf"]
+from utils.paths import DEFAULT_YEAR, available_years, split_pdf_dir
 
 JUDGE_PROMPT = """\
 You are evaluating the accuracy of a table extracted from a budget PDF page.
@@ -44,15 +44,20 @@ ISSUES: (if FAIL, list each issue on its own line prefixed with "- "; if PASS, w
 """
 
 
-def find_pdf(stem: str, project_root: Path) -> Path | None:
-    """Find a PDF matching the stem across input directories."""
-    for input_dir in INPUT_DIRS:
-        candidates = list((project_root / input_dir).glob(f"*{stem}*.pdf"))
-        if not candidates:
-            candidates = list((project_root / input_dir).glob(f"*_{stem}.pdf"))
-        for c in candidates:
-            if stem in c.stem:
-                return c
+def find_pdf(stem: str, year: int | None = None) -> Path | None:
+    """Find a PDF matching the stem across budget types and years."""
+    years = [year] if year else available_years()
+    for y in years:
+        for budget_type in ("operating", "capital"):
+            pdf_dir = split_pdf_dir(y, budget_type)
+            if not pdf_dir.exists():
+                continue
+            candidates = list(pdf_dir.glob(f"*{stem}*.pdf"))
+            if not candidates:
+                candidates = list(pdf_dir.glob(f"*_{stem}.pdf"))
+            for c in candidates:
+                if stem in c.stem:
+                    return c
     return None
 
 
@@ -226,7 +231,7 @@ async def run(
 
     async def judge_with_limit(stem: str) -> tuple[str, list[dict]]:
         async with semaphore:
-            pdf_path = find_pdf(stem, project_root)
+            pdf_path = find_pdf(stem)
             if not pdf_path:
                 print(f"WARNING: PDF not found for {stem}")
                 return stem, []
@@ -407,7 +412,7 @@ def main() -> None:
         total_skip = 0
         for stem in stems:
             csv_files = sorted((expected_root / stem).glob("P*T*.csv"))
-            pdf_path = find_pdf(stem, project_root)
+            pdf_path = find_pdf(stem)
             pdf_label = f"({pdf_path.name})" if pdf_path else "(PDF NOT FOUND)"
 
             if args.judge_all:

@@ -14,7 +14,7 @@ from PIL import Image
 BASE_DIR = Path(__file__).parent.parent
 OUTPUT_DIR = BASE_DIR / "web" / "public" / "charts"
 
-DPI = 150  # render resolution
+DPI = 300  # render resolution (high enough to read map labels and fine text)
 
 
 def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
@@ -74,7 +74,7 @@ def main() -> None:
 
     # Operating budget
     operating_data_path = BASE_DIR / "web" / "src" / "data" / "budget-data.json"
-    operating_pdf_path = BASE_DIR / "input" / "2026-operating-budget.pdf"
+    operating_pdf_path = BASE_DIR / "input" / "2026" / "operating-budget.pdf"
     if operating_data_path.exists():
         data = json.load(open(operating_data_path, encoding="utf-8"))
         count = extract_charts_from_data(data, operating_pdf_path)
@@ -83,7 +83,7 @@ def main() -> None:
 
     # Capital budget
     capital_data_path = BASE_DIR / "web" / "src" / "data" / "capital-budget-data.json"
-    capital_pdf_path = BASE_DIR / "input" / "2026-capital-budget.pdf"
+    capital_pdf_path = BASE_DIR / "input" / "2026" / "capital-budget.pdf"
     if capital_data_path.exists():
         data = json.load(open(capital_data_path, encoding="utf-8"))
         count = extract_charts_from_data(data, capital_pdf_path)
