@@ -72,6 +72,24 @@
     "amount": 20638818.0
   },
   {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "year": "2024 Actual",
+    "amount": 18577094.0
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "year": "2025 Budget",
+    "amount": 22725604.0
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "year": "2026 Budget",
+    "amount": 22303735.0
+  },
+  {
     "department": "Commission on Human Relations",
     "slug": "commission-on-human-relations",
     "year": "2024 Actual",
@@ -106,6 +124,24 @@
     "slug": "office-of-the-city-controller",
     "year": "2026 Budget",
     "amount": 5605384.0
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "year": "2024 Actual",
+    "amount": 183959506.0
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "year": "2025 Budget",
+    "amount": 193056054.0
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "year": "2026 Budget",
+    "amount": 197799537.0
   },
   {
     "department": "Department of Law",
@@ -144,6 +180,24 @@
     "amount": 187735.0
   },
   {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "year": "2024 Actual",
+    "amount": 705524.0
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "year": "2025 Budget",
+    "amount": 765376.0
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "year": "2026 Budget",
+    "amount": 778704.0
+  },
+  {
     "department": "Department of Human Resources and Civil Service",
     "slug": "department-of-human-resources-and-civil-service",
     "year": "2024 Actual",
@@ -178,6 +232,24 @@
     "slug": "department-of-city-planning",
     "year": "2026 Budget",
     "amount": 5256349.0
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "year": "2024 Actual",
+    "amount": 8888223.0
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "year": "2025 Budget",
+    "amount": 11009438.0
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "year": "2026 Budget",
+    "amount": 11146275.0
   },
   {
     "department": "Bureau of Administration (Public Safety)",
@@ -376,6 +448,42 @@
     "slug": "department-of-parks-and-recreation",
     "year": "2026 Budget",
     "amount": 7446545.0
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "year": "2024 Actual",
+    "amount": 11403684.0
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "year": "2025 Budget",
+    "amount": 13664365.0
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "year": "2026 Budget",
+    "amount": 15286603.0
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "year": "2024 Actual",
+    "amount": 791303.0
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "year": "2025 Budget",
+    "amount": 933156.0
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "year": "2026 Budget",
+    "amount": 958962.0
   },
   {
     "department": "HUD Fair Housing Program Trust Fund",
@@ -604,5 +712,11 @@
     "slug": "frick-park-trust-fund",
     "year": "2026 Budget",
     "amount": 729725.0
+  },
+  {
+    "department": "Appendices",
+    "slug": "appendices",
+    "year": "2026 Budget",
+    "amount": 3473832.0
   }
 ]

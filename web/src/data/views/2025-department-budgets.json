@@ -72,6 +72,24 @@
     "amount": 21188171.0
   },
   {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "year": "2023 Actual",
+    "amount": 17376800.0
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "year": "2024 Budget",
+    "amount": 22444776.0
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "year": "2025 Budget",
+    "amount": 22725604.0
+  },
+  {
     "department": "Commission on Human Relations",
     "slug": "commission-on-human-relations",
     "year": "2023 Actual",
@@ -106,6 +124,24 @@
     "slug": "office-of-the-city-controller",
     "year": "2025 Budget",
     "amount": 5402279.0
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "year": "2023 Actual",
+    "amount": 177731294.0
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "year": "2024 Budget",
+    "amount": 190894635.0
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "year": "2025 Budget",
+    "amount": 193056054.0
   },
   {
     "department": "Department of Law",
@@ -144,6 +180,24 @@
     "amount": 190695.0
   },
   {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "year": "2023 Actual",
+    "amount": 693857.0
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "year": "2024 Budget",
+    "amount": 752314.0
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "year": "2025 Budget",
+    "amount": 765377.0
+  },
+  {
     "department": "Department of Human Resources and Civil Service",
     "slug": "department-of-human-resources-and-civil-service",
     "year": "2023 Actual",
@@ -178,6 +232,24 @@
     "slug": "department-of-city-planning",
     "year": "2025 Budget",
     "amount": 4936342.0
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "year": "2023 Actual",
+    "amount": 8449316.0
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "year": "2024 Budget",
+    "amount": 10100395.0
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "year": "2025 Budget",
+    "amount": 11009437.0
   },
   {
     "department": "Bureau of Administration (Public Safety)",
@@ -376,6 +448,42 @@
     "slug": "department-of-parks-and-recreation",
     "year": "2025 Budget",
     "amount": 8886563.0
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "year": "2023 Actual",
+    "amount": 10195504.0
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "year": "2024 Budget",
+    "amount": 11767763.0
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "year": "2025 Budget",
+    "amount": 13664365.0
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "year": "2023 Actual",
+    "amount": 715676.0
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "year": "2024 Budget",
+    "amount": 914154.0
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "year": "2025 Budget",
+    "amount": 933156.0
   },
   {
     "department": "HUD Fair Housing Program Trust Fund",

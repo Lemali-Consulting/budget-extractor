@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.paths import (
     DEFAULT_YEAR,
+    available_years,
     expected_dir,
     glossary_path,
     input_dir,
@@ -714,7 +715,8 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
                 continue
 
             # Find a "total" row — prefer "Expenditures Total" over generic totals,
-            # and skip total rows where all budget values are zero/dash
+            # and skip total rows where all budget values are zero/dash.
+            # Fall back to unlabeled last row (common in department expenditure tables).
             best_total: list | None = None
             for row in table["rows"]:
                 label = (row[0] if row else "").lower()
@@ -732,6 +734,19 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
                     break  # This is the best match, stop looking
                 if best_total is None:
                     best_total = row
+
+            # Fallback: last row with empty label but parseable amounts
+            # (unlabeled grand total, common in department expenditure detail tables)
+            if best_total is None and table["rows"]:
+                last_row = table["rows"][-1]
+                label = (last_row[0] if last_row else "").strip()
+                if not label:
+                    has_amount = any(
+                        parse_currency(last_row[col["idx"]] if col["idx"] < len(last_row) else "") is not None
+                        for col in budget_cols
+                    )
+                    if has_amount:
+                        best_total = last_row
             if best_total:
                 for col in budget_cols:
                     amount = parse_currency(best_total[col["idx"]] if col["idx"] < len(best_total) else "")
@@ -1557,6 +1572,195 @@ def build_glossary_backlinks(
             }
 
     return backlinks
+
+
+def build_structure_changes() -> dict:
+    """Compare operating budget sections across all available years.
+
+    Detects sections that were added, removed, or renamed between years,
+    using manual annotations from input/section-mappings.json to distinguish
+    renames from true eliminations.
+    """
+    from utils.paths import PROJECT_ROOT
+
+    years = sorted(available_years())
+    if len(years) < 2:
+        return {"availableYears": years, "operatingSections": []}
+
+    # Load section titles for each year
+    sections_by_year: dict[int, list[str]] = {}
+    for year in years:
+        sp = sections_path(year, "operating")
+        if sp.exists():
+            with open(sp, encoding="utf-8") as f:
+                sections_by_year[year] = [s["title"] for s in json.load(f)]
+
+    years = sorted(sections_by_year.keys())
+    if len(years) < 2:
+        return {"availableYears": years, "operatingSections": []}
+
+    # Load manual mappings
+    mappings_path = PROJECT_ROOT / "input" / "section-mappings.json"
+    mappings: list[dict] = []
+    if mappings_path.exists():
+        with open(mappings_path, encoding="utf-8") as f:
+            mappings = json.load(f)
+
+    # Build rename lookup: old_title -> mapping
+    rename_from: dict[str, dict] = {}
+    rename_to: dict[str, dict] = {}
+    for m in mappings:
+        if m["type"] == "rename":
+            rename_from[m["from"]] = m
+            rename_to[m["to"]] = m
+
+    # Build reorganization lookup: old_title -> mapping
+    reorg_from: dict[str, dict] = {}
+    for m in mappings:
+        if m["type"] == "reorganization":
+            reorg_from[m["from"]] = m
+
+    # Collect all unique section titles across all years
+    all_titles: set[str] = set()
+    for titles in sections_by_year.values():
+        all_titles.update(titles)
+
+    # For each title, determine which years it appears in
+    sections_output: list[dict] = []
+    handled_titles: set[str] = set()
+
+    for title in sorted(all_titles):
+        if title in handled_titles:
+            continue
+
+        present_years = sorted(y for y in years if title in sections_by_year[y])
+
+        # Check if this is a rename target (the "to" side) — skip, handled with "from"
+        if title in rename_to:
+            continue
+
+        # Check if this was renamed to something else
+        if title in rename_from:
+            mapping = rename_from[title]
+            new_title = mapping["to"]
+            handled_titles.add(new_title)
+            new_present = sorted(y for y in years if new_title in sections_by_year[y])
+            sections_output.append({
+                "title": title,
+                "currentTitle": new_title,
+                "presentInYears": present_years,
+                "currentPresentInYears": new_present,
+                "changeType": "renamed",
+                "slug": slugify(title),
+                "currentSlug": slugify(new_title),
+            })
+            continue
+
+        # Check if this was reorganized (absorbed into another section)
+        if title in reorg_from:
+            mapping = reorg_from[title]
+            entry: dict = {
+                "title": title,
+                "presentInYears": present_years,
+                "changeType": "reorganization",
+                "slug": slugify(title),
+                "absorbedBy": mapping["absorbed_by"],
+                "absorbedBySlug": slugify(mapping["absorbed_by"]),
+            }
+            if mapping.get("note"):
+                entry["note"] = mapping["note"]
+            sections_output.append(entry)
+            continue
+
+        # Regular section — present in some or all years
+        if set(present_years) == set(years):
+            change_type = "unchanged"
+        elif min(present_years) == min(years):
+            # Present in earliest year but not latest — removed
+            change_type = "removed"
+        else:
+            # Not in earliest year — added
+            change_type = "added"
+
+        entry = {
+            "title": title,
+            "presentInYears": present_years,
+            "changeType": change_type,
+            "slug": slugify(title),
+        }
+        sections_output.append(entry)
+
+    # Now enrich removed/reorganized sections with last known budget & FTE
+    # by loading their extracted data
+    for entry in sections_output:
+        if entry["changeType"] not in ("removed", "reorganization"):
+            continue
+
+        last_year = max(entry["presentInYears"])
+        output_dir = expected_dir(last_year, "operating")
+        if not output_dir.exists():
+            continue
+
+        # Find the section's CSV directory
+        section_dir = None
+        for d in sorted(output_dir.iterdir()):
+            if d.is_dir() and slugify(d.name.split("_", 1)[1] if "_" in d.name else d.name) == entry["slug"]:
+                section_dir = d
+                break
+
+        if not section_dir:
+            continue
+
+        # Parse CSVs to find budget total
+        for csv_path in sorted(section_dir.glob("*.csv")):
+            parsed = parse_csv(csv_path)
+            headers = parsed.get("headers", [])
+            table_type = classify_table(headers, entry["title"])
+
+            if table_type in ("financial_summary", "financial"):
+                # Find the budget column for the last year
+                col_idx = next(
+                    (i for i, h in enumerate(headers) if str(last_year) in h and "Budget" in h),
+                    -1,
+                )
+                # Also try "Actual" if no budget column
+                if col_idx < 0:
+                    col_idx = next(
+                        (i for i, h in enumerate(headers) if str(last_year) in h and "Actual" in h),
+                        -1,
+                    )
+                if col_idx >= 0:
+                    for row in parsed.get("rows", []):
+                        label = (row[0] if row else "").strip().lower()
+                        if label in ("expenditures total", "total expenditures", "total"):
+                            amount = parse_currency(row[col_idx] if col_idx < len(row) else "")
+                            if amount:
+                                entry["lastBudget"] = amount
+                                entry["lastBudgetYear"] = last_year
+                            break
+
+            if table_type == "personnel":
+                headers_lower = [h.lower() for h in headers]
+                fte_col = next(
+                    (i for i, h in enumerate(headers_lower) if str(last_year) in h and "fte" in h),
+                    -1,
+                )
+                if fte_col >= 0:
+                    for row in parsed.get("rows", []):
+                        if (row[0] if row else "").strip().lower() == "total full-time permanent positions":
+                            fte = parse_currency(row[fte_col] if fte_col < len(row) else "")
+                            if fte:
+                                entry["lastFte"] = fte
+                            break
+
+    # Sort: reorganizations and removed first (most interesting), then renamed, then added
+    type_order = {"reorganization": 0, "removed": 1, "added": 2, "renamed": 3, "unchanged": 4}
+    sections_output.sort(key=lambda x: (type_order.get(x["changeType"], 5), x["title"]))
+
+    return {
+        "availableYears": years,
+        "operatingSections": sections_output,
+    }
 
 
 def main() -> None:
