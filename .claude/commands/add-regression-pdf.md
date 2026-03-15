@@ -24,6 +24,16 @@ ext.render_debug('input/{year}/split-pdf/{budget_type}/<file>.pdf', 'output/regr
 
 After generation, list the files produced in `output/regression/debug/{year}/<pdf_stem>/`.
 
+## Phase 1b: Validate Extraction
+
+Run structural validation on the extracted CSVs:
+
+```bash
+python3 scripts/validate_data.py structural --year {year} --source debug
+```
+
+Review any ERROR or WARN findings for this PDF's tables. If there are structural issues (header/data column mismatch, year header mismatch, missing totals), flag them to the user before proceeding to visual inspection.
+
 ## Phase 2: Inspect Outputs
 
 For each page that produced tables:

@@ -1,0 +1,15 @@
+{
+  "suppress": [
+    "STRUCTURAL:05_Revenue_Summary/P2T0:year headers ['2020', '2021', '2022', '2023', '202",
+    "STRUCTURAL:24_Bureau_of_Administration_Public_Safety/P10T0:header has 7 cols, data has 6 (1 extra)",
+    "STRUCTURAL:24_Bureau_of_Administration_Public_Safety/P11T0:header has 7 cols, data has 6 (1 extra)",
+    "STRUCTURAL:25_Bureau_of_Emergency_Medical_Services/P6T0:header has 7 cols, data has 6 (1 extra)",
+    "STRUCTURAL:26_Bureau_of_Police/P9T0:header has 7 cols, data has 6 (1 extra)",
+    "STRUCTURAL:34_Bureau_of_Facilities/P4T0:header has 7 cols, data has 6 (1 extra)",
+    "STRUCTURAL:39_EEOC_Trust_Fund/P0T1:header has 6 cols, data has 5 (1 extra)",
+    "STRUCTURAL:44_Stop_the_Violence_Trust_Fund/P3T0:header has 10 cols, data has 9 (1 extra)",
+    "STRUCTURAL:45_Liquid_Fuels_Trust_Fund/P0T1:header has 6 cols, data has 5 (1 extra)",
+    "STRUCTURAL:47_Public_Works_Trust_Fund/P0T1:header has 6 cols, data has 5 (1 extra)",
+    "STRUCTURAL:63_Master_Fee_Schedule/P21T0:year headers [] don't match document year 2026"
+  ]
+}

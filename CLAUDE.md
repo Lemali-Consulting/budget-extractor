@@ -104,8 +104,15 @@ The web app is deployed as a static site to Netlify via manual CLI deploy (not g
 
 **Deploy alongside every git push** by running:
 ```bash
-# Regenerate images (WebP) from source PDFs, then build and deploy
-python3 scripts/render_page_images.py && python3 scripts/extract_chart_images.py && cd web && npm test && npm run build && source ../.env && export NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID=11c41143-d0e2-4a28-9dde-10e173bf230f && npx netlify deploy --dir=dist --prod
+# 1. Build data for both years
+python3 scripts/build_web_data.py --year 2026 && python3 scripts/build_web_data.py --year 2025 --output-prefix 2025 \
+# 2. Validate (errors block deploy)
+&& python3 scripts/validate_data.py all --year 2026 \
+# 3. Regenerate images, build, and deploy
+&& python3 scripts/render_page_images.py && python3 scripts/extract_chart_images.py \
+&& cd web && npm run build \
+&& source ../.env && export NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID=11c41143-d0e2-4a28-9dde-10e173bf230f \
+&& npx netlify deploy --dir=dist --prod
 ```
 
 # Playwright MCP Server
