@@ -57,6 +57,8 @@ Conventions:
 - Plans should be updated as work progresses (especially the status field)
 - Root-level docs (`README.md`, `CLAUDE.md`) are for quick-reference project info; detailed analysis goes in `docs/`
 
+When a decision is made, a plan is formed, or an audit is needed, proactively use the corresponding `/decision`, `/plan`, or `/audit` skill without waiting for the user to invoke it. If the conversation produces a concrete choice between alternatives, record it as a decision. If it produces a design for upcoming work, record it as a plan.
+
 # Coding Guidance
 
 - In every subdirectory, create a small README.md file 2-3 sentences long that describes the content of the directory
