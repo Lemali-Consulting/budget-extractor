@@ -11,10 +11,12 @@ interface SearchItem {
   tableType: string;
   headers: string;
   narrative: string;
+  lineItems: string;
   page: number;
   label?: string;
   tableIndex: number;
   budgetType?: string;
+  href?: string;
 }
 
 interface Props {
@@ -77,6 +79,7 @@ export default function SearchBar({ items }: Props) {
         { name: 'sectionTitle', weight: 2 },
         { name: 'headers', weight: 1.5 },
         { name: 'narrative', weight: 1 },
+        { name: 'lineItems', weight: 0.8 },
       ],
       threshold: 0.3,
       includeMatches: true,
@@ -108,8 +111,7 @@ export default function SearchBar({ items }: Props) {
         e.preventDefault();
         if (activeIndex >= 0 && activeIndex < results.length) {
           const item = results[activeIndex].item;
-          const isCapital = item.budgetType === 'capital';
-          window.location.href = isCapital ? `/capital/${item.slug}/` : `/sections/${item.slug}/`;
+          window.location.href = getItemHref(item);
         }
         break;
       case 'Escape':
@@ -119,6 +121,18 @@ export default function SearchBar({ items }: Props) {
         break;
     }
   }
+
+  function getItemHref(item: SearchItem): string {
+    if (item.href) return item.href;
+    if (item.budgetType === 'capital') return `/capital/${item.slug}/`;
+    return `/sections/${item.slug}/`;
+  }
+
+  const budgetTypeLabels: Record<string, { text: string; bg: string; fg: string }> = {
+    capital: { text: 'Capital', bg: 'bg-blue-100', fg: 'text-blue-700' },
+    glossary: { text: 'Glossary', bg: 'bg-purple-100', fg: 'text-purple-700' },
+    changes: { text: 'Changes', bg: 'bg-amber-100', fg: 'text-amber-700' },
+  };
 
   // Scroll active option into view
   if (listRef.current && activeIndex >= 0) {
@@ -160,13 +174,17 @@ export default function SearchBar({ items }: Props) {
         >
           {results.map(({ item, matches }, index) => {
             const narrativeMatch = matches?.find(m => m.key === 'narrative');
+            const lineItemsMatch = matches?.find(m => m.key === 'lineItems');
             const titleMatch = matches?.find(m => m.key === 'sectionTitle');
-            const isCapital = item.budgetType === 'capital';
-            const href = isCapital ? `/capital/${item.slug}/` : `/sections/${item.slug}/`;
+            const href = getItemHref(item);
+            const badge = item.budgetType ? budgetTypeLabels[item.budgetType] : undefined;
             const isActive = index === activeIndex;
+            // Show the best content match (narrative or line items)
+            const contentMatch = narrativeMatch && item.narrative ? narrativeMatch : null;
+            const lineMatch = lineItemsMatch && item.lineItems ? lineItemsMatch : null;
             return (
               <a
-                key={item.tableId || item.slug}
+                key={`${item.tableId || item.slug}-${index}`}
                 id={`search-option-${index}`}
                 role="option"
                 aria-selected={isActive}
@@ -174,7 +192,7 @@ export default function SearchBar({ items }: Props) {
                 class={`block px-4 py-2 border-b last:border-b-0 ${isActive ? 'bg-blue-100' : 'hover:bg-blue-50'}`}
               >
                 <div class="font-medium text-sm">
-                  {isCapital && <span class="text-xs px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded mr-2">Capital</span>}
+                  {badge && <span class={`text-xs px-1.5 py-0.5 ${badge.bg} ${badge.fg} rounded mr-2`}>{badge.text}</span>}
                   {highlightMatches(item.sectionTitle, titleMatch?.indices as [number, number][] | undefined)}
                 </div>
                 {item.tableIndex >= 0 && (
@@ -185,9 +203,14 @@ export default function SearchBar({ items }: Props) {
                     </span>
                   </div>
                 )}
-                {narrativeMatch && item.narrative && (
+                {contentMatch && (
                   <div class="text-xs text-gray-400 mt-0.5 line-clamp-1 italic">
-                    {highlightMatches(item.narrative, narrativeMatch.indices as [number, number][] | undefined, 120)}
+                    {highlightMatches(item.narrative, contentMatch.indices as [number, number][] | undefined, 120)}
+                  </div>
+                )}
+                {!contentMatch && lineMatch && (
+                  <div class="text-xs text-gray-400 mt-0.5 line-clamp-1">
+                    {highlightMatches(item.lineItems, lineMatch.indices as [number, number][] | undefined, 120)}
                   </div>
                 )}
               </a>

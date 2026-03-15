@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import SearchBar from '../components/SearchBar.tsx';
+import searchIndex from '../data/views/search-index.json';
 import DepartmentCompare from '../components/DepartmentCompare.tsx';
 import departmentBudgets from '../data/views/department-budgets.json';
 import personnelByDept from '../data/views/personnel-by-department.json';
@@ -7,7 +9,11 @@ import personnelByDept from '../data/views/personnel-by-department.json';
 
 <Base title="Compare Departments" description="Compare budgets, staffing, and trends across Pittsburgh city departments side by side.">
   <h1 class="text-3xl font-bold mb-2">Compare Departments</h1>
-  <p class="text-gray-600 mb-6">Select 2-4 departments to compare budgets, staffing, and year-over-year changes side by side.</p>
+  <p class="text-gray-600 mb-4">Select 2-4 departments to compare budgets, staffing, and year-over-year changes side by side.</p>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} client:load />
+  </div>
 
   <DepartmentCompare
     client:load

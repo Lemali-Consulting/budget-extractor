@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import SearchBar from '../components/SearchBar.tsx';
+import searchIndex from '../data/views/search-index.json';
 import budgetData from '../data/budget-data.json';
 import backlinksData from '../data/views/glossary-backlinks.json';
 
@@ -104,7 +106,11 @@ function normalizeSection(key: string): GlossaryEntry[] {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">Budget Glossary</h1>
-  <p class="text-gray-600 mb-6">Terms, codes, abbreviations, and structure from the City of Pittsburgh FY2026 Operating and Capital Budgets.</p>
+  <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh FY2026 Operating and Capital Budgets.</p>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} client:load />
+  </div>
 
   <nav class="mb-8 border rounded-lg bg-white p-4">
     <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">On this page</h2>

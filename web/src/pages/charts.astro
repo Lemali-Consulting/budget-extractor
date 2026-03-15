@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import SearchBar from '../components/SearchBar.tsx';
+import searchIndex from '../data/views/search-index.json';
 import BudgetChart from '../components/BudgetChart.tsx';
 import WaterfallChart from '../components/WaterfallChart.tsx';
 import FundingSourceChart from '../components/FundingSourceChart.tsx';
@@ -42,7 +44,11 @@ function fmtM(n: number): string {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">FY2026 Budget Dashboard</h1>
-  <p class="text-gray-600 mb-6">City of Pittsburgh budget at a glance — operating, capital, and personnel.</p>
+  <p class="text-gray-600 mb-4">City of Pittsburgh budget at a glance — operating, capital, and personnel.</p>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} client:load />
+  </div>
 
   <!-- Summary stats -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">

@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SearchBar from '../../components/SearchBar.tsx';
 import capitalData from '../../data/capital-budget-data.json';
+import searchIndex from '../../data/views/search-index.json';
 import FundingSourceChart from '../../components/FundingSourceChart.tsx';
 import capitalFunding from '../../data/views/capital-funding-sources.json';
 
@@ -52,6 +54,11 @@ for (const section of sections) {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">Capital Budget & Six Year Plan</h1>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} client:load />
+  </div>
+
   <p class="text-gray-600 mb-6">
     City of Pittsburgh FY2026 Capital Budget.
     {sections.length} projects across {grouped.size} functional areas.

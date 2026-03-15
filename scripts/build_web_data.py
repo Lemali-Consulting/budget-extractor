@@ -816,18 +816,34 @@ def build_tables_index(sections: list[dict], budget_type: str = "operating") -> 
     return items
 
 
+def _extract_section_narrative(section: dict) -> str:
+    """Extract narrative text from a section's page_content text_blocks."""
+    snippets: list[str] = []
+    for page in section.get("page_content", []):
+        for block in page.get("text_blocks", []):
+            if block["role"] in ("narrative", "leading_prose", "trailing_prose"):
+                snippets.append(block["text"][:200])
+    return " ".join(snippets)[:500]
+
+
+def _extract_line_items(table: dict) -> str:
+    """Extract first-column values from table rows as searchable line items."""
+    items: list[str] = []
+    for row in table.get("rows", []):
+        if row and row[0].strip():
+            label = row[0].strip()
+            # Skip totals and blank-ish rows
+            if label.upper() not in ("TOTAL", "TOTAL:", "GRAND TOTAL", "GRAND TOTAL:"):
+                items.append(label)
+    return " | ".join(items)[:500]
+
+
 def build_search_index(sections: list[dict]) -> list[dict]:
-    """Build a lightweight search index — section titles, table headers, and narrative snippets."""
+    """Build a lightweight search index — section titles, table headers, narrative, and line items."""
     items: list[dict] = []
 
     for section in sections:
-        # Collect narrative text for section-level search
-        narrative_snippets: list[str] = []
-        for page in section.get("page_content", []):
-            for block in page.get("text_blocks", []):
-                if block["role"] in ("narrative", "leading_prose", "trailing_prose"):
-                    # Take first 200 chars of each block for search
-                    narrative_snippets.append(block["text"][:200])
+        narrative = _extract_section_narrative(section)
 
         # Section-level entry with narrative text for searching
         items.append({
@@ -836,7 +852,8 @@ def build_search_index(sections: list[dict]) -> list[dict]:
             "tableId": "",
             "tableType": "",
             "headers": "",
-            "narrative": " ".join(narrative_snippets)[:500],
+            "narrative": narrative,
+            "lineItems": "",
             "page": 0,
             "tableIndex": -1,
         })
@@ -855,9 +872,194 @@ def build_search_index(sections: list[dict]) -> list[dict]:
                 "label": label,
                 "headers": " ".join(table["headers"]),
                 "narrative": table_narrative[:500],
+                "lineItems": _extract_line_items(table),
                 "page": table["relative_page"],
                 "tableIndex": table["table_index"],
             })
+
+    return items
+
+
+def build_capital_search_items(capital_sections: list[dict]) -> list[dict]:
+    """Build search index entries for capital budget sections, including narrative."""
+    items: list[dict] = []
+
+    for section in capital_sections:
+        narrative = _extract_section_narrative(section)
+
+        items.append({
+            "sectionTitle": section["title"],
+            "slug": section["slug"],
+            "tableId": "",
+            "tableType": "",
+            "headers": "",
+            "narrative": narrative,
+            "lineItems": "",
+            "page": 0,
+            "tableIndex": -1,
+            "budgetType": "capital",
+        })
+
+        for table in section["tables"]:
+            items.append({
+                "sectionTitle": section["title"],
+                "slug": section["slug"],
+                "tableId": table["id"],
+                "tableType": table["table_type"],
+                "headers": " ".join(table["headers"]),
+                "narrative": "",
+                "lineItems": _extract_line_items(table),
+                "page": table["relative_page"],
+                "tableIndex": table["table_index"],
+                "budgetType": "capital",
+            })
+
+    return items
+
+
+def build_glossary_search_items(glossary: dict) -> list[dict]:
+    """Build search index entries for glossary terms."""
+    items: list[dict] = []
+
+    # Abbreviations
+    for abbr, meaning in sorted(glossary.get("abbreviations", {}).items()):
+        items.append({
+            "sectionTitle": f"{abbr} — {meaning}",
+            "slug": "",
+            "tableId": "",
+            "tableType": "glossary",
+            "headers": "",
+            "narrative": meaning,
+            "lineItems": "",
+            "page": 0,
+            "tableIndex": -1,
+            "budgetType": "glossary",
+            "href": "/glossary/#abbreviations",
+        })
+
+    # General terms and fiscal metrics
+    for key in ("general_terms", "fiscal_metrics"):
+        section_id = key
+        for entry in glossary.get(key, []):
+            items.append({
+                "sectionTitle": entry["term"],
+                "slug": "",
+                "tableId": "",
+                "tableType": "glossary",
+                "headers": "",
+                "narrative": entry.get("description", "")[:500],
+                "lineItems": "",
+                "page": 0,
+                "tableIndex": -1,
+                "budgetType": "glossary",
+                "href": f"/glossary/#{section_id}",
+            })
+
+    # Capital funding sources
+    for src in glossary.get("capital_funding_sources", []):
+        items.append({
+            "sectionTitle": src["source"],
+            "slug": "",
+            "tableId": "",
+            "tableType": "glossary",
+            "headers": "",
+            "narrative": src.get("description", "")[:500],
+            "lineItems": "",
+            "page": 0,
+            "tableIndex": -1,
+            "budgetType": "glossary",
+            "href": "/glossary/#capital_funding_sources",
+        })
+
+    # Funds
+    for fund in glossary.get("funds", []):
+        items.append({
+            "sectionTitle": fund["name"],
+            "slug": "",
+            "tableId": "",
+            "tableType": "glossary",
+            "headers": "",
+            "narrative": fund.get("description", "")[:500],
+            "lineItems": "",
+            "page": 0,
+            "tableIndex": -1,
+            "budgetType": "glossary",
+            "href": "/glossary/#funds",
+        })
+
+    # Revenue/expenditure line items
+    for key in ("revenue_line_items", "expenditure_line_items"):
+        section_id = key
+        for entry in glossary.get(key, []):
+            items.append({
+                "sectionTitle": entry["term"],
+                "slug": "",
+                "tableId": "",
+                "tableType": "glossary",
+                "headers": "",
+                "narrative": entry.get("description", "")[:500],
+                "lineItems": "",
+                "page": 0,
+                "tableIndex": -1,
+                "budgetType": "glossary",
+                "href": f"/glossary/#{section_id}",
+            })
+
+    return items
+
+
+def build_changes_search_items(budget_changes: dict) -> list[dict]:
+    """Build search index entries for budget changes (new/eliminated positions, top changes)."""
+    items: list[dict] = []
+
+    # Department changes
+    for dept in budget_changes.get("departmentChanges", []):
+        change_desc = f"2025: ${dept['budget2025']:,.0f} → 2026: ${dept['budget2026']:,.0f} ({dept['pctChange']}%)"
+        items.append({
+            "sectionTitle": dept["department"],
+            "slug": dept.get("slug", ""),
+            "tableId": "",
+            "tableType": "budget_change",
+            "headers": "",
+            "narrative": change_desc,
+            "lineItems": "",
+            "page": 0,
+            "tableIndex": -1,
+            "budgetType": "changes",
+            "href": "/changes/",
+        })
+
+    # New positions
+    for pos in budget_changes.get("newPositions", []):
+        items.append({
+            "sectionTitle": f"{pos['title']} (New Position)",
+            "slug": "",
+            "tableId": "",
+            "tableType": "new_position",
+            "headers": "",
+            "narrative": f"{pos['department']} — {pos['fte']} FTE, ${pos.get('budget', 0):,.0f}",
+            "lineItems": "",
+            "page": 0,
+            "tableIndex": -1,
+            "budgetType": "changes",
+            "href": "/changes/",
+        })
+
+    # Eliminated positions
+    for pos in budget_changes.get("eliminatedPositions", []):
+        items.append({
+            "sectionTitle": f"{pos['title']} (Eliminated)",
+            "slug": "",
+            "tableId": "",
+            "tableType": "eliminated_position",
+            "headers": "",
+            "narrative": f"{pos['department']} — {pos['fte']} FTE",
+            "lineItems": "",
+            "page": 0,
+            "tableIndex": -1,
+            "budgetType": "changes",
+            "href": "/changes/",
+        })
 
     return items
 
@@ -1398,33 +1600,10 @@ def main() -> None:
         # Add capital tables to the combined tables index
         tables_index.extend(build_tables_index(capital_sections, budget_type="capital"))
 
-        # Add capital sections to search index with budgetType tag
+        # Add capital sections to search index with budgetType tag and narrative
         for item in search_index:
             item["budgetType"] = "operating"
-        for section in capital_sections:
-            search_index.append({
-                "sectionTitle": section["title"],
-                "slug": section["slug"],
-                "tableId": "",
-                "tableType": "",
-                "headers": "",
-                "narrative": "",
-                "page": 0,
-                "tableIndex": -1,
-                "budgetType": "capital",
-            })
-            for table in section["tables"]:
-                search_index.append({
-                    "sectionTitle": section["title"],
-                    "slug": section["slug"],
-                    "tableId": table["id"],
-                    "tableType": table["table_type"],
-                    "headers": " ".join(table["headers"]),
-                    "narrative": "",
-                    "page": table["relative_page"],
-                    "tableIndex": table["table_index"],
-                    "budgetType": "capital",
-                })
+        search_index.extend(build_capital_search_items(capital_sections))
     else:
         print("No capital budget data found, skipping capital output")
 
@@ -1432,6 +1611,17 @@ def main() -> None:
     with open(views_dir / "tables-index.json", "w", encoding="utf-8") as f:
         json.dump(tables_index, f, indent=2)
     print(f"Wrote tables-index.json ({len(tables_index)} tables)")
+
+    # Add glossary terms to search index
+    glossary = data.get("glossary", {})
+    glossary_items = build_glossary_search_items(glossary)
+    search_index.extend(glossary_items)
+    print(f"  Added {len(glossary_items)} glossary terms to search index")
+
+    # Add budget changes to search index
+    changes_items = build_changes_search_items(budget_changes)
+    search_index.extend(changes_items)
+    print(f"  Added {len(changes_items)} budget change items to search index")
 
     with open(views_dir / "search-index.json", "w", encoding="utf-8") as f:
         json.dump(search_index, f, indent=2)
