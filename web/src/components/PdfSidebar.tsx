@@ -13,7 +13,7 @@ export default function PdfSidebar({ slug, totalPages, startPage }: Props) {
   const [currentPage, setCurrentPage] = useState(0);
 
   const absolutePage = startPage + currentPage;
-  const src = `/pages/${slug}/P${currentPage}.png`;
+  const src = `/pages/${slug}/P${currentPage}.webp`;
 
   useEffect(() => {
     if (!open) return;

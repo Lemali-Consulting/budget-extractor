@@ -401,7 +401,7 @@ function parseNarrative(raw: string): Segment[] {
       }
 
       if (item.kind === 'chart') {
-        const chartSrc = `/charts/${section.slug}/P${item.page}C${(item as any).chartIndex}.png`;
+        const chartSrc = `/charts/${section.slug}/P${item.page}C${(item as any).chartIndex}.webp`;
         const cType = (item as any).chartType;
         const isLogo = cType === 'logo';
         const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Organization chart' : 'Chart / diagram';

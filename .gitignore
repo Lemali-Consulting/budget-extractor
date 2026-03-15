@@ -11,6 +11,8 @@ input/split-pdf/*.pdf
 .astro/
 .netlify/
 node_modules/
+web/public/pages/
+web/public/charts/
 web/.astro/
 web/.netlify/
 web/node_modules/

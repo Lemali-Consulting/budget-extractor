@@ -1,7 +1,7 @@
 """Render clean PDF page images for the web app.
 
-Produces one PNG per page of each section's split PDF.
-Images go to web/public/pages/{section_slug}/P{page}.png.
+Produces one WebP per page of each section's split PDF.
+Images go to web/public/pages/{section_slug}/P{page}.webp.
 Supports both operating and capital budget types.
 """
 
@@ -95,8 +95,9 @@ def render_budget_type(budget_type: str) -> int:
 
 
 def _render_pdf(pdf_path: Path, slug: str) -> int:
-    """Render all pages of a PDF to PNGs. Returns number of images."""
+    """Render all pages of a PDF to WebP images. Returns number of images."""
     import fitz  # PyMuPDF
+    from PIL import Image
 
     out_dir = WEB_PUBLIC_DIR / slug
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -104,13 +105,15 @@ def _render_pdf(pdf_path: Path, slug: str) -> int:
     doc = fitz.open(str(pdf_path))
     rendered = 0
     for page_idx in range(len(doc)):
-        out_path = out_dir / f"P{page_idx}.png"
+        out_path = out_dir / f"P{page_idx}.webp"
         if out_path.exists():
             rendered += 1
             continue
         page = doc[page_idx]
-        pix = page.get_pixmap(dpi=150)
-        pix.save(str(out_path))
+        pix = page.get_pixmap(dpi=120)
+        pil_img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        pil_img.save(str(out_path), "WEBP", quality=80)
+        pil_img.close()
         rendered += 1
 
     doc.close()

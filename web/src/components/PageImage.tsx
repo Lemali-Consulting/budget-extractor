@@ -10,7 +10,7 @@ interface Props {
 
 export default function PageImage({ slug, page, label }: Props) {
   const [open, setOpen] = useState(false);
-  const src = `/pages/${slug}/P${page}.png`;
+  const src = `/pages/${slug}/P${page}.webp`;
 
   useEffect(() => {
     if (!open) return;

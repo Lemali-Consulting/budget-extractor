@@ -109,5 +109,6 @@ The web app is deployed as a static site to Netlify via manual CLI deploy (not g
 
 **Deploy alongside every git push** by running:
 ```bash
-cd web && npm run build && source ../.env && export NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID=11c41143-d0e2-4a28-9dde-10e173bf230f && npx netlify deploy --dir=dist --prod
+# Regenerate images (WebP) from source PDFs, then build and deploy
+python3 scripts/render_page_images.py && python3 scripts/extract_chart_images.py && cd web && npm run build && source ../.env && export NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID=11c41143-d0e2-4a28-9dde-10e173bf230f && npx netlify deploy --dir=dist --prod
 ```

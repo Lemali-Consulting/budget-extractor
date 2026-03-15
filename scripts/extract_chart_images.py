@@ -1,4 +1,4 @@
-"""Extract detected chart/image regions from budget PDF pages as cropped PNGs.
+"""Extract detected chart/image regions from budget PDF pages as cropped WebP images.
 
 Reads chart region data from budget-data.json and capital-budget-data.json,
 then crops the corresponding regions from the PDFs, saving them to
@@ -14,7 +14,7 @@ from PIL import Image
 BASE_DIR = Path(__file__).parent.parent
 OUTPUT_DIR = BASE_DIR / "web" / "public" / "charts"
 
-DPI = 200  # render resolution
+DPI = 150  # render resolution
 
 
 def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
@@ -61,8 +61,8 @@ def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
 
                 out_dir = OUTPUT_DIR / slug
                 out_dir.mkdir(parents=True, exist_ok=True)
-                out_path = out_dir / f"P{rel_page}C{i}.png"
-                cropped.save(str(out_path), "PNG", optimize=True)
+                out_path = out_dir / f"P{rel_page}C{i}.webp"
+                cropped.save(str(out_path), "WEBP", quality=80)
                 total += 1
 
     pdf.close()
