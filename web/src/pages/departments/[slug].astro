@@ -1,0 +1,262 @@
+---
+/**Department one-pager — simplified, print-friendly department summary.*/
+import Base from '../../layouts/Base.astro';
+import HeroStat from '../../components/HeroStat.tsx';
+import TrendMini from '../../components/TrendMini.tsx';
+import budgetData from '../../data/budget-data.json';
+import departmentBudgets from '../../data/views/department-budgets.json';
+import budgetChanges from '../../data/views/budget-changes.json';
+import personnelByDept from '../../data/views/personnel-by-department.json';
+import personnel from '../../data/views/personnel.json';
+
+const changes = budgetChanges as any;
+const budgets = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const personnelDepts = personnelByDept as any[];
+const allPersonnel = personnel as any[];
+const sections = (budgetData as any).sections as any[];
+
+// Generate static paths for all departments that have 2026 budget data
+export function getStaticPaths() {
+  const allBudgets = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+  const slugs = [...new Set(allBudgets.filter(r => r.year === '2026 Budget').map(r => r.slug))];
+  return slugs.map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+
+// Look up department data from various sources
+const deptChange = changes.departmentChanges.find((d: any) => d.slug === slug);
+const deptName = deptChange?.department || budgets.find(b => b.slug === slug)?.department || slug;
+const deptPersonnel = personnelDepts.find((d: any) => d.slug === slug);
+const section = sections.find((s: any) => s.slug === slug);
+
+// Budget trend (all years)
+const trend = budgets
+  .filter(b => b.slug === slug)
+  .sort((a, b) => a.year.localeCompare(b.year));
+
+// Position changes for this department
+const newPositions = changes.newPositions.filter((p: any) => p.department === deptName);
+const eliminatedPositions = changes.eliminatedPositions.filter((p: any) => p.department === deptName);
+const shiftedIn = changes.shiftedPositions.filter((p: any) => p.toDepartment === deptName);
+const shiftedOut = changes.shiftedPositions.filter((p: any) => p.fromDepartment === deptName);
+const hasPositionChanges = newPositions.length + eliminatedPositions.length + shiftedIn.length + shiftedOut.length > 0;
+
+// Top personnel by budget
+const deptStaff = allPersonnel
+  .filter((p: any) => p.slug === slug)
+  .sort((a: any, b: any) => (b.budget2026 || 0) - (a.budget2026 || 0))
+  .slice(0, 8);
+
+// Extract narrative text (first narrative block from section)
+let narrative = '';
+if (section?.page_content) {
+  for (const page of section.page_content) {
+    for (const block of page.text_blocks || []) {
+      if (block.role === 'narrative' && block.text.length > 50) {
+        narrative = block.text.split('\n').slice(0, 3).join(' ');
+        break;
+      }
+    }
+    if (narrative) break;
+  }
+}
+
+// Extract top line items from the first financial_summary table
+let topLineItems: { label: string; amount: number }[] = [];
+if (section?.tables) {
+  const finTable = section.tables.find((t: any) =>
+    t.table_type === 'financial_summary' || t.table_type === 'expenditure_detail'
+  );
+  if (finTable && finTable.headers && finTable.rows) {
+    // Find the column most likely to be the 2026 budget (last numeric column or one labeled "2026")
+    const budgetColIdx = finTable.headers.findIndex((h: string) =>
+      h.includes('2026') && h.toLowerCase().includes('budget')
+    );
+    const colIdx = budgetColIdx >= 0 ? budgetColIdx : finTable.headers.length - 1;
+    const labelIdx = 0;
+
+    for (const row of finTable.rows) {
+      if (!row[labelIdx] || !row[colIdx]) continue;
+      const label = String(row[labelIdx]).trim();
+      const raw = String(row[colIdx]).replace(/[$,()]/g, '').trim();
+      const amount = parseFloat(raw);
+      if (!isNaN(amount) && amount > 0 && label.length > 2 && !label.toLowerCase().includes('total')) {
+        topLineItems.push({ label, amount });
+      }
+    }
+    topLineItems = topLineItems.sort((a, b) => b.amount - a.amount).slice(0, 6);
+  }
+}
+
+// Computed values
+const budget2026 = deptChange?.budget2026 || trend.find(t => t.year === '2026 Budget')?.amount || 0;
+const budget2025 = deptChange?.budget2025 || trend.find(t => t.year === '2025 Budget')?.amount || 0;
+const dollarChange = deptChange?.dollarChange || budget2026 - budget2025;
+const pctChange = deptChange?.pctChange || (budget2025 > 0 ? ((dollarChange / budget2025) * 100).toFixed(1) : '0');
+const fte2026 = deptPersonnel?.totalFte2026 || deptChange?.fte2026;
+const fte2025 = deptPersonnel?.totalFte2025 || deptChange?.fte2025;
+const fteChange = fte2026 && fte2025 ? Math.round(fte2026 - fte2025) : null;
+
+function fmtM(n: number): string {
+  if (Math.abs(n) >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (Math.abs(n) >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n.toFixed(0)}`;
+}
+---
+
+<Base title={deptName} description={`One-page summary of ${deptName} — FY2026 budget, staffing, and key changes.`}>
+  <div class="max-w-3xl mx-auto print:max-w-none">
+    <!-- Header -->
+    <div class="mb-6 print:mb-4">
+      <nav class="text-sm text-gray-500 mb-2 print:hidden">
+        <a href="/departments/" class="hover:text-blue-600">Departments</a>
+        <span class="mx-1">/</span>
+        <span>{deptName}</span>
+      </nav>
+      <h1 class="text-3xl font-bold print:text-2xl">{deptName}</h1>
+      {narrative && (
+        <p class="text-gray-600 mt-2 leading-relaxed">{narrative}</p>
+      )}
+    </div>
+
+    <!-- Hero stats -->
+    <div class="bg-blue-50 rounded-xl p-6 mb-6 print:bg-gray-100 print:rounded-none print:p-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <HeroStat label="2026 Budget" value={fmtM(budget2026)} />
+        <HeroStat
+          label="vs 2025"
+          value={`${Number(pctChange) >= 0 ? '+' : ''}${pctChange}%`}
+          detail={fmtM(Math.abs(dollarChange))}
+          color={Number(pctChange) >= 0 ? 'text-green-700' : 'text-red-700'}
+        />
+        {fte2026 && (
+          <HeroStat label="Staff (FTE)" value={Math.round(fte2026).toLocaleString()} />
+        )}
+        {fteChange !== null && (
+          <HeroStat
+            label="FTE Change"
+            value={`${fteChange >= 0 ? '+' : ''}${fteChange}`}
+            color={fteChange >= 0 ? 'text-green-700' : 'text-red-700'}
+          />
+        )}
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      <!-- Budget trend -->
+      {trend.length > 1 && (
+        <div class="bg-white rounded-lg border p-4">
+          <h2 class="text-lg font-semibold mb-2">Budget Trend</h2>
+          <TrendMini data={trend.map(t => ({ year: t.year.replace(' Budget', '').replace(' Actual', '*'), amount: t.amount }))} client:load />
+        </div>
+      )}
+
+      <!-- Top line items -->
+      {topLineItems.length > 0 && (
+        <div class="bg-white rounded-lg border p-4">
+          <h2 class="text-lg font-semibold mb-3">Top Expenditures</h2>
+          <div class="space-y-2">
+            {topLineItems.map(item => (
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-700 truncate mr-2">{item.label}</span>
+                <span class="text-gray-900 font-medium tabular-nums whitespace-nowrap">{fmtM(item.amount)}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <!-- Top positions by budget -->
+    {deptStaff.length > 0 && (
+      <div class="bg-white rounded-lg border p-4 mb-6">
+        <h2 class="text-lg font-semibold mb-3">Top Positions by Budget</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Title</th>
+                <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">FTE</th>
+                <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">2026 Budget</th>
+                <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">2025 Budget</th>
+              </tr>
+            </thead>
+            <tbody>
+              {deptStaff.map((p: any, i: number) => (
+                <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td class="px-3 py-1.5 border-b border-gray-100">{p.title}</td>
+                  <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.fte2026 || '-'}</td>
+                  <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budget2026 ? fmtM(p.budget2026) : '-'}</td>
+                  <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budget2025 ? fmtM(p.budget2025) : '-'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
+    <!-- Position changes -->
+    {hasPositionChanges && (
+      <div class="bg-white rounded-lg border p-4 mb-6">
+        <h2 class="text-lg font-semibold mb-3">Position Changes</h2>
+        {newPositions.length > 0 && (
+          <div class="mb-3">
+            <h3 class="text-sm font-medium text-green-700 mb-1">New Positions (+{newPositions.length})</h3>
+            <div class="text-sm text-gray-700">
+              {newPositions.map((p: any) => (
+                <div class="flex justify-between py-0.5">
+                  <span>{p.title}</span>
+                  <span class="text-gray-500 tabular-nums">{p.fte} FTE · {fmtM(p.budget)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {eliminatedPositions.length > 0 && (
+          <div class="mb-3">
+            <h3 class="text-sm font-medium text-red-700 mb-1">Eliminated Positions (-{eliminatedPositions.length})</h3>
+            <div class="text-sm text-gray-700">
+              {eliminatedPositions.map((p: any) => (
+                <div class="flex justify-between py-0.5">
+                  <span>{p.title}</span>
+                  <span class="text-gray-500 tabular-nums">{p.fte} FTE · {fmtM(p.budget)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {shiftedIn.length > 0 && (
+          <div class="mb-3">
+            <h3 class="text-sm font-medium text-blue-700 mb-1">Shifted In ({shiftedIn.length})</h3>
+            <div class="text-sm text-gray-700">
+              {shiftedIn.map((p: any) => (
+                <div class="py-0.5"><span>{p.title}</span> <span class="text-gray-400">from {p.fromDepartment}</span></div>
+              ))}
+            </div>
+          </div>
+        )}
+        {shiftedOut.length > 0 && (
+          <div>
+            <h3 class="text-sm font-medium text-orange-700 mb-1">Shifted Out ({shiftedOut.length})</h3>
+            <div class="text-sm text-gray-700">
+              {shiftedOut.map((p: any) => (
+                <div class="py-0.5"><span>{p.title}</span> <span class="text-gray-400">to {p.toDepartment}</span></div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    )}
+
+    <!-- Actions -->
+    <div class="flex items-center gap-4 text-sm print:hidden">
+      <a href={`/sections/${slug}/`} class="text-blue-600 hover:underline">View full department detail &rarr;</a>
+      <button onclick="window.print()" class="text-gray-500 hover:text-gray-700 flex items-center gap-1 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print / Save as PDF
+      </button>
+    </div>
+  </div>
+</Base>
