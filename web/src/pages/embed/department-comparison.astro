@@ -1,0 +1,13 @@
+---
+/**Embeddable chart: top departments by budget.*/
+import Embed from '../../layouts/Embed.astro';
+import BudgetChart from '../../components/BudgetChart.tsx';
+import EmbedWrapper from '../../components/EmbedWrapper.tsx';
+import departmentBudgets from '../../data/views/department-budgets.json';
+---
+
+<Embed title="Department Comparison" description="Top Pittsburgh departments by budget, FY2026.">
+  <EmbedWrapper title="Top Departments by Budget" client:load>
+    <BudgetChart data={departmentBudgets} client:load />
+  </EmbedWrapper>
+</Embed>

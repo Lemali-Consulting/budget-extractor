@@ -1,0 +1,20 @@
+---
+/**Embeddable chart: biggest budget decreases.*/
+import Embed from '../../layouts/Embed.astro';
+import ChangesChart from '../../components/ChangesChart.tsx';
+import EmbedWrapper from '../../components/EmbedWrapper.tsx';
+import budgetChanges from '../../data/views/budget-changes.json';
+
+const data = budgetChanges as any;
+---
+
+<Embed title="Biggest Budget Decreases" description="Top department budget decreases in the FY2026 Pittsburgh budget vs. 2025.">
+  <EmbedWrapper title="Biggest Budget Decreases, FY2026 vs FY2025" client:load>
+    <ChangesChart
+      client:load
+      data={data.topDecreases}
+      title=""
+      color="#dc2626"
+    />
+  </EmbedWrapper>
+</Embed>

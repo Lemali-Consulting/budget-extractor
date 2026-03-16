@@ -1,0 +1,13 @@
+---
+/**Embeddable chart: revenue breakdown waterfall.*/
+import Embed from '../../layouts/Embed.astro';
+import WaterfallChart from '../../components/WaterfallChart.tsx';
+import EmbedWrapper from '../../components/EmbedWrapper.tsx';
+import revenueWaterfall from '../../data/views/revenue-waterfall.json';
+---
+
+<Embed title="Revenue Breakdown" description="FY2026 Pittsburgh revenue sources waterfall chart.">
+  <EmbedWrapper client:load>
+    <WaterfallChart data={revenueWaterfall} client:load />
+  </EmbedWrapper>
+</Embed>

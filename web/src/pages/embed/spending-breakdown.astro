@@ -1,0 +1,13 @@
+---
+/**Embeddable chart: where the money goes by department.*/
+import Embed from '../../layouts/Embed.astro';
+import SpendingPieChart from '../../components/SpendingPieChart.tsx';
+import EmbedWrapper from '../../components/EmbedWrapper.tsx';
+import departmentBudgets from '../../data/views/department-budgets.json';
+---
+
+<Embed title="Where the Money Goes" description="FY2026 Pittsburgh budget breakdown by department.">
+  <EmbedWrapper title="Where the Money Goes, FY2026" client:load>
+    <SpendingPieChart data={departmentBudgets} client:load />
+  </EmbedWrapper>
+</Embed>

@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar.tsx';
 import searchIndex from '../data/views/search-index.json';
 import ChangesChart from '../components/ChangesChart.tsx';
 import PositionChanges from '../components/PositionChanges.tsx';
+import EmbedButton from '../components/EmbedButton.tsx';
 import budgetChanges from '../data/views/budget-changes.json';
 import structureChanges from '../data/views/structure-changes.json';
 
@@ -178,6 +179,9 @@ const sections = [
   )}
 
   <div id="increases" class="scroll-mt-12">
+    <div class="flex justify-end mb-1">
+      <EmbedButton embedPath="/embed/budget-increases/" height={500} client:load />
+    </div>
     <ChangesChart
       client:load
       data={data.topIncreases}
@@ -187,6 +191,9 @@ const sections = [
   </div>
 
   <div id="decreases" class="scroll-mt-12">
+    <div class="flex justify-end mb-1">
+      <EmbedButton embedPath="/embed/budget-decreases/" height={400} client:load />
+    </div>
     <ChangesChart
       client:load
       data={data.topDecreases}

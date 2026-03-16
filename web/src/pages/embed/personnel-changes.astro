@@ -1,0 +1,13 @@
+---
+/**Embeddable chart: FTE changes by department.*/
+import Embed from '../../layouts/Embed.astro';
+import PersonnelChangesChart from '../../components/PersonnelChangesChart.tsx';
+import EmbedWrapper from '../../components/EmbedWrapper.tsx';
+import personnelByDept from '../../data/views/personnel-by-department.json';
+---
+
+<Embed title="Staffing Changes" description="FTE changes by department, FY2026 vs FY2025.">
+  <EmbedWrapper title="Staffing Changes by Department, FY2026 vs FY2025" client:load>
+    <PersonnelChangesChart data={personnelByDept} client:load />
+  </EmbedWrapper>
+</Embed>

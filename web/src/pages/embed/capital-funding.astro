@@ -1,0 +1,13 @@
+---
+/**Embeddable chart: capital funding sources by year.*/
+import Embed from '../../layouts/Embed.astro';
+import FundingSourceChart from '../../components/FundingSourceChart.tsx';
+import EmbedWrapper from '../../components/EmbedWrapper.tsx';
+import capitalFunding from '../../data/views/capital-funding-sources.json';
+---
+
+<Embed title="Capital Funding Sources" description="Pittsburgh capital budget funding by source, 2026-2031.">
+  <EmbedWrapper client:load>
+    <FundingSourceChart data={capitalFunding} client:load />
+  </EmbedWrapper>
+</Embed>

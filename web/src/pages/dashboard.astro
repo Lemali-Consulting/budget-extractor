@@ -6,6 +6,7 @@ import BudgetChart from '../components/BudgetChart.tsx';
 import WaterfallChart from '../components/WaterfallChart.tsx';
 import FundingSourceChart from '../components/FundingSourceChart.tsx';
 import PersonnelTreemap from '../components/PersonnelTreemap.tsx';
+import EmbedButton from '../components/EmbedButton.tsx';
 import departmentBudgets from '../data/views/department-budgets.json';
 import revenueWaterfall from '../data/views/revenue-waterfall.json';
 import capitalFunding from '../data/views/capital-funding-sources.json';
@@ -86,12 +87,19 @@ function fmtM(n: number): string {
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class="bg-white rounded-lg border p-5">
-        <h3 class="text-lg font-semibold mb-1">Department Comparison</h3>
+        <div class="flex items-start justify-between mb-1">
+          <h3 class="text-lg font-semibold">Department Comparison</h3>
+          <EmbedButton embedPath="/embed/department-comparison/" client:load />
+        </div>
         <p class="text-sm text-gray-500 mb-3">Top departments by budget total.</p>
         <BudgetChart data={departmentBudgets} client:load />
       </div>
 
       <div class="bg-white rounded-lg border p-5">
+        <div class="flex items-start justify-between">
+          <div />
+          <EmbedButton embedPath="/embed/revenue-breakdown/" client:load />
+        </div>
         <WaterfallChart data={revenueWaterfall} client:load />
       </div>
     </div>
@@ -106,6 +114,9 @@ function fmtM(n: number): string {
     <p class="text-gray-500 text-sm mb-6">Six-year capital improvement plan — infrastructure, facilities, and major projects.</p>
 
     <div class="bg-white rounded-lg border p-5 max-w-3xl">
+      <div class="flex justify-end mb-1">
+        <EmbedButton embedPath="/embed/capital-funding/" client:load />
+      </div>
       <FundingSourceChart data={capitalFunding} client:load />
     </div>
   </div>
