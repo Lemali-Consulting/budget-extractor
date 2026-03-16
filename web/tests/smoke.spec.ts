@@ -194,13 +194,9 @@ test("header navigation links are present on all pages", async ({ page }) => {
 test("changes chart bars link to section pages", async ({ page }) => {
   await page.goto("/changes/");
 
-  // Wait for chart SVG to render
-  const chart = main(page).locator("#increases svg").first();
-  await expect(chart).toBeVisible({ timeout: 10_000 });
-
-  // Bars should have cursor pointer and data-slug attributes
-  const bar = chart.locator("rect[data-slug]").first();
-  await expect(bar).toBeVisible();
+  // Wait for chart SVG to render and bars to get data-slug attributes (set after hydration)
+  const bar = main(page).locator("#increases rect[data-slug]").first();
+  await expect(bar).toBeVisible({ timeout: 10_000 });
   await expect(bar).toHaveCSS("cursor", "pointer");
 
   // Click a bar and verify navigation to a section page
@@ -248,6 +244,88 @@ test("dashboard budget chart bars link to section pages", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
+// Budget in Brief
+// ---------------------------------------------------------------------------
+test("brief page loads with hero stats", async ({ page }) => {
+  await page.goto("/brief/");
+
+  await expect(main(page).locator("h1").first()).toContainText(
+    /Budget in Brief/i,
+  );
+  await expect(main(page).locator("strong").getByText(/per resident/i)).toBeVisible();
+  await expect(main(page).getByText(/Where does the money go/i).first()).toBeVisible();
+});
+
+// ---------------------------------------------------------------------------
+// Department One-Pagers
+// ---------------------------------------------------------------------------
+test("departments index lists departments", async ({ page }) => {
+  await page.goto("/departments/");
+
+  await expect(main(page).locator("h1").first()).toContainText(
+    /Department/i,
+  );
+  const cards = main(page).locator("a[href*='/departments/']");
+  await expect(cards.first()).toBeVisible();
+  expect(await cards.count()).toBeGreaterThan(10);
+});
+
+test("department one-pager renders", async ({ page }) => {
+  await page.goto("/departments/bureau-of-police/");
+
+  await expect(main(page).locator("h1").first()).toContainText(
+    /Bureau of Police/i,
+  );
+  await expect(main(page).locator("h2").getByText(/Budget Trend/i)).toBeVisible();
+});
+
+// ---------------------------------------------------------------------------
+// Stories
+// ---------------------------------------------------------------------------
+test("stories index lists stories", async ({ page }) => {
+  await page.goto("/stories/");
+
+  await expect(main(page).locator("h1").first()).toContainText(/Stories/i);
+  const cards = main(page).locator("a[href*='/stories/']");
+  await expect(cards.first()).toBeVisible();
+  expect(await cards.count()).toBeGreaterThanOrEqual(4);
+});
+
+test("story page renders with content", async ({ page }) => {
+  await page.goto("/stories/biggest-budget-shifts/");
+
+  await expect(page).toHaveTitle(/Budget Shifts/i);
+  await expect(
+    page.locator("article h1").first(),
+  ).toContainText(/Budget Shifts/i);
+  // Should have narrative paragraphs
+  await expect(page.locator("article p").first()).toBeVisible();
+});
+
+// ---------------------------------------------------------------------------
+// Embeds
+// ---------------------------------------------------------------------------
+test("embed index lists available charts", async ({ page }) => {
+  await page.goto("/embed/");
+
+  await expect(main(page).locator("h1").first()).toContainText(
+    /Embeddable Charts/i,
+  );
+  await expect(main(page).getByText(/iframe/i).first()).toBeVisible();
+});
+
+test("embed page renders chart without nav", async ({ page }) => {
+  await page.goto("/embed/budget-increases/");
+
+  // Should not have the main site header
+  await expect(page.locator("header nav")).not.toBeVisible();
+  // Should have a source attribution
+  await expect(
+    page.getByText(/Pittsburgh Budget Explorer/i).first(),
+  ).toBeVisible();
+});
+
+// ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------
 test("no JS errors on key pages", async ({ page }) => {
@@ -262,6 +340,10 @@ test("no JS errors on key pages", async ({ page }) => {
     "/personnel/",
     "/changes/",
     "/glossary/",
+    "/brief/",
+    "/departments/",
+    "/stories/",
+    "/embed/",
   ];
   for (const route of routes) {
     await page.goto(route);

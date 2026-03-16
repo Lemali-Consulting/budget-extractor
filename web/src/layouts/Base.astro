@@ -48,15 +48,23 @@ function navClass(href: string): string {
         document.getElementById('mobile-banner').classList.remove('hidden');
       }
     </script>
-    <header class="bg-blue-900 text-white px-6 py-4">
-      <div class="max-w-6xl mx-auto flex items-center justify-between">
-        <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
-        <nav class="flex gap-4 text-sm" aria-label="Main navigation">
-          <a href="/changes/" class={navClass('/changes/')}>What Changed</a>
+    <header class="bg-blue-900 text-white px-6 py-3">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center justify-between mb-1">
+          <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
+          <nav class="flex gap-3 text-sm" aria-label="Main navigation">
+            <a href="/brief/" class={navClass('/brief/')}>Brief</a>
+            <a href="/stories/" class={navClass('/stories/')}>Stories</a>
+            <a href="/departments/" class={navClass('/departments/')}>Departments</a>
+            <a href="/embed/" class={navClass('/embed/')}>Embeds</a>
+            <span class="text-blue-700" aria-hidden="true">|</span>
+            <a href="/changes/" class={navClass('/changes/')}>What Changed</a>
+            <a href="/operating/" class={navClass('/operating/')}>Operating</a>
+            <a href="/capital/" class={navClass('/capital/')}>Capital</a>
+          </nav>
+        </div>
+        <nav class="flex gap-3 text-xs justify-end" aria-label="Secondary navigation">
           <a href="/cross-year/" class={navClass('/cross-year/')}>Proposed vs Adopted</a>
-          <a href="/operating/" class={navClass('/operating/')}>Operating</a>
-          <a href="/capital/" class={navClass('/capital/')}>Capital</a>
-          <span class="text-blue-600" aria-hidden="true">|</span>
           <a href="/compare/" class={navClass('/compare/')}>Compare</a>
           <a href="/explorer/" class={navClass('/explorer/')}>Explorer</a>
           <a href="/dashboard/" class={navClass('/dashboard/')}>Dashboard</a>
