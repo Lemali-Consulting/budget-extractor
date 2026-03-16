@@ -1,0 +1,94 @@
+---
+/**Layout for curated story pages — reading-friendly typography, minimal chrome.*/
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  date: string;
+}
+
+const { title, subtitle, description, date } = Astro.props;
+const canonicalUrl = Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} | Pittsburgh Budget Explorer`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="article" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231e3a5f'/><text x='16' y='23' font-size='20' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>P</text></svg>" />
+    <title>{title} | Pittsburgh Budget Explorer</title>
+  </head>
+  <body class="min-h-screen bg-white text-gray-900">
+    <header class="bg-blue-900 text-white px-6 py-3">
+      <div class="max-w-3xl mx-auto flex items-center justify-between">
+        <a href="/" class="font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
+        <a href="/stories/" class="text-sm text-blue-300 hover:text-white">All Stories</a>
+      </div>
+    </header>
+
+    <article class="max-w-3xl mx-auto px-6 py-10">
+      <header class="mb-10">
+        <h1 class="text-4xl font-bold leading-tight mb-3">{title}</h1>
+        <p class="text-xl text-gray-600 leading-relaxed">{subtitle}</p>
+        <div class="mt-4 text-sm text-gray-400">
+          <span>Data analysis by Pittsburgh Budget Explorer</span>
+          <span class="mx-2">·</span>
+          <time>{date}</time>
+        </div>
+      </header>
+
+      <div class="story-content">
+        <slot />
+      </div>
+
+      <footer class="mt-12 pt-6 border-t border-gray-200">
+        <details class="mb-6">
+          <summary class="text-sm font-medium text-gray-500 cursor-pointer hover:text-gray-700">Methodology</summary>
+          <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+            All figures are extracted from the City of Pittsburgh's official FY2026 Operating and Capital Budget documents
+            using automated table extraction. Year-over-year comparisons use the FY2025 adopted budget as baseline.
+            For details on data extraction and known limitations, see the
+            <a href="/about/" class="text-blue-600 hover:underline">About page</a>.
+          </p>
+        </details>
+        <div class="flex items-center gap-4 text-sm">
+          <a href="/stories/" class="text-blue-600 hover:underline">&larr; More stories</a>
+          <a href="/brief/" class="text-blue-600 hover:underline">Budget in Brief</a>
+          <a href="/" class="text-blue-600 hover:underline">Full Explorer</a>
+        </div>
+      </footer>
+    </article>
+
+    <style>
+      .story-content :global(p) {
+        @apply text-gray-700 leading-relaxed mb-4 text-lg;
+      }
+      .story-content :global(h2) {
+        @apply text-2xl font-bold mt-10 mb-4;
+      }
+      .story-content :global(h3) {
+        @apply text-xl font-semibold mt-8 mb-3;
+      }
+      .story-content :global(strong) {
+        @apply text-gray-900;
+      }
+      .story-content :global(.chart-container) {
+        @apply bg-gray-50 rounded-xl p-5 my-6 border;
+      }
+      .story-content :global(.callout) {
+        @apply bg-blue-50 border-l-4 border-blue-500 p-4 my-6 text-blue-900;
+      }
+      .story-content :global(.callout p) {
+        @apply text-blue-900 mb-0;
+      }
+    </style>
+  </body>
+</html>

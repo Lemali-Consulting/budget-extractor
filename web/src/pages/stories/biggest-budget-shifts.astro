@@ -1,0 +1,87 @@
+---
+/**Story: 5 Biggest Budget Shifts in 2026.*/
+import Story from '../../layouts/Story.astro';
+import ChangesChart from '../../components/ChangesChart.tsx';
+import budgetChanges from '../../data/views/budget-changes.json';
+
+const data = budgetChanges as any;
+const topInc = data.topIncreases.slice(0, 5);
+const topDec = data.topDecreases.slice(0, 5);
+const totalChange = data.totalBudget2026 - data.totalBudget2025;
+const changePct = ((totalChange / data.totalBudget2025) * 100).toFixed(1);
+
+function fmtM(n: number): string {
+  return `$${(Math.abs(n) / 1_000_000).toFixed(1)}M`;
+}
+---
+
+<Story
+  title="5 Biggest Budget Shifts in 2026"
+  subtitle="Where the money moved — and what it tells us about city priorities"
+  description="The top budget increases and decreases in Pittsburgh's FY2026 operating budget, and what they mean."
+  date="March 2026"
+>
+  <p>
+    Pittsburgh's operating budget grew by <strong>{changePct}%</strong> this year, from
+    {fmtM(data.totalBudget2025)} to {fmtM(data.totalBudget2026)}. But the headline number
+    masks significant shifts underneath — some departments saw double-digit increases while
+    others were cut. Here are the five biggest moves.
+  </p>
+
+  <h2>The Biggest Increases</h2>
+
+  <div class="chart-container">
+    <ChangesChart data={topInc} title="" color="#16a34a" client:load />
+  </div>
+
+  <h3>1. Bureau of Administration (Public Works): +{fmtM(topInc[0]?.dollarChange)} (+{topInc[0]?.pctChange}%)</h3>
+  <p>
+    The single largest dollar increase in the budget. Public Works Administration handles
+    the back-office operations that keep streets paved, trash collected, and infrastructure
+    maintained. An 80% jump signals major operational expansion or consolidation of functions
+    from other bureaus.
+  </p>
+
+  <h3>2. Bureau of Emergency Medical Services: +{fmtM(topInc[1]?.dollarChange)} (+{topInc[1]?.pctChange}%)</h3>
+  <p>
+    EMS sees a 41% increase — one of the largest percentage jumps among major departments.
+    This likely reflects rising costs for paramedic staffing, ambulance fleet maintenance,
+    and the ongoing challenge of competitive pay in a tight labor market for first responders.
+  </p>
+
+  <h3>3. Bureau of Fire: +{fmtM(topInc[2]?.dollarChange)} (+{topInc[2]?.pctChange}%)</h3>
+  <p>
+    With 679 FTE positions, Fire is one of the city's largest departments. An 8% increase
+    on a base of nearly $100M means close to $8M in additional spending — largely driven by
+    contractual salary increases and rising benefit costs.
+  </p>
+
+  <h2>The Biggest Decreases</h2>
+
+  <div class="chart-container">
+    <ChangesChart data={topDec} title="" color="#dc2626" client:load />
+  </div>
+
+  <h3>4. Liquid Fuels Trust Fund: {fmtM(topDec[0]?.dollarChange)} ({topDec[0]?.pctChange}%)</h3>
+  <p>
+    The largest dollar decrease. This state-funded trust for road maintenance dropped by over 20%.
+    This could reflect changes in state gasoline tax allocations or a shift in how infrastructure
+    spending is categorized between operating and capital budgets.
+  </p>
+
+  <h3>5. Department of Parks and Recreation: {fmtM(topDec[1]?.dollarChange)} ({topDec[1]?.pctChange}%)</h3>
+  <p>
+    Parks sees a modest 2.2% cut despite the city's stated commitment to green space.
+    The reduction may reflect one-time spending from 2025 that doesn't recur, or a shift
+    of capital-eligible projects from the operating budget to the capital plan.
+  </p>
+
+  <div class="callout">
+    <p>
+      <strong>The staffing picture:</strong> Across the city, {data.newPositions.length} positions are
+      being created and {data.eliminatedPositions.length} eliminated — a net change of
+      {data.totalFte2026 - data.totalFte2025 > 0 ? '+' : ''}{Math.round(data.totalFte2026 - data.totalFte2025)} FTE.
+      See the full breakdown on the <a href="/changes/" class="underline">What Changed</a> page.
+    </p>
+  </div>
+</Story>
