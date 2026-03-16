@@ -46,7 +46,7 @@ const sections = [
     <SearchBar items={searchIndex} client:load />
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-500 mb-1">2026 Operating Budget</div>
       <div class="text-lg font-semibold">{fmtM(data.totalBudget2026)}</div>
@@ -64,6 +64,10 @@ const sections = [
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-500 mb-1">Eliminated Positions</div>
       <div class="text-lg font-semibold text-red-600">-{data.eliminatedPositions.length}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">Shifted Positions</div>
+      <div class="text-lg font-semibold text-blue-600">{data.shiftedPositions.length}</div>
     </div>
   </div>
 
@@ -197,6 +201,7 @@ const sections = [
       client:load
       newPositions={data.newPositions}
       eliminatedPositions={data.eliminatedPositions}
+      shiftedPositions={data.shiftedPositions}
     />
   </div>
 

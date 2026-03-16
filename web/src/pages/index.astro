@@ -62,6 +62,7 @@ const totalPct = changes.totalBudget2025 > 0 ? ((totalDollarChange / changes.tot
 const fteChange = (changes.totalFte2026 || 0) - (changes.totalFte2025 || 0);
 const newPositions = changes.newPositions?.length || 0;
 const eliminatedPositions = changes.eliminatedPositions?.length || 0;
+const shiftedPositions = changes.shiftedPositions?.length || 0;
 
 function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -120,6 +121,7 @@ function fmtM(n: number): string {
       <span class="font-semibold text-amber-900">{totalDollarChange > 0 ? '+' : ''}{fmtM(totalDollarChange)} ({totalPct}%)</span>
       <span class="text-amber-700">{newPositions} new positions</span>
       <span class="text-amber-700">{eliminatedPositions} eliminated</span>
+      {shiftedPositions > 0 && <span class="text-amber-700">{shiftedPositions} shifted</span>}
       {fteChange !== 0 && <span class="text-amber-700">Net {fteChange > 0 ? '+' : ''}{fteChange} FTE</span>}
     </div>
   </a>

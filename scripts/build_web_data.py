@@ -770,6 +770,117 @@ def build_section_highlights(section: dict) -> list[str]:
     return highlights
 
 
+def _normalize_title(title: str) -> str:
+    """Normalize a position title for matching: lowercase, strip trailing asterisks."""
+    return title.rstrip(" *").strip().lower()
+
+
+def detect_shifted_positions(personnel: list[dict]) -> dict:
+    """Detect positions shifted between departments by matching eliminated/new titles.
+
+    Returns dict with newPositions, eliminatedPositions, and shiftedPositions lists.
+    Positions matched as shifts are removed from new/eliminated lists.
+    """
+    from collections import defaultdict
+
+    new_positions: list[dict] = []
+    eliminated_positions: list[dict] = []
+    for p in personnel:
+        fte_prior_val = p.get(f"fte{PRIOR_YEAR}") or 0
+        fte_current_val = p.get(f"fte{BUDGET_YEAR}") or 0
+        if fte_current_val > 0 and fte_prior_val == 0:
+            new_positions.append({
+                "department": p["department"],
+                "title": p["title"],
+                "fte": fte_current_val,
+                "budget": p.get(f"budget{BUDGET_YEAR}") or 0,
+            })
+        elif fte_prior_val > 0 and fte_current_val == 0:
+            eliminated_positions.append({
+                "department": p["department"],
+                "title": p["title"],
+                "fte": fte_prior_val,
+                "budget": p.get(f"budget{PRIOR_YEAR}") or 0,
+            })
+
+    # Group by normalized title for cross-department matching
+    new_by_title: dict[str, list[dict]] = defaultdict(list)
+    for p in new_positions:
+        new_by_title[_normalize_title(p["title"])].append(p)
+
+    elim_by_title: dict[str, list[dict]] = defaultdict(list)
+    for p in eliminated_positions:
+        elim_by_title[_normalize_title(p["title"])].append(p)
+
+    shifted_positions: list[dict] = []
+    consumed_new: set[int] = set()  # indices into new_positions
+    consumed_elim: set[int] = set()  # indices into eliminated_positions
+
+    for norm_title in set(new_by_title.keys()) & set(elim_by_title.keys()):
+        new_entries = new_by_title[norm_title]
+        elim_entries = elim_by_title[norm_title]
+
+        for new_entry in new_entries:
+            new_idx = new_positions.index(new_entry)
+            if new_idx in consumed_new:
+                continue
+            # Must be a different department to count as a shift
+            original_new_fte = new_entry["fte"]
+            remaining_fte_needed = original_new_fte
+
+            for elim_entry in elim_entries:
+                if remaining_fte_needed <= 0:
+                    break
+                elim_idx = eliminated_positions.index(elim_entry)
+                if elim_idx in consumed_elim:
+                    continue
+                if elim_entry["department"] == new_entry["department"]:
+                    continue
+
+                # Match up to the smaller FTE count
+                matched_fte = min(remaining_fte_needed, elim_entry["fte"])
+                shifted_positions.append({
+                    "title": new_entry["title"],
+                    "fromDepartment": elim_entry["department"],
+                    "toDepartment": new_entry["department"],
+                    "fte": matched_fte,
+                    "budgetPrior": elim_entry["budget"],
+                    "budgetCurrent": new_entry["budget"],
+                })
+
+                remaining_fte_needed -= matched_fte
+                remaining_elim_fte = elim_entry["fte"] - matched_fte
+
+                if remaining_elim_fte <= 0:
+                    consumed_elim.add(elim_idx)
+                else:
+                    # Reduce the eliminated entry's FTE for remaining
+                    elim_entry["fte"] = remaining_elim_fte
+                    # Prorate budget
+                    elim_entry["budget"] = round(
+                        elim_entry["budget"] * remaining_elim_fte / (remaining_elim_fte + matched_fte)
+                    )
+
+            if remaining_fte_needed <= 0:
+                consumed_new.add(new_idx)
+            elif remaining_fte_needed < original_new_fte:
+                # Partially consumed — reduce FTE and prorate budget
+                new_entry["fte"] = remaining_fte_needed
+                new_entry["budget"] = round(
+                    new_entry["budget"] * remaining_fte_needed / original_new_fte
+                )
+
+    # Filter out fully consumed entries
+    final_new = [p for i, p in enumerate(new_positions) if i not in consumed_new]
+    final_elim = [p for i, p in enumerate(eliminated_positions) if i not in consumed_elim]
+
+    return {
+        "newPositions": final_new,
+        "eliminatedPositions": final_elim,
+        "shiftedPositions": shifted_positions,
+    }
+
+
 def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
     """Build a summary of the biggest changes across the whole budget."""
     dept_changes: list[dict] = []
@@ -826,26 +937,11 @@ def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
 
     dept_changes.sort(key=lambda x: x["dollarChange"], reverse=True)
 
-    # New and eliminated positions
-    new_positions: list[dict] = []
-    eliminated_positions: list[dict] = []
-    for p in personnel:
-        fte_prior_val = p.get(f"fte{PRIOR_YEAR}") or 0
-        fte_current_val = p.get(f"fte{BUDGET_YEAR}") or 0
-        if fte_current_val > 0 and fte_prior_val == 0:
-            new_positions.append({
-                "department": p["department"],
-                "title": p["title"],
-                "fte": fte_current_val,
-                "budget": p.get(f"budget{BUDGET_YEAR}") or 0,
-            })
-        elif fte_prior_val > 0 and fte_current_val == 0:
-            eliminated_positions.append({
-                "department": p["department"],
-                "title": p["title"],
-                "fte": fte_prior_val,
-                "budget": p.get(f"budget{PRIOR_YEAR}") or 0,
-            })
+    # New, eliminated, and shifted positions
+    position_changes = detect_shifted_positions(personnel)
+    new_positions = position_changes["newPositions"]
+    eliminated_positions = position_changes["eliminatedPositions"]
+    shifted_positions = position_changes["shiftedPositions"]
 
     # Compute totals
     total_prior = sum(d[f"budget{PRIOR_YEAR}"] for d in dept_changes)
@@ -863,6 +959,7 @@ def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
         "topDecreases": list(reversed([d for d in dept_changes if d["dollarChange"] < 0]))[:10],
         "newPositions": new_positions,
         "eliminatedPositions": eliminated_positions,
+        "shiftedPositions": shifted_positions,
     }
 
 
