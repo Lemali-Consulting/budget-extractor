@@ -1,9 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
+import BudgetChart from '../components/BudgetChart.tsx';
 import budgetData from '../data/budget-data.json';
 import capitalData from '../data/capital-budget-data.json';
 import searchIndex from '../data/views/search-index.json';
+import departmentBudgets from '../data/views/department-budgets.json';
+import budgetChanges from '../data/views/budget-changes.json';
+import revenueWaterfall from '../data/views/revenue-waterfall.json';
+import capitalFunding from '../data/views/capital-funding-sources.json';
+import personnelByDept from '../data/views/personnel-by-department.json';
 
 const operatingSections = budgetData.sections;
 const capitalSections = capitalData.sections;
@@ -31,16 +37,94 @@ for (const section of capitalSections) {
     }
   }
 }
+
+// Summary stats (same logic as dashboard)
+const budgetRows = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const total2026 = budgetRows.filter(r => r.year === '2026 Budget').reduce((s, r) => s + r.amount, 0);
+const total2025 = budgetRows.filter(r => r.year === '2025 Budget').reduce((s, r) => s + r.amount, 0);
+const budgetChange = total2025 > 0 ? ((total2026 - total2025) / total2025 * 100) : 0;
+const deptCount = new Set(budgetRows.map(r => r.slug)).size;
+
+const revenueTotal = (revenueWaterfall as { amount: number }[]).reduce((s, r) => s + r.amount, 0);
+
+const capital2026 = (capitalFunding as { year: string; amount: number }[])
+  .filter(r => r.year === '2026')
+  .reduce((s, r) => s + r.amount, 0);
+
+const personnelData = personnelByDept as { totalFte2026: number; totalBudget2026: number }[];
+const totalFte = personnelData.reduce((s, r) => s + r.totalFte2026, 0);
+const totalPersonnelBudget = personnelData.reduce((s, r) => s + r.totalBudget2026, 0);
+
+// Budget changes stats
+const changes = budgetChanges as any;
+const totalDollarChange = changes.totalBudget2026 - changes.totalBudget2025;
+const totalPct = changes.totalBudget2025 > 0 ? ((totalDollarChange / changes.totalBudget2025) * 100).toFixed(1) : '0';
+const fteChange = (changes.totalFte2026 || 0) - (changes.totalFte2025 || 0);
+const newPositions = changes.newPositions?.length || 0;
+const eliminatedPositions = changes.eliminatedPositions?.length || 0;
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
 ---
 
 <Base title="Home">
-  <h1 class="text-3xl font-bold mb-2">Pittsburgh Budget Explorer</h1>
-  <p class="text-gray-600 mb-6">Browse the City of Pittsburgh FY2026 Budget — operating and capital.</p>
-
+  <!-- Hero -->
   <div class="mb-8">
-    <SearchBar items={searchIndex} client:load />
+    <h1 class="text-3xl font-bold mb-2">Pittsburgh Budget Explorer</h1>
+    <p class="text-lg text-gray-600 mb-3">
+      The city's 600-page budget PDF, turned into searchable tables and charts.
+      <a href="/about/" class="text-blue-600 hover:underline text-base">How this was built</a>
+    </p>
+
+    <!-- Example questions -->
+    <div class="flex flex-wrap gap-2 text-sm">
+      <span class="text-gray-400">Try:</span>
+      <a href="/sections/bureau-of-police/" class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition">How much does policing cost?</a>
+      <a href="/changes/#positions" class="px-3 py-1 bg-amber-50 text-amber-700 rounded-full hover:bg-amber-100 transition">What new positions were added?</a>
+      <a href="/dashboard/" class="px-3 py-1 bg-green-50 text-green-700 rounded-full hover:bg-green-100 transition">Where does the money come from?</a>
+    </div>
   </div>
 
+  <!-- Summary stats -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Operating Budget</div>
+      <div class="text-2xl font-bold text-blue-900 mt-1">{fmtM(total2026)}</div>
+      <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {budgetChange >= 0 ? '+' : ''}{budgetChange.toFixed(1)}% vs 2025
+      </div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Projected Revenue</div>
+      <div class="text-2xl font-bold text-green-900 mt-1">{fmtM(revenueTotal)}</div>
+      <div class="text-sm text-gray-500 mt-0.5">{(revenueWaterfall as any[]).length} sources</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Capital (2026)</div>
+      <div class="text-2xl font-bold text-amber-900 mt-1">{fmtM(capital2026)}</div>
+      <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Personnel</div>
+      <div class="text-2xl font-bold text-purple-900 mt-1">{totalFte.toLocaleString('en-US')} FTE</div>
+      <div class="text-sm text-gray-500 mt-0.5">{fmtM(totalPersonnelBudget)} payroll</div>
+    </div>
+  </div>
+
+  <!-- What Changed — prominent callout -->
+  <a href="/changes/" class="block mb-8 p-6 bg-amber-50 rounded-lg border-2 border-amber-200 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition">
+    <h2 class="text-xl font-bold text-amber-900 mb-2">What Changed in FY2026?</h2>
+    <p class="text-sm text-amber-800 mb-3">The biggest budget increases, decreases, new positions, and eliminated positions — the view you need before a budget hearing.</p>
+    <div class="flex flex-wrap gap-4 text-sm">
+      <span class="font-semibold text-amber-900">{totalDollarChange > 0 ? '+' : ''}{fmtM(totalDollarChange)} ({totalPct}%)</span>
+      <span class="text-amber-700">{newPositions} new positions</span>
+      <span class="text-amber-700">{eliminatedPositions} eliminated</span>
+      {fteChange !== 0 && <span class="text-amber-700">Net {fteChange > 0 ? '+' : ''}{fteChange} FTE</span>}
+    </div>
+  </a>
+
+  <!-- Operating & Capital cards -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
     <a href="/operating/" class="block p-6 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition">
       <h2 class="text-2xl font-bold text-blue-900 mb-2">Operating Budget</h2>
@@ -57,16 +141,28 @@ for (const section of capitalSections) {
       <div class="flex gap-4 text-sm text-gray-500">
         <span class="font-medium">{capitalSections.length} projects</span>
         <span>{capitalAreas.size} functional areas</span>
-        {capitalTotal > 0 && <span>2026: ${(capitalTotal / 1_000_000).toFixed(1)}M</span>}
+        {capitalTotal > 0 && <span>2026: {fmtM(capitalTotal)}</span>}
       </div>
     </a>
   </div>
 
-  <a href="/changes/" class="block p-5 mb-6 bg-amber-50 rounded-lg border-2 border-amber-200 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition">
-    <h2 class="text-lg font-bold text-amber-900 mb-1">What Changed in FY2026?</h2>
-    <p class="text-sm text-amber-700">The biggest budget increases, decreases, new positions, and eliminated positions — the view you need before a budget hearing.</p>
-  </a>
+  <!-- Inline chart: top departments -->
+  <div class="bg-white rounded-lg border p-5 mb-8">
+    <div class="flex items-baseline justify-between mb-1">
+      <h2 class="text-lg font-semibold">Top Departments by Budget</h2>
+      <a href="/dashboard/" class="text-sm text-blue-500 hover:text-blue-700">Full dashboard &rarr;</a>
+    </div>
+    <p class="text-sm text-gray-500 mb-3">FY2026 operating budget — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
+    <BudgetChart data={departmentBudgets} client:load />
+  </div>
 
+  <!-- Search -->
+  <div class="mb-8">
+    <h2 class="text-lg font-semibold mb-2">Search</h2>
+    <SearchBar items={searchIndex} client:load />
+  </div>
+
+  <!-- Quick links -->
   <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
     <a href="/changes/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">What Changed</div>
@@ -80,7 +176,7 @@ for (const section of capitalSections) {
       <div class="font-medium text-gray-700">Data Explorer</div>
       <div class="text-xs text-gray-400 mt-1">Search all tables</div>
     </a>
-    <a href="/charts/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+    <a href="/dashboard/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Dashboard</div>
       <div class="text-xs text-gray-400 mt-1">Budget at a glance</div>
     </a>

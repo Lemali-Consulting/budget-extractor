@@ -117,7 +117,7 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
       width: containerWidth,
       height: 350,
       marginRight: 100,
-      x: { label: 'Year', tickFormat: (d: number) => String(d) },
+      x: { label: 'Year', tickFormat: (d: number) => String(d), ticks: yearCols.map((c) => c.year) },
       y: { label: 'Amount ($)', tickFormat: formatDollar },
       color: { legend: true },
       marks: [

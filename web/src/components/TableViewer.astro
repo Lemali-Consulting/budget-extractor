@@ -78,8 +78,8 @@ function isTotalRow(row: string[]): boolean {
             {table.headers.map((h, hi) => {
               const align = numericColSet.has(hi) ? 'text-right tabular-nums' : 'text-left';
               return linkCell
-                ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${align}`} set:html={linkCell(h)} />
-                : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${align}`}>{h}</th>;
+                ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align}`} data-col={hi} data-numeric={numericColSet.has(hi)}><span set:html={linkCell(h)} /><span class="sort-arrow ml-1 text-gray-400"></span></th>
+                : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align}`} data-col={hi} data-numeric={numericColSet.has(hi)}>{h}<span class="sort-arrow ml-1 text-gray-400"></span></th>;
             })}
           </tr>
         </thead>
@@ -95,7 +95,7 @@ function isTotalRow(row: string[]): boolean {
           return (
             <>
               {showDivider && !isSectionRow && (
-                <tr class="bg-amber-50 border-t-2 border-amber-200">
+                <tr class="bg-amber-50 border-t-2 border-amber-200" data-row-type="divider" data-section={section} data-orig-index={i}>
                   {linkCell
                     ? <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide" set:html={linkCell(section)} />
                     : <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">{section}</td>
@@ -108,6 +108,8 @@ function isTotalRow(row: string[]): boolean {
                   : isTotal
                     ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
                     : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+              } data-section={section} data-orig-index={i} data-row-type={
+                isSectionRow ? 'section-header' : isTotal ? 'total' : 'data'
               }>
                 {row.map((cell, ci) => {
                   const align = numericColSet.has(ci) ? 'text-right tabular-nums' : '';
@@ -125,6 +127,7 @@ function isTotalRow(row: string[]): boolean {
 </div>
 
 <script>
+  // Copy table handler
   document.addEventListener('click', (e) => {
     const btn = (e.target as HTMLElement).closest('.copy-table-btn') as HTMLButtonElement | null;
     if (!btn) return;
@@ -146,5 +149,113 @@ function isTotalRow(row: string[]): boolean {
       btn.textContent = 'Copied!';
       setTimeout(() => { btn.textContent = orig; }, 1500);
     });
+  });
+
+  // Column sort handler
+  const sortStates = new WeakMap<HTMLTableElement, { col: number; dir: 'asc' | 'desc' | null }>();
+
+  function parseNumeric(text: string): number {
+    const s = text.trim();
+    if (!s || s === '—' || s === '-') return NaN;
+    const neg = s.startsWith('(') || s.startsWith('-');
+    const num = parseFloat(s.replace(/[$,()]/g, ''));
+    return neg ? -Math.abs(num) : num;
+  }
+
+  document.addEventListener('click', (e) => {
+    const th = (e.target as HTMLElement).closest('th[data-col]') as HTMLElement | null;
+    if (!th) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const table = th.closest('table');
+    if (!table) return;
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+
+    const col = parseInt(th.dataset.col!, 10);
+    const isNumeric = th.dataset.numeric === 'true';
+    const state = sortStates.get(table) || { col: -1, dir: null };
+
+    // Cycle: asc -> desc -> reset
+    let dir: 'asc' | 'desc' | null;
+    if (state.col === col) {
+      dir = state.dir === 'asc' ? 'desc' : state.dir === 'desc' ? null : 'asc';
+    } else {
+      dir = 'asc';
+    }
+    sortStates.set(table, { col, dir });
+
+    // Update sort arrows
+    for (const arrow of table.querySelectorAll('.sort-arrow')) {
+      arrow.textContent = '';
+    }
+    if (dir) {
+      const activeArrow = th.querySelector('.sort-arrow');
+      if (activeArrow) activeArrow.textContent = dir === 'asc' ? ' \u25B2' : ' \u25BC';
+    }
+
+    const allRows = Array.from(tbody.querySelectorAll('tr'));
+    if (!dir) {
+      // Reset to original order
+      allRows.sort((a, b) => {
+        const ai = parseInt(a.dataset.origIndex || '0', 10);
+        const bi = parseInt(b.dataset.origIndex || '0', 10);
+        return ai - bi;
+      });
+      for (const row of allRows) tbody.appendChild(row);
+      return;
+    }
+
+    // Group rows by section, preserving group order
+    type RowGroup = { section: string; rows: HTMLTableRowElement[] };
+    const groups: RowGroup[] = [];
+    let currentGroup: RowGroup | null = null;
+    for (const row of allRows) {
+      const section = row.dataset.section || '';
+      if (!currentGroup || currentGroup.section !== section) {
+        currentGroup = { section, rows: [] };
+        groups.push(currentGroup);
+      }
+      currentGroup.rows.push(row);
+    }
+
+    // Sort within each group
+    for (const group of groups) {
+      const pinned: HTMLTableRowElement[] = [];
+      const sortable: HTMLTableRowElement[] = [];
+      const totals: HTMLTableRowElement[] = [];
+      for (const row of group.rows) {
+        const type = row.dataset.rowType;
+        if (type === 'divider' || type === 'section-header') {
+          pinned.push(row);
+        } else if (type === 'total') {
+          totals.push(row);
+        } else {
+          sortable.push(row);
+        }
+      }
+
+      sortable.sort((a, b) => {
+        const aText = (a.children[col] as HTMLElement)?.innerText?.trim() || '';
+        const bText = (b.children[col] as HTMLElement)?.innerText?.trim() || '';
+        if (isNumeric) {
+          const na = parseNumeric(aText), nb = parseNumeric(bText);
+          const nanA = isNaN(na), nanB = isNaN(nb);
+          if (nanA && nanB) return 0;
+          if (nanA) return 1;
+          if (nanB) return -1;
+          return dir === 'asc' ? na - nb : nb - na;
+        }
+        const cmp = aText.localeCompare(bText, undefined, { sensitivity: 'base' });
+        return dir === 'asc' ? cmp : -cmp;
+      });
+
+      group.rows = [...pinned, ...sortable, ...totals];
+    }
+
+    // Re-append all rows in new order
+    for (const group of groups) {
+      for (const row of group.rows) tbody.appendChild(row);
+    }
   });
 </script>

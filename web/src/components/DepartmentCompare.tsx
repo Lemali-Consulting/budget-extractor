@@ -1,6 +1,8 @@
 /**Interactive multi-department comparison component.*/
 import { useState, useRef, useEffect } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import GlossaryTip from './GlossaryTip';
+import { FTE_TOOLTIP } from '../lib/glossary-terms';
 
 interface DeptBudget {
   department: string;
@@ -77,15 +79,16 @@ export default function DepartmentCompare({ budgets, personnel }: Props) {
     const filteredBudgets = budgets.filter(b => selected.includes(b.department));
     if (filteredBudgets.length === 0) return;
 
+    const years = [...new Set(filteredBudgets.map(b => parseInt(b.year.split(' ')[0])))].sort();
     const chart = Plot.plot({
       marginLeft: 60,
       height: 300,
       color: { legend: true },
-      x: { label: 'Year' },
+      x: { label: 'Year', tickFormat: (d: number) => String(d), ticks: years },
       y: { label: 'Budget', tickFormat: (d: number) => formatDollar(d) },
       marks: [
         Plot.line(filteredBudgets, {
-          x: (d: DeptBudget) => d.year.split(' ')[0],
+          x: (d: DeptBudget) => parseInt(d.year.split(' ')[0]),
           y: 'amount',
           stroke: 'department',
           strokeWidth: 2,
@@ -137,11 +140,11 @@ export default function DepartmentCompare({ budgets, personnel }: Props) {
                 <span class="font-medium">{formatDollar(p.totalBudget2026)}</span>
               </div>
               <div>
-                <span class="text-gray-500">FTE:</span>{' '}
-                <span class="font-medium">{p.totalFte2026}</span>
+                <span class="text-gray-500"><GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} />:</span>{' '}
+                <span class="font-medium">{Math.round(p.totalFte2026)}</span>
                 {p.totalFte2025 > 0 && (
                   <span class={`ml-1 text-xs ${p.totalFte2026 >= p.totalFte2025 ? 'text-green-600' : 'text-red-600'}`}>
-                    ({p.totalFte2026 >= p.totalFte2025 ? '+' : ''}{p.totalFte2026 - p.totalFte2025})
+                    ({p.totalFte2026 >= p.totalFte2025 ? '+' : ''}{Math.round(p.totalFte2026 - p.totalFte2025)})
                   </span>
                 )}
               </div>
@@ -197,15 +200,15 @@ export default function DepartmentCompare({ budgets, personnel }: Props) {
                 })}
               </tr>
               <tr class="bg-gray-50">
-                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">2026 FTE</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">2026 <GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /></td>
                 {selectedPersonnel.map(p => (
-                  <td key={p.department} class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.totalFte2026}</td>
+                  <td key={p.department} class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{Math.round(p.totalFte2026)}</td>
                 ))}
               </tr>
               <tr class="bg-white">
-                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">FTE Change</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 font-medium"><GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /> Change</td>
                 {selectedPersonnel.map(p => {
-                  const change = p.totalFte2026 - p.totalFte2025;
+                  const change = Math.round(p.totalFte2026 - p.totalFte2025);
                   return (
                     <td key={p.department} class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                       {change >= 0 ? '+' : ''}{change}

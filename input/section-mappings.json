@@ -1,0 +1,29 @@
+[
+  {
+    "type": "rename",
+    "from": "City Council as a Body",
+    "to": "Office of the City Clerk"
+  },
+  {
+    "type": "rename",
+    "from": "Smaller Trust Funds",
+    "to": "Other Special Revenue Funds"
+  },
+  {
+    "type": "rename",
+    "from": "Fee Schedule",
+    "to": "Master Fee Schedule"
+  },
+  {
+    "type": "reorganization",
+    "from": "Office of Equity",
+    "absorbed_by": "Office of the Mayor",
+    "note": "Budget lines shifted into the Office of the Mayor cost center in 2023. IDEA Manager and Coordinator positions eliminated by 2026."
+  },
+  {
+    "type": "reorganization",
+    "from": "Office of Immigrant and Refugee Affairs",
+    "absorbed_by": "Office of the Mayor",
+    "note": "Budget lines shifted into the Office of the Mayor cost center in 2023. Manager position downgraded to Coordinator, Policy Coordinator eliminated by 2026."
+  }
+]

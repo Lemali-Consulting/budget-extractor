@@ -50,6 +50,8 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
           y: 'department',
           fill: CHART_COLORS.primary,
           sort: { y: '-x' },
+          tip: true,
+          title: (d: BudgetRow) => `${d.department}\n$${(d.amount / 1_000_000).toFixed(1)}M`,
         }),
         Plot.text(filtered, {
           x: 'amount',
@@ -61,6 +63,27 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
         }),
         Plot.ruleX([0]),
       ],
+    });
+
+    // Make bars clickable — navigate to section detail pages
+    // Observable Plot sets fill on a parent <g>, not individual rects
+    const barRects = Array.from(chart.querySelectorAll('rect')).filter(
+      (r) => r.parentElement?.getAttribute('fill') === CHART_COLORS.primary,
+    );
+    barRects.forEach((rect, i) => {
+      if (i < filtered.length) {
+        rect.setAttribute('data-slug', filtered[i].slug);
+        rect.style.cursor = 'pointer';
+        rect.addEventListener('click', () => {
+          window.location.href = `/sections/${filtered[i].slug}/`;
+        });
+        rect.addEventListener('mouseenter', () => {
+          rect.setAttribute('opacity', '0.7');
+        });
+        rect.addEventListener('mouseleave', () => {
+          rect.removeAttribute('opacity');
+        });
+      }
     });
 
     // Insert chart before the controls

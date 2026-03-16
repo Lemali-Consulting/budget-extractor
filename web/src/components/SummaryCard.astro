@@ -31,7 +31,8 @@ const hasMetrics = hasBudget || hasFte;
 const isNegativeChange = budgetChange?.startsWith('(') || budgetChange?.startsWith('-');
 const changeColor = isNegativeChange ? 'text-red-600' : 'text-green-600';
 
-const fteChange = hasFte && fte2025 != null ? fte2026! - fte2025 : null;
+const fteChangeRaw = hasFte && fte2025 != null ? fte2026! - fte2025 : null;
+const fteChange = fteChangeRaw != null ? Math.round(fteChangeRaw * 10) / 10 : null;
 const fteChangeStr = fteChange != null && fteChange !== 0
   ? (fteChange > 0 ? `+${fteChange}` : `${fteChange}`)
   : null;
@@ -63,7 +64,7 @@ const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-red-600' : 'te
     )}
     {hasFte && (
       <div>
-        <div class="text-xs text-gray-500 mb-1">Positions (FTE)</div>
+        <div class="text-xs text-gray-500 mb-1">Positions (<a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a>)</div>
         <div class="text-lg font-semibold text-gray-900">
           {fte2026?.toLocaleString()}
           {fteChangeStr && (

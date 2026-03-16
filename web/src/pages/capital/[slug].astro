@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import TableViewer from '../../components/TableViewer.astro';
 import PageImage from '../../components/PageImage.tsx';
+import ChartImage from '../../components/ChartImage.tsx';
 import PdfSidebar from '../../components/PdfSidebar.tsx';
 import SectionNav from '../../components/SectionNav.astro';
 import capitalData from '../../data/capital-budget-data.json';
@@ -187,9 +188,14 @@ function parseNarrative(raw: string): Segment[] {
 
     if (item.kind === 'narrative') {
       const isTitle = item.role === 'section_title';
+      const isFootnote = item.role === 'footnote';
       if (isTitle) {
         const titleHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
         return <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-2" set:html={titleHtml} />;
+      }
+      if (isFootnote) {
+        const fnHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
+        return <p class="text-xs text-gray-400 mt-1 mb-0" set:html={fnHtml} />;
       }
       const segments = parseNarrative(item.text);
       return (
@@ -221,7 +227,7 @@ function parseNarrative(raw: string): Segment[] {
       const chartSrc = `/charts/${section.slug}/P${item.page}C${(item as any).chartIndex}.webp`;
       const cType = (item as any).chartType;
       const isLogo = cType === 'logo';
-      const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Organization chart' : 'Chart / diagram';
+      const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Figure' : 'Chart / diagram';
       if (isLogo) {
         return (
           <div class="my-3 flex items-center gap-3">
@@ -236,19 +242,12 @@ function parseNarrative(raw: string): Segment[] {
         );
       }
       return (
-        <div class="my-4 rounded-lg border overflow-hidden bg-white">
-          <div class="px-4 py-2 bg-blue-50 border-b text-xs text-blue-700 font-medium">
-            {label}
-          </div>
-          <div class="p-4 flex justify-center">
-            <img
-              src={chartSrc}
-              alt={`${label} for ${section.title}`}
-              class="max-w-full max-h-[500px] object-contain"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        <ChartImage
+          client:visible
+          src={chartSrc}
+          alt={`${label} for ${section.title}`}
+          label={label}
+        />
       );
     }
 

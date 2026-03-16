@@ -6,6 +6,7 @@ import SectionToc from '../../components/SectionToc.astro';
 import HighlightsCallout from '../../components/HighlightsCallout.astro';
 import ShareButton from '../../components/ShareButton.tsx';
 import PageImage from '../../components/PageImage.tsx';
+import ChartImage from '../../components/ChartImage.tsx';
 import PdfSidebar from '../../components/PdfSidebar.tsx';
 import SectionNav from '../../components/SectionNav.astro';
 import SectionCharts from '../../components/SectionCharts.tsx';
@@ -76,6 +77,35 @@ for (const item of items) {
     lastPage = item.page;
   }
   finalItems.push(item);
+}
+
+// Detect trust fund balance groups: Beginning Balance + Detail + Ending Balance
+// Mark items so the renderer can merge them into a single visual container
+function isBalanceRow(item: ContentItem, label: string): boolean {
+  if (item.kind !== 'table') return false;
+  const t = (item as any).data;
+  // Balance rows may appear as a single data row OR as header-only (no data rows)
+  if (t.rows?.length === 1 && (t.rows[0][0] || '').trim().startsWith(label)) return true;
+  if (t.rows?.length === 0 && t.headers?.length === 2 && (t.headers[0] || '').trim().startsWith(label)) return true;
+  return false;
+}
+
+// balanceGroups maps item index → role in a group
+const balanceGroups = new Map<number, 'begin' | 'middle' | 'end'>();
+for (let i = 0; i < finalItems.length; i++) {
+  if (!isBalanceRow(finalItems[i], 'Projected Beginning Balance')) continue;
+  // Find the matching ending balance on the same page
+  for (let j = i + 1; j < finalItems.length && finalItems[j].page === finalItems[i].page; j++) {
+    if (isBalanceRow(finalItems[j], 'Projected Ending Balance')) {
+      balanceGroups.set(i, 'begin');
+      balanceGroups.set(j, 'end');
+      // Mark all tables between as 'middle'
+      for (let k = i + 1; k < j; k++) {
+        if (finalItems[k].kind === 'table') balanceGroups.set(k, 'middle');
+      }
+      break;
+    }
+  }
 }
 
 const hasNarrative = finalItems.some(i => i.kind === 'narrative');
@@ -352,7 +382,7 @@ function parseNarrative(raw: string): Segment[] {
     <p class="text-gray-400 italic">No content extracted for this section.</p>
   ) : (() => {
     let renderHeadingIdx = 0;
-    return finalItems.map((item) => {
+    return finalItems.map((item, itemIdx) => {
       if (item.kind === 'page_break') {
         return (
           <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
@@ -368,10 +398,15 @@ function parseNarrative(raw: string): Segment[] {
 
       if (item.kind === 'narrative') {
         const isTitle = item.role === 'section_title';
+        const isFootnote = item.role === 'footnote';
         if (isTitle) {
           renderHeadingIdx++;
           const titleHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
           return <h2 id={`heading-${renderHeadingIdx}`} class="text-xl font-semibold text-gray-800 mt-6 mb-2" set:html={titleHtml} />;
+        }
+        if (isFootnote) {
+          const fnHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
+          return <p class="text-xs text-gray-400 mt-1 mb-0" set:html={fnHtml} />;
         }
         const segments = parseNarrative(item.text);
         return (
@@ -404,7 +439,7 @@ function parseNarrative(raw: string): Segment[] {
         const chartSrc = `/charts/${section.slug}/P${item.page}C${(item as any).chartIndex}.webp`;
         const cType = (item as any).chartType;
         const isLogo = cType === 'logo';
-        const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Organization chart' : 'Chart / diagram';
+        const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Figure' : 'Chart / diagram';
         if (isLogo) {
           return (
             <div class="my-3 flex items-center gap-3">
@@ -419,24 +454,56 @@ function parseNarrative(raw: string): Segment[] {
           );
         }
         return (
-          <div class="my-4 rounded-lg border overflow-hidden bg-white">
-            <div class="px-4 py-2 bg-blue-50 border-b text-xs text-blue-700 font-medium">
-              {label}
-            </div>
-            <div class="p-4 flex justify-center">
-              <img
-                src={chartSrc}
-                alt={`${label} for ${section.title}`}
-                class="max-w-full max-h-[500px] object-contain"
-                loading="lazy"
-              />
-            </div>
-          </div>
+          <ChartImage
+            client:visible
+            src={chartSrc}
+            alt={`${label} for ${section.title}`}
+            label={label}
+          />
         );
       }
 
       if (item.kind === 'table') {
         const tableData = (item as any).data;
+        const balanceRole = balanceGroups.get(itemIdx);
+
+        // Extract label/value from balance table (may be in rows or headers)
+        function getBalanceLabelValue(td: any): [string, string] {
+          if (td.rows?.length >= 1) return [(td.rows[0][0] || '').trim(), (td.rows[0][1] || '').trim()];
+          return [(td.headers?.[0] || '').trim(), (td.headers?.[1] || '').trim()];
+        }
+
+        // Beginning balance: render as a header bar, no separate table card
+        if (balanceRole === 'begin') {
+          const [label, value] = getBalanceLabelValue(tableData);
+          return (
+            <div id={`table-${tableData.id}`} class="mb-0 bg-white rounded-t-lg border border-b-0 px-4 py-3 flex items-center justify-between">
+              <span class="text-sm font-medium text-gray-700">{label}</span>
+              <span class="text-sm font-semibold tabular-nums">${value}</span>
+            </div>
+          );
+        }
+
+        // Ending balance: render as a footer bar
+        if (balanceRole === 'end') {
+          const [label, value] = getBalanceLabelValue(tableData);
+          return (
+            <div id={`table-${tableData.id}`} class="mt-0 mb-8 bg-white rounded-b-lg border border-t-0 px-4 py-3 flex items-center justify-between">
+              <span class="text-sm font-medium text-gray-700">{label}</span>
+              <span class="text-sm font-semibold tabular-nums">${value}</span>
+            </div>
+          );
+        }
+
+        // Middle tables in a balance group: render inset (no card chrome)
+        if (balanceRole === 'middle') {
+          return (
+            <div id={`table-${tableData.id}`}>
+              <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} inset />
+            </div>
+          );
+        }
+
         return (
           <div id={`table-${tableData.id}`}>
             <div class="flex justify-end gap-3 mb-1">

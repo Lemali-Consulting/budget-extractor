@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Bash(test:*)",
-      "Bash(claude-toolbox:*)"
+      "Bash(claude-toolbox:*)",
+      "Bash(npm run:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_install",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_network_requests",
+      "mcp__playwright__browser_evaluate",
+      "Bash(python3:*)"
     ]
   }
 }

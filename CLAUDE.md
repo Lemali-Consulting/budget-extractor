@@ -93,6 +93,7 @@ This project runs in a devcontainer with limited memory. Follow these rules to a
 - **Never run dev servers as background jobs** (`&`). Use `run_in_background` instead, which is managed properly.
 - **Never spawn multiple dev server instances.** Always confirm the previous one is stopped before starting a new one.
 - To start the web dev server: `cd web && npm run dev` (foreground, or with `run_in_background`)
+- **For browser access through port forwarding, use `astro preview` not `astro dev`.** Vite's dev server uses WebSockets for HMR that hang indefinitely through devcontainer port forwarding. `astro preview` serves the built static site with plain HTTP: `cd web && npx astro build && npx astro preview --port 4322 --host 0.0.0.0`
 
 # Netlify Deployment
 

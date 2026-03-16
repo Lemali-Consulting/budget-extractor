@@ -67,8 +67,13 @@ export default function YearChangeChart({ headers, rows, numericCols, tableId }:
     data.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta));
     const sliced = data.slice(0, 25);
 
+    const yLabelWidth = Math.min(250, Math.max(120, ...sliced.map((d) => d.label.length * 7)));
+    const hasNegative = sliced.some((d) => d.delta < 0);
+    const hasPositive = sliced.some((d) => d.delta >= 0);
+
     const chart = Plot.plot({
-      marginLeft: Math.min(250, Math.max(120, ...sliced.map((d) => d.label.length * 7))),
+      marginLeft: hasNegative ? yLabelWidth + 70 : yLabelWidth,
+      marginRight: hasPositive ? 70 : 20,
       width: containerWidth,
       height: Math.max(300, sliced.length * 28),
       x: {
@@ -88,16 +93,30 @@ export default function YearChangeChart({ headers, rows, numericCols, tableId }:
           fill: (d: { delta: number }) => (d.delta >= 0 ? CHART_COLORS.positive : CHART_COLORS.negative),
           sort: { y: 'x' },
         }),
-        Plot.text(sliced, {
-          x: 'delta',
-          y: 'label',
-          text: (d: { pctChange: number }) =>
-            `${d.pctChange >= 0 ? '+' : ''}${d.pctChange.toFixed(1)}%`,
-          dx: (d: { delta: number }) => (d.delta >= 0 ? 4 : -4),
-          textAnchor: (d: { delta: number }) => (d.delta >= 0 ? 'start' : 'end'),
-          fontSize: 10,
-          fill: CHART_COLORS.annotation,
-        }),
+        Plot.text(
+          sliced.filter((d) => d.delta >= 0),
+          {
+            x: 'delta',
+            y: 'label',
+            text: (d: { pctChange: number }) => `+${d.pctChange.toFixed(1)}%`,
+            dx: 5,
+            textAnchor: 'start',
+            fontSize: 12,
+            fill: '#374151',
+          },
+        ),
+        Plot.text(
+          sliced.filter((d) => d.delta < 0),
+          {
+            x: 'delta',
+            y: 'label',
+            text: (d: { pctChange: number }) => `${d.pctChange.toFixed(1)}%`,
+            dx: -5,
+            textAnchor: 'end',
+            fontSize: 12,
+            fill: '#374151',
+          },
+        ),
         Plot.ruleX([0]),
       ],
     });

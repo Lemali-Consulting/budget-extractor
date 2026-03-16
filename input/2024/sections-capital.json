@@ -2,569 +2,578 @@
   {
     "title": "Capital Budget Introduction",
     "start_page": 1,
-    "end_page": 25
+    "end_page": 27
   },
   {
     "title": "28TH STREET BRIDGE (TIP)",
-    "start_page": 26,
-    "end_page": 27,
-    "functional_area": "Engineering and Construction",
-    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
-    "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
-  },
-  {
-    "title": "BEAVER AVENUE TWO-WAY CONVERSION (TIP)",
     "start_page": 28,
-    "end_page": 29,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility & Infrastructure"
-  },
-  {
-    "title": "BLOOMFIELD BRIDGE (TIP)",
-    "start_page": 30,
-    "end_page": 31,
-    "functional_area": "Engineering and Construction",
-    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
-    "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility & Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 29
   },
   {
     "title": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
-    "start_page": 32,
-    "end_page": 33,
-    "functional_area": "Engineering and Construction",
-    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
-    "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
-  },
-  {
-    "title": "BRIDGE UPGRADES",
-    "start_page": 34,
-    "end_page": 35,
+    "start_page": 30,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Chief Engineer, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 31
+  },
+  {
+    "title": "BRIDGE UPGRADES",
+    "start_page": 32,
+    "functional_area": "Engineering and Construction",
+    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
+    "project_type": "Recurring, Capital Project",
+    "project_manager": "Chief Engineer, Mobility and Infrastructure",
+    "end_page": 33
   },
   {
     "title": "CALERA STREET BRIDGE (TIP)",
-    "start_page": 36,
-    "end_page": 37,
+    "start_page": 34,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 35
   },
   {
     "title": "CALIFORNIA AVENUE BRIDGE (TIP)",
-    "start_page": 38,
-    "end_page": 39,
+    "start_page": 36,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 37
+  },
+  {
+    "title": "CHARLES ANDERSON BRIDGE (TIP)",
+    "start_page": 38,
+    "functional_area": "Engineering and Construction",
+    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
+    "project_type": "Continuing, Capital Project",
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 39
   },
   {
     "title": "COMPLETE STREETS",
     "start_page": 40,
-    "end_page": 41,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Municipal Traffic Engineer, Mobility and Infrastructure"
+    "project_manager": "Municipal Traffic Engineer, Mobility and Infrastructure",
+    "end_page": 43
   },
   {
     "title": "CORLEY STREET BRIDGE (TIP)",
-    "start_page": 42,
-    "end_page": 43,
-    "functional_area": "Engineering and Construction",
-    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
-    "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
-  },
-  {
-    "title": "CORLISS STREET TUNNEL (TIP)",
     "start_page": 44,
-    "end_page": 45,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 45
   },
   {
     "title": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
     "start_page": 46,
-    "end_page": 47,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Chief Engineer, Mobility and Infrastructure"
-  },
-  {
-    "title": "EAST SYCAMORE STREET BRIDGE (TIP)",
-    "start_page": 48,
-    "end_page": 49,
-    "functional_area": "Engineering and Construction",
-    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
-    "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility & Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 47
   },
   {
     "title": "ELIZABETH STREET BRIDGE (TIP)",
-    "start_page": 50,
-    "end_page": 51,
+    "start_page": 48,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 49
   },
   {
     "title": "FLEX BEAM GUIDERAILS AND FENCING",
-    "start_page": 52,
-    "end_page": 53,
+    "start_page": 50,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Operations Manager, Mobility and Infrastructure"
+    "project_manager": "Operations Manager, Mobility and Infrastructure",
+    "end_page": 51
   },
   {
     "title": "FLOOD CONTROL PROJECTS",
-    "start_page": 54,
-    "end_page": 55,
+    "start_page": 52,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Chief Engineer, Mobility and Infrastructure"
+    "project_manager": "Chief Engineer, Mobility and Infrastructure",
+    "end_page": 53
+  },
+  {
+    "title": "FRANKSTOWN AVENUE SIGNAL IMPROVEMENTS (TIP)",
+    "start_page": 54,
+    "functional_area": "Engineering and Construction",
+    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
+    "project_type": "New, Capital Project",
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 55
   },
   {
     "title": "HERRON AVENUE BRIDGE (TIP)",
     "start_page": 56,
-    "end_page": 57,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 57
   },
   {
     "title": "LARIMER BRIDGE (TIP)",
     "start_page": 58,
-    "end_page": 59,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 59
+  },
+  {
+    "title": "LIBERTY AVENUE (HSIP)",
+    "start_page": 60,
+    "functional_area": "Engineering and Construction",
+    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
+    "project_type": "Continuing, Capital Project",
+    "project_manager": "Municipal Traffic Engineer, Mobility and Infrastructure",
+    "end_page": 61
   },
   {
     "title": "MAPLE AVENUE BRIDGE (TIP)",
-    "start_page": 60,
-    "end_page": 61,
+    "start_page": 62,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 63
   },
   {
-    "title": "P.J. MCARDLE ROADWAY (TIP)",
-    "start_page": 62,
-    "end_page": 63,
+    "title": "PARKING LOT BRIDGE AT WOODRUFF STREET (TIP)",
+    "start_page": 64,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "New, Capital Project",
-    "project_manager": "Deputy Director, Mobility & Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 65
   },
   {
     "title": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
-    "start_page": 64,
-    "end_page": 65,
+    "start_page": 66,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
-  },
-  {
-    "title": "PENN AVENUE RECONSTRUCTION, PHASE III (TIP)",
-    "start_page": 66,
-    "end_page": 67,
-    "functional_area": "Engineering and Construction",
-    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
-    "project_type": "New, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 67
   },
   {
     "title": "PENN AVENUE SIGNAL IMPROVEMENTS (TIP)",
     "start_page": 68,
-    "end_page": 69,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 69
   },
   {
     "title": "RAMP AND PUBLIC SIDEWALK",
     "start_page": 70,
-    "end_page": 71,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Chief Engineer, Mobility and Infrastructure"
+    "project_manager": "Project Engineer, Mobility and Infrastructure",
+    "end_page": 71
   },
   {
     "title": "SLOPE FAILURE REMEDIATION",
     "start_page": 72,
-    "end_page": 73,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Chief Engineer, Mobility and Infrastructure"
+    "project_manager": "Chief Engineer, Mobility and Infrastructure",
+    "end_page": 73
   },
   {
     "title": "SOUTH NEGLEY AVENUE BRIDGE (TIP)",
     "start_page": 74,
-    "end_page": 75,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 75
   },
   {
     "title": "STEP REPAIR AND REPLACEMENT",
     "start_page": 76,
-    "end_page": 77,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Engineer, Mobility and Infrastructure"
+    "project_manager": "Project Engineer, Mobility and Infrastructure",
+    "end_page": 77
   },
   {
     "title": "STREET RESURFACING",
     "start_page": 78,
-    "end_page": 79,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Paving Supervisor, Mobility and Infrastructure"
+    "project_manager": "Paving Supervisor, Mobility and Infrastructure",
+    "end_page": 79
   },
   {
     "title": "SWINDELL BRIDGE (TIP)",
     "start_page": 80,
-    "end_page": 81,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 81
   },
   {
     "title": "TRAIL DEVELOPMENT",
     "start_page": 82,
-    "end_page": 83,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Chief Engineer, Mobility and Infrastructure"
+    "project_manager": "Chief Engineer, Mobility and Infrastructure",
+    "end_page": 83
   },
   {
     "title": "WEST CARSON STREET BRIDGE (TIP)",
     "start_page": 84,
-    "end_page": 85,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
-  },
-  {
-    "title": "SMITHFIELD STREET (TIP)",
-    "start_page": 86,
-    "end_page": 87,
-    "functional_area": "Engineering and Construction",
-    "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
-    "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 85
   },
   {
     "title": "SWINBURNE BRIDGE (TIP)",
-    "start_page": 88,
-    "end_page": 89,
+    "start_page": 86,
     "functional_area": "Engineering and Construction",
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Deputy Director, Mobility and Infrastructure"
+    "project_manager": "Assistant Director, Mobility and Infrastructure",
+    "end_page": 89
   },
   {
     "title": "BOB O'CONNOR GOLF COURSE",
-    "start_page": 92,
-    "end_page": 93,
+    "start_page": 90,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "The First Tee of Pittsburgh"
+    "project_manager": "The First Tee of Pittsburgh",
+    "end_page": 91
   },
   {
     "title": "FACILITY IMPROVEMENTS - CITY FACILITIES",
-    "start_page": 94,
-    "end_page": 95,
+    "start_page": 92,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 93
   },
   {
     "title": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
-    "start_page": 96,
-    "end_page": 97,
+    "start_page": 94,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 95
   },
   {
     "title": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
-    "start_page": 98,
-    "end_page": 99,
+    "start_page": 96,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 97
   },
   {
     "title": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
-    "start_page": 100,
-    "end_page": 101,
+    "start_page": 98,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 99
   },
   {
     "title": "PARK RECONSTRUCTION",
-    "start_page": 102,
-    "end_page": 103,
+    "start_page": 100,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 101
   },
   {
     "title": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
-    "start_page": 104,
-    "end_page": 105,
+    "start_page": 102,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 103
   },
   {
     "title": "PLAY AREA IMPROVEMENTS",
-    "start_page": 106,
-    "end_page": 107,
+    "start_page": 104,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 105
+  },
+  {
+    "title": "POOL REHABILITATION",
+    "start_page": 106,
+    "functional_area": "Facility Improvement",
+    "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
+    "project_type": "Recurring, Capital Project",
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 107
   },
   {
     "title": "PUBLIC SAFETY TRAINING FACILITY",
     "start_page": 108,
-    "end_page": 109,
     "functional_area": "Facility Improvement",
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF",
     "project_type": "Continuing, Capital Project",
-    "project_manager": "Project Manager, Bureau of Facilities"
+    "project_manager": "Project Manager, Bureau of Facilities",
+    "end_page": 111
   },
   {
     "title": "BEDFORD DWELLINGS CHOICE NEIGHBORHOOD",
     "start_page": 112,
-    "end_page": 113,
     "functional_area": "Neighborhood and Community Development",
     "department": "URBAN REDEVELOPMENT AUTHORITY",
     "project_type": "Continuing, Intergovernmental Project",
-    "project_manager": "Project Manager, Project & Asset Management"
+    "project_manager": "Project Manager, Project & Asset Management",
+    "end_page": 113
   },
   {
     "title": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
     "start_page": 114,
-    "end_page": 115,
     "functional_area": "Neighborhood and Community Development",
     "department": "URBAN REDEVELOPMENT AUTHORITY",
     "project_type": "Recurring, Intergovernmental Project",
-    "project_manager": "Chief Housing Officer, Lending & Investments"
+    "project_manager": "Housing Director, Residential & Consumer Lending",
+    "end_page": 115
   },
   {
     "title": "HOUSING DEVELOPMENT",
     "start_page": 116,
-    "end_page": 117,
     "functional_area": "Neighborhood and Community Development",
     "department": "URBAN REDEVELOPMENT AUTHORITY",
     "project_type": "Recurring, Intergovernmental Project",
-    "project_manager": "Chief Housing Officer, Lending & Investments"
+    "project_manager": "Chief Housing Officer, Lending & Investments",
+    "end_page": 117
+  },
+  {
+    "title": "NEIGHBORHOOD INITIATIVES FUND",
+    "start_page": 118,
+    "functional_area": "Neighborhood and Community Development",
+    "department": "URBAN REDEVELOPMENT AUTHORITY",
+    "project_type": "Recurring, Intergovernmental Project",
+    "project_manager": "Manager, Business District Services",
+    "end_page": 119
   },
   {
     "title": "SMALL BUSINESS DEVELOPMENT",
-    "start_page": 118,
-    "end_page": 119,
+    "start_page": 120,
     "functional_area": "Neighborhood and Community Development",
     "department": "URBAN REDEVELOPMENT AUTHORITY",
     "project_type": "Recurring, Intergovernmental Project",
-    "project_manager": "Chief Development Officer, Lending & Investments"
+    "project_manager": "Chief Development Officer, Lending & Investments",
+    "end_page": 121
   },
   {
     "title": "WAR MEMORIALS AND PUBLIC ART",
-    "start_page": 120,
-    "end_page": 121,
+    "start_page": 122,
     "functional_area": "Neighborhood and Community Development",
     "department": "DEPARTMENT OF CITY PLANNING",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Assistant Director, Public History & Civic Design"
+    "project_manager": "Assistant Director, Public History, Art, & Design",
+    "end_page": 125
+  },
+  {
+    "title": "PUBLIC SAFETY EQUIPMENT",
+    "start_page": 126,
+    "functional_area": "Public Safety",
+    "department": "DEPARTMENT OF PUBLIC SAFETY - BUREAU OF",
+    "project_type": "Recurring",
+    "project_manager": "Assistant Director, Operations and Administration",
+    "end_page": 127
   },
   {
     "title": "REMEDIATION OF CONDEMNED BUILDINGS",
-    "start_page": 124,
-    "end_page": 125,
+    "start_page": 128,
     "functional_area": "Public Safety",
     "department": "DEPARTMENT OF PERMITS, LICENSES, AND",
     "project_type": "Recurring, Capital Project",
-    "project_manager": "Demolition Manager, Permits, Licenses, and Inspections"
+    "project_manager": "Demolition Manager, Permits, Licenses, and Inspections",
+    "end_page": 131
   },
   {
     "title": "CAPITAL EQUIPMENT ACQUISITION",
-    "start_page": 128,
-    "end_page": 129,
+    "start_page": 132,
     "functional_area": "Vehicles and Equipment",
     "department": "EQUIPMENT LEASING AUTHORITY",
     "project_type": "Recurring, Intergovernmental Project",
-    "project_manager": "Senior Manager, Fleet Services"
+    "project_manager": "Senior Manager, Fleet Services",
+    "end_page": 135
   },
   {
-    "title": "CDBG ADMINISTRATION",
-    "start_page": 133,
-    "end_page": 134,
-    "functional_area": "Administration/Sub-Award",
-    "department": "OFFICE OF MANAGEMENT AND BUDGET",
-    "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Community Development"
-  },
-  {
-    "title": "CDBG PERSONNEL",
-    "start_page": 135,
-    "end_page": 136,
-    "functional_area": "Administration/Sub-Award",
-    "department": "OFFICE OF MANAGEMENT AND BUDGET",
-    "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Community Development"
-  },
-  {
-    "title": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
-    "start_page": 137,
-    "end_page": 138,
-    "functional_area": "Administration/Sub-Award",
-    "department": "CITY COUNCIL",
-    "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Community Development"
-  },
-  {
-    "title": "EMERGENCY SOLUTIONS GRANT",
-    "start_page": 139,
-    "end_page": 140,
-    "functional_area": "Administration/Sub-Award",
-    "department": "OFFICE OF MANAGEMENT AND BUDGET",
-    "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Community Development"
-  },
-  {
-    "title": "FAIR HOUSING",
-    "start_page": 141,
-    "end_page": 142,
-    "functional_area": "Administration/Sub-Award",
-    "department": "COMMISSION ON HUMAN RELATIONS",
-    "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Director, Commission on Human Relations"
-  },
-  {
-    "title": "HOUSING COUNSELING",
-    "start_page": 143,
-    "end_page": 144,
-    "functional_area": "Administration/Sub-Award",
-    "department": "OFFICE OF MANAGEMENT AND BUDGET",
-    "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Community Development"
-  },
-  {
-    "title": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
-    "start_page": 145,
-    "end_page": 146,
-    "functional_area": "Administration/Sub-Award",
-    "department": "OFFICE OF MANAGEMENT AND BUDGET",
-    "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Community Development"
-  },
-  {
-    "title": "INFORMATION SYSTEMS MODERNIZATION",
-    "start_page": 147,
-    "end_page": 148,
-    "functional_area": "Administration/Sub-Award",
-    "department": "DEPARTMENT OF INNOVATION AND PERFORMANCE",
-    "project_type": "Recurring, Capital Project",
-    "project_manager": "Director, Innovation and Performance"
-  },
-  {
-    "title": "MAYOR'S PUBLIC SERVICE GRANTS",
-    "start_page": 149,
-    "end_page": 150,
+    "title": "ADA COMPLIANCE",
+    "start_page": 136,
     "functional_area": "Administration/Sub-Award",
     "department": "OFFICE OF THE MAYOR",
     "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Community Development"
+    "project_manager": "ADA Coordinator",
+    "end_page": 137
   },
   {
-    "title": "NEIGHBORHOOD ECONOMIC DEVELOPMENT",
-    "start_page": 151,
-    "end_page": 152,
+    "title": "CDBG ADMINISTRATION",
+    "start_page": 138,
     "functional_area": "Administration/Sub-Award",
     "department": "OFFICE OF MANAGEMENT AND BUDGET",
     "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Program Supervisor, Community Development"
+    "project_manager": "Assistant Director, Community Development",
+    "end_page": 139
+  },
+  {
+    "title": "CDBG PERSONNEL",
+    "start_page": 140,
+    "functional_area": "Administration/Sub-Award",
+    "department": "OFFICE OF MANAGEMENT AND BUDGET",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Assistant Director, Community Development",
+    "end_page": 141
+  },
+  {
+    "title": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
+    "start_page": 142,
+    "functional_area": "Administration/Sub-Award",
+    "department": "CITY COUNCIL",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Assistant Director, Community Development",
+    "end_page": 143
+  },
+  {
+    "title": "EMERGENCY SOLUTIONS GRANT",
+    "start_page": 144,
+    "functional_area": "Administration/Sub-Award",
+    "department": "OFFICE OF MANAGEMENT AND BUDGET",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Assistant Director, Community Development",
+    "end_page": 145
+  },
+  {
+    "title": "FAIR HOUSING",
+    "start_page": 146,
+    "functional_area": "Administration/Sub-Award",
+    "department": "COMMISSION ON HUMAN RELATIONS",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Director, Commission on Human Relations",
+    "end_page": 147
+  },
+  {
+    "title": "HOUSING COUNSELING",
+    "start_page": 148,
+    "functional_area": "Administration/Sub-Award",
+    "department": "OFFICE OF MANAGEMENT AND BUDGET",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Assistant Director, Community Development",
+    "end_page": 149
+  },
+  {
+    "title": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
+    "start_page": 150,
+    "functional_area": "Administration/Sub-Award",
+    "department": "OFFICE OF MANAGEMENT AND BUDGET",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Assistant Director, Community Development",
+    "end_page": 151
+  },
+  {
+    "title": "INFORMATION SYSTEMS MODERNIZATION",
+    "start_page": 152,
+    "functional_area": "Administration/Sub-Award",
+    "department": "DEPARTMENT OF INNOVATION AND PERFORMANCE",
+    "project_type": "Recurring, Capital Project",
+    "project_manager": "Director, Innovation and Performance",
+    "end_page": 153
+  },
+  {
+    "title": "MAYOR'S PUBLIC SERVICE GRANTS",
+    "start_page": 154,
+    "functional_area": "Administration/Sub-Award",
+    "department": "OFFICE OF THE MAYOR",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Assistant Director, Community Development",
+    "end_page": 155
+  },
+  {
+    "title": "NEIGHBORHOOD ECONOMIC DEVELOPMENT",
+    "start_page": 156,
+    "functional_area": "Administration/Sub-Award",
+    "department": "OFFICE OF MANAGEMENT AND BUDGET",
+    "project_type": "Recurring, Special Revenue Project",
+    "project_manager": "Program Supervisor, Community Development",
+    "end_page": 157
   },
   {
     "title": "NEIGHBORHOOD EMPLOYMENT CENTERS",
-    "start_page": 153,
-    "end_page": 154,
+    "start_page": 158,
     "functional_area": "Administration/Sub-Award",
     "department": "HUMAN RESOURCES AND CIVIL SERVICE COMMISSION",
     "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Pittsburgh Partnership"
+    "project_manager": "Senior HR Manager, Pittsburgh Partnership",
+    "end_page": 159
   },
   {
     "title": "PITTSBURGH EMPLOYMENT PROGRAM",
-    "start_page": 155,
-    "end_page": 156,
+    "start_page": 160,
     "functional_area": "Administration/Sub-Award",
     "department": "HUMAN RESOURCES AND CIVIL SERVICE COMMISSION",
     "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Pittsburgh Partnership"
+    "project_manager": "Senior HR Manager, Pittsburgh Partnership",
+    "end_page": 161
   },
   {
     "title": "SENIOR COMMUNITY PROGRAM",
-    "start_page": 157,
-    "end_page": 158,
+    "start_page": 162,
     "functional_area": "Administration/Sub-Award",
     "department": "DEPARTMENT OF PARKS AND RECREATION",
     "project_type": "Recurring, Special Revenue Project",
-    "project_manager": "Assistant Director, Parks and Recreation"
+    "project_manager": "Assistant Director, Parks and Recreation",
+    "end_page": 163
   },
   {
     "title": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "start_page": 159,
-    "end_page": 160,
+    "start_page": 164,
     "functional_area": "Administration/Sub-Award",
     "department": "URBAN REDEVELOPMENT AUTHORITY",
     "project_type": "Recurring, Intergovernmental Project",
-    "project_manager": "Chief Financial Officer, Finance"
+    "project_manager": "Chief Financial Officer, Finance",
+    "end_page": 165
   },
   {
     "title": "Capital Budget Appendices",
-    "start_page": 161,
-    "end_page": 179
+    "start_page": 167,
+    "end_page": 202
   }
 ]

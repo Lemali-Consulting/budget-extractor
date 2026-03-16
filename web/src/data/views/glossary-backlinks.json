@@ -599,6 +599,16 @@
     ],
     "total": 2
   },
+  "CAGR": {
+    "sections": [
+      {
+        "slug": "revenue-summary",
+        "title": "Revenue Summary",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 1
+  },
   "General Fund": {
     "sections": [
       {

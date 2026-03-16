@@ -409,7 +409,7 @@
     ]
   },
   "abbreviations": {
-    "FTE": "Full-Time Equivalent (staffing measure)",
+    "FTE": "Full-Time Equivalent — a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
     "OPEB": "Other Post-Employment Benefits",
     "PAYGO": "Pay-As-You-Go (capital funding from reserves instead of debt)",
     "RAD": "Regional Asset District",
@@ -428,7 +428,8 @@
     "HOME": "HOME Investment Partnerships Program (federal affordable housing)",
     "ESG": "Emergency Solutions Grant",
     "CIP": "Capital Improvement Plan (the City's multi-year capital spending document)",
-    "CPFC": "Capital Program Facilitation Committee (reviews and scores capital project proposals)"
+    "CPFC": "Capital Program Facilitation Committee (reviews and scores capital project proposals)",
+    "CAGR": "Compound Annual Growth Rate (annualized average rate of return over a multi-year period)"
   },
   "general_terms": [
     {

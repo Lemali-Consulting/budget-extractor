@@ -71,7 +71,7 @@ function fmtM(n: number): string {
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Personnel</div>
-      <div class="text-2xl font-bold text-purple-900 mt-1">{totalFte.toLocaleString('en-US')} FTE</div>
+      <div class="text-2xl font-bold text-purple-900 mt-1">{totalFte.toLocaleString('en-US')} <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a></div>
       <div class="text-sm text-gray-500 mt-0.5">{fmtM(totalPersonnelBudget)} payroll</div>
     </div>
   </div>

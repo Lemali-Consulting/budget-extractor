@@ -1,0 +1,535 @@
+{
+  "availableYears": [
+    2024,
+    2025,
+    2026
+  ],
+  "operatingSections": [
+    {
+      "title": "Office of Equity",
+      "presentInYears": [
+        2024
+      ],
+      "changeType": "reorganization",
+      "slug": "office-of-equity",
+      "absorbedBy": "Office of the Mayor",
+      "absorbedBySlug": "office-of-the-mayor",
+      "note": "Budget lines shifted into the Office of the Mayor cost center in 2023. IDEA Manager and Coordinator positions eliminated by 2026."
+    },
+    {
+      "title": "Office of Immigrant and Refugee Affairs",
+      "presentInYears": [
+        2024
+      ],
+      "changeType": "reorganization",
+      "slug": "office-of-immigrant-and-refugee-affairs",
+      "absorbedBy": "Office of the Mayor",
+      "absorbedBySlug": "office-of-the-mayor",
+      "note": "Budget lines shifted into the Office of the Mayor cost center in 2023. Manager position downgraded to Coordinator, Policy Coordinator eliminated by 2026."
+    },
+    {
+      "title": "Solid Waste Trust Fund",
+      "presentInYears": [
+        2024
+      ],
+      "changeType": "removed",
+      "slug": "solid-waste-trust-fund"
+    },
+    {
+      "title": "Wayfinders Signage Trust Fund",
+      "presentInYears": [
+        2024
+      ],
+      "changeType": "removed",
+      "slug": "wayfinders-signage-trust-fund"
+    },
+    {
+      "title": "City Council as a Body",
+      "currentTitle": "Office of the City Clerk",
+      "presentInYears": [
+        2024
+      ],
+      "currentPresentInYears": [
+        2025,
+        2026
+      ],
+      "changeType": "renamed",
+      "slug": "city-council-as-a-body",
+      "currentSlug": "office-of-the-city-clerk"
+    },
+    {
+      "title": "Smaller Trust Funds",
+      "currentTitle": "Other Special Revenue Funds",
+      "presentInYears": [
+        2024
+      ],
+      "currentPresentInYears": [
+        2025,
+        2026
+      ],
+      "changeType": "renamed",
+      "slug": "smaller-trust-funds",
+      "currentSlug": "other-special-revenue-funds"
+    },
+    {
+      "title": "Bureau of Administration (Public Safety)",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-administration-public-safety"
+    },
+    {
+      "title": "Bureau of Administration (Public Works)",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-administration-public-works"
+    },
+    {
+      "title": "Bureau of Animal Care and Control",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-animal-care-and-control"
+    },
+    {
+      "title": "Bureau of Emergency Medical Services",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-emergency-medical-services"
+    },
+    {
+      "title": "Bureau of Environmental Services",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-environmental-services"
+    },
+    {
+      "title": "Bureau of Facilities",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-facilities"
+    },
+    {
+      "title": "Bureau of Fire",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-fire"
+    },
+    {
+      "title": "Bureau of Operations",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-operations"
+    },
+    {
+      "title": "Bureau of Police",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "bureau-of-police"
+    },
+    {
+      "title": "Citizen Police Review Board",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "citizen-police-review-board"
+    },
+    {
+      "title": "City Council",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "city-council"
+    },
+    {
+      "title": "Commission on Human Relations",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "commission-on-human-relations"
+    },
+    {
+      "title": "Community Development Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "community-development-trust-fund"
+    },
+    {
+      "title": "Department of City Planning",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-city-planning"
+    },
+    {
+      "title": "Department of Finance",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-finance"
+    },
+    {
+      "title": "Department of Human Resources and Civil Service",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-human-resources-and-civil-service"
+    },
+    {
+      "title": "Department of Innovation and Performance",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-innovation-and-performance"
+    },
+    {
+      "title": "Department of Law",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-law"
+    },
+    {
+      "title": "Department of Mobility and Infrastructure",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-mobility-and-infrastructure"
+    },
+    {
+      "title": "Department of Parks and Recreation",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-parks-and-recreation"
+    },
+    {
+      "title": "Department of Permits, Licenses, and Inspections",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-permits-licenses-and-inspections"
+    },
+    {
+      "title": "Department of Public Works",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-public-works"
+    },
+    {
+      "title": "EEOC Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "eeoc-trust-fund"
+    },
+    {
+      "title": "Ethics Hearing Board",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "ethics-hearing-board"
+    },
+    {
+      "title": "Frick Park Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "frick-park-trust-fund"
+    },
+    {
+      "title": "HUD Fair Housing Program Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "hud-fair-housing-program-trust-fund"
+    },
+    {
+      "title": "Liquid Fuels Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "liquid-fuels-trust-fund"
+    },
+    {
+      "title": "Mellon Park Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "mellon-park-trust-fund"
+    },
+    {
+      "title": "Office of Community Health and Safety",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "office-of-community-health-and-safety"
+    },
+    {
+      "title": "Office of Management and Budget",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "office-of-management-and-budget"
+    },
+    {
+      "title": "Office of Municipal Investigations",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "office-of-municipal-investigations"
+    },
+    {
+      "title": "Office of the City Controller",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "office-of-the-city-controller"
+    },
+    {
+      "title": "Office of the Mayor",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "office-of-the-mayor"
+    },
+    {
+      "title": "Parks Tax Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "parks-tax-trust-fund"
+    },
+    {
+      "title": "Pittsburgh Partnership Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "pittsburgh-partnership-trust-fund"
+    },
+    {
+      "title": "Police Secondary Employment Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "police-secondary-employment-trust-fund"
+    },
+    {
+      "title": "Public Works Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "public-works-trust-fund"
+    },
+    {
+      "title": "Regional Asset District - Parks and Recreation Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "regional-asset-district-parks-and-recreation-trust-fund"
+    },
+    {
+      "title": "Regional Asset District - Public Works Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "regional-asset-district-public-works-trust-fund"
+    },
+    {
+      "title": "Schenley Park Rink Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "schenley-park-rink-trust-fund"
+    },
+    {
+      "title": "Senior Citizens Program Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "senior-citizens-program-trust-fund"
+    },
+    {
+      "title": "Shade Tree Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "shade-tree-trust-fund"
+    },
+    {
+      "title": "Special Events Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "special-events-trust-fund"
+    },
+    {
+      "title": "Special Food Service Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "special-food-service-trust-fund"
+    },
+    {
+      "title": "Stop the Violence Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "stop-the-violence-trust-fund"
+    },
+    {
+      "title": "Three Taxing Bodies Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026
+      ],
+      "changeType": "unchanged",
+      "slug": "three-taxing-bodies-trust-fund"
+    }
+  ]
+}

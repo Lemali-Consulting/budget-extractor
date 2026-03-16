@@ -1,6 +1,7 @@
 /**Cross-year budget comparison: 2025 proposed vs 2025 adopted (as reported in 2026 doc).*/
 import { useState, useRef, useEffect } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
+import { useContainerWidth } from '../lib/hooks';
 
 interface DeptBudget {
   department: string;
@@ -82,6 +83,8 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
   const [showOnlyChanges, setShowOnlyChanges] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
+  const chartContainerRef = useRef<HTMLDivElement>(null);
+  const chartWidth = useContainerWidth(chartContainerRef);
 
   const comparison = buildComparison(proposed, adopted);
 
@@ -125,7 +128,7 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
 
     const chart = Plot.plot({
       marginLeft: 220,
-      width: Math.min(800, chartRef.current.clientWidth),
+      width: chartWidth,
       height: Math.max(300, chartData.length * 28 + 60),
       x: { label: 'Change from Proposed to Adopted ($)', tickFormat: (d: number) => formatDollar(d) },
       y: { label: null },
@@ -141,7 +144,7 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
     });
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [changed.length, showOnlyChanges]);
+  }, [changed.length, showOnlyChanges, chartWidth]);
 
   return (
     <div>
@@ -169,9 +172,9 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
 
       {/* Chart */}
       {changed.length > 0 && (
-        <div class="bg-white rounded-lg border p-4 mb-6">
+        <div ref={chartContainerRef} class="bg-white rounded-lg border p-4 mb-6">
           <h3 class="text-sm font-semibold text-gray-700 mb-2">Departments Changed by Council</h3>
-          <div ref={chartRef}></div>
+          <div ref={chartRef} />
         </div>
       )}
 

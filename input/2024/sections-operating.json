@@ -7,316 +7,331 @@
   {
     "title": "American Rescue Plan",
     "start_page": 10,
-    "end_page": 17
+    "end_page": 16
   },
   {
     "title": "Budget Guide",
-    "start_page": 18,
-    "end_page": 29
+    "start_page": 17,
+    "end_page": 28
   },
   {
     "title": "Five-Year Financial Forecast",
-    "start_page": 30,
+    "start_page": 29,
     "end_page": 32
   },
   {
     "title": "Revenue Summary",
     "start_page": 33,
-    "end_page": 39
+    "end_page": 38
   },
   {
     "title": "Revenue Narrative",
-    "start_page": 40,
-    "end_page": 44
+    "start_page": 39,
+    "end_page": 43
   },
   {
     "title": "Revenue Detail",
-    "start_page": 45,
+    "start_page": 44,
     "end_page": 48
   },
   {
     "title": "Expenditure Summary",
     "start_page": 49,
-    "end_page": 55
+    "end_page": 54
   },
   {
     "title": "Expenditures Detail",
-    "start_page": 56,
-    "end_page": 58
+    "start_page": 55,
+    "end_page": 57
   },
   {
     "title": "City Council",
-    "start_page": 59,
-    "end_page": 63
+    "start_page": 58,
+    "end_page": 62
   },
   {
-    "title": "Office of the City Clerk",
-    "start_page": 64,
-    "end_page": 68
+    "title": "City Council as a Body",
+    "start_page": 63,
+    "end_page": 67
   },
   {
     "title": "Office of the Mayor",
-    "start_page": 69,
+    "start_page": 68,
     "end_page": 73
   },
   {
-    "title": "Office of Management and Budget",
+    "title": "Office of Equity",
     "start_page": 74,
-    "end_page": 81
+    "end_page": 75
+  },
+  {
+    "title": "Office of Management and Budget",
+    "start_page": 76,
+    "end_page": 82
+  },
+  {
+    "title": "Office of Immigrant and Refugee Affairs",
+    "start_page": 83,
+    "end_page": 84
   },
   {
     "title": "Department of Innovation and Performance",
-    "start_page": 82,
-    "end_page": 88
+    "start_page": 85,
+    "end_page": 91
   },
   {
     "title": "Commission on Human Relations",
-    "start_page": 89,
-    "end_page": 94
+    "start_page": 92,
+    "end_page": 97
   },
   {
     "title": "Office of the City Controller",
-    "start_page": 95,
-    "end_page": 101
+    "start_page": 98,
+    "end_page": 104
   },
   {
     "title": "Department of Finance",
-    "start_page": 102,
-    "end_page": 110
+    "start_page": 105,
+    "end_page": 112
   },
   {
     "title": "Department of Law",
-    "start_page": 111,
-    "end_page": 116
+    "start_page": 113,
+    "end_page": 118
   },
   {
     "title": "Ethics Hearing Board",
-    "start_page": 117,
-    "end_page": 122
+    "start_page": 119,
+    "end_page": 124
   },
   {
     "title": "Office of Municipal Investigations",
-    "start_page": 123,
-    "end_page": 128
+    "start_page": 125,
+    "end_page": 130
   },
   {
     "title": "Department of Human Resources and Civil Service",
-    "start_page": 129,
-    "end_page": 137
+    "start_page": 131,
+    "end_page": 139
   },
   {
     "title": "Department of City Planning",
-    "start_page": 138,
-    "end_page": 145
+    "start_page": 140,
+    "end_page": 146
   },
   {
     "title": "Department of Permits, Licenses, and Inspections",
-    "start_page": 146,
+    "start_page": 147,
     "end_page": 153
   },
   {
     "title": "Bureau of Administration (Public Safety)",
     "start_page": 154,
-    "end_page": 165
+    "end_page": 161
   },
   {
     "title": "Bureau of Emergency Medical Services",
-    "start_page": 166,
-    "end_page": 173
+    "start_page": 162,
+    "end_page": 169
   },
   {
     "title": "Bureau of Police",
-    "start_page": 174,
-    "end_page": 183
+    "start_page": 170,
+    "end_page": 179
   },
   {
     "title": "Bureau of Fire",
-    "start_page": 184,
-    "end_page": 190
+    "start_page": 180,
+    "end_page": 187
   },
   {
     "title": "Bureau of Animal Care and Control",
-    "start_page": 191,
-    "end_page": 196
+    "start_page": 188,
+    "end_page": 193
   },
   {
     "title": "Office of Community Health and Safety",
-    "start_page": 197,
-    "end_page": 202
+    "start_page": 194,
+    "end_page": 199
   },
   {
     "title": "Department of Public Works",
-    "start_page": 203,
-    "end_page": 207
+    "start_page": 200,
+    "end_page": 204
   },
   {
     "title": "Bureau of Administration (Public Works)",
-    "start_page": 208,
-    "end_page": 211
+    "start_page": 205,
+    "end_page": 208
   },
   {
     "title": "Bureau of Operations",
-    "start_page": 212,
-    "end_page": 217
+    "start_page": 209,
+    "end_page": 213
   },
   {
     "title": "Bureau of Environmental Services",
-    "start_page": 218,
-    "end_page": 221
+    "start_page": 214,
+    "end_page": 217
   },
   {
     "title": "Bureau of Facilities",
-    "start_page": 222,
-    "end_page": 227
+    "start_page": 218,
+    "end_page": 222
   },
   {
     "title": "Department of Parks and Recreation",
-    "start_page": 228,
-    "end_page": 236
+    "start_page": 223,
+    "end_page": 230
   },
   {
     "title": "Department of Mobility and Infrastructure",
-    "start_page": 237,
-    "end_page": 247
+    "start_page": 231,
+    "end_page": 239
   },
   {
     "title": "Citizen Police Review Board",
+    "start_page": 240,
+    "end_page": 247
+  },
+  {
+    "title": "Community Development Trust Fund",
     "start_page": 248,
-    "end_page": 254
+    "end_page": 249
   },
   {
     "title": "HUD Fair Housing Program Trust Fund",
-    "start_page": 255,
-    "end_page": 256
+    "start_page": 250,
+    "end_page": 251
   },
   {
     "title": "EEOC Trust Fund",
-    "start_page": 257,
-    "end_page": 257
+    "start_page": 252,
+    "end_page": 253
   },
   {
     "title": "Three Taxing Bodies Trust Fund",
+    "start_page": 254,
+    "end_page": 255
+  },
+  {
+    "title": "Pittsburgh Partnership Trust Fund",
+    "start_page": 256,
+    "end_page": 257
+  },
+  {
+    "title": "Police Secondary Employment Trust Fund",
     "start_page": 258,
     "end_page": 259
   },
   {
-    "title": "Pittsburgh Partnership Trust Fund",
+    "title": "Stop the Violence Trust Fund",
     "start_page": 260,
-    "end_page": 261
-  },
-  {
-    "title": "Community Development Trust Fund",
-    "start_page": 262,
     "end_page": 263
   },
   {
-    "title": "Police Secondary Employment Trust Fund",
+    "title": "Special Events Trust Fund",
     "start_page": 264,
     "end_page": 265
   },
   {
-    "title": "Stop the Violence Trust Fund",
+    "title": "Parks Tax Trust Fund",
     "start_page": 266,
-    "end_page": 269
+    "end_page": 268
   },
   {
     "title": "Liquid Fuels Trust Fund",
-    "start_page": 270,
-    "end_page": 270
+    "start_page": 269,
+    "end_page": 269
   },
   {
     "title": "Regional Asset District - Public Works Trust Fund",
-    "start_page": 271,
-    "end_page": 273
+    "start_page": 270,
+    "end_page": 271
   },
   {
     "title": "Public Works Trust Fund",
-    "start_page": 274,
-    "end_page": 274
+    "start_page": 272,
+    "end_page": 272
   },
   {
     "title": "Shade Tree Trust Fund",
+    "start_page": 273,
+    "end_page": 274
+  },
+  {
+    "title": "Wayfinders Signage Trust Fund",
     "start_page": 275,
     "end_page": 275
   },
   {
-    "title": "Parks Tax Trust Fund",
+    "title": "Solid Waste Trust Fund",
     "start_page": 276,
+    "end_page": 276
+  },
+  {
+    "title": "Schenley Park Rink Trust Fund",
+    "start_page": 277,
+    "end_page": 277
+  },
+  {
+    "title": "Regional Asset District - Parks and Recreation Trust Fund",
+    "start_page": 278,
     "end_page": 279
   },
   {
-    "title": "Special Events Trust Fund",
+    "title": "Mellon Park Trust Fund",
     "start_page": 280,
     "end_page": 281
   },
   {
-    "title": "Regional Asset District - Parks and Recreation Trust Fund",
-    "start_page": 282,
-    "end_page": 284
-  },
-  {
-    "title": "Mellon Park Trust Fund",
-    "start_page": 285,
-    "end_page": 286
-  },
-  {
-    "title": "Schenley Park Rink Trust Fund",
-    "start_page": 287,
-    "end_page": 287
-  },
-  {
     "title": "Senior Citizens Program Trust Fund",
-    "start_page": 288,
-    "end_page": 289
+    "start_page": 282,
+    "end_page": 283
   },
   {
     "title": "Special Food Service Trust Fund",
-    "start_page": 290,
-    "end_page": 291
+    "start_page": 284,
+    "end_page": 285
   },
   {
     "title": "Frick Park Trust Fund",
-    "start_page": 292,
-    "end_page": 292
+    "start_page": 286,
+    "end_page": 286
   },
   {
-    "title": "Other Special Revenue Funds",
-    "start_page": 293,
-    "end_page": 303
+    "title": "Smaller Trust Funds",
+    "start_page": 287,
+    "end_page": 296
   },
   {
     "title": "Grants",
-    "start_page": 304,
-    "end_page": 315
+    "start_page": 297,
+    "end_page": 306
   },
   {
     "title": "City of Pittsburgh Organization Chart",
-    "start_page": 316,
-    "end_page": 317
+    "start_page": 307,
+    "end_page": 308
   },
   {
     "title": "Salary Tables",
-    "start_page": 318,
-    "end_page": 321
+    "start_page": 309,
+    "end_page": 312
   },
   {
     "title": "Debt Service",
-    "start_page": 322,
-    "end_page": 336
+    "start_page": 313,
+    "end_page": 327
   },
   {
     "title": "Pension Funding",
-    "start_page": 337,
-    "end_page": 340
+    "start_page": 328,
+    "end_page": 331
   },
   {
-    "title": "Master Fee Schedule",
-    "start_page": 341,
-    "end_page": 364
-  },
-  {
-    "title": "Appendices",
-    "start_page": 365,
-    "end_page": 368
+    "title": "Fee Schedule",
+    "start_page": 332,
+    "end_page": 350
   }
 ]

@@ -1,13 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
-import CrossYearComparison from '../components/CrossYearComparison.tsx';
+import CrossYearPage from '../components/CrossYearPage.tsx';
 import searchIndex from '../data/views/search-index.json';
 import proposedBudgets from '../data/views/2025-department-budgets.json';
 import adoptedBudgets from '../data/views/department-budgets.json';
+import proposedChanges from '../data/views/2025-budget-changes.json';
+import adoptedChanges from '../data/views/budget-changes.json';
+import proposedPersonnel from '../data/views/2025-personnel.json';
+import adoptedPersonnel from '../data/views/personnel.json';
+import proposedCapital from '../data/views/2025-capital-projects.json';
+import adoptedCapital from '../data/views/capital-projects.json';
 ---
 
-<Base title="Proposed vs Adopted" description="Compare the mayor's proposed 2025 budget to what council adopted — department by department.">
+<Base title="Proposed vs Adopted" description="Compare the mayor's proposed 2025 budget to what council adopted — department by department, position by position.">
   <h1 class="text-3xl font-bold mb-2">2025: Proposed vs. Adopted</h1>
   <p class="text-gray-600 mb-4">
     The mayor proposes a budget; council amends and adopts it. This page compares
@@ -16,13 +22,41 @@ import adoptedBudgets from '../data/views/department-budgets.json';
     showing where council made changes.
   </p>
 
+  {/* Aggregate summary */}
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
+      <div class="text-xs text-blue-600 mb-1">Proposed Budget</div>
+      <div class="text-lg font-semibold">${(proposedChanges.totalBudget2025 / 1_000_000).toFixed(1)}M</div>
+    </div>
+    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
+      <div class="text-xs text-blue-600 mb-1">Adopted Budget</div>
+      <div class="text-lg font-semibold">${(adoptedChanges.totalBudget2025 / 1_000_000).toFixed(1)}M</div>
+    </div>
+    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
+      <div class="text-xs text-blue-600 mb-1">Budget Change</div>
+      <div class={`text-lg font-semibold ${adoptedChanges.totalBudget2025 - proposedChanges.totalBudget2025 >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {adoptedChanges.totalBudget2025 - proposedChanges.totalBudget2025 >= 0 ? '+' : ''}${((adoptedChanges.totalBudget2025 - proposedChanges.totalBudget2025) / 1_000_000).toFixed(1)}M
+      </div>
+    </div>
+    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
+      <div class="text-xs text-blue-600 mb-1"><a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a> Change</div>
+      <div class={`text-lg font-semibold ${adoptedChanges.totalFte2025 - proposedChanges.totalFte2025 >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {adoptedChanges.totalFte2025 - proposedChanges.totalFte2025 >= 0 ? '+' : ''}{adoptedChanges.totalFte2025 - proposedChanges.totalFte2025} FTE
+      </div>
+    </div>
+  </div>
+
   <div class="mb-6">
     <SearchBar items={searchIndex} client:load />
   </div>
 
-  <CrossYearComparison
+  <CrossYearPage
     client:load
-    proposed={proposedBudgets}
-    adopted={adoptedBudgets}
+    proposedBudgets={proposedBudgets}
+    adoptedBudgets={adoptedBudgets}
+    proposedPersonnel={proposedPersonnel}
+    adoptedPersonnel={adoptedPersonnel}
+    proposedCapital={proposedCapital}
+    adoptedCapital={adoptedCapital}
   />
 </Base>

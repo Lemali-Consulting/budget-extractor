@@ -28,6 +28,7 @@ export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
     const chartData = data
       .map((d) => ({
         department: d.department,
+        slug: d.slug,
         value: sizeBy === 'fte' ? d.totalFte2026 : d.totalBudget2026,
         change: sizeBy === 'fte'
           ? d.totalFte2026 - d.totalFte2025
@@ -69,8 +70,9 @@ export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
           y: 'department',
           fill: 'change',
           sort: { y: '-x' },
+          tip: true,
           title: (d: typeof chartData[0]) =>
-            `${d.department}\nFTE: ${d.fte} | Budget: $${(d.budget / 1_000_000).toFixed(1)}M\n${d.positions} position types`,
+            `${d.department}\nFTE: ${Math.round(d.fte)} | Budget: $${(d.budget / 1_000_000).toFixed(1)}M\n${d.positions} position types`,
         }),
         Plot.text(chartData, {
           x: 'value',
@@ -85,6 +87,28 @@ export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
     });
 
     chartRef.current.replaceChildren(chart);
+
+    // Make bars clickable — navigate to section detail pages
+    // Observable Plot wraps bar marks in <g aria-label="bar">
+    const barRects = Array.from(
+      chart.querySelectorAll('g[aria-label="bar"] rect'),
+    );
+    barRects.forEach((rect, i) => {
+      if (i < chartData.length) {
+        rect.setAttribute('data-slug', chartData[i].slug);
+        rect.style.cursor = 'pointer';
+        rect.addEventListener('click', () => {
+          window.location.href = `/sections/${chartData[i].slug}/`;
+        });
+        rect.addEventListener('mouseenter', () => {
+          rect.setAttribute('opacity', '0.7');
+        });
+        rect.addEventListener('mouseleave', () => {
+          rect.removeAttribute('opacity');
+        });
+      }
+    });
+
     return () => chart.remove();
   }, [data, sizeBy, containerWidth]);
 

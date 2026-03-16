@@ -1,6 +1,8 @@
 /**Filterable, sortable view of personnel tables across all departments.*/
 
 import { useState, useMemo } from 'preact/hooks';
+import GlossaryTip from './GlossaryTip';
+import { FTE_TOOLTIP } from '../lib/glossary-terms';
 
 interface PersonnelRow {
   department: string;
@@ -109,7 +111,7 @@ export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
                 class="px-3 py-2 text-right font-medium cursor-pointer hover:text-blue-600"
                 onClick={() => toggleSort('fte2026')}
               >
-                FTE 2026{sortIcon('fte2026')}
+                <GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /> 2026{sortIcon('fte2026')}
               </th>
               <th
                 class="px-3 py-2 text-right font-medium cursor-pointer hover:text-blue-600"
@@ -128,7 +130,19 @@ export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
                     {row.department}
                   </a>
                 </td>
-                <td class="px-3 py-1.5 border-t text-right">{row.rateGrade || '—'}</td>
+                <td class="px-3 py-1.5 border-t text-right">
+                  {row.rateGrade === 'see below' ? (
+                    <a
+                      href="/sections/salary-tables/"
+                      class="text-blue-600 hover:underline text-xs"
+                      title="Rate set by collective bargaining agreement — see Salary Tables"
+                    >
+                      CBA rates
+                    </a>
+                  ) : (
+                    row.rateGrade || '—'
+                  )}
+                </td>
                 <td class="px-3 py-1.5 border-t text-right">{row.fte2026 ?? '—'}</td>
                 <td class="px-3 py-1.5 border-t text-right">{formatCurrency(row.budget2026)}</td>
               </tr>

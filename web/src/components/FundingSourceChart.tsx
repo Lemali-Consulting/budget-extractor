@@ -46,7 +46,7 @@ export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
       width: containerWidth,
       height: 350,
       marginBottom: 40,
-      x: { label: 'Year', padding: 0.3 },
+      x: { label: 'Year', type: 'band', padding: 0.3 },
       y: {
         label: 'Total Funding ($)',
         tickFormat: (d: number) => `$${(d / 1_000_000).toFixed(0)}M`,

@@ -29,6 +29,17 @@ from utils.paths import (
     web_data_dir,
 )
 
+# Footnote-like patterns that may be misclassified as section_title by the extractor.
+_FOOTNOTE_PATTERNS = ("Totals may not", "*Compound Annual Growth Rate")
+
+
+def _effective_role(block) -> str:
+    """Reclassify text blocks whose content is footnote-like but were mis-tagged."""
+    if block.role != "footnote" and any(p in block.text for p in _FOOTNOTE_PATTERNS):
+        return "footnote"
+    return block.role
+
+
 # Budget year — set from CLI or default. PRIOR_YEAR is always BUDGET_YEAR - 1.
 BUDGET_YEAR: int = DEFAULT_YEAR
 PRIOR_YEAR: int = BUDGET_YEAR - 1
@@ -98,6 +109,163 @@ def parse_csv(path: Path) -> dict:
     return {"headers": headers, "rows": data_rows, "sections": sections}
 
 
+def fill_blank_year_headers(headers: list[str], budget_year: int) -> list[str]:
+    """Fill blank headers that follow the standard budget year-column pattern.
+
+    Many operating budget tables have headers like:
+      ['Expenditures', '', '', '', 'Increase/ (Decrease)', '% Change']
+    where columns 1-3 are years (budget_year-2 Actual, budget_year-1 Budget,
+    budget_year Budget). Detect this pattern and fill in the blanks.
+    """
+    if len(headers) < 4:
+        return headers
+
+    # Find contiguous blank headers between a non-blank first col and non-blank later cols
+    blank_indices = [i for i in range(1, len(headers)) if headers[i].strip() == ""]
+    if not blank_indices:
+        return headers
+
+    # Pattern: exactly 3 consecutive blank cols starting at index 1,
+    # followed by Increase/Decrease and % Change columns
+    if (
+        blank_indices == [1, 2, 3]
+        and len(headers) >= 6
+        and "increase" in headers[4].lower()
+        and "%" in headers[5].lower()
+    ):
+        headers = list(headers)  # copy
+        headers[1] = f"{budget_year - 2} Actual"
+        headers[2] = f"{budget_year - 1} Budget"
+        headers[3] = f"{budget_year} Budget"
+        return headers
+
+    return headers
+
+
+def _is_empty_table(table: dict) -> bool:
+    """Return True if a table is a junk extraction (chart artifact, empty grid, etc.).
+
+    Matches tables where all headers are blank and/or all cell values are blank,
+    or where data got smashed entirely into headers with no usable rows.
+    """
+    headers = table.get("headers", [])
+    rows = table.get("rows", [])
+
+    # All headers blank
+    all_headers_blank = all(h.strip() == "" for h in headers)
+    # Single blank header
+    single_blank = len(headers) == 1 and headers[0].strip() == ""
+    # All row cells blank
+    all_rows_blank = all(
+        all(cell.strip() == "" for cell in row) for row in rows
+    ) if rows else True
+
+    if all_headers_blank and all_rows_blank:
+        return True
+    if single_blank and all_rows_blank:
+        return True
+
+    # Tables where data got jammed into a single header with no rows (misaligned extraction)
+    if len(rows) == 0 and len(headers) <= 3 and any(len(h) > 80 for h in headers):
+        return True
+
+    return False
+
+
+def merge_split_salary_tables(tables: list[dict]) -> list[dict]:
+    """Merge horizontally-split salary tables that share a key column on the same page.
+
+    Detects groups of same-page salary tables with identical row counts and a shared
+    'Grade' key column, then joins them column-wise into a single wide table.
+    """
+    from itertools import groupby
+
+    result: list[dict] = []
+    # Group consecutive salary tables on the same page
+    for (_page, _type), group_iter in groupby(
+        tables, key=lambda t: (t["relative_page"], t["table_type"])
+    ):
+        group = list(group_iter)
+        if _type != "salary" or len(group) < 2:
+            result.extend(group)
+            continue
+
+        # Find tables with a shared "Grade" key column and matching row counts
+        # Build candidate sets: tables that share row count and have a Grade column
+        grade_tables: list[tuple[int, int, dict]] = []  # (index, grade_col, table)
+        other_tables: list[dict] = []
+        for t in group:
+            grade_col = next(
+                (i for i, h in enumerate(t["headers"]) if h.startswith("Grade")),
+                None,
+            )
+            if grade_col is not None and len(t["rows"]) > 0:
+                grade_tables.append((len(grade_tables), grade_col, t))
+            else:
+                other_tables.append(t)
+
+        if len(grade_tables) < 2:
+            result.extend(group)
+            continue
+
+        # Group by row count — only merge tables with same number of rows
+        by_rowcount: dict[int, list[tuple[int, int, dict]]] = {}
+        for idx, gcol, t in grade_tables:
+            rc = len(t["rows"])
+            by_rowcount.setdefault(rc, []).append((idx, gcol, t))
+
+        for rc, candidates in by_rowcount.items():
+            if len(candidates) < 2:
+                # Not mergeable, keep as-is
+                for _, _, t in candidates:
+                    other_tables.append(t)
+                continue
+
+            # Verify grade values match across all candidates
+            grade_values = [
+                [r[gcol] for r in t["rows"]] for _, gcol, t in candidates
+            ]
+            if not all(gv == grade_values[0] for gv in grade_values):
+                for _, _, t in candidates:
+                    other_tables.append(t)
+                continue
+
+            # Merge: Grade column first, then all non-Grade columns from each table
+            first = candidates[0][2]
+            merged_headers = ["Grade"]
+            for _, gcol, t in candidates:
+                for i, h in enumerate(t["headers"]):
+                    if i != gcol:
+                        merged_headers.append(h)
+
+            merged_rows: list[list[str]] = []
+            for ri in range(rc):
+                row = [candidates[0][2]["rows"][ri][candidates[0][1]]]  # Grade value
+                for _, gcol, t in candidates:
+                    for ci, cell in enumerate(t["rows"][ri]):
+                        if ci != gcol:
+                            row.append(cell)
+                merged_rows.append(row)
+
+            merged_table = {
+                "id": first["id"],
+                "relative_page": first["relative_page"],
+                "table_index": first["table_index"],
+                "table_type": "salary",
+                "headers": merged_headers,
+                "rows": merged_rows,
+            }
+            if "absolute_page" in first:
+                merged_table["absolute_page"] = first["absolute_page"]
+            if "description" in first:
+                merged_table["description"] = first["description"]
+            other_tables.append(merged_table)
+
+        result.extend(sorted(other_tables, key=lambda t: t["table_index"]))
+
+    return result
+
+
 def classify_table(headers: list[str], section_title: str = "") -> str:
     """Classify a table by its header pattern and section context."""
     header_text = " ".join(headers).lower()
@@ -157,6 +325,9 @@ def classify_table(headers: list[str], section_title: str = "") -> str:
     # Deliverables / objectives
     if "deliverable" in header_text or "objective" in header_text:
         return "deliverables"
+    # Historical actuals tables (e.g., Revenue Summary with CAGR)
+    if "actual" in header_text and ("cagr" in header_text or header_text.count("actual") >= 3):
+        return "financial"
     return "unknown"
 
 
@@ -234,8 +405,8 @@ def extract_narrative_content(
                 continue
 
             blocks = [
-                {"text": b.text, "role": b.role, "bbox": [round(v, 1) for v in b.bbox]}
-                for b in content.text_blocks if b.role in USEFUL_ROLES
+                {"text": b.text, "role": _effective_role(b), "bbox": [round(v, 1) for v in b.bbox]}
+                for b in content.text_blocks if _effective_role(b) in USEFUL_ROLES
             ]
             charts = [
                 {"bbox": [round(v, 1) for v in c.bbox], "chart_type": c.chart_type}
@@ -440,6 +611,7 @@ def build_data() -> dict:
             rel_page = int(file_match.group(1))
             table_idx = int(file_match.group(2))
             parsed = parse_csv(csv_path)
+            parsed["headers"] = fill_blank_year_headers(parsed["headers"], BUDGET_YEAR)
             table_type = classify_table(parsed["headers"], section_title=title)
 
             table_id = f"s{section_num}_p{rel_page}_t{table_idx}"
@@ -470,6 +642,12 @@ def build_data() -> dict:
                 table["description"] = descriptions[table_id]
 
             tables.append(table)
+
+        # Merge horizontally-split salary tables that share a key column on the same page
+        tables = merge_split_salary_tables(tables)
+
+        # Filter out junk tables (chart artifacts with all-empty content)
+        tables = [t for t in tables if not _is_empty_table(t)]
 
         slug = slugify(title)
         section_dict: dict = {
@@ -672,8 +850,8 @@ def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
     # Compute totals
     total_prior = sum(d[f"budget{PRIOR_YEAR}"] for d in dept_changes)
     total_current = sum(d[f"budget{BUDGET_YEAR}"] for d in dept_changes)
-    total_fte_prior = sum(d.get(f"fte{PRIOR_YEAR}", 0) or 0 for d in dept_changes)
-    total_fte_current = sum(d.get(f"fte{BUDGET_YEAR}", 0) or 0 for d in dept_changes)
+    total_fte_prior = round(sum(d.get(f"fte{PRIOR_YEAR}", 0) or 0 for d in dept_changes), 2)
+    total_fte_current = round(sum(d.get(f"fte{BUDGET_YEAR}", 0) or 0 for d in dept_changes), 2)
 
     return {
         f"totalBudget{PRIOR_YEAR}": total_prior,
@@ -1209,8 +1387,8 @@ def extract_capital_narrative(
                 continue
 
             blocks = [
-                {"text": b.text, "role": b.role, "bbox": [round(v, 1) for v in b.bbox]}
-                for b in content.text_blocks if b.role in USEFUL_ROLES
+                {"text": b.text, "role": _effective_role(b), "bbox": [round(v, 1) for v in b.bbox]}
+                for b in content.text_blocks if _effective_role(b) in USEFUL_ROLES
             ]
             charts = [
                 {"bbox": [round(v, 1) for v in c.bbox], "chart_type": c.chart_type}
@@ -1414,6 +1592,11 @@ def build_personnel_by_department(personnel: list[dict]) -> list[dict]:
         if row[f"budget{BUDGET_YEAR}"] is not None:
             d[f"totalBudget{BUDGET_YEAR}"] += row[f"budget{BUDGET_YEAR}"]
 
+    # Round FTE totals to avoid floating-point precision noise (e.g. 54.800000000000004)
+    for d in dept_map.values():
+        d[f"totalFte{PRIOR_YEAR}"] = round(d[f"totalFte{PRIOR_YEAR}"], 2)
+        d[f"totalFte{BUDGET_YEAR}"] = round(d[f"totalFte{BUDGET_YEAR}"], 2)
+
     return sorted(dept_map.values(), key=lambda d: d[f"totalBudget{BUDGET_YEAR}"], reverse=True)
 
 
@@ -1583,17 +1766,43 @@ def build_structure_changes() -> dict:
     """
     from utils.paths import PROJECT_ROOT
 
+    # Non-department sections to exclude from structure comparison.
+    # These are overview, reference, or administrative sections whose
+    # presence/absence across years is not editorially interesting.
+    EXCLUDED_SECTIONS = {
+        "Budget Authorizing Legislation",
+        "American Rescue Plan",
+        "Budget Guide",
+        "Five-Year Financial Forecast",
+        "Revenue Summary",
+        "Revenue Narrative",
+        "Revenue Detail",
+        "Expenditure Summary",
+        "Expenditures Detail",
+        "Salary Tables",
+        "Debt Service",
+        "Pension Funding",
+        "Fee Schedule",
+        "Master Fee Schedule",
+        "Appendices",
+        "City of Pittsburgh Organization Chart",
+        "Grants",
+    }
+
     years = sorted(available_years())
     if len(years) < 2:
         return {"availableYears": years, "operatingSections": []}
 
-    # Load section titles for each year
+    # Load section titles for each year, excluding non-department sections
     sections_by_year: dict[int, list[str]] = {}
     for year in years:
         sp = sections_path(year, "operating")
         if sp.exists():
             with open(sp, encoding="utf-8") as f:
-                sections_by_year[year] = [s["title"] for s in json.load(f)]
+                sections_by_year[year] = [
+                    s["title"] for s in json.load(f)
+                    if s["title"] not in EXCLUDED_SECTIONS
+                ]
 
     years = sorted(sections_by_year.keys())
     if len(years) < 2:
@@ -1905,6 +2114,18 @@ def main() -> None:
     with open(views_dir / f"{prefix}glossary-backlinks.json", "w", encoding="utf-8") as f:
         json.dump(glossary_backlinks, f, indent=2)
     print(f"Wrote glossary-backlinks.json ({len(glossary_backlinks)} terms with backlinks)")
+
+    # Structure changes (cross-year section comparison) — only for default run, not prefixed
+    if not prefix:
+        structure_changes = build_structure_changes()
+        sc_years = structure_changes["availableYears"]
+        sc_sections = structure_changes["operatingSections"]
+        if len(sc_years) >= 2:
+            with open(views_dir / "structure-changes.json", "w", encoding="utf-8") as f:
+                json.dump(structure_changes, f, indent=2)
+            changed = [s for s in sc_sections if s["changeType"] != "unchanged"]
+            print(f"Wrote structure-changes.json ({len(sc_sections)} sections across {sc_years}, "
+                  f"{len(changed)} with changes)")
 
 
 if __name__ == "__main__":
