@@ -79,8 +79,9 @@ if (section?.tables) {
     for (const row of finTable.rows) {
       if (!row[labelIdx] || !row[colIdx]) continue;
       const label = String(row[labelIdx]).trim();
+      const isNeg = String(row[colIdx]).trim().startsWith('(');
       const raw = String(row[colIdx]).replace(/[$,()]/g, '').trim();
-      const amount = parseFloat(raw);
+      const amount = isNeg ? -parseFloat(raw) : parseFloat(raw);
       if (!isNaN(amount) && amount > 0 && label.length > 2 && !label.toLowerCase().includes('total')) {
         topLineItems.push({ label, amount });
       }
@@ -92,8 +93,8 @@ if (section?.tables) {
 // Computed values
 const budget2026 = deptChange?.budget2026 || trend.find(t => t.year === '2026 Budget')?.amount || 0;
 const budget2025 = deptChange?.budget2025 || trend.find(t => t.year === '2025 Budget')?.amount || 0;
-const dollarChange = deptChange?.dollarChange || budget2026 - budget2025;
-const pctChange = deptChange?.pctChange || (budget2025 > 0 ? ((dollarChange / budget2025) * 100).toFixed(1) : '0');
+const dollarChange = deptChange?.dollarChange ?? (budget2026 - budget2025);
+const pctChange = deptChange?.pctChange ?? (budget2025 > 0 ? ((dollarChange / budget2025) * 100).toFixed(1) : '0');
 const fte2026 = deptPersonnel?.totalFte2026 || deptChange?.fte2026;
 const fte2025 = deptPersonnel?.totalFte2025 || deptChange?.fte2025;
 const fteChange = fte2026 && fte2025 ? Math.round(fte2026 - fte2025) : null;

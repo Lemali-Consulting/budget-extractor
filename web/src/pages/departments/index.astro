@@ -21,7 +21,9 @@ const depts2026 = budgets
   .sort((a, b) => b.amount - a.amount);
 
 function fmtM(n: number): string {
-  return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (Math.abs(n) >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (Math.abs(n) >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n.toFixed(0)}`;
 }
 ---
 
@@ -33,8 +35,8 @@ function fmtM(n: number): string {
     {depts2026.map((dept) => {
       const dc = deptMap.get(dept.slug);
       const pers = personnel.find((p: any) => p.slug === dept.slug);
-      const change = dc?.dollarChange || 0;
-      const changePct = dc?.pctChange || 0;
+      const change = dc?.dollarChange ?? 0;
+      const changePct = dc?.pctChange ?? 0;
       const fte = pers?.totalFte2026 || dc?.fte2026;
 
       return (

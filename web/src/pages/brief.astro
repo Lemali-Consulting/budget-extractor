@@ -66,7 +66,9 @@ const topDec = changes.topDecreases.slice(0, 5);
 const capital2026 = (capitalFunding as any[])
   .filter(r => r.year === '2026')
   .reduce((s: number, r: any) => s + r.amount, 0);
-const capitalTotal = (capitalFunding as any[]).reduce((s: number, r: any) => s + r.amount, 0);
+const capitalTotal = (capitalFunding as any[])
+  .filter(r => parseInt(r.year) >= 2026)
+  .reduce((s: number, r: any) => s + r.amount, 0);
 
 function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -107,7 +109,7 @@ function fmtB(n: number): string {
       </div>
       <p class="text-gray-700 leading-relaxed">
         The City of Pittsburgh's proposed operating budget for fiscal year 2026 is <strong>{fmtM(total2026)}</strong>,
-        up {changePct}% ({fmtM(Math.abs(totalChange))}) from last year. That works out to about
+        {Number(changePct) >= 0 ? 'up' : 'down'} {Math.abs(Number(changePct))}% ({fmtM(Math.abs(totalChange))}) from last year. That works out to about
         <strong>${perResident.toLocaleString()} per resident</strong> for city services — police, fire, EMS, parks,
         public works, and more. Separately, the capital budget plans <strong>{fmtM(capital2026)}</strong> in
         infrastructure spending this year as part of a six-year, {fmtB(capitalTotal)} plan.

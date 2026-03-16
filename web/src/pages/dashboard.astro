@@ -21,8 +21,8 @@ const deptCount = new Set(budgetRows.map(r => r.slug)).size;
 
 const revenueTotal = (revenueWaterfall as { amount: number }[]).reduce((s, r) => s + r.amount, 0);
 
-const capitalRows = capitalFunding as { amount: number }[];
-const capitalTotal = capitalRows.reduce((s, r) => s + r.amount, 0);
+const capitalRows = capitalFunding as { year: string; amount: number }[];
+const capitalTotal = capitalRows.filter(r => parseInt(r.year) >= 2026).reduce((s, r) => s + r.amount, 0);
 // 2026 only
 const capital2026 = (capitalFunding as { year: string; amount: number }[])
   .filter(r => r.year === '2026')

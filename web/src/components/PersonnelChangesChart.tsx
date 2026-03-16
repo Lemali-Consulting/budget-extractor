@@ -54,12 +54,12 @@ export default function PersonnelChangesChart({ data }: { data: DeptPersonnel[] 
           sort: { y: '-x' },
           tip: true,
           title: (d: typeof changes[0]) =>
-            `${d.department}\n${d.change > 0 ? '+' : ''}${d.change} FTE (now ${d.fte2026})`,
+            `${d.department}\n${d.change > 0 ? '+' : ''}${Number.isInteger(d.change) ? d.change : d.change.toFixed(1)} FTE (now ${d.fte2026})`,
         }),
         Plot.text(changes, {
           y: 'department',
           x: 'change',
-          text: (d: typeof changes[0]) => `${d.change > 0 ? '+' : ''}${d.change}`,
+          text: (d: typeof changes[0]) => `${d.change > 0 ? '+' : ''}${Number.isInteger(d.change) ? d.change : d.change.toFixed(1)}`,
           textAnchor: (d: typeof changes[0]) => (d.change >= 0 ? 'start' : 'end'),
           dx: (d: typeof changes[0]) => (d.change >= 0 ? 5 : -5),
           fontSize: 11,

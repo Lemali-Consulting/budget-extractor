@@ -9,7 +9,7 @@ const funding = capitalFunding as any[];
 const projects = capitalProjects as any[];
 
 const capital2026 = funding.filter(r => r.year === '2026').reduce((s: number, r: any) => s + r.amount, 0);
-const capitalTotal = funding.reduce((s: number, r: any) => s + r.amount, 0);
+const capitalTotal = funding.filter(r => parseInt(r.year) >= 2026).reduce((s: number, r: any) => s + r.amount, 0);
 
 // Aggregate funding by source for 2026
 const sourceMap = new Map<string, number>();
@@ -18,9 +18,10 @@ for (const r of funding.filter((r: any) => r.year === '2026')) {
 }
 const sources = [...sourceMap.entries()].sort((a, b) => b[1] - a[1]);
 
-// Top projects by 2026 funding
+// Top projects by 2026 funding (exclude items without funding data like intro pages)
 const topProjects = [...projects]
-  .sort((a: any, b: any) => (b.total2026 || 0) - (a.total2026 || 0))
+  .filter((p: any) => p.funding)
+  .sort((a: any, b: any) => (b.funding?.['2026'] || 0) - (a.funding?.['2026'] || 0))
   .slice(0, 8);
 
 function fmtM(n: number): string {
@@ -35,7 +36,7 @@ function fmtB(n: number): string {
 
 <Story
   title="What's Getting Built: The Capital Plan"
-  subtitle="A $960 million investment in Pittsburgh's infrastructure"
+  subtitle={`A ${fmtB(capitalTotal)} investment in Pittsburgh's infrastructure`}
   description="Pittsburgh's six-year capital improvement plan funds roads, bridges, buildings, and technology. Here's where the money is going."
   date="March 2026"
 >
@@ -90,8 +91,8 @@ function fmtB(n: number): string {
                     : (p.title || p.project)
                   }
                 </td>
-                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{fmtM(p.total2026 || 0)}</td>
-                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{fmtM(p.totalAllYears || p.total2026 || 0)}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{fmtM(p.funding?.['2026'] || 0)}</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{fmtM(p.funding?.['Total 2026-2031'] || 0)}</td>
               </tr>
             ))}
           </tbody>

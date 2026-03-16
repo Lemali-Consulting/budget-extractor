@@ -18,25 +18,10 @@ const operatingTables = operatingSections.reduce((n: number, s: any) => n + s.ta
 // Count capital functional areas
 const capitalAreas = new Set(capitalSections.map((s: any) => s.functional_area || 'Other'));
 
-// Helper to parse currency from CIP table cells
-function parseCurrency(s: string): number {
-  if (!s) return 0;
-  return parseFloat(s.replace(/[,$]/g, '')) || 0;
-}
-
-// Sum capital 2026 funding
-let capitalTotal = 0;
-for (const section of capitalSections) {
-  for (const table of (section as any).tables || []) {
-    if (table.table_type === 'cip_funding') {
-      for (const row of table.rows) {
-        if (row[0]?.trim().toUpperCase() === 'TOTAL' && row.length > 2) {
-          capitalTotal += parseCurrency(row[2]);
-        }
-      }
-    }
-  }
-}
+// Sum capital 6-year plan total (2026-2031)
+const capitalTotal = (capitalFunding as { year: string; amount: number }[])
+  .filter(r => parseInt(r.year) >= 2026)
+  .reduce((s, r) => s + r.amount, 0);
 
 // Summary stats (same logic as dashboard)
 const budgetRows = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
@@ -143,7 +128,7 @@ function fmtM(n: number): string {
       <div class="flex gap-4 text-sm text-gray-500">
         <span class="font-medium">{capitalSections.length} projects</span>
         <span>{capitalAreas.size} functional areas</span>
-        {capitalTotal > 0 && <span>2026: {fmtM(capitalTotal)}</span>}
+        {capital2026 > 0 && <span>2026: {fmtM(capital2026)}</span>}
       </div>
     </a>
   </div>

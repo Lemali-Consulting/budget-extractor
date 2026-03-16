@@ -9,9 +9,9 @@ import revenueWaterfall from '../../data/views/revenue-waterfall.json';
 const budgets = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
 const revenue = revenueWaterfall as { label: string; amount: number }[];
 
-// 2026 budgets sorted by amount
+// 2026 budgets sorted by amount (exclude non-department entries like Appendices)
 const depts = budgets
-  .filter(r => r.year === '2026 Budget')
+  .filter(r => r.year === '2026 Budget' && r.slug !== 'appendices')
   .sort((a, b) => b.amount - a.amount);
 const total = depts.reduce((s, d) => s + d.amount, 0);
 

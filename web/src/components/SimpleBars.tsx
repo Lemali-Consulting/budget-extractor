@@ -20,7 +20,7 @@ function formatDollar(n: number): string {
 }
 
 function formatFte(n: number): string {
-  return `${n.toLocaleString('en-US')} FTE`;
+  return `${Math.round(n).toLocaleString('en-US')} FTE`;
 }
 
 export default function SimpleBars({ items, format = 'dollar', maxItems = 8 }: Props) {
