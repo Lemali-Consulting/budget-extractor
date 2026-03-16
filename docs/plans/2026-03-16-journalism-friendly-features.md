@@ -1,7 +1,7 @@
 # Journalism-Friendly Features for PublicSource
 
 **Date:** 2026-03-16
-**Status:** draft
+**Status:** completed
 
 ## Goal
 
