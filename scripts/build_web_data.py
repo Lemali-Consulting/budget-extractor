@@ -778,10 +778,22 @@ def _normalize_title(title: str) -> str:
 def detect_shifted_positions(personnel: list[dict]) -> dict:
     """Detect positions shifted between departments by matching eliminated/new titles.
 
+    Generic titles (appearing in 3+ departments across all personnel) require
+    corroboration: at least 2 shifts must occur on the same from→to department
+    pair. Specific titles (1-2 departments) are matched without corroboration.
+
     Returns dict with newPositions, eliminatedPositions, and shiftedPositions lists.
     Positions matched as shifts are removed from new/eliminated lists.
     """
     from collections import defaultdict
+
+    GENERIC_DEPT_THRESHOLD = 3
+
+    # Count how many departments each title appears in (all personnel, not just changes)
+    title_dept_count: dict[str, int] = defaultdict(set)
+    for p in personnel:
+        title_dept_count[_normalize_title(p["title"])].add(p["department"])
+    title_dept_count = {t: len(depts) for t, depts in title_dept_count.items()}
 
     new_positions: list[dict] = []
     eliminated_positions: list[dict] = []
@@ -812,9 +824,10 @@ def detect_shifted_positions(personnel: list[dict]) -> dict:
     for p in eliminated_positions:
         elim_by_title[_normalize_title(p["title"])].append(p)
 
-    shifted_positions: list[dict] = []
-    consumed_new: set[int] = set()  # indices into new_positions
-    consumed_elim: set[int] = set()  # indices into eliminated_positions
+    # First pass: build all candidate shifts
+    candidate_shifts: list[dict] = []
+    candidate_consumed_new: set[int] = set()
+    candidate_consumed_elim: set[int] = set()
 
     for norm_title in set(new_by_title.keys()) & set(elim_by_title.keys()):
         new_entries = new_by_title[norm_title]
@@ -822,9 +835,8 @@ def detect_shifted_positions(personnel: list[dict]) -> dict:
 
         for new_entry in new_entries:
             new_idx = new_positions.index(new_entry)
-            if new_idx in consumed_new:
+            if new_idx in candidate_consumed_new:
                 continue
-            # Must be a different department to count as a shift
             original_new_fte = new_entry["fte"]
             remaining_fte_needed = original_new_fte
 
@@ -832,43 +844,78 @@ def detect_shifted_positions(personnel: list[dict]) -> dict:
                 if remaining_fte_needed <= 0:
                     break
                 elim_idx = eliminated_positions.index(elim_entry)
-                if elim_idx in consumed_elim:
+                if elim_idx in candidate_consumed_elim:
                     continue
                 if elim_entry["department"] == new_entry["department"]:
                     continue
 
-                # Match up to the smaller FTE count
                 matched_fte = min(remaining_fte_needed, elim_entry["fte"])
-                shifted_positions.append({
+                candidate_shifts.append({
                     "title": new_entry["title"],
                     "fromDepartment": elim_entry["department"],
                     "toDepartment": new_entry["department"],
                     "fte": matched_fte,
                     "budgetPrior": elim_entry["budget"],
                     "budgetCurrent": new_entry["budget"],
+                    "_new_idx": new_idx,
+                    "_elim_idx": elim_idx,
+                    "_norm_title": norm_title,
+                    "_original_new_fte": original_new_fte,
+                    "_original_elim_fte": elim_entry["fte"],
                 })
 
                 remaining_fte_needed -= matched_fte
-                remaining_elim_fte = elim_entry["fte"] - matched_fte
-
-                if remaining_elim_fte <= 0:
-                    consumed_elim.add(elim_idx)
-                else:
-                    # Reduce the eliminated entry's FTE for remaining
-                    elim_entry["fte"] = remaining_elim_fte
-                    # Prorate budget
-                    elim_entry["budget"] = round(
-                        elim_entry["budget"] * remaining_elim_fte / (remaining_elim_fte + matched_fte)
-                    )
+                if elim_entry["fte"] - matched_fte <= 0:
+                    candidate_consumed_elim.add(elim_idx)
 
             if remaining_fte_needed <= 0:
-                consumed_new.add(new_idx)
-            elif remaining_fte_needed < original_new_fte:
-                # Partially consumed — reduce FTE and prorate budget
-                new_entry["fte"] = remaining_fte_needed
-                new_entry["budget"] = round(
-                    new_entry["budget"] * remaining_fte_needed / original_new_fte
-                )
+                candidate_consumed_new.add(new_idx)
+
+    # Second pass: filter by generic title corroboration
+    # Count how many candidate shifts exist per (from, to) department pair
+    pair_counts: dict[tuple[str, str], int] = defaultdict(int)
+    for cs in candidate_shifts:
+        pair_counts[(cs["fromDepartment"], cs["toDepartment"])] += 1
+
+    shifted_positions: list[dict] = []
+    consumed_new: set[int] = set()
+    consumed_elim: set[int] = set()
+
+    for cs in candidate_shifts:
+        is_generic = title_dept_count.get(cs["_norm_title"], 0) >= GENERIC_DEPT_THRESHOLD
+        pair = (cs["fromDepartment"], cs["toDepartment"])
+        if is_generic and pair_counts[pair] < 2:
+            # Generic title without corroboration — skip
+            continue
+
+        new_idx = cs["_new_idx"]
+        elim_idx = cs["_elim_idx"]
+        consumed_new.add(new_idx)
+        consumed_elim.add(elim_idx)
+
+        # Clean up internal keys before adding to output
+        shift = {k: v for k, v in cs.items() if not k.startswith("_")}
+        shifted_positions.append(shift)
+
+        # Handle partial FTE reduction on eliminated entry
+        elim_entry = eliminated_positions[elim_idx]
+        remaining_elim_fte = cs["_original_elim_fte"] - cs["fte"]
+        if remaining_elim_fte > 0:
+            elim_entry["fte"] = remaining_elim_fte
+            elim_entry["budget"] = round(
+                elim_entry["budget"] * remaining_elim_fte / cs["_original_elim_fte"]
+            )
+            consumed_elim.discard(elim_idx)
+
+        # Handle partial FTE reduction on new entry
+        new_entry = new_positions[new_idx]
+        remaining_new_fte = cs["_original_new_fte"] - cs["fte"]
+        if remaining_new_fte > 0:
+            new_entry["fte"] = remaining_new_fte
+            new_entry["budget"] = round(
+                new_entry["budget"] * remaining_new_fte / cs["_original_new_fte"]
+            )
+            consumed_new.discard(new_idx)
 
     # Filter out fully consumed entries
     final_new = [p for i, p in enumerate(new_positions) if i not in consumed_new]

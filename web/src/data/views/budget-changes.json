@@ -787,8 +787,20 @@
       "budget": 76294.0
     },
     {
+      "department": "Department of City Planning",
+      "title": "Administrator 2",
+      "fte": 1.0,
+      "budget": 56618.0
+    },
+    {
       "department": "Department of Permits, Licenses, and Inspections",
       "title": "Personnel & Finance Coordinator",
+      "fte": 1.0,
+      "budget": 64542.0
+    },
+    {
+      "department": "Department of Permits, Licenses, and Inspections",
+      "title": "Neighborhood Engagement Coordinator",
       "fte": 1.0,
       "budget": 64542.0
     },
@@ -859,6 +871,12 @@
       "budget": 575744.0
     },
     {
+      "department": "Bureau of Operations",
+      "title": "Neighborhood Engagement Coordinator",
+      "fte": 1.0,
+      "budget": 64542.0
+    },
+    {
       "department": "Bureau of Environmental Services",
       "title": "Lot Coordinator",
       "fte": 2.0,
@@ -875,6 +893,12 @@
       "title": "Assistant Warehouse Manager",
       "fte": 1.0,
       "budget": 73258.0
+    },
+    {
+      "department": "Department of Parks and Recreation",
+      "title": "Press Officer",
+      "fte": 1.0,
+      "budget": 61922.0
     },
     {
       "department": "Department of Parks and Recreation",
@@ -911,6 +935,12 @@
       "title": "Contract Administrator",
       "fte": 1.0,
       "budget": 70200.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "title": "Press Officer",
+      "fte": 1.0,
+      "budget": 61922.0
     },
     {
       "department": "Department of Mobility and Infrastructure",
@@ -1054,6 +1084,12 @@
     },
     {
       "department": "Office of the Mayor",
+      "title": "Press Officer",
+      "fte": 2.0,
+      "budget": 120224.0
+    },
+    {
+      "department": "Office of the Mayor",
       "title": "Digital Communications Specialist",
       "fte": 1.0,
       "budget": 71115.0
@@ -1079,8 +1115,8 @@
     {
       "department": "Office of the Mayor",
       "title": "Neighborhood Engagement Coordinator",
-      "fte": 1.0,
-      "budget": 62670
+      "fte": 3.0,
+      "budget": 188011.0
     },
     {
       "department": "Office of the Mayor",
@@ -1317,6 +1353,12 @@
       "budget": 95458.0
     },
     {
+      "department": "Bureau of Facilities",
+      "title": "Administrator 2",
+      "fte": 1.0,
+      "budget": 60112.0
+    },
+    {
       "department": "Department of Parks and Recreation",
       "title": "Manager, Aquatics",
       "fte": 1.0,
@@ -1435,14 +1477,6 @@
       "budgetCurrent": 36404.0
     },
     {
-      "title": "Assistant Manager, 311 Response Line",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Innovation and Performance",
-      "fte": 1.0,
-      "budgetPrior": 74069.0,
-      "budgetCurrent": 76294.0
-    },
-    {
       "title": "Manager, 311 Response Line",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of Innovation and Performance",
@@ -1451,52 +1485,12 @@
       "budgetCurrent": 86008.0
     },
     {
-      "title": "Digital Engagement Coordinator",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of City Planning",
-      "fte": 1.0,
-      "budgetPrior": 62670.0,
-      "budgetCurrent": 64542.0
-    },
-    {
-      "title": "Stores Manager",
-      "fromDepartment": "Bureau of Administration (Public Safety)",
-      "toDepartment": "Bureau of Facilities",
-      "fte": 1.0,
-      "budgetPrior": 77043.0,
-      "budgetCurrent": 79352.0
-    },
-    {
-      "title": "Neighborhood Engagement Coordinator",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Permits, Licenses, and Inspections",
-      "fte": 1.0,
-      "budgetPrior": 188011.0,
-      "budgetCurrent": 64542.0
-    },
-    {
-      "title": "Neighborhood Engagement Coordinator",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Bureau of Operations",
-      "fte": 1.0,
-      "budgetPrior": 125341,
-      "budgetCurrent": 64542.0
-    },
-    {
-      "title": "311 Call Center Representative",
+      "title": "Assistant Manager, 311 Response Line",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of Innovation and Performance",
-      "fte": 5.0,
-      "budgetPrior": 211509.0,
-      "budgetCurrent": 211509.0
-    },
-    {
-      "title": "Special Projects Manager",
-      "fromDepartment": "Office of the City Controller",
-      "toDepartment": "Office of the Mayor",
       "fte": 1.0,
-      "budgetPrior": 77043.0,
-      "budgetCurrent": 86008.0
+      "budgetPrior": 74069.0,
+      "budgetCurrent": 76294.0
     },
     {
       "title": "Manager, Office of Equal Protection",
@@ -1507,28 +1501,20 @@
       "budgetCurrent": 76294.0
     },
     {
-      "title": "Administrator 2",
-      "fromDepartment": "Bureau of Facilities",
-      "toDepartment": "Department of City Planning",
-      "fte": 1.0,
-      "budgetPrior": 60112.0,
-      "budgetCurrent": 56618.0
+      "title": "311 Call Center Representative",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Innovation and Performance",
+      "fte": 5.0,
+      "budgetPrior": 211509.0,
+      "budgetCurrent": 211509.0
     },
     {
-      "title": "Press Officer",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Parks and Recreation",
+      "title": "Stores Manager",
+      "fromDepartment": "Bureau of Administration (Public Safety)",
+      "toDepartment": "Bureau of Facilities",
       "fte": 1.0,
-      "budgetPrior": 120224.0,
-      "budgetCurrent": 61922.0
-    },
-    {
-      "title": "Press Officer",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Mobility and Infrastructure",
-      "fte": 1.0,
-      "budgetPrior": 60112,
-      "budgetCurrent": 61922.0
+      "budgetPrior": 77043.0,
+      "budgetCurrent": 79352.0
     },
     {
       "title": "Performance Operations Analyst",
@@ -1537,6 +1523,22 @@
       "fte": 1.0,
       "budgetPrior": 68162.0,
       "budgetCurrent": 70200.0
+    },
+    {
+      "title": "Digital Engagement Coordinator",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of City Planning",
+      "fte": 1.0,
+      "budgetPrior": 62670.0,
+      "budgetCurrent": 64542.0
+    },
+    {
+      "title": "Special Projects Manager",
+      "fromDepartment": "Office of the City Controller",
+      "toDepartment": "Office of the Mayor",
+      "fte": 1.0,
+      "budgetPrior": 77043.0,
+      "budgetCurrent": 86008.0
     }
   ]
 }

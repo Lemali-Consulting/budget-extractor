@@ -1,6 +1,5 @@
 """Tests for shifted position detection in build_web_data.py."""
 import importlib
-import sys
 import types
 
 
@@ -98,18 +97,36 @@ def test_partial_shift_different_fte():
     assert len(result["newPositions"]) == 0
 
 
-def test_multiple_destinations():
-    """One eliminated title matching multiple new departments creates multiple shifts."""
+def test_multiple_destinations_specific_title():
+    """A specific title (2 depts) eliminated in one, new in another, with extra FTE."""
+    mod = _import_build_web_data()
+    # Title only in 2 departments → specific → no corroboration needed
+    personnel = [
+        _make_personnel("Chief Data Officer", "Office of the Mayor", 2, 0, 120000, 0),
+        _make_personnel("Chief Data Officer", "Dept A", 0, 2, 0, 124000),
+    ]
+    result = mod.detect_shifted_positions(personnel)
+    assert len(result["shiftedPositions"]) == 1
+    assert result["shiftedPositions"][0]["fte"] == 2
+    assert len(result["newPositions"]) == 0
+    assert len(result["eliminatedPositions"]) == 0
+
+
+def test_multiple_destinations_generic_no_corroboration():
+    """A generic title split across multiple solo dept pairs is NOT shifted."""
     mod = _import_build_web_data()
     personnel = [
+        # Continuing positions make this generic (3+ depts)
+        _make_personnel("Press Officer", "Dept X", 1, 1, 60000, 62000),
         _make_personnel("Press Officer", "Office of the Mayor", 2, 0, 120000, 0),
         _make_personnel("Press Officer", "Dept A", 0, 1, 0, 62000),
         _make_personnel("Press Officer", "Dept B", 0, 1, 0, 62000),
     ]
     result = mod.detect_shifted_positions(personnel)
-    assert len(result["shiftedPositions"]) == 2
-    assert len(result["newPositions"]) == 0
-    assert len(result["eliminatedPositions"]) == 0
+    # Each pair (Mayor->A, Mayor->B) only has 1 shift, so no corroboration
+    assert len(result["shiftedPositions"]) == 0
+    assert len(result["newPositions"]) == 2
+    assert len(result["eliminatedPositions"]) == 1
 
 
 def test_asterisk_normalized():
@@ -137,12 +154,71 @@ def test_case_insensitive_matching():
 def test_unchanged_positions_ignored():
     """Positions present in both years (not new/eliminated) are not shifted."""
     mod = _import_build_web_data()
+    # Title only in 2 depts (B and C) — Dept A has it unchanged so doesn't affect shift
     personnel = [
-        _make_personnel("Clerk", "Dept A", 2, 2, 80000, 82000),
-        _make_personnel("Clerk", "Dept B", 1, 0, 40000, 0),
-        _make_personnel("Clerk", "Dept C", 0, 1, 0, 42000),
+        _make_personnel("Zoning Review Specialist", "Dept A", 2, 2, 80000, 82000),
+        _make_personnel("Zoning Review Specialist", "Dept B", 1, 0, 40000, 0),
+        _make_personnel("Zoning Review Specialist", "Dept C", 0, 1, 0, 42000),
+    ]
+    result = mod.detect_shifted_positions(personnel)
+    # Title appears in 3 depts total, so it's generic — but there's only
+    # one shift pair (B→C), so no corroboration. Should NOT be shifted.
+    assert len(result["shiftedPositions"]) == 0
+    assert len(result["newPositions"]) == 1
+    assert len(result["eliminatedPositions"]) == 1
+
+
+def test_generic_title_without_corroboration_not_shifted():
+    """A generic title (3+ depts) with no corroborating shifts on the same dept pair
+    should NOT be detected as shifted."""
+    mod = _import_build_web_data()
+    # "Administrator 2" exists in 4 departments as continuing positions
+    personnel = [
+        _make_personnel("Administrator 2", "Dept A", 1, 1, 60000, 62000),
+        _make_personnel("Administrator 2", "Dept B", 1, 1, 58000, 60000),
+        _make_personnel("Administrator 2", "Dept C", 1, 1, 55000, 57000),
+        # One eliminated in Dept D, one new in Dept E — but generic + no corroboration
+        _make_personnel("Administrator 2", "Dept D", 1, 0, 60000, 0),
+        _make_personnel("Administrator 2", "Dept E", 0, 1, 0, 62000),
+    ]
+    result = mod.detect_shifted_positions(personnel)
+    assert len(result["shiftedPositions"]) == 0
+    assert len(result["newPositions"]) == 1
+    assert len(result["eliminatedPositions"]) == 1
+
+
+def test_generic_title_with_corroboration_shifted():
+    """A generic title (3+ depts) IS shifted when another position also moves
+    between the same department pair."""
+    mod = _import_build_web_data()
+    # "Administrator 2" is generic (exists in 3+ depts)
+    personnel = [
+        _make_personnel("Administrator 2", "Dept A", 1, 1, 60000, 62000),
+        _make_personnel("Administrator 2", "Dept B", 1, 1, 58000, 60000),
+        _make_personnel("Administrator 2", "Dept C", 1, 1, 55000, 57000),
+        # Generic title moving from Mayor -> I&P
+        _make_personnel("Administrator 2", "Office of the Mayor", 1, 0, 60000, 0),
+        _make_personnel("Administrator 2", "Dept of I&P", 0, 1, 0, 62000),
+        # Specific title also moving from Mayor -> I&P (corroboration)
+        _make_personnel("Manager, 311 Response Line", "Office of the Mayor", 1, 0, 83000, 0),
+        _make_personnel("Manager, 311 Response Line", "Dept of I&P", 0, 1, 0, 86000),
+    ]
+    result = mod.detect_shifted_positions(personnel)
+    assert len(result["shiftedPositions"]) == 2
+    shifted_titles = {s["title"] for s in result["shiftedPositions"]}
+    assert "Administrator 2" in shifted_titles
+    assert "Manager, 311 Response Line" in shifted_titles
+
+
+def test_specific_title_solo_pair_still_shifted():
+    """A specific title (appears in <3 depts) should be shifted even without
+    corroboration on the same dept pair."""
+    mod = _import_build_web_data()
+    personnel = [
+        _make_personnel("Manager, Office of Equal Protection", "Office of the Mayor", 1, 0, 74000, 0),
+        _make_personnel("Manager, Office of Equal Protection", "Dept of Law", 0, 1, 0, 76000),
     ]
     result = mod.detect_shifted_positions(personnel)
     assert len(result["shiftedPositions"]) == 1
-    assert result["shiftedPositions"][0]["fromDepartment"] == "Dept B"
-    assert result["shiftedPositions"][0]["toDepartment"] == "Dept C"
+    assert len(result["newPositions"]) == 0
+    assert len(result["eliminatedPositions"]) == 0
