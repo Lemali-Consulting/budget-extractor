@@ -1,0 +1,255 @@
+---
+/**Budget in Brief — plain-language overview of the FY2026 Pittsburgh budget.*/
+import Base from '../layouts/Base.astro';
+import HeroStat from '../components/HeroStat.tsx';
+import SimpleBars from '../components/SimpleBars.tsx';
+import WaterfallChart from '../components/WaterfallChart.tsx';
+import ChangesChart from '../components/ChangesChart.tsx';
+import EmbedButton from '../components/EmbedButton.tsx';
+import departmentBudgets from '../data/views/department-budgets.json';
+import revenueWaterfall from '../data/views/revenue-waterfall.json';
+import budgetChanges from '../data/views/budget-changes.json';
+import personnelByDept from '../data/views/personnel-by-department.json';
+import capitalFunding from '../data/views/capital-funding-sources.json';
+
+// --- Compute aggregations ---
+const budgets = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const changes = budgetChanges as any;
+const personnel = personnelByDept as any[];
+const revenue = revenueWaterfall as { label: string; amount: number; type: string }[];
+
+// Total operating budget
+const total2026 = budgets.filter(r => r.year === '2026 Budget').reduce((s, r) => s + r.amount, 0);
+const total2025 = budgets.filter(r => r.year === '2025 Budget').reduce((s, r) => s + r.amount, 0);
+const totalChange = total2026 - total2025;
+const changePct = ((totalChange / total2025) * 100).toFixed(1);
+
+// Per-resident (2020 Census: 302,971)
+const PGH_POPULATION = 302_971;
+const perResident = Math.round(total2026 / PGH_POPULATION);
+
+// Revenue
+const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
+const taxRevenue = revenue.find(r => r.label.includes('Tax'))?.amount || 0;
+const taxPct = ((taxRevenue / revenueTotal) * 100).toFixed(0);
+
+// Top departments by spending
+const depts2026 = budgets
+  .filter(r => r.year === '2026 Budget')
+  .sort((a, b) => b.amount - a.amount);
+const topDepts = depts2026.slice(0, 8).map(d => ({
+  label: d.department,
+  value: d.amount,
+}));
+
+// Public safety rollup
+const publicSafetyNames = ['Bureau of Police', 'Bureau of Fire', 'Bureau of Emergency Medical Services'];
+const publicSafety = depts2026
+  .filter(d => publicSafetyNames.includes(d.department))
+  .reduce((s, d) => s + d.amount, 0);
+const publicSafetyPct = ((publicSafety / total2026) * 100).toFixed(0);
+
+// Personnel
+const totalFte2026 = Math.round(personnel.reduce((s, d) => s + d.totalFte2026, 0));
+const totalFte2025 = Math.round(personnel.reduce((s, d) => s + d.totalFte2025, 0));
+const fteChange = totalFte2026 - totalFte2025;
+const topPersonnel = personnel
+  .sort((a: any, b: any) => b.totalFte2026 - a.totalFte2026)
+  .slice(0, 8)
+  .map((d: any) => ({ label: d.department, value: d.totalFte2026 }));
+
+// Top changes (limited for brief)
+const topInc = changes.topIncreases.slice(0, 5);
+const topDec = changes.topDecreases.slice(0, 5);
+
+// Capital
+const capital2026 = (capitalFunding as any[])
+  .filter(r => r.year === '2026')
+  .reduce((s: number, r: any) => s + r.amount, 0);
+const capitalTotal = (capitalFunding as any[]).reduce((s: number, r: any) => s + r.amount, 0);
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
+function fmtB(n: number): string {
+  return `$${(n / 1_000_000_000).toFixed(2)}B`;
+}
+---
+
+<Base
+  title="Budget in Brief"
+  description="Pittsburgh's FY2026 budget explained in plain language — where the money comes from, where it goes, and what changed."
+  ogDescription={`Pittsburgh's ${fmtM(total2026)} operating budget explained: ${taxPct}% from taxes, ${publicSafetyPct}% to public safety, ${changes.newPositions.length} new positions.`}
+>
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2">Pittsburgh's 2026 Budget in Brief</h1>
+    <p class="text-gray-600 mb-8 text-lg">Six things to know about how Pittsburgh plans to spend your money this year.</p>
+
+    <!-- Jump nav -->
+    <nav class="flex flex-wrap gap-2 mb-10 text-sm" aria-label="Page sections">
+      <a href="#how-big" class="bg-blue-50 text-blue-700 rounded-full px-3 py-1 hover:bg-blue-100">The big picture</a>
+      <a href="#revenue" class="bg-green-50 text-green-700 rounded-full px-3 py-1 hover:bg-green-100">Revenue</a>
+      <a href="#spending" class="bg-purple-50 text-purple-700 rounded-full px-3 py-1 hover:bg-purple-100">Spending</a>
+      <a href="#changed" class="bg-amber-50 text-amber-700 rounded-full px-3 py-1 hover:bg-amber-100">What changed</a>
+      <a href="#workforce" class="bg-cyan-50 text-cyan-700 rounded-full px-3 py-1 hover:bg-cyan-100">Workforce</a>
+      <a href="#capital" class="bg-orange-50 text-orange-700 rounded-full px-3 py-1 hover:bg-orange-100">Big projects</a>
+    </nav>
+
+    <!-- 1. How big is the budget? -->
+    <section id="how-big" class="mb-12 scroll-mt-8">
+      <h2 class="text-2xl font-bold mb-4">How big is the budget?</h2>
+      <div class="bg-blue-50 rounded-xl p-6 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <HeroStat label="Operating Budget" value={fmtM(total2026)} detail={`${Number(changePct) >= 0 ? '+' : ''}${changePct}% vs 2025`} />
+          <HeroStat label="Per Resident" value={`$${perResident.toLocaleString()}`} detail="Based on 2020 Census" />
+          <HeroStat label="Capital (2026)" value={fmtM(capital2026)} detail={`6-year plan: ${fmtB(capitalTotal)}`} />
+        </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        The City of Pittsburgh's proposed operating budget for fiscal year 2026 is <strong>{fmtM(total2026)}</strong>,
+        up {changePct}% ({fmtM(Math.abs(totalChange))}) from last year. That works out to about
+        <strong>${perResident.toLocaleString()} per resident</strong> for city services — police, fire, EMS, parks,
+        public works, and more. Separately, the capital budget plans <strong>{fmtM(capital2026)}</strong> in
+        infrastructure spending this year as part of a six-year, {fmtB(capitalTotal)} plan.
+      </p>
+    </section>
+
+    <!-- 2. Where does the money come from? -->
+    <section id="revenue" class="mb-12 scroll-mt-8">
+      <div class="flex items-start justify-between">
+        <h2 class="text-2xl font-bold mb-4">Where does the money come from?</h2>
+        <EmbedButton embedPath="/embed/revenue-breakdown/" client:load />
+      </div>
+      <WaterfallChart data={revenueWaterfall} client:load />
+      <p class="text-gray-700 leading-relaxed mt-4">
+        The city expects <strong>{fmtM(revenueTotal)}</strong> in revenue. The biggest source by far is
+        <strong>tax revenue ({taxPct}% of the total)</strong> — earned income tax, property tax, and various
+        business taxes. The rest comes from state and federal aid, fees for city services, permits,
+        fines, and interest earnings.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        <a href="/dashboard/" class="text-blue-600 hover:underline">Explore the full dashboard &rarr;</a>
+      </p>
+    </section>
+
+    <!-- 3. Where does the money go? -->
+    <section id="spending" class="mb-12 scroll-mt-8">
+      <div class="flex items-start justify-between">
+        <h2 class="text-2xl font-bold mb-4">Where does the money go?</h2>
+        <EmbedButton embedPath="/embed/spending-breakdown/" client:load />
+      </div>
+      <div class="bg-white rounded-lg border p-5 mb-4">
+        <SimpleBars items={topDepts} client:load />
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        Public safety dominates the budget. Police, Fire, and EMS together account for
+        <strong>{publicSafetyPct}% of all operating spending</strong> ({fmtM(publicSafety)}).
+        The Bureau of Police alone is the single largest department. After public safety,
+        the biggest spending areas are public works, parks, and general government operations.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        <a href="/operating/" class="text-blue-600 hover:underline">Browse all departments &rarr;</a>
+      </p>
+    </section>
+
+    <!-- 4. What changed this year? -->
+    <section id="changed" class="mb-12 scroll-mt-8">
+      <div class="flex items-start justify-between">
+        <h2 class="text-2xl font-bold mb-4">What changed this year?</h2>
+        <EmbedButton embedPath="/embed/budget-increases/" height={500} client:load />
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <div>
+          <ChangesChart data={topInc} title="Biggest Increases" color="#16a34a" client:load />
+        </div>
+        <div>
+          <ChangesChart data={topDec} title="Biggest Decreases" color="#dc2626" client:load />
+        </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        The biggest dollar increase goes to the <strong>{topInc[0]?.department}</strong>
+        (+{fmtM(topInc[0]?.dollarChange)}, {topInc[0]?.pctChange > 0 ? '+' : ''}{topInc[0]?.pctChange}%).
+        On the staffing side, the city is adding <strong>{changes.newPositions.length} new positions</strong>
+        while eliminating {changes.eliminatedPositions.length}
+        {changes.shiftedPositions.length > 0 ? ` and shifting ${changes.shiftedPositions.length} between departments` : ''}.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        <a href="/changes/" class="text-blue-600 hover:underline">See all changes in detail &rarr;</a>
+      </p>
+    </section>
+
+    <!-- 5. Who works for the city? -->
+    <section id="workforce" class="mb-12 scroll-mt-8">
+      <div class="flex items-start justify-between">
+        <h2 class="text-2xl font-bold mb-4">Who works for the city?</h2>
+        <EmbedButton embedPath="/embed/personnel-changes/" client:load />
+      </div>
+      <div class="bg-cyan-50 rounded-xl p-6 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <HeroStat label="Total Positions" value={totalFte2026.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
+          <HeroStat label="Year-over-Year" value={`${fteChange >= 0 ? '+' : ''}${fteChange}`} detail="FTE change vs 2025" color={fteChange >= 0 ? 'text-green-700' : 'text-red-700'} />
+          <HeroStat label="New Positions" value={`${changes.newPositions.length}`} detail={`${changes.eliminatedPositions.length} eliminated`} color="text-cyan-900" />
+        </div>
+      </div>
+      <div class="bg-white rounded-lg border p-5 mb-4">
+        <h3 class="text-sm font-medium text-gray-500 mb-3">Largest departments by headcount</h3>
+        <SimpleBars
+          items={topPersonnel}
+          format="fte"
+          client:load
+        />
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        The city's workforce is budgeted at <strong>{totalFte2026.toLocaleString()} full-time equivalent positions</strong>,
+        a net change of {fteChange >= 0 ? '+' : ''}{fteChange} from 2025. The Bureau of Police is the largest
+        employer, followed by Fire and Operations (public works).
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        <a href="/personnel/" class="text-blue-600 hover:underline">Explore all positions &rarr;</a>
+      </p>
+    </section>
+
+    <!-- 6. What about big projects? -->
+    <section id="capital" class="mb-12 scroll-mt-8">
+      <div class="flex items-start justify-between">
+        <h2 class="text-2xl font-bold mb-4">What about big projects?</h2>
+        <EmbedButton embedPath="/embed/capital-funding/" client:load />
+      </div>
+      <div class="bg-orange-50 rounded-xl p-6 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <HeroStat label="2026 Capital Spending" value={fmtM(capital2026)} color="text-orange-900" />
+          <HeroStat label="6-Year Capital Plan" value={fmtB(capitalTotal)} detail="2026 through 2031" color="text-orange-900" />
+        </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        Beyond day-to-day operations, the capital budget funds infrastructure: road repairs, bridge rehabilitation,
+        building renovations, vehicle replacements, and technology upgrades. The six-year plan totals
+        <strong>{fmtB(capitalTotal)}</strong>, funded through bonds, pay-as-you-go (PAYGO) from operating revenue,
+        Community Development Block Grants (CDBG), and other sources.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        <a href="/capital/" class="text-blue-600 hover:underline">Browse all capital projects &rarr;</a>
+      </p>
+    </section>
+
+    <!-- Methodology -->
+    <details class="mb-8 border rounded-lg">
+      <summary class="px-4 py-3 text-sm font-medium text-gray-600 cursor-pointer hover:bg-gray-50">About this data</summary>
+      <div class="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
+        <p class="mb-2">
+          All figures are extracted from the City of Pittsburgh's official FY2026 Operating and Capital Budget documents
+          using automated table extraction. Population figure (302,971) is from the 2020 U.S. Census.
+        </p>
+        <p class="mb-2">
+          "Operating budget" covers day-to-day city expenses including salaries, supplies, and services.
+          "Capital budget" covers long-term infrastructure investments. The two are separate funds.
+        </p>
+        <p>
+          This analysis was produced by <a href="/about/" class="text-blue-600 hover:underline">Pittsburgh Budget Explorer</a>,
+          an independent project. For the underlying data and methodology, see the
+          <a href="/about/" class="text-blue-600 hover:underline">About page</a>.
+        </p>
+      </div>
+    </details>
+  </div>
+</Base>
