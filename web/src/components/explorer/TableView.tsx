@@ -23,7 +23,7 @@ export default function TableView({ headers, rows, sections = [], numericCols }:
           <thead>
             <tr class="bg-gray-50">
               {headers.map((h, i) => (
-                <th key={i} class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${numSet.has(i) ? 'text-right tabular-nums' : 'text-left'}`}>
+                <th key={i} class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${numSet.has(i) ? 'text-right tabular-nums' : 'text-left'} ${i < colCount - 1 ? 'border-r border-gray-200' : ''}`}>
                   {h}
                 </th>
               ))}
@@ -55,7 +55,7 @@ export default function TableView({ headers, rows, sections = [], numericCols }:
                       : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
                 }>
                   {row.map((cell, j) => (
-                    <td key={j} class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${numSet.has(j) ? 'text-right tabular-nums' : ''}`}>
+                    <td key={j} class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${numSet.has(j) ? 'text-right tabular-nums' : ''} ${j < colCount - 1 ? 'border-r border-gray-200' : ''}`}>
                       {cell}
                     </td>
                   ))}

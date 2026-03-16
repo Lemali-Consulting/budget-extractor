@@ -40,6 +40,53 @@ for (let ci = 0; ci < colCount; ci++) {
   if (total > 0 && numCount / total > 0.5) numericColSet.add(ci);
 }
 
+// Detect paired year columns for change highlighting
+// Maps later-year column index → earlier-year column index
+const yearPairs = new Map<number, number>();
+const yearPattern = /\b(20\d{2})\b/;
+for (let ci = 0; ci < colCount; ci++) {
+  const h = table.headers[ci] || '';
+  const m = h.match(yearPattern);
+  if (!m) continue;
+  const year = parseInt(m[1], 10);
+  const metric = h.replace(yearPattern, '').trim().toLowerCase();
+  // Look for an earlier-year column with the same metric
+  for (let cj = 0; cj < ci; cj++) {
+    const h2 = table.headers[cj] || '';
+    const m2 = h2.match(yearPattern);
+    if (!m2) continue;
+    const year2 = parseInt(m2[1], 10);
+    const metric2 = h2.replace(yearPattern, '').trim().toLowerCase();
+    if (metric === metric2 && year > year2) {
+      yearPairs.set(ci, cj);
+      break;
+    }
+  }
+}
+
+function parseNum(s: string): number | null {
+  const t = s.trim();
+  if (!t || t === '—' || t === '-') return null;
+  const neg = t.startsWith('(') || t.startsWith('-');
+  const num = parseFloat(t.replace(/[$,()]/g, ''));
+  if (isNaN(num)) return null;
+  return neg ? -Math.abs(num) : num;
+}
+
+// Pre-compute change classes for each cell: '' | 'increased' | 'decreased'
+const cellChangeClass: string[][] = table.rows.map((row) => {
+  return row.map((cell, ci) => {
+    const pairCol = yearPairs.get(ci);
+    if (pairCol === undefined) return '';
+    const cur = parseNum(cell);
+    const prev = parseNum(row[pairCol] || '');
+    if (cur === null || prev === null) return '';
+    if (cur > prev) return 'changed-increase';
+    if (cur < prev) return 'changed-decrease';
+    return '';
+  });
+});
+
 function isTotalRow(row: string[]): boolean {
   const cell = (row[0] || '').trim().toLowerCase();
   return cell.startsWith('total') || cell.endsWith('total');
@@ -77,9 +124,10 @@ function isTotalRow(row: string[]): boolean {
           <tr class="bg-gray-50">
             {table.headers.map((h, hi) => {
               const align = numericColSet.has(hi) ? 'text-right tabular-nums' : 'text-left';
+              const colBorder = hi < colCount - 1 ? 'border-r border-gray-200' : '';
               return linkCell
-                ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align}`} data-col={hi} data-numeric={numericColSet.has(hi)}><span set:html={linkCell(h)} /><span class="sort-arrow ml-1 text-gray-400"></span></th>
-                : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align}`} data-col={hi} data-numeric={numericColSet.has(hi)}>{h}<span class="sort-arrow ml-1 text-gray-400"></span></th>;
+                ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder}`} data-col={hi} data-numeric={numericColSet.has(hi)}><span set:html={linkCell(h)} /><span class="sort-arrow ml-1 text-gray-400"></span></th>
+                : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder}`} data-col={hi} data-numeric={numericColSet.has(hi)}>{h}<span class="sort-arrow ml-1 text-gray-400"></span></th>;
             })}
           </tr>
         </thead>
@@ -113,9 +161,11 @@ function isTotalRow(row: string[]): boolean {
               }>
                 {row.map((cell, ci) => {
                   const align = numericColSet.has(ci) ? 'text-right tabular-nums' : '';
+                  const change = cellChangeClass[i]?.[ci] || '';
+                  const colBorder = ci < colCount - 1 ? 'border-r border-gray-200' : '';
                   return linkCell && ci === 0
-                    ? <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align}`} set:html={linkCell(cell)} />
-                    : <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align}`}>{cell}</td>;
+                    ? <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder}`} set:html={linkCell(cell)} />
+                    : <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder}`}>{cell}</td>;
                 })}
               </tr>
             </>
