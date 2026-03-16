@@ -210,6 +210,19 @@ def test_generic_title_with_corroboration_shifted():
     assert "Manager, 311 Response Line" in shifted_titles
 
 
+def test_blocklisted_title_not_shifted():
+    """Blocklisted titles are never matched as shifts, even if specific."""
+    mod = _import_build_web_data()
+    personnel = [
+        _make_personnel("Assistant II, Administrative", "Dept A", 1, 0, 40000, 0),
+        _make_personnel("Assistant II, Administrative", "Dept B", 0, 1, 0, 42000),
+    ]
+    result = mod.detect_shifted_positions(personnel)
+    assert len(result["shiftedPositions"]) == 0
+    assert len(result["newPositions"]) == 1
+    assert len(result["eliminatedPositions"]) == 1
+
+
 def test_specific_title_solo_pair_still_shifted():
     """A specific title (appears in <3 depts) should be shifted even without
     corroboration on the same dept pair."""

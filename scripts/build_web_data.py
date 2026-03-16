@@ -781,6 +781,7 @@ def detect_shifted_positions(personnel: list[dict]) -> dict:
     Generic titles (appearing in 3+ departments across all personnel) require
     corroboration: at least 2 shifts must occur on the same from→to department
     pair. Specific titles (1-2 departments) are matched without corroboration.
+    Blocklisted titles are never matched as shifts.
 
     Returns dict with newPositions, eliminatedPositions, and shiftedPositions lists.
     Positions matched as shifts are removed from new/eliminated lists.
@@ -788,6 +789,8 @@ def detect_shifted_positions(personnel: list[dict]) -> dict:
     from collections import defaultdict
 
     GENERIC_DEPT_THRESHOLD = 3
+    # Titles too generic to ever match as shifts, even if they appear in few departments
+    TITLE_BLOCKLIST = {"assistant ii, administrative"}
 
     # Count how many departments each title appears in (all personnel, not just changes)
     title_dept_count: dict[str, int] = defaultdict(set)
@@ -882,6 +885,8 @@ def detect_shifted_positions(personnel: list[dict]) -> dict:
     consumed_elim: set[int] = set()
 
     for cs in candidate_shifts:
+        if cs["_norm_title"] in TITLE_BLOCKLIST:
+            continue
         is_generic = title_dept_count.get(cs["_norm_title"], 0) >= GENERIC_DEPT_THRESHOLD
         pair = (cs["fromDepartment"], cs["toDepartment"])
         if is_generic and pair_counts[pair] < 2:

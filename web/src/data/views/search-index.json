@@ -9772,6 +9772,19 @@
     "href": "/changes/"
   },
   {
+    "sectionTitle": "Assistant II, Administrative (New Position)",
+    "slug": "",
+    "tableId": "",
+    "tableType": "new_position",
+    "headers": "",
+    "narrative": "Three Taxing Bodies Trust Fund \u2014 0.9 FTE, $36,404",
+    "lineItems": "",
+    "page": 0,
+    "tableIndex": -1,
+    "budgetType": "changes",
+    "href": "/changes/"
+  },
+  {
     "sectionTitle": "Specialist, Administrative (New Position)",
     "slug": "",
     "tableId": "",
@@ -10453,7 +10466,7 @@
     "tableId": "",
     "tableType": "eliminated_position",
     "headers": "",
-    "narrative": "Department of Finance \u2014 0.09999999999999998 FTE",
+    "narrative": "Department of Finance \u2014 1.0 FTE",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
