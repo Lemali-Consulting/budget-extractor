@@ -2726,25 +2726,7 @@
               "\u2014",
               "\u2014",
               "n/a"
-            ]
-          ],
-          "absolute_page": 33
-        },
-        {
-          "id": "s5_p0_t2",
-          "relative_page": 0,
-          "table_index": 2,
-          "table_type": "revenue",
-          "headers": [
-            "Annual Growth Rate Tax Revenue",
-            "2025",
-            "1.7% 2026",
-            "1.8% 2027",
-            "1.6% 2028",
-            "1.7% 2029",
-            "CAGR*"
-          ],
-          "rows": [
+            ],
             [
               "41 - Tax Revenue",
               "530,346,534",
@@ -6590,25 +6572,7 @@
               "36",
               "",
               "2,752,838"
-            ]
-          ],
-          "absolute_page": 60
-        },
-        {
-          "id": "s10_p2_t1",
-          "relative_page": 2,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 Rate/ FTE Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 Rate/ FTE Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -6664,6 +6628,7 @@
               "2,778,838"
             ]
           ],
+          "absolute_page": 60,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -6671,9 +6636,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 60,
-          "linked_narrative": "Each of the nine Council Members have discretion on how they would like to budget their staff salary allocations. The proposed budget for each office (not including the Council Member) for 2025 is approximately $216,000."
+          ]
         },
         {
           "id": "s10_p3_t0",
@@ -8714,85 +8677,7 @@
               "",
               "",
               "2,915,653"
-            ]
-          ],
-          "sections": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee"
-          ],
-          "absolute_page": 70
-        },
-        {
-          "id": "s12_p3_t0",
-          "relative_page": 3,
-          "table_index": 0,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -8894,6 +8779,62 @@
             ]
           ],
           "sections": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -8904,7 +8845,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
           ],
-          "absolute_page": 71
+          "absolute_page": 70
         },
         {
           "id": "s12_p4_t0",
@@ -9773,27 +9714,7 @@
               "",
               "",
               "2,766,381"
-            ]
-          ],
-          "absolute_page": 78
-        },
-        {
-          "id": "s13_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -9872,6 +9793,7 @@
               "2,660,726"
             ]
           ],
+          "absolute_page": 78,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -9880,9 +9802,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 78,
-          "linked_narrative": "Community Development positions are described in the appropriate Trust Fund section. 78"
+          ]
         },
         {
           "id": "s13_p5_t0",
@@ -11264,90 +11184,7 @@
               "",
               "",
               "5,363,799"
-            ]
-          ],
-          "sections": [
-            "I&P Administration",
-            "I&P Administration",
-            "I&P Administration",
-            "I&P Administration",
-            "I&P Administration",
-            "I&P Administration",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "IT Operations Reliability",
-            "Security & Risk",
-            "Security & Risk",
-            "Security & Risk",
-            "Operations Performance Excellence",
-            "Operations Performance Excellence",
-            "Operations Performance Excellence",
-            "Business Technology",
-            "Business Technology",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Senior Manager, Digital Services/Chief Data",
-            "Communications",
-            "Communications",
-            "Communications",
-            "Communications",
-            "Communications",
-            "Communications",
-            "Communications",
-            "Communications"
-          ],
-          "absolute_page": 84
-        },
-        {
-          "id": "s14_p4_t0",
-          "relative_page": 4,
-          "table_index": 0,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -11402,34 +11239,7 @@
               "",
               "",
               "48,000"
-            ]
-          ],
-          "sections": [
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 85
-        },
-        {
-          "id": "s14_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Total Full-Time Permanent Positions",
               "67",
@@ -11486,7 +11296,75 @@
               "5,089,971"
             ]
           ],
-          "absolute_page": 85
+          "sections": [
+            "I&P Administration",
+            "I&P Administration",
+            "I&P Administration",
+            "I&P Administration",
+            "I&P Administration",
+            "I&P Administration",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "IT Operations Reliability",
+            "Security & Risk",
+            "Security & Risk",
+            "Security & Risk",
+            "Operations Performance Excellence",
+            "Operations Performance Excellence",
+            "Operations Performance Excellence",
+            "Business Technology",
+            "Business Technology",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Senior Manager, Digital Services/Chief Data",
+            "Communications",
+            "Communications",
+            "Communications",
+            "Communications",
+            "Communications",
+            "Communications",
+            "Communications",
+            "Communications",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances"
+          ],
+          "absolute_page": 84
         },
         {
           "id": "s14_p5_t0",
@@ -12213,27 +12091,7 @@
               "",
               "",
               "560,280"
-            ]
-          ],
-          "absolute_page": 91
-        },
-        {
-          "id": "s15_p3_t1",
-          "relative_page": 3,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -12301,6 +12159,7 @@
               "565,280"
             ]
           ],
+          "absolute_page": 91,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -12308,8 +12167,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 91
+          ]
         },
         {
           "id": "s15_p4_t0",
@@ -13419,81 +13277,7 @@
               "",
               "",
               "4,263,583"
-            ]
-          ],
-          "sections": [
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit"
-          ],
-          "absolute_page": 97
-        },
-        {
-          "id": "s16_p4_t0",
-          "relative_page": 4,
-          "table_index": 0,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -13584,6 +13368,58 @@
             ]
           ],
           "sections": [
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -13593,7 +13429,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
           ],
-          "absolute_page": 98
+          "absolute_page": 97
         },
         {
           "id": "s16_p5_t0",
@@ -14518,59 +14354,7 @@
               "",
               "",
               "2,435,016"
-            ]
-          ],
-          "sections": [
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Business Intelligence",
-            "Business Intelligence",
-            "Business Intelligence",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division"
-          ],
-          "absolute_page": 105
-        },
-        {
-          "id": "s17_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -14672,6 +14456,36 @@
             ]
           ],
           "sections": [
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Business Intelligence",
+            "Business Intelligence",
+            "Business Intelligence",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -15830,27 +15644,7 @@
               "",
               "",
               "3,402,187"
-            ]
-          ],
-          "absolute_page": 113
-        },
-        {
-          "id": "s18_p3_t1",
-          "relative_page": 3,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -15951,6 +15745,7 @@
               "3,377,778"
             ]
           ],
+          "absolute_page": 113,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -15961,8 +15756,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 113
+          ]
         },
         {
           "id": "s18_p4_t0",
@@ -16595,27 +16389,7 @@
               "",
               "",
               "110,718"
-            ]
-          ],
-          "absolute_page": 119
-        },
-        {
-          "id": "s19_p3_t1",
-          "relative_page": 3,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -16683,6 +16457,7 @@
               "125,718"
             ]
           ],
+          "absolute_page": 119,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -16690,8 +16465,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 119
+          ]
         },
         {
           "id": "s19_p4_t0",
@@ -20568,27 +20342,7 @@
               "",
               "",
               "8,542,894"
-            ]
-          ],
-          "absolute_page": 148
-        },
-        {
-          "id": "s23_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -20623,12 +20377,12 @@
               "5,000"
             ]
           ],
+          "absolute_page": 148,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 148
+          ]
         },
         {
           "id": "s23_p5_t0",
@@ -23891,27 +23645,7 @@
               "",
               "",
               "75,366,052"
-            ]
-          ],
-          "absolute_page": 175
-        },
-        {
-          "id": "s26_p5_t1",
-          "relative_page": 5,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -24001,6 +23735,7 @@
               "75,394,680"
             ]
           ],
+          "absolute_page": 175,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -24010,8 +23745,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 175
+          ]
         },
         {
           "id": "s26_p6_t0",
@@ -25118,27 +24852,7 @@
               "",
               "",
               "56,639,494"
-            ]
-          ],
-          "absolute_page": 183
-        },
-        {
-          "id": "s27_p3_t1",
-          "relative_page": 3,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -25171,32 +24885,7 @@
               "",
               "",
               "1,081,167"
-            ]
-          ],
-          "sections": [
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 183
-        },
-        {
-          "id": "s27_p3_t2",
-          "relative_page": 3,
-          "table_index": 2,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Total Full-Time Permanent Positions",
               "679",
@@ -25264,7 +24953,12 @@
               "57,735,661"
             ]
           ],
-          "absolute_page": 183
+          "absolute_page": 183,
+          "sections": [
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances"
+          ]
         },
         {
           "id": "s27_p3_t3",
@@ -27283,27 +26977,7 @@
               "",
               "",
               "2,143,760"
-            ]
-          ],
-          "absolute_page": 206
-        },
-        {
-          "id": "s31_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -27382,6 +27056,7 @@
               "2,059,572"
             ]
           ],
+          "absolute_page": 206,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -27390,8 +27065,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 206
+          ]
         },
         {
           "id": "s31_p2_t0",
@@ -28162,27 +27836,7 @@
               "",
               "",
               "15,978,143"
-            ]
-          ],
-          "absolute_page": 210
-        },
-        {
-          "id": "s32_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -28261,6 +27915,7 @@
               "15,247,009"
             ]
           ],
+          "absolute_page": 210,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -28269,9 +27924,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 210,
-          "linked_narrative": "The labor agreement for AFSMCE 2037 members expires on December 31, 2024. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change."
+          ]
         },
         {
           "id": "s32_p2_t0",
@@ -29196,27 +28849,7 @@
               "",
               "",
               "10,232,371"
-            ]
-          ],
-          "absolute_page": 215
-        },
-        {
-          "id": "s33_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2023 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2023 Budget",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -29249,32 +28882,7 @@
               "",
               "",
               "281,070"
-            ]
-          ],
-          "sections": [
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 215
-        },
-        {
-          "id": "s33_p1_t2",
-          "relative_page": 1,
-          "table_index": 2,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2023 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2023 Budget",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Total Full-Time Permanent Positions",
               "195",
@@ -29332,7 +28940,11 @@
             ]
           ],
           "absolute_page": 215,
-          "linked_narrative": "The labor agreement for AFSMCE 2037 members expires on December 31, 2024. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change."
+          "sections": [
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances"
+          ]
         },
         {
           "id": "s33_p2_t0",
@@ -31293,27 +30905,7 @@
               "",
               "",
               "2,895,805"
-            ]
-          ],
-          "absolute_page": 227
-        },
-        {
-          "id": "s35_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -31491,6 +31083,7 @@
               "4,160,281"
             ]
           ],
+          "absolute_page": 227,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -31508,8 +31101,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 227
+          ]
         },
         {
           "id": "s35_p5_t0",
@@ -33192,27 +32784,7 @@
               "",
               "",
               "8,702,174"
-            ]
-          ],
-          "absolute_page": 237
-        },
-        {
-          "id": "s36_p6_t0",
-          "relative_page": 6,
-          "table_index": 0,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -33324,6 +32896,7 @@
               "8,259,497"
             ]
           ],
+          "absolute_page": 237,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -33335,8 +32908,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 238
+          ]
         },
         {
           "id": "s36_p7_t0",
@@ -34152,27 +33724,7 @@
               "",
               "",
               "594,919"
-            ]
-          ],
-          "absolute_page": 245
-        },
-        {
-          "id": "s37_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -34240,6 +33792,7 @@
               "599,919"
             ]
           ],
+          "absolute_page": 245,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -34247,8 +33800,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 245
+          ]
         },
         {
           "id": "s37_p5_t0",
@@ -40247,27 +39799,7 @@
               "",
               "",
               "52,145"
-            ]
-          ],
-          "absolute_page": 273
-        },
-        {
-          "id": "s50_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -40346,6 +39878,7 @@
               "85,413"
             ]
           ],
+          "absolute_page": 273,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -40354,8 +39887,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 273
+          ]
         },
         {
           "id": "s50_p1_t2",
@@ -40866,27 +40398,7 @@
               "",
               "",
               "751,557"
-            ]
-          ],
-          "absolute_page": 275
-        },
-        {
-          "id": "s51_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -41064,6 +40576,7 @@
               "1,557,903"
             ]
           ],
+          "absolute_page": 275,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -41081,8 +40594,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 275
+          ]
         },
         {
           "id": "s51_p1_t2",
@@ -41519,27 +41031,7 @@
               "",
               "",
               "200,832"
-            ]
-          ],
-          "absolute_page": 277
-        },
-        {
-          "id": "s52_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -41607,6 +41099,7 @@
               "239,016"
             ]
           ],
+          "absolute_page": 277,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -41614,8 +41107,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 277
+          ]
         },
         {
           "id": "s52_p1_t2",
@@ -42426,27 +41918,7 @@
               "",
               "",
               "1,369,903"
-            ]
-          ],
-          "absolute_page": 280
-        },
-        {
-          "id": "s54_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -42514,6 +41986,7 @@
               "1,560,823"
             ]
           ],
+          "absolute_page": 280,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -42521,8 +41994,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 280
+          ]
         },
         {
           "id": "s54_p1_t2",
@@ -42884,27 +42356,7 @@
               "",
               "",
               "83,512"
-            ]
-          ],
-          "absolute_page": 282
-        },
-        {
-          "id": "s55_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -42994,6 +42446,7 @@
               "189,322"
             ]
           ],
+          "absolute_page": 282,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -43003,8 +42456,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ],
-          "absolute_page": 282
+          ]
         }
       ],
       "page_content": [
@@ -43208,42 +42660,12 @@
               "\u2014",
               "\u2014",
               "40,840.50"
-            ]
-          ],
-          "absolute_page": 284,
-          "linked_narrative": "Archives and Records Management Trust Fund Department:  City Clerk 1012877000 Authorizing Resolution:  758 of 2018 Description:  Created in 2018 for the immediate need of capturing $40,000 donated by the Bicentennial committee for archives purposes.  Per the recommendation of the Controller\u2019s office, re-used existing account and fund number, formerly the Clerk-Vending Machine trust fund. Revenues:  All money charged in connection with Archives and Records Management activities, including but not limited to copying, scanning, digitization, and right-to-know request reimbursements.  Also Grants or donations made to the City for the purposes of Archives or Records Management, including an initial $40,000 donation from the Bicentennial committee in 2018. Expenditures:  The funds deposited in said trust fund shall be used by the Office of the City Clerk to cover any and all expenses associated with Archives, Retention of Records, or Records Management."
-        },
-        {
-          "id": "s57_p0_t1",
-          "relative_page": 0,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "\u2014",
               "522,363.61",
               "92,247.08"
-            ]
-          ],
-          "absolute_page": 284,
-          "linked_narrative": "Bridge Asset Management Program Trust Fund Department: Office of Management & Budget 0222800600 Authorizing Resolution:  414 of 2022 Description:  Created in 2022 for setting the conditions for the deposit of funding into the account and for the expenditure of said funds. Revenues:  ARPA Funds through 12/31/2024. City funds in future years as needed. Expenditures:  The funds deposited in said trust fund shall be used for costs related to the implementation of said program"
-        },
-        {
-          "id": "s57_p0_t2",
-          "relative_page": 0,
-          "table_index": 2,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "41,967.00",
               "38,875.50",
@@ -43253,42 +42675,12 @@
               "246,812.25",
               "165,693.70",
               "764,120.27"
-            ]
-          ],
-          "absolute_page": 284,
-          "linked_narrative": "Code Trust Fund Department:  Permits, Licenses & Inspections 2700240900 Authorizing Resolution:  965 of 1981.  Renamed \"BOCA TF\" by resolution 895 of 1996. Description: Used by PL&I to capture revenue paid to the City for copies of the building code. Revenues:  Fees paid for purchases of the Building, Fire, Mechanical, and Pittsburgh Supplements to the Code Expenditures:  Expenses to buy copies of the Code for City customers"
-        },
-        {
-          "id": "s57_p1_t0",
-          "relative_page": 1,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "167,176.66",
               "747,502.53",
               "1,606,569.91"
-            ]
-          ],
-          "absolute_page": 285,
-          "linked_narrative": "Comcast Franchise Trust Fund Department:  Innovation & Performance 1030281500 Authorizing Resolution:   432 of 2010 Description: This trust fund was created in 2010 to house capital grants made by Comcast, and act as a pass through for funds going to the local public access tv station.  Not to be confused with the franchise fee, that goes directly into the City\u2019s operating budget. Revenues:  Payment of grants from Comcast to the City for public, educational and governmental (\u201cPEG\u201d) access channel support. Expenditures:  Any and all expenses associated with the purchase, acquisition, and maintenance of cable and network communications equipment, including but not limited to cameras, editing suites, switches, routers, training, travel, and related hardware, software, licensing fees, and professional services.  This fund is also a pass-through for the funds that go to PCTV."
-        },
-        {
-          "id": "s57_p1_t1",
-          "relative_page": 1,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "1,530.00",
               "24,526.00",
@@ -43298,42 +42690,12 @@
               "164,625.00",
               "206,999.68",
               "(134,967.93)"
-            ]
-          ],
-          "absolute_page": 285,
-          "linked_narrative": "Confiscated Narcotics Proceeds Trust Fund Department:  Police 2300241600 Authorizing Resolution:  1265 of 1985.  Amended 1070 of 1987 and 978 of 1989.  Codified in ordinance 232.01 in 2015. Description: Civil asset forfeiture fund Revenues:  Cash and proceeds derived from the confiscation of narcotics and related items of forfeited property Expenditures:  Any and all expenses associated with investigations of narcotics violations, including salaries, supplies, materials, and other miscellaneous expenses.  Proposed 2015 amendment to include \u201cany other law enforcement activities\u201d by 2015 ordinance."
-        },
-        {
-          "id": "s57_p2_t0",
-          "relative_page": 2,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "3,390.00",
               "\u2014",
               "201,792.26"
-            ]
-          ],
-          "absolute_page": 286,
-          "linked_narrative": "Crossing Guards Special Events Trust Fund Department: Public Safety 2100240840 Authorizing Resolution:  106 of 2020 Description: This trust fund will provide a more efficient and transparent means for depositing funds collected for crossing guards working special events and for paying premium pay to crossing guards working events and for related administrative costs.  The Police and EMS bureaus have similar trust funds for secondary employment that work well. Revenues:  Any and all monies collected from crossing guards special events cost recovery shall be deposited Expenditures:  Reimbursements to crossing guards for Special Events, including pay and related taxes paid by the employer, shall be paid directly from this trust fund.  Expenses related to the administration of Crossing Guard Special Events programming may be paid directly from this trust fund or reimbursed to a different City funding source."
-        },
-        {
-          "id": "s57_p2_t1",
-          "relative_page": 2,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "105,859.00",
               "70,578.34",
@@ -43343,42 +42705,12 @@
               "1,607,203.09",
               "1,340,955.84",
               "2,743,295.78"
-            ]
-          ],
-          "absolute_page": 286,
-          "linked_narrative": "Demolition Trust Fund Department:  Permits, Licenses & Inspections 2700872800 Authorizing Resolution:  1037 of 1982.  Further amended by 836 of 2017 Description: Fund is used to capture liens that were placed against properties when the City had to demolish unsafe structures. Revenues:  Monies received from the demolition of properties condemned under the provisions of the Act of May 13, 1915, P.L. 297 Expenditures:  Expenses incurred by contractors for the demolition of condemned property"
-        },
-        {
-          "id": "s57_p3_t0",
-          "relative_page": 3,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "8,800.00",
               "\u2014",
               "475,246.79"
-            ]
-          ],
-          "absolute_page": 287,
-          "linked_narrative": "EMS Reimbursable Events Trust Fund Department:  EMS 2200243700 Authorizing Resolution: 1016 of 1991 Description: Created in 1991 to allow reimbursements from events that used the City\u2019s EMS personnel. Cooperation agreements with other EMS organizations allows events to hire additional suburban paramedics, using this trust fund as a pass-through. Revenues:  Monies reimbursed from special events Expenditures:  Payroll reimbursements are to be used for payment of premium pay for EMS personnel only. Fees and other rentals can be used to support the Bureau of EMS.  The fund is also a pass through for non-city EMS companies that are hired by Heinz Field, PNC Park, etc for coverage at their events."
-        },
-        {
-          "id": "s57_p3_t1",
-          "relative_page": 3,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "\u2014",
               "\u2014",
@@ -43388,42 +42720,12 @@
               "272.13",
               "\u2014",
               "91,996.55"
-            ]
-          ],
-          "absolute_page": 287,
-          "linked_narrative": "Facilities Trust Fund Department:  OMB 0730125015 Authorizing Resolution: 425 of 2015, as amended by 434 of 2017 Description: Created in 2015 to address the deferred maintenance of City facilities. Revenues:  The Facilities Trust Fund shall be funded from any proceeds received from the disposition or lease of a facility. Expenditures:  Funds to be used for the exclusive and irrevocable purpose of funding the maintenance, capital investment, acquisition, and disposition of City-owned facilities."
-        },
-        {
-          "id": "s57_p4_t0",
-          "relative_page": 4,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "1,388.98",
               "\u2014",
               "8,084.03"
-            ]
-          ],
-          "absolute_page": 288,
-          "linked_narrative": "Graffiti Trust Fund Department:  Police 2300244200 Authorizing Resolution: Ordinance 11 of 1987 created it in the City Code.  Further amended by ordinances 18 of 1997 and 8 of 2008. Description: The fund was created with the same legislation that made graffiti illegal.  Fines from violating the City\u2019s anti-graffiti law were deposited into the trust fund.  The City's current process for accepting fine revenue no longer allows for differentiation of which fines are part of that monthly check, rendering this account defunct. Revenues:  Receipt and deposit of private sector contributions and the fines resulting from violations of the graffiti chapter of the City Code. Expenditures: Used specifically for graffiti abatement, rewards, public awareness, vouchers to community organizations in support of their graffiti removal programs, and for such other purposes as may be approved by the Director of Public Safety.  The Director of Public Safety shall grant rewards of up to the sum of five hundred dollars to individuals, organizations, or other entities who provide information leading to the arrest and conviction of any individual for violating Chapter 620.03."
-        },
-        {
-          "id": "s57_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "25,000.00",
               "74,568.37",
@@ -43433,42 +42735,12 @@
               "\u2014",
               "157,627.00",
               "24,719.15"
-            ]
-          ],
-          "absolute_page": 288,
-          "linked_narrative": "Green Initiatives Trust Fund Department:  According to authorizing legislation, CIS - in practice, City Planning 1020288500 Authorizing Resolution: 393 of 2008 Description: This trust fund was created in 2008 to accept green grants Revenues:  Any funds appropriated for such purpose in the annual Operating Budget, as well as any Grant Funds obtained by the City to advance green initiatives Expenditures: Used to promote energy conservation and efficiency, including but not limited to: Implementation of findings from the Green Government Task Force; energy audits for City owned facilities; LEED certifications; terms and conditions of local, state, and federal grants; Capital improvements to City owned facilities"
-        },
-        {
-          "id": "s57_p5_t0",
-          "relative_page": 5,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "\u2014",
               "\u2014",
               "13,698.25"
-            ]
-          ],
-          "absolute_page": 289,
-          "linked_narrative": "Lead Safety Trust Fund Department: OMB 0222802700 Authorizing Resolution: 265 of 2022 Description: Created in 2022 for setting the conditions for the deposits of funding into the account and for the expenditure of said funds. Revenues:  Funds received from APRA through 12/31/2024, along with private or non-profit contributions. Expenditures: Funds should be related to the implementation and enforcement of the Lead Safe Ordinance (materials, employee costs, safety training, and community outreach)."
-        },
-        {
-          "id": "s57_p5_t1",
-          "relative_page": 5,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "47,662.00",
               "\u2014",
@@ -43478,30 +42750,15 @@
               "199,426.35",
               "3,416.49",
               "1,014,233.06"
-            ]
-          ],
-          "absolute_page": 289,
-          "linked_narrative": "Pittsburgh Code Trust Fund Department: City Clerk 1012875000 Authorizing Resolution: 191 of 1982.  Amended by 760 of 2018 Description: Established in 1982 to collect revenue from printing the code and code supplements.  Expanded over the years to house all Clerks revenue.  Amended in 2018 to formally allow the deposit of the revenues already being deposited into the fund. Revenues:  The deposit of money charged for the purchase of all Pittsburgh Codes and Supplements to the Pittsburgh Code, all revenue from liquor license transfer fees, monies charged for copies, and other City Clerk revenues. Expenditures: The trust fund is used by the City Solicitor and the City Clerk to have supplements printed for the City Code, and to update the online City Code."
-        },
-        {
-          "id": "s57_p6_t0",
-          "relative_page": 6,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "203,338.35",
               "343,258.94",
               "655,920.38"
             ]
           ],
-          "absolute_page": 290,
-          "linked_narrative": "Public Safety Training Trust Fund Department:  Public Safety 2300246900 Authorizing Resolution: 744 of 1979 and 511 of 1986 Description:  The Police Recruit Training Trust Fund was created in 1979.  Amended in 1986 to include all of Public Safety. Revenues:  Any and all state and/or federal funds received by the City as reimbursements for such recruit and in of service training and related expenses, income generated by the public Safety Training Academy, and other such local funds Expenditures: Training and related expenses for public safety employees and recruits and in of service training of public safety employees, as well as for the purchase of training equipment and related capital expenditures."
+          "absolute_page": 284,
+          "linked_narrative": "Archives and Records Management Trust Fund Department:  City Clerk 1012877000 Authorizing Resolution:  758 of 2018 Description:  Created in 2018 for the immediate need of capturing $40,000 donated by the Bicentennial committee for archives purposes.  Per the recommendation of the Controller\u2019s office, re-used existing account and fund number, formerly the Clerk-Vending Machine trust fund. Revenues:  All money charged in connection with Archives and Records Management activities, including but not limited to copying, scanning, digitization, and right-to-know request reimbursements.  Also Grants or donations made to the City for the purposes of Archives or Records Management, including an initial $40,000 donation from the Bicentennial committee in 2018. Expenditures:  The funds deposited in said trust fund shall be used by the Office of the City Clerk to cover any and all expenses associated with Archives, Retention of Records, or Records Management."
         },
         {
           "id": "s57_p6_t1",
@@ -43538,42 +42795,12 @@
               "\u2014",
               "\u2014",
               "3,200,000.00"
-            ]
-          ],
-          "absolute_page": 291,
-          "linked_narrative": "Other Post Employment Benefits (OPEB) Trust Fund Department:  Finance 1070813500 Authorizing Resolution: 17 of 2012.  Companion legislation to Ordinance 1 of 2012 (Chapter 176A) Description:  Created in 2012 to address retiree healthcare expenses.  Created at the urging of Act 47, the ICA, and best practices.  As of 2019, it has not yet been used to pay any retiree benefits. Revenues:  Transfers from the general fund Expenditures: Investment administrative expenses.  When the fund becomes large enough, it will eventually be used to pay retirees other post-employment benefits, which is mostly retiree healthcare."
-        },
-        {
-          "id": "s57_p7_t1",
-          "relative_page": 7,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "\u2014",
               "39,236.82",
               "160,332.25"
-            ]
-          ],
-          "absolute_page": 291,
-          "linked_narrative": "Public Safety Support Trust Fund Department:  Public Safety 2102906500 Authorizing Resolution: 761 of 2018 Description: On October 27, 2018, four City of Pittsburgh police officers were injured during the tragic events at Squirrel Hill\u2019s Tree of Life synagogue; and in the wake of this horrific incident, many generous private and corporate citizens and organizations have expressed interest in donating to the Department of Public Safety; and, the City wishes to establish a trust fund in order to receive these and future donations so that they may be used for training, equipment, and supplies. Revenues:  Deposit of monies from various sources of donations for training, equipment, and supply purchases by the Department of Public Safety Expenditures: To cover expenses associated with training for Public Safety personnel and for the purchase of Public Safety equipment and supplies, subject to any further legislation as may be required."
-        },
-        {
-          "id": "s57_p7_t2",
-          "relative_page": 7,
-          "table_index": 2,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "\u2014",
               "\u2014",
@@ -43583,42 +42810,12 @@
               "\u2014",
               "98,471.00",
               "228,306.47"
-            ]
-          ],
-          "absolute_page": 291,
-          "linked_narrative": "Open Space Trust Fund Department:  City Planning 1100280630 Authorizing Resolution: 334 of 2016 Description: Payments in lieu of complying with the City Code. Revenues:  Deposited funds paid to the City by developers in lieu of dedication of an open space.  The amount of the deposits are based upon the value of the land that would otherwise be required to be devoted to open space on the development site, plus the cost that would otherwise be incurred by the applicant for development of that space in accordance with the provisions of the City of Pittsburgh Code. Expenditures: May only be appropriated for the acquisition and development of open space, park sites, and recreational facilities within the area of a development project. Funds would be utilized by the Department of City Planning and/or Department of Public Works."
-        },
-        {
-          "id": "s57_p8_t0",
-          "relative_page": 8,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "337,918.17",
               "181,052.30",
               "215,915.37"
-            ]
-          ],
-          "absolute_page": 292,
-          "linked_narrative": "Stormwater Management Trust Fund Department:  City Planning and the Pittsburgh Water and Sewer Authority (PWSA) 1100280640 Authorizing Resolution: 335 of 2016.  Cooperation agreement with PWSA authorized 765 of 2018. Description: Payments in lieu of complying with the City Code. Revenues:  Deposited funds paid to the City by developers in lieu of constructing on-site stormwater facilities. Expenditures: May only be expended in order to supplement stormwater planning and development projects conducted by City Planning and/or DPW.  Added PWSA per cooperation agreement via resolution 765 of 2018."
-        },
-        {
-          "id": "s57_p8_t1",
-          "relative_page": 8,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "3,750.00",
               "\u2014",
@@ -43628,42 +42825,12 @@
               "83,117.00",
               "156,750.00",
               "66,400.50"
-            ]
-          ],
-          "absolute_page": 292,
-          "linked_narrative": "Southside Parking Enhancement District Trust Fund Department:  OMB, and also PS Admin, DPW, DOMI, and Parking Authority 2100248000 Authorizing Resolution: 777 of 2016.  Companion resolution to resolution 776 of 2016 that creates the parking enhancement district.  Amended by 131 of 2018.  Governing ordinance is Chapter 546 of City Code. Description: Introduced November of 2016, 9 months after passage of the Parking Enhancements District trust fund ordinance, found at Chapter 546 of the City Code.  Related to the Nightime Economy plan for the Southside.  Was originally in Public Safety, amended in 2018 to house it within OMB. Revenues:  Monies collected from metered street parking within the enhancement district during times designated by the Director of Finance (after 6pm, per chapter 546 of City Code). Expenditures: The trust fund shall be established within the Department of Management and Budget and may only be used in order to provide public safety resources, public works resources, needed infrastructure improvements, and parking enforcement for the South Side Flats Parking Enhancement District.  Fund shall be utilized by the Department of Public Safety, the Department of Public Works, the Department of Mobility and Infrastructure, and the Pittsburgh Parking Authority."
-        },
-        {
-          "id": "s57_p9_t0",
-          "relative_page": 9,
-          "table_index": 0,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "3,510,000.00",
               "821,366.15",
               "3,466,996.00"
-            ]
-          ],
-          "absolute_page": 293,
-          "linked_narrative": "OneStopPGH Permitting Technology Trust Fund Department:  Any department that collects OneStopPGH departments.  Including, but not limited to: PLI; DOMI; Public 1030286600 Works; Innovation & Performance Authorizing Resolution:  776 of 2021 1030286600 Revenues:  Technology fee collected from applicable OneStopPGH permits Expenditures:  Expenses associated with the OneStopPGH permitting platform for ongoing maintenance and enhancements to improve customer and user experience."
-        },
-        {
-          "id": "s57_p9_t1",
-          "relative_page": 9,
-          "table_index": 1,
-          "table_type": "revenue",
-          "headers": [
-            "Last 12 months* Revenues",
-            "Last 12 months* Expenditures",
-            "Spending Authority as of 11/13/24"
-          ],
-          "rows": [
+            ],
             [
               "826,432.45",
               "11,555,770.26",
@@ -43675,8 +42842,8 @@
               "26,854,751.07"
             ]
           ],
-          "absolute_page": 293,
-          "linked_narrative": "Technology Modernization Trust Fund Department:  Innovation & Performance 1030287500 Authorizing Resolution:  826 of 2021 Description: Provides a vehicle for city departments to fund new technology projects, outside of Council oversight and the Operating and Capital Budget. Revenues:  Direct transfers form the city\u2019s general fund balance; Existing grants dedicated to technology related projects; Private charitable donations; Matching funds from charitable entities. Expenditures:  Implementation costs of new technology projects for city operations; Upgrade costs of existing technology projects for city operations."
+          "absolute_page": 291,
+          "linked_narrative": "Other Post Employment Benefits (OPEB) Trust Fund Department:  Finance 1070813500 Authorizing Resolution: 17 of 2012.  Companion legislation to Ordinance 1 of 2012 (Chapter 176A) Description:  Created in 2012 to address retiree healthcare expenses.  Created at the urging of Act 47, the ICA, and best practices.  As of 2019, it has not yet been used to pay any retiree benefits. Revenues:  Transfers from the general fund Expenditures: Investment administrative expenses.  When the fund becomes large enough, it will eventually be used to pay retirees other post-employment benefits, which is mostly retiree healthcare."
         }
       ],
       "page_content": [
@@ -44124,27 +43291,7 @@
               "",
               "",
               "98,517"
-            ]
-          ],
-          "absolute_page": 305
-        },
-        {
-          "id": "s58_p10_t1",
-          "relative_page": 10,
-          "table_index": 1,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Data Analyst",
               "1",
@@ -44177,27 +43324,7 @@
               "",
               "",
               "138,176"
-            ]
-          ],
-          "absolute_page": 305
-        },
-        {
-          "id": "s58_p10_t2",
-          "relative_page": 10,
-          "table_index": 2,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Project Manager",
               "1",
@@ -44254,8 +43381,7 @@
               "498,197"
             ]
           ],
-          "absolute_page": 305,
-          "linked_narrative": "Position Summary: Post-Overdose  - Substance Abuse and Mental Health Services Administration 2129400452"
+          "absolute_page": 305
         },
         {
           "id": "s58_p10_t3",
@@ -44411,25 +43537,7 @@
               "Office of the City Clerk",
               "Dick's Sporting Goods Provide sports equipment to youth sports 1029400419 Foundation organizations in each council district",
               "10,000 \u2014 10,000"
-            ]
-          ],
-          "absolute_page": 297
-        },
-        {
-          "id": "s58_p2_t1",
-          "relative_page": 2,
-          "table_index": 1,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Office of the Mayor",
               "Cities for Financial 0229400390 Establish an office of financial empowerment Empowerment",
@@ -44444,25 +43552,7 @@
               "Office of the Mayor",
               "Cities for Financial Financial Empowerment for Summer Jobs 0229400395 Empowerment participants",
               "70,000 33,941 36,059"
-            ]
-          ],
-          "absolute_page": 297
-        },
-        {
-          "id": "s58_p2_t2",
-          "relative_page": 2,
-          "table_index": 2,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Office of Management and Budget",
               "PA Department. of 229400440 Purchase of Electric Vehicles Environmental Protection",
@@ -44477,25 +43567,7 @@
               "Office of Management and Budget",
               "Environmental Protection 29400442 Diesel Vehicle Replacement Agency",
               "1,345,000 \u2014 1,345,000"
-            ]
-          ],
-          "absolute_page": 297
-        },
-        {
-          "id": "s58_p2_t3",
-          "relative_page": 2,
-          "table_index": 3,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Department of Innovation and Performance",
               "Appalachian Regional 329400459 Digital Equity Coordinator Commission",
@@ -44565,25 +43637,7 @@
               "Department of City Planning",
               "Pennsylvania Historic and Museum Commission 1129400481 Mexican War Streets",
               "25,000 \u2014 25,000"
-            ]
-          ],
-          "absolute_page": 297
-        },
-        {
-          "id": "s58_p3_t0",
-          "relative_page": 3,
-          "table_index": 0,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Department of Public Safety - Bureau of Administration",
               "Allegheny County Health 2129400327 Public Health Diversion Program Department",
@@ -44683,48 +43737,12 @@
               "Department of Public Safety - Bureau of Police",
               "PA Commission on Crime 2329400476 and Delinquency Police Recruitment",
               "315,000 \u2014 315,000"
-            ]
-          ],
-          "absolute_page": 298
-        },
-        {
-          "id": "s58_p4_t0",
-          "relative_page": 4,
-          "table_index": 0,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Department of Public Safety - Bureau of Emergency Services",
               "Office of the State Fire 2229400468 Purchase of a Blood Cooler Commissioner",
               "15,000 12,500 2,500"
-            ]
-          ],
-          "absolute_page": 299
-        },
-        {
-          "id": "s58_p4_t1",
-          "relative_page": 4,
-          "table_index": 1,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Department of Public Safety - Bureau of Fire",
               "Federal Emergency 2529400292 Fire Detection Systems for the hearing impaired Management Agency",
@@ -44944,25 +43962,7 @@
               "Department of Public Works",
               "4029400492 US Dept. of Energy 4th division solar panels",
               "337,960 \u2014 337,960"
-            ]
-          ],
-          "absolute_page": 299
-        },
-        {
-          "id": "s58_p6_t0",
-          "relative_page": 6,
-          "table_index": 0,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Department of Parks and Recreation",
               "5029400335 Digital Harbor Foundation Rec2tech U",
@@ -44972,25 +43972,7 @@
               "Department of Parks and Recreation",
               "Chester County 5029400382 Rec2Tech Intermediate Unit",
               "80,000 76,082 3,918"
-            ]
-          ],
-          "absolute_page": 301
-        },
-        {
-          "id": "s58_p6_t1",
-          "relative_page": 6,
-          "table_index": 1,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Department of Mobility and Infrastructure",
               "Pennsylvania Department 6029400235 South Side Neighborhood Streets of Transportation",
@@ -45235,32 +44217,14 @@
               "Department of Mobility and Infrastructure",
               "Federal Highway 6029400491 Administration Community Fueling",
               "2,396,407 \u2014 2,396,407"
-            ]
-          ],
-          "absolute_page": 301
-        },
-        {
-          "id": "s58_p8_t0",
-          "relative_page": 8,
-          "table_index": 0,
-          "table_type": "grant",
-          "headers": [
-            "Department",
-            "JDE Number",
-            "Funder",
-            "Grant",
-            "Amount Awarded",
-            "Amount Spent",
-            "Remaining Balance"
-          ],
-          "rows": [
+            ],
             [
               "Urban Redevelopment Authority",
               "Housing and Urban 8229400488 Homewood Ave Development",
               "750,000 \u2014 750,000"
             ]
           ],
-          "absolute_page": 303
+          "absolute_page": 297
         },
         {
           "id": "s58_p9_t0",
@@ -45370,27 +44334,7 @@
               "",
               "",
               "\u2014"
-            ]
-          ],
-          "absolute_page": 304
-        },
-        {
-          "id": "s58_p9_t3",
-          "relative_page": 9,
-          "table_index": 3,
-          "table_type": "personnel",
-          "headers": [
-            "Title",
-            "2024 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2024 Budget",
-            "2025 FTE",
-            "Rate/ Grade",
-            "Hours/ Months",
-            "2025 Budget"
-          ],
-          "rows": [
+            ],
             [
               "Tree Equity Lead",
               "1",

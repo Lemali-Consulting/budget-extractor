@@ -266,6 +266,47 @@ def merge_split_salary_tables(tables: list[dict]) -> list[dict]:
     return result
 
 
+# Table types that should NOT be merged even when headers match.
+# Financial summaries are intentionally separate (revenue vs expenditure).
+# Personnel tables are per-program (each has its own "Total" row).
+_NO_MERGE_TYPES = frozenset({"financial_summary", "financial", "salary", "personnel"})
+
+
+def merge_consecutive_tables(tables: list[dict]) -> list[dict]:
+    """Merge consecutive tables that share the same type and headers.
+
+    The extractor often splits what is logically one table across pages or
+    sub-table boundaries (horizontal rules, section dividers). This merges
+    those fragments back into a single table for cleaner web display.
+    """
+    if not tables:
+        return []
+
+    result: list[dict] = []
+    current = tables[0]
+
+    for next_table in tables[1:]:
+        same_type = current["table_type"] == next_table["table_type"]
+        same_headers = current["headers"] == next_table["headers"]
+        mergeable_type = current["table_type"] not in _NO_MERGE_TYPES
+
+        if same_type and same_headers and mergeable_type:
+            # Append rows from next_table into current
+            current = dict(current)  # shallow copy to avoid mutating original
+            current["rows"] = current["rows"] + next_table["rows"]
+            # Merge sections lists if present
+            cur_sections = current.get("sections", [])
+            next_sections = next_table.get("sections", [])
+            if cur_sections or next_sections:
+                current["sections"] = cur_sections + next_sections
+        else:
+            result.append(current)
+            current = next_table
+
+    result.append(current)
+    return result
+
+
 def classify_table(headers: list[str], section_title: str = "") -> str:
     """Classify a table by its header pattern and section context."""
     header_text = " ".join(headers).lower()
@@ -645,6 +686,7 @@ def build_data() -> dict:
 
         # Merge horizontally-split salary tables that share a key column on the same page
         tables = merge_split_salary_tables(tables)
+        tables = merge_consecutive_tables(tables)
 
         # Filter out junk tables (chart artifacts with all-empty content)
         tables = [t for t in tables if not _is_empty_table(t)]

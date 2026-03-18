@@ -20,12 +20,13 @@ test("home page loads with key content", async ({ page }) => {
     "Pittsburgh Budget Explorer",
   );
 
-  // Navigation links in header
+  // Navigation dropdown triggers in header
   const header = page.locator("header");
   await expect(
-    header.getByRole("link", { name: /Operating/i }),
+    header.getByRole("link", { name: /Budgets/i }),
   ).toBeVisible();
-  await expect(header.getByRole("link", { name: /Capital/i })).toBeVisible();
+  await expect(header.getByRole("button", { name: /Stories/i })).toBeVisible();
+  await expect(header.getByRole("button", { name: /Explore/i })).toBeVisible();
 });
 
 // ---------------------------------------------------------------------------
@@ -180,10 +181,13 @@ test("header navigation links are present on all pages", async ({ page }) => {
     await page.goto(route);
     const header = page.locator("header");
     await expect(
-      header.getByRole("link", { name: /Operating/i }),
+      header.getByRole("link", { name: /Budgets/i }),
     ).toBeVisible();
     await expect(
-      header.getByRole("link", { name: /Capital/i }),
+      header.getByRole("link", { name: /Stories/i }),
+    ).toBeVisible();
+    await expect(
+      header.getByRole("link", { name: /Explore/i }),
     ).toBeVisible();
   }
 });

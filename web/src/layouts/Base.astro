@@ -15,12 +15,28 @@ const resolvedOgDescription = ogDescription || description;
 const canonicalUrl = Astro.url.href;
 
 const path = Astro.url.pathname;
+function isActive(href: string): boolean {
+  return path === href || (path.startsWith(href) && href !== '/');
+}
 function navClass(href: string): string {
-  const active = path === href || path.startsWith(href) && href !== '/';
-  return active
+  return isActive(href)
     ? 'text-white font-semibold border-b-2 border-white pb-0.5'
     : 'text-blue-300 hover:text-white';
 }
+function dropdownParentClass(hrefs: string[]): string {
+  return hrefs.some(h => isActive(h))
+    ? 'text-white font-semibold'
+    : 'text-blue-300 hover:text-white';
+}
+function dropdownItemClass(href: string): string {
+  return isActive(href)
+    ? 'block px-3 py-1.5 text-white bg-blue-700 font-semibold'
+    : 'block px-3 py-1.5 text-blue-100 hover:bg-blue-700 hover:text-white';
+}
+
+const storiesHrefs = ['/stories/', '/departments/'];
+const budgetsHrefs = ['/operating/', '/capital/', '/changes/', '/cross-year/'];
+const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/embed/', '/glossary/'];
 ---
 
 <!doctype html>
@@ -50,32 +66,83 @@ function navClass(href: string): string {
     </script>
     <header class="bg-blue-900 text-white px-6 py-3">
       <div class="max-w-6xl mx-auto">
-        <div class="flex items-center justify-between mb-1">
+        <div class="flex items-center justify-between">
           <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
-          <nav class="flex gap-3 text-sm" aria-label="Main navigation">
+          <nav class="flex items-center gap-4 text-sm" aria-label="Main navigation">
             <a href="/brief/" class={navClass('/brief/')}>Brief</a>
-            <a href="/stories/" class={navClass('/stories/')}>Stories</a>
-            <a href="/departments/" class={navClass('/departments/')}>Departments</a>
-            <a href="/embed/" class={navClass('/embed/')}>Embeds</a>
-            <span class="text-blue-700" aria-hidden="true">|</span>
-            <a href="/changes/" class={navClass('/changes/')}>What Changed</a>
-            <a href="/operating/" class={navClass('/operating/')}>Operating</a>
-            <a href="/capital/" class={navClass('/capital/')}>Capital</a>
+
+            <div class="nav-dropdown relative">
+              <a href="/stories/" class={`nav-dropdown-trigger ${dropdownParentClass(storiesHrefs)}`} aria-expanded="false" aria-haspopup="true">
+                Stories <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
+              </a>
+              <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
+                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[10rem]">
+                  <a href="/stories/" class={dropdownItemClass('/stories/')}>Stories</a>
+                  <a href="/departments/" class={dropdownItemClass('/departments/')}>Departments</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-dropdown relative">
+              <a href="/operating/" class={`nav-dropdown-trigger ${dropdownParentClass(budgetsHrefs)}`} aria-expanded="false" aria-haspopup="true">
+                Budgets <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
+              </a>
+              <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
+                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[12rem]">
+                  <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
+                  <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
+                  <a href="/changes/" class={dropdownItemClass('/changes/')}>What Changed</a>
+                  <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-dropdown relative">
+              <a href="/dashboard/" class={`nav-dropdown-trigger ${dropdownParentClass(exploreHrefs)}`} aria-expanded="false" aria-haspopup="true">
+                Explore <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
+              </a>
+              <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
+                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[10rem]">
+                  <a href="/dashboard/" class={dropdownItemClass('/dashboard/')}>Dashboard</a>
+                  <a href="/explorer/" class={dropdownItemClass('/explorer/')}>Explorer</a>
+                  <a href="/compare/" class={dropdownItemClass('/compare/')}>Compare</a>
+                  <a href="/personnel/" class={dropdownItemClass('/personnel/')}>Personnel</a>
+                  <a href="/embed/" class={dropdownItemClass('/embed/')}>Embeds</a>
+                  <a href="/glossary/" class={dropdownItemClass('/glossary/')}>Glossary</a>
+                </div>
+              </div>
+            </div>
           </nav>
         </div>
-        <nav class="flex gap-3 text-xs justify-end" aria-label="Secondary navigation">
-          <a href="/cross-year/" class={navClass('/cross-year/')}>Proposed vs Adopted</a>
-          <a href="/compare/" class={navClass('/compare/')}>Compare</a>
-          <a href="/explorer/" class={navClass('/explorer/')}>Explorer</a>
-          <a href="/dashboard/" class={navClass('/dashboard/')}>Dashboard</a>
-          <a href="/personnel/" class={navClass('/personnel/')}>Personnel</a>
-          <a href="/glossary/" class={navClass('/glossary/')}>Glossary</a>
-        </nav>
       </div>
     </header>
     <main class={fullWidth ? '' : 'max-w-6xl mx-auto px-6 py-8'}>
       <slot />
     </main>
+    <script is:inline>
+      // Nav dropdown: open on hover/click, close on leave/outside click, keyboard accessible
+      document.querySelectorAll('.nav-dropdown').forEach(dd => {
+        const trigger = dd.querySelector('.nav-dropdown-trigger');
+        const menu = dd.querySelector('.nav-dropdown-menu');
+        function open() { menu.classList.remove('hidden'); trigger.setAttribute('aria-expanded', 'true'); }
+        function close() { menu.classList.add('hidden'); trigger.setAttribute('aria-expanded', 'false'); }
+
+        dd.addEventListener('mouseenter', open);
+        dd.addEventListener('mouseleave', close);
+
+        // Close on outside click
+        document.addEventListener('click', (e) => { if (!dd.contains(e.target)) close(); });
+
+        // Keyboard: Escape closes, arrow keys open and navigate items
+        dd.addEventListener('keydown', (e) => {
+          const items = menu.querySelectorAll('a:not(.nav-dropdown-trigger)');
+          const idx = Array.from(items).indexOf(document.activeElement);
+          if (e.key === 'Escape') { close(); trigger.focus(); }
+          else if (e.key === 'ArrowDown') { e.preventDefault(); open(); items[Math.min(idx + 1, items.length - 1)].focus(); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); items[Math.max(idx - 1, 0)].focus(); }
+        });
+      });
+    </script>
     <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-200">
       <p>Data extracted from the City of Pittsburgh FY2026 Operating &amp; Capital Budgets</p>
       <p class="mt-1"><a href="/about/" class="hover:text-blue-600 underline">About this site</a> &mdash; how it was built, the role of AI, and important caveats</p>

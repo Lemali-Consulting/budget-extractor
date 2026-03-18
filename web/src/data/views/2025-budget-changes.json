@@ -1,7 +1,7 @@
 {
   "totalBudget2024": 498142625.0,
   "totalBudget2025": 473414619.0,
-  "totalFte2024": 2728.0,
+  "totalFte2024": 2734.0,
   "totalFte2025": 2761.0,
   "departmentChanges": [
     {
@@ -271,7 +271,7 @@
       "budget2025": 2231219.0,
       "dollarChange": -208860.0,
       "pctChange": -8.6,
-      "fte2024": 7.6,
+      "fte2024": 13.6,
       "fte2025": 13.6
     },
     {
@@ -555,7 +555,7 @@
       "budget2025": 2231219.0,
       "dollarChange": -208860.0,
       "pctChange": -8.6,
-      "fte2024": 7.6,
+      "fte2024": 13.6,
       "fte2025": 13.6
     }
   ],
@@ -691,12 +691,6 @@
       "title": "Chief Audit Officer",
       "fte": 1.0,
       "budget": 106475.0
-    },
-    {
-      "department": "Department of Human Resources and Civil Service",
-      "title": "Social Worker",
-      "fte": 1.0,
-      "budget": 68162.0
     },
     {
       "department": "Department of Human Resources and Civil Service",
@@ -993,12 +987,6 @@
       "title": "Infrastructure Engagement Specialist",
       "fte": 1.0,
       "budget": 69035.0
-    },
-    {
-      "department": "Office of the Mayor",
-      "title": "Social Worker",
-      "fte": 1.0,
-      "budget": 63437.0
     },
     {
       "department": "Office of the Mayor",
@@ -1461,6 +1449,16 @@
       "title": "Digital Equity Coordinator",
       "fte": 1.0,
       "budget": 30000.0
+    }
+  ],
+  "shiftedPositions": [
+    {
+      "title": "Social Worker",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Human Resources and Civil Service",
+      "fte": 1.0,
+      "budgetPrior": 63437.0,
+      "budgetCurrent": 68162.0
     }
   ]
 }
