@@ -11,6 +11,7 @@ import {
   addPourForce,
   removePourForce,
   getBallConfig,
+  decomposeBalls,
   estimateCanvasHeight,
 } from '../lib/ball-simulation';
 
@@ -85,7 +86,8 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
 
   // Build department-level data
   const buildDepartmentView = useCallback((): ViewData => {
-    const { unit, radius, label: unitLabel } = getBallConfig(containerWidth, false);
+    const { tiers, label: unitLabel } = getBallConfig(containerWidth, false);
+    const smallestUnit = tiers[tiers.length - 1].amount;
     const width = containerWidth;
 
     // Get 2026 Budget amounts per department
@@ -97,20 +99,25 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
 
     const depts = [...deptMap.values()].sort((a, b) => b.amount - a.amount);
 
+    // First pass: decompose all departments to determine ball counts
+    const deptBalls = depts.map((d) => ({
+      ...d,
+      balls: decomposeBalls(d.amount, tiers),
+    }));
+
     const clusters: ClusterInfo[] = [];
-    const otherDepts: typeof depts = [];
+    const otherDepts: typeof deptBalls = [];
     let colorIdx = 0;
 
-    for (const d of depts) {
-      const ballCount = Math.max(1, Math.ceil(d.amount / unit));
-      if (ballCount >= MIN_BALLS_THRESHOLD) {
+    for (const d of deptBalls) {
+      if (d.balls.length >= MIN_BALLS_THRESHOLD) {
         clusters.push({
           id: clusters.length,
           name: d.dept,
           slug: d.slug,
           color: assignColor(colorIdx++, false),
           total: d.amount,
-          ballCount,
+          ballCount: d.balls.length,
           cx: 0,
           cy: 0,
         });
@@ -119,37 +126,62 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
       }
     }
 
+    // Pre-compute "Other" balls
+    const otherTotal = otherDepts.reduce((s, d) => s + d.amount, 0);
+    const otherBalls = otherTotal > 0 ? decomposeBalls(otherTotal, tiers) : [];
+
     if (otherDepts.length > 0) {
-      const otherTotal = otherDepts.reduce((s, d) => s + d.amount, 0);
       clusters.push({
         id: clusters.length,
         name: `Other (${otherDepts.length} depts)`,
         slug: undefined,
         color: OTHER_COLOR,
         total: otherTotal,
-        ballCount: Math.max(1, Math.ceil(otherTotal / unit)),
+        ballCount: otherBalls.length,
         cx: 0,
         cy: 0,
       });
     }
 
-    const totalBalls = clusters.reduce((s, c) => s + c.ballCount, 0);
-    const height = estimateCanvasHeight(totalBalls, radius, width);
+    // Build a map from cluster id to its decomposed balls
+    const clusterBallsMap = new Map<number, { amount: number; radius: number }[]>();
+    for (const cluster of clusters) {
+      if (cluster.slug) {
+        const d = deptBalls.find((db) => db.slug === cluster.slug);
+        clusterBallsMap.set(cluster.id, d ? d.balls : []);
+      } else {
+        clusterBallsMap.set(cluster.id, otherBalls);
+      }
+    }
+
+    // Compute total ball area for height estimation
+    const totalBallArea = clusters.reduce((sum, cluster) => {
+      const balls = clusterBallsMap.get(cluster.id) || [];
+      return sum + balls.reduce((s, b) => {
+        const cellSize = (b.radius + 1) * 2;
+        return s + cellSize * cellSize;
+      }, 0);
+    }, 0);
+
+    const height = estimateCanvasHeight(totalBallArea, width);
 
     layoutClusters(clusters, width, height);
 
+    // Build nodes using decomposed balls per cluster
     const nodes: BallNode[] = [];
     for (const cluster of clusters) {
-      for (let i = 0; i < cluster.ballCount; i++) {
+      const balls = clusterBallsMap.get(cluster.id) || [];
+
+      for (const ball of balls) {
         nodes.push({
           id: nodes.length,
           cluster: cluster.id,
           clusterName: cluster.name,
           color: cluster.color,
-          radius,
+          radius: ball.radius,
           cx: cluster.cx,
           cy: cluster.cy,
-          amount: unit,
+          amount: ball.amount,
           x: cluster.cx + (Math.random() - 0.5) * 20,
           y: -20 - Math.random() * 100,
           spawned: false,
@@ -157,51 +189,65 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
       }
     }
 
-    return { nodes, clusters, height, unit, unitLabel };
+    return { nodes, clusters, height, unit: smallestUnit, unitLabel };
   }, [departmentBudgets, containerWidth]);
 
   // Build category drill-down data
   const buildCategoryView = useCallback(
     (slug: string): ViewData | null => {
-      const { unit, radius, label: unitLabel } = getBallConfig(containerWidth, true);
+      const { tiers, label: unitLabel } = getBallConfig(containerWidth, true);
+      const smallestUnit = tiers[tiers.length - 1].amount;
       const width = containerWidth;
 
       const detail = expenditureDetails.find((d) => d.slug === slug);
       if (!detail) return null;
 
+      // Decompose each category into mixed-size balls
+      const catBalls = detail.categories.map((cat) => ({
+        cat,
+        balls: decomposeBalls(cat.amount, tiers),
+      }));
+
       const clusters: ClusterInfo[] = [];
       let colorIdx = 0;
 
-      for (const cat of detail.categories) {
-        const ballCount = Math.max(1, Math.ceil(cat.amount / unit));
+      for (const { cat, balls } of catBalls) {
         clusters.push({
           id: clusters.length,
           name: cat.name.replace(/^PERSONNEL-/, '').replace(/^SUPPLIES-/, ''),
           color: assignColor(colorIdx++, false),
           total: cat.amount,
-          ballCount,
+          ballCount: balls.length,
           cx: 0,
           cy: 0,
         });
       }
 
-      const totalBalls = clusters.reduce((s, c) => s + c.ballCount, 0);
-      const height = estimateCanvasHeight(totalBalls, radius, width);
+      // Compute total ball area for height estimation
+      const totalBallArea = catBalls.flatMap((cb) => cb.balls).reduce((sum, b) => {
+        const cellSize = (b.radius + 1) * 2;
+        return sum + cellSize * cellSize;
+      }, 0);
+
+      const height = estimateCanvasHeight(totalBallArea, width);
 
       layoutClusters(clusters, width, height);
 
       const nodes: BallNode[] = [];
-      for (const cluster of clusters) {
-        for (let i = 0; i < cluster.ballCount; i++) {
+      for (let ci = 0; ci < clusters.length; ci++) {
+        const cluster = clusters[ci];
+        const balls = catBalls[ci].balls;
+
+        for (const ball of balls) {
           nodes.push({
             id: nodes.length,
             cluster: cluster.id,
             clusterName: cluster.name,
             color: cluster.color,
-            radius,
+            radius: ball.radius,
             cx: cluster.cx,
             cy: cluster.cy,
-            amount: unit,
+            amount: ball.amount,
             x: cluster.cx + (Math.random() - 0.5) * 20,
             y: -20 - Math.random() * 100,
             spawned: false,
@@ -209,7 +255,7 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
         }
       }
 
-      return { nodes, clusters, height, unit, unitLabel };
+      return { nodes, clusters, height, unit: smallestUnit, unitLabel };
     },
     [expenditureDetails, containerWidth],
   );
@@ -475,7 +521,7 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
             </button>
           )}
           <span class="text-xs text-gray-500">
-            Each ball = {viewInfo.unitLabel || '$100K'} · {viewInfo.ballCount.toLocaleString()} balls
+            Each ball = {viewInfo.unitLabel || '$100K–$1M'} · {viewInfo.ballCount.toLocaleString()} balls
           </span>
         </div>
         <button

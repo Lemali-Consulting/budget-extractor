@@ -126,47 +126,117 @@ export function removePourForce(
   simulation.force('pour', null);
 }
 
+export interface BallTier {
+  amount: number;
+  radius: number;
+}
+
+export interface BallConfig {
+  tiers: BallTier[];
+  label: string;
+}
+
 /**
- * Determine ball unit size and radius based on viewport width.
- * When isDrillDown is true, uses a larger unit to keep ball count manageable.
+ * Determine ball denomination tiers and radii based on viewport width.
+ * Returns tiers sorted largest-first for greedy decomposition.
+ * When isDrillDown is true, uses just 2 tiers for simplicity.
  */
 export function getBallConfig(
   viewportWidth: number,
   isDrillDown: boolean = false,
-): {
-  unit: number;
-  radius: number;
-  label: string;
-} {
+): BallConfig {
   if (isDrillDown) {
-    // Drill-down uses fewer, larger balls for clarity
     if (viewportWidth < 768) {
-      return { unit: 500_000, radius: 7, label: '$500K' };
+      return {
+        tiers: [
+          { amount: 500_000, radius: 7 },
+          { amount: 100_000, radius: 5 },
+        ],
+        label: '$100K–$500K',
+      };
     }
-    return { unit: 100_000, radius: 5, label: '$100K' };
+    return {
+      tiers: [
+        { amount: 500_000, radius: 7 },
+        { amount: 100_000, radius: 5 },
+      ],
+      label: '$100K–$500K',
+    };
   }
   if (viewportWidth < 768) {
-    return { unit: 500_000, radius: 5, label: '$500K' };
+    return {
+      tiers: [
+        { amount: 5_000_000, radius: 8 },
+        { amount: 1_000_000, radius: 6 },
+        { amount: 500_000, radius: 5 },
+      ],
+      label: '$500K–$5M',
+    };
   }
   if (viewportWidth < 1024) {
-    return { unit: 250_000, radius: 4, label: '$250K' };
+    return {
+      tiers: [
+        { amount: 2_500_000, radius: 7 },
+        { amount: 1_000_000, radius: 5 },
+        { amount: 250_000, radius: 4 },
+      ],
+      label: '$250K–$2.5M',
+    };
   }
-  return { unit: 100_000, radius: 3, label: '$100K' };
+  return {
+    tiers: [
+      { amount: 1_000_000, radius: 7 },
+      { amount: 500_000, radius: 5 },
+      { amount: 100_000, radius: 3 },
+    ],
+    label: '$100K–$1M',
+  };
 }
 
 /**
- * Estimate a good canvas height based on ball count and radius.
+ * Decompose a dollar amount into mixed-denomination balls using greedy allocation.
+ * Returns an array of { amount, radius } for each ball, largest denominations first.
+ */
+export function decomposeBalls(
+  totalAmount: number,
+  tiers: BallTier[],
+): { amount: number; radius: number }[] {
+  const balls: { amount: number; radius: number }[] = [];
+  let remaining = totalAmount;
+
+  for (const tier of tiers) {
+    const count = Math.floor(remaining / tier.amount);
+    for (let i = 0; i < count; i++) {
+      balls.push({ amount: tier.amount, radius: tier.radius });
+    }
+    remaining -= count * tier.amount;
+  }
+
+  // If there's any remainder, add one ball of the smallest tier
+  if (remaining > 0 && tiers.length > 0) {
+    const smallest = tiers[tiers.length - 1];
+    balls.push({ amount: smallest.amount, radius: smallest.radius });
+  }
+
+  // Guarantee at least one ball
+  if (balls.length === 0 && tiers.length > 0) {
+    const smallest = tiers[tiers.length - 1];
+    balls.push({ amount: smallest.amount, radius: smallest.radius });
+  }
+
+  return balls;
+}
+
+/**
+ * Estimate a good canvas height based on total ball area.
+ * Accepts either a uniform radius + count, or a pre-computed total area.
  */
 export function estimateCanvasHeight(
-  ballCount: number,
-  radius: number,
+  totalBallArea: number,
   width: number,
 ): number {
-  // Estimate area needed: each ball occupies a square cell
-  const cellSize = (radius + 1) * 2;
-  const totalArea = cellSize * cellSize * ballCount;
   // Assume ~50% packing efficiency
-  const neededArea = totalArea / 0.5;
+  const neededArea = totalBallArea / 0.5;
   // Height = area / width, with label padding
   const rawHeight = neededArea / width + 40;
   // Clamp: min 300 for small drill-downs, max 650 for top-level
