@@ -93,8 +93,12 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
   const simulationRef = useRef<Simulation<FloatingBall, undefined> | null>(null);
   const animFrameRef = useRef<number>(0);
   const transitionRef = useRef<{
-    fadingOut: FloatingBall[];
-    fadingIn: FloatingBall[];
+    /** Balls shrinking to nothing (old view) — frozen positions/radii at transition start */
+    shrinking: { x: number; y: number; radius: number; color: string }[];
+    /** Origin point where new balls burst from */
+    originX: number;
+    originY: number;
+    /** 0→1 animation progress */
     progress: number;
     direction: 'drill' | 'back';
   } | null>(null);
@@ -222,57 +226,67 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     const trans = transitionRef.current;
     const nodes = nodesRef.current;
 
-    // Draw fading-out balls during transition
-    if (trans && trans.fadingOut.length > 0) {
-      const alpha = Math.max(0, 1 - trans.progress * 2); // fade out in first half
-      if (alpha > 0) {
-        ctx.globalAlpha = alpha;
-        for (const ball of trans.fadingOut) {
-          drawBall(ctx, ball, ball.id === hoveredId, false);
+    if (trans) {
+      const t = trans.progress;
+      // Ease function for smooth animation (ease-out cubic)
+      const ease = 1 - Math.pow(1 - t, 3);
+
+      // --- Shrinking old balls: scale from full → 0 ---
+      const shrinkScale = Math.max(0, 1 - ease * 1.5); // shrink faster than expand
+      if (shrinkScale > 0) {
+        ctx.globalAlpha = shrinkScale;
+        for (const ball of trans.shrinking) {
+          const r = ball.radius * shrinkScale;
+          if (r < 0.5) continue;
+          ctx.beginPath();
+          ctx.arc(ball.x, ball.y, r, 0, Math.PI * 2);
+          ctx.fillStyle = ball.color;
+          ctx.fill();
         }
         ctx.globalAlpha = 1;
       }
-    }
 
-    // Draw main balls (fade in during transition)
-    if (trans && trans.fadingIn.length > 0) {
-      const alpha = Math.max(0, (trans.progress - 0.3) / 0.7); // fade in after 30%
-      ctx.globalAlpha = Math.min(1, alpha);
-      for (const ball of nodes) {
-        const scale = 0.3 + 0.7 * Math.min(1, alpha); // scale up
-        drawBall(ctx, ball, ball.id === hoveredId, false, scale);
+      // --- Expanding new balls: burst from origin, scale from 0 → full ---
+      const expandT = Math.max(0, (t - 0.1) / 0.9); // start slightly after shrink begins
+      const expandEase = 1 - Math.pow(1 - expandT, 2);
+      if (expandEase > 0) {
+        for (const ball of nodes) {
+          // Interpolate position from origin to current simulation position
+          const bx = trans.originX + (ball.x! - trans.originX) * expandEase;
+          const by = trans.originY + (ball.y! - trans.originY) * expandEase;
+          const r = ball.radius * expandEase;
+          if (r < 0.5) continue;
+
+          ctx.globalAlpha = Math.min(1, expandEase * 2);
+          drawBall(ctx, { ...ball, x: bx, y: by } as FloatingBall, false, false, expandEase);
+          ctx.globalAlpha = 1;
+        }
       }
-      ctx.globalAlpha = 1;
-    } else if (!trans) {
-      // Normal rendering
+    } else {
+      // Normal rendering — no transition
       for (const ball of nodes) {
-        drawBall(ctx, ball, ball.id === hoveredId, !drillSlug);
+        drawBall(ctx, ball, ball.id === hoveredId, !drillSlugRef.current);
       }
-    }
 
-    // Draw labels on balls large enough
-    for (const ball of nodes) {
-      if (ball.radius < 20) continue;
-      const alpha = trans ? Math.max(0, (trans.progress - 0.5) / 0.5) : 1;
-      if (alpha <= 0) continue;
-      ctx.globalAlpha = alpha;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = '#fff';
+      // Draw labels on balls large enough
+      for (const ball of nodes) {
+        if (ball.radius < 20) continue;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#fff';
 
-      // Fit label text
-      const maxChars = Math.floor(ball.radius / 4);
-      let label = ball.label;
-      if (label.length > maxChars) label = label.slice(0, maxChars - 1) + '…';
+        const maxChars = Math.floor(ball.radius / 4);
+        let label = ball.label;
+        if (label.length > maxChars) label = label.slice(0, maxChars - 1) + '…';
 
-      const fontSize = Math.max(9, Math.min(13, ball.radius * 0.28));
-      ctx.font = `bold ${fontSize}px system-ui, sans-serif`;
-      ctx.fillText(label, ball.x!, ball.y! - fontSize * 0.4);
+        const fontSize = Math.max(9, Math.min(13, ball.radius * 0.28));
+        ctx.font = `bold ${fontSize}px system-ui, sans-serif`;
+        ctx.fillText(label, ball.x!, ball.y! - fontSize * 0.4);
 
-      ctx.font = `${fontSize * 0.85}px system-ui, sans-serif`;
-      ctx.fillStyle = 'rgba(255,255,255,0.85)';
-      ctx.fillText(fmtAmount(ball.amount), ball.x!, ball.y! + fontSize * 0.6);
-      ctx.globalAlpha = 1;
+        ctx.font = `${fontSize * 0.85}px system-ui, sans-serif`;
+        ctx.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx.fillText(fmtAmount(ball.amount), ball.x!, ball.y! + fontSize * 0.6);
+      }
     }
   }, [containerWidth, hoveredId, drillSlug]);
 
@@ -339,7 +353,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       // Handle transition animation
       const trans = transitionRef.current;
       if (trans) {
-        trans.progress = Math.min(1, trans.progress + 0.025);
+        trans.progress = Math.min(1, trans.progress + 0.03);
         if (trans.progress >= 1) {
           transitionRef.current = null;
         }
@@ -405,10 +419,23 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       cancelAnimationFrame(animFrameRef.current);
       simulationRef.current?.stop();
 
-      // Set up transition
+      // Snapshot old ball positions for shrink animation
+      const shrinking = oldNodes.map((n) => ({
+        x: n.x!, y: n.y!, radius: n.radius, color: n.color,
+      }));
+
+      // Give new balls outward burst velocity from the click origin
+      for (const ball of catBalls) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 8 + Math.random() * 12;
+        ball.vx = Math.cos(angle) * speed;
+        ball.vy = Math.sin(angle) * speed;
+      }
+
       transitionRef.current = {
-        fadingOut: [...oldNodes],
-        fadingIn: catBalls,
+        shrinking,
+        originX: ox,
+        originY: oy,
         progress: 0,
         direction: 'drill',
       };
@@ -429,11 +456,36 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     simulationRef.current?.stop();
 
     const oldNodes = nodesRef.current;
+    const width = containerWidth;
+    const height = canvasHeight(width);
+
+    // Snapshot old sub-ball positions for shrink animation
+    // Compute centroid of current sub-balls as the collapse point
+    let cx = 0, cy = 0;
+    for (const n of oldNodes) { cx += n.x!; cy += n.y!; }
+    cx /= oldNodes.length || 1;
+    cy /= oldNodes.length || 1;
+
+    const shrinking = oldNodes.map((n) => ({
+      x: n.x!, y: n.y!, radius: n.radius, color: n.color,
+    }));
+
     const balls = buildDeptBalls();
 
+    // Give new dept balls outward burst from centroid
+    for (const ball of balls) {
+      ball.x = cx + (Math.random() - 0.5) * 20;
+      ball.y = cy + (Math.random() - 0.5) * 20;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 6 + Math.random() * 10;
+      ball.vx = Math.cos(angle) * speed;
+      ball.vy = Math.sin(angle) * speed;
+    }
+
     transitionRef.current = {
-      fadingOut: [...oldNodes],
-      fadingIn: balls,
+      shrinking,
+      originX: cx,
+      originY: cy,
       progress: 0,
       direction: 'back',
     };
@@ -444,7 +496,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     setTooltip(null);
     setHoveredId(null);
     startLoop();
-  }, [buildDeptBalls, createSim, startLoop]);
+  }, [buildDeptBalls, createSim, startLoop, containerWidth]);
 
   // Mouse interaction
   const findBallAt = useCallback(
