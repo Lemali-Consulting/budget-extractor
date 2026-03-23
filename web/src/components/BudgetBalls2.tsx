@@ -52,6 +52,31 @@ interface FloatingBall extends SimulationNodeDatum {
   parentSlug?: string;
 }
 
+/** Scale info for the size legend. */
+interface ScaleInfo {
+  maxAmount: number;
+  maxRadius: number;
+  minRadius: number;
+}
+
+/** Pick 3 nice round legend tick values spanning the data range. */
+function legendTicks(maxAmount: number): number[] {
+  // Find a nice base: largest power of 10 ≤ maxAmount
+  const mag = Math.pow(10, Math.floor(Math.log10(maxAmount)));
+  const candidates = [
+    mag * 0.1, mag * 0.25, mag * 0.5, mag, mag * 2, mag * 5, mag * 10,
+  ].filter((v) => v > 0 && v <= maxAmount);
+
+  // Pick top, mid, and small
+  const top = candidates[candidates.length - 1];
+  const mid = candidates[Math.floor(candidates.length / 2)] || top / 2;
+  const small = candidates[Math.max(0, Math.floor(candidates.length / 4))] || top / 5;
+
+  // Deduplicate and sort descending
+  const unique = [...new Set([top, mid, small])].sort((a, b) => b - a);
+  return unique.slice(0, 3);
+}
+
 /** Slug suffix for trust fund departments. */
 const TRUST_FUND_MARKER = 'trust-fund';
 
@@ -88,6 +113,8 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     amount: string;
     hint: string;
   } | null>(null);
+
+  const [scaleInfo, setScaleInfo] = useState<ScaleInfo>({ maxAmount: 1, maxRadius: 60, minRadius: 12 });
 
   const nodesRef = useRef<FloatingBall[]>([]);
   const simulationRef = useRef<Simulation<FloatingBall, undefined> | null>(null);
@@ -133,6 +160,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     }
 
     const maxAmount = Math.max(...depts.map((d) => d.amount));
+    setScaleInfo({ maxAmount, maxRadius, minRadius });
 
     const balls: FloatingBall[] = depts.map((d, i) => ({
       id: i,
@@ -162,6 +190,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
       const cats = detail.categories.filter((c) => c.amount > 0).sort((a, b) => b.amount - a.amount);
       const maxAmount = Math.max(...cats.map((c) => c.amount));
+      setScaleInfo({ maxAmount, maxRadius, minRadius });
 
       return cats.map((cat, i) => ({
         id: i,
@@ -633,7 +662,72 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
             )}
           </div>
         )}
+        <SizeLegend scaleInfo={scaleInfo} />
       </div>
+    </div>
+  );
+}
+
+/** Nested-circle size legend showing how ball radius maps to budget amount. */
+function SizeLegend({ scaleInfo }: { scaleInfo: ScaleInfo }) {
+  const { maxAmount, maxRadius, minRadius } = scaleInfo;
+  const ticks = legendTicks(maxAmount);
+
+  // Compute radius for each tick using the same formula as the balls
+  const circles = ticks.map((amount) => ({
+    amount,
+    radius: amountToRadius(amount, maxAmount, maxRadius, minRadius),
+    label: fmtAmount(amount),
+  }));
+
+  // The largest circle determines the SVG size
+  const largest = circles[0];
+  const svgWidth = largest.radius * 2 + 70; // room for labels on right
+  const svgHeight = largest.radius * 2 + 4;
+
+  return (
+    <div
+      class="absolute bottom-3 left-3 pointer-events-none"
+      aria-label="Size legend"
+    >
+      <svg width={svgWidth} height={svgHeight} class="overflow-visible">
+        {circles.map((c) => {
+          // All circles sit on the same baseline (bottom-aligned)
+          const cy = svgHeight - c.radius - 1;
+          const cx = largest.radius + 1;
+          return (
+            <g key={c.amount}>
+              <circle
+                cx={cx}
+                cy={cy}
+                r={c.radius}
+                fill="none"
+                stroke="#94a3b8"
+                stroke-width="1"
+                stroke-dasharray="3,2"
+              />
+              {/* Horizontal line from top of circle to label */}
+              <line
+                x1={cx + c.radius + 2}
+                y1={cy - c.radius}
+                x2={cx + largest.radius + 8}
+                y2={cy - c.radius}
+                stroke="#94a3b8"
+                stroke-width="0.75"
+              />
+              <text
+                x={cx + largest.radius + 11}
+                y={cy - c.radius + 3.5}
+                fill="#64748b"
+                font-size="10"
+                font-family="system-ui, sans-serif"
+              >
+                {c.label}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
     </div>
   );
 }
