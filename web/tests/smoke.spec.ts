@@ -25,8 +25,8 @@ test("home page loads with key content", async ({ page }) => {
   await expect(
     header.getByRole("link", { name: /Budgets/i }),
   ).toBeVisible();
-  await expect(header.getByRole("button", { name: /Stories/i })).toBeVisible();
-  await expect(header.getByRole("button", { name: /Explore/i })).toBeVisible();
+  await expect(header.getByRole("link", { name: "Stories", exact: true })).toBeVisible();
+  await expect(header.getByRole("link", { name: "Explore", exact: true })).toBeVisible();
 });
 
 // ---------------------------------------------------------------------------
@@ -184,10 +184,10 @@ test("header navigation links are present on all pages", async ({ page }) => {
       header.getByRole("link", { name: /Budgets/i }),
     ).toBeVisible();
     await expect(
-      header.getByRole("link", { name: /Stories/i }),
+      header.getByRole("link", { name: "Stories", exact: true }),
     ).toBeVisible();
     await expect(
-      header.getByRole("link", { name: /Explore/i }),
+      header.getByRole("link", { name: "Explore", exact: true }),
     ).toBeVisible();
   }
 });

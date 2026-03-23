@@ -423,11 +423,11 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       ctx.stroke();
       ctx.setLineDash([]);
 
-      // Leader line from top of circle to label
+      // Leader line from top of circle to label — starts at the actual topmost point
       const topY = cy - c.radius;
       const lineEndX = cx + largest.radius + 10;
       ctx.beginPath();
-      ctx.moveTo(cx + c.radius + 2, topY);
+      ctx.moveTo(cx, topY);
       ctx.lineTo(lineEndX, topY);
       ctx.strokeStyle = '#94a3b8';
       ctx.lineWidth = 0.75;
