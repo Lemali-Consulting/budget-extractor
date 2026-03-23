@@ -393,22 +393,33 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     }));
 
     const largest = circles[0];
-    const padding = 14;
+    const padding = 20;
     const baselineY = canvasH - padding;
-    const cx = padding + largest.radius + 2;
+    const cx = padding + largest.radius + 4;
 
     ctx.save();
-    ctx.globalAlpha = trans ? Math.min(1, 0.5 + trans.progress * 0.5) : 1;
+    ctx.globalAlpha = trans ? Math.min(1, 0.4 + trans.progress * 0.6) : 1;
 
-    for (const c of circles) {
+    // Semi-transparent backdrop so legend is readable over balls
+    const backdropX = cx - largest.radius - 8;
+    const backdropY = baselineY - largest.radius * 2 - 10;
+    const backdropW = largest.radius * 2 + 85;
+    const backdropH = largest.radius * 2 + 16;
+    ctx.fillStyle = 'rgba(248, 250, 252, 0.8)';
+    ctx.fillRect(backdropX, backdropY, backdropW, backdropH);
+
+    // Draw circles from smallest (on top) to largest (behind)
+    for (let i = circles.length - 1; i >= 0; i--) {
+      const c = circles[i];
       const cy = baselineY - c.radius;
+      const isOutermost = i === 0;
 
       // Dashed circle
       ctx.beginPath();
-      ctx.arc(cx, cy, c.radius, 0, Math.PI * 2);
-      ctx.setLineDash([3, 2]);
-      ctx.strokeStyle = '#94a3b8';
-      ctx.lineWidth = 1;
+      ctx.arc(cx, cy, Math.max(c.radius, 1), 0, Math.PI * 2);
+      ctx.setLineDash(isOutermost ? [5, 3] : [4, 3]);
+      ctx.strokeStyle = isOutermost ? '#475569' : '#64748b';
+      ctx.lineWidth = isOutermost ? 2 : 1.5;
       ctx.stroke();
       ctx.setLineDash([]);
 
@@ -424,7 +435,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
       // Label
       ctx.font = '10px system-ui, sans-serif';
-      ctx.fillStyle = '#64748b';
+      ctx.fillStyle = '#475569';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
       ctx.fillText(c.label, lineEndX + 3, topY);
