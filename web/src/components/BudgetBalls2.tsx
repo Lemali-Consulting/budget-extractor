@@ -114,8 +114,6 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     hint: string;
   } | null>(null);
 
-  const [scaleInfo, setScaleInfo] = useState<ScaleInfo>({ maxAmount: 1, maxRadius: 60, minRadius: 12 });
-
   const nodesRef = useRef<FloatingBall[]>([]);
   const simulationRef = useRef<Simulation<FloatingBall, undefined> | null>(null);
   const animFrameRef = useRef<number>(0);
@@ -131,6 +129,8 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
   } | null>(null);
   const renderRef = useRef<() => void>(() => {});
   const drillSlugRef = useRef<string | null>(null);
+  const scaleRef = useRef<ScaleInfo>({ maxAmount: 1, maxRadius: 60, minRadius: 12 });
+  const prevScaleRef = useRef<ScaleInfo | null>(null);
 
   // Build department-level balls
   const buildDeptBalls = useCallback((): FloatingBall[] => {
@@ -160,7 +160,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     }
 
     const maxAmount = Math.max(...depts.map((d) => d.amount));
-    setScaleInfo({ maxAmount, maxRadius, minRadius });
+    scaleRef.current = { maxAmount, maxRadius, minRadius };
 
     const balls: FloatingBall[] = depts.map((d, i) => ({
       id: i,
@@ -190,7 +190,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
       const cats = detail.categories.filter((c) => c.amount > 0).sort((a, b) => b.amount - a.amount);
       const maxAmount = Math.max(...cats.map((c) => c.amount));
-      setScaleInfo({ maxAmount, maxRadius, minRadius });
+      scaleRef.current = { maxAmount, maxRadius, minRadius };
 
       return cats.map((cat, i) => ({
         id: i,
@@ -317,6 +317,9 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         ctx.fillText(fmtAmount(ball.amount), ball.x!, ball.y! + fontSize * 0.6);
       }
     }
+
+    // --- Draw size legend (bottom-left) ---
+    drawLegend(ctx, h, trans);
   }, [containerWidth, hoveredId, drillSlug]);
 
   // Keep refs in sync so animation loop always uses latest versions
@@ -359,6 +362,75 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       ctx.lineWidth = 2.5;
       ctx.stroke();
     }
+  }
+
+  /** Draw the size legend in the bottom-left corner of the canvas. */
+  function drawLegend(
+    ctx: CanvasRenderingContext2D,
+    canvasH: number,
+    trans: typeof transitionRef.current,
+  ) {
+    // Interpolate between old and new scale during transitions
+    let scale = scaleRef.current;
+    if (trans && prevScaleRef.current) {
+      const t = trans.progress;
+      const ease = 1 - Math.pow(1 - t, 3);
+      const prev = prevScaleRef.current;
+      const next = scaleRef.current;
+      scale = {
+        maxAmount: prev.maxAmount + (next.maxAmount - prev.maxAmount) * ease,
+        maxRadius: prev.maxRadius + (next.maxRadius - prev.maxRadius) * ease,
+        minRadius: prev.minRadius + (next.minRadius - prev.minRadius) * ease,
+      };
+    }
+
+    // Use the target scale's ticks (so labels don't flicker)
+    const ticks = legendTicks(scaleRef.current.maxAmount);
+    const circles = ticks.map((amount) => ({
+      amount,
+      radius: amountToRadius(amount, scale.maxAmount, scale.maxRadius, scale.minRadius),
+      label: fmtAmount(amount),
+    }));
+
+    const largest = circles[0];
+    const padding = 14;
+    const baselineY = canvasH - padding;
+    const cx = padding + largest.radius + 2;
+
+    ctx.save();
+    ctx.globalAlpha = trans ? Math.min(1, 0.5 + trans.progress * 0.5) : 1;
+
+    for (const c of circles) {
+      const cy = baselineY - c.radius;
+
+      // Dashed circle
+      ctx.beginPath();
+      ctx.arc(cx, cy, c.radius, 0, Math.PI * 2);
+      ctx.setLineDash([3, 2]);
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Leader line from top of circle to label
+      const topY = cy - c.radius;
+      const lineEndX = cx + largest.radius + 10;
+      ctx.beginPath();
+      ctx.moveTo(cx + c.radius + 2, topY);
+      ctx.lineTo(lineEndX, topY);
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 0.75;
+      ctx.stroke();
+
+      // Label
+      ctx.font = '10px system-ui, sans-serif';
+      ctx.fillStyle = '#64748b';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(c.label, lineEndX + 3, topY);
+    }
+
+    ctx.restore();
   }
 
   // Animation loop — uses renderRef to avoid stale closure issues
@@ -448,10 +520,11 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       cancelAnimationFrame(animFrameRef.current);
       simulationRef.current?.stop();
 
-      // Snapshot old ball positions for shrink animation
+      // Snapshot old ball positions and scale for shrink animation
       const shrinking = oldNodes.map((n) => ({
         x: n.x!, y: n.y!, radius: n.radius, color: n.color,
       }));
+      prevScaleRef.current = { ...scaleRef.current };
 
       // Give new balls outward burst velocity from the click origin
       for (const ball of catBalls) {
@@ -498,6 +571,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     const shrinking = oldNodes.map((n) => ({
       x: n.x!, y: n.y!, radius: n.radius, color: n.color,
     }));
+    prevScaleRef.current = { ...scaleRef.current };
 
     const balls = buildDeptBalls();
 
@@ -662,72 +736,8 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
             )}
           </div>
         )}
-        <SizeLegend scaleInfo={scaleInfo} />
       </div>
     </div>
   );
 }
 
-/** Nested-circle size legend showing how ball radius maps to budget amount. */
-function SizeLegend({ scaleInfo }: { scaleInfo: ScaleInfo }) {
-  const { maxAmount, maxRadius, minRadius } = scaleInfo;
-  const ticks = legendTicks(maxAmount);
-
-  // Compute radius for each tick using the same formula as the balls
-  const circles = ticks.map((amount) => ({
-    amount,
-    radius: amountToRadius(amount, maxAmount, maxRadius, minRadius),
-    label: fmtAmount(amount),
-  }));
-
-  // The largest circle determines the SVG size
-  const largest = circles[0];
-  const svgWidth = largest.radius * 2 + 70; // room for labels on right
-  const svgHeight = largest.radius * 2 + 4;
-
-  return (
-    <div
-      class="absolute bottom-3 left-3 pointer-events-none"
-      aria-label="Size legend"
-    >
-      <svg width={svgWidth} height={svgHeight} class="overflow-visible">
-        {circles.map((c) => {
-          // All circles sit on the same baseline (bottom-aligned)
-          const cy = svgHeight - c.radius - 1;
-          const cx = largest.radius + 1;
-          return (
-            <g key={c.amount}>
-              <circle
-                cx={cx}
-                cy={cy}
-                r={c.radius}
-                fill="none"
-                stroke="#94a3b8"
-                stroke-width="1"
-                stroke-dasharray="3,2"
-              />
-              {/* Horizontal line from top of circle to label */}
-              <line
-                x1={cx + c.radius + 2}
-                y1={cy - c.radius}
-                x2={cx + largest.radius + 8}
-                y2={cy - c.radius}
-                stroke="#94a3b8"
-                stroke-width="0.75"
-              />
-              <text
-                x={cx + largest.radius + 11}
-                y={cy - c.radius + 3.5}
-                fill="#64748b"
-                font-size="10"
-                font-family="system-ui, sans-serif"
-              >
-                {c.label}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-    </div>
-  );
-}
