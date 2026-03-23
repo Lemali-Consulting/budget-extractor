@@ -52,14 +52,14 @@ interface FloatingBall extends SimulationNodeDatum {
   parentSlug?: string;
 }
 
-/** An item in the color legend sidebar. */
-interface LegendItem {
-  slug: string;
-  label: string;
-  amount: number;
-  color: string;
-  radius: number;
-  drillable: boolean;
+/** A force-positioned external label for a small ball. */
+interface LabelNode extends SimulationNodeDatum {
+  ballId: number;
+  text: string;
+  amount: string;
+  textWidth: number;
+  anchorX: number;
+  anchorY: number;
 }
 
 /** Scale info for the size legend. */
@@ -89,9 +89,6 @@ function legendTicks(maxAmount: number): number[] {
 
 /** Slug suffix for trust fund departments. */
 const TRUST_FUND_MARKER = 'trust-fund';
-
-/** Width of the color legend sidebar in pixels. */
-const SIDEBAR_W = 224;
 
 /** Format a dollar amount for display. */
 function fmtAmount(n: number): string {
@@ -127,7 +124,6 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
   const [drillStack, setDrillStack] = useState<DrillLevel[]>([]);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const [legendItems, setLegendItems] = useState<LegendItem[]>([]);
   const [tooltip, setTooltip] = useState<{
     x: number;
     y: number;
@@ -140,23 +136,34 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
   const simulationRef = useRef<Simulation<FloatingBall, undefined> | null>(null);
   const animFrameRef = useRef<number>(0);
   const transitionRef = useRef<{
-    /** Balls shrinking to nothing (old view) — frozen positions/radii at transition start */
-    shrinking: { x: number; y: number; radius: number; color: string }[];
+    /** Non-clicked old balls — fade out during transition */
+    others: { x: number; y: number; radius: number; color: string }[];
+    /** The clicked ball (ghost that fades through) */
+    clicked: { x: number; y: number; radius: number; color: string } | null;
     /** Origin point where new balls burst from */
     originX: number;
     originY: number;
     /** 0→1 animation progress */
     progress: number;
     direction: 'drill' | 'back';
+    /** Per-node trail history for comet tails */
+    trails: { x: number; y: number }[][];
   } | null>(null);
   const renderRef = useRef<() => void>(() => {});
   const drillStackRef = useRef<DrillLevel[]>([]);
   const scaleRef = useRef<ScaleInfo>({ maxAmount: 1, maxRadius: 60, minRadius: 12 });
   const prevScaleRef = useRef<ScaleInfo | null>(null);
-  const legendRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+  const prevTicksRef = useRef<number[] | null>(null);
+  const labelNodesRef = useRef<LabelNode[]>([]);
+  const labelSimRef = useRef<Simulation<LabelNode, undefined> | null>(null);
+  /** Persistent grid warp state — survives transitions so the grid feels continuous. */
+  const gridWarpRef = useRef<{
+    ox: number; oy: number; strength: number; gridSize: number;
+    /** Previous state to interpolate from during transitions */
+    prev: { ox: number; oy: number; strength: number; gridSize: number } | null;
+  }>({ ox: 0, oy: 0, strength: 0, gridSize: 40, prev: null });
 
-  // Canvas width accounts for sidebar + gap
-  const canvasWidth = Math.max(200, containerWidth - SIDEBAR_W - 16);
+  const canvasWidth = containerWidth;
 
   // Build department-level balls
   const buildDeptBalls = useCallback((): FloatingBall[] => {
@@ -308,6 +315,135 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     [canvasWidth],
   );
 
+  /** Build label nodes for balls with radius < 20. */
+  const buildLabelNodes = useCallback(
+    (balls: FloatingBall[]): LabelNode[] => {
+      const canvas = canvasRef.current;
+      if (!canvas) return [];
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return [];
+
+      const w = canvasWidth;
+      const h = canvasHeight(w);
+      const cx = w / 2;
+      const cy = h / 2;
+      const FONT = '10px system-ui, sans-serif';
+      ctx.font = FONT;
+
+      const labels: LabelNode[] = [];
+      for (const ball of balls) {
+        if (ball.radius >= 20) continue;
+
+        let text = ball.label;
+        if (text.length > 22) text = text.slice(0, 21) + '…';
+        const amountStr = fmtAmount(ball.amount);
+        const textWidth = Math.max(ctx.measureText(text).width, ctx.measureText(amountStr).width);
+
+        // Initial position: offset outward from canvas center
+        const bx = ball.x ?? cx;
+        const by = ball.y ?? cy;
+        const angle = Math.atan2(by - cy, bx - cx);
+        const offset = ball.radius + 40 + Math.random() * 30;
+
+        labels.push({
+          ballId: ball.id,
+          text,
+          amount: amountStr,
+          textWidth,
+          anchorX: bx,
+          anchorY: by,
+          x: bx + Math.cos(angle) * offset,
+          y: by + Math.sin(angle) * offset,
+        });
+      }
+      return labels;
+    },
+    [canvasWidth],
+  );
+
+  /** Create a force simulation for label positioning. */
+  const createLabelSim = useCallback(
+    (labels: LabelNode[], balls: FloatingBall[]): Simulation<LabelNode, undefined> => {
+      const w = canvasWidth;
+      const h = canvasHeight(w);
+      const LABEL_H = 24; // approximate height of a two-line label
+      const PAD = 4;
+
+      const sim = forceSimulation(labels)
+        // Pull each label toward its ball
+        .force('anchor', () => {
+          for (const label of labels) {
+            const dx = label.anchorX - label.x!;
+            const dy = label.anchorY - label.y!;
+            label.vx! += dx * 0.08;
+            label.vy! += dy * 0.08;
+          }
+        })
+        // Labels repel each other
+        .force(
+          'collide',
+          forceCollide<LabelNode>()
+            .radius((d) => d.textWidth / 2 + PAD + 8)
+            .iterations(2),
+        )
+        // Labels avoid overlapping balls
+        .force('avoidBalls', () => {
+          for (const label of labels) {
+            const lx = label.x!;
+            const ly = label.y!;
+            const halfW = label.textWidth / 2 + PAD;
+            for (const ball of balls) {
+              const dx = lx - ball.x!;
+              const dy = ly - ball.y!;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              const minDist = ball.radius + halfW;
+              if (dist < minDist && dist > 0) {
+                const push = (minDist - dist) * 0.5;
+                label.vx! += (dx / dist) * push;
+                label.vy! += (dy / dist) * push;
+              }
+            }
+          }
+        })
+        // Clamp to canvas bounds
+        .on('tick', () => {
+          for (const label of labels) {
+            const halfW = label.textWidth / 2 + PAD;
+            label.x = Math.max(halfW, Math.min(w - halfW, label.x!));
+            label.y = Math.max(LABEL_H / 2, Math.min(h - LABEL_H / 2, label.y!));
+          }
+        })
+        .alphaDecay(0.02)
+        .velocityDecay(0.4)
+        .stop();
+
+      return sim;
+    },
+    [canvasWidth],
+  );
+
+  /** Build and start label simulation for current balls. */
+  const rebuildLabels = useCallback(
+    (balls: FloatingBall[]) => {
+      labelSimRef.current?.stop();
+      const labels = buildLabelNodes(balls);
+      labelNodesRef.current = labels;
+      if (labels.length > 0) {
+        labelSimRef.current = createLabelSim(labels, balls);
+      } else {
+        labelSimRef.current = null;
+      }
+    },
+    [buildLabelNodes, createLabelSim],
+  );
+
+  /** Clear labels (used during transitions). */
+  const clearLabels = useCallback(() => {
+    labelSimRef.current?.stop();
+    labelNodesRef.current = [];
+    labelSimRef.current = null;
+  }, []);
+
   // Render
   const render = useCallback(() => {
     const canvas = canvasRef.current;
@@ -329,40 +465,194 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     const trans = transitionRef.current;
     const nodes = nodesRef.current;
 
+    // --- Background grid: always visible, warps continuously across transitions ---
+    {
+      const gw = gridWarpRef.current;
+      let ox: number, oy: number, strength: number, gridSize: number;
+
+      if (trans && gw.prev) {
+        // Interpolate from previous warp state to current target
+        const t = trans.progress;
+        const ease = 1 - Math.pow(1 - t, 3);
+        ox = gw.prev.ox + (gw.ox - gw.prev.ox) * ease;
+        oy = gw.prev.oy + (gw.oy - gw.prev.oy) * ease;
+        strength = gw.prev.strength + (gw.strength - gw.prev.strength) * ease;
+        gridSize = gw.prev.gridSize + (gw.gridSize - gw.prev.gridSize) * ease;
+      } else {
+        // Settled state
+        ox = gw.ox;
+        oy = gw.oy;
+        strength = gw.strength;
+        gridSize = gw.gridSize;
+      }
+      // Clamp to reasonable range
+      gridSize = Math.max(20, Math.min(80, gridSize));
+
+      const alpha = 0.42;
+
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 0.5;
+      const maxDist = Math.sqrt(w * w + h * h);
+      for (let gx = 0; gx <= w; gx += gridSize) {
+        ctx.beginPath();
+        for (let gy = 0; gy <= h; gy += 4) {
+          const dx = gx - ox, dy = gy - oy;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const warp = strength * (1 - dist / maxDist);
+          const wx = gx + dx * warp * 0.5;
+          const wy = gy + dy * warp * 0.5;
+          if (gy === 0) ctx.moveTo(wx, wy);
+          else ctx.lineTo(wx, wy);
+        }
+        ctx.stroke();
+      }
+      for (let gy = 0; gy <= h; gy += gridSize) {
+        ctx.beginPath();
+        for (let gx = 0; gx <= w; gx += 4) {
+          const dx = gx - ox, dy = gy - oy;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const warp = strength * (1 - dist / maxDist);
+          const wx = gx + dx * warp * 0.5;
+          const wy = gy + dy * warp * 0.5;
+          if (gx === 0) ctx.moveTo(wx, wy);
+          else ctx.lineTo(wx, wy);
+        }
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
     if (trans) {
       const t = trans.progress;
-      // Ease function for smooth animation (ease-out cubic)
-      const ease = 1 - Math.pow(1 - t, 3);
+      // Ease-in-out for the ghost fade
+      const fadeT = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
-      // --- Shrinking old balls: scale from full → 0 ---
-      const shrinkScale = Math.max(0, 1 - ease * 1.5); // shrink faster than expand
-      if (shrinkScale > 0) {
-        ctx.globalAlpha = shrinkScale;
-        for (const ball of trans.shrinking) {
-          const r = ball.radius * shrinkScale;
-          if (r < 0.5) continue;
-          ctx.beginPath();
-          ctx.arc(ball.x, ball.y, r, 0, Math.PI * 2);
-          ctx.fillStyle = ball.color;
-          ctx.fill();
+      if (trans.direction === 'back') {
+        // --- Converge & Grow: old sub-balls shrink inward, new parent balls grow ---
+
+        // Old sub-balls converge toward origin, shrinking
+        const convergeT = Math.min(1, t / 0.65);
+        const cEase = convergeT * convergeT * convergeT; // easeInCubic — accelerates inward
+        for (const ball of trans.others) {
+          const bx = ball.x + (trans.originX - ball.x) * cEase;
+          const by = ball.y + (trans.originY - ball.y) * cEase;
+          const bScale = Math.max(0.05, 1 - cEase * 0.95);
+          const bAlpha = Math.max(0, 1 - cEase * 1.1);
+          if (bAlpha > 0.01) {
+            const r = ball.radius * bScale;
+            ctx.globalAlpha = bAlpha;
+            ctx.beginPath();
+            ctx.arc(bx, by, r, 0, Math.PI * 2);
+            ctx.fillStyle = ball.color;
+            ctx.fill();
+            const grad = ctx.createRadialGradient(
+              bx - r * 0.3, by - r * 0.3, 0,
+              bx, by, r,
+            );
+            grad.addColorStop(0, 'rgba(255,255,255,0.25)');
+            grad.addColorStop(1, 'rgba(0,0,0,0.1)');
+            ctx.fillStyle = grad;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+          }
         }
-        ctx.globalAlpha = 1;
-      }
 
-      // --- Expanding new balls: burst from origin, scale from 0 → full ---
-      const expandT = Math.max(0, (t - 0.1) / 0.9); // start slightly after shrink begins
-      const expandEase = 1 - Math.pow(1 - expandT, 2);
-      if (expandEase > 0) {
-        for (const ball of nodes) {
-          // Interpolate position from origin to current simulation position
-          const bx = trans.originX + (ball.x! - trans.originX) * expandEase;
-          const by = trans.originY + (ball.y! - trans.originY) * expandEase;
-          const r = ball.radius * expandEase;
-          if (r < 0.5) continue;
+        // New parent balls grow in (delayed start so convergence is visible first)
+        if (t > 0.3) {
+          const growT = Math.min(1, (t - 0.3) / 0.7);
+          const gEase = 1 - Math.pow(1 - growT, 3); // easeOutCubic
+          for (const ball of nodes) {
+            ctx.globalAlpha = gEase;
+            drawBall(ctx, ball, false, false, gEase);
+            ctx.globalAlpha = 1;
+          }
+        }
+      } else {
+        // --- Drill down: burst from center with comet tails ---
 
-          ctx.globalAlpha = Math.min(1, expandEase * 2);
-          drawBall(ctx, { ...ball, x: bx, y: by } as FloatingBall, false, false, expandEase);
+        // Non-clicked old balls: simple fade out
+        const othersAlpha = Math.max(0, 1 - fadeT * 1.2);
+        if (othersAlpha > 0) {
+          ctx.globalAlpha = othersAlpha;
+          for (const ball of trans.others) {
+            const r = ball.radius;
+            if (r < 0.5) continue;
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, r, 0, Math.PI * 2);
+            ctx.fillStyle = ball.color;
+            ctx.fill();
+          }
           ctx.globalAlpha = 1;
+        }
+
+        // Expanding new balls: burst from center with comet tails
+        const expandT = Math.min(1, t / 0.85);
+        const expandEase = 1 - Math.pow(1 - expandT, 3);
+        const ballScale = Math.min(1, 0.15 + expandEase * 0.85);
+
+        if (expandEase > 0) {
+          // Draw comet tails first (behind balls)
+          for (let ni = 0; ni < nodes.length; ni++) {
+            const trail = trans.trails[ni];
+            if (!trail || trail.length < 2) continue;
+            const ball = nodes[ni];
+            const r = ball.radius * ballScale;
+            for (let ti = 1; ti < trail.length; ti++) {
+              const tFrac = ti / trail.length; // 0=oldest, 1=newest
+              const prev = trail[ti - 1];
+              const cur = trail[ti];
+              ctx.globalAlpha = tFrac * 0.5;
+              ctx.beginPath();
+              ctx.moveTo(prev.x, prev.y);
+              ctx.lineTo(cur.x, cur.y);
+              ctx.strokeStyle = ball.color;
+              ctx.lineWidth = r * 2 * tFrac * 0.8;
+              ctx.lineCap = 'round';
+              ctx.stroke();
+            }
+          }
+          ctx.globalAlpha = 1;
+
+          // Draw new balls
+          for (const ball of nodes) {
+            const r = ball.radius * ballScale;
+            if (r < 0.5) continue;
+            ctx.globalAlpha = Math.min(1, expandT * 3);
+            drawBall(ctx, ball, false, false, ballScale);
+            ctx.globalAlpha = 1;
+          }
+        }
+
+        // Ghost of clicked ball: fades through (drawn on top so sub-balls emerge "through" it)
+        if (trans.clicked) {
+          const ghostAlpha = Math.max(0, 1 - fadeT * 1.2);
+          if (ghostAlpha > 0) {
+            const cb = trans.clicked;
+            // Filled ghost
+            ctx.globalAlpha = ghostAlpha;
+            ctx.beginPath();
+            ctx.arc(cb.x, cb.y, cb.radius, 0, Math.PI * 2);
+            ctx.fillStyle = cb.color;
+            ctx.fill();
+            const grad = ctx.createRadialGradient(
+              cb.x - cb.radius * 0.3, cb.y - cb.radius * 0.3, 0,
+              cb.x, cb.y, cb.radius,
+            );
+            grad.addColorStop(0, 'rgba(255,255,255,0.25)');
+            grad.addColorStop(1, 'rgba(0,0,0,0.1)');
+            ctx.fillStyle = grad;
+            ctx.fill();
+            // Lingering outline
+            ctx.globalAlpha = ghostAlpha * 0.5;
+            ctx.beginPath();
+            ctx.arc(cb.x, cb.y, cb.radius, 0, Math.PI * 2);
+            ctx.strokeStyle = cb.color;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
         }
       }
     } else {
@@ -391,6 +681,60 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         ctx.font = `${fontSize * 0.85}px system-ui, sans-serif`;
         ctx.fillStyle = 'rgba(255,255,255,0.85)';
         ctx.fillText(fmtAmount(ball.amount), ball.x!, ball.y! + fontSize * 0.6);
+      }
+
+      // Draw external labels for small balls
+      for (const label of labelNodesRef.current) {
+        const ball = nodes[label.ballId];
+        if (!ball) continue;
+        const lx = label.x!;
+        const ly = label.y!;
+        const bx = ball.x!;
+        const by = ball.y!;
+
+        const isHov = ball.id === hoveredId;
+
+        // Underline position (bottom of text block)
+        const underlineY = ly + 8;
+        const halfW = label.textWidth / 2 + 4;
+        const lineColor = isHov ? '#475569' : '#94a3b8';
+        const lineW = isHov ? 1.5 : 0.75;
+
+        // Leader line from ball edge to the underline
+        const angle = Math.atan2(underlineY - by, lx - bx);
+        const startX = bx + Math.cos(angle) * ball.radius;
+        const startY = by + Math.sin(angle) * ball.radius;
+
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(lx, underlineY);
+        ctx.strokeStyle = lineColor;
+        ctx.lineWidth = lineW;
+        ctx.stroke();
+
+        // Small dot at the ball end of the leader
+        ctx.beginPath();
+        ctx.arc(startX, startY, 1.5, 0, Math.PI * 2);
+        ctx.fillStyle = lineColor;
+        ctx.fill();
+
+        // Underline extends under the text, connected to the leader
+        ctx.beginPath();
+        ctx.moveTo(lx - halfW, underlineY);
+        ctx.lineTo(lx + halfW, underlineY);
+        ctx.strokeStyle = lineColor;
+        ctx.lineWidth = lineW;
+        ctx.stroke();
+
+        // Label text (above the underline)
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.font = isHov ? 'bold 10px system-ui, sans-serif' : '10px system-ui, sans-serif';
+        ctx.fillStyle = isHov ? '#1e293b' : '#475569';
+        ctx.fillText(label.text, lx, underlineY - 9);
+        ctx.font = '9px system-ui, sans-serif';
+        ctx.fillStyle = isHov ? '#334155' : '#64748b';
+        ctx.fillText(label.amount, lx, underlineY - 0.5);
       }
     }
 
@@ -450,33 +794,48 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     }
   }
 
-  /** Draw the size legend in the bottom-left corner of the canvas. */
+  /** Draw the size legend in the bottom-left corner of the canvas.
+   *  Uses staggered cascade: each circle transitions independently
+   *  (largest first, then mid, then smallest) with smoothly counting labels. */
   function drawLegend(
     ctx: CanvasRenderingContext2D,
     canvasH: number,
     trans: typeof transitionRef.current,
   ) {
-    // Interpolate between old and new scale during transitions
-    let scale = scaleRef.current;
-    if (trans && prevScaleRef.current) {
-      const t = trans.progress;
-      const ease = 1 - Math.pow(1 - t, 3);
-      const prev = prevScaleRef.current;
-      const next = scaleRef.current;
-      scale = {
-        maxAmount: prev.maxAmount + (next.maxAmount - prev.maxAmount) * ease,
-        maxRadius: prev.maxRadius + (next.maxRadius - prev.maxRadius) * ease,
-        minRadius: prev.minRadius + (next.minRadius - prev.minRadius) * ease,
-      };
-    }
+    const nextTicks = legendTicks(scaleRef.current.maxAmount);
+    const prevTicks = prevTicksRef.current;
+    const prev = prevScaleRef.current;
+    const next = scaleRef.current;
 
-    // Use the target scale's ticks (so labels don't flicker)
-    const ticks = legendTicks(scaleRef.current.maxAmount);
-    const circles = ticks.map((amount) => ({
-      amount,
-      radius: amountToRadius(amount, scale.maxAmount, scale.maxRadius, scale.minRadius),
-      label: fmtAmount(amount),
-    }));
+    // Stagger delays per circle: [largest, mid, smallest]
+    const delays = [0, 0.2, 0.4];
+    const easeOutCubic = (x: number) => 1 - Math.pow(1 - x, 3);
+
+    // Compute per-circle interpolated values
+    const circles = nextTicks.map((targetAmount, i) => {
+      let amount = targetAmount;
+      let scale = next;
+
+      if (trans && prev && prevTicks) {
+        const t = trans.progress;
+        // Each circle has its own eased progress with staggered delay
+        const localT = Math.max(0, Math.min(1, (t - delays[i]) / 0.6));
+        const ease = easeOutCubic(localT);
+        amount = prevTicks[i] + (targetAmount - prevTicks[i]) * ease;
+        scale = {
+          maxAmount: prev.maxAmount + (next.maxAmount - prev.maxAmount) * ease,
+          maxRadius: prev.maxRadius + (next.maxRadius - prev.maxRadius) * ease,
+          minRadius: prev.minRadius + (next.minRadius - prev.minRadius) * ease,
+        };
+      }
+
+      return {
+        amount,
+        radius: amountToRadius(amount, scale.maxAmount, scale.maxRadius, scale.minRadius),
+        label: fmtAmount(amount),
+        localEase: trans && prev ? easeOutCubic(Math.max(0, Math.min(1, (trans.progress - delays[i]) / 0.6))) : 1,
+      };
+    });
 
     const largest = circles[0];
     const padding = 20;
@@ -484,7 +843,6 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     const cx = padding + largest.radius + 4;
 
     ctx.save();
-    ctx.globalAlpha = trans ? Math.min(1, 0.4 + trans.progress * 0.6) : 1;
 
     // Semi-transparent backdrop so legend is readable over balls
     const backdropX = cx - largest.radius - 8;
@@ -499,6 +857,10 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       const c = circles[i];
       const cy = baselineY - c.radius;
       const isOutermost = i === 0;
+      const alpha = 0.3 + c.localEase * 0.7;
+
+      ctx.save();
+      ctx.globalAlpha = alpha;
 
       // Dashed circle
       ctx.beginPath();
@@ -525,6 +887,8 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
       ctx.fillText(c.label, lineEndX + 3, topY);
+
+      ctx.restore();
     }
 
     ctx.restore();
@@ -548,18 +912,53 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         node.y = Math.max(node.radius, Math.min(h - node.radius, node.y!));
       }
 
-      // Handle transition animation
+      // Handle transition animation — advance progress + record comet trails
       const trans = transitionRef.current;
       if (trans) {
-        trans.progress = Math.min(1, trans.progress + 0.03);
+        trans.progress = Math.min(1, trans.progress + 0.025);
+
+        // Record trail positions for comet tails (drill-down only)
+        if (trans.direction === 'drill') {
+          const nodes = nodesRef.current;
+          const TRAIL_LEN = 18;
+          for (let ni = 0; ni < nodes.length; ni++) {
+            if (!trans.trails[ni]) trans.trails[ni] = [];
+            trans.trails[ni].push({ x: nodes[ni].x!, y: nodes[ni].y! });
+            if (trans.trails[ni].length > TRAIL_LEN) trans.trails[ni].shift();
+          }
+        }
+
         if (trans.progress >= 1) {
           transitionRef.current = null;
+          // Rebuild labels now that transition is done
+          const currentBalls = nodesRef.current;
+          const labels = buildLabelNodes(currentBalls);
+          labelNodesRef.current = labels;
+          if (labels.length > 0) {
+            labelSimRef.current = createLabelSim(labels, currentBalls);
+          }
         }
+      }
+
+      // Update label anchors to follow balls and tick label sim
+      const labelNodes = labelNodesRef.current;
+      const ballNodes = nodesRef.current;
+      for (const label of labelNodes) {
+        const ball = ballNodes[label.ballId];
+        if (ball) {
+          label.anchorX = ball.x!;
+          label.anchorY = ball.y!;
+        }
+      }
+      if (labelSimRef.current && labelNodes.length > 0) {
+        labelSimRef.current.alpha(Math.max(labelSimRef.current.alpha(), 0.05));
+        labelSimRef.current.tick();
       }
 
       renderRef.current();
 
-      if (sim.alpha() > 0.001 || trans) {
+      const labelActive = labelSimRef.current && labelSimRef.current.alpha() > 0.01;
+      if (sim.alpha() > 0.001 || trans || labelActive) {
         settling = 0;
         animFrameRef.current = requestAnimationFrame(tick);
       } else {
@@ -576,37 +975,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
     sim.alpha(1).restart().stop();
     animFrameRef.current = requestAnimationFrame(tick);
-  }, [canvasWidth]);
-
-  // Track the last width we initialized at to avoid re-running on callback identity changes
-  // Initialize on mount and when container width changes — only fires on resize
-  /** Build legend items from the current ball set with drillability info. */
-  const updateLegendItems = useCallback(
-    (balls: FloatingBall[], stackDepth: number) => {
-      setLegendItems(
-        balls.map((b) => {
-          let drillable = false;
-          if (stackDepth < 2) {
-            if (stackDepth === 0) {
-              drillable = true;
-            } else {
-              const parts = b.slug.split('__');
-              drillable = parts.length >= 2 && categoryIsDrillable(parts[0], parts[1]);
-            }
-          }
-          return {
-            slug: b.slug,
-            label: b.label,
-            amount: b.amount,
-            color: b.color,
-            radius: b.radius,
-            drillable,
-          };
-        }),
-      );
-    },
-    [categoryIsDrillable],
-  );
+  }, [canvasWidth, buildLabelNodes, createLabelSim]);
 
   useEffect(() => {
     if (canvasWidth < 100) return;
@@ -618,9 +987,10 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     setDrillStack([]);
 
     const balls = buildDeptBalls();
+    gridWarpRef.current = { ox: 0, oy: 0, strength: 0, gridSize: scaleRef.current.maxRadius * 2, prev: null };
     nodesRef.current = balls;
     simulationRef.current = createSim(balls);
-    updateLegendItems(balls, 0);
+    rebuildLabels(balls);
     startLoop();
 
     return () => {
@@ -653,6 +1023,10 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       const ox = clicked.x!;
       const oy = clicked.y!;
       const stack = drillStackRef.current;
+
+      // Snapshot current scale/ticks BEFORE building new balls (which overwrite scaleRef)
+      const savedScale = { ...scaleRef.current };
+      const savedTicks = legendTicks(scaleRef.current.maxAmount);
 
       let newBalls: FloatingBall[];
       let newLevel: DrillLevel;
@@ -688,36 +1062,53 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       cancelAnimationFrame(animFrameRef.current);
       simulationRef.current?.stop();
 
-      const shrinking = oldNodes.map((n) => ({
-        x: n.x!, y: n.y!, radius: n.radius, color: n.color,
-      }));
-      prevScaleRef.current = { ...scaleRef.current };
+      const others = oldNodes
+        .filter((n) => n.slug !== slug)
+        .map((n) => ({ x: n.x!, y: n.y!, radius: n.radius, color: n.color }));
+      const clickedSnapshot = { x: ox, y: oy, radius: clicked.radius, color: clicked.color };
+      prevScaleRef.current = savedScale;
+      prevTicksRef.current = savedTicks;
 
+      // New balls start at dead center of clicked ball, burst outward
       for (const ball of newBalls) {
+        ball.x = ox;
+        ball.y = oy;
         const angle = Math.random() * Math.PI * 2;
-        const speed = 8 + Math.random() * 12;
+        const speed = 6 + Math.random() * 6;
         ball.vx = Math.cos(angle) * speed;
         ball.vy = Math.sin(angle) * speed;
       }
 
+      // Snapshot current grid warp as "prev" and set new target
+      // Deeper levels get stronger warp: depth 1 = 0.6, depth 2 = 1.4
+      const newDepth = stack.length + 1;
+      const gw = gridWarpRef.current;
+      gw.prev = { ox: gw.ox, oy: gw.oy, strength: gw.strength, gridSize: gw.gridSize };
+      gw.ox = ox;
+      gw.oy = oy;
+      gw.strength = 0.4 + newDepth * 0.5;
+      gw.gridSize = scaleRef.current.maxRadius * 2;
+
       transitionRef.current = {
-        shrinking,
+        others,
+        clicked: clickedSnapshot,
         originX: ox,
         originY: oy,
         progress: 0,
         direction: 'drill',
+        trails: newBalls.map(() => [{ x: ox, y: oy }]),
       };
 
       const newStack = [...stack, newLevel];
       nodesRef.current = newBalls;
       simulationRef.current = createSim(newBalls);
-      updateLegendItems(newBalls, newStack.length);
+      clearLabels();
       setDrillStack(newStack);
       setTooltip(null);
       setHoveredId(null);
       startLoop();
     },
-    [buildCategoryBalls, buildSubcategoryBalls, categoryIsDrillable, expenditureDetails, createSim, startLoop, updateLegendItems],
+    [buildCategoryBalls, buildSubcategoryBalls, categoryIsDrillable, expenditureDetails, createSim, startLoop],
   );
 
   // Go back one level (or jump to a specific depth via doBackTo)
@@ -733,43 +1124,48 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       cx /= oldNodes.length || 1;
       cy /= oldNodes.length || 1;
 
-      const shrinking = oldNodes.map((n) => ({
+      const others = oldNodes.map((n) => ({
         x: n.x!, y: n.y!, radius: n.radius, color: n.color,
       }));
       prevScaleRef.current = { ...scaleRef.current };
+      prevTicksRef.current = legendTicks(scaleRef.current.maxAmount);
 
       const newStack = drillStackRef.current.slice(0, targetDepth);
       const balls = buildBallsForStack(newStack, cx, cy);
 
-      // For dept-level balls built without origin, position at centroid
+      // Keep initial positions from buildBallsForStack (already canvas-centered); clear velocities
       for (const ball of balls) {
-        if (!ball.isSub) {
-          ball.x = cx + (Math.random() - 0.5) * 20;
-          ball.y = cy + (Math.random() - 0.5) * 20;
-        }
-        const angle = Math.random() * Math.PI * 2;
-        const speed = 6 + Math.random() * 10;
-        ball.vx = Math.cos(angle) * speed;
-        ball.vy = Math.sin(angle) * speed;
+        ball.vx = 0;
+        ball.vy = 0;
       }
 
+      // Snapshot current grid warp as "prev" and set target for back navigation
+      const gw = gridWarpRef.current;
+      gw.prev = { ox: gw.ox, oy: gw.oy, strength: gw.strength, gridSize: gw.gridSize };
+      gw.ox = cx;
+      gw.oy = cy;
+      gw.strength = targetDepth > 0 ? 0.4 + targetDepth * 0.5 : 0;
+      gw.gridSize = scaleRef.current.maxRadius * 2;
+
       transitionRef.current = {
-        shrinking,
+        others,
+        clicked: null,
         originX: cx,
         originY: cy,
         progress: 0,
         direction: 'back',
+        trails: balls.map(() => [{ x: cx, y: cy }]),
       };
 
       nodesRef.current = balls;
       simulationRef.current = createSim(balls);
-      updateLegendItems(balls, newStack.length);
+      clearLabels();
       setDrillStack(newStack);
       setTooltip(null);
       setHoveredId(null);
       startLoop();
     },
-    [buildBallsForStack, createSim, startLoop, updateLegendItems],
+    [buildBallsForStack, createSim, startLoop],
   );
 
   const doBack = useCallback(() => {
@@ -819,7 +1215,23 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
 
-      const ball = findBallAt(mx, my);
+      // Check balls first, then external labels
+      let ball = findBallAt(mx, my);
+
+      // If no ball hit, check external label bounding rects
+      if (!ball) {
+        for (const label of labelNodesRef.current) {
+          const lx = label.x!;
+          const ly = label.y!;
+          const halfW = label.textWidth / 2 + 6;
+          const halfH = 13;
+          if (mx >= lx - halfW && mx <= lx + halfW && my >= ly - halfH && my <= ly + halfH) {
+            ball = nodesRef.current[label.ballId] ?? null;
+            break;
+          }
+        }
+      }
+
       if (ball) {
         const drillable = canDrillBall(ball);
         canvas.style.cursor = drillable ? 'pointer' : 'default';
@@ -831,10 +1243,6 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
           amount: fmtAmount(ball.amount),
           hint: drillable ? 'Click to break down' : '',
         });
-
-        // Auto-scroll legend row into view
-        const row = legendRowRefs.current.get(ball.slug);
-        if (row) row.scrollIntoView({ block: 'nearest' });
 
         render();
       } else {
@@ -857,7 +1265,22 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
 
-      const ball = findBallAt(mx, my);
+      let ball = findBallAt(mx, my);
+
+      // Also check label clicks
+      if (!ball) {
+        for (const label of labelNodesRef.current) {
+          const lx = label.x!;
+          const ly = label.y!;
+          const halfW = label.textWidth / 2 + 6;
+          const halfH = 13;
+          if (mx >= lx - halfW && mx <= lx + halfW && my >= ly - halfH && my <= ly + halfH) {
+            ball = nodesRef.current[label.ballId] ?? null;
+            break;
+          }
+        }
+      }
+
       if (ball && canDrillBall(ball)) {
         doDrill(ball.slug);
       }
@@ -925,95 +1348,42 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         </h2>
       )}
 
-      <div class="flex gap-4">
-        {/* Canvas area */}
-        <div class="relative flex-1 min-w-0">
-          <canvas
-            ref={canvasRef}
-            onMouseMove={handleMouseMove}
-            onClick={handleClick}
-            onMouseLeave={() => {
-              setTooltip(null);
-              setHoveredId(null);
-              render();
+      <div class="relative">
+        <canvas
+          ref={canvasRef}
+          onMouseMove={handleMouseMove}
+          onClick={handleClick}
+          onMouseLeave={() => {
+            setTooltip(null);
+            setHoveredId(null);
+            render();
+          }}
+          class="w-full border border-gray-200 rounded-lg bg-slate-50"
+          style={{ height: `${height}px` }}
+          aria-label={
+            depth === 0
+              ? `City of Pittsburgh 2026 operating budget: departments shown as proportional floating balls`
+              : depth === 1
+                ? `Budget breakdown for ${drillStack[0].label}: expenditure categories shown as proportional balls`
+                : `Line items for ${drillStack[1]?.label} in ${drillStack[0].label}: shown as proportional balls`
+          }
+          role="img"
+        />
+        {tooltip && (
+          <div
+            class="absolute pointer-events-none bg-gray-900 text-white text-xs rounded px-2.5 py-1.5 shadow-lg z-10"
+            style={{
+              left: `${Math.min(tooltip.x, canvasWidth - 140)}px`,
+              top: `${Math.max(tooltip.y, 0)}px`,
             }}
-            class="w-full border border-gray-200 rounded-lg bg-slate-50"
-            style={{ height: `${height}px` }}
-            aria-label={
-              depth === 0
-                ? `City of Pittsburgh 2026 operating budget: departments shown as proportional floating balls`
-                : depth === 1
-                  ? `Budget breakdown for ${drillStack[0].label}: expenditure categories shown as proportional balls`
-                  : `Line items for ${drillStack[1]?.label} in ${drillStack[0].label}: shown as proportional balls`
-            }
-            role="img"
-          />
-          {tooltip && (
-            <div
-              class="absolute pointer-events-none bg-gray-900 text-white text-xs rounded px-2.5 py-1.5 shadow-lg z-10"
-              style={{
-                left: `${Math.min(tooltip.x, canvasWidth - 140)}px`,
-                top: `${Math.max(tooltip.y, 0)}px`,
-              }}
-            >
-              <div class="font-medium">{tooltip.label}</div>
-              <div class="text-gray-300">{tooltip.amount}</div>
-              {tooltip.hint && (
-                <div class="text-blue-300 text-[10px] mt-0.5">{tooltip.hint}</div>
-              )}
-            </div>
-          )}
-        </div>
-
-        {/* Color legend sidebar */}
-        <div
-          class="shrink-0 overflow-y-auto border border-gray-200 rounded-lg bg-white"
-          style={{ width: `${SIDEBAR_W}px`, maxHeight: `${height}px` }}
-        >
-          <div class="px-2 py-1.5 text-[11px] font-semibold text-gray-500 uppercase tracking-wide border-b border-gray-100 sticky top-0 bg-white z-10">
-            {depth === 0 ? 'Departments' : depth === 1 ? 'Categories' : 'Line Items'}
+          >
+            <div class="font-medium">{tooltip.label}</div>
+            <div class="text-gray-300">{tooltip.amount}</div>
+            {tooltip.hint && (
+              <div class="text-blue-300 text-[10px] mt-0.5">{tooltip.hint}</div>
+            )}
           </div>
-          <div class="py-1">
-            {legendItems.map((item) => {
-              const isHovered = hoveredId !== null && nodesRef.current[hoveredId]?.slug === item.slug;
-              return (
-                <div
-                  key={item.slug}
-                  ref={(el) => {
-                    if (el) legendRowRefs.current.set(item.slug, el);
-                    else legendRowRefs.current.delete(item.slug);
-                  }}
-                  class={`flex items-center gap-1.5 px-2 py-1 text-[11px] transition-colors ${
-                    isHovered ? 'bg-blue-50' : 'hover:bg-gray-50'
-                  } ${item.drillable ? 'cursor-pointer' : 'cursor-default'}`}
-                  onMouseEnter={() => {
-                    const node = nodesRef.current.find((n) => n.slug === item.slug);
-                    if (node) {
-                      setHoveredId(node.id);
-                      renderRef.current();
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredId(null);
-                    renderRef.current();
-                  }}
-                  onClick={() => {
-                    if (item.drillable) doDrill(item.slug);
-                  }}
-                >
-                  <span
-                    class="shrink-0 rounded-full inline-block"
-                    style={{ width: '10px', height: '10px', backgroundColor: item.color }}
-                  />
-                  <span class={`truncate flex-1 ${item.radius < 20 ? 'font-medium' : ''}`} title={item.label}>
-                    {item.label}
-                  </span>
-                  <span class="shrink-0 text-gray-400 tabular-nums">{fmtAmount(item.amount)}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
