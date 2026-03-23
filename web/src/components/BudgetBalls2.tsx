@@ -52,6 +52,16 @@ interface FloatingBall extends SimulationNodeDatum {
   parentSlug?: string;
 }
 
+/** An item in the color legend sidebar. */
+interface LegendItem {
+  slug: string;
+  label: string;
+  amount: number;
+  color: string;
+  radius: number;
+  drillable: boolean;
+}
+
 /** Scale info for the size legend. */
 interface ScaleInfo {
   maxAmount: number;
@@ -79,6 +89,9 @@ function legendTicks(maxAmount: number): number[] {
 
 /** Slug suffix for trust fund departments. */
 const TRUST_FUND_MARKER = 'trust-fund';
+
+/** Width of the color legend sidebar in pixels. */
+const SIDEBAR_W = 224;
 
 /** Format a dollar amount for display. */
 function fmtAmount(n: number): string {
@@ -114,6 +127,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
   const [drillStack, setDrillStack] = useState<DrillLevel[]>([]);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [legendItems, setLegendItems] = useState<LegendItem[]>([]);
   const [tooltip, setTooltip] = useState<{
     x: number;
     y: number;
@@ -139,10 +153,14 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
   const drillStackRef = useRef<DrillLevel[]>([]);
   const scaleRef = useRef<ScaleInfo>({ maxAmount: 1, maxRadius: 60, minRadius: 12 });
   const prevScaleRef = useRef<ScaleInfo | null>(null);
+  const legendRowRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+
+  // Canvas width accounts for sidebar + gap
+  const canvasWidth = Math.max(200, containerWidth - SIDEBAR_W - 16);
 
   // Build department-level balls
   const buildDeptBalls = useCallback((): FloatingBall[] => {
-    const width = containerWidth;
+    const width = canvasWidth;
     const height = canvasHeight(width);
     const maxRadius = Math.min(width, height) * 0.12;
     const minRadius = 12;
@@ -183,12 +201,12 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     }));
 
     return balls;
-  }, [departmentBudgets, containerWidth]);
+  }, [departmentBudgets, canvasWidth]);
 
   // Build sub-category balls for a department
   const buildCategoryBalls = useCallback(
     (slug: string, originX: number, originY: number): FloatingBall[] => {
-      const width = containerWidth;
+      const width = canvasWidth;
       const height = canvasHeight(width);
       const maxRadius = Math.min(width, height) * 0.10;
       const minRadius = 10;
@@ -214,13 +232,13 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         y: originY + (Math.random() - 0.5) * 20,
       }));
     },
-    [expenditureDetails, containerWidth],
+    [expenditureDetails, canvasWidth],
   );
 
   // Build subcategory/line-item balls for a category within a department
   const buildSubcategoryBalls = useCallback(
     (deptSlug: string, categoryCode: string, originX: number, originY: number): FloatingBall[] => {
-      const width = containerWidth;
+      const width = canvasWidth;
       const height = canvasHeight(width);
       const maxRadius = Math.min(width, height) * 0.10;
       const minRadius = 10;
@@ -250,7 +268,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         y: originY + (Math.random() - 0.5) * 20,
       }));
     },
-    [expenditureDetails, containerWidth],
+    [expenditureDetails, canvasWidth],
   );
 
   /** Check if a category has >1 subcategory with positive amounts. */
@@ -268,7 +286,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
   // Create simulation for floating balls
   const createSim = useCallback(
     (balls: FloatingBall[]): Simulation<FloatingBall, undefined> => {
-      const width = containerWidth;
+      const width = canvasWidth;
       const height = canvasHeight(width);
 
       const sim = forceSimulation(balls)
@@ -287,7 +305,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
       return sim;
     },
-    [containerWidth],
+    [canvasWidth],
   );
 
   // Render
@@ -298,7 +316,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     if (!ctx) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const w = containerWidth;
+    const w = canvasWidth;
     const h = canvasHeight(w);
 
     canvas.width = w * dpr;
@@ -378,7 +396,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
     // --- Draw size legend (bottom-left) ---
     drawLegend(ctx, h, trans);
-  }, [containerWidth, hoveredId, drillStack]);
+  }, [canvasWidth, hoveredId, drillStack]);
 
   // Keep refs in sync so animation loop always uses latest versions
   renderRef.current = render;
@@ -523,7 +541,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       sim.tick();
 
       // Clamp nodes to canvas bounds
-      const w = containerWidth;
+      const w = canvasWidth;
       const h = canvasHeight(w);
       for (const node of nodesRef.current) {
         node.x = Math.max(node.radius, Math.min(w - node.radius, node.x!));
@@ -558,12 +576,40 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
     sim.alpha(1).restart().stop();
     animFrameRef.current = requestAnimationFrame(tick);
-  }, [containerWidth]);
+  }, [canvasWidth]);
 
   // Track the last width we initialized at to avoid re-running on callback identity changes
   // Initialize on mount and when container width changes — only fires on resize
+  /** Build legend items from the current ball set with drillability info. */
+  const updateLegendItems = useCallback(
+    (balls: FloatingBall[], stackDepth: number) => {
+      setLegendItems(
+        balls.map((b) => {
+          let drillable = false;
+          if (stackDepth < 2) {
+            if (stackDepth === 0) {
+              drillable = true;
+            } else {
+              const parts = b.slug.split('__');
+              drillable = parts.length >= 2 && categoryIsDrillable(parts[0], parts[1]);
+            }
+          }
+          return {
+            slug: b.slug,
+            label: b.label,
+            amount: b.amount,
+            color: b.color,
+            radius: b.radius,
+            drillable,
+          };
+        }),
+      );
+    },
+    [categoryIsDrillable],
+  );
+
   useEffect(() => {
-    if (containerWidth < 100) return;
+    if (canvasWidth < 100) return;
 
     cancelAnimationFrame(animFrameRef.current);
     simulationRef.current?.stop();
@@ -574,6 +620,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     const balls = buildDeptBalls();
     nodesRef.current = balls;
     simulationRef.current = createSim(balls);
+    updateLegendItems(balls, 0);
     startLoop();
 
     return () => {
@@ -581,7 +628,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       simulationRef.current?.stop();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [containerWidth]);
+  }, [canvasWidth]);
 
   /** Build balls for a given stack depth, used by doBack to rebuild a level. */
   const buildBallsForStack = useCallback(
@@ -664,12 +711,13 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       const newStack = [...stack, newLevel];
       nodesRef.current = newBalls;
       simulationRef.current = createSim(newBalls);
+      updateLegendItems(newBalls, newStack.length);
       setDrillStack(newStack);
       setTooltip(null);
       setHoveredId(null);
       startLoop();
     },
-    [buildCategoryBalls, buildSubcategoryBalls, categoryIsDrillable, expenditureDetails, createSim, startLoop],
+    [buildCategoryBalls, buildSubcategoryBalls, categoryIsDrillable, expenditureDetails, createSim, startLoop, updateLegendItems],
   );
 
   // Go back one level (or jump to a specific depth via doBackTo)
@@ -715,12 +763,13 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
       nodesRef.current = balls;
       simulationRef.current = createSim(balls);
+      updateLegendItems(balls, newStack.length);
       setDrillStack(newStack);
       setTooltip(null);
       setHoveredId(null);
       startLoop();
     },
-    [buildBallsForStack, createSim, startLoop],
+    [buildBallsForStack, createSim, startLoop, updateLegendItems],
   );
 
   const doBack = useCallback(() => {
@@ -783,6 +832,10 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
           hint: drillable ? 'Click to break down' : '',
         });
 
+        // Auto-scroll legend row into view
+        const row = legendRowRefs.current.get(ball.slug);
+        if (row) row.scrollIntoView({ block: 'nearest' });
+
         render();
       } else {
         canvas.style.cursor = 'default';
@@ -822,7 +875,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     breadcrumbs.push({ label: drillStack[i].label, depth: i + 1 });
   }
 
-  const height = canvasHeight(containerWidth);
+  const height = canvasHeight(canvasWidth);
 
   // Subtitle text for current level
   const subtitle = depth === 0
@@ -872,42 +925,95 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         </h2>
       )}
 
-      <div class="relative">
-        <canvas
-          ref={canvasRef}
-          onMouseMove={handleMouseMove}
-          onClick={handleClick}
-          onMouseLeave={() => {
-            setTooltip(null);
-            setHoveredId(null);
-            render();
-          }}
-          class="w-full border border-gray-200 rounded-lg bg-slate-50"
-          style={{ height: `${height}px` }}
-          aria-label={
-            depth === 0
-              ? `City of Pittsburgh 2026 operating budget: departments shown as proportional floating balls`
-              : depth === 1
-                ? `Budget breakdown for ${drillStack[0].label}: expenditure categories shown as proportional balls`
-                : `Line items for ${drillStack[1]?.label} in ${drillStack[0].label}: shown as proportional balls`
-          }
-          role="img"
-        />
-        {tooltip && (
-          <div
-            class="absolute pointer-events-none bg-gray-900 text-white text-xs rounded px-2.5 py-1.5 shadow-lg z-10"
-            style={{
-              left: `${Math.min(tooltip.x, containerWidth - 140)}px`,
-              top: `${Math.max(tooltip.y, 0)}px`,
+      <div class="flex gap-4">
+        {/* Canvas area */}
+        <div class="relative flex-1 min-w-0">
+          <canvas
+            ref={canvasRef}
+            onMouseMove={handleMouseMove}
+            onClick={handleClick}
+            onMouseLeave={() => {
+              setTooltip(null);
+              setHoveredId(null);
+              render();
             }}
-          >
-            <div class="font-medium">{tooltip.label}</div>
-            <div class="text-gray-300">{tooltip.amount}</div>
-            {tooltip.hint && (
-              <div class="text-blue-300 text-[10px] mt-0.5">{tooltip.hint}</div>
-            )}
+            class="w-full border border-gray-200 rounded-lg bg-slate-50"
+            style={{ height: `${height}px` }}
+            aria-label={
+              depth === 0
+                ? `City of Pittsburgh 2026 operating budget: departments shown as proportional floating balls`
+                : depth === 1
+                  ? `Budget breakdown for ${drillStack[0].label}: expenditure categories shown as proportional balls`
+                  : `Line items for ${drillStack[1]?.label} in ${drillStack[0].label}: shown as proportional balls`
+            }
+            role="img"
+          />
+          {tooltip && (
+            <div
+              class="absolute pointer-events-none bg-gray-900 text-white text-xs rounded px-2.5 py-1.5 shadow-lg z-10"
+              style={{
+                left: `${Math.min(tooltip.x, canvasWidth - 140)}px`,
+                top: `${Math.max(tooltip.y, 0)}px`,
+              }}
+            >
+              <div class="font-medium">{tooltip.label}</div>
+              <div class="text-gray-300">{tooltip.amount}</div>
+              {tooltip.hint && (
+                <div class="text-blue-300 text-[10px] mt-0.5">{tooltip.hint}</div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Color legend sidebar */}
+        <div
+          class="shrink-0 overflow-y-auto border border-gray-200 rounded-lg bg-white"
+          style={{ width: `${SIDEBAR_W}px`, maxHeight: `${height}px` }}
+        >
+          <div class="px-2 py-1.5 text-[11px] font-semibold text-gray-500 uppercase tracking-wide border-b border-gray-100 sticky top-0 bg-white z-10">
+            {depth === 0 ? 'Departments' : depth === 1 ? 'Categories' : 'Line Items'}
           </div>
-        )}
+          <div class="py-1">
+            {legendItems.map((item) => {
+              const isHovered = hoveredId !== null && nodesRef.current[hoveredId]?.slug === item.slug;
+              return (
+                <div
+                  key={item.slug}
+                  ref={(el) => {
+                    if (el) legendRowRefs.current.set(item.slug, el);
+                    else legendRowRefs.current.delete(item.slug);
+                  }}
+                  class={`flex items-center gap-1.5 px-2 py-1 text-[11px] transition-colors ${
+                    isHovered ? 'bg-blue-50' : 'hover:bg-gray-50'
+                  } ${item.drillable ? 'cursor-pointer' : 'cursor-default'}`}
+                  onMouseEnter={() => {
+                    const node = nodesRef.current.find((n) => n.slug === item.slug);
+                    if (node) {
+                      setHoveredId(node.id);
+                      renderRef.current();
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredId(null);
+                    renderRef.current();
+                  }}
+                  onClick={() => {
+                    if (item.drillable) doDrill(item.slug);
+                  }}
+                >
+                  <span
+                    class="shrink-0 rounded-full inline-block"
+                    style={{ width: '10px', height: '10px', backgroundColor: item.color }}
+                  />
+                  <span class={`truncate flex-1 ${item.radius < 20 ? 'font-medium' : ''}`} title={item.label}>
+                    {item.label}
+                  </span>
+                  <span class="shrink-0 text-gray-400 tabular-nums">{fmtAmount(item.amount)}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
