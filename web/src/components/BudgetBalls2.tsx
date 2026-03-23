@@ -104,7 +104,15 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerWidth = useContainerWidth(containerRef);
 
-  const [drillSlug, setDrillSlug] = useState<string | null>(null);
+  /** Navigation stack for drill-down levels. */
+  interface DrillLevel {
+    type: 'dept' | 'category';
+    deptSlug: string;
+    categoryCode?: string;
+    label: string;
+  }
+
+  const [drillStack, setDrillStack] = useState<DrillLevel[]>([]);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [tooltip, setTooltip] = useState<{
     x: number;
@@ -128,7 +136,7 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     direction: 'drill' | 'back';
   } | null>(null);
   const renderRef = useRef<() => void>(() => {});
-  const drillSlugRef = useRef<string | null>(null);
+  const drillStackRef = useRef<DrillLevel[]>([]);
   const scaleRef = useRef<ScaleInfo>({ maxAmount: 1, maxRadius: 60, minRadius: 12 });
   const prevScaleRef = useRef<ScaleInfo | null>(null);
 
@@ -207,6 +215,54 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       }));
     },
     [expenditureDetails, containerWidth],
+  );
+
+  // Build subcategory/line-item balls for a category within a department
+  const buildSubcategoryBalls = useCallback(
+    (deptSlug: string, categoryCode: string, originX: number, originY: number): FloatingBall[] => {
+      const width = containerWidth;
+      const height = canvasHeight(width);
+      const maxRadius = Math.min(width, height) * 0.10;
+      const minRadius = 10;
+
+      const detail = expenditureDetails.find((d) => d.slug === deptSlug);
+      if (!detail) return [];
+
+      const category = detail.categories.find((c) => c.code === categoryCode);
+      if (!category) return [];
+
+      const subs = category.subcategories.filter((s) => s.amount > 0).sort((a, b) => b.amount - a.amount);
+      if (subs.length <= 1) return [];
+
+      const maxAmount = Math.max(...subs.map((s) => s.amount));
+      scaleRef.current = { maxAmount, maxRadius, minRadius };
+
+      return subs.map((sub, i) => ({
+        id: i,
+        slug: `${deptSlug}__${categoryCode}__${sub.code}`,
+        label: sub.name,
+        amount: sub.amount,
+        color: assignColor(i, false),
+        radius: amountToRadius(sub.amount, maxAmount, maxRadius, minRadius),
+        isSub: true,
+        parentSlug: deptSlug,
+        x: originX + (Math.random() - 0.5) * 20,
+        y: originY + (Math.random() - 0.5) * 20,
+      }));
+    },
+    [expenditureDetails, containerWidth],
+  );
+
+  /** Check if a category has >1 subcategory with positive amounts. */
+  const categoryIsDrillable = useCallback(
+    (deptSlug: string, categoryCode: string): boolean => {
+      const detail = expenditureDetails.find((d) => d.slug === deptSlug);
+      if (!detail) return false;
+      const category = detail.categories.find((c) => c.code === categoryCode);
+      if (!category) return false;
+      return category.subcategories.filter((s) => s.amount > 0).length > 1;
+    },
+    [expenditureDetails],
   );
 
   // Create simulation for floating balls
@@ -293,8 +349,10 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       }
     } else {
       // Normal rendering — no transition
+      const depth = drillStackRef.current.length;
       for (const ball of nodes) {
-        drawBall(ctx, ball, ball.id === hoveredId, !drillSlugRef.current);
+        const canDrill = depth < 2 && (depth === 0 || isDrillableBall(ball));
+        drawBall(ctx, ball, ball.id === hoveredId, canDrill);
       }
 
       // Draw labels on balls large enough
@@ -320,11 +378,21 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
     // --- Draw size legend (bottom-left) ---
     drawLegend(ctx, h, trans);
-  }, [containerWidth, hoveredId, drillSlug]);
+  }, [containerWidth, hoveredId, drillStack]);
 
   // Keep refs in sync so animation loop always uses latest versions
   renderRef.current = render;
-  drillSlugRef.current = drillSlug;
+  drillStackRef.current = drillStack;
+
+  /** Check if a ball at depth 1 (category) is drillable to subcategories. */
+  function isDrillableBall(ball: FloatingBall): boolean {
+    const stack = drillStackRef.current;
+    if (stack.length !== 1) return false;
+    // slug format: "dept-slug__categoryCode"
+    const parts = ball.slug.split('__');
+    if (parts.length < 2) return false;
+    return categoryIsDrillable(parts[0], parts[1]);
+  }
 
   /** Draw a single ball. */
   function drawBall(
@@ -500,8 +568,8 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     cancelAnimationFrame(animFrameRef.current);
     simulationRef.current?.stop();
     transitionRef.current = null;
-    drillSlugRef.current = null;
-    setDrillSlug(null);
+    drillStackRef.current = [];
+    setDrillStack([]);
 
     const balls = buildDeptBalls();
     nodesRef.current = balls;
@@ -515,7 +583,20 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [containerWidth]);
 
-  // Drill down into a department
+  /** Build balls for a given stack depth, used by doBack to rebuild a level. */
+  const buildBallsForStack = useCallback(
+    (stack: DrillLevel[], originX: number, originY: number): FloatingBall[] => {
+      if (stack.length === 0) return buildDeptBalls();
+      if (stack.length === 1) return buildCategoryBalls(stack[0].deptSlug, originX, originY);
+      if (stack.length === 2) {
+        return buildSubcategoryBalls(stack[0].deptSlug, stack[1].categoryCode!, originX, originY);
+      }
+      return [];
+    },
+    [buildDeptBalls, buildCategoryBalls, buildSubcategoryBalls],
+  );
+
+  // Drill down — works for depth 0→1 (dept→categories) and 1→2 (category→subcategories)
   const doDrill = useCallback(
     (slug: string) => {
       const oldNodes = nodesRef.current;
@@ -524,21 +605,48 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
       const ox = clicked.x!;
       const oy = clicked.y!;
+      const stack = drillStackRef.current;
 
-      const catBalls = buildCategoryBalls(slug, ox, oy);
-      if (catBalls.length === 0) return;
+      let newBalls: FloatingBall[];
+      let newLevel: DrillLevel;
+
+      if (stack.length === 0) {
+        // Dept → categories
+        newBalls = buildCategoryBalls(slug, ox, oy);
+        if (newBalls.length === 0) return;
+        const detail = expenditureDetails.find((d) => d.slug === slug);
+        newLevel = {
+          type: 'dept',
+          deptSlug: slug,
+          label: detail?.department || slug,
+        };
+      } else if (stack.length === 1) {
+        // Category → subcategories
+        const parts = slug.split('__');
+        const deptSlug = parts[0];
+        const catCode = parts[1];
+        if (!categoryIsDrillable(deptSlug, catCode)) return;
+        newBalls = buildSubcategoryBalls(deptSlug, catCode, ox, oy);
+        if (newBalls.length === 0) return;
+        newLevel = {
+          type: 'category',
+          deptSlug,
+          categoryCode: catCode,
+          label: clicked.label,
+        };
+      } else {
+        return; // Already at leaf level
+      }
 
       cancelAnimationFrame(animFrameRef.current);
       simulationRef.current?.stop();
 
-      // Snapshot old ball positions and scale for shrink animation
       const shrinking = oldNodes.map((n) => ({
         x: n.x!, y: n.y!, radius: n.radius, color: n.color,
       }));
       prevScaleRef.current = { ...scaleRef.current };
 
-      // Give new balls outward burst velocity from the click origin
-      for (const ball of catBalls) {
+      for (const ball of newBalls) {
         const angle = Math.random() * Math.PI * 2;
         const speed = 8 + Math.random() * 12;
         ball.vx = Math.cos(angle) * speed;
@@ -553,64 +661,73 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         direction: 'drill',
       };
 
-      nodesRef.current = catBalls;
-      simulationRef.current = createSim(catBalls);
-      setDrillSlug(slug);
+      const newStack = [...stack, newLevel];
+      nodesRef.current = newBalls;
+      simulationRef.current = createSim(newBalls);
+      setDrillStack(newStack);
       setTooltip(null);
       setHoveredId(null);
       startLoop();
     },
-    [buildCategoryBalls, createSim, startLoop],
+    [buildCategoryBalls, buildSubcategoryBalls, categoryIsDrillable, expenditureDetails, createSim, startLoop],
   );
 
-  // Go back to overview
+  // Go back one level (or jump to a specific depth via doBackTo)
+  const doBackTo = useCallback(
+    (targetDepth: number) => {
+      cancelAnimationFrame(animFrameRef.current);
+      simulationRef.current?.stop();
+
+      const oldNodes = nodesRef.current;
+
+      let cx = 0, cy = 0;
+      for (const n of oldNodes) { cx += n.x!; cy += n.y!; }
+      cx /= oldNodes.length || 1;
+      cy /= oldNodes.length || 1;
+
+      const shrinking = oldNodes.map((n) => ({
+        x: n.x!, y: n.y!, radius: n.radius, color: n.color,
+      }));
+      prevScaleRef.current = { ...scaleRef.current };
+
+      const newStack = drillStackRef.current.slice(0, targetDepth);
+      const balls = buildBallsForStack(newStack, cx, cy);
+
+      // For dept-level balls built without origin, position at centroid
+      for (const ball of balls) {
+        if (!ball.isSub) {
+          ball.x = cx + (Math.random() - 0.5) * 20;
+          ball.y = cy + (Math.random() - 0.5) * 20;
+        }
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 6 + Math.random() * 10;
+        ball.vx = Math.cos(angle) * speed;
+        ball.vy = Math.sin(angle) * speed;
+      }
+
+      transitionRef.current = {
+        shrinking,
+        originX: cx,
+        originY: cy,
+        progress: 0,
+        direction: 'back',
+      };
+
+      nodesRef.current = balls;
+      simulationRef.current = createSim(balls);
+      setDrillStack(newStack);
+      setTooltip(null);
+      setHoveredId(null);
+      startLoop();
+    },
+    [buildBallsForStack, createSim, startLoop],
+  );
+
   const doBack = useCallback(() => {
-    cancelAnimationFrame(animFrameRef.current);
-    simulationRef.current?.stop();
-
-    const oldNodes = nodesRef.current;
-    const width = containerWidth;
-    const height = canvasHeight(width);
-
-    // Snapshot old sub-ball positions for shrink animation
-    // Compute centroid of current sub-balls as the collapse point
-    let cx = 0, cy = 0;
-    for (const n of oldNodes) { cx += n.x!; cy += n.y!; }
-    cx /= oldNodes.length || 1;
-    cy /= oldNodes.length || 1;
-
-    const shrinking = oldNodes.map((n) => ({
-      x: n.x!, y: n.y!, radius: n.radius, color: n.color,
-    }));
-    prevScaleRef.current = { ...scaleRef.current };
-
-    const balls = buildDeptBalls();
-
-    // Give new dept balls outward burst from centroid
-    for (const ball of balls) {
-      ball.x = cx + (Math.random() - 0.5) * 20;
-      ball.y = cy + (Math.random() - 0.5) * 20;
-      const angle = Math.random() * Math.PI * 2;
-      const speed = 6 + Math.random() * 10;
-      ball.vx = Math.cos(angle) * speed;
-      ball.vy = Math.sin(angle) * speed;
-    }
-
-    transitionRef.current = {
-      shrinking,
-      originX: cx,
-      originY: cy,
-      progress: 0,
-      direction: 'back',
-    };
-
-    nodesRef.current = balls;
-    simulationRef.current = createSim(balls);
-    setDrillSlug(null);
-    setTooltip(null);
-    setHoveredId(null);
-    startLoop();
-  }, [buildDeptBalls, createSim, startLoop, containerWidth]);
+    const depth = drillStackRef.current.length;
+    if (depth === 0) return;
+    doBackTo(depth - 1);
+  }, [doBackTo]);
 
   // Mouse interaction
   const findBallAt = useCallback(
@@ -632,6 +749,19 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
     [],
   );
 
+  /** Check if a ball can be drilled into at the current depth. */
+  const canDrillBall = useCallback(
+    (ball: FloatingBall): boolean => {
+      const depth = drillStackRef.current.length;
+      if (depth >= 2) return false; // leaf level
+      if (depth === 0) return true; // can always drill into departments
+      // depth 1: check if category has subcategories
+      const parts = ball.slug.split('__');
+      return parts.length >= 2 && categoryIsDrillable(parts[0], parts[1]);
+    },
+    [categoryIsDrillable],
+  );
+
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
       const canvas = canvasRef.current;
@@ -642,17 +772,17 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
 
       const ball = findBallAt(mx, my);
       if (ball) {
-        canvas.style.cursor = !drillSlug ? 'pointer' : 'default';
+        const drillable = canDrillBall(ball);
+        canvas.style.cursor = drillable ? 'pointer' : 'default';
         setHoveredId(ball.id);
         setTooltip({
           x: e.clientX - rect.left,
           y: e.clientY - rect.top - 50,
           label: ball.label,
           amount: fmtAmount(ball.amount),
-          hint: !drillSlug ? 'Click to break down' : '',
+          hint: drillable ? 'Click to break down' : '',
         });
 
-        // Trigger re-render for outline
         render();
       } else {
         canvas.style.cursor = 'default';
@@ -663,12 +793,11 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
         }
       }
     },
-    [drillSlug, findBallAt, render, hoveredId],
+    [findBallAt, canDrillBall, render, hoveredId],
   );
 
   const handleClick = useCallback(
     (e: MouseEvent) => {
-      if (drillSlug) return; // already drilled down
       const canvas = canvasRef.current;
       if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
@@ -676,41 +805,71 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
       const my = e.clientY - rect.top;
 
       const ball = findBallAt(mx, my);
-      if (ball && !ball.isSub) {
+      if (ball && canDrillBall(ball)) {
         doDrill(ball.slug);
       }
     },
-    [drillSlug, findBallAt, doDrill],
+    [findBallAt, canDrillBall, doDrill],
   );
 
-  const activeDept = drillSlug
-    ? expenditureDetails.find((d) => d.slug === drillSlug)?.department ||
-      (drillSlug === '__trust-funds__' ? 'Trust Funds' : drillSlug)
-    : null;
+  const depth = drillStack.length;
+
+  // Build breadcrumb segments
+  const breadcrumbs: { label: string; depth: number }[] = [
+    { label: 'All Departments', depth: 0 },
+  ];
+  for (let i = 0; i < drillStack.length; i++) {
+    breadcrumbs.push({ label: drillStack[i].label, depth: i + 1 });
+  }
 
   const height = canvasHeight(containerWidth);
 
+  // Subtitle text for current level
+  const subtitle = depth === 0
+    ? 'Each ball = one department, sized by budget'
+    : depth === 1
+      ? `${drillStack[0].label} — expenditure categories`
+      : `${drillStack[0].label} — ${drillStack[1].label} — line items`;
+
   return (
     <div ref={containerRef} class="relative">
-      {/* Header */}
+      {/* Breadcrumb navigation */}
       <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
         <div class="flex items-center gap-3">
-          {drillSlug && (
-            <button
-              onClick={doBack}
-              class="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1"
-            >
-              ← All Departments
-            </button>
+          {depth > 0 && (
+            <nav class="text-sm flex items-center gap-1 flex-wrap">
+              {breadcrumbs.map((crumb, i) => {
+                const isLast = i === breadcrumbs.length - 1;
+                if (isLast) {
+                  return (
+                    <span key={i} class="text-gray-700 font-medium">{crumb.label}</span>
+                  );
+                }
+                return (
+                  <span key={i} class="flex items-center gap-1">
+                    {i === 0 && <span>←</span>}
+                    <button
+                      onClick={() => doBackTo(crumb.depth)}
+                      class="text-blue-600 hover:text-blue-800"
+                    >
+                      {crumb.label}
+                    </button>
+                    <span class="text-gray-400">/</span>
+                  </span>
+                );
+              })}
+            </nav>
           )}
           <span class="text-xs text-gray-500">
-            {drillSlug ? `${activeDept} — expenditure categories` : 'Each ball = one department, sized by budget'}
+            {subtitle}
           </span>
         </div>
       </div>
 
-      {drillSlug && activeDept && (
-        <h2 class="text-lg font-semibold mb-2">{activeDept}</h2>
+      {depth > 0 && (
+        <h2 class="text-lg font-semibold mb-2">
+          {breadcrumbs[breadcrumbs.length - 1].label}
+        </h2>
       )}
 
       <div class="relative">
@@ -726,9 +885,11 @@ export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: 
           class="w-full border border-gray-200 rounded-lg bg-slate-50"
           style={{ height: `${height}px` }}
           aria-label={
-            drillSlug
-              ? `Budget breakdown for ${activeDept}: expenditure categories shown as proportional balls`
-              : `City of Pittsburgh 2026 operating budget: departments shown as proportional floating balls`
+            depth === 0
+              ? `City of Pittsburgh 2026 operating budget: departments shown as proportional floating balls`
+              : depth === 1
+                ? `Budget breakdown for ${drillStack[0].label}: expenditure categories shown as proportional balls`
+                : `Line items for ${drillStack[1]?.label} in ${drillStack[0].label}: shown as proportional balls`
           }
           role="img"
         />

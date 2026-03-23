@@ -3,9 +3,6 @@
 import {
   forceSimulation,
   forceCollide,
-  forceManyBody,
-  forceX,
-  forceY,
   type Simulation,
   type SimulationNodeDatum,
 } from 'd3-force';
@@ -37,93 +34,172 @@ export interface ClusterInfo {
   cy: number;
 }
 
-/**
- * Compute cluster centroid positions arranged in a packed layout.
- * Larger clusters get positioned toward the center.
- */
-export function layoutClusters(
-  clusters: ClusterInfo[],
-  width: number,
-  height: number,
-): void {
-  // Sort by ball count descending — largest clusters near center
-  const sorted = [...clusters].sort((a, b) => b.ballCount - a.ballCount);
+export interface BowlParams {
+  cx: number;
+  cy: number;
+  radius: number;
+  clusterId: number;
+}
 
-  // Use a spiral layout from center
-  const centerX = width / 2;
-  const centerY = height / 2;
-  const angleStep = 2.4; // golden angle in radians
-  const radiusScale = Math.min(width, height) * 0.35;
-
-  sorted.forEach((cluster, i) => {
-    if (i === 0) {
-      cluster.cx = centerX;
-      cluster.cy = centerY;
-    } else {
-      const angle = i * angleStep;
-      const r = radiusScale * Math.sqrt(i / sorted.length);
-      cluster.cx = centerX + r * Math.cos(angle);
-      cluster.cy = centerY + r * Math.sin(angle);
-    }
-  });
+export interface BowlGridResult {
+  bowls: BowlParams[];
+  totalHeight: number;
+  columns: number;
+  cellWidth: number;
+  cellHeight: number;
 }
 
 /**
- * Create a d3-force simulation for the balls.
+ * Compute a grid of equal-sized bowls, one per cluster.
+ * Returns bowl positions and overall grid dimensions.
+ */
+export function computeBowlGrid(
+  clusters: ClusterInfo[],
+  width: number,
+): BowlGridResult {
+  const columns = width >= 1024 ? 4 : width >= 768 ? 3 : 2;
+  const cellWidth = width / columns;
+  const cellHeight = cellWidth * 1.1;
+  const bowlRadius = cellWidth * 0.38;
+  const rows = Math.ceil(clusters.length / columns);
+  const totalHeight = rows * cellHeight;
+
+  const bowls: BowlParams[] = clusters.map((cluster, i) => {
+    const col = i % columns;
+    const row = Math.floor(i / columns);
+    const cx = col * cellWidth + cellWidth / 2;
+    // Position bowl center so the arc sits nicely in the cell
+    // Bowl center is offset upward so there's room for the label below
+    const cy = row * cellHeight + cellHeight * 0.45;
+
+    // Update cluster centroid to match bowl center
+    cluster.cx = cx;
+    cluster.cy = cy;
+
+    return { cx, cy, radius: bowlRadius, clusterId: cluster.id };
+  });
+
+  return { bowls, totalHeight, columns, cellWidth, cellHeight };
+}
+
+/**
+ * Custom force: constant gravity pulling spawned nodes downward.
+ * Not scaled by alpha so balls always fall until stopped by bowl/collision.
+ */
+function forceGravity(strength: number) {
+  let nodes: BallNode[] = [];
+
+  function force() {
+    for (const node of nodes) {
+      if (!node.spawned) continue;
+      node.vy! += strength;
+    }
+  }
+
+  force.initialize = function (_nodes: BallNode[]) {
+    nodes = _nodes;
+  };
+
+  return force;
+}
+
+/**
+ * Custom force: constrains nodes inside their cluster's bowl.
+ * Each node is pushed back into the bowl corresponding to its cluster.
+ */
+function forceMultiBowl(bowlMap: Map<number, BowlParams>) {
+  let nodes: BallNode[] = [];
+
+  function force() {
+    for (const node of nodes) {
+      if (!node.spawned) continue;
+
+      const bowl = bowlMap.get(node.cluster);
+      if (!bowl) continue;
+
+      // Only constrain nodes that have fallen into the bowl (below the rim)
+      if (node.y! < bowl.cy) continue;
+
+      const dx = node.x! - bowl.cx;
+      const dy = node.y! - bowl.cy;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const maxDist = bowl.radius - node.radius;
+
+      if (dist > maxDist && dist > 0) {
+        // Project back onto bowl boundary
+        const scale = maxDist / dist;
+        node.x = bowl.cx + dx * scale;
+        node.y = bowl.cy + dy * scale;
+
+        // Kill outward velocity component
+        const vDot = (node.vx! * dx + node.vy! * dy) / dist;
+        if (vDot > 0) {
+          node.vx! -= vDot * (dx / dist) * 0.8;
+          node.vy! -= vDot * (dy / dist) * 0.8;
+        }
+      }
+    }
+  }
+
+  force.initialize = function (_nodes: BallNode[]) {
+    nodes = _nodes;
+  };
+
+  return force;
+}
+
+/**
+ * Custom force: gently pulls each node toward the x-center of its bowl.
+ * Prevents balls from drifting sideways into other bowls.
+ */
+function forceBowlCentering(bowlMap: Map<number, BowlParams>, strength: number) {
+  let nodes: BallNode[] = [];
+
+  function force() {
+    for (const node of nodes) {
+      if (!node.spawned) continue;
+      const bowl = bowlMap.get(node.cluster);
+      if (!bowl) continue;
+      node.vx! += (bowl.cx - node.x!) * strength;
+    }
+  }
+
+  force.initialize = function (_nodes: BallNode[]) {
+    nodes = _nodes;
+  };
+
+  return force;
+}
+
+/**
+ * Create a d3-force simulation for the balls with per-cluster bowls.
+ * Uses gravity + multi-bowl boundary for a natural "pouring into bowls" effect.
  * Returns the simulation — caller controls the tick loop.
  */
 export function createSimulation(
   nodes: BallNode[],
-  width: number,
-  height: number,
+  bowls: BowlParams[],
 ): Simulation<BallNode, undefined> {
+  const bowlMap = new Map<number, BowlParams>();
+  for (const bowl of bowls) {
+    bowlMap.set(bowl.clusterId, bowl);
+  }
+
   const simulation = forceSimulation(nodes)
-    .force('charge', forceManyBody<BallNode>().strength(-0.3))
+    .force('gravity', forceGravity(1.2))
+    .force('bowl', forceMultiBowl(bowlMap))
+    .force('center', forceBowlCentering(bowlMap, 0.02))
     .force(
       'collide',
       forceCollide<BallNode>()
         .radius((d) => d.radius + 0.5)
-        .iterations(2),
+        .iterations(3),
     )
-    .force(
-      'clusterX',
-      forceX<BallNode>()
-        .x((d) => d.cx)
-        .strength(0.15),
-    )
-    .force(
-      'clusterY',
-      forceY<BallNode>()
-        .y((d) => d.cy)
-        .strength(0.15),
-    )
-    .alphaDecay(0.02)
-    .velocityDecay(0.3)
+    .alphaDecay(0.005)
+    .velocityDecay(0.4)
     .stop(); // We'll tick manually in the render loop
 
   return simulation;
-}
-
-/**
- * Add a temporary downward force to simulate balls pouring in.
- * Call removePourForce() once settled.
- */
-export function addPourForce(
-  simulation: Simulation<BallNode, undefined>,
-  height: number,
-): void {
-  simulation.force(
-    'pour',
-    forceY<BallNode>()
-      .y(height * 0.5)
-      .strength(0.05),
-  );
-}
-
-export function removePourForce(
-  simulation: Simulation<BallNode, undefined>,
-): void {
-  simulation.force('pour', null);
 }
 
 export interface BallTier {
@@ -185,11 +261,12 @@ export function getBallConfig(
   }
   return {
     tiers: [
+      { amount: 5_000_000, radius: 11 },
       { amount: 1_000_000, radius: 7 },
       { amount: 500_000, radius: 5 },
       { amount: 100_000, radius: 3 },
     ],
-    label: '$100K–$1M',
+    label: '$100K–$5M',
   };
 }
 
@@ -225,20 +302,4 @@ export function decomposeBalls(
   }
 
   return balls;
-}
-
-/**
- * Estimate a good canvas height based on total ball area.
- * Accepts either a uniform radius + count, or a pre-computed total area.
- */
-export function estimateCanvasHeight(
-  totalBallArea: number,
-  width: number,
-): number {
-  // Assume ~50% packing efficiency
-  const neededArea = totalBallArea / 0.5;
-  // Height = area / width, with label padding
-  const rawHeight = neededArea / width + 40;
-  // Clamp: min 300 for small drill-downs, max 650 for top-level
-  return Math.max(300, Math.min(rawHeight, 650));
 }

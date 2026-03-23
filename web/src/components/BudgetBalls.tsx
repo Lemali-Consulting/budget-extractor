@@ -1,4 +1,4 @@
-/**Interactive budget balls visualization — each ball = a unit of spending, clustered by department.*/
+/**Interactive budget balls visualization — each ball = a unit of spending, one bowl per department.*/
 
 import { useEffect, useRef, useState, useCallback } from 'preact/hooks';
 import { useContainerWidth } from '../lib/hooks';
@@ -6,13 +6,12 @@ import { assignColor, OTHER_COLOR } from '../lib/ball-colors';
 import {
   type BallNode,
   type ClusterInfo,
+  type BowlParams,
+  type BowlGridResult,
   createSimulation,
-  layoutClusters,
-  addPourForce,
-  removePourForce,
+  computeBowlGrid,
   getBallConfig,
   decomposeBalls,
-  estimateCanvasHeight,
 } from '../lib/ball-simulation';
 
 interface DepartmentBudget {
@@ -44,13 +43,19 @@ interface Props {
 interface ViewData {
   nodes: BallNode[];
   clusters: ClusterInfo[];
-  height: number;
+  grid: BowlGridResult;
   unit: number;
   unitLabel: string;
 }
 
 /** Minimum ball count for a department to be shown individually (not grouped into "Other"). */
 const MIN_BALLS_THRESHOLD = 5;
+
+/** Slug suffix used to identify trust fund departments. */
+const TRUST_FUND_MARKER = 'trust-fund';
+
+/** Synthetic slug for the consolidated trust funds bowl. */
+const TRUST_FUNDS_SLUG = '__trust-funds__';
 
 /** Format a dollar amount for display. */
 function fmtAmount(n: number): string {
@@ -78,10 +83,11 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
   // Refs for animation state (avoid re-renders during simulation)
   const nodesRef = useRef<BallNode[]>([]);
   const clustersRef = useRef<ClusterInfo[]>([]);
+  const bowlsRef = useRef<BowlParams[]>([]);
+  const gridRef = useRef<BowlGridResult | null>(null);
   const animFrameRef = useRef<number>(0);
   const simulationRef = useRef<ReturnType<typeof createSimulation> | null>(null);
   const spawnTimerRef = useRef<number>(0);
-  const pourRemovedRef = useRef(false);
   const canvasHeightRef = useRef(500);
 
   // Build department-level data
@@ -97,7 +103,18 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
       deptMap.set(row.slug, { dept: row.department, slug: row.slug, amount: row.amount });
     }
 
-    const depts = [...deptMap.values()].sort((a, b) => b.amount - a.amount);
+    // Separate trust funds from regular departments
+    const trustFundDepts: { dept: string; slug: string; amount: number }[] = [];
+    const regularDepts: { dept: string; slug: string; amount: number }[] = [];
+    for (const d of deptMap.values()) {
+      if (d.slug.endsWith(TRUST_FUND_MARKER)) {
+        trustFundDepts.push(d);
+      } else {
+        regularDepts.push(d);
+      }
+    }
+
+    const depts = regularDepts.sort((a, b) => b.amount - a.amount);
 
     // First pass: decompose all departments to determine ball counts
     const deptBalls = depts.map((d) => ({
@@ -126,6 +143,23 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
       }
     }
 
+    // Consolidated trust funds bowl
+    const trustTotal = trustFundDepts.reduce((s, d) => s + d.amount, 0);
+    const trustBalls = trustTotal > 0 ? decomposeBalls(trustTotal, tiers) : [];
+
+    if (trustFundDepts.length > 0) {
+      clusters.push({
+        id: clusters.length,
+        name: `Trust Funds (${trustFundDepts.length})`,
+        slug: TRUST_FUNDS_SLUG,
+        color: assignColor(colorIdx++, false),
+        total: trustTotal,
+        ballCount: trustBalls.length,
+        cx: 0,
+        cy: 0,
+      });
+    }
+
     // Pre-compute "Other" balls
     const otherTotal = otherDepts.reduce((s, d) => s + d.amount, 0);
     const otherBalls = otherTotal > 0 ? decomposeBalls(otherTotal, tiers) : [];
@@ -146,7 +180,9 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
     // Build a map from cluster id to its decomposed balls
     const clusterBallsMap = new Map<number, { amount: number; radius: number }[]>();
     for (const cluster of clusters) {
-      if (cluster.slug) {
+      if (cluster.slug === TRUST_FUNDS_SLUG) {
+        clusterBallsMap.set(cluster.id, trustBalls);
+      } else if (cluster.slug) {
         const d = deptBalls.find((db) => db.slug === cluster.slug);
         clusterBallsMap.set(cluster.id, d ? d.balls : []);
       } else {
@@ -154,18 +190,8 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
       }
     }
 
-    // Compute total ball area for height estimation
-    const totalBallArea = clusters.reduce((sum, cluster) => {
-      const balls = clusterBallsMap.get(cluster.id) || [];
-      return sum + balls.reduce((s, b) => {
-        const cellSize = (b.radius + 1) * 2;
-        return s + cellSize * cellSize;
-      }, 0);
-    }, 0);
-
-    const height = estimateCanvasHeight(totalBallArea, width);
-
-    layoutClusters(clusters, width, height);
+    // Compute bowl grid — this also sets cluster.cx/cy
+    const grid = computeBowlGrid(clusters, width);
 
     // Build nodes using decomposed balls per cluster
     const nodes: BallNode[] = [];
@@ -182,14 +208,78 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
           cx: cluster.cx,
           cy: cluster.cy,
           amount: ball.amount,
-          x: cluster.cx + (Math.random() - 0.5) * 20,
-          y: -20 - Math.random() * 100,
+          // Spawn above this cluster's bowl
+          x: cluster.cx + (Math.random() - 0.5) * 4,
+          y: -10 - Math.random() * 20,
           spawned: false,
         });
       }
     }
 
-    return { nodes, clusters, height, unit: smallestUnit, unitLabel };
+    return { nodes, clusters, grid, unit: smallestUnit, unitLabel };
+  }, [departmentBudgets, containerWidth]);
+
+  // Build trust fund drill-down: each trust fund becomes its own bowl
+  const buildTrustFundView = useCallback((): ViewData | null => {
+    const { tiers, label: unitLabel } = getBallConfig(containerWidth, true);
+    const smallestUnit = tiers[tiers.length - 1].amount;
+    const width = containerWidth;
+
+    // Get all trust fund departments for 2026
+    const trusts = departmentBudgets
+      .filter((r) => r.year === '2026 Budget' && r.slug.endsWith(TRUST_FUND_MARKER))
+      .sort((a, b) => b.amount - a.amount);
+
+    if (trusts.length === 0) return null;
+
+    const trustBalls = trusts.map((t) => ({
+      trust: t,
+      balls: decomposeBalls(t.amount, tiers),
+    }));
+
+    const clusters: ClusterInfo[] = [];
+    let colorIdx = 0;
+
+    for (const { trust, balls } of trustBalls) {
+      // Strip " Trust Fund" suffix for shorter labels
+      const shortName = trust.department.replace(/\s+Trust Fund$/i, '');
+      clusters.push({
+        id: clusters.length,
+        name: shortName,
+        slug: trust.slug,
+        color: assignColor(colorIdx++, false),
+        total: trust.amount,
+        ballCount: balls.length,
+        cx: 0,
+        cy: 0,
+      });
+    }
+
+    const grid = computeBowlGrid(clusters, width);
+
+    const nodes: BallNode[] = [];
+    for (let ci = 0; ci < clusters.length; ci++) {
+      const cluster = clusters[ci];
+      const balls = trustBalls[ci].balls;
+
+      for (const ball of balls) {
+        nodes.push({
+          id: nodes.length,
+          cluster: cluster.id,
+          clusterName: cluster.name,
+          color: cluster.color,
+          radius: ball.radius,
+          cx: cluster.cx,
+          cy: cluster.cy,
+          amount: ball.amount,
+          x: cluster.cx + (Math.random() - 0.5) * 4,
+          y: -10 - Math.random() * 20,
+          spawned: false,
+        });
+      }
+    }
+
+    return { nodes, clusters, grid, unit: smallestUnit, unitLabel };
   }, [departmentBudgets, containerWidth]);
 
   // Build category drill-down data
@@ -223,15 +313,8 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
         });
       }
 
-      // Compute total ball area for height estimation
-      const totalBallArea = catBalls.flatMap((cb) => cb.balls).reduce((sum, b) => {
-        const cellSize = (b.radius + 1) * 2;
-        return sum + cellSize * cellSize;
-      }, 0);
-
-      const height = estimateCanvasHeight(totalBallArea, width);
-
-      layoutClusters(clusters, width, height);
+      // Compute bowl grid — sets cluster.cx/cy
+      const grid = computeBowlGrid(clusters, width);
 
       const nodes: BallNode[] = [];
       for (let ci = 0; ci < clusters.length; ci++) {
@@ -248,14 +331,14 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
             cx: cluster.cx,
             cy: cluster.cy,
             amount: ball.amount,
-            x: cluster.cx + (Math.random() - 0.5) * 20,
-            y: -20 - Math.random() * 100,
+            x: cluster.cx + (Math.random() - 0.5) * 4,
+            y: -10 - Math.random() * 20,
             spawned: false,
           });
         }
       }
 
-      return { nodes, clusters, height, unit: smallestUnit, unitLabel };
+      return { nodes, clusters, grid, unit: smallestUnit, unitLabel };
     },
     [expenditureDetails, containerWidth],
   );
@@ -279,6 +362,49 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
 
     ctx.clearRect(0, 0, w, h);
 
+    const grid = gridRef.current;
+    const clusters = clustersRef.current;
+    const bowls = bowlsRef.current;
+
+    // Draw each bowl arc and label
+    for (let i = 0; i < bowls.length; i++) {
+      const bowl = bowls[i];
+      const cluster = clusters[i];
+      if (!cluster) continue;
+
+      // Bowl arc (semicircle opening upward)
+      ctx.beginPath();
+      ctx.arc(bowl.cx, bowl.cy, bowl.radius, 0, Math.PI);
+      ctx.strokeStyle = '#cbd5e1'; // slate-300
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Subtle fill
+      ctx.beginPath();
+      ctx.arc(bowl.cx, bowl.cy, bowl.radius, 0, Math.PI);
+      ctx.fillStyle = 'rgba(241, 245, 249, 0.5)'; // slate-100 translucent
+      ctx.fill();
+
+      // Label below bowl
+      const labelY = bowl.cy + bowl.radius + 8;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+
+      // Cluster name
+      ctx.font = 'bold 11px system-ui, sans-serif';
+      ctx.fillStyle = '#374151';
+      let label = cluster.name;
+      // Truncate based on cell width
+      const maxChars = grid ? Math.floor(grid.cellWidth / 7) : 20;
+      if (label.length > maxChars) label = label.slice(0, maxChars - 1) + '…';
+      ctx.fillText(label, bowl.cx, labelY);
+
+      // Total amount
+      ctx.font = '10px system-ui, sans-serif';
+      ctx.fillStyle = '#6b7280';
+      ctx.fillText(fmtAmount(cluster.total), bowl.cx, labelY + 14);
+    }
+
     // Draw balls
     const nodes = nodesRef.current;
     for (const node of nodes) {
@@ -288,85 +414,79 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
       ctx.fillStyle = node.color;
       ctx.fill();
     }
-
-    // Draw cluster labels — collect positions first, then skip overlapping ones
-    const clusters = clustersRef.current;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
-
-    const labelPositions: { x: number; y: number; w: number; cluster: ClusterInfo }[] = [];
-
-    for (const cluster of [...clusters].sort((a, b) => b.ballCount - a.ballCount)) {
-      if (cluster.ballCount < 8) continue;
-
-      const clusterNodes = nodes.filter(
-        (n) => n.cluster === cluster.id && n.spawned,
-      );
-      if (clusterNodes.length === 0) continue;
-
-      const avgX =
-        clusterNodes.reduce((s, n) => s + n.x!, 0) / clusterNodes.length;
-      const maxY = Math.max(...clusterNodes.map((n) => n.y! + n.radius));
-
-      let label = cluster.name;
-      if (label.length > 22) label = label.slice(0, 20) + '…';
-
-      // Estimate label width (~6px per char)
-      const labelWidth = label.length * 6;
-
-      // Check for overlap with already-placed labels
-      const overlaps = labelPositions.some(
-        (p) =>
-          Math.abs(p.x - avgX) < (p.w + labelWidth) / 2 + 8 &&
-          Math.abs(p.y - maxY) < 28,
-      );
-      if (overlaps) continue;
-
-      labelPositions.push({ x: avgX, y: maxY, w: labelWidth, cluster });
-
-      ctx.font = 'bold 11px system-ui, sans-serif';
-      ctx.fillStyle = '#374151';
-      ctx.fillText(label, avgX, maxY + 5);
-      ctx.font = '10px system-ui, sans-serif';
-      ctx.fillStyle = '#6b7280';
-      ctx.fillText(fmtAmount(cluster.total), avgX, maxY + 19);
-    }
   }, [containerWidth]);
 
   // Animation loop
-  const startAnimation = useCallback((height: number) => {
+  const startAnimation = useCallback(() => {
     const simulation = simulationRef.current;
     if (!simulation) return;
 
     const nodes = nodesRef.current;
+    const bowls = bowlsRef.current;
+
+    // Build a map from cluster id to bowl for spawn positions
+    const bowlMap = new Map<number, BowlParams>();
+    for (const bowl of bowls) {
+      bowlMap.set(bowl.clusterId, bowl);
+    }
+
+    // Build round-robin spawn order so all bowls fill simultaneously
+    const nodesByCluster = new Map<number, BallNode[]>();
+    for (const node of nodes) {
+      let list = nodesByCluster.get(node.cluster);
+      if (!list) {
+        list = [];
+        nodesByCluster.set(node.cluster, list);
+      }
+      list.push(node);
+    }
+    const clusterQueues = [...nodesByCluster.values()];
+    const spawnOrder: BallNode[] = [];
+    let remaining = true;
+    while (remaining) {
+      remaining = false;
+      for (const queue of clusterQueues) {
+        if (queue.length > 0) {
+          spawnOrder.push(queue.shift()!);
+          if (queue.length > 0) remaining = true;
+        }
+      }
+    }
+
     let spawnIdx = 0;
-    const batchSize = Math.max(10, Math.floor(nodes.length / 60));
-    pourRemovedRef.current = false;
+    let frameCount = 0;
+    const framesPerBall = 2;
 
     const spawnBatch = () => {
-      const end = Math.min(spawnIdx + batchSize, nodes.length);
-      for (let i = spawnIdx; i < end; i++) {
-        nodes[i].spawned = true;
+      frameCount++;
+      if (frameCount % framesPerBall === 0 && spawnIdx < spawnOrder.length) {
+        const node = spawnOrder[spawnIdx];
+        const bowl = bowlMap.get(node.cluster);
+        // Spawn just above this node's bowl rim
+        node.x = (bowl?.cx ?? containerWidth / 2) + (Math.random() - 0.5) * 4;
+        node.y = (bowl?.cy ?? 0) - (bowl?.radius ?? 50) - 15;
+        node.vx = 0;
+        node.vy = 0;
+        node.spawned = true;
+        spawnIdx++;
       }
-      spawnIdx = end;
 
-      if (spawnIdx < nodes.length) {
+      if (spawnIdx < spawnOrder.length) {
         spawnTimerRef.current = requestAnimationFrame(spawnBatch);
       }
     };
 
-    addPourForce(simulation, height);
     simulation.alpha(1).restart();
 
     const tick = () => {
-      if (!pourRemovedRef.current && simulation.alpha() < 0.3) {
-        removePourForce(simulation);
-        pourRemovedRef.current = true;
+      // Keep simulation warm while balls are still spawning
+      if (spawnIdx < spawnOrder.length && simulation.alpha() < 0.3) {
+        simulation.alpha(0.3);
       }
 
       render();
 
-      if (simulation.alpha() > 0.001) {
+      if (spawnIdx < spawnOrder.length || simulation.alpha() > 0.001) {
         animFrameRef.current = requestAnimationFrame(tick);
       } else {
         render();
@@ -375,7 +495,7 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
 
     spawnBatch();
     animFrameRef.current = requestAnimationFrame(tick);
-  }, [render]);
+  }, [render, containerWidth]);
 
   // Initialize / reset simulation
   useEffect(() => {
@@ -386,7 +506,13 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
     simulationRef.current?.stop();
 
     let data: ViewData | null;
-    if (drillDept) {
+    if (drillDept === TRUST_FUNDS_SLUG) {
+      data = buildTrustFundView();
+      if (!data) {
+        setDrillDept(null);
+        return;
+      }
+    } else if (drillDept) {
       data = buildCategoryView(drillDept);
       if (!data) {
         setDrillDept(null);
@@ -398,27 +524,28 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
 
     nodesRef.current = data.nodes;
     clustersRef.current = data.clusters;
-    canvasHeightRef.current = data.height;
+    bowlsRef.current = data.grid.bowls;
+    gridRef.current = data.grid;
+    canvasHeightRef.current = data.grid.totalHeight;
     setViewInfo({
       ballCount: data.nodes.length,
       unitLabel: data.unitLabel,
-      height: data.height,
+      height: data.grid.totalHeight,
     });
 
     simulationRef.current = createSimulation(
       data.nodes,
-      containerWidth,
-      data.height,
+      data.grid.bowls,
     );
 
-    startAnimation(data.height);
+    startAnimation();
 
     return () => {
       cancelAnimationFrame(animFrameRef.current);
       cancelAnimationFrame(spawnTimerRef.current);
       simulationRef.current?.stop();
     };
-  }, [containerWidth, drillDept, buildDepartmentView, buildCategoryView, startAnimation]);
+  }, [containerWidth, drillDept, buildDepartmentView, buildCategoryView, buildTrustFundView, startAnimation]);
 
   // Hit detection on mouse move
   const handleMouseMove = useCallback(
@@ -503,9 +630,11 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
     setTooltip(null);
   }, []);
 
-  const activeDept = drillDept
-    ? expenditureDetails.find((d) => d.slug === drillDept)?.department
-    : null;
+  const activeDept = drillDept === TRUST_FUNDS_SLUG
+    ? 'Trust Funds'
+    : drillDept
+      ? expenditureDetails.find((d) => d.slug === drillDept)?.department
+      : null;
 
   return (
     <div ref={containerRef} class="relative">
@@ -553,8 +682,8 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
             style={{ height: `${viewInfo.height}px` }}
             aria-label={
               drillDept
-                ? `Budget breakdown for ${activeDept}: expenditure categories shown as clusters of balls`
-                : `City of Pittsburgh 2026 operating budget: ${viewInfo.ballCount.toLocaleString()} balls representing departments`
+                ? `Budget breakdown for ${activeDept}: expenditure categories shown as balls in separate bowls`
+                : `City of Pittsburgh 2026 operating budget: ${viewInfo.ballCount.toLocaleString()} balls in department bowls`
             }
             role="img"
           />
@@ -572,19 +701,6 @@ export default function BudgetBalls({ departmentBudgets, expenditureDetails }: P
           )}
         </div>
       )}
-
-      {/* Legend */}
-      <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1">
-        {clustersRef.current.map((cluster) => (
-          <div key={cluster.id} class="flex items-center gap-1 text-xs text-gray-600">
-            <span
-              class="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0"
-              style={{ backgroundColor: cluster.color }}
-            />
-            <span class="truncate max-w-[150px]">{cluster.name}</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

@@ -6572,7 +6572,25 @@
               "36",
               "",
               "2,752,838"
-            ],
+            ]
+          ],
+          "absolute_page": 60
+        },
+        {
+          "id": "s10_p2_t1",
+          "relative_page": 2,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 Rate/ FTE Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 Rate/ FTE Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -6628,7 +6646,6 @@
               "2,778,838"
             ]
           ],
-          "absolute_page": 60,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -6636,7 +6653,9 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 60,
+          "linked_narrative": "Each of the nine Council Members have discretion on how they would like to budget their staff salary allocations. The proposed budget for each office (not including the Council Member) for 2025 is approximately $216,000."
         },
         {
           "id": "s10_p3_t0",
@@ -8677,7 +8696,85 @@
               "",
               "",
               "2,915,653"
-            ],
+            ]
+          ],
+          "sections": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee",
+            "Total Office of Immigrant and Refugee"
+          ],
+          "absolute_page": 70
+        },
+        {
+          "id": "s12_p3_t0",
+          "relative_page": 3,
+          "table_index": 0,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -8779,62 +8876,6 @@
             ]
           ],
           "sections": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
-            "Total Office of Immigrant and Refugee",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -8845,7 +8886,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
           ],
-          "absolute_page": 70
+          "absolute_page": 71
         },
         {
           "id": "s12_p4_t0",
@@ -9714,7 +9755,27 @@
               "",
               "",
               "2,766,381"
-            ],
+            ]
+          ],
+          "absolute_page": 78
+        },
+        {
+          "id": "s13_p4_t1",
+          "relative_page": 4,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -9793,7 +9854,6 @@
               "2,660,726"
             ]
           ],
-          "absolute_page": 78,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -9802,7 +9862,9 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 78,
+          "linked_narrative": "Community Development positions are described in the appropriate Trust Fund section. 78"
         },
         {
           "id": "s13_p5_t0",
@@ -11184,116 +11246,6 @@
               "",
               "",
               "5,363,799"
-            ],
-            [
-              "Temporary, Part-Time, and Seasonal Allowances",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ],
-            [
-              "I&P Intern",
-              "\u2014",
-              "15.00",
-              "\u2014",
-              "32,550",
-              "\u2014",
-              "15.00",
-              "\u2014",
-              "30,000"
-            ],
-            [
-              "G.I.S. Intern",
-              "\u2014",
-              "15.00",
-              "\u2014",
-              "21,500",
-              "\u2014",
-              "",
-              "\u2014",
-              "\u2014"
-            ],
-            [
-              "Cybersecurity Fellow",
-              "\u2014",
-              "15.00",
-              "\u2014",
-              "18,000",
-              "\u2014",
-              "15.00",
-              "\u2014",
-              "18,000"
-            ],
-            [
-              "",
-              "\u2014",
-              "",
-              "",
-              "72,050",
-              "\u2014",
-              "",
-              "",
-              "48,000"
-            ],
-            [
-              "Total Full-Time Permanent Positions",
-              "67",
-              "",
-              "",
-              "5,101,571",
-              "68",
-              "",
-              "",
-              "5,363,799"
-            ],
-            [
-              "Temporary, Part-Time, and Seasonal Allowances",
-              "\u2014",
-              "",
-              "",
-              "72,050",
-              "\u2014",
-              "",
-              "",
-              "48,000"
-            ],
-            [
-              "Vacancy Allowance",
-              "\u2014",
-              "",
-              "",
-              "(300,511)",
-              "\u2014",
-              "",
-              "",
-              "(321,828)"
-            ],
-            [
-              "Digital Equity Grant Funding",
-              "\u2014",
-              "",
-              "",
-              "(30,000)",
-              "\u2014",
-              "",
-              "",
-              "\u2014"
-            ],
-            [
-              "Total Full-time Positions and Net Salaries",
-              "67",
-              "",
-              "",
-              "4,843,110",
-              "68",
-              "",
-              "",
-              "5,089,971"
             ]
           ],
           "sections": [
@@ -11357,14 +11309,166 @@
             "Communications",
             "Communications",
             "Communications",
-            "Communications",
+            "Communications"
+          ],
+          "absolute_page": 84
+        },
+        {
+          "id": "s14_p4_t0",
+          "relative_page": 4,
+          "table_index": 0,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
+            [
+              "Temporary, Part-Time, and Seasonal Allowances",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "I&P Intern",
+              "\u2014",
+              "15.00",
+              "\u2014",
+              "32,550",
+              "\u2014",
+              "15.00",
+              "\u2014",
+              "30,000"
+            ],
+            [
+              "G.I.S. Intern",
+              "\u2014",
+              "15.00",
+              "\u2014",
+              "21,500",
+              "\u2014",
+              "",
+              "\u2014",
+              "\u2014"
+            ],
+            [
+              "Cybersecurity Fellow",
+              "\u2014",
+              "15.00",
+              "\u2014",
+              "18,000",
+              "\u2014",
+              "15.00",
+              "\u2014",
+              "18,000"
+            ],
+            [
+              "",
+              "\u2014",
+              "",
+              "",
+              "72,050",
+              "\u2014",
+              "",
+              "",
+              "48,000"
+            ]
+          ],
+          "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
           ],
-          "absolute_page": 84
+          "absolute_page": 85
+        },
+        {
+          "id": "s14_p4_t1",
+          "relative_page": 4,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
+            [
+              "Total Full-Time Permanent Positions",
+              "67",
+              "",
+              "",
+              "5,101,571",
+              "68",
+              "",
+              "",
+              "5,363,799"
+            ],
+            [
+              "Temporary, Part-Time, and Seasonal Allowances",
+              "\u2014",
+              "",
+              "",
+              "72,050",
+              "\u2014",
+              "",
+              "",
+              "48,000"
+            ],
+            [
+              "Vacancy Allowance",
+              "\u2014",
+              "",
+              "",
+              "(300,511)",
+              "\u2014",
+              "",
+              "",
+              "(321,828)"
+            ],
+            [
+              "Digital Equity Grant Funding",
+              "\u2014",
+              "",
+              "",
+              "(30,000)",
+              "\u2014",
+              "",
+              "",
+              "\u2014"
+            ],
+            [
+              "Total Full-time Positions and Net Salaries",
+              "67",
+              "",
+              "",
+              "4,843,110",
+              "68",
+              "",
+              "",
+              "5,089,971"
+            ]
+          ],
+          "absolute_page": 85
         },
         {
           "id": "s14_p5_t0",
@@ -12091,7 +12195,27 @@
               "",
               "",
               "560,280"
-            ],
+            ]
+          ],
+          "absolute_page": 91
+        },
+        {
+          "id": "s15_p3_t1",
+          "relative_page": 3,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -12159,7 +12283,6 @@
               "565,280"
             ]
           ],
-          "absolute_page": 91,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -12167,7 +12290,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 91
         },
         {
           "id": "s15_p4_t0",
@@ -13277,7 +13401,81 @@
               "",
               "",
               "4,263,583"
-            ],
+            ]
+          ],
+          "sections": [
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Administration",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Contracts & Policy",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Accounting",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Inspectors",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Accounts Payable",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit",
+            "Audit"
+          ],
+          "absolute_page": 97
+        },
+        {
+          "id": "s16_p4_t0",
+          "relative_page": 4,
+          "table_index": 0,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -13368,58 +13566,6 @@
             ]
           ],
           "sections": [
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Administration",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Contracts & Policy",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Accounting",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Inspectors",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Accounts Payable",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
-            "Audit",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -13429,7 +13575,7 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
           ],
-          "absolute_page": 97
+          "absolute_page": 98
         },
         {
           "id": "s16_p5_t0",
@@ -14354,7 +14500,59 @@
               "",
               "",
               "2,435,016"
-            ],
+            ]
+          ],
+          "sections": [
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Administration & Treasury Division",
+            "Business Intelligence",
+            "Business Intelligence",
+            "Business Intelligence",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Cash Management",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Tax Compliance  Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division",
+            "Real Estate Division"
+          ],
+          "absolute_page": 105
+        },
+        {
+          "id": "s17_p4_t1",
+          "relative_page": 4,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -14456,36 +14654,6 @@
             ]
           ],
           "sections": [
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Administration & Treasury Division",
-            "Business Intelligence",
-            "Business Intelligence",
-            "Business Intelligence",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Cash Management",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Tax Compliance  Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
-            "Real Estate Division",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -15644,7 +15812,27 @@
               "",
               "",
               "3,402,187"
-            ],
+            ]
+          ],
+          "absolute_page": 113
+        },
+        {
+          "id": "s18_p3_t1",
+          "relative_page": 3,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -15745,7 +15933,6 @@
               "3,377,778"
             ]
           ],
-          "absolute_page": 113,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -15756,7 +15943,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 113
         },
         {
           "id": "s18_p4_t0",
@@ -16389,7 +16577,27 @@
               "",
               "",
               "110,718"
-            ],
+            ]
+          ],
+          "absolute_page": 119
+        },
+        {
+          "id": "s19_p3_t1",
+          "relative_page": 3,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -16457,7 +16665,6 @@
               "125,718"
             ]
           ],
-          "absolute_page": 119,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -16465,7 +16672,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 119
         },
         {
           "id": "s19_p4_t0",
@@ -20342,7 +20550,27 @@
               "",
               "",
               "8,542,894"
-            ],
+            ]
+          ],
+          "absolute_page": 148
+        },
+        {
+          "id": "s23_p4_t1",
+          "relative_page": 4,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -20377,12 +20605,12 @@
               "5,000"
             ]
           ],
-          "absolute_page": 148,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 148
         },
         {
           "id": "s23_p5_t0",
@@ -23645,7 +23873,27 @@
               "",
               "",
               "75,366,052"
-            ],
+            ]
+          ],
+          "absolute_page": 175
+        },
+        {
+          "id": "s26_p5_t1",
+          "relative_page": 5,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -23735,7 +23983,6 @@
               "75,394,680"
             ]
           ],
-          "absolute_page": 175,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -23745,7 +23992,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 175
         },
         {
           "id": "s26_p6_t0",
@@ -24852,7 +25100,27 @@
               "",
               "",
               "56,639,494"
-            ],
+            ]
+          ],
+          "absolute_page": 183
+        },
+        {
+          "id": "s27_p3_t1",
+          "relative_page": 3,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -24885,7 +25153,32 @@
               "",
               "",
               "1,081,167"
-            ],
+            ]
+          ],
+          "sections": [
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances"
+          ],
+          "absolute_page": 183
+        },
+        {
+          "id": "s27_p3_t2",
+          "relative_page": 3,
+          "table_index": 2,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Total Full-Time Permanent Positions",
               "679",
@@ -24953,12 +25246,7 @@
               "57,735,661"
             ]
           ],
-          "absolute_page": 183,
-          "sections": [
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          "absolute_page": 183
         },
         {
           "id": "s27_p3_t3",
@@ -26977,7 +27265,27 @@
               "",
               "",
               "2,143,760"
-            ],
+            ]
+          ],
+          "absolute_page": 206
+        },
+        {
+          "id": "s31_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -27056,7 +27364,6 @@
               "2,059,572"
             ]
           ],
-          "absolute_page": 206,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -27065,7 +27372,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 206
         },
         {
           "id": "s31_p2_t0",
@@ -27836,7 +28144,27 @@
               "",
               "",
               "15,978,143"
-            ],
+            ]
+          ],
+          "absolute_page": 210
+        },
+        {
+          "id": "s32_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -27915,7 +28243,6 @@
               "15,247,009"
             ]
           ],
-          "absolute_page": 210,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -27924,7 +28251,9 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 210,
+          "linked_narrative": "The labor agreement for AFSMCE 2037 members expires on December 31, 2024. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change."
         },
         {
           "id": "s32_p2_t0",
@@ -28849,7 +29178,27 @@
               "",
               "",
               "10,232,371"
-            ],
+            ]
+          ],
+          "absolute_page": 215
+        },
+        {
+          "id": "s33_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2023 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2023 Budget",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -28882,7 +29231,32 @@
               "",
               "",
               "281,070"
-            ],
+            ]
+          ],
+          "sections": [
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances",
+            "Temporary, Part-Time, and Seasonal Allowances"
+          ],
+          "absolute_page": 215
+        },
+        {
+          "id": "s33_p1_t2",
+          "relative_page": 1,
+          "table_index": 2,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2023 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2023 Budget",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget"
+          ],
+          "rows": [
             [
               "Total Full-Time Permanent Positions",
               "195",
@@ -28940,11 +29314,7 @@
             ]
           ],
           "absolute_page": 215,
-          "sections": [
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances",
-            "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          "linked_narrative": "The labor agreement for AFSMCE 2037 members expires on December 31, 2024. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change."
         },
         {
           "id": "s33_p2_t0",
@@ -30905,7 +31275,27 @@
               "",
               "",
               "2,895,805"
-            ],
+            ]
+          ],
+          "absolute_page": 227
+        },
+        {
+          "id": "s35_p4_t1",
+          "relative_page": 4,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -31083,7 +31473,6 @@
               "4,160,281"
             ]
           ],
-          "absolute_page": 227,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -31101,7 +31490,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 227
         },
         {
           "id": "s35_p5_t0",
@@ -32784,7 +33174,27 @@
               "",
               "",
               "8,702,174"
-            ],
+            ]
+          ],
+          "absolute_page": 237
+        },
+        {
+          "id": "s36_p6_t0",
+          "relative_page": 6,
+          "table_index": 0,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -32896,7 +33306,6 @@
               "8,259,497"
             ]
           ],
-          "absolute_page": 237,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -32908,7 +33317,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 238
         },
         {
           "id": "s36_p7_t0",
@@ -33724,7 +34134,27 @@
               "",
               "",
               "594,919"
-            ],
+            ]
+          ],
+          "absolute_page": 245
+        },
+        {
+          "id": "s37_p4_t1",
+          "relative_page": 4,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -33792,7 +34222,6 @@
               "599,919"
             ]
           ],
-          "absolute_page": 245,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -33800,7 +34229,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 245
         },
         {
           "id": "s37_p5_t0",
@@ -39799,7 +40229,27 @@
               "",
               "",
               "52,145"
-            ],
+            ]
+          ],
+          "absolute_page": 273
+        },
+        {
+          "id": "s50_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -39878,7 +40328,6 @@
               "85,413"
             ]
           ],
-          "absolute_page": 273,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -39887,7 +40336,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 273
         },
         {
           "id": "s50_p1_t2",
@@ -40398,7 +40848,27 @@
               "",
               "",
               "751,557"
-            ],
+            ]
+          ],
+          "absolute_page": 275
+        },
+        {
+          "id": "s51_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -40576,7 +41046,6 @@
               "1,557,903"
             ]
           ],
-          "absolute_page": 275,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -40594,7 +41063,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 275
         },
         {
           "id": "s51_p1_t2",
@@ -41031,7 +41501,27 @@
               "",
               "",
               "200,832"
-            ],
+            ]
+          ],
+          "absolute_page": 277
+        },
+        {
+          "id": "s52_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -41099,7 +41589,6 @@
               "239,016"
             ]
           ],
-          "absolute_page": 277,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -41107,7 +41596,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 277
         },
         {
           "id": "s52_p1_t2",
@@ -41918,7 +42408,27 @@
               "",
               "",
               "1,369,903"
-            ],
+            ]
+          ],
+          "absolute_page": 280
+        },
+        {
+          "id": "s54_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -41986,7 +42496,6 @@
               "1,560,823"
             ]
           ],
-          "absolute_page": 280,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -41994,7 +42503,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 280
         },
         {
           "id": "s54_p1_t2",
@@ -42356,7 +42866,27 @@
               "",
               "",
               "83,512"
-            ],
+            ]
+          ],
+          "absolute_page": 282
+        },
+        {
+          "id": "s55_p1_t1",
+          "relative_page": 1,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Temporary, Part-Time, and Seasonal Allowances",
               "",
@@ -42446,7 +42976,6 @@
               "189,322"
             ]
           ],
-          "absolute_page": 282,
           "sections": [
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
@@ -42456,7 +42985,8 @@
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances",
             "Temporary, Part-Time, and Seasonal Allowances"
-          ]
+          ],
+          "absolute_page": 282
         }
       ],
       "page_content": [
@@ -43291,7 +43821,27 @@
               "",
               "",
               "98,517"
-            ],
+            ]
+          ],
+          "absolute_page": 305
+        },
+        {
+          "id": "s58_p10_t1",
+          "relative_page": 10,
+          "table_index": 1,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Data Analyst",
               "1",
@@ -43324,7 +43874,27 @@
               "",
               "",
               "138,176"
-            ],
+            ]
+          ],
+          "absolute_page": 305
+        },
+        {
+          "id": "s58_p10_t2",
+          "relative_page": 10,
+          "table_index": 2,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Project Manager",
               "1",
@@ -43381,7 +43951,8 @@
               "498,197"
             ]
           ],
-          "absolute_page": 305
+          "absolute_page": 305,
+          "linked_narrative": "Position Summary: Post-Overdose  - Substance Abuse and Mental Health Services Administration 2129400452"
         },
         {
           "id": "s58_p10_t3",
@@ -44334,7 +44905,27 @@
               "",
               "",
               "\u2014"
-            ],
+            ]
+          ],
+          "absolute_page": 304
+        },
+        {
+          "id": "s58_p9_t3",
+          "relative_page": 9,
+          "table_index": 3,
+          "table_type": "personnel",
+          "headers": [
+            "Title",
+            "2024 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2024 Budget",
+            "2025 FTE",
+            "Rate/ Grade",
+            "Hours/ Months",
+            "2025 Budget"
+          ],
+          "rows": [
             [
               "Tree Equity Lead",
               "1",

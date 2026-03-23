@@ -693,7 +693,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 Rate/ FTE Grade",
@@ -703,11 +703,38 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 9,
+    "rowCount": 3,
     "numericCols": [
       2,
       3,
       5,
+      6
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s10_p2_t1",
+    "sectionNumber": 10,
+    "sectionTitle": "City Council",
+    "sectionSlug": "city-council",
+    "page": 2,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 Rate/ FTE Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 Rate/ FTE Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      3,
+      4,
       6
     ],
     "budgetType": "operating"
@@ -874,7 +901,7 @@
     "page": 2,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -886,13 +913,42 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 65,
+    "rowCount": 56,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s12_p3_t0",
+    "sectionNumber": 12,
+    "sectionTitle": "Office of the Mayor",
+    "sectionSlug": "office-of-the-mayor",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -958,7 +1014,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -970,13 +1026,42 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 33,
+    "rowCount": 26,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s13_p4_t1",
+    "sectionNumber": 13,
+    "sectionTitle": "Office of Management and Budget",
+    "sectionSlug": "office-of-management-and-budget",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -1059,7 +1144,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -1071,13 +1156,71 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 71,
+    "rowCount": 61,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s14_p4_t0",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s14_p4_t1",
+    "sectionNumber": 14,
+    "sectionTitle": "Department of Innovation and Performance",
+    "sectionSlug": "department-of-innovation-and-performance",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (3)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -1160,7 +1303,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -1172,13 +1315,42 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 12,
+    "rowCount": 6,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s15_p3_t1",
+    "sectionNumber": 15,
+    "sectionTitle": "Commission on Human Relations",
+    "sectionSlug": "commission-on-human-relations",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -1244,7 +1416,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -1256,13 +1428,43 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 60,
+    "rowCount": 52,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s16_p4_t0",
+    "sectionNumber": 16,
+    "sectionTitle": "Office of the City Controller",
+    "sectionSlug": "office-of-the-city-controller",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 8,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -1345,7 +1547,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -1357,7 +1559,38 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 39,
+    "rowCount": 30,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s17_p4_t1",
+    "sectionNumber": 17,
+    "sectionTitle": "Department of Finance",
+    "sectionSlug": "department-of-finance",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 9,
     "numericCols": [
       1,
       3,
@@ -1464,7 +1697,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -1476,12 +1709,45 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 25,
+    "rowCount": 16,
     "numericCols": [
       1,
       3,
       4,
       5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s18_p3_t1",
+    "sectionNumber": 18,
+    "sectionTitle": "Department of Law",
+    "sectionSlug": "department-of-law",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
       7,
       8
     ],
@@ -1548,7 +1814,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -1560,13 +1826,42 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 8,
+    "rowCount": 2,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s19_p3_t1",
+    "sectionNumber": 19,
+    "sectionTitle": "Ethics Hearing Board",
+    "sectionSlug": "ethics-hearing-board",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -1961,7 +2256,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -1973,13 +2268,40 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 37,
+    "rowCount": 34,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s23_p4_t1",
+    "sectionNumber": 23,
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "sectionSlug": "department-of-permits-licenses-and-inspections",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      4,
       8
     ],
     "budgetType": "operating"
@@ -2291,7 +2613,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -2303,7 +2625,38 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 32,
+    "rowCount": 24,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s26_p5_t1",
+    "sectionNumber": 26,
+    "sectionTitle": "Bureau of Police",
+    "sectionSlug": "bureau-of-police",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 8,
     "numericCols": [
       1,
       3,
@@ -2396,7 +2749,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -2408,7 +2761,7 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 24,
+    "rowCount": 15,
     "numericCols": [
       1,
       2,
@@ -2417,6 +2770,64 @@
       5,
       6,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s27_p3_t1",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 3,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s27_p3_t2",
+    "sectionNumber": 27,
+    "sectionTitle": "Bureau of Fire",
+    "sectionSlug": "bureau-of-fire",
+    "page": 3,
+    "tableIndex": 2,
+    "type": "personnel",
+    "label": "Personnel (3)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -2682,7 +3093,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -2694,12 +3105,45 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 29,
+    "rowCount": 22,
     "numericCols": [
       1,
       3,
       4,
       5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s31_p1_t1",
+    "sectionNumber": 31,
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "sectionSlug": "bureau-of-administration-public-works",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
       7,
       8
     ],
@@ -2766,7 +3210,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -2778,7 +3222,40 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 32,
+    "rowCount": 25,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s32_p1_t1",
+    "sectionNumber": 32,
+    "sectionTitle": "Bureau of Operations",
+    "sectionSlug": "bureau-of-operations",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 7,
     "numericCols": [
       1,
       2,
@@ -2849,7 +3326,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2023 FTE",
@@ -2861,13 +3338,73 @@
       "Hours/ Months",
       "2024 Budget"
     ],
-    "rowCount": 28,
+    "rowCount": 20,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s33_p1_t1",
+    "sectionNumber": 33,
+    "sectionTitle": "Bureau of Environmental Services",
+    "sectionSlug": "bureau-of-environmental-services",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2023 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2023 Budget",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s33_p1_t2",
+    "sectionNumber": 33,
+    "sectionTitle": "Bureau of Environmental Services",
+    "sectionSlug": "bureau-of-environmental-services",
+    "page": 1,
+    "tableIndex": 2,
+    "type": "personnel",
+    "label": "Personnel (3)",
+    "headers": [
+      "Title",
+      "2023 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2023 Budget",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget"
+    ],
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -3045,7 +3582,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -3057,13 +3594,45 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 34,
+    "rowCount": 18,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p4_t1",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 16,
     "numericCols": [
       1,
       2,
       3,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -3167,7 +3736,7 @@
     "page": 5,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -3179,12 +3748,45 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 87,
+    "rowCount": 77,
     "numericCols": [
       1,
       3,
       4,
       5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s36_p6_t0",
+    "sectionNumber": 36,
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "sectionSlug": "department-of-mobility-and-infrastructure",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
       7,
       8
     ],
@@ -3268,7 +3870,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -3280,13 +3882,42 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 13,
+    "rowCount": 7,
     "numericCols": [
       1,
       3,
       4,
       5,
       7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s37_p4_t1",
+    "sectionNumber": 37,
+    "sectionTitle": "Citizen Police Review Board",
+    "sectionSlug": "citizen-police-review-board",
+    "page": 4,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 6,
+    "numericCols": [
+      1,
+      4,
+      5,
       8
     ],
     "budgetType": "operating"
@@ -4511,7 +5142,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -4523,12 +5154,45 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 10,
+    "rowCount": 3,
     "numericCols": [
       1,
       3,
       4,
       5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s50_p1_t1",
+    "sectionNumber": 50,
+    "sectionTitle": "Special Events Trust Fund",
+    "sectionSlug": "special-events-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
       7,
       8
     ],
@@ -4618,7 +5282,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -4630,7 +5294,40 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 26,
+    "rowCount": 10,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s51_p1_t1",
+    "sectionNumber": 51,
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "sectionSlug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 16,
     "numericCols": [
       1,
       2,
@@ -4728,7 +5425,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -4740,7 +5437,40 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 11,
+    "rowCount": 5,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s52_p1_t1",
+    "sectionNumber": 52,
+    "sectionTitle": "Mellon Park Trust Fund",
+    "sectionSlug": "mellon-park-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 6,
     "numericCols": [
       1,
       2,
@@ -4895,7 +5625,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -4907,7 +5637,38 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 13,
+    "rowCount": 7,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s54_p1_t1",
+    "sectionNumber": 54,
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "sectionSlug": "senior-citizens-program-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 6,
     "numericCols": [
       1,
       2,
@@ -5004,7 +5765,7 @@
     "page": 1,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel",
+    "label": "Personnel (1)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -5016,7 +5777,38 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 10,
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s55_p1_t1",
+    "sectionNumber": 55,
+    "sectionTitle": "Special Food Service Trust Fund",
+    "sectionSlug": "special-food-service-trust-fund",
+    "page": 1,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 8,
     "numericCols": [
       1,
       2,
@@ -5171,7 +5963,71 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 10,
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s58_p10_t1",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 10,
+    "tableIndex": 1,
+    "type": "personnel",
+    "label": "Personnel (2)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 3,
+    "numericCols": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s58_p10_t2",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 10,
+    "tableIndex": 2,
+    "type": "personnel",
+    "label": "Personnel (3)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 5,
     "numericCols": [
       1,
       2,
@@ -5192,7 +6048,7 @@
     "page": 10,
     "tableIndex": 3,
     "type": "personnel",
-    "label": "Personnel (2)",
+    "label": "Personnel (4)",
     "headers": [
       "Position Summary BJA Appropriation - LEAD 2129400483 Title",
       "2024 FTE",
@@ -5221,7 +6077,7 @@
     "page": 11,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel (3)",
+    "label": "Personnel (5)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -5276,7 +6132,7 @@
     "page": 9,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel (4)",
+    "label": "Personnel (6)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -5301,7 +6157,7 @@
     "page": 9,
     "tableIndex": 1,
     "type": "personnel",
-    "label": "Personnel (5)",
+    "label": "Personnel (7)",
     "headers": [
       "Title",
       "Rate/ Grade",
@@ -5327,7 +6183,7 @@
     "page": 9,
     "tableIndex": 2,
     "type": "personnel",
-    "label": "Personnel (6)",
+    "label": "Personnel (8)",
     "headers": [
       "Title",
       "2024 FTE",
@@ -5339,7 +6195,35 @@
       "Hours/ Months",
       "2025 Budget"
     ],
-    "rowCount": 4,
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      3,
+      4
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s58_p9_t3",
+    "sectionNumber": 58,
+    "sectionTitle": "Grants",
+    "sectionSlug": "grants",
+    "page": 9,
+    "tableIndex": 3,
+    "type": "personnel",
+    "label": "Personnel (9)",
+    "headers": [
+      "Title",
+      "2024 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2024 Budget",
+      "2025 FTE",
+      "Rate/ Grade",
+      "Hours/ Months",
+      "2025 Budget"
+    ],
+    "rowCount": 2,
     "numericCols": [
       1,
       3,
@@ -5357,7 +6241,7 @@
     "page": 9,
     "tableIndex": 4,
     "type": "personnel",
-    "label": "Personnel (7)",
+    "label": "Personnel (10)",
     "headers": [
       "Title",
       "2024 Rate/ FTE Grade",

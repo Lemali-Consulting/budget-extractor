@@ -1,7 +1,7 @@
 {
   "totalBudget2024": 498142625.0,
   "totalBudget2025": 473414619.0,
-  "totalFte2024": 2734.0,
+  "totalFte2024": 2728.0,
   "totalFte2025": 2761.0,
   "departmentChanges": [
     {
@@ -271,7 +271,7 @@
       "budget2025": 2231219.0,
       "dollarChange": -208860.0,
       "pctChange": -8.6,
-      "fte2024": 13.6,
+      "fte2024": 7.6,
       "fte2025": 13.6
     },
     {
@@ -555,7 +555,7 @@
       "budget2025": 2231219.0,
       "dollarChange": -208860.0,
       "pctChange": -8.6,
-      "fte2024": 13.6,
+      "fte2024": 7.6,
       "fte2025": 13.6
     }
   ],

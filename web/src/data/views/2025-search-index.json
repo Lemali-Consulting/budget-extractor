@@ -492,9 +492,22 @@
     "label": "Personnel",
     "headers": "Title 2024 Rate/ FTE Grade Hours/ Months 2024 Budget 2025 Rate/ FTE Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Member of Council | Council Staff | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Administrative/Research | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "lineItems": "Member of Council | Council Staff | Total Full-Time Permanent Positions",
     "page": 2,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "City Council",
+    "slug": "city-council",
+    "tableId": "s10_p2_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 Rate/ FTE Grade Hours/ Months 2024 Budget 2025 Rate/ FTE Grade Hours/ Months 2025 Budget",
+    "narrative": "Each of the nine Council Members have discretion on how they would like to budget their staff salary allocations. The proposed budget for each office (not including the Council Member) for 2025 is approximately $216,000.",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Administrative/Research | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 2,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -615,6 +628,19 @@
   {
     "sectionTitle": "Office of the Mayor",
     "slug": "office-of-the-mayor",
+    "tableId": "s12_p3_t0",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Intern | Pittsburgh Public Schools Interns | 311 Call Center Representatives, part-time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 3,
+    "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
     "tableId": "s12_p4_t0",
     "tableType": "financial_summary",
     "label": "Financial Summary",
@@ -661,6 +687,19 @@
     "lineItems": "Director, OMB | Chief Economic Development Officer | Chief Operating and Administrative Officer | Executive Assistant, OMB | Management Analyst | Chief Financial Officer | Budget Accounts/Technician | Fiscal and Contracting Coordinator | Assistant Director - Capital & Asset Management | Manager, Capital Budget | Budget Analyst | Assistant Director - Operating & Special Revenue | Senior Budget Analyst | Budget Analyst | Manager, Grants | Grants Officer | Grants Analyst | Chief Procurement Officer",
     "page": 4,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "tableId": "s13_p4_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "Community Development positions are described in the appropriate Trust Fund section. 78",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Intern | Total Full Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-time Positions and Net Salaries",
+    "page": 4,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -730,6 +769,32 @@
   {
     "sectionTitle": "Department of Innovation and Performance",
     "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p4_t0",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | I&P Intern | G.I.S. Intern | Cybersecurity Fellow",
+    "page": 4,
+    "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "tableId": "s14_p4_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Digital Equity Grant Funding | Total Full-time Positions and Net Salaries",
+    "page": 4,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
     "tableId": "s14_p5_t0",
     "tableType": "financial_summary",
     "label": "Financial Summary",
@@ -786,9 +851,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Director | Deputy Director | Senior Investigator, Field | Fiscal & Contracting Coordinator | Administrative Assistant | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Student Interns | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "lineItems": "Director | Deputy Director | Senior Investigator, Field | Fiscal & Contracting Coordinator | Administrative Assistant | Total Full-Time Permanent Positions",
     "page": 3,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "tableId": "s15_p3_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Student Interns | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "page": 3,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -839,6 +917,19 @@
     "narrative": "",
     "lineItems": "Administration | City Controller | Deputy Controller | Controller's Executive Secretary | Assistant Controller, Administration | Senior Systems Analyst 3 | Constituent Service Officer | Controller's Office Communication Specialist | Personnel & Finance Analyst | Contracts & Policy | Controller's Solicitor | Special Projects Manager | Research Assistant | Research Director | Contracts Division Manager | Assistant Special Projects Manager | Accounting | Chief Accounting Officer, C.P.A. | Assistant",
     "page": 3,
+    "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Office of the City Controller",
+    "slug": "office-of-the-city-controller",
+    "tableId": "s16_p4_t0",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Clerk 1, Part-Time | Intern | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 4,
     "tableIndex": 0,
     "budgetType": "operating"
   },
@@ -904,6 +995,19 @@
     "lineItems": "Administration & Treasury Division | Director - City Treasurer* | Deputy Director | Administrative Assistant | Mailroom Supervisor | Financial Analyst | Business Intelligence | Manager, Finance Operations | Senior Finance Applications Administrator | Cash Management | Investment Officer | Assistant Investment Officer | Collection Supervisor | Remittance Supervisor | Technician, Remittance | Cashier | Tax Compliance  Division | Tax Compliance Supervisor | Assistant Tax Compliance Manager | Coordi",
     "page": 4,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Department of Finance",
+    "slug": "department-of-finance",
+    "tableId": "s17_p4_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Assistant I, Administrative- Part-Time | Cashier, Part-Time | Finance Intern | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 4,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -978,9 +1082,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Chief Legal Officer & City Solicitor | Deputy Solicitor | Associate Solicitor | Assistant Solicitor II | Assistant Solicitor l | Contract Administrator | Fiscal & Contracting Coordinator | Paralegal | Claims Supervisor | Claims Specialist | Assistant 1, Administrative | Legal Secretary | Legal Secretary | Assistant, Real Estate | Legal Investigator | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Law Clerk, Part-Time | Law Intern | Record Specialist, Part-T",
+    "lineItems": "Chief Legal Officer & City Solicitor | Deputy Solicitor | Associate Solicitor | Assistant Solicitor II | Assistant Solicitor l | Contract Administrator | Fiscal & Contracting Coordinator | Paralegal | Claims Supervisor | Claims Specialist | Assistant 1, Administrative | Legal Secretary | Legal Secretary | Assistant, Real Estate | Legal Investigator | Total Full-Time Permanent Positions",
     "page": 3,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Department of Law",
+    "slug": "department-of-law",
+    "tableId": "s18_p3_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Law Clerk, Part-Time | Law Intern | Record Specialist, Part-Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 3,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -1029,9 +1146,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Executive Director | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Interns | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "lineItems": "Executive Director | Total Full-Time Permanent Positions",
     "page": 3,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "tableId": "s19_p3_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Interns | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "page": 3,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -1280,6 +1410,19 @@
   {
     "sectionTitle": "Department of Permits, Licenses, and Inspections",
     "slug": "department-of-permits-licenses-and-inspections",
+    "tableId": "s23_p4_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | PLI Interns",
+    "page": 4,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
     "tableId": "s23_p5_t0",
     "tableType": "personnel",
     "label": "Total Full-Time Permanent Positions",
@@ -1485,6 +1628,19 @@
   {
     "sectionTitle": "Bureau of Police",
     "slug": "bureau-of-police",
+    "tableId": "s26_p5_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Police Officer First Year | Police Recruit | Assistant I, Administrative, Part Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions & Net Salaries",
+    "page": 5,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Bureau of Police",
+    "slug": "bureau-of-police",
     "tableId": "s26_p6_t0",
     "tableType": "salary",
     "label": "FOP Hourly Rates",
@@ -1541,9 +1697,35 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Fire Chief | Assistant Chief | Deputy Chief | Deputy Chief * | Battalion Chief | Battalion Chief * | Firefighter Instructor | Public Education Specialist | Fire Captain | Fire Lieutenant | Firefighter | Total Uniformed Firefighters | Deputy Fire Marshall | Total Fire Civilian Positions | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Firefighter Recruit Allowance | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Urban S",
+    "lineItems": "Fire Chief | Assistant Chief | Deputy Chief | Deputy Chief * | Battalion Chief | Battalion Chief * | Firefighter Instructor | Public Education Specialist | Fire Captain | Fire Lieutenant | Firefighter | Total Uniformed Firefighters | Deputy Fire Marshall | Total Fire Civilian Positions | Total Full-Time Permanent Positions",
     "page": 3,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p3_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Firefighter Recruit Allowance",
+    "page": 3,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "tableId": "s27_p3_t2",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Urban Search and Rescue Allowance | Emergency Management Coordinator Bonus | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 3,
+    "tableIndex": 2,
     "budgetType": "operating"
   },
   {
@@ -1728,6 +1910,19 @@
   {
     "sectionTitle": "Bureau of Administration (Public Works)",
     "slug": "bureau-of-administration-public-works",
+    "tableId": "s31_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Intern | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 1,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
     "tableId": "s31_p2_t0",
     "tableType": "financial_summary",
     "label": "Financial Summary",
@@ -1779,6 +1974,19 @@
   {
     "sectionTitle": "Bureau of Operations",
     "slug": "bureau-of-operations",
+    "tableId": "s32_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "The labor agreement for AFSMCE 2037 members expires on December 31, 2024. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Laborer, Seasonal | Total Full-Time Permanent Positions | Temporary, Part-Time & Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 1,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Bureau of Operations",
+    "slug": "bureau-of-operations",
     "tableId": "s32_p2_t0",
     "tableType": "financial_summary",
     "label": "Financial Summary",
@@ -1822,9 +2030,35 @@
     "label": "Personnel",
     "headers": "Title 2023 FTE Rate/ Grade Hours/ Months 2023 Budget 2024 FTE Rate/ Grade Hours/ Months 2024 Budget",
     "narrative": "",
-    "lineItems": "Superintendent | Assistant Superintendent | Refuse Collection Supervisor | Environmental Enforcement Manager | Foreman, Environmental Services | Foreman, Second in Command | Environmental Enforcement Coordinator | Project Coordinator | Lot Supervisor | Lot Coordinator | Recycling Supervisor | Specialist, Environmental Enforcement | Administrator 2 | Dispatcher | Technician, Payroll | Assistant I, Administrative | Driver | Co-Driver | Loader | Total Full-Time Permanent Positions | Temporary, Part",
+    "lineItems": "Superintendent | Assistant Superintendent | Refuse Collection Supervisor | Environmental Enforcement Manager | Foreman, Environmental Services | Foreman, Second in Command | Environmental Enforcement Coordinator | Project Coordinator | Lot Supervisor | Lot Coordinator | Recycling Supervisor | Specialist, Environmental Enforcement | Administrator 2 | Dispatcher | Technician, Payroll | Assistant I, Administrative | Driver | Co-Driver | Loader | Total Full-Time Permanent Positions",
     "page": 1,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "s33_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2023 FTE Rate/ Grade Hours/ Months 2023 Budget 2024 FTE Rate/ Grade Hours/ Months 2024 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Loader, Seasonal",
+    "page": 1,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "tableId": "s33_p1_t2",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2023 FTE Rate/ Grade Hours/ Months 2023 Budget 2024 FTE Rate/ Grade Hours/ Months 2024 Budget",
+    "narrative": "The labor agreement for AFSMCE 2037 members expires on December 31, 2024. This budget reflects a 0% salary increase for members as conversations continue through Q4. The City anticipates that these numbers will change.",
+    "lineItems": "Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Loader CDL Allowance | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 1,
+    "tableIndex": 2,
     "budgetType": "operating"
   },
   {
@@ -1945,6 +2179,19 @@
   {
     "sectionTitle": "Department of Parks and Recreation",
     "slug": "department-of-parks-and-recreation",
+    "tableId": "s35_p4_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Recreation Leader, Part-Time | Regional Manager | Headguard | Assistant Headguard | Senior Lifeguard | First Year Lifeguard | Pool Aide | Program Coordinator, Part-Time (City Farms) | Farmers Market Site Attendant | Intern | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 4,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
     "tableId": "s35_p5_t0",
     "tableType": "allocation",
     "label": "2025 Allocations",
@@ -2022,6 +2269,19 @@
   {
     "sectionTitle": "Department of Mobility and Infrastructure",
     "slug": "department-of-mobility-and-infrastructure",
+    "tableId": "s36_p6_t0",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Part-Time Senior Planner | Seasonal Laborers | Seasonal Truck Driver - Special Operator | Intern | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Vacancy Allowance | Total Full-Time Positions and Net Salaries",
+    "page": 6,
+    "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
     "tableId": "s36_p7_t0",
     "tableType": "financial_summary",
     "label": "Financial Summary",
@@ -2078,9 +2338,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "CPRB Executive Director | Assistant Executive Director | Community Liaison | Administrative Assistant | Lead Investigator | Investigator | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Intern | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "lineItems": "CPRB Executive Director | Assistant Executive Director | Community Liaison | Administrative Assistant | Lead Investigator | Investigator | Total Full-Time Permanent Positions",
     "page": 4,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "tableId": "s37_p4_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Intern | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "page": 4,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -2962,9 +3235,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Program Coordinator 3* | Special Events Operations Coordinator | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Special Event AV Technician, Part-Time | Special Event Support, Part-Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "lineItems": "Program Coordinator 3* | Special Events Operations Coordinator | Total Full-Time Permanent Positions",
     "page": 1,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "tableId": "s50_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Special Event AV Technician, Part-Time | Special Event Support, Part-Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "page": 1,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -3039,9 +3325,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "RAD Program Manager | Program Supervisor | Skating Rink Supervisor | Senior Park Ranger | Program Coordinator | Program Coordinator, Special Events | Skating Rink Leader | Park Ranger* | Recreation Leader | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Regional Manager | Headguard | Assistant Headguard | Senior Lifeguard | First Year Lifeguard | Park Ranger, Part-Time | Rink Attendant, Part-Time | Rink Attendant, Seasonal | Recreation Leader, Part-Time | P",
+    "lineItems": "RAD Program Manager | Program Supervisor | Skating Rink Supervisor | Senior Park Ranger | Program Coordinator | Program Coordinator, Special Events | Skating Rink Leader | Park Ranger* | Recreation Leader | Total Full-Time Permanent Positions",
     "page": 1,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "tableId": "s51_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Regional Manager | Headguard | Assistant Headguard | Senior Lifeguard | First Year Lifeguard | Park Ranger, Part-Time | Rink Attendant, Part-Time | Rink Attendant, Seasonal | Recreation Leader, Part-Time | Pool Aide | Rink Zamboni Driver | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions & Net Salaries",
+    "page": 1,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -3116,9 +3415,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Operations Administrator | Program Coordinator, Recreation | Park Ranger | Recreation Leader 1 | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Recreation Leader, Part-Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "lineItems": "Operations Administrator | Program Coordinator, Recreation | Park Ranger | Recreation Leader 1 | Total Full-Time Permanent Positions",
     "page": 1,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "tableId": "s52_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Recreation Leader, Part-Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "page": 1,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -3244,9 +3556,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Assistant Director - HAL | Manager - Parks | Program Supervisor - Seniors | Community Center Director | Data Intake Specialist | Recreation Leader 1 | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Recreation Leader, Part-Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "lineItems": "Assistant Director - HAL | Manager - Parks | Program Supervisor - Seniors | Community Center Director | Data Intake Specialist | Recreation Leader 1 | Total Full-Time Permanent Positions",
     "page": 1,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "tableId": "s54_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Recreation Leader, Part-Time | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "page": 1,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -3321,9 +3646,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Program Supervisor | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Site Monitor | Site Leader | Administrative Aide | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "lineItems": "Program Supervisor | Total Full-Time Permanent Positions",
     "page": 1,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "tableId": "s55_p1_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Temporary, Part-Time, and Seasonal Allowances | Site Monitor | Site Leader | Administrative Aide | Total Full-Time Permanent Positions | Temporary, Part-Time, and Seasonal Allowances | Total Full-Time Positions and Net Salaries",
+    "page": 1,
+    "tableIndex": 1,
     "budgetType": "operating"
   },
   {
@@ -3448,9 +3786,35 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Senior Project Manager | Total Full-Time Positions | Data Analyst | CIT Project Coordinator | Total Full-Time Positions | Project Manager | Case Manager | Peer Specialist | Peer Supervisor | Total Full-Time Positions",
+    "lineItems": "Senior Project Manager | Total Full-Time Positions",
     "page": 10,
     "tableIndex": 0,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p10_t1",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Data Analyst | CIT Project Coordinator | Total Full-Time Positions",
+    "page": 10,
+    "tableIndex": 1,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p10_t2",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "Position Summary: Post-Overdose  - Substance Abuse and Mental Health Services Administration 2129400452",
+    "lineItems": "Project Manager | Case Manager | Peer Specialist | Peer Supervisor | Total Full-Time Positions",
+    "page": 10,
+    "tableIndex": 2,
     "budgetType": "operating"
   },
   {
@@ -3526,9 +3890,22 @@
     "label": "Personnel",
     "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
     "narrative": "",
-    "lineItems": "Digital Equity Coordinator | Total Full-Time Positions | Tree Equity Lead",
+    "lineItems": "Digital Equity Coordinator | Total Full-Time Positions",
     "page": 9,
     "tableIndex": 2,
+    "budgetType": "operating"
+  },
+  {
+    "sectionTitle": "Grants",
+    "slug": "grants",
+    "tableId": "s58_p9_t3",
+    "tableType": "personnel",
+    "label": "Personnel",
+    "headers": "Title 2024 FTE Rate/ Grade Hours/ Months 2024 Budget 2025 FTE Rate/ Grade Hours/ Months 2025 Budget",
+    "narrative": "",
+    "lineItems": "Tree Equity Lead",
+    "page": 9,
+    "tableIndex": 3,
     "budgetType": "operating"
   },
   {

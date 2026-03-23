@@ -10,7 +10,17 @@
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_network_requests",
       "mcp__playwright__browser_evaluate",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(wc:*)",
+      "Bash(ls:*)",
+      "Bash(git status:*)",
+      "Bash(git commit:*)",
+      "mcp__playwright__browser_console_messages",
+      "Bash(npm test:*)",
+      "Bash(npx playwright:*)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(git push:*)"
     ]
   }
 }
