@@ -341,13 +341,22 @@ test("budget balls page loads with visualization", async ({ page }) => {
   // Canvas should be present
   await expect(main(page).locator("canvas")).toBeVisible();
 
-  // Legend should show departments
-  await expect(main(page).getByText("Department of Finance")).toBeVisible();
-
-  // "View as table" button should exist
+  // "View as table" button should exist and show departments when clicked
   await expect(
     main(page).getByRole("button", { name: "View as table" }),
   ).toBeVisible();
+  await main(page).getByRole("button", { name: "View as table" }).click();
+  await expect(main(page).getByText("Department of Finance")).toBeVisible();
+});
+
+test("budget balls 2 page loads with visualization", async ({ page }) => {
+  await page.goto("/budget-balls-2/");
+
+  await expect(page).toHaveTitle(/Budget Balls 2/);
+  await expect(main(page).locator("h1")).toContainText("Budget Balls 2");
+
+  // Canvas should be present
+  await expect(main(page).locator("canvas")).toBeVisible();
 });
 
 test("no JS errors on key pages", async ({ page }) => {
@@ -367,6 +376,7 @@ test("no JS errors on key pages", async ({ page }) => {
     "/stories/",
     "/embed/",
     "/budget-balls/",
+    "/budget-balls-2/",
   ];
   for (const route of routes) {
     await page.goto(route);

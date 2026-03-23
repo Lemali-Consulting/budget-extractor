@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import BudgetBalls2 from '../components/BudgetBalls2.tsx';
+import departmentBudgets from '../data/views/department-budgets.json';
+import expenditureDetails from '../data/views/department-expenditure-details.json';
+
+const budgetRows = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const total2026 = budgetRows.filter(r => r.year === '2026 Budget').reduce((s, r) => s + r.amount, 0);
+const deptCount = new Set(budgetRows.filter(r => r.year === '2026 Budget').map(r => r.slug)).size;
+---
+
+<Base title="Budget Balls 2 — Department Overview">
+  <nav class="text-sm text-gray-500 mb-4">
+    <a href="/" class="hover:text-blue-600">Home</a>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <span>Budget Balls 2</span>
+  </nav>
+
+  <h1 class="text-3xl font-bold mb-2">Budget Balls 2</h1>
+  <p class="text-gray-600 mb-6">
+    Each ball is a department, sized by its share of the ${(total2026 / 1_000_000).toFixed(0)}M operating budget.
+    Click any department to see it explode into expenditure categories.
+  </p>
+
+  <BudgetBalls2
+    client:load
+    departmentBudgets={departmentBudgets}
+    expenditureDetails={expenditureDetails}
+  />
+
+  <div class="mt-8 text-sm text-gray-500">
+    <p>
+      Data: City of Pittsburgh FY2026 Operating Budget across {deptCount} departments.
+      Ball size is proportional to budget amount. Hover for details, click to drill into spending categories.
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,587 @@
+/**Budget Balls 2 — each department is a single proportional ball; click to explode into categories.*/
+
+import { useEffect, useRef, useState, useCallback } from 'preact/hooks';
+import { useContainerWidth } from '../lib/hooks';
+import { assignColor, OTHER_COLOR } from '../lib/ball-colors';
+import {
+  forceSimulation,
+  forceCollide,
+  forceX,
+  forceY,
+  forceManyBody,
+  type Simulation,
+  type SimulationNodeDatum,
+} from 'd3-force';
+
+interface DepartmentBudget {
+  department: string;
+  slug: string;
+  year: string;
+  amount: number;
+}
+
+interface ExpenditureCategory {
+  code: string;
+  name: string;
+  amount: number;
+  subcategories: { code: string; name: string; amount: number }[];
+}
+
+interface ExpenditureDetail {
+  department: string;
+  slug: string;
+  total: number;
+  categories: ExpenditureCategory[];
+}
+
+interface Props {
+  departmentBudgets: DepartmentBudget[];
+  expenditureDetails: ExpenditureDetail[];
+}
+
+interface FloatingBall extends SimulationNodeDatum {
+  id: number;
+  slug: string;
+  label: string;
+  amount: number;
+  color: string;
+  radius: number;
+  /** Whether this is a drilldown sub-ball */
+  isSub: boolean;
+  /** Parent slug for sub-balls */
+  parentSlug?: string;
+}
+
+/** Slug suffix for trust fund departments. */
+const TRUST_FUND_MARKER = 'trust-fund';
+
+/** Format a dollar amount for display. */
+function fmtAmount(n: number): string {
+  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)}B`;
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n.toFixed(0)}`;
+}
+
+/** Compute ball radius from amount, proportional to sqrt. */
+function amountToRadius(amount: number, maxAmount: number, maxRadius: number, minRadius: number): number {
+  const ratio = amount / maxAmount;
+  return minRadius + (maxRadius - minRadius) * Math.sqrt(ratio);
+}
+
+/** Canvas height based on width. */
+function canvasHeight(width: number): number {
+  return Math.min(width * 0.75, 700);
+}
+
+export default function BudgetBalls2({ departmentBudgets, expenditureDetails }: Props) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
+
+  const [drillSlug, setDrillSlug] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [tooltip, setTooltip] = useState<{
+    x: number;
+    y: number;
+    label: string;
+    amount: string;
+    hint: string;
+  } | null>(null);
+
+  const nodesRef = useRef<FloatingBall[]>([]);
+  const simulationRef = useRef<Simulation<FloatingBall, undefined> | null>(null);
+  const animFrameRef = useRef<number>(0);
+  const transitionRef = useRef<{
+    fadingOut: FloatingBall[];
+    fadingIn: FloatingBall[];
+    progress: number;
+    direction: 'drill' | 'back';
+  } | null>(null);
+  const renderRef = useRef<() => void>(() => {});
+  const drillSlugRef = useRef<string | null>(null);
+
+  // Build department-level balls
+  const buildDeptBalls = useCallback((): FloatingBall[] => {
+    const width = containerWidth;
+    const height = canvasHeight(width);
+    const maxRadius = Math.min(width, height) * 0.12;
+    const minRadius = 12;
+
+    // Aggregate trust funds
+    const deptMap = new Map<string, { dept: string; slug: string; amount: number }>();
+    let trustTotal = 0;
+    let trustCount = 0;
+
+    for (const row of departmentBudgets) {
+      if (row.year !== '2026 Budget') continue;
+      if (row.slug.endsWith(TRUST_FUND_MARKER)) {
+        trustTotal += row.amount;
+        trustCount++;
+      } else {
+        deptMap.set(row.slug, { dept: row.department, slug: row.slug, amount: row.amount });
+      }
+    }
+
+    const depts = [...deptMap.values()].sort((a, b) => b.amount - a.amount);
+    if (trustTotal > 0) {
+      depts.push({ dept: `Trust Funds (${trustCount})`, slug: '__trust-funds__', amount: trustTotal });
+    }
+
+    const maxAmount = Math.max(...depts.map((d) => d.amount));
+
+    const balls: FloatingBall[] = depts.map((d, i) => ({
+      id: i,
+      slug: d.slug,
+      label: d.dept,
+      amount: d.amount,
+      color: d.slug === '__trust-funds__' ? OTHER_COLOR : assignColor(i, false),
+      radius: amountToRadius(d.amount, maxAmount, maxRadius, minRadius),
+      isSub: false,
+      x: width / 2 + (Math.random() - 0.5) * width * 0.4,
+      y: height / 2 + (Math.random() - 0.5) * height * 0.4,
+    }));
+
+    return balls;
+  }, [departmentBudgets, containerWidth]);
+
+  // Build sub-category balls for a department
+  const buildCategoryBalls = useCallback(
+    (slug: string, originX: number, originY: number): FloatingBall[] => {
+      const width = containerWidth;
+      const height = canvasHeight(width);
+      const maxRadius = Math.min(width, height) * 0.10;
+      const minRadius = 10;
+
+      const detail = expenditureDetails.find((d) => d.slug === slug);
+      if (!detail) return [];
+
+      const cats = detail.categories.filter((c) => c.amount > 0).sort((a, b) => b.amount - a.amount);
+      const maxAmount = Math.max(...cats.map((c) => c.amount));
+
+      return cats.map((cat, i) => ({
+        id: i,
+        slug: `${slug}__${cat.code}`,
+        label: cat.name.replace(/^PERSONNEL-/, '').replace(/^SUPPLIES-/, ''),
+        amount: cat.amount,
+        color: assignColor(i, false),
+        radius: amountToRadius(cat.amount, maxAmount, maxRadius, minRadius),
+        isSub: true,
+        parentSlug: slug,
+        // Start from origin (the clicked ball's position)
+        x: originX + (Math.random() - 0.5) * 20,
+        y: originY + (Math.random() - 0.5) * 20,
+      }));
+    },
+    [expenditureDetails, containerWidth],
+  );
+
+  // Create simulation for floating balls
+  const createSim = useCallback(
+    (balls: FloatingBall[]): Simulation<FloatingBall, undefined> => {
+      const width = containerWidth;
+      const height = canvasHeight(width);
+
+      const sim = forceSimulation(balls)
+        .force('charge', forceManyBody<FloatingBall>().strength((d) => -d.radius * 0.8))
+        .force('x', forceX<FloatingBall>(width / 2).strength(0.04))
+        .force('y', forceY<FloatingBall>(height / 2).strength(0.04))
+        .force(
+          'collide',
+          forceCollide<FloatingBall>()
+            .radius((d) => d.radius + 2)
+            .iterations(3),
+        )
+        .alphaDecay(0.01)
+        .velocityDecay(0.3)
+        .stop();
+
+      return sim;
+    },
+    [containerWidth],
+  );
+
+  // Render
+  const render = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const dpr = window.devicePixelRatio || 1;
+    const w = containerWidth;
+    const h = canvasHeight(w);
+
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, w, h);
+
+    const trans = transitionRef.current;
+    const nodes = nodesRef.current;
+
+    // Draw fading-out balls during transition
+    if (trans && trans.fadingOut.length > 0) {
+      const alpha = Math.max(0, 1 - trans.progress * 2); // fade out in first half
+      if (alpha > 0) {
+        ctx.globalAlpha = alpha;
+        for (const ball of trans.fadingOut) {
+          drawBall(ctx, ball, ball.id === hoveredId, false);
+        }
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // Draw main balls (fade in during transition)
+    if (trans && trans.fadingIn.length > 0) {
+      const alpha = Math.max(0, (trans.progress - 0.3) / 0.7); // fade in after 30%
+      ctx.globalAlpha = Math.min(1, alpha);
+      for (const ball of nodes) {
+        const scale = 0.3 + 0.7 * Math.min(1, alpha); // scale up
+        drawBall(ctx, ball, ball.id === hoveredId, false, scale);
+      }
+      ctx.globalAlpha = 1;
+    } else if (!trans) {
+      // Normal rendering
+      for (const ball of nodes) {
+        drawBall(ctx, ball, ball.id === hoveredId, !drillSlug);
+      }
+    }
+
+    // Draw labels on balls large enough
+    for (const ball of nodes) {
+      if (ball.radius < 20) continue;
+      const alpha = trans ? Math.max(0, (trans.progress - 0.5) / 0.5) : 1;
+      if (alpha <= 0) continue;
+      ctx.globalAlpha = alpha;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#fff';
+
+      // Fit label text
+      const maxChars = Math.floor(ball.radius / 4);
+      let label = ball.label;
+      if (label.length > maxChars) label = label.slice(0, maxChars - 1) + '…';
+
+      const fontSize = Math.max(9, Math.min(13, ball.radius * 0.28));
+      ctx.font = `bold ${fontSize}px system-ui, sans-serif`;
+      ctx.fillText(label, ball.x!, ball.y! - fontSize * 0.4);
+
+      ctx.font = `${fontSize * 0.85}px system-ui, sans-serif`;
+      ctx.fillStyle = 'rgba(255,255,255,0.85)';
+      ctx.fillText(fmtAmount(ball.amount), ball.x!, ball.y! + fontSize * 0.6);
+      ctx.globalAlpha = 1;
+    }
+  }, [containerWidth, hoveredId, drillSlug]);
+
+  // Keep refs in sync so animation loop always uses latest versions
+  renderRef.current = render;
+  drillSlugRef.current = drillSlug;
+
+  /** Draw a single ball. */
+  function drawBall(
+    ctx: CanvasRenderingContext2D,
+    ball: FloatingBall,
+    isHovered: boolean,
+    showClickHint: boolean,
+    scale: number = 1,
+  ) {
+    const r = ball.radius * scale;
+    ctx.beginPath();
+    ctx.arc(ball.x!, ball.y!, r, 0, Math.PI * 2);
+    ctx.fillStyle = ball.color;
+    ctx.fill();
+
+    // Subtle gradient highlight
+    const grad = ctx.createRadialGradient(
+      ball.x! - r * 0.3,
+      ball.y! - r * 0.3,
+      0,
+      ball.x!,
+      ball.y!,
+      r,
+    );
+    grad.addColorStop(0, 'rgba(255,255,255,0.25)');
+    grad.addColorStop(1, 'rgba(0,0,0,0.1)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Hover outline
+    if (isHovered) {
+      ctx.beginPath();
+      ctx.arc(ball.x!, ball.y!, r + 3, 0, Math.PI * 2);
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
+    }
+  }
+
+  // Animation loop — uses renderRef to avoid stale closure issues
+  const startLoop = useCallback(() => {
+    const sim = simulationRef.current;
+    if (!sim) return;
+
+    let settling = 0;
+
+    const tick = () => {
+      sim.tick();
+
+      // Clamp nodes to canvas bounds
+      const w = containerWidth;
+      const h = canvasHeight(w);
+      for (const node of nodesRef.current) {
+        node.x = Math.max(node.radius, Math.min(w - node.radius, node.x!));
+        node.y = Math.max(node.radius, Math.min(h - node.radius, node.y!));
+      }
+
+      // Handle transition animation
+      const trans = transitionRef.current;
+      if (trans) {
+        trans.progress = Math.min(1, trans.progress + 0.025);
+        if (trans.progress >= 1) {
+          transitionRef.current = null;
+        }
+      }
+
+      renderRef.current();
+
+      if (sim.alpha() > 0.001 || trans) {
+        settling = 0;
+        animFrameRef.current = requestAnimationFrame(tick);
+      } else {
+        settling++;
+        // Keep ticking a bit for gentle floating
+        if (settling < 60) {
+          sim.alpha(0.01);
+          animFrameRef.current = requestAnimationFrame(tick);
+        } else {
+          renderRef.current();
+        }
+      }
+    };
+
+    sim.alpha(1).restart().stop();
+    animFrameRef.current = requestAnimationFrame(tick);
+  }, [containerWidth]);
+
+  // Track the last width we initialized at to avoid re-running on callback identity changes
+  // Initialize on mount and when container width changes — only fires on resize
+  useEffect(() => {
+    if (containerWidth < 100) return;
+
+    cancelAnimationFrame(animFrameRef.current);
+    simulationRef.current?.stop();
+    transitionRef.current = null;
+    drillSlugRef.current = null;
+    setDrillSlug(null);
+
+    const balls = buildDeptBalls();
+    nodesRef.current = balls;
+    simulationRef.current = createSim(balls);
+    startLoop();
+
+    return () => {
+      cancelAnimationFrame(animFrameRef.current);
+      simulationRef.current?.stop();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [containerWidth]);
+
+  // Drill down into a department
+  const doDrill = useCallback(
+    (slug: string) => {
+      const oldNodes = nodesRef.current;
+      const clicked = oldNodes.find((n) => n.slug === slug);
+      if (!clicked) return;
+
+      const ox = clicked.x!;
+      const oy = clicked.y!;
+
+      const catBalls = buildCategoryBalls(slug, ox, oy);
+      if (catBalls.length === 0) return;
+
+      cancelAnimationFrame(animFrameRef.current);
+      simulationRef.current?.stop();
+
+      // Set up transition
+      transitionRef.current = {
+        fadingOut: [...oldNodes],
+        fadingIn: catBalls,
+        progress: 0,
+        direction: 'drill',
+      };
+
+      nodesRef.current = catBalls;
+      simulationRef.current = createSim(catBalls);
+      setDrillSlug(slug);
+      setTooltip(null);
+      setHoveredId(null);
+      startLoop();
+    },
+    [buildCategoryBalls, createSim, startLoop],
+  );
+
+  // Go back to overview
+  const doBack = useCallback(() => {
+    cancelAnimationFrame(animFrameRef.current);
+    simulationRef.current?.stop();
+
+    const oldNodes = nodesRef.current;
+    const balls = buildDeptBalls();
+
+    transitionRef.current = {
+      fadingOut: [...oldNodes],
+      fadingIn: balls,
+      progress: 0,
+      direction: 'back',
+    };
+
+    nodesRef.current = balls;
+    simulationRef.current = createSim(balls);
+    setDrillSlug(null);
+    setTooltip(null);
+    setHoveredId(null);
+    startLoop();
+  }, [buildDeptBalls, createSim, startLoop]);
+
+  // Mouse interaction
+  const findBallAt = useCallback(
+    (mx: number, my: number): FloatingBall | null => {
+      let closest: FloatingBall | null = null;
+      let closestDist = Infinity;
+
+      for (const ball of nodesRef.current) {
+        const dx = ball.x! - mx;
+        const dy = ball.y! - my;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < ball.radius + 4 && dist < closestDist) {
+          closest = ball;
+          closestDist = dist;
+        }
+      }
+      return closest;
+    },
+    [],
+  );
+
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+
+      const ball = findBallAt(mx, my);
+      if (ball) {
+        canvas.style.cursor = !drillSlug ? 'pointer' : 'default';
+        setHoveredId(ball.id);
+        setTooltip({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top - 50,
+          label: ball.label,
+          amount: fmtAmount(ball.amount),
+          hint: !drillSlug ? 'Click to break down' : '',
+        });
+
+        // Trigger re-render for outline
+        render();
+      } else {
+        canvas.style.cursor = 'default';
+        if (hoveredId !== null) {
+          setHoveredId(null);
+          setTooltip(null);
+          render();
+        }
+      }
+    },
+    [drillSlug, findBallAt, render, hoveredId],
+  );
+
+  const handleClick = useCallback(
+    (e: MouseEvent) => {
+      if (drillSlug) return; // already drilled down
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+
+      const ball = findBallAt(mx, my);
+      if (ball && !ball.isSub) {
+        doDrill(ball.slug);
+      }
+    },
+    [drillSlug, findBallAt, doDrill],
+  );
+
+  const activeDept = drillSlug
+    ? expenditureDetails.find((d) => d.slug === drillSlug)?.department ||
+      (drillSlug === '__trust-funds__' ? 'Trust Funds' : drillSlug)
+    : null;
+
+  const height = canvasHeight(containerWidth);
+
+  return (
+    <div ref={containerRef} class="relative">
+      {/* Header */}
+      <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+        <div class="flex items-center gap-3">
+          {drillSlug && (
+            <button
+              onClick={doBack}
+              class="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1"
+            >
+              ← All Departments
+            </button>
+          )}
+          <span class="text-xs text-gray-500">
+            {drillSlug ? `${activeDept} — expenditure categories` : 'Each ball = one department, sized by budget'}
+          </span>
+        </div>
+      </div>
+
+      {drillSlug && activeDept && (
+        <h2 class="text-lg font-semibold mb-2">{activeDept}</h2>
+      )}
+
+      <div class="relative">
+        <canvas
+          ref={canvasRef}
+          onMouseMove={handleMouseMove}
+          onClick={handleClick}
+          onMouseLeave={() => {
+            setTooltip(null);
+            setHoveredId(null);
+            render();
+          }}
+          class="w-full border border-gray-200 rounded-lg bg-slate-50"
+          style={{ height: `${height}px` }}
+          aria-label={
+            drillSlug
+              ? `Budget breakdown for ${activeDept}: expenditure categories shown as proportional balls`
+              : `City of Pittsburgh 2026 operating budget: departments shown as proportional floating balls`
+          }
+          role="img"
+        />
+        {tooltip && (
+          <div
+            class="absolute pointer-events-none bg-gray-900 text-white text-xs rounded px-2.5 py-1.5 shadow-lg z-10"
+            style={{
+              left: `${Math.min(tooltip.x, containerWidth - 140)}px`,
+              top: `${Math.max(tooltip.y, 0)}px`,
+            }}
+          >
+            <div class="font-medium">{tooltip.label}</div>
+            <div class="text-gray-300">{tooltip.amount}</div>
+            {tooltip.hint && (
+              <div class="text-blue-300 text-[10px] mt-0.5">{tooltip.hint}</div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
