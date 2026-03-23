@@ -14,10 +14,16 @@
     "@astrojs/tailwind": "^6.0.0",
     "@observablehq/plot": "^0.6.17",
     "astro": "^5.0.0",
+    "d3-ease": "^3.0.1",
+    "d3-force": "^3.0.0",
+    "d3-scale": "^4.0.2",
     "fuse.js": "^7.0.0",
     "preact": "^10.25.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.58.2",
+    "@types/d3-ease": "^3.0.2",
+    "@types/d3-force": "^3.0.10",
+    "@types/d3-scale": "^4.0.9"
   }
 }

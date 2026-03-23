@@ -1,0 +1,4058 @@
+[
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "total": 3664835.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 2901384.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 2835384.0
+          },
+          {
+            "code": "51103",
+            "name": "Part Time",
+            "amount": 66000.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 723451.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 383952.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 53467.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 231349.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity",
+            "amount": 6202.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 48480.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 40000.0,
+        "subcategories": [
+          {
+            "code": "56105",
+            "name": "Postage",
+            "amount": 40000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "total": 2515537.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 1495519.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 1464944.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 30575.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 398474.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 184401.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 27236.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 117877.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 46460.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 22500.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 519294.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 108700.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 43500.0
+          },
+          {
+            "code": "53501",
+            "name": "Auditing & Accounting Services",
+            "amount": 16500.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 80118.0
+          },
+          {
+            "code": "53517",
+            "name": "Legal Fees",
+            "amount": 112276.0
+          },
+          {
+            "code": "53529",
+            "name": "Protective/Investigative",
+            "amount": 1000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 157200.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 26600.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 1600.0
+          },
+          {
+            "code": "54207",
+            "name": "Construction",
+            "amount": 25000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 6300.0,
+        "subcategories": [
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 3000.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 3300.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 51850.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 37500.0
+          },
+          {
+            "code": "56105",
+            "name": "Postage",
+            "amount": 50.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 14300.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 17500.0,
+        "subcategories": [
+          {
+            "code": "57501",
+            "name": "Machinery & Equipment",
+            "amount": 14500.0
+          },
+          {
+            "code": "57571",
+            "name": "Furniture & Fixtures",
+            "amount": 3000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "total": 3145158.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 2504297.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 2467668.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 36629.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 511599.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 187342.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 43425.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 202052.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 78780.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 96712.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 6175.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 8000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 25137.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 57400.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 6250.0,
+        "subcategories": [
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 6250.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 26300.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 3000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 23300.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "total": 20638818.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 2481131.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 2476131.0
+          },
+          {
+            "code": "51103",
+            "name": "Part Time",
+            "amount": 5000.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 600169.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 295639.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 45307.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 195603.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 62620.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 1000.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 735218.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 454888.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 12750.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 232756.0
+          },
+          {
+            "code": "53725",
+            "name": "Maintenance-Miscellaneous",
+            "amount": 34824.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 9015214.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 3400.0
+          },
+          {
+            "code": "54201",
+            "name": "Maintenance",
+            "amount": 8211206.0
+          },
+          {
+            "code": "54501",
+            "name": "Land & Buildings",
+            "amount": 674608.0
+          },
+          {
+            "code": "54513",
+            "name": "Machinery & Equipment",
+            "amount": 126000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 832247.0,
+        "subcategories": [
+          {
+            "code": "55101",
+            "name": "Insurance Premiums",
+            "amount": 829747.0
+          },
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 2500.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 6949839.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 8000.0
+          },
+          {
+            "code": "56105",
+            "name": "Postage",
+            "amount": 100.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 12640.0
+          },
+          {
+            "code": "56201",
+            "name": "Fuel",
+            "amount": 3044325.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 11000.0
+          },
+          {
+            "code": "56501",
+            "name": "Parts",
+            "amount": 3873774.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 1000.0,
+        "subcategories": [
+          {
+            "code": "57571",
+            "name": "Furniture & Fixtures",
+            "amount": 1000.0
+          }
+        ]
+      },
+      {
+        "code": "58",
+        "name": "MISCELLANEOUS",
+        "amount": 24000.0,
+        "subcategories": [
+          {
+            "code": "58101",
+            "name": "Grants",
+            "amount": 24000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of Innovation and Performance",
+    "slug": "department-of-innovation-and-performance",
+    "total": 22303735.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 5953711.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 5734226.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 180383.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 39101.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 1499795.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 799787.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 108105.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 467873.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 104030.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 20000.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 10295083.0,
+        "subcategories": [
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 8000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 188500.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 9457783.0
+          },
+          {
+            "code": "53529",
+            "name": "Protective/Investigation",
+            "amount": 7000.0
+          },
+          {
+            "code": "53701",
+            "name": "Repairs",
+            "amount": 40000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 593800.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 71500.0,
+        "subcategories": [
+          {
+            "code": "54103",
+            "name": "Disposal-Refuse",
+            "amount": 15000.0
+          },
+          {
+            "code": "54513",
+            "name": "Machinery & Equipment",
+            "amount": 56500.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 3532146.0,
+        "subcategories": [
+          {
+            "code": "55201",
+            "name": "Telephone",
+            "amount": 3030146.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 500000.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 2000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 107500.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 50000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 55500.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 2000.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 844000.0,
+        "subcategories": [
+          {
+            "code": "57501",
+            "name": "Machinery & Equipment",
+            "amount": 844000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "total": 827516.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 582117.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 577117.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 5000.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 179941.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 113621.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 11688.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 44532.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 10100.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 55408.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 600.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 6000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 3338.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 7260.0
+          },
+          {
+            "code": "53517",
+            "name": "Legal Fees",
+            "amount": 25000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 13210.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 5300.0,
+        "subcategories": [
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 5000.0
+          },
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 150.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 150.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 4750.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 3500.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 1250.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Office of the City Controller",
+    "slug": "office-of-the-city-controller",
+    "total": 5605384.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 4233343.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 4176694.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 56649.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 1145826.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 616390.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 78913.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 336543.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 98980.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 15000.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 198315.0,
+        "subcategories": [
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 20000.0
+          },
+          {
+            "code": "53501",
+            "name": "Auditing & Accounting Services",
+            "amount": 93920.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 18000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 66395.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 750.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 750.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 8000.0,
+        "subcategories": [
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 8000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 6650.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 4000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 2650.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 12500.0,
+        "subcategories": [
+          {
+            "code": "57501",
+            "name": "Machinery & Equipment",
+            "amount": 7500.0
+          },
+          {
+            "code": "57571",
+            "name": "Furniture & Fixtures",
+            "amount": 5000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of Finance",
+    "slug": "department-of-finance",
+    "total": 197799537.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 2656349.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 2565261.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 65726.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 25361.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 113160094.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 478351.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 52028.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 206028.0
+          },
+          {
+            "code": "52401",
+            "name": "Pension Contribution",
+            "amount": 49275222.0
+          },
+          {
+            "code": "52404",
+            "name": "Retiree Contribution",
+            "amount": 1850000.0
+          },
+          {
+            "code": "52407",
+            "name": "Widow(er) Contribution",
+            "amount": 80000.0
+          },
+          {
+            "code": "52410",
+            "name": "Survivor Contribution",
+            "amount": 45000.0
+          },
+          {
+            "code": "52413",
+            "name": "Additional Pension Fund",
+            "amount": 55826281.0
+          },
+          {
+            "code": "52419",
+            "name": "Retired Police Officer",
+            "amount": 250000.0
+          },
+          {
+            "code": "52422",
+            "name": "Retired Firefighter",
+            "amount": 15000.0
+          },
+          {
+            "code": "52423",
+            "name": "Retired Emergency Medical Services",
+            "amount": 5000.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 25250.0
+          },
+          {
+            "code": "52901",
+            "name": "Other Post-Employment Benefits Contribution",
+            "amount": 5051934.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 2562232.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 1187240.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 3000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 7500.0
+          },
+          {
+            "code": "53501",
+            "name": "Auditing & Accounting Services",
+            "amount": 207000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 791251.0
+          },
+          {
+            "code": "53513",
+            "name": "Court Related Fees",
+            "amount": 25700.0
+          },
+          {
+            "code": "53517",
+            "name": "Legal Fees",
+            "amount": 257500.0
+          },
+          {
+            "code": "53529",
+            "name": "Protective/Investigation",
+            "amount": 600.0
+          },
+          {
+            "code": "53725",
+            "name": "Maintenance-Miscellaneous",
+            "amount": 62441.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 20000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 256400.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 5200.0
+          },
+          {
+            "code": "54105",
+            "name": "Landscaping",
+            "amount": 250000.0
+          },
+          {
+            "code": "54501",
+            "name": "Land & Buildings",
+            "amount": 1200.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 190000.0,
+        "subcategories": [
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 25000.0
+          },
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 60000.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 95000.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 10000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 582800.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 15000.0
+          },
+          {
+            "code": "56105",
+            "name": "Postage",
+            "amount": 550000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 16800.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 1000.0
+          }
+        ]
+      },
+      {
+        "code": "58",
+        "name": "MISCELLANEOUS",
+        "amount": 80000.0,
+        "subcategories": [
+          {
+            "code": "58101",
+            "name": "Grants",
+            "amount": 40000.0
+          },
+          {
+            "code": "58191",
+            "name": "Refunds",
+            "amount": 40000.0
+          }
+        ]
+      },
+      {
+        "code": "82",
+        "name": "DEBT SERVICE",
+        "amount": 78311662.0,
+        "subcategories": [
+          {
+            "code": "82101",
+            "name": "Interest Expense-Bonds",
+            "amount": 20811662.0
+          },
+          {
+            "code": "82103",
+            "name": "Principal",
+            "amount": 57500000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of Law",
+    "slug": "department-of-law",
+    "total": 7705822.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 3515871.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 3368637.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 146627.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 607.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 820957.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 416906.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 62914.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 275487.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 65650.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 1173899.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 13625.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 43000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 23850.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 53424.0
+          },
+          {
+            "code": "53513",
+            "name": "Court Related Fees",
+            "amount": 180000.0
+          },
+          {
+            "code": "53517",
+            "name": "Legal Fees",
+            "amount": 580000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Service",
+            "amount": 280000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 2900.0,
+        "subcategories": [
+          {
+            "code": "55301",
+            "name": "Employment Related",
+            "amount": 900.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 2000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 111645.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 13000.0
+          },
+          {
+            "code": "56105",
+            "name": "Postage",
+            "amount": 2300.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 96345.0
+          }
+        ]
+      },
+      {
+        "code": "58",
+        "name": "MISCELLANEOUS",
+        "amount": 2080550.0,
+        "subcategories": [
+          {
+            "code": "58105",
+            "name": "Judgements",
+            "amount": 2080550.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "total": 187735.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 149046.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 114046.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 35000.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 13660.0,
+        "subcategories": [
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 2258.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 11402.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 22835.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 880.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 1525.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 4330.0
+          },
+          {
+            "code": "53513",
+            "name": "Court Related Fees",
+            "amount": 2100.0
+          },
+          {
+            "code": "53517",
+            "name": "Legal Fees",
+            "amount": 14000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 1194.0,
+        "subcategories": [
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 250.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 944.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 1000.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 775.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 225.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "total": 778704.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 567061.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 566442.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 618.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 128993.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 66935.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 10658.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 45340.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 6060.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 68000.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 1000.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 4500.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 15000.0
+          },
+          {
+            "code": "53517",
+            "name": "Legal Fees",
+            "amount": 10000.0
+          },
+          {
+            "code": "53529",
+            "name": "Protective/Investigation",
+            "amount": 37500.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 3000.0,
+        "subcategories": [
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 2500.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 500.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 11650.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 6000.0
+          },
+          {
+            "code": "56103",
+            "name": "Freight",
+            "amount": 150.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 5500.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "total": 24122782.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 5513108.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 2736308.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 26800.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 2750000.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 15465199.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 689954.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 495596.0
+          },
+          {
+            "code": "52121",
+            "name": "Retiree Health Insurance",
+            "amount": 13149909.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 218942.0
+          },
+          {
+            "code": "52205",
+            "name": "Unemployment Compensation",
+            "amount": 205200.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical-Workers' Compensation",
+            "amount": 10759.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity-Workers' Compensation",
+            "amount": 218096.0
+          },
+          {
+            "code": "52309",
+            "name": "Legal-Workers' Compensation",
+            "amount": 419500.0
+          },
+          {
+            "code": "52315",
+            "name": "Workers' Compensation-Fees",
+            "amount": 18863.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 38380.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 1496175.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 5600.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 5000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 20000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 52000.0
+          },
+          {
+            "code": "53521",
+            "name": "Medical & Dental Fees",
+            "amount": 520000.0
+          },
+          {
+            "code": "53525",
+            "name": "Payroll Processing",
+            "amount": 515000.0
+          },
+          {
+            "code": "53529",
+            "name": "Protective/Investigation",
+            "amount": 10000.0
+          },
+          {
+            "code": "53725",
+            "name": "Maintenance-Miscellaneous",
+            "amount": 4500.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 360475.0
+          },
+          {
+            "code": "53907",
+            "name": "Recreational Services",
+            "amount": 3600.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 8300.0,
+        "subcategories": [
+          {
+            "code": "54501",
+            "name": "Land & Buildings",
+            "amount": 8300.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 146000.0,
+        "subcategories": [
+          {
+            "code": "55301",
+            "name": "Employment Related",
+            "amount": 90000.0
+          },
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 50000.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 5000.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 1000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 94000.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 27000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 63500.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 3500.0
+          }
+        ]
+      },
+      {
+        "code": "58",
+        "name": "MISCELLANEOUS",
+        "amount": 1400000.0,
+        "subcategories": [
+          {
+            "code": "58102",
+            "name": "Summer Youth Employment",
+            "amount": 1400000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of City Planning",
+    "slug": "department-of-city-planning",
+    "total": 5256349.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 4111394.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 4044253.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 62196.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 4945.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 1036011.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 530005.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 78737.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 324497.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical-Workers' Compensation",
+            "amount": 2662.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 74740.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 25370.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 70150.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 10750.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 20000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 23500.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 900.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 15000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 11744.0,
+        "subcategories": [
+          {
+            "code": "55101",
+            "name": "Insurance Premiums",
+            "amount": 4600.0
+          },
+          {
+            "code": "55301",
+            "name": "Employment Related",
+            "amount": 750.0
+          },
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 3144.0
+          },
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 2250.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 1000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 27050.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 15000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 12050.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of Permits, Licenses, and Inspections",
+    "slug": "department-of-permits-licenses-and-inspections",
+    "total": 11146275.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 8575834.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 8398476.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 5000.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 172359.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 2240064.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 1286518.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 168925.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 669552.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 108070.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 7000.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 207000.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 5000.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 44000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 133000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 5000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 20000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 5000.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 5000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 15000.0,
+        "subcategories": [
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 8000.0
+          },
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 2000.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 5000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 98377.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 20000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 78377.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 5000.0,
+        "subcategories": [
+          {
+            "code": "57501",
+            "name": "Machinery & Equipment",
+            "amount": 5000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Administration (Public Safety)",
+    "slug": "bureau-of-administration-public-safety",
+    "total": 1375000.0,
+    "categories": [
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 1375000.0,
+        "subcategories": [
+          {
+            "code": "57531",
+            "name": "Vehicles",
+            "amount": 1375000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "total": 33607157.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 26078128.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 17152743.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 478000.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 7000.0
+          },
+          {
+            "code": "51205",
+            "name": "Uniform",
+            "amount": 186000.0
+          },
+          {
+            "code": "51207",
+            "name": "Leave Buyback",
+            "amount": 100000.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 8154386.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 5961312.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 2793059.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 363392.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 1738325.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical-Workers' Compensation",
+            "amount": 203241.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity-Workers' Compensation",
+            "amount": 571001.0
+          },
+          {
+            "code": "52315",
+            "name": "Workers' Compensation-Fees",
+            "amount": 29064.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 225230.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 38000.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 91685.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 1000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 5000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 11000.0
+          },
+          {
+            "code": "53701",
+            "name": "Repairs",
+            "amount": 74685.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 5500.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 5500.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 76595.0,
+        "subcategories": [
+          {
+            "code": "55101",
+            "name": "Insurance Premiums",
+            "amount": 63395.0
+          },
+          {
+            "code": "55201",
+            "name": "Telephone",
+            "amount": 1200.0
+          },
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 12000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 1393937.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 20000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 1295437.0
+          },
+          {
+            "code": "56301",
+            "name": "Parts",
+            "amount": 4500.0
+          },
+          {
+            "code": "56351",
+            "name": "Tools",
+            "amount": 15000.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 5000.0
+          },
+          {
+            "code": "56501",
+            "name": "Parts",
+            "amount": 15000.0
+          },
+          {
+            "code": "56503",
+            "name": "Repairs (Vehicles)",
+            "amount": 39000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "total": 117958522.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 94055583.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 69951574.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 29487.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 2478500.0
+          },
+          {
+            "code": "51205",
+            "name": "Uniform",
+            "amount": 690300.0
+          },
+          {
+            "code": "51207",
+            "name": "Leave Buyback",
+            "amount": 420000.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 20485722.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 16512754.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 11832102.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 778082.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 1495887.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical-Workers' Compensation",
+            "amount": 453205.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity-Workers' Compensation",
+            "amount": 1501968.0
+          },
+          {
+            "code": "52315",
+            "name": "Workers' Compensation-Fees",
+            "amount": 89020.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 352490.0
+          },
+          {
+            "code": "52602",
+            "name": "Tuition Reimbursement",
+            "amount": 10000.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 742114.0,
+        "subcategories": [
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 65000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 141614.0
+          },
+          {
+            "code": "53529",
+            "name": "Protective/Investigation",
+            "amount": 100000.0
+          },
+          {
+            "code": "53533",
+            "name": "Animal Services",
+            "amount": 46500.0
+          },
+          {
+            "code": "53545",
+            "name": "Towing Services",
+            "amount": 80000.0
+          },
+          {
+            "code": "53725",
+            "name": "Maintenance-Miscellaneous",
+            "amount": 159000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 150000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 1611250.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 38500.0
+          },
+          {
+            "code": "54103",
+            "name": "Disposal-Refuse",
+            "amount": 1000.0
+          },
+          {
+            "code": "54201",
+            "name": "Maintenance",
+            "amount": 1750.0
+          },
+          {
+            "code": "54301",
+            "name": "Building-General",
+            "amount": 5000.0
+          },
+          {
+            "code": "54501",
+            "name": "Land & Buildings",
+            "amount": 1565000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 62500.0,
+        "subcategories": [
+          {
+            "code": "55201",
+            "name": "Telephone",
+            "amount": 32500.0
+          },
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 30000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 1290200.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 100000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 1190200.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 3684121.0,
+        "subcategories": [
+          {
+            "code": "57501",
+            "name": "Machinery & Equipment",
+            "amount": 3684121.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "total": 106816658.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 86623226.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 59405814.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 1901322.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 352942.0
+          },
+          {
+            "code": "51205",
+            "name": "Uniform",
+            "amount": 763148.0
+          },
+          {
+            "code": "51207",
+            "name": "Leave Buyback",
+            "amount": 1200000.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 23000000.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 16704107.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 11124395.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 263767.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 1192119.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical-Workers' Compensation",
+            "amount": 687110.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity-Workers' Compensation",
+            "amount": 2843032.0
+          },
+          {
+            "code": "52315",
+            "name": "Workers' Compensation-Fees",
+            "amount": 80554.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 13130.0
+          },
+          {
+            "code": "52605",
+            "name": "Retirement Severance",
+            "amount": 500000.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 650325.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 1500.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 25000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 150000.0
+          },
+          {
+            "code": "53521",
+            "name": "Medical and Dental Fees",
+            "amount": 235625.0
+          },
+          {
+            "code": "53701",
+            "name": "Repairs",
+            "amount": 18000.0
+          },
+          {
+            "code": "53725",
+            "name": "Maintenance-Miscellaneous",
+            "amount": 5000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 215200.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 25100.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 5000.0
+          },
+          {
+            "code": "54501",
+            "name": "Land & Buildings",
+            "amount": 20100.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 12500.0,
+        "subcategories": [
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 12000.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 500.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 2791400.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 70000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 2562400.0
+          },
+          {
+            "code": "56301",
+            "name": "Parts",
+            "amount": 25000.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 134000.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 10000.0,
+        "subcategories": [
+          {
+            "code": "57501",
+            "name": "Machinery & Equipment",
+            "amount": 10000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "total": 2461494.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 1087990.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 967040.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 2500.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 118450.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 282276.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 143282.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 20376.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 83703.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical-Workers' Compensation",
+            "amount": 3570.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity-Workers' Compensation",
+            "amount": 26294.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 5050.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 967728.0,
+        "subcategories": [
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 10000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 30000.0
+          },
+          {
+            "code": "53533",
+            "name": "Animal Services",
+            "amount": 857728.0
+          },
+          {
+            "code": "53905",
+            "name": "Prevention",
+            "amount": 70000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 90000.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 90000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 33500.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 4000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 29500.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "total": 58000.0,
+    "categories": [
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 36000.0,
+        "subcategories": [
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 6000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 30000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 22000.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 1000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 21000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Administration (Public Works)",
+    "slug": "bureau-of-administration-public-works",
+    "total": 25696815.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 2087996.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 2057444.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 23000.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 7551.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 538817.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 317367.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 39441.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 160799.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 21210.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 77000.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 18000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 26000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 33000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 22965252.0,
+        "subcategories": [
+          {
+            "code": "54601",
+            "name": "Electric",
+            "amount": 8000000.0
+          },
+          {
+            "code": "54603",
+            "name": "Natural Gas",
+            "amount": 1200000.0
+          },
+          {
+            "code": "54605",
+            "name": "Sewer",
+            "amount": 10000.0
+          },
+          {
+            "code": "54607",
+            "name": "Steam",
+            "amount": 755252.0
+          },
+          {
+            "code": "54609",
+            "name": "Water",
+            "amount": 13000000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 15000.0,
+        "subcategories": [
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 15000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 12750.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 10000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 2750.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "total": 26996116.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 17568039.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 15448153.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 395092.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 99000.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 70231.0
+          },
+          {
+            "code": "51205",
+            "name": "Uniform",
+            "amount": 11050.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 1544513.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 5558180.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 2961032.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 337114.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 1366868.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical - Workers' Compensation",
+            "amount": 239591.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity - Workers' Compensation",
+            "amount": 438805.0
+          },
+          {
+            "code": "52315",
+            "name": "Workers' Compensation-Fees",
+            "amount": 26910.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 187860.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 1000.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 1000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 1789122.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 1288122.0
+          },
+          {
+            "code": "54105",
+            "name": "Landscaping",
+            "amount": 5000.0
+          },
+          {
+            "code": "54201",
+            "name": "Maintenance",
+            "amount": 140000.0
+          },
+          {
+            "code": "54207",
+            "name": "Construction",
+            "amount": 20000.0
+          },
+          {
+            "code": "54305",
+            "name": "Building-Systems",
+            "amount": 65000.0
+          },
+          {
+            "code": "54513",
+            "name": "Machinery & Equipment",
+            "amount": 271000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 1132423.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 40000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 297600.0
+          },
+          {
+            "code": "56301",
+            "name": "Parts (Equipment)",
+            "amount": 160000.0
+          },
+          {
+            "code": "56351",
+            "name": "Tools",
+            "amount": 75000.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 449823.0
+          },
+          {
+            "code": "56501",
+            "name": "Parts (Vehicles)",
+            "amount": 110000.0
+          }
+        ]
+      },
+      {
+        "code": "57",
+        "name": "PROPERTY",
+        "amount": 947352.0,
+        "subcategories": [
+          {
+            "code": "57501",
+            "name": "Machinery & Equipment",
+            "amount": 100000.0
+          },
+          {
+            "code": "57531",
+            "name": "Vehicles",
+            "amount": 847352.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "total": 19166722.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 10784647.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 9804390.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 72750.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 2720.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 904787.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 3560958.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 1911866.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 216520.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 839578.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical - Workers' Compensation",
+            "amount": 121890.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity - Workers' Compensation",
+            "amount": 341756.0
+          },
+          {
+            "code": "52315",
+            "name": "Workers' Compensation-Fees",
+            "amount": 30368.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 98980.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 30000.0,
+        "subcategories": [
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 30000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 4565308.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 48000.0
+          },
+          {
+            "code": "54103",
+            "name": "Disposal-Refuse",
+            "amount": 3981543.0
+          },
+          {
+            "code": "54201",
+            "name": "Maintenance",
+            "amount": 117000.0
+          },
+          {
+            "code": "54517",
+            "name": "Roll Off Boxes",
+            "amount": 418765.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 19000.0,
+        "subcategories": [
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 18000.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 1000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 204809.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 5000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 190809.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 9000.0
+          }
+        ]
+      },
+      {
+        "code": "58",
+        "name": "MISCELLANEOUS",
+        "amount": 2000.0,
+        "subcategories": [
+          {
+            "code": "58105",
+            "name": "Judgements",
+            "amount": 2000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "total": 11861338.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 5748527.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 5527790.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 31000.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 24078.0
+          },
+          {
+            "code": "51205",
+            "name": "Uniform",
+            "amount": 18300.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 147359.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 1513585.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 869140.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 116198.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 449467.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 78780.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 3000.0,
+        "subcategories": [
+          {
+            "code": "53701",
+            "name": "Repairs",
+            "amount": 3000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 3243515.0,
+        "subcategories": [
+          {
+            "code": "54201",
+            "name": "Maintenance",
+            "amount": 2037275.0
+          },
+          {
+            "code": "54305",
+            "name": "Building-Systems",
+            "amount": 230000.0
+          },
+          {
+            "code": "54501",
+            "name": "Land & Buildings",
+            "amount": 961240.0
+          },
+          {
+            "code": "54513",
+            "name": "Machinery & Equipment",
+            "amount": 15000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 1352711.0,
+        "subcategories": [
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 17100.0
+          },
+          {
+            "code": "56301",
+            "name": "Parts",
+            "amount": 73111.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 1262500.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "total": 7446545.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 4720887.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 3013224.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 1510904.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 15250.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 28500.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 153009.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 1012258.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 446690.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 57628.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 371479.0
+          },
+          {
+            "code": "52301",
+            "name": "Medical-Workers' Compensation",
+            "amount": 21970.0
+          },
+          {
+            "code": "52305",
+            "name": "Indemnity-Workers' Compensation",
+            "amount": 1736.0
+          },
+          {
+            "code": "52315",
+            "name": "Workers' Compensation-Fees",
+            "amount": 1655.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 111100.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 272900.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 5000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 30000.0
+          },
+          {
+            "code": "53701",
+            "name": "Repairs",
+            "amount": 3000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 134900.0
+          },
+          {
+            "code": "53907",
+            "name": "Recreational Services",
+            "amount": 100000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 24500.0,
+        "subcategories": [
+          {
+            "code": "54103",
+            "name": "Disposal-Refuse",
+            "amount": 500.0
+          },
+          {
+            "code": "54105",
+            "name": "Landscaping",
+            "amount": 1000.0
+          },
+          {
+            "code": "54509",
+            "name": "Vehicles",
+            "amount": 6000.0
+          },
+          {
+            "code": "54513",
+            "name": "Machinery & Equipment",
+            "amount": 17000.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 13500.0,
+        "subcategories": [
+          {
+            "code": "55201",
+            "name": "Telephone",
+            "amount": 3000.0
+          },
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 500.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 5000.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 5000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 402500.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 15000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 362500.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 25000.0
+          }
+        ]
+      },
+      {
+        "code": "58",
+        "name": "MISCELLANEOUS",
+        "amount": 1000000.0,
+        "subcategories": [
+          {
+            "code": "58101",
+            "name": "Grants",
+            "amount": 1000000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "total": 15286603.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 9084700.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 8710182.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 207821.0
+          },
+          {
+            "code": "51201",
+            "name": "Longevity",
+            "amount": 9500.0
+          },
+          {
+            "code": "51203",
+            "name": "Allowances",
+            "amount": 3146.0
+          },
+          {
+            "code": "51205",
+            "name": "Uniform",
+            "amount": 7150.0
+          },
+          {
+            "code": "51401",
+            "name": "Premium Pay",
+            "amount": 146901.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 2370446.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 1370486.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 174953.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 700777.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 124230.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 256000.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 84000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 20000.0
+          },
+          {
+            "code": "53509",
+            "name": "Computer Maintenance",
+            "amount": 95000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 57000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 3021832.0,
+        "subcategories": [
+          {
+            "code": "54201",
+            "name": "Maintenance",
+            "amount": 1100000.0
+          },
+          {
+            "code": "54205",
+            "name": "Engineering",
+            "amount": 50000.0
+          },
+          {
+            "code": "54513",
+            "name": "Machinery & Equipment",
+            "amount": 1871832.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 20500.0,
+        "subcategories": [
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 500.0
+          },
+          {
+            "code": "55501",
+            "name": "Printing & Binding",
+            "amount": 5000.0
+          },
+          {
+            "code": "55701",
+            "name": "Transportation",
+            "amount": 15000.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 533125.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 18000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 120125.0
+          },
+          {
+            "code": "56351",
+            "name": "Tools",
+            "amount": 45000.0
+          },
+          {
+            "code": "56401",
+            "name": "Materials",
+            "amount": 350000.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "total": 958962.0,
+    "categories": [
+      {
+        "code": "51",
+        "name": "PERSONNEL-SALARIES & WAGES",
+        "amount": 617747.0,
+        "subcategories": [
+          {
+            "code": "51101",
+            "name": "Regular",
+            "amount": 612747.0
+          },
+          {
+            "code": "51103",
+            "name": "Part-Time",
+            "amount": 5000.0
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "name": "PERSONNEL-EMPLOYEE BENEFITS",
+        "amount": 157411.0,
+        "subcategories": [
+          {
+            "code": "52101",
+            "name": "Health Insurance",
+            "amount": 85005.0
+          },
+          {
+            "code": "52111",
+            "name": "Other Insurance/Benefits",
+            "amount": 12101.0
+          },
+          {
+            "code": "52201",
+            "name": "Social Security",
+            "amount": 48185.0
+          },
+          {
+            "code": "52601",
+            "name": "Personal Leave Buyback",
+            "amount": 12120.0
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "name": "PROFESSIONAL & TECHNICAL SERVICES",
+        "amount": 86900.0,
+        "subcategories": [
+          {
+            "code": "53101",
+            "name": "Administrative Fees",
+            "amount": 7500.0
+          },
+          {
+            "code": "53105",
+            "name": "Recording/Filing Fees",
+            "amount": 2000.0
+          },
+          {
+            "code": "53301",
+            "name": "Workforce Training",
+            "amount": 10400.0
+          },
+          {
+            "code": "53517",
+            "name": "Legal Fees",
+            "amount": 50000.0
+          },
+          {
+            "code": "53901",
+            "name": "Professional Services",
+            "amount": 17000.0
+          }
+        ]
+      },
+      {
+        "code": "54",
+        "name": "PROPERTY SERVICES",
+        "amount": 74084.0,
+        "subcategories": [
+          {
+            "code": "54101",
+            "name": "Cleaning",
+            "amount": 2100.0
+          },
+          {
+            "code": "54501",
+            "name": "Land & Buildings",
+            "amount": 71984.0
+          }
+        ]
+      },
+      {
+        "code": "55",
+        "name": "OTHER SERVICES",
+        "amount": 5700.0,
+        "subcategories": [
+          {
+            "code": "55305",
+            "name": "Promotional",
+            "amount": 5200.0
+          },
+          {
+            "code": "55309",
+            "name": "Regulatory",
+            "amount": 500.0
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "name": "SUPPLIES",
+        "amount": 17120.0,
+        "subcategories": [
+          {
+            "code": "56101",
+            "name": "Office Supplies",
+            "amount": 4000.0
+          },
+          {
+            "code": "56151",
+            "name": "Operational Supplies",
+            "amount": 13120.0
+          }
+        ]
+      }
+    ]
+  }
+]

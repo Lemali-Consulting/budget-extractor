@@ -332,6 +332,24 @@ test("embed page renders chart without nav", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------
+test("budget balls page loads with visualization", async ({ page }) => {
+  await page.goto("/budget-balls/");
+
+  await expect(page).toHaveTitle(/Budget Balls/);
+  await expect(main(page).locator("h1")).toContainText("Where the Money Goes");
+
+  // Canvas should be present
+  await expect(main(page).locator("canvas")).toBeVisible();
+
+  // Legend should show departments
+  await expect(main(page).getByText("Department of Finance")).toBeVisible();
+
+  // "View as table" button should exist
+  await expect(
+    main(page).getByRole("button", { name: "View as table" }),
+  ).toBeVisible();
+});
+
 test("no JS errors on key pages", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (err) => errors.push(`${err.message}`));
@@ -348,6 +366,7 @@ test("no JS errors on key pages", async ({ page }) => {
     "/departments/",
     "/stories/",
     "/embed/",
+    "/budget-balls/",
   ];
   for (const route of routes) {
     await page.goto(route);
