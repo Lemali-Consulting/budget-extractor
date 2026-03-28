@@ -45,6 +45,7 @@ When a decision is made, a plan is formed, or an audit is needed, proactively us
 
 # Workflow
 
+- **Use `uv run` (not `python3`) to run all Python scripts** — the project manages dependencies via uv and scripts will fail with `ModuleNotFoundError` without it
 - Commit after each meaningful unit of work — don't let changes accumulate across sessions
 
 # Coding Guidance
@@ -107,18 +108,7 @@ The web app is deployed as a static site to Netlify via manual CLI deploy (not g
 - **Site ID**: `11c41143-d0e2-4a28-9dde-10e173bf230f`
 - **Auth token**: stored in `.env` as `NETLIFY_AUTH_TOKEN`
 
-**Deploy alongside every git push** by running:
-```bash
-# 1. Build data for both years
-python3 scripts/build_web_data.py --year 2026 && python3 scripts/build_web_data.py --year 2025 --output-prefix 2025 \
-# 2. Validate (errors block deploy)
-&& python3 scripts/validate_data.py all --year 2026 \
-# 3. Regenerate images, build, and deploy
-&& python3 scripts/render_page_images.py && python3 scripts/extract_chart_images.py \
-&& cd web && npm run build \
-&& source ../.env && export NETLIFY_AUTH_TOKEN NETLIFY_SITE_ID=11c41143-d0e2-4a28-9dde-10e173bf230f \
-&& npx netlify deploy --dir=dist --prod
-```
+**Deploy alongside every git push** by running `./deploy.sh` from the project root.
 
 # Playwright MCP Server
 
@@ -128,3 +118,5 @@ The Playwright MCP server is configured in `.mcp.json`. It requires `--no-sandbo
 - The `--no-sandbox` flag in `.mcp.json` is required — without it Chrome crashes with `Operation not permitted`
 - **Changes to `.mcp.json` require restarting the MCP server** via `/mcp` in Claude Code. Without a restart, old args stay in effect and Chrome will keep crashing regardless of config changes.
 - If Chrome fails repeatedly with namespace errors, the fix is always: verify `--no-sandbox` is in `.mcp.json`, then restart the MCP server
+- **"Browser is already in use" errors** mean a stale `SingletonLock` file exists from an unclean shutdown. Fix: `pkill -f 'chrome.*mcp'` to kill the orphaned process, then retry. The lock file is in `~/.cache/ms-playwright/mcp-chrome-*/`.
+- **`file://` URLs are blocked.** The Playwright MCP server only allows `http:` and `https:`. To view local HTML files, serve them via `python3 -m http.server <port>` first.
