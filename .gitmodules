@@ -1,0 +1,3 @@
+[submodule "lemali-assets"]
+	path = lemali-assets
+	url = git@github.com:lemali-consulting/lemali-assets.git

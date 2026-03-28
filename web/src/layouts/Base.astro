@@ -36,7 +36,7 @@ function dropdownItemClass(href: string): string {
 
 const storiesHrefs = ['/stories/', '/departments/'];
 const budgetsHrefs = ['/operating/', '/capital/', '/changes/', '/cross-year/'];
-const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/budget-balls/', '/budget-balls-2/', '/embed/', '/glossary/'];
+const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/embed/', '/glossary/'];
 ---
 
 <!doctype html>
@@ -107,8 +107,6 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                   <a href="/explorer/" class={dropdownItemClass('/explorer/')}>Explorer</a>
                   <a href="/compare/" class={dropdownItemClass('/compare/')}>Compare</a>
                   <a href="/personnel/" class={dropdownItemClass('/personnel/')}>Personnel</a>
-                  <a href="/budget-balls/" class={dropdownItemClass('/budget-balls/')}>Budget Balls</a>
-                  <a href="/budget-balls-2/" class={dropdownItemClass('/budget-balls-2/')}>Budget Balls 2</a>
                   <a href="/embed/" class={dropdownItemClass('/embed/')}>Embeds</a>
                   <a href="/glossary/" class={dropdownItemClass('/glossary/')}>Glossary</a>
                 </div>
@@ -148,6 +146,12 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
     <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-200">
       <p>Data extracted from the City of Pittsburgh FY2026 Operating &amp; Capital Budgets</p>
       <p class="mt-1"><a href="/about/" class="hover:text-blue-600 underline">About this site</a> &mdash; how it was built, the role of AI, and important caveats</p>
+      <p class="mt-3">
+        <a href="https://lemaliconsulting.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-gray-600 transition-colors">
+          <span>Built by</span>
+          <img src="/images/lemali-wordmark.svg" alt="Lemali Consulting" class="h-4 inline-block" />
+        </a>
+      </p>
     </footer>
   </body>
 </html>
