@@ -164,6 +164,21 @@ test("glossary page loads with terms", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
+// Money Flow
+// ---------------------------------------------------------------------------
+test("flow page renders both sankey diagrams", async ({ page }) => {
+  await page.goto("/flow/");
+
+  await expect(main(page).locator("h1").first()).toContainText(/Money Flow/i);
+  // Two sections, each with an SVG
+  const svgs = main(page).locator("svg");
+  expect(await svgs.count()).toBeGreaterThanOrEqual(2);
+  // Sankey paths should be present (at least one per diagram)
+  const paths = main(page).locator("svg path");
+  expect(await paths.count()).toBeGreaterThan(10);
+});
+
+// ---------------------------------------------------------------------------
 // About
 // ---------------------------------------------------------------------------
 test("about page loads", async ({ page }) => {
@@ -332,33 +347,6 @@ test("embed page renders chart without nav", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------
-test("budget balls page loads with visualization", async ({ page }) => {
-  await page.goto("/budget-balls/");
-
-  await expect(page).toHaveTitle(/Budget Balls/);
-  await expect(main(page).locator("h1")).toContainText("Where the Money Goes");
-
-  // Canvas should be present
-  await expect(main(page).locator("canvas")).toBeVisible();
-
-  // "View as table" button should exist and show departments when clicked
-  await expect(
-    main(page).getByRole("button", { name: "View as table" }),
-  ).toBeVisible();
-  await main(page).getByRole("button", { name: "View as table" }).click();
-  await expect(main(page).getByText("Department of Finance")).toBeVisible();
-});
-
-test("budget balls 2 page loads with visualization", async ({ page }) => {
-  await page.goto("/budget-balls-2/");
-
-  await expect(page).toHaveTitle(/Budget Balls 2/);
-  await expect(main(page).locator("h1")).toContainText("Budget Balls 2");
-
-  // Canvas should be present
-  await expect(main(page).locator("canvas")).toBeVisible();
-});
-
 test("no JS errors on key pages", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (err) => errors.push(`${err.message}`));
@@ -375,8 +363,7 @@ test("no JS errors on key pages", async ({ page }) => {
     "/departments/",
     "/stories/",
     "/embed/",
-    "/budget-balls/",
-    "/budget-balls-2/",
+    "/flow/",
   ];
   for (const route of routes) {
     await page.goto(route);

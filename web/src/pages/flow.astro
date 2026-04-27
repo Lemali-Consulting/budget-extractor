@@ -1,0 +1,250 @@
+---
+import Base from '../layouts/Base.astro';
+import FlowSankey from '../components/FlowSankey.tsx';
+import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
+import revenueWaterfall from '../data/views/revenue-waterfall.json';
+import departmentBudgets from '../data/views/department-budgets.json';
+import capitalFunding from '../data/views/capital-funding-sources.json';
+import { revenueColor, capitalSourceColor } from '../lib/flow-colors';
+import { colorForSlug, GROUP_COLORS } from '../lib/department-groups';
+
+interface RevenueRow { label: string; amount: number; type: string }
+interface DeptRow { department: string; slug: string; year: string; amount: number }
+interface CapitalRow { project: string; source: string; year: string; amount: number }
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
+
+// Title-case all-caps source data while preserving common acronyms.
+function titleCase(s: string): string {
+  const lowered = s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+  return lowered.replace(/\b(Tip|Cdbg|Ems|Hud|Eeoc|Rad|Tif|Urd)\b/g, (m) => m.toUpperCase());
+}
+
+// ---------- Operating flow: revenue → trunk → departments ----------
+
+const revenue = revenueWaterfall as RevenueRow[];
+const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
+
+const dept2026 = (departmentBudgets as DeptRow[]).filter((r) => r.year === '2026 Budget');
+const deptTotal = dept2026.reduce((s, r) => s + r.amount, 0);
+
+// Group small departments (<1% of dept total) into "Other departments".
+const DEPT_THRESHOLD = 0.01;
+const bigDepts = dept2026.filter((d) => d.amount / deptTotal >= DEPT_THRESHOLD);
+const smallDepts = dept2026.filter((d) => d.amount / deptTotal < DEPT_THRESHOLD);
+const otherDeptAmount = smallDepts.reduce((s, d) => s + d.amount, 0);
+
+// Scale department amounts to revenue total so the diagram balances visually
+// — story is "of every revenue dollar, where does it go?"
+const deptScale = revenueTotal / deptTotal;
+
+const operatingNodes: FlowNode[] = [
+  ...revenue.map((r) => ({
+    id: `rev:${r.label}`,
+    label: r.label,
+    category: 'revenue',
+    color: revenueColor(r.label),
+  })),
+  { id: 'trunk', label: '2026 Operating Budget', category: 'trunk' },
+  ...bigDepts
+    .slice()
+    .sort((a, b) => b.amount - a.amount)
+    .map((d) => ({
+      id: `dep:${d.slug}`,
+      label: d.department,
+      category: 'department',
+      color: colorForSlug(d.slug),
+      href: `/sections/${d.slug}/`,
+    })),
+  ...(smallDepts.length > 0
+    ? [{
+        id: 'dep:other',
+        label: `Other (${smallDepts.length} departments)`,
+        category: 'department-other',
+      }]
+    : []),
+];
+
+const operatingLinks: FlowLink[] = [
+  ...revenue.map((r) => ({ source: `rev:${r.label}`, target: 'trunk', value: r.amount })),
+  ...bigDepts.map((d) => ({
+    source: 'trunk',
+    target: `dep:${d.slug}`,
+    value: d.amount * deptScale,
+    color: colorForSlug(d.slug),
+  })),
+  ...(smallDepts.length > 0
+    ? [{ source: 'trunk', target: 'dep:other', value: otherDeptAmount * deptScale }]
+    : []),
+];
+
+// ---------- Capital flow: source → project → year ----------
+
+const capital = capitalFunding as CapitalRow[];
+const capitalTotal = capital.reduce((s, r) => s + r.amount, 0);
+
+// Aggregate by project to find top projects.
+const projectTotals = new Map<string, number>();
+for (const r of capital) {
+  projectTotals.set(r.project, (projectTotals.get(r.project) ?? 0) + r.amount);
+}
+const TOP_N = 18;
+const sortedProjects = [...projectTotals.entries()].sort((a, b) => b[1] - a[1]);
+const topProjects = new Set(sortedProjects.slice(0, TOP_N).map(([p]) => p));
+
+function projectId(project: string): string {
+  return topProjects.has(project) ? `proj:${project}` : 'proj:other';
+}
+
+// source → project links
+const srcProjMap = new Map<string, number>();
+const projYearMap = new Map<string, number>();
+// Track funding mix per project so we can color each project node by its
+// dominant source — that way the source palette propagates into the
+// project → year links too.
+const projSourceMix = new Map<string, Map<string, number>>();
+for (const r of capital) {
+  const pid = projectId(r.project);
+  const sk = `${r.source}|${pid}`;
+  srcProjMap.set(sk, (srcProjMap.get(sk) ?? 0) + r.amount);
+  const pk = `${pid}|${r.year}`;
+  projYearMap.set(pk, (projYearMap.get(pk) ?? 0) + r.amount);
+  const mix = projSourceMix.get(pid) ?? new Map<string, number>();
+  mix.set(r.source, (mix.get(r.source) ?? 0) + r.amount);
+  projSourceMix.set(pid, mix);
+}
+
+function dominantSourceColor(pid: string): string {
+  const mix = projSourceMix.get(pid);
+  if (!mix) return '#94a3b8';
+  let topSource = '';
+  let topAmount = -1;
+  for (const [src, amt] of mix) {
+    if (amt > topAmount) {
+      topAmount = amt;
+      topSource = src;
+    }
+  }
+  return capitalSourceColor(topSource);
+}
+
+const sources = [...new Set(capital.map((r) => r.source))];
+const years = [...new Set(capital.map((r) => r.year))].sort();
+
+const capitalNodes: FlowNode[] = [
+  ...sources.map((s) => ({
+    id: `src:${s}`,
+    label: s,
+    category: 'source',
+    color: capitalSourceColor(s),
+  })),
+  ...sortedProjects.slice(0, TOP_N).map(([p]) => {
+    const titled = titleCase(p);
+    return {
+      id: `proj:${p}`,
+      label: titled.length > 48 ? titled.slice(0, 45).trimEnd() + '…' : titled,
+      category: 'project',
+      color: dominantSourceColor(`proj:${p}`),
+    };
+  }),
+  ...(sortedProjects.length > TOP_N
+    ? [{
+        id: 'proj:other',
+        label: `Other (${sortedProjects.length - TOP_N} projects)`,
+        category: 'project-other',
+      }]
+    : []),
+  ...years.map((y) => ({ id: `yr:${y}`, label: y, category: 'year' })),
+];
+
+const capitalLinks: FlowLink[] = [
+  ...[...srcProjMap.entries()].map(([k, v]) => {
+    const [source, target] = k.split('|');
+    return { source: `src:${source}`, target, value: v };
+  }),
+  ...[...projYearMap.entries()].map(([k, v]) => {
+    const [source, year] = k.split('|');
+    return { source, target: `yr:${year}`, value: v };
+  }),
+];
+---
+
+<Base
+  title="Money Flow"
+  description="Where Pittsburgh's 2026 budget comes from and where it goes — operating revenue and capital spending visualized as flows."
+  ogDescription={`Operating: ${fmtM(revenueTotal)} revenue across ${revenue.length} sources flows to ${dept2026.length} departments. Capital: ${fmtM(capitalTotal)} across ${sources.length} funding sources, ${sortedProjects.length} projects, ${years.length} years.`}
+>
+  <h1 class="text-3xl font-bold mb-2">Money Flow</h1>
+  <p class="text-gray-600 mb-6 max-w-3xl">
+    Where the city's money comes from, and where it goes. Hover any band to trace
+    the dollars; click a department to drill in.
+  </p>
+
+  <!-- Operating -->
+  <section class="mb-12">
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="text-xl font-semibold">Operating Budget — Revenue to Departments</h2>
+      <span class="text-sm text-gray-500">FY2026 · {fmtM(revenueTotal)}</span>
+    </div>
+    <p class="text-sm text-gray-500 mb-4 max-w-3xl">
+      Seven categories of revenue on the left feed the city's general budget,
+      which is then distributed across {bigDepts.length} departments on the right.
+      Departments smaller than 1% are grouped together. Department amounts are
+      scaled proportionally so the two sides balance — the story is "of every
+      revenue dollar, where does it go?"
+    </p>
+    <div class="bg-white rounded-lg border p-4">
+      <FlowSankey
+        nodes={operatingNodes}
+        links={operatingLinks}
+        width={1100}
+        height={Math.max(760, bigDepts.length * 38)}
+        interactive
+        showLabels
+        totalAmount={revenueTotal}
+        client:visible
+      />
+      <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600">
+        <span class="text-gray-400 uppercase tracking-wide">Departments grouped by:</span>
+        {Object.entries(GROUP_COLORS).map(([name, color]) => (
+          <span class="inline-flex items-center gap-1.5">
+            <span class="inline-block w-3 h-3 rounded-sm" style={`background-color: ${color}`}></span>
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Capital -->
+  <section class="mb-12">
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="text-xl font-semibold">Capital Plan — Sources, Projects, Years</h2>
+      <span class="text-sm text-gray-500">2025–2031 · {fmtM(capitalTotal)}</span>
+    </div>
+    <p class="text-sm text-gray-500 mb-4 max-w-3xl">
+      The six-year capital plan moves money from {sources.length} funding sources
+      (bonds, PAYGO, CDBG, other) through {sortedProjects.length} projects and
+      out across {years.length} fiscal years. Smaller projects are grouped into
+      "Other" to keep labels readable.
+    </p>
+    <div class="bg-white rounded-lg border p-4">
+      <FlowSankey
+        nodes={capitalNodes}
+        links={capitalLinks}
+        width={1100}
+        height={820}
+        interactive
+        showLabels
+        totalAmount={capitalTotal}
+        client:visible
+      />
+    </div>
+  </section>
+
+  <p class="text-xs text-gray-400">
+    Source: 2026 Pittsburgh Operating &amp; Capital Budget (extracted tables).
+  </p>
+</Base>

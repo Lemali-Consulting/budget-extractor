@@ -35,7 +35,7 @@ function dropdownItemClass(href: string): string {
 }
 
 const storiesHrefs = ['/stories/', '/departments/'];
-const budgetsHrefs = ['/operating/', '/capital/', '/changes/', '/cross-year/'];
+const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/changes/', '/cross-year/'];
 const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/embed/', '/glossary/'];
 ---
 
@@ -50,6 +50,9 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231e3a5f'/><text x='16' y='23' font-size='20' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>P</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title} | Pittsburgh Budget Explorer</title>
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-900">
@@ -91,6 +94,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[12rem]">
                   <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
+                  <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
                   <a href="/changes/" class={dropdownItemClass('/changes/')}>What Changed</a>
                   <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
                 </div>

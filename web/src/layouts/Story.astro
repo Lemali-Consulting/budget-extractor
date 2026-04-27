@@ -33,7 +33,7 @@ function dropdownItemClass(href: string): string {
 }
 
 const storiesHrefs = ['/stories/', '/departments/'];
-const budgetsHrefs = ['/operating/', '/capital/', '/changes/', '/cross-year/'];
+const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/changes/', '/cross-year/'];
 const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/embed/', '/glossary/'];
 ---
 
@@ -78,6 +78,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[12rem]">
                   <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
+                  <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
                   <a href="/changes/" class={dropdownItemClass('/changes/')}>What Changed</a>
                   <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
                 </div>

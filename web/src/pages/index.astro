@@ -2,6 +2,10 @@
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
 import BudgetChart from '../components/BudgetChart.tsx';
+import FlowSankey from '../components/FlowSankey.tsx';
+import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
+import { revenueColor } from '../lib/flow-colors';
+import { colorForSlug } from '../lib/department-groups';
 import budgetData from '../data/budget-data.json';
 import capitalData from '../data/capital-budget-data.json';
 import searchIndex from '../data/views/search-index.json';
@@ -52,6 +56,53 @@ const shiftedPositions = changes.shiftedPositions?.length || 0;
 function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
 }
+
+// ---------- Teaser Sankey: revenue → trunk → top departments ----------
+const teaserDepts = [...(departmentBudgets as { department: string; slug: string; year: string; amount: number }[])]
+  .filter((r) => r.year === '2026 Budget')
+  .sort((a, b) => b.amount - a.amount);
+const teaserDeptTotal = teaserDepts.reduce((s, d) => s + d.amount, 0);
+const TEASER_TOP = 8;
+const teaserTop = teaserDepts.slice(0, TEASER_TOP);
+const teaserOther = teaserDepts.slice(TEASER_TOP);
+const teaserOtherAmount = teaserOther.reduce((s, d) => s + d.amount, 0);
+const teaserScale = revenueTotal / teaserDeptTotal;
+
+const teaserNodes: FlowNode[] = [
+  ...(revenueWaterfall as { label: string; amount: number }[]).map((r) => ({
+    id: `rev:${r.label}`,
+    label: r.label.replace(/ Revenue$/, ''),
+    category: 'revenue',
+    color: revenueColor(r.label),
+  })),
+  { id: 'trunk', label: 'Operating Budget', category: 'trunk' },
+  ...teaserTop.map((d) => ({
+    id: `dep:${d.slug}`,
+    label: d.department.replace(/^Bureau of |^Department of |^Office of(?: the)? /, ''),
+    category: 'department',
+    color: colorForSlug(d.slug),
+  })),
+  ...(teaserOther.length > 0
+    ? [{ id: 'dep:other', label: `Other (${teaserOther.length})`, category: 'department-other' }]
+    : []),
+];
+
+const teaserLinks: FlowLink[] = [
+  ...(revenueWaterfall as { label: string; amount: number }[]).map((r) => ({
+    source: `rev:${r.label}`,
+    target: 'trunk',
+    value: r.amount,
+  })),
+  ...teaserTop.map((d) => ({
+    source: 'trunk',
+    target: `dep:${d.slug}`,
+    value: d.amount * teaserScale,
+    color: colorForSlug(d.slug),
+  })),
+  ...(teaserOther.length > 0
+    ? [{ source: 'trunk', target: 'dep:other', value: teaserOtherAmount * teaserScale }]
+    : []),
+];
 ---
 
 <Base title="Home">
@@ -97,6 +148,21 @@ function fmtM(n: number): string {
       <div class="text-sm text-gray-500 mt-0.5">{fmtM(totalPersonnelBudget)} payroll</div>
     </div>
   </div>
+
+  <!-- Money Flow teaser -->
+  <a
+    href="/flow/"
+    class="block mb-8 p-5 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition"
+  >
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="text-xl font-bold text-blue-900">Where the Money Flows</h2>
+      <span class="text-sm text-blue-600 hover:text-blue-800">See the full money flow &rarr;</span>
+    </div>
+    <p class="text-sm text-gray-600 mb-3">
+      From {(revenueWaterfall as any[]).length} revenue sources, through the operating budget, out to {teaserDepts.length} departments.
+    </p>
+    <FlowSankey nodes={teaserNodes} links={teaserLinks} width={1000} height={280} showLabels />
+  </a>
 
   <!-- What Changed — prominent callout -->
   <a href="/changes/" class="block mb-8 p-6 bg-amber-50 rounded-lg border-2 border-amber-200 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition">
