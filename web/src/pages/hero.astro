@@ -1,0 +1,205 @@
+---
+/**Marketing hero shot — landscape 1.91:1, optimized for LinkedIn preview.
+ * Renders just the Operating Sankey with an editorial headline and URL
+ * wordmark, no nav/footer chrome. Screenshot at 1600x840. */
+import '../styles/global.css';
+import FlowSankey from '../components/FlowSankey.tsx';
+import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
+import revenueWaterfall from '../data/views/revenue-waterfall.json';
+import departmentBudgets from '../data/views/department-budgets.json';
+import { revenueColor } from '../lib/flow-colors';
+import { colorForSlug } from '../lib/department-groups';
+
+interface RevenueRow { label: string; amount: number; type: string }
+interface DeptRow { department: string; slug: string; year: string; amount: number }
+
+const revenue = revenueWaterfall as RevenueRow[];
+const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
+
+const dept2026 = (departmentBudgets as DeptRow[]).filter((r) => r.year === '2026 Budget');
+const deptTotal = dept2026.reduce((s, r) => s + r.amount, 0);
+
+// Group small departments (<2% — slightly higher threshold than the live
+// page so the hero shot has fewer, bigger labels that survive thumbnailing).
+const DEPT_THRESHOLD = 0.02;
+const bigDepts = dept2026.filter((d) => d.amount / deptTotal >= DEPT_THRESHOLD);
+const smallDepts = dept2026.filter((d) => d.amount / deptTotal < DEPT_THRESHOLD);
+const otherDeptAmount = smallDepts.reduce((s, d) => s + d.amount, 0);
+const deptScale = revenueTotal / deptTotal;
+
+const nodes: FlowNode[] = [
+  ...revenue.map((r) => ({
+    id: `rev:${r.label}`,
+    label: r.label,
+    category: 'revenue',
+    color: revenueColor(r.label),
+  })),
+  { id: 'trunk', label: '2026 Operating Budget', category: 'trunk' },
+  ...bigDepts
+    .slice()
+    .sort((a, b) => b.amount - a.amount)
+    .map((d) => ({
+      id: `dep:${d.slug}`,
+      label: d.department,
+      category: 'department',
+      color: colorForSlug(d.slug),
+    })),
+  ...(smallDepts.length > 0
+    ? [{
+        id: 'dep:other',
+        label: `Other (${smallDepts.length})`,
+        category: 'department-other',
+      }]
+    : []),
+];
+
+const links: FlowLink[] = [
+  ...revenue.map((r) => ({ source: `rev:${r.label}`, target: 'trunk', value: r.amount })),
+  ...bigDepts.map((d) => ({
+    source: 'trunk',
+    target: `dep:${d.slug}`,
+    value: d.amount * deptScale,
+    color: colorForSlug(d.slug),
+  })),
+  ...(smallDepts.length > 0
+    ? [{ source: 'trunk', target: 'dep:other', value: otherDeptAmount * deptScale }]
+    : []),
+];
+
+const totalLabel = `$${(revenueTotal / 1_000_000).toFixed(0)}M`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1600, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Pittsburgh Budget Explorer</title>
+    <style>
+      html, body { margin: 0; padding: 0; background: #f8fafc; }
+      .hero {
+        width: 1600px;
+        height: 840px;
+        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+        position: relative;
+        overflow: hidden;
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      .accent-bar {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 50%, #06b6d4 100%);
+      }
+      .header {
+        padding: 44px 72px 0 72px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+      .eyebrow {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #2563eb;
+        margin: 0 0 10px 0;
+      }
+      .headline {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        margin: 0;
+        max-width: 880px;
+      }
+      .headline .accent { color: #2563eb; }
+      .stat {
+        text-align: right;
+      }
+      .stat-value {
+        font-size: 56px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #0f172a;
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #64748b;
+        margin-top: 6px;
+      }
+      .chart-wrap {
+        padding: 20px 56px 0 56px;
+      }
+      .footer {
+        position: absolute;
+        bottom: 28px;
+        left: 72px;
+        right: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        color: #475569;
+      }
+      .url {
+        font-weight: 700;
+        color: #0f172a;
+        letter-spacing: -0.01em;
+      }
+      .source {
+        font-size: 13px;
+        color: #94a3b8;
+      }
+      /* Soften the small-text labels d3 emits so the diagram reads cleanly */
+      :global(.hero text) {
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="accent-bar"></div>
+
+      <div class="header">
+        <div>
+          <p class="eyebrow">Pittsburgh Budget Explorer</p>
+          <h1 class="headline">
+            Where Pittsburgh's<br/>
+            <span class="accent">operating budget</span> goes.
+          </h1>
+        </div>
+        <div class="stat">
+          <div class="stat-value">{bigDepts.length}</div>
+          <div class="stat-label">Largest<br/>departments</div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <FlowSankey
+          nodes={nodes}
+          links={links}
+          width={1488}
+          height={520}
+          showLabels
+          totalAmount={revenueTotal}
+        />
+      </div>
+
+      <div class="footer">
+        <div>
+          <div class="url">pgh-budget-explorer.netlify.app</div>
+          <div class="source">Based on the FY2026 budget as published — pre-revision.</div>
+        </div>
+        <span class="source">Source: City of Pittsburgh FY2026 Operating Budget</span>
+      </div>
+    </div>
+  </body>
+</html>
