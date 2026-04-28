@@ -1475,12 +1475,44 @@
   ],
   "shiftedPositions": [
     {
+      "title": "Assistant Manager, 311 Response Line",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Innovation and Performance",
+      "fte": 1.0,
+      "budgetPrior": 74069.0,
+      "budgetCurrent": 76294.0
+    },
+    {
+      "title": "Manager, Office of Equal Protection",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Law",
+      "fte": 1.0,
+      "budgetPrior": 74069.0,
+      "budgetCurrent": 76294.0
+    },
+    {
+      "title": "Performance Operations Analyst",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Innovation and Performance",
+      "fte": 1.0,
+      "budgetPrior": 68162.0,
+      "budgetCurrent": 70200.0
+    },
+    {
       "title": "Digital Engagement Coordinator",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of City Planning",
       "fte": 1.0,
       "budgetPrior": 62670.0,
       "budgetCurrent": 64542.0
+    },
+    {
+      "title": "Manager, 311 Response Line",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Innovation and Performance",
+      "fte": 1.0,
+      "budgetPrior": 83512.0,
+      "budgetCurrent": 86008.0
     },
     {
       "title": "311 Call Center Representative",
@@ -1505,38 +1537,6 @@
       "fte": 1.0,
       "budgetPrior": 77043.0,
       "budgetCurrent": 79352.0
-    },
-    {
-      "title": "Assistant Manager, 311 Response Line",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Innovation and Performance",
-      "fte": 1.0,
-      "budgetPrior": 74069.0,
-      "budgetCurrent": 76294.0
-    },
-    {
-      "title": "Performance Operations Analyst",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Innovation and Performance",
-      "fte": 1.0,
-      "budgetPrior": 68162.0,
-      "budgetCurrent": 70200.0
-    },
-    {
-      "title": "Manager, Office of Equal Protection",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Law",
-      "fte": 1.0,
-      "budgetPrior": 74069.0,
-      "budgetCurrent": 76294.0
-    },
-    {
-      "title": "Manager, 311 Response Line",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Innovation and Performance",
-      "fte": 1.0,
-      "budgetPrior": 83512.0,
-      "budgetCurrent": 86008.0
     }
   ]
 }

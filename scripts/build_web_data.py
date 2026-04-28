@@ -1130,98 +1130,6 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
     return rows
 
 
-def build_expenditure_details(sections: list[dict]) -> list[dict]:
-    """Extract per-department expenditure breakdowns from financial_summary tables.
-
-    For each department, extracts 2-digit category codes and their 5-digit subcategories
-    with the latest budget year amount. Used by the budget balls visualization.
-    """
-    results: list[dict] = []
-
-    for section in sections:
-        if section["section_number"] <= 9:
-            continue
-
-        # Find the financial_summary table
-        fin_table = None
-        for table in section["tables"]:
-            if table["table_type"] == "financial_summary":
-                fin_table = table
-                break
-        if not fin_table:
-            continue
-
-        headers = fin_table["headers"]
-        # Find the latest budget column (e.g., "2026 Budget")
-        budget_col_idx: int | None = None
-        for i, h in enumerate(headers):
-            m = re.search(rf"{BUDGET_YEAR}\s*Budget", h, re.IGNORECASE)
-            if m:
-                budget_col_idx = i
-                break
-        if budget_col_idx is None:
-            continue
-
-        # Parse rows into categories (2-digit codes) and subcategories (5-digit codes)
-        categories: list[dict] = []
-        current_category: dict | None = None
-        dept_total: float = 0.0
-
-        for row in fin_table["rows"]:
-            label = (row[0] if row else "").strip()
-            if not label:
-                continue
-
-            # Skip header/total rows
-            label_lower = label.lower()
-            if label_lower in ("expenditures", "revenues"):
-                continue
-            if "total" in label_lower:
-                continue
-
-            # Parse the budget amount
-            raw_val = row[budget_col_idx] if budget_col_idx < len(row) else ""
-            amount = parse_currency(raw_val)
-            if amount is None or amount <= 0:
-                continue
-
-            # Detect code pattern: "51 - Personnel" or "51101 - Regular"
-            code_match = re.match(r"^(\d{2,5})\s*[-–—]\s*(.+)", label)
-            if not code_match:
-                continue
-
-            code = code_match.group(1)
-            name = code_match.group(2).strip()
-
-            if len(code) <= 2:
-                # 2-digit category
-                current_category = {
-                    "code": code,
-                    "name": name,
-                    "amount": amount,
-                    "subcategories": [],
-                }
-                categories.append(current_category)
-                dept_total += amount
-            elif len(code) >= 4 and current_category is not None:
-                # 5-digit subcategory — belongs to current category
-                current_category["subcategories"].append({
-                    "code": code,
-                    "name": name,
-                    "amount": amount,
-                })
-
-        if categories:
-            results.append({
-                "department": section["title"],
-                "slug": section["slug"],
-                "total": dept_total,
-                "categories": categories,
-            })
-
-    return results
-
-
 def build_personnel(sections: list[dict]) -> list[dict]:
     """Extract personnel rows from all personnel tables."""
     rows: list[dict] = []
@@ -2331,12 +2239,6 @@ def main() -> None:
     with open(views_dir / f"{prefix}revenue-waterfall.json", "w", encoding="utf-8") as f:
         json.dump(revenue_waterfall, f, indent=2)
     print(f"Wrote {prefix}revenue-waterfall.json ({len(revenue_waterfall)} categories)")
-
-    # Expenditure details (for budget balls drill-down)
-    expenditure_details = build_expenditure_details(sections)
-    with open(views_dir / f"{prefix}department-expenditure-details.json", "w", encoding="utf-8") as f:
-        json.dump(expenditure_details, f, indent=2)
-    print(f"Wrote {prefix}department-expenditure-details.json ({len(expenditure_details)} departments)")
 
     # Department forecast (multi-year for sparklines)
     dept_forecast = build_department_forecast(sections)
