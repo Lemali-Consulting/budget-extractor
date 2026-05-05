@@ -71,7 +71,11 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between">
           <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
-          <nav class="flex items-center gap-4 text-sm" aria-label="Main navigation">
+          <button id="mobile-nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded text-blue-100 hover:text-white hover:bg-blue-800" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+            <svg id="mobile-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg id="mobile-nav-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <nav class="hidden md:flex items-center gap-4 text-sm" aria-label="Main navigation">
             <a href="/brief/" class={navClass('/brief/')}>Brief</a>
 
             <div class="nav-dropdown relative">
@@ -118,11 +122,62 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
             </div>
           </nav>
         </div>
+        <nav id="mobile-nav" class="hidden md:hidden mt-3 pb-2 text-sm" aria-label="Mobile navigation">
+          <a href="/brief/" class={`block px-2 py-2 rounded ${isActive('/brief/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Brief</a>
+          <div class="mt-3">
+            <div class="px-2 text-xs uppercase tracking-wide text-blue-300 font-semibold">Stories</div>
+            <a href="/stories/" class={`block px-2 py-2 rounded ${isActive('/stories/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Stories</a>
+            <a href="/departments/" class={`block px-2 py-2 rounded ${isActive('/departments/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Departments</a>
+          </div>
+          <div class="mt-3">
+            <div class="px-2 text-xs uppercase tracking-wide text-blue-300 font-semibold">Budgets</div>
+            <a href="/operating/" class={`block px-2 py-2 rounded ${isActive('/operating/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Operating</a>
+            <a href="/capital/" class={`block px-2 py-2 rounded ${isActive('/capital/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Capital</a>
+            <a href="/flow/" class={`block px-2 py-2 rounded ${isActive('/flow/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Money Flow</a>
+            <a href="/changes/" class={`block px-2 py-2 rounded ${isActive('/changes/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>What Changed</a>
+            <a href="/cross-year/" class={`block px-2 py-2 rounded ${isActive('/cross-year/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Proposed vs Adopted</a>
+          </div>
+          <div class="mt-3">
+            <div class="px-2 text-xs uppercase tracking-wide text-blue-300 font-semibold">Explore</div>
+            <a href="/dashboard/" class={`block px-2 py-2 rounded ${isActive('/dashboard/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Dashboard</a>
+            <a href="/explorer/" class={`block px-2 py-2 rounded ${isActive('/explorer/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Explorer</a>
+            <a href="/compare/" class={`block px-2 py-2 rounded ${isActive('/compare/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Compare</a>
+            <a href="/personnel/" class={`block px-2 py-2 rounded ${isActive('/personnel/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Personnel</a>
+            <a href="/embed/" class={`block px-2 py-2 rounded ${isActive('/embed/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Embeds</a>
+            <a href="/glossary/" class={`block px-2 py-2 rounded ${isActive('/glossary/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Glossary</a>
+          </div>
+        </nav>
       </div>
     </header>
     <main class={fullWidth ? '' : 'max-w-6xl mx-auto px-6 py-8'}>
       <slot />
     </main>
+    <script is:inline>
+      // Mobile hamburger toggle
+      (function() {
+        const btn = document.getElementById('mobile-nav-toggle');
+        const panel = document.getElementById('mobile-nav');
+        const iconOpen = document.getElementById('mobile-nav-icon-open');
+        const iconClose = document.getElementById('mobile-nav-icon-close');
+        if (!btn || !panel) return;
+        btn.addEventListener('click', () => {
+          const isOpen = !panel.classList.contains('hidden');
+          if (isOpen) {
+            panel.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'Open menu');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+          } else {
+            panel.classList.remove('hidden');
+            btn.setAttribute('aria-expanded', 'true');
+            btn.setAttribute('aria-label', 'Close menu');
+            iconOpen.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+          }
+        });
+      })();
+    </script>
     <script is:inline>
       // Nav dropdown: open on hover/click, close on leave/outside click, keyboard accessible
       document.querySelectorAll('.nav-dropdown').forEach(dd => {
