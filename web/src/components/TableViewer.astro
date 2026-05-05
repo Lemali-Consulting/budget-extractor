@@ -117,64 +117,152 @@ function isTotalRow(row: string[]): boolean {
     </div>
     <p class="text-xs text-gray-400 italic mt-1">{annotation}</p>
   </div>
-  <div class="overflow-x-auto">
-    <table class="w-full text-sm">
-      {table.headers.length > 0 && (
-        <thead>
-          <tr class="bg-gray-50">
-            {table.headers.map((h, hi) => {
-              const align = numericColSet.has(hi) ? 'text-right tabular-nums' : 'text-left';
-              const colBorder = hi < colCount - 1 ? 'border-r border-gray-200' : '';
-              return linkCell
-                ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder}`} data-col={hi} data-numeric={numericColSet.has(hi)}><span set:html={linkCell(h)} /><span class="sort-arrow ml-1 text-gray-400"></span></th>
-                : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder}`} data-col={hi} data-numeric={numericColSet.has(hi)}>{h}<span class="sort-arrow ml-1 text-gray-400"></span></th>;
-            })}
-          </tr>
-        </thead>
-      )}
-      <tbody>
-        {table.rows.map((row, i) => {
-          const section = sections[i] || '';
-          const prevSection = i > 0 ? (sections[i - 1] || '') : '';
-          const showDivider = section && section !== prevSection;
-          const isSectionRow = showDivider && row[0]?.trim() === section;
-          const isTotal = isTotalRow(row);
+  <div class="table-scroll-wrap relative">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        {table.headers.length > 0 && (
+          <thead>
+            <tr class="bg-gray-50">
+              {table.headers.map((h, hi) => {
+                const align = numericColSet.has(hi) ? 'text-right tabular-nums' : 'text-left';
+                const colBorder = hi < colCount - 1 ? 'border-r border-gray-200' : '';
+                const sticky = hi === 0 ? 'sticky-col bg-gray-50' : '';
+                return linkCell
+                  ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder} ${sticky}`} data-col={hi} data-numeric={numericColSet.has(hi)}><span set:html={linkCell(h)} /><span class="sort-arrow ml-1 text-gray-400"></span></th>
+                  : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder} ${sticky}`} data-col={hi} data-numeric={numericColSet.has(hi)}>{h}<span class="sort-arrow ml-1 text-gray-400"></span></th>;
+              })}
+            </tr>
+          </thead>
+        )}
+        <tbody>
+          {table.rows.map((row, i) => {
+            const section = sections[i] || '';
+            const prevSection = i > 0 ? (sections[i - 1] || '') : '';
+            const showDivider = section && section !== prevSection;
+            const isSectionRow = showDivider && row[0]?.trim() === section;
+            const isTotal = isTotalRow(row);
+            const rowBg = isSectionRow
+              ? 'bg-amber-50'
+              : isTotal
+                ? 'bg-gray-100'
+                : i % 2 === 0 ? 'bg-white' : 'bg-gray-50';
 
-          return (
-            <>
-              {showDivider && !isSectionRow && (
-                <tr class="bg-amber-50 border-t-2 border-amber-200" data-row-type="divider" data-section={section} data-orig-index={i}>
-                  {linkCell
-                    ? <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide" set:html={linkCell(section)} />
-                    : <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">{section}</td>
-                  }
+            return (
+              <>
+                {showDivider && !isSectionRow && (
+                  <tr class="bg-amber-50 border-t-2 border-amber-200" data-row-type="divider" data-section={section} data-orig-index={i}>
+                    {linkCell
+                      ? <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide" set:html={linkCell(section)} />
+                      : <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">{section}</td>
+                    }
+                  </tr>
+                )}
+                <tr class={
+                  isSectionRow
+                    ? 'bg-amber-50 border-t-2 border-amber-200 font-semibold text-amber-900'
+                    : isTotal
+                      ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
+                      : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                } data-section={section} data-orig-index={i} data-row-type={
+                  isSectionRow ? 'section-header' : isTotal ? 'total' : 'data'
+                }>
+                  {row.map((cell, ci) => {
+                    const align = numericColSet.has(ci) ? 'text-right tabular-nums' : '';
+                    const change = cellChangeClass[i]?.[ci] || '';
+                    const colBorder = ci < colCount - 1 ? 'border-r border-gray-200' : '';
+                    const sticky = ci === 0 ? `sticky-col ${rowBg}` : '';
+                    return linkCell && ci === 0
+                      ? <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder} ${sticky}`} set:html={linkCell(cell)} />
+                      : <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder} ${sticky}`}>{cell}</td>;
+                  })}
                 </tr>
-              )}
-              <tr class={
-                isSectionRow
-                  ? 'bg-amber-50 border-t-2 border-amber-200 font-semibold text-amber-900'
-                  : isTotal
-                    ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
-                    : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-              } data-section={section} data-orig-index={i} data-row-type={
-                isSectionRow ? 'section-header' : isTotal ? 'total' : 'data'
-              }>
-                {row.map((cell, ci) => {
-                  const align = numericColSet.has(ci) ? 'text-right tabular-nums' : '';
-                  const change = cellChangeClass[i]?.[ci] || '';
-                  const colBorder = ci < colCount - 1 ? 'border-r border-gray-200' : '';
-                  return linkCell && ci === 0
-                    ? <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder}`} set:html={linkCell(cell)} />
-                    : <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder}`}>{cell}</td>;
-                })}
-              </tr>
-            </>
-          );
-        })}
-      </tbody>
-    </table>
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    <div class="scroll-shadow-right" aria-hidden="true"></div>
+    <div class="scroll-hint" aria-hidden="true">swipe →</div>
   </div>
 </div>
+
+<style>
+  .sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+  .scroll-shadow-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.35));
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .table-scroll-wrap.can-scroll-right .scroll-shadow-right {
+    opacity: 1;
+  }
+  /* "swipe →" badge at the top-right of the table; visible at first paint */
+  .scroll-hint {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    pointer-events: none;
+    background: rgba(15, 23, 42, 0.85);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 5px 9px;
+    border-radius: 9999px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .table-scroll-wrap.can-scroll-right.is-scrolled-pristine .scroll-hint {
+    opacity: 1;
+  }
+  /* Hide the explicit hint on wide viewports — affordance not needed */
+  @media (min-width: 768px) {
+    .scroll-hint { display: none; }
+  }
+  /* Subtle right-edge separator on the sticky column when scrolled */
+  .table-scroll-wrap.is-scrolled .sticky-col {
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.08);
+  }
+</style>
+
+<script>
+  // Toggle scroll-affordance classes based on horizontal scroll position.
+  function updateTableScrollState(wrap: HTMLElement) {
+    const inner = wrap.querySelector('.overflow-x-auto') as HTMLElement | null;
+    if (!inner) return;
+    const max = inner.scrollWidth - inner.clientWidth;
+    const left = inner.scrollLeft;
+    wrap.classList.toggle('can-scroll-right', max > 1 && left < max - 1);
+    wrap.classList.toggle('is-scrolled', left > 1);
+    // "Pristine" = scrollable but user hasn't scrolled yet — show the swipe hint.
+    wrap.classList.toggle('is-scrolled-pristine', max > 1 && left <= 1);
+  }
+
+  function initTableScrollWrap(wrap: HTMLElement) {
+    const inner = wrap.querySelector('.overflow-x-auto') as HTMLElement | null;
+    if (!inner) return;
+    updateTableScrollState(wrap);
+    inner.addEventListener('scroll', () => updateTableScrollState(wrap), { passive: true });
+    const ro = new ResizeObserver(() => updateTableScrollState(wrap));
+    ro.observe(inner);
+  }
+
+  for (const wrap of document.querySelectorAll<HTMLElement>('.table-scroll-wrap')) {
+    initTableScrollWrap(wrap);
+  }
+</script>
 
 <script>
   // Copy table handler

@@ -240,23 +240,32 @@ export default function FlowSankey({
             );
 
             const isYearLabel = /^\d{4}$/.test(n.label);
-            // Drop in-band labels below ~14px to avoid collisions; users can
-            // hover to see the name. Year labels are kept down to 8px since
-            // they're short and on the diagram's edge.
-            const minLabelHeight = isYearLabel ? 8 : 14;
+            const isNarrow = renderWidth < 520;
+            // Drop in-band labels below a height threshold to avoid collisions;
+            // users can tap/hover for tooltips. Year labels are kept down to 8px
+            // since they're short and on the diagram's edge. On narrow viewports
+            // raise the non-year threshold so only the largest interior nodes
+            // get labeled — adjacent-column labels otherwise run into each other.
+            const minLabelHeight = isYearLabel ? 8 : isNarrow ? 28 : 14;
+            // At narrow widths, truncate long interior labels so they don't
+            // bleed into the neighboring column.
+            const truncatedLabel =
+              isNarrow && !isYearLabel && n.label.length > 16
+                ? n.label.slice(0, 15) + '…'
+                : n.label;
             const labelEl = showLabels && nodeHeight >= minLabelHeight ? (
               <text
                 x={(n.x0 ?? 0) < renderWidth / 2 ? (n.x1 ?? 0) + 6 : (n.x0 ?? 0) - 6}
                 y={((n.y0 ?? 0) + (n.y1 ?? 0)) / 2}
                 dy="0.35em"
                 text-anchor={(n.x0 ?? 0) < renderWidth / 2 ? 'start' : 'end'}
-                font-size={isYearLabel ? 13 : 11}
+                font-size={isYearLabel ? 13 : isNarrow ? 10 : 11}
                 font-weight={isYearLabel ? 600 : 400}
                 fill="#1f2937"
                 fill-opacity={lit ? 1 : 0.35}
                 style="pointer-events: none; font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;"
               >
-                {n.label}
+                {truncatedLabel}
               </text>
             ) : null;
 

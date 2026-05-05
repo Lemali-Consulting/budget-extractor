@@ -75,6 +75,24 @@ tr.bg-gray-100 td.changed-decrease {
   background-color: theme('colors.red.100');
 }
 
+/* Prevent iOS Safari from zooming the page when focusing form fields.
+   Below 16px, iOS auto-zooms on focus; we force 16px on mobile but let the
+   designed size apply on tablet+ where zoom-on-focus does not trigger. */
+@media (max-width: 767px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="password"],
+  input:not([type]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
 /* Print styles */
 @media print {
   header, footer, nav, .print\\:hidden {

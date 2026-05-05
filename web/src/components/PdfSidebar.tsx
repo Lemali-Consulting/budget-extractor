@@ -15,6 +15,16 @@ export default function PdfSidebar({ slug, totalPages, startPage }: Props) {
   const absolutePage = startPage + currentPage;
   const src = `/pages/${slug}/P${currentPage}.webp`;
 
+  // Reserve scroll-space for the floating "Show PDF" button so it never sits
+  // on top of the last row of a table or a chart's x-axis.
+  useEffect(() => {
+    const prev = document.body.style.paddingBottom;
+    document.body.style.paddingBottom = '5rem';
+    return () => {
+      document.body.style.paddingBottom = prev;
+    };
+  }, []);
+
   useEffect(() => {
     if (!open) return;
 
@@ -52,7 +62,7 @@ export default function PdfSidebar({ slug, totalPages, startPage }: Props) {
       </button>
 
       {open && (
-        <div class="fixed top-0 right-0 w-[420px] h-full bg-white border-l shadow-2xl z-30 flex flex-col">
+        <div class="fixed top-0 right-0 w-full sm:w-[420px] h-full bg-white border-l shadow-2xl z-30 flex flex-col">
           <div class="flex items-center justify-between px-3 py-2 bg-gray-50 border-b text-sm">
             <span class="font-medium text-gray-700">
               Page {absolutePage}

@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import GlossaryTip from './GlossaryTip';
 import { FTE_TOOLTIP } from '../lib/glossary-terms';
+import { useContainerWidth } from '../lib/hooks';
 
 interface DeptBudget {
   department: string;
@@ -52,6 +53,8 @@ export default function DepartmentCompare({ budgets, personnel }: Props) {
 
   const [selected, setSelected] = useState<string[]>(getInitialDepts);
   const chartRef = useRef<HTMLDivElement>(null);
+  const chartContainerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(chartContainerRef);
 
   const toggle = (dept: string) => {
     setSelected(prev => {
@@ -82,6 +85,7 @@ export default function DepartmentCompare({ budgets, personnel }: Props) {
     const years = [...new Set(filteredBudgets.map(b => parseInt(b.year.split(' ')[0])))].sort();
     const chart = Plot.plot({
       marginLeft: 60,
+      width: containerWidth,
       height: 300,
       color: { legend: true },
       x: { label: 'Year', tickFormat: (d: number) => String(d), ticks: years },
@@ -100,7 +104,7 @@ export default function DepartmentCompare({ budgets, personnel }: Props) {
     chartRef.current.innerHTML = '';
     chartRef.current.appendChild(chart);
     return () => chart.remove();
-  }, [selected, budgets]);
+  }, [selected, budgets, containerWidth]);
 
   const selectedPersonnel = personnel.filter(p => selected.includes(p.department));
 
@@ -157,7 +161,7 @@ export default function DepartmentCompare({ budgets, personnel }: Props) {
         ))}
       </div>
 
-      <div class="bg-white rounded-lg border p-4 mb-6">
+      <div ref={chartContainerRef} class="bg-white rounded-lg border p-4 mb-6">
         <h3 class="text-lg font-semibold mb-3">Budget Trend</h3>
         <div ref={chartRef} />
       </div>

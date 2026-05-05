@@ -23,6 +23,20 @@ function formatDollar(n: number): string {
   return `$${n.toFixed(0)}`;
 }
 
+// Shorten common department prefixes so labels fit a reduced left margin on
+// narrow viewports. The full name still appears in the tooltip.
+function shortDept(name: string): string {
+  return name
+    .replace(/^Department of\s+/i, 'Dept. of ')
+    .replace(/^Bureau of\s+/i, '')
+    .replace(/^Office of\s+/i, '')
+    .replace(/\bAdministration\b/i, 'Admin.')
+    .replace(/\bDevelopment\b/i, 'Dev.')
+    .replace(/\bManagement\b/i, 'Mgmt.')
+    .replace(/\bServices\b/i, 'Svcs.')
+    .replace(/\bInfrastructure\b/i, 'Infra.');
+}
+
 export default function ChangesChart({ data, title, color }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,7 +45,10 @@ export default function ChangesChart({ data, title, color }: Props) {
   useEffect(() => {
     if (!ref.current || data.length === 0) return;
 
-    const sorted = [...data].sort((a, b) => Math.abs(b.dollarChange) - Math.abs(a.dollarChange));
+    const isNarrow = containerWidth < 520;
+    const sorted = [...data]
+      .sort((a, b) => Math.abs(b.dollarChange) - Math.abs(a.dollarChange))
+      .map((d) => ({ ...d, displayName: isNarrow ? shortDept(d.department) : d.department }));
 
     const hasPositive = sorted.some((d) => d.dollarChange >= 0);
     const hasNegative = sorted.some((d) => d.dollarChange < 0);
@@ -42,29 +59,43 @@ export default function ChangesChart({ data, title, color }: Props) {
     );
     const labelWidth = Math.min(140, longestLabel * 7 + 10);
 
+    // Shrink margins on narrow viewports so the plot area stays positive.
+    // Without this, marginLeft (200) + marginRight (~140) exceed mobile widths
+    // and Plot emits bars with negative width attributes.
+    const MIN_INNER = 80;
+    let marginLeft = 200;
+    let marginRight = hasPositive || hasNegative ? labelWidth : 40;
+    const overflow = marginLeft + marginRight + MIN_INNER - containerWidth;
+    if (overflow > 0) {
+      const leftShrink = Math.min(overflow, marginLeft - 90);
+      marginLeft -= Math.max(0, leftShrink);
+      const remaining = overflow - Math.max(0, leftShrink);
+      if (remaining > 0) marginRight = Math.max(40, marginRight - remaining);
+    }
+
     const chart = Plot.plot({
-      marginLeft: 200,
-      marginRight: hasPositive || hasNegative ? labelWidth : 40,
+      marginLeft,
+      marginRight,
       width: containerWidth,
       height: Math.max(200, sorted.length * 32 + 40),
       x: { label: 'Dollar Change', tickFormat: (d: number) => formatDollar(d) },
       y: { label: null },
       marks: [
         Plot.barX(sorted, {
-          y: (d: DeptChange) => d.department,
-          x: (d: DeptChange) => d.dollarChange,
+          y: 'displayName',
+          x: 'dollarChange',
           fill: color,
           sort: { y: '-x' },
           tip: true,
-          title: (d: DeptChange) =>
+          title: (d) =>
             `${d.department}\n${formatDollar(d.dollarChange)} (${d.pctChange > 0 ? '+' : ''}${d.pctChange}%)`,
         }),
         Plot.text(
           sorted.filter((d) => d.dollarChange >= 0),
           {
-            y: (d: DeptChange) => d.department,
-            x: (d: DeptChange) => d.dollarChange,
-            text: (d: DeptChange) => `${formatDollar(d.dollarChange)} (+${d.pctChange}%)`,
+            y: 'displayName',
+            x: 'dollarChange',
+            text: (d) => `${formatDollar(d.dollarChange)} (+${d.pctChange}%)`,
             textAnchor: 'start',
             dx: 5,
             fontSize: 12,
@@ -74,9 +105,9 @@ export default function ChangesChart({ data, title, color }: Props) {
         Plot.text(
           sorted.filter((d) => d.dollarChange < 0),
           {
-            y: (d: DeptChange) => d.department,
+            y: 'displayName',
             x: 0,
-            text: (d: DeptChange) => `${formatDollar(d.dollarChange)} (${d.pctChange}%)`,
+            text: (d) => `${formatDollar(d.dollarChange)} (${d.pctChange}%)`,
             textAnchor: 'start',
             dx: 5,
             fontSize: 12,
