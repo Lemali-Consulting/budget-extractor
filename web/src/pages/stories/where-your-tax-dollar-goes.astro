@@ -5,13 +5,14 @@ import TaxDollarChart from '../../components/TaxDollarChart.tsx';
 import SimpleBars from '../../components/SimpleBars.tsx';
 import departmentBudgets from '../../data/views/department-budgets.json';
 import revenueWaterfall from '../../data/views/revenue-waterfall.json';
+import { operating, type DeptBudgetRow } from '../../lib/department-budgets';
 
-const budgets = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const budgets = departmentBudgets as DeptBudgetRow[];
 const revenue = revenueWaterfall as { label: string; amount: number }[];
 
-// 2026 budgets sorted by amount (exclude non-department entries like Appendices)
-const depts = budgets
-  .filter(r => r.year === '2026 Budget' && r.slug !== 'appendices')
+// 2026 operating-department budgets sorted by amount (trust funds & appendices excluded)
+const depts = operating(budgets)
+  .filter(r => r.year === '2026 Budget')
   .sort((a, b) => b.amount - a.amount);
 const total = depts.reduce((s, d) => s + d.amount, 0);
 

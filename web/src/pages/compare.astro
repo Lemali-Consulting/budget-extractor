@@ -5,6 +5,9 @@ import searchIndex from '../data/views/search-index.json';
 import DepartmentCompare from '../components/DepartmentCompare.tsx';
 import departmentBudgets from '../data/views/department-budgets.json';
 import personnelByDept from '../data/views/personnel-by-department.json';
+import { operating, type DeptBudgetRow } from '../lib/department-budgets';
+
+const operatingBudgets = operating(departmentBudgets as DeptBudgetRow[]);
 ---
 
 <Base title="Compare Departments" description="Compare budgets, staffing, and trends across Pittsburgh city departments side by side.">
@@ -17,7 +20,7 @@ import personnelByDept from '../data/views/personnel-by-department.json';
 
   <DepartmentCompare
     client:load
-    budgets={departmentBudgets}
+    budgets={operatingBudgets}
     personnel={personnelByDept}
   />
 </Base>

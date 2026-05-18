@@ -11,16 +11,17 @@ import revenueWaterfall from '../data/views/revenue-waterfall.json';
 import budgetChanges from '../data/views/budget-changes.json';
 import personnelByDept from '../data/views/personnel-by-department.json';
 import capitalFunding from '../data/views/capital-funding-sources.json';
+import { operating, sumFor, type DeptBudgetRow } from '../lib/department-budgets';
 
 // --- Compute aggregations ---
-const budgets = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const budgets = departmentBudgets as DeptBudgetRow[];
 const changes = budgetChanges as any;
 const personnel = personnelByDept as any[];
 const revenue = revenueWaterfall as { label: string; amount: number; type: string }[];
 
-// Total operating budget
-const total2026 = budgets.filter(r => r.year === '2026 Budget').reduce((s, r) => s + r.amount, 0);
-const total2025 = budgets.filter(r => r.year === '2025 Budget').reduce((s, r) => s + r.amount, 0);
+// Total operating budget (trust funds excluded — reported separately)
+const total2026 = sumFor(budgets, 'operating', '2026 Budget');
+const total2025 = sumFor(budgets, 'operating', '2025 Budget');
 const totalChange = total2026 - total2025;
 const changePct = ((totalChange / total2025) * 100).toFixed(1);
 
@@ -34,7 +35,7 @@ const taxRevenue = revenue.find(r => r.label.includes('Tax'))?.amount || 0;
 const taxPct = ((taxRevenue / revenueTotal) * 100).toFixed(0);
 
 // Top departments by spending
-const depts2026 = budgets
+const depts2026 = operating(budgets)
   .filter(r => r.year === '2026 Budget')
   .sort((a, b) => b.amount - a.amount);
 const topDepts = depts2026.slice(0, 8).map(d => ({

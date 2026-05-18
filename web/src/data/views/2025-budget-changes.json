@@ -1,8 +1,8 @@
 {
-  "totalBudget2024": 498142625.0,
-  "totalBudget2025": 473414619.0,
-  "totalFte2024": 2728.0,
-  "totalFte2025": 2761.0,
+  "totalBudget2024": 686034502.0,
+  "totalBudget2025": 646077390.0,
+  "totalFte2024": 3011.75,
+  "totalFte2025": 3043.75,
   "departmentChanges": [
     {
       "department": "Department of Parks and Recreation",
@@ -25,12 +25,24 @@
       "fte2025": 679.0
     },
     {
-      "department": "Regional Asset District - Public Works Trust Fund",
-      "slug": "regional-asset-district-public-works-trust-fund",
-      "budget2024": 5680532.0,
-      "budget2025": 6819898.0,
-      "dollarChange": 1139366.0,
-      "pctChange": 20.1
+      "department": "Department of Finance",
+      "slug": "department-of-finance",
+      "budget2024": 190894635.0,
+      "budget2025": 193056054.0,
+      "dollarChange": 2161419.0,
+      "pctChange": 1.1,
+      "fte2024": 39.95,
+      "fte2025": 40.95
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "slug": "department-of-mobility-and-infrastructure",
+      "budget2024": 11767763.0,
+      "budget2025": 13664365.0,
+      "dollarChange": 1896602.0,
+      "pctChange": 16.1,
+      "fte2024": 118.0,
+      "fte2025": 122.0
     },
     {
       "department": "Bureau of Administration (Public Works)",
@@ -43,12 +55,14 @@
       "fte2025": 31.0
     },
     {
-      "department": "Stop the Violence Trust Fund",
-      "slug": "stop-the-violence-trust-fund",
-      "budget2024": 11095749.0,
-      "budget2025": 11841651.0,
-      "dollarChange": 745902.0,
-      "pctChange": 6.7
+      "department": "Department of Permits, Licenses, and Inspections",
+      "slug": "department-of-permits-licenses-and-inspections",
+      "budget2024": 10100395.0,
+      "budget2025": 11009437.0,
+      "dollarChange": 909042.0,
+      "pctChange": 9.0,
+      "fte2024": 120.0,
+      "fte2025": 120.0
     },
     {
       "department": "Office of the City Controller",
@@ -71,6 +85,16 @@
       "fte2025": 17.0
     },
     {
+      "department": "Department of Innovation and Performance",
+      "slug": "department-of-innovation-and-performance",
+      "budget2024": 22444776.0,
+      "budget2025": 22725604.0,
+      "dollarChange": 280828.0,
+      "pctChange": 1.3,
+      "fte2024": 67.0,
+      "fte2025": 68.0
+    },
+    {
       "department": "City Council",
       "slug": "city-council",
       "budget2024": 3341102.0,
@@ -79,14 +103,6 @@
       "pctChange": 5.9,
       "fte2024": 37.0,
       "fte2025": 36.0
-    },
-    {
-      "department": "Pittsburgh Partnership Trust Fund",
-      "slug": "pittsburgh-partnership-trust-fund",
-      "budget2024": 3110513.0,
-      "budget2025": 3204206.0,
-      "dollarChange": 93693.0,
-      "pctChange": 3.0
     },
     {
       "department": "Office of the City Clerk",
@@ -99,14 +115,6 @@
       "fte2025": 21.0
     },
     {
-      "department": "Public Works Trust Fund",
-      "slug": "public-works-trust-fund",
-      "budget2024": 935000.0,
-      "budget2025": 982040.0,
-      "dollarChange": 47040.0,
-      "pctChange": 5.0
-    },
-    {
       "department": "Commission on Human Relations",
       "slug": "commission-on-human-relations",
       "budget2024": 748300.0,
@@ -117,32 +125,24 @@
       "fte2025": 8.0
     },
     {
-      "department": "Three Taxing Bodies Trust Fund",
-      "slug": "three-taxing-bodies-trust-fund",
-      "budget2024": 670314.0,
-      "budget2025": 689816.0,
-      "dollarChange": 19502.0,
-      "pctChange": 2.9
+      "department": "Citizen Police Review Board",
+      "slug": "citizen-police-review-board",
+      "budget2024": 914154.0,
+      "budget2025": 933156.0,
+      "dollarChange": 19002.0,
+      "pctChange": 2.1,
+      "fte2024": 9.0,
+      "fte2025": 9.0
     },
     {
-      "department": "Special Food Service Trust Fund",
-      "slug": "special-food-service-trust-fund",
-      "budget2024": 648782.0,
-      "budget2025": 663737.0,
-      "dollarChange": 14955.0,
-      "pctChange": 2.3,
-      "fte2024": 1.0,
-      "fte2025": 1.0
-    },
-    {
-      "department": "Special Events Trust Fund",
-      "slug": "special-events-trust-fund",
-      "budget2024": 219161.0,
-      "budget2025": 222684.0,
-      "dollarChange": 3523.0,
-      "pctChange": 1.6,
-      "fte2024": 1.15,
-      "fte2025": 1.15
+      "department": "Office of Municipal Investigations",
+      "slug": "office-of-municipal-investigations",
+      "budget2024": 752314.0,
+      "budget2025": 765377.0,
+      "dollarChange": 13063.0,
+      "pctChange": 1.7,
+      "fte2024": 8.0,
+      "fte2025": 8.0
     },
     {
       "department": "Ethics Hearing Board",
@@ -155,70 +155,12 @@
       "fte2025": 1.0
     },
     {
-      "department": "Police Secondary Employment Trust Fund",
-      "slug": "police-secondary-employment-trust-fund",
-      "budget2024": 9029266.0,
-      "budget2025": 9030633.0,
-      "dollarChange": 1367.0,
-      "pctChange": 0.0
-    },
-    {
       "department": "Office of Community Health and Safety",
       "slug": "office-of-community-health-and-safety",
       "budget2024": 58000.0,
       "budget2025": 58000.0,
       "dollarChange": 0.0,
       "pctChange": 0.0
-    },
-    {
-      "department": "EEOC Trust Fund",
-      "slug": "eeoc-trust-fund",
-      "budget2024": 38500.0,
-      "budget2025": 38500.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "Liquid Fuels Trust Fund",
-      "slug": "liquid-fuels-trust-fund",
-      "budget2024": 6692500.0,
-      "budget2025": 6692500.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "Schenley Park Rink Trust Fund",
-      "slug": "schenley-park-rink-trust-fund",
-      "budget2024": 157000.0,
-      "budget2025": 157000.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "Frick Park Trust Fund",
-      "slug": "frick-park-trust-fund",
-      "budget2024": 729725.0,
-      "budget2025": 729725.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "HUD Fair Housing Program Trust Fund",
-      "slug": "hud-fair-housing-program-trust-fund",
-      "budget2024": 70016.0,
-      "budget2025": 70000.0,
-      "dollarChange": -16.0,
-      "pctChange": -0.0
-    },
-    {
-      "department": "Mellon Park Trust Fund",
-      "slug": "mellon-park-trust-fund",
-      "budget2024": 449667.0,
-      "budget2025": 414215.0,
-      "dollarChange": -35452.0,
-      "pctChange": -7.9,
-      "fte2024": 3.95,
-      "fte2025": 3.95
     },
     {
       "department": "Office of the Mayor",
@@ -231,58 +173,12 @@
       "fte2025": 39.0
     },
     {
-      "department": "Shade Tree Trust Fund",
-      "slug": "shade-tree-trust-fund",
-      "budget2024": 227687.0,
-      "budget2025": 150000.0,
-      "dollarChange": -77687.0,
-      "pctChange": -34.1
-    },
-    {
-      "department": "Senior Citizens Program Trust Fund",
-      "slug": "senior-citizens-program-trust-fund",
-      "budget2024": 2380319.0,
-      "budget2025": 2300565.0,
-      "dollarChange": -79754.0,
-      "pctChange": -3.4,
-      "fte2024": 27.5,
-      "fte2025": 27.5
-    },
-    {
-      "department": "Community Development Trust Fund",
-      "slug": "community-development-trust-fund",
-      "budget2024": 13499999.0,
-      "budget2025": 13400860.0,
-      "dollarChange": -99139.0,
-      "pctChange": -0.7
-    },
-    {
       "department": "Office of Management and Budget",
       "slug": "office-of-management-and-budget",
       "budget2024": 21346876.0,
       "budget2025": 21188171.0,
       "dollarChange": -158705.0,
       "pctChange": -0.7
-    },
-    {
-      "department": "Regional Asset District - Parks and Recreation Trust Fund",
-      "slug": "regional-asset-district-parks-and-recreation-trust-fund",
-      "budget2024": 2440079.0,
-      "budget2025": 2231219.0,
-      "dollarChange": -208860.0,
-      "pctChange": -8.6,
-      "fte2024": 7.6,
-      "fte2025": 13.6
-    },
-    {
-      "department": "Parks Tax Trust Fund",
-      "slug": "parks-tax-trust-fund",
-      "budget2024": 10449052.0,
-      "budget2025": 9851973.0,
-      "dollarChange": -597079.0,
-      "pctChange": -5.7,
-      "fte2024": 37.0,
-      "fte2025": 38.0
     },
     {
       "department": "Bureau of Operations",
@@ -385,12 +281,24 @@
       "fte2025": 679.0
     },
     {
-      "department": "Regional Asset District - Public Works Trust Fund",
-      "slug": "regional-asset-district-public-works-trust-fund",
-      "budget2024": 5680532.0,
-      "budget2025": 6819898.0,
-      "dollarChange": 1139366.0,
-      "pctChange": 20.1
+      "department": "Department of Finance",
+      "slug": "department-of-finance",
+      "budget2024": 190894635.0,
+      "budget2025": 193056054.0,
+      "dollarChange": 2161419.0,
+      "pctChange": 1.1,
+      "fte2024": 39.95,
+      "fte2025": 40.95
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "slug": "department-of-mobility-and-infrastructure",
+      "budget2024": 11767763.0,
+      "budget2025": 13664365.0,
+      "dollarChange": 1896602.0,
+      "pctChange": 16.1,
+      "fte2024": 118.0,
+      "fte2025": 122.0
     },
     {
       "department": "Bureau of Administration (Public Works)",
@@ -403,12 +311,14 @@
       "fte2025": 31.0
     },
     {
-      "department": "Stop the Violence Trust Fund",
-      "slug": "stop-the-violence-trust-fund",
-      "budget2024": 11095749.0,
-      "budget2025": 11841651.0,
-      "dollarChange": 745902.0,
-      "pctChange": 6.7
+      "department": "Department of Permits, Licenses, and Inspections",
+      "slug": "department-of-permits-licenses-and-inspections",
+      "budget2024": 10100395.0,
+      "budget2025": 11009437.0,
+      "dollarChange": 909042.0,
+      "pctChange": 9.0,
+      "fte2024": 120.0,
+      "fte2025": 120.0
     },
     {
       "department": "Office of the City Controller",
@@ -431,6 +341,16 @@
       "fte2025": 17.0
     },
     {
+      "department": "Department of Innovation and Performance",
+      "slug": "department-of-innovation-and-performance",
+      "budget2024": 22444776.0,
+      "budget2025": 22725604.0,
+      "dollarChange": 280828.0,
+      "pctChange": 1.3,
+      "fte2024": 67.0,
+      "fte2025": 68.0
+    },
+    {
       "department": "City Council",
       "slug": "city-council",
       "budget2024": 3341102.0,
@@ -439,24 +359,6 @@
       "pctChange": 5.9,
       "fte2024": 37.0,
       "fte2025": 36.0
-    },
-    {
-      "department": "Pittsburgh Partnership Trust Fund",
-      "slug": "pittsburgh-partnership-trust-fund",
-      "budget2024": 3110513.0,
-      "budget2025": 3204206.0,
-      "dollarChange": 93693.0,
-      "pctChange": 3.0
-    },
-    {
-      "department": "Office of the City Clerk",
-      "slug": "office-of-the-city-clerk",
-      "budget2024": 2474432.0,
-      "budget2025": 2542149.0,
-      "dollarChange": 67717.0,
-      "pctChange": 2.7,
-      "fte2024": 21.0,
-      "fte2025": 21.0
     }
   ],
   "topDecreases": [
@@ -539,24 +441,22 @@
       "fte2025": 286.0
     },
     {
-      "department": "Parks Tax Trust Fund",
-      "slug": "parks-tax-trust-fund",
-      "budget2024": 10449052.0,
-      "budget2025": 9851973.0,
-      "dollarChange": -597079.0,
-      "pctChange": -5.7,
-      "fte2024": 37.0,
-      "fte2025": 38.0
+      "department": "Office of Management and Budget",
+      "slug": "office-of-management-and-budget",
+      "budget2024": 21346876.0,
+      "budget2025": 21188171.0,
+      "dollarChange": -158705.0,
+      "pctChange": -0.7
     },
     {
-      "department": "Regional Asset District - Parks and Recreation Trust Fund",
-      "slug": "regional-asset-district-parks-and-recreation-trust-fund",
-      "budget2024": 2440079.0,
-      "budget2025": 2231219.0,
-      "dollarChange": -208860.0,
-      "pctChange": -8.6,
-      "fte2024": 7.6,
-      "fte2025": 13.6
+      "department": "Office of the Mayor",
+      "slug": "office-of-the-mayor",
+      "budget2024": 5033800.0,
+      "budget2025": 4963344.0,
+      "dollarChange": -70456.0,
+      "pctChange": -1.4,
+      "fte2024": 43.0,
+      "fte2025": 39.0
     }
   ],
   "newPositions": [

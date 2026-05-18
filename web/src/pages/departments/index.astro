@@ -4,9 +4,10 @@ import Base from '../../layouts/Base.astro';
 import departmentBudgets from '../../data/views/department-budgets.json';
 import budgetChanges from '../../data/views/budget-changes.json';
 import personnelByDept from '../../data/views/personnel-by-department.json';
+import { operating, type DeptBudgetRow } from '../../lib/department-budgets';
 
 const changes = budgetChanges as any;
-const budgets = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
+const budgets = departmentBudgets as DeptBudgetRow[];
 const personnel = personnelByDept as any[];
 
 // Build a lookup of department data
@@ -15,8 +16,8 @@ for (const dc of changes.departmentChanges) {
   deptMap.set(dc.slug, dc);
 }
 
-// Get 2026 budgets sorted by amount
-const depts2026 = budgets
+// Get 2026 operating-department budgets sorted by amount (trust funds excluded)
+const depts2026 = operating(budgets)
   .filter(r => r.year === '2026 Budget')
   .sort((a, b) => b.amount - a.amount);
 

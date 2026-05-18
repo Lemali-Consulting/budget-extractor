@@ -142,11 +142,135 @@ def fill_blank_year_headers(headers: list[str], budget_year: int) -> list[str]:
     return headers
 
 
+_CID_TOKEN_RE = re.compile(r"\(cid:\d+\)")
+
+
+def _merge_dropcap_splits(text: str) -> str:
+    """Stitch together PDF small-caps drop-cap splits.
+
+    Decorative covers/section headers in the budget PDFs render the first
+    letter of each word in a larger font, which pdfplumber emits as a separate
+    line. The result looks like::
+
+        C B
+        APITAL UDGET
+
+    when the visible text is "CAPITAL BUDGET". This helper detects that
+    pattern (a line of single uppercase letters immediately followed by a line
+    with the same number of all-uppercase continuation words) and merges them.
+    """
+    if not text:
+        return text
+    lines = text.split("\n")
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        cur_words = lines[i].strip().split()
+        nxt_words = lines[i + 1].strip().split() if i + 1 < len(lines) else []
+        is_dropcap_line = (
+            len(cur_words) >= 1
+            and all(len(w) == 1 and w.isalpha() and w.isupper() for w in cur_words)
+        )
+        is_continuation = (
+            len(nxt_words) == len(cur_words)
+            and all(w.isalpha() and w.isupper() for w in nxt_words)
+        )
+        if is_dropcap_line and is_continuation:
+            out.append(" ".join(c + w for c, w in zip(cur_words, nxt_words)))
+            i += 2
+        else:
+            out.append(lines[i])
+            i += 1
+    return "\n".join(out)
+
+
+def _is_cid_garbage(text: str, threshold: float = 0.5) -> bool:
+    """Return True if `text` is dominated by undecoded `(cid:N)` glyph tokens.
+
+    These appear when pdfplumber can't resolve a font's ToUnicode mapping —
+    the raw glyph IDs leak through and are unreadable to humans. We strip the
+    tokens and compare the remaining non-whitespace length to the original; if
+    `threshold` or more of the visible characters were CID tokens, treat the
+    text as garbage.
+    """
+    if not text or not text.strip():
+        return False
+    stripped = _CID_TOKEN_RE.sub("", text)
+    original_chars = len(re.sub(r"\s", "", text))
+    remaining_chars = len(re.sub(r"\s", "", stripped))
+    if original_chars == 0:
+        return False
+    removed_fraction = (original_chars - remaining_chars) / original_chars
+    return removed_fraction >= threshold
+
+
+def _dedupe_chart_regions(
+    regions: list[dict], page_width: float, page_height: float
+) -> list[dict]:
+    """Drop nested/duplicate chart regions and full-page artifacts.
+
+    The PDF extractor sometimes detects a single visual figure as a stack of
+    overlapping raster regions (cover pages are the worst offenders), and
+    occasionally classifies the entire page as one big `vector_chart`. Both
+    render as duplicate "Figure" blocks on the site. Strategy:
+    - Drop regions whose bbox covers ≥85% of the page area.
+    - Greedy: starting from largest, keep a region only if it isn't ≥70%
+      contained inside an already-kept region.
+    """
+    page_area = max(1.0, page_width * page_height)
+
+    def area(b: list[float]) -> float:
+        return max(0.0, b[2] - b[0]) * max(0.0, b[3] - b[1])
+
+    def overlap_area(a: list[float], b: list[float]) -> float:
+        x0 = max(a[0], b[0])
+        y0 = max(a[1], b[1])
+        x1 = min(a[2], b[2])
+        y1 = min(a[3], b[3])
+        return max(0.0, x1 - x0) * max(0.0, y1 - y0)
+
+    page_rect = [0.0, 0.0, page_width, page_height]
+
+    def visible_fraction(b: list[float]) -> float:
+        a = area(b)
+        return overlap_area(b, page_rect) / a if a > 0 else 0.0
+
+    def is_decorative_banner(r: dict) -> bool:
+        # Wide-and-short raster strips (gold cover banners, page dividers) are
+        # decorative chrome that adds nothing to the page. Restrict to raster
+        # images so genuine wide vector charts/logos aren't caught.
+        if r.get("chart_type") != "raster_image":
+            return False
+        x0, y0, x1, y1 = r["bbox"]
+        w, h = x1 - x0, y1 - y0
+        if h <= 0:
+            return False
+        return h < 100 and w / h >= 3.5
+
+    # Drop zero-area, full-page artifacts, mostly-off-page, and decorative banners.
+    candidates = [
+        r for r in regions
+        if 0 < area(r["bbox"]) < 0.85 * page_area
+        and visible_fraction(r["bbox"]) >= 0.5
+        and not is_decorative_banner(r)
+    ]
+    candidates.sort(key=lambda r: -area(r["bbox"]))
+
+    kept: list[dict] = []
+    for r in candidates:
+        a = area(r["bbox"])
+        if any(overlap_area(r["bbox"], k["bbox"]) / a >= 0.7 for k in kept):
+            continue
+        kept.append(r)
+    return kept
+
+
 def _is_empty_table(table: dict) -> bool:
     """Return True if a table is a junk extraction (chart artifact, empty grid, etc.).
 
     Matches tables where all headers are blank and/or all cell values are blank,
-    or where data got smashed entirely into headers with no usable rows.
+    where data got smashed entirely into headers with no usable rows, or where
+    cell contents are dominated by undecoded `(cid:N)` glyph tokens.
     """
     headers = table.get("headers", [])
     rows = table.get("rows", [])
@@ -167,6 +291,12 @@ def _is_empty_table(table: dict) -> bool:
 
     # Tables where data got jammed into a single header with no rows (misaligned extraction)
     if len(rows) == 0 and len(headers) <= 3 and any(len(h) > 80 for h in headers):
+        return True
+
+    # Tables dominated by undecoded CID glyph tokens — unreadable to users.
+    cells = [*headers, *(c for row in rows for c in row)]
+    nonblank = [c for c in cells if c and c.strip()]
+    if nonblank and sum(1 for c in nonblank if _is_cid_garbage(c)) / len(nonblank) >= 0.5:
         return True
 
     return False
@@ -446,13 +576,19 @@ def extract_narrative_content(
                 continue
 
             blocks = [
-                {"text": b.text, "role": _effective_role(b), "bbox": [round(v, 1) for v in b.bbox]}
-                for b in content.text_blocks if _effective_role(b) in USEFUL_ROLES
+                {
+                    "text": _merge_dropcap_splits(b.text),
+                    "role": _effective_role(b),
+                    "bbox": [round(v, 1) for v in b.bbox],
+                }
+                for b in content.text_blocks
+                if _effective_role(b) in USEFUL_ROLES and not _is_cid_garbage(b.text)
             ]
             charts = [
                 {"bbox": [round(v, 1) for v in c.bbox], "chart_type": c.chart_type}
                 for c in content.chart_regions
             ]
+            charts = _dedupe_chart_regions(charts, float(page.width), float(page.height))
 
             # Link narrative blocks to their nearest table using spatial proximity.
             # A text block is linked to the table whose top edge is closest below it,
@@ -975,59 +1111,96 @@ def detect_shifted_positions(personnel: list[dict]) -> dict:
     }
 
 
-def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
-    """Build a summary of the biggest changes across the whole budget."""
-    dept_changes: list[dict] = []
+def classify_fund(section: dict) -> str:
+    """Classify a budget section as 'operating', 'trust', or 'other'.
 
+    Separates the operating budget proper from trust/special-revenue funds and
+    non-department reference sections (appendices, salary tables, etc.) so the
+    web views can report citywide operating spending distinctly from trust funds.
+    """
+    title: str = section["title"].lower()
+    if "trust fund" in title:
+        return "trust"
+    non_operating: set[str] = {
+        "appendices", "grants", "other special revenue funds", "salary tables",
+        "debt service", "pension funding", "master fee schedule",
+        "city of pittsburgh organization chart",
+    }
+    return "other" if title in non_operating else "operating"
+
+
+def _operating_budget_changes(department_budgets: list[dict]) -> list[dict]:
+    """Pivot department_budgets rows into per-operating-department change entries.
+
+    Derives year-over-year changes from the already-resolved department totals,
+    so operating departments with unlabeled PDF total rows (e.g. Finance) are
+    not dropped, and trust funds are excluded.
+    """
+    by_slug: dict[str, dict] = {}
+    for row in department_budgets:
+        if row.get("fund") != "operating":
+            continue
+        entry: dict = by_slug.setdefault(
+            row["slug"], {"department": row["department"], "slug": row["slug"]}
+        )
+        entry[row["year"]] = row["amount"]
+
+    changes: list[dict] = []
+    for slug, entry in by_slug.items():
+        prior: float | None = entry.get(f"{PRIOR_YEAR} Budget")
+        current: float | None = entry.get(f"{BUDGET_YEAR} Budget")
+        if prior and current and prior > 0:
+            dollar_change: float = current - prior
+            changes.append({
+                "department": entry["department"],
+                "slug": slug,
+                f"budget{PRIOR_YEAR}": prior,
+                f"budget{BUDGET_YEAR}": current,
+                "dollarChange": dollar_change,
+                "pctChange": round(dollar_change / prior * 100, 1),
+            })
+    return changes
+
+
+def build_budget_changes(sections: list[dict], personnel: list[dict],
+                         department_budgets: list[dict]) -> dict:
+    """Build a summary of the biggest changes across the operating budget.
+
+    Per-department changes are derived from the resolved department totals
+    (operating departments only); trust funds are reported separately.
+    """
+    dept_changes: list[dict] = _operating_budget_changes(department_budgets)
+
+    # Attach FTE counts per department from personnel tables.
+    fte_by_slug: dict[str, dict] = {}
     for section in sections:
         if section["section_number"] <= 9:
             continue
-
-        budget_prior: float | None = None
-        budget_current: float | None = None
-        fte_prior: float | None = None
-        fte_current: float | None = None
-
         for table in section["tables"]:
+            if table["table_type"] != "personnel":
+                continue
             headers = table.get("headers", [])
-            if table["table_type"] in ("financial_summary", "financial"):
-                col_current = next((i for i, h in enumerate(headers) if str(BUDGET_YEAR) in h and "Budget" in h), -1)
-                col_prior = next((i for i, h in enumerate(headers) if str(PRIOR_YEAR) in h and "Budget" in h), -1)
-                if col_current >= 0 and col_prior >= 0:
-                    for row in table["rows"]:
-                        label = (row[0] if row else "").strip().lower()
-                        if label in ("expenditures total", "total expenditures", "total"):
-                            budget_current = parse_currency(row[col_current] if col_current < len(row) else "")
-                            budget_prior = parse_currency(row[col_prior] if col_prior < len(row) else "")
-                            break
+            headers_lower = [h.lower() for h in headers]
+            fi_current = next((i for i, h in enumerate(headers_lower) if str(BUDGET_YEAR) in h and "fte" in h), -1)
+            fi_prior = next((i for i, h in enumerate(headers_lower) if str(PRIOR_YEAR) in h and "fte" in h), -1)
+            if fi_current < 0 or fi_prior < 0:
+                continue
+            for row in table["rows"]:
+                if (row[0] if row else "").strip().lower() == "total full-time permanent positions":
+                    fte_by_slug[section["slug"]] = {
+                        f"fte{BUDGET_YEAR}": parse_currency(row[fi_current] if fi_current < len(row) else ""),
+                        f"fte{PRIOR_YEAR}": parse_currency(row[fi_prior] if fi_prior < len(row) else ""),
+                    }
+                    break
 
-            if table["table_type"] == "personnel":
-                headers_lower = [h.lower() for h in headers]
-                fi_current = next((i for i, h in enumerate(headers_lower) if str(BUDGET_YEAR) in h and "fte" in h), -1)
-                fi_prior = next((i for i, h in enumerate(headers_lower) if str(PRIOR_YEAR) in h and "fte" in h), -1)
-                if fi_current >= 0 and fi_prior >= 0:
-                    for row in table["rows"]:
-                        if (row[0] if row else "").strip().lower() == "total full-time permanent positions":
-                            fte_current = parse_currency(row[fi_current] if fi_current < len(row) else "")
-                            fte_prior = parse_currency(row[fi_prior] if fi_prior < len(row) else "")
-                            break
-
-        if budget_prior and budget_current and budget_prior > 0:
-            dollar_change = budget_current - budget_prior
-            pct_change = (dollar_change / budget_prior) * 100
-            entry: dict = {
-                "department": section["title"],
-                "slug": section["slug"],
-                f"budget{PRIOR_YEAR}": budget_prior,
-                f"budget{BUDGET_YEAR}": budget_current,
-                "dollarChange": dollar_change,
-                "pctChange": round(pct_change, 1),
-            }
-            if fte_prior is not None:
-                entry[f"fte{PRIOR_YEAR}"] = fte_prior
-            if fte_current is not None:
-                entry[f"fte{BUDGET_YEAR}"] = fte_current
-            dept_changes.append(entry)
+    for entry in dept_changes:
+        fte = fte_by_slug.get(entry["slug"])
+        if not fte:
+            continue
+        if fte[f"fte{PRIOR_YEAR}"] is not None:
+            entry[f"fte{PRIOR_YEAR}"] = fte[f"fte{PRIOR_YEAR}"]
+        if fte[f"fte{BUDGET_YEAR}"] is not None:
+            entry[f"fte{BUDGET_YEAR}"] = fte[f"fte{BUDGET_YEAR}"]
 
     dept_changes.sort(key=lambda x: x["dollarChange"], reverse=True)
 
@@ -1037,9 +1210,12 @@ def build_budget_changes(sections: list[dict], personnel: list[dict]) -> dict:
     eliminated_positions = position_changes["eliminatedPositions"]
     shifted_positions = position_changes["shiftedPositions"]
 
-    # Compute totals
-    total_prior = sum(d[f"budget{PRIOR_YEAR}"] for d in dept_changes)
-    total_current = sum(d[f"budget{BUDGET_YEAR}"] for d in dept_changes)
+    # Citywide operating totals — sum of operating departments only
+    # (trust funds and reference sections excluded, see classify_fund).
+    total_current = sum(r["amount"] for r in department_budgets
+                        if r.get("fund") == "operating" and r["year"] == f"{BUDGET_YEAR} Budget")
+    total_prior = sum(r["amount"] for r in department_budgets
+                      if r.get("fund") == "operating" and r["year"] == f"{PRIOR_YEAR} Budget")
     total_fte_prior = round(sum(d.get(f"fte{PRIOR_YEAR}", 0) or 0 for d in dept_changes), 2)
     total_fte_current = round(sum(d.get(f"fte{BUDGET_YEAR}", 0) or 0 for d in dept_changes), 2)
 
@@ -1117,6 +1293,7 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
                     if has_amount:
                         best_total = last_row
             if best_total:
+                fund = classify_fund(section)
                 for col in budget_cols:
                     amount = parse_currency(best_total[col["idx"]] if col["idx"] < len(best_total) else "")
                     if amount and amount > 0:
@@ -1125,6 +1302,7 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
                             "slug": section["slug"],
                             "year": col["year"],
                             "amount": amount,
+                            "fund": fund,
                         })
 
     return rows
@@ -1578,13 +1756,19 @@ def extract_capital_narrative(
                 continue
 
             blocks = [
-                {"text": b.text, "role": _effective_role(b), "bbox": [round(v, 1) for v in b.bbox]}
-                for b in content.text_blocks if _effective_role(b) in USEFUL_ROLES
+                {
+                    "text": _merge_dropcap_splits(b.text),
+                    "role": _effective_role(b),
+                    "bbox": [round(v, 1) for v in b.bbox],
+                }
+                for b in content.text_blocks
+                if _effective_role(b) in USEFUL_ROLES and not _is_cid_garbage(b.text)
             ]
             charts = [
                 {"bbox": [round(v, 1) for v in c.bbox], "chart_type": c.chart_type}
                 for c in content.chart_regions
             ]
+            charts = _dedupe_chart_regions(charts, float(page.width), float(page.height))
 
             if blocks or charts:
                 section_info = sections_lookup.get(section_num, {})
@@ -1656,6 +1840,8 @@ def build_capital_data() -> dict:
                 table["absolute_page"] = start_page + rel_page
 
             tables.append(table)
+
+        tables = [t for t in tables if not _is_empty_table(t)]
 
         slug = slugify(title)
         section_dict: dict = {
@@ -2221,7 +2407,7 @@ def main() -> None:
     print(f"Wrote {prefix}personnel.json ({len(personnel)} rows)")
 
     # Budget changes view (for "What Changed?" page)
-    budget_changes = build_budget_changes(sections, personnel)
+    budget_changes = build_budget_changes(sections, personnel, dept_budgets)
     with open(views_dir / f"{prefix}budget-changes.json", "w", encoding="utf-8") as f:
         json.dump(budget_changes, f, indent=2)
     print(f"Wrote {prefix}budget-changes.json ({len(budget_changes['departmentChanges'])} departments, "

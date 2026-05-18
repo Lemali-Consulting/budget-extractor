@@ -120,3 +120,7 @@ The Playwright MCP server is configured in `.mcp.json`. It requires `--no-sandbo
 - If Chrome fails repeatedly with namespace errors, the fix is always: verify `--no-sandbox` is in `.mcp.json`, then restart the MCP server
 - **"Browser is already in use" errors** mean a stale `SingletonLock` file exists from an unclean shutdown. Fix: `pkill -f 'chrome.*mcp'` to kill the orphaned process, then retry. The lock file is in `~/.cache/ms-playwright/mcp-chrome-*/`.
 - **`file://` URLs are blocked.** The Playwright MCP server only allows `http:` and `https:`. To view local HTML files, serve them via `python3 -m http.server <port>` first.
+
+# Mistakes
+
+- **[testing]**: Run pytest as `uv run python3 -m pytest` — `uv run pytest` fails to resolve project deps (`ModuleNotFoundError: pdfplumber`).

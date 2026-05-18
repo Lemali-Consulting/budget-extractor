@@ -1,8 +1,8 @@
 {
-  "totalBudget2025": 493362501.0,
-  "totalBudget2026": 520427220.0,
-  "totalFte2025": 2904.0,
-  "totalFte2026": 2925.0,
+  "totalBudget2025": 665619091.0,
+  "totalBudget2026": 693235672.0,
+  "totalFte2025": 3192.75,
+  "totalFte2026": 3218.92,
   "departmentChanges": [
     {
       "department": "Bureau of Administration (Public Works)",
@@ -35,12 +35,14 @@
       "fte2026": 679.0
     },
     {
-      "department": "Stop the Violence Trust Fund",
-      "slug": "stop-the-violence-trust-fund",
-      "budget2025": 12201651.0,
-      "budget2026": 17365392.0,
-      "dollarChange": 5163741.0,
-      "pctChange": 42.3
+      "department": "Department of Finance",
+      "slug": "department-of-finance",
+      "budget2025": 193056054.0,
+      "budget2026": 197799537.0,
+      "dollarChange": 4743483.0,
+      "pctChange": 2.5,
+      "fte2025": 40.95,
+      "fte2026": 42.0
     },
     {
       "department": "Bureau of Operations",
@@ -53,6 +55,16 @@
       "fte2026": 287.0
     },
     {
+      "department": "Department of Mobility and Infrastructure",
+      "slug": "department-of-mobility-and-infrastructure",
+      "budget2025": 13664365.0,
+      "budget2026": 15286603.0,
+      "dollarChange": 1622238.0,
+      "pctChange": 11.9,
+      "fte2025": 122.0,
+      "fte2026": 126.0
+    },
+    {
       "department": "Bureau of Administration (Public Safety)",
       "slug": "bureau-of-administration-public-safety",
       "budget2025": 12345508.0,
@@ -63,14 +75,6 @@
       "fte2026": 136.12
     },
     {
-      "department": "Regional Asset District - Public Works Trust Fund",
-      "slug": "regional-asset-district-public-works-trust-fund",
-      "budget2025": 6819898.0,
-      "budget2026": 7890039.0,
-      "dollarChange": 1070141.0,
-      "pctChange": 15.7
-    },
-    {
       "department": "Department of Law",
       "slug": "department-of-law",
       "budget2025": 6989174.0,
@@ -79,16 +83,6 @@
       "pctChange": 10.3,
       "fte2025": 40.0,
       "fte2026": 41.0
-    },
-    {
-      "department": "Regional Asset District - Parks and Recreation Trust Fund",
-      "slug": "regional-asset-district-parks-and-recreation-trust-fund",
-      "budget2025": 2256219.0,
-      "budget2026": 2758358.0,
-      "dollarChange": 502139.0,
-      "pctChange": 22.3,
-      "fte2025": 7.6,
-      "fte2026": 17.48
     },
     {
       "department": "Department of City Planning",
@@ -110,14 +104,14 @@
       "fte2026": 56.0
     },
     {
-      "department": "Senior Citizens Program Trust Fund",
-      "slug": "senior-citizens-program-trust-fund",
-      "budget2025": 2300564.0,
-      "budget2026": 2429280.0,
-      "dollarChange": 128716.0,
-      "pctChange": 5.6,
-      "fte2025": 27.5,
-      "fte2026": 27.5
+      "department": "Department of Permits, Licenses, and Inspections",
+      "slug": "department-of-permits-licenses-and-inspections",
+      "budget2025": 11009438.0,
+      "budget2026": 11146275.0,
+      "dollarChange": 136837.0,
+      "pctChange": 1.2,
+      "fte2025": 120.0,
+      "fte2026": 121.0
     },
     {
       "department": "City Council",
@@ -140,14 +134,6 @@
       "fte2026": 17.0
     },
     {
-      "department": "Pittsburgh Partnership Trust Fund",
-      "slug": "pittsburgh-partnership-trust-fund",
-      "budget2025": 3187206.0,
-      "budget2026": 3267469.0,
-      "dollarChange": 80263.0,
-      "pctChange": 2.5
-    },
-    {
       "department": "Commission on Human Relations",
       "slug": "commission-on-human-relations",
       "budget2025": 776018.0,
@@ -158,104 +144,30 @@
       "fte2026": 8.0
     },
     {
-      "department": "Community Development Trust Fund",
-      "slug": "community-development-trust-fund",
-      "budget2025": 13400859.0,
-      "budget2026": 13438828.0,
-      "dollarChange": 37969.0,
-      "pctChange": 0.3
+      "department": "Citizen Police Review Board",
+      "slug": "citizen-police-review-board",
+      "budget2025": 933156.0,
+      "budget2026": 958962.0,
+      "dollarChange": 25806.0,
+      "pctChange": 2.8,
+      "fte2025": 9.0,
+      "fte2026": 9.0
     },
     {
-      "department": "Mellon Park Trust Fund",
-      "slug": "mellon-park-trust-fund",
-      "budget2025": 452399.0,
-      "budget2026": 474840.0,
-      "dollarChange": 22441.0,
-      "pctChange": 5.0,
-      "fte2025": 3.95,
-      "fte2026": 3.95
-    },
-    {
-      "department": "Special Events Trust Fund",
-      "slug": "special-events-trust-fund",
-      "budget2025": 222684.0,
-      "budget2026": 238314.0,
-      "dollarChange": 15630.0,
-      "pctChange": 7.0,
-      "fte2025": 1.15,
-      "fte2026": 1.15
-    },
-    {
-      "department": "Special Food Service Trust Fund",
-      "slug": "special-food-service-trust-fund",
-      "budget2025": 663737.0,
-      "budget2026": 671328.0,
-      "dollarChange": 7591.0,
-      "pctChange": 1.1,
-      "fte2025": 1.0,
-      "fte2026": 1.0
-    },
-    {
-      "department": "Police Secondary Employment Trust Fund",
-      "slug": "police-secondary-employment-trust-fund",
-      "budget2025": 9030632.0,
-      "budget2026": 9033436.0,
-      "dollarChange": 2804.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "EEOC Trust Fund",
-      "slug": "eeoc-trust-fund",
-      "budget2025": 38500.0,
-      "budget2026": 39938.0,
-      "dollarChange": 1438.0,
-      "pctChange": 3.7
+      "department": "Office of Municipal Investigations",
+      "slug": "office-of-municipal-investigations",
+      "budget2025": 765376.0,
+      "budget2026": 778704.0,
+      "dollarChange": 13328.0,
+      "pctChange": 1.7,
+      "fte2025": 8.0,
+      "fte2026": 8.0
     },
     {
       "department": "Office of Community Health and Safety",
       "slug": "office-of-community-health-and-safety",
       "budget2025": 58000.0,
       "budget2026": 58000.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "HUD Fair Housing Program Trust Fund",
-      "slug": "hud-fair-housing-program-trust-fund",
-      "budget2025": 70000.0,
-      "budget2026": 70000.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "Public Works Trust Fund",
-      "slug": "public-works-trust-fund",
-      "budget2025": 982040.0,
-      "budget2026": 982040.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "Shade Tree Trust Fund",
-      "slug": "shade-tree-trust-fund",
-      "budget2025": 150000.0,
-      "budget2026": 150000.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "Schenley Park Rink Trust Fund",
-      "slug": "schenley-park-rink-trust-fund",
-      "budget2025": 157000.0,
-      "budget2026": 157000.0,
-      "dollarChange": 0.0,
-      "pctChange": 0.0
-    },
-    {
-      "department": "Frick Park Trust Fund",
-      "slug": "frick-park-trust-fund",
-      "budget2025": 729725.0,
-      "budget2026": 729725.0,
       "dollarChange": 0.0,
       "pctChange": 0.0
     },
@@ -268,14 +180,6 @@
       "pctChange": -1.6,
       "fte2025": 1.0,
       "fte2026": 1.0
-    },
-    {
-      "department": "Three Taxing Bodies Trust Fund",
-      "slug": "three-taxing-bodies-trust-fund",
-      "budget2025": 689816.0,
-      "budget2026": 669430.0,
-      "dollarChange": -20386.0,
-      "pctChange": -3.0
     },
     {
       "department": "Office of the City Clerk",
@@ -308,30 +212,22 @@
       "fte2026": 202.0
     },
     {
+      "department": "Department of Innovation and Performance",
+      "slug": "department-of-innovation-and-performance",
+      "budget2025": 22725604.0,
+      "budget2026": 22303735.0,
+      "dollarChange": -421869.0,
+      "pctChange": -1.9,
+      "fte2025": 68.0,
+      "fte2026": 77.0
+    },
+    {
       "department": "Office of Management and Budget",
       "slug": "office-of-management-and-budget",
       "budget2025": 21188171.0,
       "budget2026": 20638818.0,
       "dollarChange": -549353.0,
       "pctChange": -2.6
-    },
-    {
-      "department": "Parks Tax Trust Fund",
-      "slug": "parks-tax-trust-fund",
-      "budget2025": 9851973.0,
-      "budget2026": 9254799.0,
-      "dollarChange": -597174.0,
-      "pctChange": -6.1,
-      "fte2025": 38.0,
-      "fte2026": 38.0
-    },
-    {
-      "department": "Liquid Fuels Trust Fund",
-      "slug": "liquid-fuels-trust-fund",
-      "budget2025": 6692500.0,
-      "budget2026": 5845148.0,
-      "dollarChange": -847352.0,
-      "pctChange": -12.7
     },
     {
       "department": "Department of Parks and Recreation",
@@ -406,12 +302,14 @@
       "fte2026": 679.0
     },
     {
-      "department": "Stop the Violence Trust Fund",
-      "slug": "stop-the-violence-trust-fund",
-      "budget2025": 12201651.0,
-      "budget2026": 17365392.0,
-      "dollarChange": 5163741.0,
-      "pctChange": 42.3
+      "department": "Department of Finance",
+      "slug": "department-of-finance",
+      "budget2025": 193056054.0,
+      "budget2026": 197799537.0,
+      "dollarChange": 4743483.0,
+      "pctChange": 2.5,
+      "fte2025": 40.95,
+      "fte2026": 42.0
     },
     {
       "department": "Bureau of Operations",
@@ -424,6 +322,16 @@
       "fte2026": 287.0
     },
     {
+      "department": "Department of Mobility and Infrastructure",
+      "slug": "department-of-mobility-and-infrastructure",
+      "budget2025": 13664365.0,
+      "budget2026": 15286603.0,
+      "dollarChange": 1622238.0,
+      "pctChange": 11.9,
+      "fte2025": 122.0,
+      "fte2026": 126.0
+    },
+    {
       "department": "Bureau of Administration (Public Safety)",
       "slug": "bureau-of-administration-public-safety",
       "budget2025": 12345508.0,
@@ -432,14 +340,6 @@
       "pctChange": 11.2,
       "fte2025": 134.0,
       "fte2026": 136.12
-    },
-    {
-      "department": "Regional Asset District - Public Works Trust Fund",
-      "slug": "regional-asset-district-public-works-trust-fund",
-      "budget2025": 6819898.0,
-      "budget2026": 7890039.0,
-      "dollarChange": 1070141.0,
-      "pctChange": 15.7
     },
     {
       "department": "Department of Law",
@@ -452,22 +352,22 @@
       "fte2026": 41.0
     },
     {
-      "department": "Regional Asset District - Parks and Recreation Trust Fund",
-      "slug": "regional-asset-district-parks-and-recreation-trust-fund",
-      "budget2025": 2256219.0,
-      "budget2026": 2758358.0,
-      "dollarChange": 502139.0,
-      "pctChange": 22.3,
-      "fte2025": 7.6,
-      "fte2026": 17.48
-    },
-    {
       "department": "Department of City Planning",
       "slug": "department-of-city-planning",
       "budget2025": 4936342.0,
       "budget2026": 5256349.0,
       "dollarChange": 320007.0,
       "pctChange": 6.5,
+      "fte2026": 56.0
+    },
+    {
+      "department": "Office of the City Controller",
+      "slug": "office-of-the-city-controller",
+      "budget2025": 5402279.0,
+      "budget2026": 5605384.0,
+      "dollarChange": 203105.0,
+      "pctChange": 3.8,
+      "fte2025": 57.0,
       "fte2026": 56.0
     }
   ],
@@ -513,30 +413,22 @@
       "fte2026": 54.8
     },
     {
-      "department": "Liquid Fuels Trust Fund",
-      "slug": "liquid-fuels-trust-fund",
-      "budget2025": 6692500.0,
-      "budget2026": 5845148.0,
-      "dollarChange": -847352.0,
-      "pctChange": -12.7
-    },
-    {
-      "department": "Parks Tax Trust Fund",
-      "slug": "parks-tax-trust-fund",
-      "budget2025": 9851973.0,
-      "budget2026": 9254799.0,
-      "dollarChange": -597174.0,
-      "pctChange": -6.1,
-      "fte2025": 38.0,
-      "fte2026": 38.0
-    },
-    {
       "department": "Office of Management and Budget",
       "slug": "office-of-management-and-budget",
       "budget2025": 21188171.0,
       "budget2026": 20638818.0,
       "dollarChange": -549353.0,
       "pctChange": -2.6
+    },
+    {
+      "department": "Department of Innovation and Performance",
+      "slug": "department-of-innovation-and-performance",
+      "budget2025": 22725604.0,
+      "budget2026": 22303735.0,
+      "dollarChange": -421869.0,
+      "pctChange": -1.9,
+      "fte2025": 68.0,
+      "fte2026": 77.0
     },
     {
       "department": "Bureau of Environmental Services",
@@ -567,6 +459,16 @@
       "pctChange": -1.0,
       "fte2025": 21.0,
       "fte2026": 19.0
+    },
+    {
+      "department": "Ethics Hearing Board",
+      "slug": "ethics-hearing-board",
+      "budget2025": 190695.0,
+      "budget2026": 187735.0,
+      "dollarChange": -2960.0,
+      "pctChange": -1.6,
+      "fte2025": 1.0,
+      "fte2026": 1.0
     }
   ],
   "newPositions": [
@@ -1475,30 +1377,6 @@
   ],
   "shiftedPositions": [
     {
-      "title": "Assistant Manager, 311 Response Line",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Innovation and Performance",
-      "fte": 1.0,
-      "budgetPrior": 74069.0,
-      "budgetCurrent": 76294.0
-    },
-    {
-      "title": "Performance Operations Analyst",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Innovation and Performance",
-      "fte": 1.0,
-      "budgetPrior": 68162.0,
-      "budgetCurrent": 70200.0
-    },
-    {
-      "title": "Stores Manager",
-      "fromDepartment": "Bureau of Administration (Public Safety)",
-      "toDepartment": "Bureau of Facilities",
-      "fte": 1.0,
-      "budgetPrior": 77043.0,
-      "budgetCurrent": 79352.0
-    },
-    {
       "title": "Manager, Office of Equal Protection",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of Law",
@@ -1507,12 +1385,12 @@
       "budgetCurrent": 76294.0
     },
     {
-      "title": "311 Call Center Representative",
+      "title": "Assistant Manager, 311 Response Line",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of Innovation and Performance",
-      "fte": 5.0,
-      "budgetPrior": 211509.0,
-      "budgetCurrent": 211509.0
+      "fte": 1.0,
+      "budgetPrior": 74069.0,
+      "budgetCurrent": 76294.0
     },
     {
       "title": "Special Projects Manager",
@@ -1523,6 +1401,30 @@
       "budgetCurrent": 86008.0
     },
     {
+      "title": "Digital Engagement Coordinator",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of City Planning",
+      "fte": 1.0,
+      "budgetPrior": 62670.0,
+      "budgetCurrent": 64542.0
+    },
+    {
+      "title": "Stores Manager",
+      "fromDepartment": "Bureau of Administration (Public Safety)",
+      "toDepartment": "Bureau of Facilities",
+      "fte": 1.0,
+      "budgetPrior": 77043.0,
+      "budgetCurrent": 79352.0
+    },
+    {
+      "title": "311 Call Center Representative",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Innovation and Performance",
+      "fte": 5.0,
+      "budgetPrior": 211509.0,
+      "budgetCurrent": 211509.0
+    },
+    {
       "title": "Manager, 311 Response Line",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of Innovation and Performance",
@@ -1531,12 +1433,12 @@
       "budgetCurrent": 86008.0
     },
     {
-      "title": "Digital Engagement Coordinator",
+      "title": "Performance Operations Analyst",
       "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of City Planning",
+      "toDepartment": "Department of Innovation and Performance",
       "fte": 1.0,
-      "budgetPrior": 62670.0,
-      "budgetCurrent": 64542.0
+      "budgetPrior": 68162.0,
+      "budgetCurrent": 70200.0
     }
   ]
 }

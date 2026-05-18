@@ -9,7 +9,7 @@ import { revenueColor, capitalSourceColor } from '../lib/flow-colors';
 import { colorForSlug, GROUP_COLORS } from '../lib/department-groups';
 
 interface RevenueRow { label: string; amount: number; type: string }
-interface DeptRow { department: string; slug: string; year: string; amount: number }
+interface DeptRow { department: string; slug: string; year: string; amount: number; fund: string }
 interface CapitalRow { project: string; source: string; year: string; amount: number }
 
 function fmtM(n: number): string {
@@ -27,7 +27,8 @@ function titleCase(s: string): string {
 const revenue = revenueWaterfall as RevenueRow[];
 const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
 
-const dept2026 = (departmentBudgets as DeptRow[]).filter((r) => r.year === '2026 Budget');
+// Operating departments only — trust funds are not part of the operating flow.
+const dept2026 = (departmentBudgets as DeptRow[]).filter((r) => r.year === '2026 Budget' && r.fund === 'operating');
 const deptTotal = dept2026.reduce((s, r) => s + r.amount, 0);
 
 // Group small departments (<1% of dept total) into "Other departments".

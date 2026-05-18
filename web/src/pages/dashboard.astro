@@ -11,13 +11,15 @@ import departmentBudgets from '../data/views/department-budgets.json';
 import revenueWaterfall from '../data/views/revenue-waterfall.json';
 import capitalFunding from '../data/views/capital-funding-sources.json';
 import personnelByDept from '../data/views/personnel-by-department.json';
+import { operating, sumFor, type DeptBudgetRow } from '../lib/department-budgets';
 
-// Compute summary stats
-const budgetRows = departmentBudgets as { department: string; slug: string; year: string; amount: number }[];
-const total2026 = budgetRows.filter(r => r.year === '2026 Budget').reduce((s, r) => s + r.amount, 0);
-const total2025 = budgetRows.filter(r => r.year === '2025 Budget').reduce((s, r) => s + r.amount, 0);
+// Compute summary stats — operating budget only; trust funds reported separately
+const budgetRows = departmentBudgets as DeptBudgetRow[];
+const total2026 = sumFor(budgetRows, 'operating', '2026 Budget');
+const total2025 = sumFor(budgetRows, 'operating', '2025 Budget');
+const trustTotal2026 = sumFor(budgetRows, 'trust', '2026 Budget');
 const budgetChange = total2025 > 0 ? ((total2026 - total2025) / total2025 * 100) : 0;
-const deptCount = new Set(budgetRows.map(r => r.slug)).size;
+const deptCount = new Set(operating(budgetRows).map(r => r.slug)).size;
 
 const revenueTotal = (revenueWaterfall as { amount: number }[]).reduce((s, r) => s + r.amount, 0);
 
@@ -52,13 +54,18 @@ function fmtM(n: number): string {
   </div>
 
   <!-- Summary stats -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Operating Budget</div>
       <div class="text-2xl font-bold text-blue-900 mt-1">{fmtM(total2026)}</div>
       <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
         {budgetChange >= 0 ? '↑ +' : '↓ '}{budgetChange.toFixed(1)}% vs 2025
       </div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Trust Funds</div>
+      <div class="text-2xl font-bold text-slate-700 mt-1">{fmtM(trustTotal2026)}</div>
+      <div class="text-sm text-gray-500 mt-0.5">Separate from operating</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Projected Revenue</div>
@@ -92,7 +99,7 @@ function fmtM(n: number): string {
           <EmbedButton embedPath="/embed/department-comparison/" client:load />
         </div>
         <p class="text-sm text-gray-500 mb-3">Top departments by budget total.</p>
-        <BudgetChart data={departmentBudgets} client:load />
+        <BudgetChart data={operating(budgetRows)} client:load />
       </div>
 
       <div class="bg-white rounded-lg border p-5">
