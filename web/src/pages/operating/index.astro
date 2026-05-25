@@ -5,6 +5,7 @@ import Sparkline from '../../components/Sparkline.tsx';
 import budgetData from '../../data/budget-data.json';
 import searchIndex from '../../data/views/search-index.json';
 import departmentBudgets from '../../data/views/department-budgets.json';
+import AmendmentNotice from '../../components/AmendmentNotice.astro';
 
 const sections = budgetData.sections;
 
@@ -71,6 +72,8 @@ function hasChart(section: any): boolean {
 
   <h1 class="text-3xl font-bold mb-2">Operating Budget</h1>
   <p class="text-gray-600 mb-4">City of Pittsburgh FY2026 Operating Budget. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
+
+  <AmendmentNotice />
 
   <div class="mb-8">
     <SearchBar items={searchIndex} client:load />

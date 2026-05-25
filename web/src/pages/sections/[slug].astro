@@ -4,6 +4,7 @@ import TableViewer from '../../components/TableViewer.astro';
 import SummaryCard from '../../components/SummaryCard.astro';
 import SectionToc from '../../components/SectionToc.astro';
 import HighlightsCallout from '../../components/HighlightsCallout.astro';
+import AmendmentNotice from '../../components/AmendmentNotice.astro';
 import ShareButton from '../../components/ShareButton.tsx';
 import PageImage from '../../components/PageImage.tsx';
 import ChartImage from '../../components/ChartImage.tsx';
@@ -12,7 +13,10 @@ import SectionNav from '../../components/SectionNav.astro';
 import SectionCharts from '../../components/SectionCharts.tsx';
 import budgetData from '../../data/budget-data.json';
 import departmentBudgets from '../../data/views/department-budgets.json';
+import amendmentCellDiffs from '../../data/views/2026-amendment-cell-diffs.json';
 import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
+
+const amendmentByTable = (amendmentCellDiffs as any).byTable || {};
 
 export function getStaticPaths() {
   return budgetData.sections.map((s, i) => ({
@@ -358,6 +362,8 @@ function parseNarrative(raw: string): Segment[] {
     {hasNarrative ? ' · includes narrative' : ''}
   </p>
 
+  <AmendmentNotice />
+
   <SummaryCard
     budget2026={metrics.budget2026}
     budget2025={metrics.budget2025}
@@ -499,7 +505,7 @@ function parseNarrative(raw: string): Segment[] {
         if (balanceRole === 'middle') {
           return (
             <div id={`table-${tableData.id}`}>
-              <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} inset />
+              <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendmentDiffs={amendmentByTable[tableData.id]} inset />
             </div>
           );
         }
@@ -515,7 +521,7 @@ function parseNarrative(raw: string): Segment[] {
                 Open in Explorer &rarr;
               </a>
             </div>
-            <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} />
+            <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendmentDiffs={amendmentByTable[tableData.id]} />
           </div>
         );
       }

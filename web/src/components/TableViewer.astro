@@ -15,9 +15,15 @@ interface Props {
   };
   slug?: string;
   linkCell?: (text: string) => string;
+  inset?: boolean;
+  // Per-table adopted-vs-amended diff slice: rowLabel -> columnKey -> values.
+  // columnKey is the trimmed header, or the column index when the header is blank.
+  amendmentDiffs?: {
+    rows: Record<string, Record<string, { adopted: number; amended: number; delta: number; pct: number | null }>>;
+  };
 }
 
-const { table, slug, linkCell } = Astro.props;
+const { table, slug, linkCell, amendmentDiffs } = Astro.props;
 
 import { TYPE_COLORS, typeDescription } from '../lib/type-colors';
 
@@ -91,6 +97,29 @@ function isTotalRow(row: string[]): boolean {
   const cell = (row[0] || '').trim().toLowerCase();
   return cell.startsWith('total') || cell.endsWith('total');
 }
+
+// Pre-compute per-cell amendment metadata (highlight class + tooltip text),
+// keyed by row label + column key to match build_amendment_diff.py output.
+function fmtUSD(n: number): string {
+  return `$${Math.round(n).toLocaleString('en-US')}`;
+}
+const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map((row) => {
+  const rowDiffs = amendmentDiffs?.rows?.[(row[0] || '').trim()];
+  return row.map((_, ci) => {
+    if (!rowDiffs) return null;
+    const header = (table.headers[ci] || '').trim();
+    const colKey = header || String(ci);
+    const d = rowDiffs[colKey];
+    if (!d || d.delta === 0) return null;
+    const cls = d.delta > 0 ? 'has-amendment-up' : 'has-amendment-down';
+    // FTE columns are counts, not dollars — format without a currency symbol.
+    const fmt = /fte/i.test(header) ? (n: number) => `${n}` : fmtUSD;
+    const pctStr = d.pct === null ? '' : ` (${d.pct >= 0 ? '+' : ''}${d.pct}%)`;
+    const sign = d.delta >= 0 ? '+' : '−';
+    const tip = `Adopted ${fmt(d.adopted)} · Amended ${fmt(d.amended)} · ${sign}${fmt(Math.abs(d.delta))}${pctStr}`;
+    return { cls, tip };
+  });
+});
 ---
 
 <div class="mb-8 bg-white rounded-lg border overflow-hidden" id={`table-container-${table.id}`}>
@@ -171,9 +200,13 @@ function isTotalRow(row: string[]): boolean {
                     const change = cellChangeClass[i]?.[ci] || '';
                     const colBorder = ci < colCount - 1 ? 'border-r border-gray-200' : '';
                     const sticky = ci === 0 ? `sticky-col ${rowBg}` : '';
+                    const amd = amendmentCell[i]?.[ci];
+                    const amdClass = amd ? amd.cls : '';
+                    const tip = amd ? amd.tip : undefined;
+                    const tabindex = amd ? '0' : undefined;
                     return linkCell && ci === 0
-                      ? <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder} ${sticky}`} set:html={linkCell(cell)} />
-                      : <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${colBorder} ${sticky}`}>{cell}</td>;
+                      ? <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${amdClass} ${colBorder} ${sticky}`} data-amendment-tip={tip} tabindex={tabindex} set:html={linkCell(cell)} />
+                      : <td class={`px-3 py-1.5 border-b border-gray-100 whitespace-nowrap ${align} ${change} ${amdClass} ${colBorder} ${sticky}`} data-amendment-tip={tip} tabindex={tabindex}>{cell}</td>;
                   })}
                 </tr>
               </>
@@ -288,6 +321,46 @@ function isTotalRow(row: string[]): boolean {
       setTimeout(() => { btn.textContent = orig; }, 1500);
     });
   });
+
+  // Floating tooltip for amendment cells. A single body-level fixed element
+  // escapes the table's overflow/sticky clipping. Bound once per page.
+  if (!(window as any).__amendmentTooltipInit) {
+    (window as any).__amendmentTooltipInit = true;
+    let tip: HTMLDivElement | null = null;
+    const ensureTip = (): HTMLDivElement => {
+      if (!tip) {
+        tip = document.createElement('div');
+        tip.id = 'amendment-tooltip';
+        tip.setAttribute('role', 'tooltip');
+        document.body.appendChild(tip);
+      }
+      return tip;
+    };
+    const show = (cell: HTMLElement) => {
+      const text = cell.getAttribute('data-amendment-tip');
+      if (!text) return;
+      const t = ensureTip();
+      t.textContent = text;
+      t.classList.add('visible');
+      const r = cell.getBoundingClientRect();
+      const tr = t.getBoundingClientRect();
+      let left = r.left + r.width / 2 - tr.width / 2;
+      left = Math.max(8, Math.min(left, window.innerWidth - tr.width - 8));
+      let top = r.top - tr.height - 8;
+      if (top < 8) top = r.bottom + 8;
+      t.style.left = `${left}px`;
+      t.style.top = `${top}px`;
+    };
+    const hide = () => { if (tip) tip.classList.remove('visible'); };
+    const cellFrom = (e: Event): HTMLElement | null =>
+      (e.target as HTMLElement)?.closest?.('[data-amendment-tip]') as HTMLElement | null;
+    document.addEventListener('mouseover', (e) => { const c = cellFrom(e); if (c) show(c); });
+    document.addEventListener('mouseout', (e) => { if (cellFrom(e)) hide(); });
+    document.addEventListener('focusin', (e) => { const c = cellFrom(e); if (c) show(c); });
+    document.addEventListener('focusout', hide);
+    document.addEventListener('click', (e) => { const c = cellFrom(e); if (c) show(c); else hide(); });
+    window.addEventListener('scroll', hide, true);
+  }
 
   // Column sort handler
   const sortStates = new WeakMap<HTMLTableElement, { col: number; dir: 'asc' | 'desc' | null }>();

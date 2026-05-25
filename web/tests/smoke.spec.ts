@@ -143,6 +143,41 @@ test("changes page shows structure changes", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
+// Amendments (adopted vs amended)
+// ---------------------------------------------------------------------------
+test("amendments page loads with adopted-vs-amended figures", async ({ page }) => {
+  await page.goto("/amendments/");
+
+  await expect(main(page).locator("h1").first()).toContainText(/Amendment/i);
+  await expect(main(page).getByText(/2026 Adopted/i).first()).toBeVisible();
+  await expect(main(page).getByText(/2026 Amended/i).first()).toBeVisible();
+  await expect(main(page).getByText(/Legislative Changes/i)).toBeVisible();
+});
+
+test("operating pages show the amended-budget notice", async ({ page }) => {
+  await page.goto("/operating/");
+  await expect(main(page).getByText(/as amended/i).first()).toBeVisible();
+});
+
+test("amended cells are highlighted with adopted-vs-amended tooltips", async ({ page }) => {
+  // HR was reorganized by the amendment, so its tables have highlighted cells.
+  await page.goto("/sections/department-of-human-resources-and-civil-service/");
+
+  const cell = main(page)
+    .locator("td.has-amendment-up, td.has-amendment-down")
+    .first();
+  await expect(cell).toBeVisible();
+  await expect(cell).toHaveAttribute(
+    "data-amendment-tip",
+    /Adopted .*Amended .*/,
+  );
+
+  // Hovering shows the shared floating tooltip (escapes table overflow clipping).
+  await cell.hover();
+  await expect(page.locator("#amendment-tooltip")).toBeVisible();
+});
+
+// ---------------------------------------------------------------------------
 // Compare
 // ---------------------------------------------------------------------------
 test("compare page loads", async ({ page }) => {
@@ -358,6 +393,7 @@ test("no JS errors on key pages", async ({ page }) => {
     "/dashboard/",
     "/personnel/",
     "/changes/",
+    "/amendments/",
     "/glossary/",
     "/brief/",
     "/departments/",

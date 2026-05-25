@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+import SearchBar from '../components/SearchBar.tsx';
+import searchIndex from '../data/views/search-index.json';
+import ChangesChart from '../components/ChangesChart.tsx';
+import amendmentChanges from '../data/views/2026-amendment-changes.json';
+import cellDiffs from '../data/views/2026-amendment-cell-diffs.json';
+
+const data = amendmentChanges as any;
+const meta = (cellDiffs as any).meta || {};
+const adopted = data.totalBudgetAdopted;
+const amended = data.totalBudgetAmended;
+const netChange = amended - adopted;
+const netPct = adopted > 0 ? ((netChange / adopted) * 100).toFixed(1) : '0';
+const fteChange = (data.totalFteAmended || 0) - (data.totalFteAdopted || 0);
+const label = data.amendmentLabel || meta.amendmentLabel || 'as amended';
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
+
+const categoryStyle: Record<string, string> = {
+  Appropriation: 'bg-amber-50 border-amber-200 text-amber-900',
+  Legislation: 'bg-blue-50 border-blue-200 text-blue-900',
+};
+
+const jump = [
+  { id: 'increases', label: 'Increases' },
+  { id: 'decreases', label: 'Decreases' },
+  { id: 'legislative', label: 'Legislative' },
+  { id: 'all-depts', label: 'All Depts' },
+];
+---
+
+<Base title="2026 Amendments" description={`How City Council's amended 2026 operating budget (${label}) differs from the December adopted budget.`} ogDescription={`The amended 2026 operating budget is ${netChange >= 0 ? 'up' : 'down'} ${netPct}% (${fmtM(Math.abs(netChange))}) from the adopted budget.`}>
+  <h1 class="text-3xl font-bold mb-2">2026 Budget Amendments</h1>
+  <p class="text-gray-600 mb-4">
+    The City published an amended 2026 operating budget (<strong>{label}</strong>) at the same
+    "2026 budget" link, with no visible version marker. This page compares it line-by-line against
+    the December adopted budget. Amended figures are now used throughout the site; changed cells are
+    highlighted on each department's tables.
+  </p>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} client:load />
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">2026 Adopted</div>
+      <div class="text-lg font-semibold">{fmtM(adopted)}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">2026 Amended</div>
+      <div class="text-lg font-semibold">{fmtM(amended)}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">Net Change</div>
+      <div class={`text-lg font-semibold ${netChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {netChange >= 0 ? '+' : ''}{netPct}% ({fmtM(Math.abs(netChange))})
+      </div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">FTE Change</div>
+      <div class={`text-lg font-semibold ${fteChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {fteChange >= 0 ? '+' : ''}{Math.round(fteChange * 10) / 10}
+      </div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">Changed Line Items</div>
+      <div class="text-lg font-semibold">{meta.changedLineItemCount ?? '—'}</div>
+    </div>
+  </div>
+
+  <!-- Jump nav -->
+  <nav class="sticky top-0 z-10 bg-gray-50 border-b border-gray-200 -mx-6 px-6 py-2 mb-6 flex gap-3 overflow-x-auto text-sm" aria-label="Page sections">
+    {jump.map(s => (
+      <a href={`#${s.id}`} class="text-blue-600 hover:text-blue-800 whitespace-nowrap font-medium">{s.label}</a>
+    ))}
+  </nav>
+
+  <div id="increases" class="scroll-mt-12">
+    <ChangesChart client:load data={data.topIncreases} title="Largest Amendment Increases" color="#16a34a" />
+  </div>
+
+  <div id="decreases" class="scroll-mt-12">
+    <ChangesChart client:load data={data.topDecreases} title="Largest Amendment Decreases" color="#dc2626" />
+  </div>
+
+  {data.legislativeChanges?.length > 0 && (
+    <div id="legislative" class="mb-8 scroll-mt-12">
+      <h2 class="text-2xl font-bold mb-2">Legislative Changes</h2>
+      <p class="text-gray-600 mb-4 text-sm">Changes in the authorizing legislation that aren't individual table line items.</p>
+      <div class="grid gap-3 md:grid-cols-2">
+        {data.legislativeChanges.map((c: any) => (
+          <div class={`border rounded-lg p-4 ${categoryStyle[c.category] || 'bg-gray-50 border-gray-200 text-gray-900'}`}>
+            <div class="text-xs uppercase tracking-wide opacity-70 mb-1">{c.category}</div>
+            <div class="font-semibold">{c.title}</div>
+            <div class="text-sm mt-1 opacity-90">{c.detail}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div id="all-depts" class="bg-white rounded-lg border p-4 scroll-mt-12">
+    <h3 class="text-lg font-semibold mb-3">All Department Changes</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Department</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">2026 Adopted</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">2026 Amended</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Change</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">%</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.departmentChanges.map((d: any, i: number) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <td class="px-3 py-1.5 border-b border-gray-100">
+                <a href={`/sections/${d.slug}/`} class="text-blue-600 hover:underline">{d.department}</a>
+              </td>
+              <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${Math.round(d.budgetAdopted).toLocaleString()}</td>
+              <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${Math.round(d.budgetAmended).toLocaleString()}</td>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange > 0 ? 'text-green-600' : d.dollarChange < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                {d.dollarChange === 0 ? '—' : `${d.dollarChange > 0 ? '+' : ''}${Math.round(d.dollarChange).toLocaleString()}`}
+              </td>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange > 0 ? 'text-green-600' : d.dollarChange < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                {d.pctChange === null || d.dollarChange === 0 ? '—' : `${d.pctChange > 0 ? '+' : ''}${d.pctChange}%`}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>
