@@ -26,6 +26,7 @@ from utils.paths import (
     pdf_path,
     sections_path,
     split_pdf_dir,
+    variant_type,
     web_data_dir,
 )
 
@@ -44,12 +45,15 @@ def _effective_role(block) -> str:
 BUDGET_YEAR: int = DEFAULT_YEAR
 PRIOR_YEAR: int = BUDGET_YEAR - 1
 
-# Derived paths (re-initialized in main() if --year is passed)
+# Operating budget variant subtype (e.g. "operating" or "operating-amended").
+OPERATING_SUBTYPE: str = "operating"
+
+# Derived paths (re-initialized in main() if --year/--operating-variant is passed)
 INPUT_DIR = input_dir(BUDGET_YEAR)
-OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "operating")
+OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, OPERATING_SUBTYPE)
 CAPITAL_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "capital")
 GLOSSARY_PATH = glossary_path()
-PDF_PATH = pdf_path(BUDGET_YEAR, "operating")
+PDF_PATH = pdf_path(BUDGET_YEAR, OPERATING_SUBTYPE)
 CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, "capital")
 WEB_DATA_DIR = web_data_dir()
 
@@ -504,7 +508,7 @@ def classify_table(headers: list[str], section_title: str = "") -> str:
 
 def load_sections() -> dict[int, dict]:
     """Load sections JSON and index by start_page for matching."""
-    sections_path = INPUT_DIR / "sections-operating.json"
+    sections_path = INPUT_DIR / f"sections-{OPERATING_SUBTYPE}.json"
     with open(sections_path, encoding="utf-8") as f:
         sections = json.load(f)
 
@@ -2355,21 +2359,27 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Build web data JSON bundles from extracted CSVs.")
     parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
     parser.add_argument("--output-prefix", type=str, default="", help="Prefix for output filenames (e.g., '2025' → '2025-budget-data.json')")
+    parser.add_argument("--operating-variant", default="adopted",
+                        help="Operating budget variant to read (default: adopted; e.g. 'amended')")
+    parser.add_argument("--operating-only", action="store_true",
+                        help="Skip the capital budget build (used for the adopted diff baseline)")
     args = parser.parse_args()
     prefix = f"{args.output_prefix}-" if args.output_prefix else ""
 
-    # Reinitialize globals for the requested year
+    # Reinitialize globals for the requested year and operating variant
     global BUDGET_YEAR, PRIOR_YEAR, INPUT_DIR, OPERATING_OUTPUT_DIR, CAPITAL_OUTPUT_DIR
-    global PDF_PATH, CAPITAL_SPLIT_DIR
+    global PDF_PATH, CAPITAL_SPLIT_DIR, OPERATING_SUBTYPE
     BUDGET_YEAR = args.year
     PRIOR_YEAR = BUDGET_YEAR - 1
     INPUT_DIR = input_dir(BUDGET_YEAR)
-    OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "operating")
+    OPERATING_SUBTYPE = variant_type("operating", args.operating_variant)
+    OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, OPERATING_SUBTYPE)
     CAPITAL_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "capital")
-    PDF_PATH = pdf_path(BUDGET_YEAR, "operating")
+    PDF_PATH = pdf_path(BUDGET_YEAR, OPERATING_SUBTYPE)
     CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, "capital")
 
-    print(f"Building web data for {BUDGET_YEAR} budget (prior year: {PRIOR_YEAR})")
+    print(f"Building web data for {BUDGET_YEAR} budget "
+          f"(operating variant: {args.operating_variant}, prior year: {PRIOR_YEAR})")
 
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     views_dir = WEB_DATA_DIR / "views"
@@ -2434,9 +2444,11 @@ def main() -> None:
 
     search_index = build_search_index(sections)
 
-    # Capital budget data
-    capital_data = build_capital_data()
-    capital_sections = capital_data["sections"]
+    # Capital budget data (skipped for the operating-only adopted diff baseline)
+    capital_sections: list = []
+    if not args.operating_only:
+        capital_data = build_capital_data()
+        capital_sections = capital_data["sections"]
 
     if capital_sections:
         out_path = WEB_DATA_DIR / f"{prefix}capital-budget-data.json"

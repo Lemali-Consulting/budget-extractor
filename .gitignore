@@ -5,6 +5,10 @@ output/regression/debug_*
 output/regression/judge_images/
 output/regression/status.json
 input/*/split-pdf/
+# Adopted-baseline bundles are transient inputs to build_amendment_diff.py
+# (regenerated on demand); only the amendment diff outputs are committed.
+web/src/data/adopted-*.json
+web/src/data/views/adopted-*.json
 .env
 .astro/
 .netlify/
