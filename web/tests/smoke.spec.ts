@@ -27,6 +27,12 @@ test("home page loads with key content", async ({ page }) => {
   ).toBeVisible();
   await expect(header.getByRole("link", { name: "Stories", exact: true })).toBeVisible();
   await expect(header.getByRole("link", { name: "Explore", exact: true })).toBeVisible();
+
+  // Prominent amendment callout linking to /amendments/
+  const amendmentCallout = main(page).locator('a[href="/amendments/"]').first();
+  await expect(amendmentCallout).toBeVisible();
+  await expect(amendmentCallout).toContainText(/Budget Amended/i);
+  await expect(amendmentCallout).toContainText(/Net Change/i);
 });
 
 // ---------------------------------------------------------------------------
