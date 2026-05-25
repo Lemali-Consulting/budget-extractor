@@ -79,6 +79,16 @@ Run `python3 scripts/test_regression.py` to verify extractor output against expe
 - Test a specific year: `python3 scripts/test_regression.py --year 2026`
 - Always run regression tests after modifying the extractor to catch regressions across all PDFs
 
+# Budget Variants & Amendments
+
+A budget can have multiple **variants** for the same `(year, budget_type)` — e.g. the December "adopted" budget and a later "as amended" reissue. Variants ride on the existing path scheme via `paths.variant_type(budget_type, variant)` (default `adopted` → plain `budget_type`; otherwise `{budget_type}-{variant}`, e.g. `operating-amended`).
+
+- Inputs: `input/{year}/{budget_type}-{variant}-budget.pdf` + `sections-{budget_type}-{variant}.json`; baselines under `expected/{year}/{budget_type}-{variant}/`.
+- `split_pdf.py` / `test_regression.py` take `--variant`; `build_web_data.py` takes `--operating-variant {adopted,amended}` and `--operating-only`.
+- **2026 operating** is currently published as **amended** ("as amended 4-20-26"). The amended extraction is the canonical site data; the adopted version is rebuilt as a transient `adopted-*.json` baseline (gitignored) only to compute diffs.
+- `scripts/build_amendment_diff.py` reads the amended + adopted bundles and writes `views/2026-amendment-changes.json` (high-level) and `views/2026-amendment-cell-diffs.json` (per-cell, consumed by `TableViewer` for inline highlighting). The `/amendments` page surfaces the high-level comparison.
+- `deploy.sh` runs the amended build → adopted baseline → `build_amendment_diff.py` before the Astro build.
+
 # Web Smoke Tests
 
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.
