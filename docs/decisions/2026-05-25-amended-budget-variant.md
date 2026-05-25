@@ -5,7 +5,7 @@
 
 ## Context
 
-The City of Pittsburgh silently replaced the 2026 operating budget PDF with an "as amended 4-20-26" version (Res. 217 of 2026) — the public "2026 budget" link is unchanged, but the file behind it differs from our adopted (December) copy on 147 of 368 pages (general-fund appropriation $693.2M → $721.5M, plus revenue, personnel, and allocation changes). Only the operating budget was amended; the 2026 capital budget is unchanged. Our extracted data reflected the superseded adopted budget, and the team wanted to (a) ingest the amendment and (b) show adopted-vs-amended differences both at a high level and inline.
+The City of Pittsburgh published an "as amended 4-20-26" version of the 2026 operating budget PDF (Res. 217 of 2026) at the existing "2026 budget" link; the file behind it differs from our adopted (December) copy on 147 of 368 pages (general-fund appropriation $693.2M → $721.5M, plus revenue, personnel, and allocation changes). Only the operating budget was amended; the 2026 capital budget is unchanged. Our extracted data reflected the superseded adopted budget, and the team wanted to (a) ingest the amendment and (b) show adopted-vs-amended differences both at a high level and inline.
 
 ## Decision
 
