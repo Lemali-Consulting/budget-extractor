@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import pypdf
 
-from utils.paths import DEFAULT_YEAR, pdf_path, sections_path, split_pdf_dir
+from utils.paths import DEFAULT_YEAR, pdf_path, sections_path, split_pdf_dir, variant_type
 
 
 def sanitize_filename(title: str) -> str:
@@ -67,12 +67,18 @@ def main() -> None:
         default=DEFAULT_YEAR,
         help=f"Budget year (default: {DEFAULT_YEAR})",
     )
+    parser.add_argument(
+        "--variant",
+        default="adopted",
+        help="Budget variant (default: adopted; e.g. 'amended' for a revised PDF)",
+    )
     args = parser.parse_args()
 
+    budget_type = variant_type(args.budget_type, args.variant)
     split_pdf(
-        pdf_file=str(pdf_path(args.year, args.budget_type)),
-        sections_file=str(sections_path(args.year, args.budget_type)),
-        output_dir=str(split_pdf_dir(args.year, args.budget_type)),
+        pdf_file=str(pdf_path(args.year, budget_type)),
+        sections_file=str(sections_path(args.year, budget_type)),
+        output_dir=str(split_pdf_dir(args.year, budget_type)),
     )
 
 

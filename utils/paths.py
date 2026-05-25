@@ -12,6 +12,17 @@ def input_dir(year: int = DEFAULT_YEAR) -> Path:
     return PROJECT_ROOT / "input" / str(year)
 
 
+def variant_type(budget_type: str, variant: str = "adopted") -> str:
+    """Compose a budget type with a variant into a path-friendly subtype.
+
+    The default "adopted" variant returns the plain budget type for
+    backward compatibility (e.g. "operating"); other variants are appended
+    (e.g. "operating-amended"). This lets every (year, budget_type) path
+    helper hold a parallel variant without further changes.
+    """
+    return budget_type if variant in ("", "adopted") else f"{budget_type}-{variant}"
+
+
 def pdf_path(year: int, budget_type: str) -> Path:
     """Full budget PDF for a year and type (operating/capital)."""
     return input_dir(year) / f"{budget_type}-budget.pdf"

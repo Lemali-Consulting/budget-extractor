@@ -17,10 +17,17 @@ def load_csv(path: Path) -> list[list[str]]:
         return list(csv.reader(f))
 
 
-def find_pdf(stem: str, year: int) -> Path | None:
-    """Find a PDF matching the stem across budget types for a given year."""
-    for budget_type in ("operating", "capital"):
-        input_dir = split_pdf_dir(year, budget_type)
+def find_pdf(stem: str, year: int, budget_type: str | None = None) -> Path | None:
+    """Find a PDF matching the stem for a given year.
+
+    When ``budget_type`` is given (which may be a variant like
+    "operating-amended"), only that split dir is searched so amended
+    baselines are compared against the amended PDF, not the adopted one.
+    Otherwise all known budget types are scanned.
+    """
+    search_types = (budget_type,) if budget_type else ("operating", "capital")
+    for bt in search_types:
+        input_dir = split_pdf_dir(year, bt)
         if not input_dir.exists():
             continue
         candidates = list(input_dir.glob(f"*{stem}*.pdf"))
@@ -85,10 +92,11 @@ def generate_all_debug_pdfs(year: int) -> None:
     """Generate debug output (CSVs + annotated PDFs) for all split PDFs of a year."""
     ext = SpatialTableExtractor()
     all_pdfs = []
-    for budget_type in ("operating", "capital"):
-        pdf_dir = split_pdf_dir(year, budget_type)
-        if pdf_dir.exists():
-            all_pdfs.extend(sorted(pdf_dir.glob("*.pdf")))
+    split_root = split_pdf_dir(year, "")
+    if split_root.exists():
+        for pdf_dir in sorted(split_root.iterdir()):
+            if pdf_dir.is_dir():
+                all_pdfs.extend(sorted(pdf_dir.glob("*.pdf")))
 
     if not all_pdfs:
         print(f"No PDFs found for year {year}.")
@@ -150,7 +158,7 @@ def main() -> None:
 
             dbg = debug_dir(year)
             for stem in stems:
-                pdf = find_pdf(stem, year)
+                pdf = find_pdf(stem, year, budget_type)
                 if not pdf:
                     print(f"WARNING: PDF not found for {stem}")
                     continue
