@@ -1,7 +1,7 @@
 [
   {
     "label": "Tax Revenue",
-    "amount": 564315683.0,
+    "amount": 572315683.0,
     "type": "revenue"
   },
   {
@@ -21,7 +21,7 @@
   },
   {
     "label": "Intergovernmental Revenue",
-    "amount": 52937756.0,
+    "amount": 51068924.0,
     "type": "revenue"
   },
   {

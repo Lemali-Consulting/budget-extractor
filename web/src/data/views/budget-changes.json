@@ -1,6 +1,6 @@
 {
   "totalBudget2025": 665619091.0,
-  "totalBudget2026": 693235672.0,
+  "totalBudget2026": 721499359.0,
   "totalFte2025": 3192.75,
   "totalFte2026": 3218.92,
   "departmentChanges": [
@@ -8,9 +8,9 @@
       "department": "Bureau of Administration (Public Works)",
       "slug": "bureau-of-administration-public-works",
       "budget2025": 14269913.0,
-      "budget2026": 25696815.0,
-      "dollarChange": 11426902.0,
-      "pctChange": 80.1,
+      "budget2026": 26035728.0,
+      "dollarChange": 11765815.0,
+      "pctChange": 82.5,
       "fte2025": 31.0,
       "fte2026": 29.0
     },
@@ -18,9 +18,9 @@
       "department": "Bureau of Emergency Medical Services",
       "slug": "bureau-of-emergency-medical-services",
       "budget2025": 27666043.0,
-      "budget2026": 39005907.0,
-      "dollarChange": 11339864.0,
-      "pctChange": 41.0,
+      "budget2026": 37389707.0,
+      "dollarChange": 9723664.0,
+      "pctChange": 35.1,
       "fte2025": 219.0,
       "fte2026": 219.0
     },
@@ -28,18 +28,28 @@
       "department": "Bureau of Fire",
       "slug": "bureau-of-fire",
       "budget2025": 99021429.0,
-      "budget2026": 106816658.0,
-      "dollarChange": 7795229.0,
-      "pctChange": 7.9,
+      "budget2026": 108140401.0,
+      "dollarChange": 9118972.0,
+      "pctChange": 9.2,
       "fte2025": 679.0,
       "fte2026": 679.0
+    },
+    {
+      "department": "Department of Law",
+      "slug": "department-of-law",
+      "budget2025": 6989174.0,
+      "budget2026": 15529185.0,
+      "dollarChange": 8540011.0,
+      "pctChange": 122.2,
+      "fte2025": 40.0,
+      "fte2026": 41.0
     },
     {
       "department": "Department of Finance",
       "slug": "department-of-finance",
       "budget2025": 193056054.0,
-      "budget2026": 197799537.0,
-      "dollarChange": 4743483.0,
+      "budget2026": 197888939.0,
+      "dollarChange": 4832885.0,
       "pctChange": 2.5,
       "fte2025": 40.95,
       "fte2026": 42.0
@@ -48,19 +58,47 @@
       "department": "Bureau of Operations",
       "slug": "bureau-of-operations",
       "budget2025": 25312349.0,
-      "budget2026": 26996116.0,
-      "dollarChange": 1683767.0,
-      "pctChange": 6.7,
+      "budget2026": 28903104.0,
+      "dollarChange": 3590755.0,
+      "pctChange": 14.2,
       "fte2025": 286.0,
-      "fte2026": 287.0
+      "fte2026": 286.0
+    },
+    {
+      "department": "Bureau of Facilities",
+      "slug": "bureau-of-facilities",
+      "budget2025": 12033312.0,
+      "budget2026": 14789144.0,
+      "dollarChange": 2755832.0,
+      "pctChange": 22.9,
+      "fte2025": 88.0,
+      "fte2026": 87.0
+    },
+    {
+      "department": "Department of Human Resources and Civil Service",
+      "slug": "department-of-human-resources-and-civil-service",
+      "budget2025": 30822882.0,
+      "budget2026": 33151845.0,
+      "dollarChange": 2328963.0,
+      "pctChange": 7.6,
+      "fte2025": 38.0,
+      "fte2026": 37.0
+    },
+    {
+      "department": "Office of Management and Budget",
+      "slug": "office-of-management-and-budget",
+      "budget2025": 21188171.0,
+      "budget2026": 23499895.0,
+      "dollarChange": 2311724.0,
+      "pctChange": 10.9
     },
     {
       "department": "Department of Mobility and Infrastructure",
       "slug": "department-of-mobility-and-infrastructure",
       "budget2025": 13664365.0,
-      "budget2026": 15286603.0,
-      "dollarChange": 1622238.0,
-      "pctChange": 11.9,
+      "budget2026": 15342236.0,
+      "dollarChange": 1677871.0,
+      "pctChange": 12.3,
       "fte2025": 122.0,
       "fte2026": 126.0
     },
@@ -68,78 +106,78 @@
       "department": "Bureau of Administration (Public Safety)",
       "slug": "bureau-of-administration-public-safety",
       "budget2025": 12345508.0,
-      "budget2026": 13723803.0,
-      "dollarChange": 1378295.0,
-      "pctChange": 11.2,
+      "budget2026": 13769389.0,
+      "dollarChange": 1423881.0,
+      "pctChange": 11.5,
       "fte2025": 134.0,
-      "fte2026": 136.12
+      "fte2026": 135.12
     },
     {
-      "department": "Department of Law",
-      "slug": "department-of-law",
-      "budget2025": 6989174.0,
-      "budget2026": 7705822.0,
-      "dollarChange": 716648.0,
-      "pctChange": 10.3,
-      "fte2025": 40.0,
-      "fte2026": 41.0
+      "department": "Bureau of Environmental Services",
+      "slug": "bureau-of-environmental-services",
+      "budget2025": 19541701.0,
+      "budget2026": 19957803.0,
+      "dollarChange": 416102.0,
+      "pctChange": 2.1,
+      "fte2025": 203.0,
+      "fte2026": 202.0
     },
     {
       "department": "Department of City Planning",
       "slug": "department-of-city-planning",
       "budget2025": 4936342.0,
-      "budget2026": 5256349.0,
-      "dollarChange": 320007.0,
-      "pctChange": 6.5,
-      "fte2026": 56.0
-    },
-    {
-      "department": "Office of the City Controller",
-      "slug": "office-of-the-city-controller",
-      "budget2025": 5402279.0,
-      "budget2026": 5605384.0,
-      "dollarChange": 203105.0,
-      "pctChange": 3.8,
-      "fte2025": 57.0,
+      "budget2026": 5329394.0,
+      "dollarChange": 393052.0,
+      "pctChange": 8.0,
       "fte2026": 56.0
     },
     {
       "department": "Department of Permits, Licenses, and Inspections",
       "slug": "department-of-permits-licenses-and-inspections",
       "budget2025": 11009438.0,
-      "budget2026": 11146275.0,
-      "dollarChange": 136837.0,
-      "pctChange": 1.2,
+      "budget2026": 11335283.0,
+      "dollarChange": 325845.0,
+      "pctChange": 3.0,
       "fte2025": 120.0,
       "fte2026": 121.0
     },
     {
-      "department": "City Council",
-      "slug": "city-council",
-      "budget2025": 3539772.0,
-      "budget2026": 3664835.0,
-      "dollarChange": 125063.0,
-      "pctChange": 3.5,
-      "fte2025": 36.0,
-      "fte2026": 36.0
+      "department": "Office of the City Controller",
+      "slug": "office-of-the-city-controller",
+      "budget2025": 5402279.0,
+      "budget2026": 5683720.0,
+      "dollarChange": 281441.0,
+      "pctChange": 5.2,
+      "fte2025": 57.0,
+      "fte2026": 58.0
     },
     {
       "department": "Bureau of Animal Care and Control",
       "slug": "bureau-of-animal-care-and-control",
       "budget2025": 2337259.0,
-      "budget2026": 2461494.0,
-      "dollarChange": 124235.0,
-      "pctChange": 5.3,
+      "budget2026": 2522084.0,
+      "dollarChange": 184825.0,
+      "pctChange": 7.9,
       "fte2025": 17.0,
       "fte2026": 17.0
+    },
+    {
+      "department": "City Council",
+      "slug": "city-council",
+      "budget2025": 3539772.0,
+      "budget2026": 3709073.0,
+      "dollarChange": 169301.0,
+      "pctChange": 4.8,
+      "fte2025": 36.0,
+      "fte2026": 36.0
     },
     {
       "department": "Commission on Human Relations",
       "slug": "commission-on-human-relations",
       "budget2025": 776018.0,
-      "budget2026": 827516.0,
-      "dollarChange": 51498.0,
-      "pctChange": 6.6,
+      "budget2026": 840536.0,
+      "dollarChange": 64518.0,
+      "pctChange": 8.3,
       "fte2025": 8.0,
       "fte2026": 8.0
     },
@@ -147,9 +185,9 @@
       "department": "Citizen Police Review Board",
       "slug": "citizen-police-review-board",
       "budget2025": 933156.0,
-      "budget2026": 958962.0,
-      "dollarChange": 25806.0,
-      "pctChange": 2.8,
+      "budget2026": 970951.0,
+      "dollarChange": 37795.0,
+      "pctChange": 4.1,
       "fte2025": 9.0,
       "fte2026": 9.0
     },
@@ -157,9 +195,9 @@
       "department": "Office of Municipal Investigations",
       "slug": "office-of-municipal-investigations",
       "budget2025": 765376.0,
-      "budget2026": 778704.0,
-      "dollarChange": 13328.0,
-      "pctChange": 1.7,
+      "budget2026": 787865.0,
+      "dollarChange": 22489.0,
+      "pctChange": 2.9,
       "fte2025": 8.0,
       "fte2026": 8.0
     },
@@ -172,6 +210,16 @@
       "pctChange": 0.0
     },
     {
+      "department": "Office of the City Clerk",
+      "slug": "office-of-the-city-clerk",
+      "budget2025": 2542149.0,
+      "budget2026": 2540637.0,
+      "dollarChange": -1512.0,
+      "pctChange": -0.1,
+      "fte2025": 21.0,
+      "fte2026": 19.0
+    },
+    {
       "department": "Ethics Hearing Board",
       "slug": "ethics-hearing-board",
       "budget2025": 190695.0,
@@ -182,92 +230,44 @@
       "fte2026": 1.0
     },
     {
-      "department": "Office of the City Clerk",
-      "slug": "office-of-the-city-clerk",
-      "budget2025": 2542149.0,
-      "budget2026": 2515537.0,
-      "dollarChange": -26612.0,
-      "pctChange": -1.0,
-      "fte2025": 21.0,
-      "fte2026": 19.0
-    },
-    {
-      "department": "Bureau of Facilities",
-      "slug": "bureau-of-facilities",
-      "budget2025": 12033312.0,
-      "budget2026": 11961338.0,
-      "dollarChange": -71974.0,
-      "pctChange": -0.6,
-      "fte2025": 88.0,
-      "fte2026": 86.0
-    },
-    {
-      "department": "Bureau of Environmental Services",
-      "slug": "bureau-of-environmental-services",
-      "budget2025": 19541701.0,
-      "budget2026": 19166722.0,
-      "dollarChange": -374979.0,
-      "pctChange": -1.9,
-      "fte2025": 203.0,
-      "fte2026": 202.0
-    },
-    {
       "department": "Department of Innovation and Performance",
       "slug": "department-of-innovation-and-performance",
       "budget2025": 22725604.0,
-      "budget2026": 22303735.0,
-      "dollarChange": -421869.0,
-      "pctChange": -1.9,
+      "budget2026": 22259453.0,
+      "dollarChange": -466151.0,
+      "pctChange": -2.1,
       "fte2025": 68.0,
-      "fte2026": 77.0
-    },
-    {
-      "department": "Office of Management and Budget",
-      "slug": "office-of-management-and-budget",
-      "budget2025": 21188171.0,
-      "budget2026": 20638818.0,
-      "dollarChange": -549353.0,
-      "pctChange": -2.6
-    },
-    {
-      "department": "Department of Parks and Recreation",
-      "slug": "department-of-parks-and-recreation",
-      "budget2025": 8886563.0,
-      "budget2026": 7446545.0,
-      "dollarChange": -1440018.0,
-      "pctChange": -16.2,
-      "fte2025": 52.8,
-      "fte2026": 54.8
-    },
-    {
-      "department": "Office of the Mayor",
-      "slug": "office-of-the-mayor",
-      "budget2025": 4963344.0,
-      "budget2026": 3145158.0,
-      "dollarChange": -1818186.0,
-      "pctChange": -36.6,
-      "fte2025": 39.0,
-      "fte2026": 27.0
+      "fte2026": 75.0
     },
     {
       "department": "Bureau of Police",
       "slug": "bureau-of-police",
       "budget2025": 120642195.0,
-      "budget2026": 117958522.0,
-      "dollarChange": -2683673.0,
-      "pctChange": -2.2,
+      "budget2026": 119820024.0,
+      "dollarChange": -822171.0,
+      "pctChange": -0.7,
       "fte2025": 875.0,
-      "fte2026": 844.0
+      "fte2026": 845.0
     },
     {
-      "department": "Department of Human Resources and Civil Service",
-      "slug": "department-of-human-resources-and-civil-service",
-      "budget2025": 30822882.0,
-      "budget2026": 24122782.0,
-      "dollarChange": -6700100.0,
-      "pctChange": -21.7,
-      "fte2025": 38.0,
-      "fte2026": 38.0
+      "department": "Department of Parks and Recreation",
+      "slug": "department-of-parks-and-recreation",
+      "budget2025": 8886563.0,
+      "budget2026": 7509981.0,
+      "dollarChange": -1376582.0,
+      "pctChange": -15.5,
+      "fte2025": 52.8,
+      "fte2026": 55.8
+    },
+    {
+      "department": "Office of the Mayor",
+      "slug": "office-of-the-mayor",
+      "budget2025": 4963344.0,
+      "budget2026": 3547247.0,
+      "dollarChange": -1416097.0,
+      "pctChange": -28.5,
+      "fte2025": 39.0,
+      "fte2026": 27.0
     }
   ],
   "topIncreases": [
@@ -275,9 +275,9 @@
       "department": "Bureau of Administration (Public Works)",
       "slug": "bureau-of-administration-public-works",
       "budget2025": 14269913.0,
-      "budget2026": 25696815.0,
-      "dollarChange": 11426902.0,
-      "pctChange": 80.1,
+      "budget2026": 26035728.0,
+      "dollarChange": 11765815.0,
+      "pctChange": 82.5,
       "fte2025": 31.0,
       "fte2026": 29.0
     },
@@ -285,9 +285,9 @@
       "department": "Bureau of Emergency Medical Services",
       "slug": "bureau-of-emergency-medical-services",
       "budget2025": 27666043.0,
-      "budget2026": 39005907.0,
-      "dollarChange": 11339864.0,
-      "pctChange": 41.0,
+      "budget2026": 37389707.0,
+      "dollarChange": 9723664.0,
+      "pctChange": 35.1,
       "fte2025": 219.0,
       "fte2026": 219.0
     },
@@ -295,18 +295,28 @@
       "department": "Bureau of Fire",
       "slug": "bureau-of-fire",
       "budget2025": 99021429.0,
-      "budget2026": 106816658.0,
-      "dollarChange": 7795229.0,
-      "pctChange": 7.9,
+      "budget2026": 108140401.0,
+      "dollarChange": 9118972.0,
+      "pctChange": 9.2,
       "fte2025": 679.0,
       "fte2026": 679.0
+    },
+    {
+      "department": "Department of Law",
+      "slug": "department-of-law",
+      "budget2025": 6989174.0,
+      "budget2026": 15529185.0,
+      "dollarChange": 8540011.0,
+      "pctChange": 122.2,
+      "fte2025": 40.0,
+      "fte2026": 41.0
     },
     {
       "department": "Department of Finance",
       "slug": "department-of-finance",
       "budget2025": 193056054.0,
-      "budget2026": 197799537.0,
-      "dollarChange": 4743483.0,
+      "budget2026": 197888939.0,
+      "dollarChange": 4832885.0,
       "pctChange": 2.5,
       "fte2025": 40.95,
       "fte2026": 42.0
@@ -315,90 +325,59 @@
       "department": "Bureau of Operations",
       "slug": "bureau-of-operations",
       "budget2025": 25312349.0,
-      "budget2026": 26996116.0,
-      "dollarChange": 1683767.0,
-      "pctChange": 6.7,
+      "budget2026": 28903104.0,
+      "dollarChange": 3590755.0,
+      "pctChange": 14.2,
       "fte2025": 286.0,
-      "fte2026": 287.0
+      "fte2026": 286.0
+    },
+    {
+      "department": "Bureau of Facilities",
+      "slug": "bureau-of-facilities",
+      "budget2025": 12033312.0,
+      "budget2026": 14789144.0,
+      "dollarChange": 2755832.0,
+      "pctChange": 22.9,
+      "fte2025": 88.0,
+      "fte2026": 87.0
+    },
+    {
+      "department": "Department of Human Resources and Civil Service",
+      "slug": "department-of-human-resources-and-civil-service",
+      "budget2025": 30822882.0,
+      "budget2026": 33151845.0,
+      "dollarChange": 2328963.0,
+      "pctChange": 7.6,
+      "fte2025": 38.0,
+      "fte2026": 37.0
+    },
+    {
+      "department": "Office of Management and Budget",
+      "slug": "office-of-management-and-budget",
+      "budget2025": 21188171.0,
+      "budget2026": 23499895.0,
+      "dollarChange": 2311724.0,
+      "pctChange": 10.9
     },
     {
       "department": "Department of Mobility and Infrastructure",
       "slug": "department-of-mobility-and-infrastructure",
       "budget2025": 13664365.0,
-      "budget2026": 15286603.0,
-      "dollarChange": 1622238.0,
-      "pctChange": 11.9,
+      "budget2026": 15342236.0,
+      "dollarChange": 1677871.0,
+      "pctChange": 12.3,
       "fte2025": 122.0,
       "fte2026": 126.0
-    },
-    {
-      "department": "Bureau of Administration (Public Safety)",
-      "slug": "bureau-of-administration-public-safety",
-      "budget2025": 12345508.0,
-      "budget2026": 13723803.0,
-      "dollarChange": 1378295.0,
-      "pctChange": 11.2,
-      "fte2025": 134.0,
-      "fte2026": 136.12
-    },
-    {
-      "department": "Department of Law",
-      "slug": "department-of-law",
-      "budget2025": 6989174.0,
-      "budget2026": 7705822.0,
-      "dollarChange": 716648.0,
-      "pctChange": 10.3,
-      "fte2025": 40.0,
-      "fte2026": 41.0
-    },
-    {
-      "department": "Department of City Planning",
-      "slug": "department-of-city-planning",
-      "budget2025": 4936342.0,
-      "budget2026": 5256349.0,
-      "dollarChange": 320007.0,
-      "pctChange": 6.5,
-      "fte2026": 56.0
-    },
-    {
-      "department": "Office of the City Controller",
-      "slug": "office-of-the-city-controller",
-      "budget2025": 5402279.0,
-      "budget2026": 5605384.0,
-      "dollarChange": 203105.0,
-      "pctChange": 3.8,
-      "fte2025": 57.0,
-      "fte2026": 56.0
     }
   ],
   "topDecreases": [
     {
-      "department": "Department of Human Resources and Civil Service",
-      "slug": "department-of-human-resources-and-civil-service",
-      "budget2025": 30822882.0,
-      "budget2026": 24122782.0,
-      "dollarChange": -6700100.0,
-      "pctChange": -21.7,
-      "fte2025": 38.0,
-      "fte2026": 38.0
-    },
-    {
-      "department": "Bureau of Police",
-      "slug": "bureau-of-police",
-      "budget2025": 120642195.0,
-      "budget2026": 117958522.0,
-      "dollarChange": -2683673.0,
-      "pctChange": -2.2,
-      "fte2025": 875.0,
-      "fte2026": 844.0
-    },
-    {
       "department": "Office of the Mayor",
       "slug": "office-of-the-mayor",
       "budget2025": 4963344.0,
-      "budget2026": 3145158.0,
-      "dollarChange": -1818186.0,
-      "pctChange": -36.6,
+      "budget2026": 3547247.0,
+      "dollarChange": -1416097.0,
+      "pctChange": -28.5,
       "fte2025": 39.0,
       "fte2026": 27.0
     },
@@ -406,59 +385,31 @@
       "department": "Department of Parks and Recreation",
       "slug": "department-of-parks-and-recreation",
       "budget2025": 8886563.0,
-      "budget2026": 7446545.0,
-      "dollarChange": -1440018.0,
-      "pctChange": -16.2,
+      "budget2026": 7509981.0,
+      "dollarChange": -1376582.0,
+      "pctChange": -15.5,
       "fte2025": 52.8,
-      "fte2026": 54.8
+      "fte2026": 55.8
     },
     {
-      "department": "Office of Management and Budget",
-      "slug": "office-of-management-and-budget",
-      "budget2025": 21188171.0,
-      "budget2026": 20638818.0,
-      "dollarChange": -549353.0,
-      "pctChange": -2.6
+      "department": "Bureau of Police",
+      "slug": "bureau-of-police",
+      "budget2025": 120642195.0,
+      "budget2026": 119820024.0,
+      "dollarChange": -822171.0,
+      "pctChange": -0.7,
+      "fte2025": 875.0,
+      "fte2026": 845.0
     },
     {
       "department": "Department of Innovation and Performance",
       "slug": "department-of-innovation-and-performance",
       "budget2025": 22725604.0,
-      "budget2026": 22303735.0,
-      "dollarChange": -421869.0,
-      "pctChange": -1.9,
+      "budget2026": 22259453.0,
+      "dollarChange": -466151.0,
+      "pctChange": -2.1,
       "fte2025": 68.0,
-      "fte2026": 77.0
-    },
-    {
-      "department": "Bureau of Environmental Services",
-      "slug": "bureau-of-environmental-services",
-      "budget2025": 19541701.0,
-      "budget2026": 19166722.0,
-      "dollarChange": -374979.0,
-      "pctChange": -1.9,
-      "fte2025": 203.0,
-      "fte2026": 202.0
-    },
-    {
-      "department": "Bureau of Facilities",
-      "slug": "bureau-of-facilities",
-      "budget2025": 12033312.0,
-      "budget2026": 11961338.0,
-      "dollarChange": -71974.0,
-      "pctChange": -0.6,
-      "fte2025": 88.0,
-      "fte2026": 86.0
-    },
-    {
-      "department": "Office of the City Clerk",
-      "slug": "office-of-the-city-clerk",
-      "budget2025": 2542149.0,
-      "budget2026": 2515537.0,
-      "dollarChange": -26612.0,
-      "pctChange": -1.0,
-      "fte2025": 21.0,
-      "fte2026": 19.0
+      "fte2026": 75.0
     },
     {
       "department": "Ethics Hearing Board",
@@ -469,6 +420,16 @@
       "pctChange": -1.6,
       "fte2025": 1.0,
       "fte2026": 1.0
+    },
+    {
+      "department": "Office of the City Clerk",
+      "slug": "office-of-the-city-clerk",
+      "budget2025": 2542149.0,
+      "budget2026": 2540637.0,
+      "dollarChange": -1512.0,
+      "pctChange": -0.1,
+      "fte2025": 21.0,
+      "fte2026": 19.0
     }
   ],
   "newPositions": [
@@ -575,6 +536,18 @@
       "budget": 219774.0
     },
     {
+      "department": "Office of Management and Budget",
+      "title": "Director, OMB/Chief Financial Officer",
+      "fte": 1.0,
+      "budget": 133827.0
+    },
+    {
+      "department": "Office of Management and Budget",
+      "title": "Deputy Director, OMB",
+      "fte": 1.0,
+      "budget": 120827.0
+    },
+    {
       "department": "Department of Innovation and Performance",
       "title": "Noble Reach Fellow in Cybersecurity",
       "fte": 1.0,
@@ -630,9 +603,15 @@
     },
     {
       "department": "Office of the City Controller",
-      "title": "Controller's Clerk",
+      "title": "Senior Controller's Clerk",
       "fte": 1.0,
-      "budget": 59301.0
+      "budget": 32271.0
+    },
+    {
+      "department": "Office of the City Controller",
+      "title": "ERP Manager",
+      "fte": 1.0,
+      "budget": 52749.0
     },
     {
       "department": "Office of the City Controller",
@@ -674,13 +653,19 @@
       "department": "Department of Finance",
       "title": "Cashier II",
       "fte": 1.0,
-      "budget": 46613.0
+      "budget": 48127.0
     },
     {
       "department": "Department of Law",
       "title": "A.D.A. and Disability Resources Coordinator",
       "fte": 1.0,
       "budget": 64542.0
+    },
+    {
+      "department": "Department of Human Resources and Civil Service",
+      "title": "Deputy Director",
+      "fte": 1.0,
+      "budget": 120827.0
     },
     {
       "department": "Department of City Planning",
@@ -692,17 +677,11 @@
       "department": "Department of City Planning",
       "title": "Administrator 2",
       "fte": 1.0,
-      "budget": 56618.0
+      "budget": 56761.0
     },
     {
       "department": "Department of Permits, Licenses, and Inspections",
       "title": "Personnel & Finance Coordinator",
-      "fte": 1.0,
-      "budget": 64542.0
-    },
-    {
-      "department": "Department of Permits, Licenses, and Inspections",
-      "title": "Neighborhood Engagement Coordinator",
       "fte": 1.0,
       "budget": 64542.0
     },
@@ -726,12 +705,6 @@
     },
     {
       "department": "Bureau of Administration (Public Safety)",
-      "title": "Assistant Director - Community Affairs",
-      "fte": 1.0,
-      "budget": 114046.0
-    },
-    {
-      "department": "Bureau of Administration (Public Safety)",
       "title": "Assistant Director - Community Health & Safety",
       "fte": 1.0,
       "budget": 114046.0
@@ -744,6 +717,12 @@
     },
     {
       "department": "Bureau of Administration (Public Safety)",
+      "title": "Senior Public Information Officer",
+      "fte": 1.0,
+      "budget": 105498.0
+    },
+    {
+      "department": "Bureau of Administration (Public Safety)",
       "title": "Warehouse Manager",
       "fte": 1.0,
       "budget": 82742.0
@@ -753,6 +732,12 @@
       "title": "Senior Emergency Management Planner",
       "fte": 1.0,
       "budget": 82742.0
+    },
+    {
+      "department": "Bureau of Police",
+      "title": "Head of Wellness",
+      "fte": 1.0,
+      "budget": 82503.0
     },
     {
       "department": "Bureau of Police",
@@ -770,19 +755,25 @@
       "department": "Bureau of Administration (Public Works)",
       "title": "Environmental Enforcement Inspector",
       "fte": 10.0,
-      "budget": 575744.0
+      "budget": 596573.0
     },
     {
       "department": "Bureau of Operations",
-      "title": "Neighborhood Engagement Coordinator",
+      "title": "Support Services Coordinator",
       "fte": 1.0,
-      "budget": 64542.0
+      "budget": 70200.0
     },
     {
       "department": "Bureau of Environmental Services",
       "title": "Lot Coordinator",
       "fte": 2.0,
-      "budget": 52978.0
+      "budget": 57242.0
+    },
+    {
+      "department": "Bureau of Facilities",
+      "title": "Director - Facilities",
+      "fte": 1.0,
+      "budget": 132995.0
     },
     {
       "department": "Bureau of Facilities",
@@ -795,6 +786,12 @@
       "title": "Assistant Warehouse Manager",
       "fte": 1.0,
       "budget": 73258.0
+    },
+    {
+      "department": "Department of Parks and Recreation",
+      "title": "Deputy Director",
+      "fte": 1.0,
+      "budget": 120827.0
     },
     {
       "department": "Department of Parks and Recreation",
@@ -836,7 +833,7 @@
       "department": "Department of Mobility and Infrastructure",
       "title": "Contract Administrator",
       "fte": 1.0,
-      "budget": 70200.0
+      "budget": 70377.0
     },
     {
       "department": "Department of Mobility and Infrastructure",
@@ -859,14 +856,8 @@
     {
       "department": "Three Taxing Bodies Trust Fund",
       "title": "Assistant II, Administrative",
-      "fte": 0.9,
-      "budget": 36404.0
-    },
-    {
-      "department": "Police Secondary Employment Trust Fund",
-      "title": "Specialist, Administrative",
       "fte": 1.0,
-      "budget": 40617.0
+      "budget": 45900.0
     },
     {
       "department": "Stop the Violence Trust Fund",
@@ -885,6 +876,18 @@
       "title": "Community Resilience Coordinator",
       "fte": 1.0,
       "budget": 70200.0
+    },
+    {
+      "department": "Stop the Violence Trust Fund",
+      "title": "Violence Prevention Manager",
+      "fte": 5.0,
+      "budget": 413712.0
+    },
+    {
+      "department": "Stop the Violence Trust Fund",
+      "title": "Violence Prevention Coordinator",
+      "fte": 1.0,
+      "budget": 76294.0
     },
     {
       "department": "Parks Tax Trust Fund",
@@ -1023,8 +1026,14 @@
     {
       "department": "Office of the Mayor",
       "title": "Neighborhood Engagement Coordinator",
-      "fte": 3.0,
-      "budget": 188011.0
+      "fte": 2.0,
+      "budget": 125341
+    },
+    {
+      "department": "Office of the Mayor",
+      "title": "311 Call Center Representative",
+      "fte": 1.0,
+      "budget": 42302
     },
     {
       "department": "Office of the Mayor",
@@ -1070,6 +1079,12 @@
     },
     {
       "department": "Office of Management and Budget",
+      "title": "Director, OMB",
+      "fte": 1.0,
+      "budget": 135574.0
+    },
+    {
+      "department": "Office of Management and Budget",
       "title": "Chief Economic Development Officer",
       "fte": 1.0,
       "budget": 129938.0
@@ -1085,6 +1100,12 @@
       "title": "Management Analyst",
       "fte": 2.0,
       "budget": 148138.0
+    },
+    {
+      "department": "Office of Management and Budget",
+      "title": "Chief Financial Officer",
+      "fte": 1.0,
+      "budget": 129938.0
     },
     {
       "department": "Department of Innovation and Performance",
@@ -1189,6 +1210,18 @@
       "budget": 39698.0
     },
     {
+      "department": "Department of Human Resources and Civil Service",
+      "title": "Assistant Director, Employee Compensation & Benefits",
+      "fte": 1.0,
+      "budget": 110718.0
+    },
+    {
+      "department": "Department of Human Resources and Civil Service",
+      "title": "Senior Human Resources Specialist",
+      "fte": 2.0,
+      "budget": 109949.0
+    },
+    {
       "department": "Department of City Planning",
       "title": "Senior Secretary",
       "fte": 1.0,
@@ -1280,6 +1313,12 @@
     },
     {
       "department": "Department of Mobility and Infrastructure",
+      "title": "Senior Systems Analyst 3",
+      "fte": 1.0,
+      "budget": 77043.0
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
       "title": "Administrator 2",
       "fte": 1.0,
       "budget": 60112.0
@@ -1339,6 +1378,18 @@
       "budget": 355576.0
     },
     {
+      "department": "Stop the Violence Trust Fund",
+      "title": "Crime Analyst",
+      "fte": 1.0,
+      "budget": 74069.0
+    },
+    {
+      "department": "Stop the Violence Trust Fund",
+      "title": "Recreation Leader, Afterschool Program",
+      "fte": 1.0,
+      "budget": 43264.0
+    },
+    {
       "department": "Parks Tax Trust Fund",
       "title": "Field Turf Manager",
       "fte": 1.0,
@@ -1377,28 +1428,12 @@
   ],
   "shiftedPositions": [
     {
-      "title": "Manager, Office of Equal Protection",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Law",
-      "fte": 1.0,
-      "budgetPrior": 74069.0,
-      "budgetCurrent": 76294.0
-    },
-    {
       "title": "Assistant Manager, 311 Response Line",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of Innovation and Performance",
       "fte": 1.0,
       "budgetPrior": 74069.0,
       "budgetCurrent": 76294.0
-    },
-    {
-      "title": "Special Projects Manager",
-      "fromDepartment": "Office of the City Controller",
-      "toDepartment": "Office of the Mayor",
-      "fte": 1.0,
-      "budgetPrior": 77043.0,
-      "budgetCurrent": 86008.0
     },
     {
       "title": "Digital Engagement Coordinator",
@@ -1409,20 +1444,20 @@
       "budgetCurrent": 64542.0
     },
     {
+      "title": "Manager, Office of Equal Protection",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Law",
+      "fte": 1.0,
+      "budgetPrior": 74069.0,
+      "budgetCurrent": 76294.0
+    },
+    {
       "title": "Stores Manager",
       "fromDepartment": "Bureau of Administration (Public Safety)",
       "toDepartment": "Bureau of Facilities",
       "fte": 1.0,
       "budgetPrior": 77043.0,
       "budgetCurrent": 79352.0
-    },
-    {
-      "title": "311 Call Center Representative",
-      "fromDepartment": "Office of the Mayor",
-      "toDepartment": "Department of Innovation and Performance",
-      "fte": 5.0,
-      "budgetPrior": 211509.0,
-      "budgetCurrent": 211509.0
     },
     {
       "title": "Manager, 311 Response Line",
@@ -1433,12 +1468,36 @@
       "budgetCurrent": 86008.0
     },
     {
+      "title": "Neighborhood Engagement Coordinator",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Permits, Licenses, and Inspections",
+      "fte": 1.0,
+      "budgetPrior": 188011.0,
+      "budgetCurrent": 64542.0
+    },
+    {
+      "title": "Special Projects Manager",
+      "fromDepartment": "Office of the City Controller",
+      "toDepartment": "Office of the Mayor",
+      "fte": 1.0,
+      "budgetPrior": 77043.0,
+      "budgetCurrent": 86008.0
+    },
+    {
       "title": "Performance Operations Analyst",
       "fromDepartment": "Office of the Mayor",
       "toDepartment": "Department of Innovation and Performance",
       "fte": 1.0,
       "budgetPrior": 68162.0,
       "budgetCurrent": 70200.0
+    },
+    {
+      "title": "311 Call Center Representative",
+      "fromDepartment": "Office of the Mayor",
+      "toDepartment": "Department of Innovation and Performance",
+      "fte": 4.0,
+      "budgetPrior": 211509.0,
+      "budgetCurrent": 189000.0
     }
   ]
 }

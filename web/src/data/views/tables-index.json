@@ -1,5 +1,272 @@
 [
   {
+    "id": "s1_p3_t0",
+    "sectionNumber": 1,
+    "sectionTitle": "Budget Authorizing Legislation",
+    "sectionSlug": "budget-authorizing-legislation",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Unknown",
+    "headers": [
+      "fixed and established as set forth herein. Section 2. To ensure the capacity of the City to provide an effective level of Municipal services which will meet the economic, physical and social needs of its citizens, residents, visitors and neighborhoods during the 2026 Fiscal",
+      ""
+    ],
+    "rowCount": 34,
+    "numericCols": [
+      1
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s1_p4_t0",
+    "sectionNumber": 1,
+    "sectionTitle": "Budget Authorizing Legislation",
+    "sectionSlug": "budget-authorizing-legislation",
+    "page": 4,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "EMS Chief",
+    "headers": [
+      "EMS Chief",
+      "1"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      1
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s2_p5_t0",
+    "sectionNumber": 2,
+    "sectionTitle": "American Rescue Plan",
+    "sectionSlug": "american-rescue-plan",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "allocation",
+    "label": "Exhibit A, version 10",
+    "headers": [
+      "Exhibit A, version 10",
+      "ARPA Allocation",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rowCount": 18,
+    "numericCols": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s2_p5_t1",
+    "sectionNumber": 2,
+    "sectionTitle": "American Rescue Plan",
+    "sectionSlug": "american-rescue-plan",
+    "page": 5,
+    "tableIndex": 1,
+    "type": "revenue",
+    "label": "Revenue",
+    "headers": [
+      "City - Special Revenue Bridge asset management program",
+      "\u2014",
+      "2,500,100",
+      "\u2014",
+      "\u2014",
+      "2,500,100"
+    ],
+    "rowCount": 2,
+    "numericCols": [
+      1,
+      2,
+      5
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s2_p5_t2",
+    "sectionNumber": 2,
+    "sectionTitle": "American Rescue Plan",
+    "sectionSlug": "american-rescue-plan",
+    "page": 5,
+    "tableIndex": 2,
+    "type": "unknown",
+    "label": "City - Capital",
+    "headers": [
+      "City - Capital",
+      "Green fleet improvements",
+      "7,825,834",
+      "6,713,079",
+      "907,063",
+      "\u2014",
+      "15,445,976"
+    ],
+    "rowCount": 11,
+    "numericCols": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s2_p6_t0",
+    "sectionNumber": 2,
+    "sectionTitle": "American Rescue Plan",
+    "sectionSlug": "american-rescue-plan",
+    "page": 6,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Funding (1)",
+    "headers": [
+      "Funding",
+      "ARPA Expenses",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "Four Year Total"
+    ],
+    "rowCount": 9,
+    "numericCols": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s2_p6_t1",
+    "sectionNumber": 2,
+    "sectionTitle": "American Rescue Plan",
+    "sectionSlug": "american-rescue-plan",
+    "page": 6,
+    "tableIndex": 1,
+    "type": "unknown",
+    "label": "URA",
+    "headers": [
+      "URA",
+      "Casa San Jos\u00e9 support",
+      "100,000",
+      "\u2014",
+      "\u2014",
+      "\u2014",
+      "100,000"
+    ],
+    "rowCount": 24,
+    "numericCols": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s2_p7_t0",
+    "sectionNumber": 2,
+    "sectionTitle": "American Rescue Plan",
+    "sectionSlug": "american-rescue-plan",
+    "page": 7,
+    "tableIndex": 0,
+    "type": "forecast",
+    "label": "Funding (2)",
+    "headers": [
+      "Funding",
+      "ARPA Expenses",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "",
+      "Four Year Total"
+    ],
+    "rowCount": 13,
+    "numericCols": [
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s3_p3_t0",
+    "sectionNumber": 3,
+    "sectionTitle": "Budget Guide",
+    "sectionSlug": "budget-guide",
+    "page": 3,
+    "tableIndex": 0,
+    "type": "unknown",
+    "label": "Governmental Funds",
+    "headers": [
+      "Governmental Funds"
+    ],
+    "rowCount": 3,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s3_p5_t0",
+    "sectionNumber": 3,
+    "sectionTitle": "Budget Guide",
+    "sectionSlug": "budget-guide",
+    "page": 5,
+    "tableIndex": 0,
+    "type": "revenue",
+    "label": "Revenues",
+    "headers": [
+      "Revenues"
+    ],
+    "rowCount": 1,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s3_p7_t3",
+    "sectionNumber": 3,
+    "sectionTitle": "Budget Guide",
+    "sectionSlug": "budget-guide",
+    "page": 7,
+    "tableIndex": 3,
+    "type": "unknown",
+    "label": "Health Insurance",
+    "headers": [
+      "Health Insurance"
+    ],
+    "rowCount": 1,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s3_p7_t4",
+    "sectionNumber": 3,
+    "sectionTitle": "Budget Guide",
+    "sectionSlug": "budget-guide",
+    "page": 7,
+    "tableIndex": 4,
+    "type": "unknown",
+    "label": "Workers' Compensation",
+    "headers": [
+      "Workers' Compensation"
+    ],
+    "rowCount": 1,
+    "numericCols": [],
+    "budgetType": "operating"
+  },
+  {
     "id": "s4_p1_t0",
     "sectionNumber": 4,
     "sectionTitle": "Five-Year Financial Forecast",
@@ -17,7 +284,7 @@
       "2029 Forecast",
       "2030 Forecast"
     ],
-    "rowCount": 44,
+    "rowCount": 45,
     "numericCols": [
       1,
       2,
@@ -99,7 +366,7 @@
     "headers": [
       "Annual Growth Rate Tax Revenue",
       "2026",
-      "1.3% 2027",
+      "0.4% 2027",
       "1.2% 2028",
       "1.2% 2029",
       "1.2% 2030",
@@ -263,9 +530,9 @@
       "Total Expenditures $ 658,305,314 Expenditures by Subclass",
       "$ 665,619,090",
       "",
-      "$ 693,235,672",
-      "27,616,582",
-      "4.1%"
+      "$ 721,521,858",
+      "55,902,768",
+      "8.4%"
     ],
     "rowCount": 3,
     "numericCols": [],
@@ -308,8 +575,8 @@
     "label": "Total Expenditures",
     "headers": [
       "Total Expenditures",
-      "658,305,314  $ 665,619,090  $ 693,235,671",
-      "27,616,581  4.1%"
+      "658,305,314  $ 665,619,090  $ 721,521,858",
+      "55,902,768  8.4%"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -590,7 +857,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 9,
+    "rowCount": 10,
     "numericCols": [
       1,
       4,
@@ -672,7 +939,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 28,
+    "rowCount": 30,
     "numericCols": [
       1,
       3,
@@ -723,8 +990,8 @@
       "Total Full Time Permanent Positions",
       "35",
       "2,991,603",
-      "30",
-      "2,587,892"
+      "29",
+      "2,435,385"
     ],
     "rowCount": 3,
     "numericCols": [
@@ -844,6 +1111,7 @@
       1,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -866,7 +1134,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 38,
+    "rowCount": 39,
     "numericCols": [
       1,
       2,
@@ -928,6 +1196,7 @@
       3,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -1035,7 +1304,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 50,
+    "rowCount": 52,
     "numericCols": [
       1,
       3,
@@ -1202,6 +1471,7 @@
       3,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -1221,7 +1491,7 @@
       "Department of Finance",
       "Three Taxing Bodies Trust Fund"
     ],
-    "rowCount": 3,
+    "rowCount": 2,
     "numericCols": [],
     "budgetType": "operating"
   },
@@ -1639,7 +1909,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 26,
+    "rowCount": 28,
     "numericCols": [
       1,
       3,
@@ -1762,6 +2032,7 @@
       3,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -1855,7 +2126,7 @@
     "page": 4,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "Personnel (1)",
+    "label": "Personnel",
     "headers": [
       "Title",
       "2025 FTE",
@@ -1879,33 +2150,6 @@
     "budgetType": "operating"
   },
   {
-    "id": "s23_p4_t1",
-    "sectionNumber": 23,
-    "sectionTitle": "Department of Permits, Licenses, and Inspections",
-    "sectionSlug": "department-of-permits-licenses-and-inspections",
-    "page": 4,
-    "tableIndex": 1,
-    "type": "personnel",
-    "label": "Personnel (2)",
-    "headers": [
-      "Title",
-      "2025 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
-      "Hours/ Months",
-      "2026 Budget"
-    ],
-    "rowCount": 2,
-    "numericCols": [
-      4,
-      8
-    ],
-    "budgetType": "operating"
-  },
-  {
     "id": "s23_p5_t0",
     "sectionNumber": 23,
     "sectionTitle": "Department of Permits, Licenses, and Inspections",
@@ -1913,15 +2157,19 @@
     "page": 5,
     "tableIndex": 0,
     "type": "unknown",
-    "label": "\u2014",
+    "label": "PLI Interns",
     "headers": [
-      "\u2014",
+      "PLI Interns",
+      "\u2014  9.00-14.00 \u2014",
       "5,000",
-      "\u2014",
+      "\u2014  9.00-14.00 \u2014",
       "5,000"
     ],
-    "rowCount": 0,
-    "numericCols": [],
+    "rowCount": 1,
+    "numericCols": [
+      2,
+      4
+    ],
     "budgetType": "operating"
   },
   {
@@ -1938,7 +2186,7 @@
       "120",
       "8,542,894",
       "121",
-      "8,736,495"
+      "8,948,127"
     ],
     "rowCount": 3,
     "numericCols": [
@@ -2283,7 +2531,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 25,
+    "rowCount": 26,
     "numericCols": [
       1,
       3,
@@ -2320,6 +2568,7 @@
       3,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -2843,6 +3092,7 @@
       3,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -2960,6 +3210,7 @@
       3,
       4,
       5,
+      6,
       7,
       8
     ],
@@ -3096,7 +3347,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 48,
+    "rowCount": 49,
     "numericCols": [
       1,
       2,
@@ -3117,7 +3368,7 @@
     "page": 3,
     "tableIndex": 0,
     "type": "financial_summary",
-    "label": "Financial Summary (1)",
+    "label": "Financial Summary",
     "headers": [
       "",
       "2024 Actual",
@@ -3126,33 +3377,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 41,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "budgetType": "operating"
-  },
-  {
-    "id": "s34_p4_t0",
-    "sectionNumber": 34,
-    "sectionTitle": "Bureau of Facilities",
-    "sectionSlug": "bureau-of-facilities",
-    "page": 4,
-    "tableIndex": 0,
-    "type": "financial_summary",
-    "label": "Financial Summary (2)",
-    "headers": [
-      "",
-      "2024 Actual",
-      "2025 Budget",
-      "2026 Budget",
-      "Increase/ (Decrease)",
-      "% Change"
-    ],
-    "rowCount": 5,
+    "rowCount": 46,
     "numericCols": [
       1,
       2,
@@ -3182,7 +3407,6 @@
     "numericCols": [
       1,
       2,
-      3,
       4,
       5
     ],
@@ -3208,7 +3432,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 28,
+    "rowCount": 29,
     "numericCols": [
       1,
       3,
@@ -3239,11 +3463,13 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 11,
+    "rowCount": 20,
     "numericCols": [
+      1,
       2,
       3,
       4,
+      5,
       6,
       7,
       8
@@ -3258,9 +3484,11 @@
     "page": 5,
     "tableIndex": 0,
     "type": "personnel",
-    "label": "2025 Rate/ Title FTE Grade",
+    "label": "Personnel (3)",
     "headers": [
-      "2025 Rate/ Title FTE Grade",
+      "Title",
+      "2025 FTE",
+      "Rate/ Grade",
       "Hours/ Months",
       "2025 Budget",
       "2026 FTE",
@@ -3268,55 +3496,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 1,
-    "numericCols": [
-      2,
-      6
-    ],
-    "budgetType": "operating"
-  },
-  {
-    "id": "s35_p5_t1",
-    "sectionNumber": 35,
-    "sectionTitle": "Department of Parks and Recreation",
-    "sectionSlug": "department-of-parks-and-recreation",
-    "page": 5,
-    "tableIndex": 1,
-    "type": "personnel",
-    "label": "Total Full-Time Permanent Positions",
-    "headers": [
-      "Total Full-Time Permanent Positions",
-      "52.80",
-      "2,895,806",
-      "54.80",
-      "3,216,755"
-    ],
-    "rowCount": 3,
-    "numericCols": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "budgetType": "operating"
-  },
-  {
-    "id": "s35_p5_t2",
-    "sectionNumber": 35,
-    "sectionTitle": "Department of Parks and Recreation",
-    "sectionSlug": "department-of-parks-and-recreation",
-    "page": 5,
-    "tableIndex": 2,
-    "type": "allocation",
-    "label": "2026 Allocations",
-    "headers": [
-      "2026 Allocations",
-      "Department of Parks & Recreation",
-      "Mellon Park Trust Fund",
-      "Senior Citizens Program Trust Fund",
-      "Special Events Trust Fund"
-    ],
-    "rowCount": 3,
+    "rowCount": 5,
     "numericCols": [],
     "budgetType": "operating"
   },
@@ -3371,6 +3551,23 @@
       4,
       5
     ],
+    "budgetType": "operating"
+  },
+  {
+    "id": "s35_p8_t1",
+    "sectionNumber": 35,
+    "sectionTitle": "Department of Parks and Recreation",
+    "sectionSlug": "department-of-parks-and-recreation",
+    "page": 8,
+    "tableIndex": 1,
+    "type": "unknown",
+    "label": "55 - OTHER SERVICES 56 - SUPPLIES",
+    "headers": [
+      "55 - OTHER SERVICES 56 - SUPPLIES",
+      "DEPARTMENT OF PARKS & RECREATION 2026 Expenditures by Subclass 58 - MISCELLANEOUS"
+    ],
+    "rowCount": 3,
+    "numericCols": [],
     "budgetType": "operating"
   },
   {
@@ -3567,7 +3764,7 @@
       "Increase/ (Decrease)",
       "% Change"
     ],
-    "rowCount": 26,
+    "rowCount": 27,
     "numericCols": [
       1,
       2,
@@ -3770,7 +3967,7 @@
     "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
-      "543,280"
+      "523,511"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -3821,7 +4018,7 @@
       "Department of Finance",
       "Three Taxing Bodies Trust Fund"
     ],
-    "rowCount": 4,
+    "rowCount": 2,
     "numericCols": [],
     "budgetType": "operating"
   },
@@ -3966,7 +4163,7 @@
     "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
-      "(40,658)"
+      "(42,144)"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -4055,7 +4252,7 @@
     "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
-      "3,325,749"
+      "3,321,046"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -4076,8 +4273,7 @@
       "Rate/ Grade",
       "Hours/ Months",
       "2025 Budget",
-      "2026 FTE",
-      "Rate/ Grade",
+      "2026 Rate/ FTE Grade",
       "Hours/ Months",
       "2026 Budget"
     ],
@@ -4086,9 +4282,8 @@
       1,
       3,
       4,
-      5,
-      7,
-      8
+      6,
+      7
     ],
     "budgetType": "operating"
   },
@@ -4144,7 +4339,7 @@
     "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
-      "11,160,239"
+      "5,770,896"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -4170,7 +4365,7 @@
       "Hours/ Months",
       "2026 Budget"
     ],
-    "rowCount": 33,
+    "rowCount": 53,
     "numericCols": [
       1,
       3,
@@ -4188,37 +4383,6 @@
     "sectionSlug": "stop-the-violence-trust-fund",
     "page": 3,
     "tableIndex": 0,
-    "type": "personnel",
-    "label": "Assistant Director - Community Affairs",
-    "headers": [
-      "Assistant Director - Community Affairs",
-      "1",
-      "32G",
-      "12",
-      "110,718",
-      "\u2014",
-      "32G",
-      "\u2014",
-      "\u2014"
-    ],
-    "rowCount": 17,
-    "numericCols": [
-      1,
-      3,
-      4,
-      5,
-      7,
-      8
-    ],
-    "budgetType": "operating"
-  },
-  {
-    "id": "s44_p3_t1",
-    "sectionNumber": 44,
-    "sectionTitle": "Stop the Violence Trust Fund",
-    "sectionSlug": "stop-the-violence-trust-fund",
-    "page": 3,
-    "tableIndex": 1,
     "type": "personnel",
     "label": "Temporary, Part-Time, and Seasonal Allowances",
     "headers": [
@@ -4244,20 +4408,20 @@
     "budgetType": "operating"
   },
   {
-    "id": "s44_p3_t2",
+    "id": "s44_p3_t1",
     "sectionNumber": 44,
     "sectionTitle": "Stop the Violence Trust Fund",
     "sectionSlug": "stop-the-violence-trust-fund",
     "page": 3,
-    "tableIndex": 2,
+    "tableIndex": 1,
     "type": "personnel",
     "label": "Total Full-Time Permanent Positions",
     "headers": [
       "Total Full-Time Permanent Positions",
       "68",
       "4,614,080",
-      "69",
-      "4,713,841"
+      "72",
+      "5,073,366"
     ],
     "rowCount": 3,
     "numericCols": [
@@ -4584,7 +4748,7 @@
     "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
-      "1,409,142"
+      "908,878"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -4666,7 +4830,7 @@
       "38",
       "2,348,031",
       "38",
-      "2,472,829"
+      "2,472,932"
     ],
     "rowCount": 3,
     "numericCols": [
@@ -4869,7 +5033,7 @@
     "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
-      "1,840,915"
+      "1,836,828"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -5011,7 +5175,7 @@
     "label": "Projected Ending Balance",
     "headers": [
       "Projected Ending Balance",
-      "1,652,005"
+      "1,584,921"
     ],
     "rowCount": 0,
     "numericCols": [],
@@ -5752,43 +5916,15 @@
     "sectionSlug": "salary-tables",
     "page": 2,
     "tableIndex": 0,
-    "type": "salary",
-    "label": "Grade",
+    "type": "unknown",
+    "label": "Unknown",
     "headers": [
-      "Grade",
-      "Step|A",
-      "Step|B",
-      "Step|C",
-      "Step|D",
-      "Step|E",
-      "Step|F",
-      "Step|G",
-      "Step|H",
-      "Step|I",
-      "Step|J",
-      "Step|K",
-      "Step|L",
-      "Step|M",
-      "Step|N",
-      "Step|O"
+      "Title",
+      "Rate"
     ],
-    "rowCount": 10,
+    "rowCount": 98,
     "numericCols": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
+      1
     ],
     "budgetType": "operating"
   },
@@ -5805,7 +5941,7 @@
       "Grade and Step",
       "Annual Rate"
     ],
-    "rowCount": 13,
+    "rowCount": 19,
     "numericCols": [
       1
     ],
@@ -6357,7 +6493,7 @@
       "Funding Source",
       "Total Cost"
     ],
-    "rowCount": 23,
+    "rowCount": 22,
     "numericCols": [
       1,
       4
@@ -6604,23 +6740,6 @@
     "budgetType": "capital"
   },
   {
-    "id": "cap_s1_p2_t0",
-    "sectionNumber": 1,
-    "sectionTitle": "Capital Budget Introduction",
-    "sectionSlug": "capital-budget-introduction",
-    "page": 2,
-    "tableIndex": 0,
-    "type": "capital_summary",
-    "label": "Capital Summary (3)",
-    "headers": [
-      "(cid:53)(cid:17) (cid:39)(cid:68)(cid:81)(cid:76)(cid:72)(cid:79)(cid:3)(cid:47)(cid:68)(cid:89)(cid:72)(cid:79)(cid:79)(cid:72)(cid:11)(cid:1)(cid:51)(cid:85)(cid:72)(cid:86)(cid:76)(cid:71)(cid:72)(cid:81)(cid:87) (cid:27)(cid:65)(cid:52)(cid:52)(cid:75)(cid:1)(cid:47)(cid:59)(cid:62)(cid:69)(cid:65)(cid:64)(cid:11)(cid:1)(cid:47)(cid:68)(cid:81)(cid:71)(cid:3)(cid:56)(cid:86)(cid:72)(cid:3)(cid:9)(cid:3)(cid:40)(cid:70)(cid:82)(cid:81)(cid:82)(cid:80)(cid:76)(cid:70)(cid:3)(cid:39)(cid:72)(cid:89)(cid:72)(cid:79)(cid:82)(cid:83)(cid:80)(cid:72)(cid:81)(cid:87) (cid:55)(cid:75)(cid:72)(cid:85)(cid:72)(cid:86)(cid:68)(cid:3)(cid:46)(cid:68)(cid:76)(cid:79)(cid:16)(cid:54)(cid:80)(cid:76)(cid:87)(cid:75)(cid:11)(cid:1)(cid:53)(cid:72)(cid:70)(cid:85)(cid:72)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)(cid:15)(cid:3)(cid:60)(cid:82)(cid:88)(cid:87)(cid:75)(cid:15)(cid:3)(cid:9)(cid:3)(cid:54)(cid:72)(cid:81)(cid:76)(cid:82)(cid:85)(cid:3)(cid:54)(cid:72)(cid:85)(cid:89)(cid:76)(cid:70)(cid:72)(cid:86)",
-      "(cid:31)(cid:61)(cid:71)(cid:72)(cid:70)(cid:61)(cid:55)(cid:72)(cid:1)(cid:25) (cid:31)(cid:61)(cid:71)(cid:72)(cid:70)(cid:61)(cid:55)(cid:72)(cid:1)(cid:16) (cid:31)(cid:61)(cid:71)(cid:72)(cid:70)(cid:61)(cid:55)(cid:72)(cid:1)(cid:21)"
-    ],
-    "rowCount": 5,
-    "numericCols": [],
-    "budgetType": "capital"
-  },
-  {
     "id": "cap_s1_p8_t0",
     "sectionNumber": 1,
     "sectionTitle": "Capital Budget Introduction",
@@ -6628,7 +6747,7 @@
     "page": 8,
     "tableIndex": 0,
     "type": "capital_summary",
-    "label": "Capital Summary (4)",
+    "label": "Capital Summary (3)",
     "headers": [
       "historically disadvantaged Pittsburghers. Departments were also asked to consider: \uf0b7 Has the department taken taking current market conditions, particularly anticipated increases",
       ""

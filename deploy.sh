@@ -12,7 +12,11 @@ export NETLIFY_AUTH_TOKEN
 export NETLIFY_SITE_ID="11c41143-d0e2-4a28-9dde-10e173bf230f"
 
 echo "==> Building web data..."
-uv run scripts/build_web_data.py --year 2026
+# 2026 operating budget = amended ("as amended 4-20-26") is the canonical site data.
+uv run scripts/build_web_data.py --year 2026 --operating-variant amended
+# Adopted baseline (transient, gitignored) + adopted-vs-amended diff outputs.
+uv run scripts/build_web_data.py --year 2026 --operating-variant adopted --operating-only --output-prefix adopted
+uv run scripts/build_amendment_diff.py --year 2026
 uv run scripts/build_web_data.py --year 2025 --output-prefix 2025
 
 echo "==> Validating data..."

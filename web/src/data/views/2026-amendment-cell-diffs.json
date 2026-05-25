@@ -1,0 +1,6170 @@
+{
+  "meta": {
+    "amendmentLabel": "as amended 4-20-26",
+    "adoptedTotal": 693235672.0,
+    "amendedTotal": 721499359.0,
+    "changedTableCount": 114,
+    "changedLineItemCount": 682,
+    "changedCellCount": 723
+  },
+  "byTable": {
+    "s4_p1_t0": {
+      "rows": {
+        "Payroll Preparation Tax": {
+          "2026 Budget": {
+            "adopted": 79742920.0,
+            "amended": 87742920.0,
+            "delta": 8000000.0,
+            "pct": 10.0
+          }
+        },
+        "Intergovernmental Revenue": {
+          "2026 Budget": {
+            "adopted": 52937756.0,
+            "amended": 51068924.0,
+            "delta": -1868832.0,
+            "pct": -3.5
+          }
+        },
+        "Total Revenues": {
+          "2026 Budget": {
+            "adopted": 708880951.0,
+            "amended": 721521858.0,
+            "delta": 12640907.0,
+            "pct": 1.8
+          }
+        },
+        "Salaries": {
+          "2026 Budget": {
+            "adopted": 309357607.0,
+            "amended": 310132377.0,
+            "delta": 774770.0,
+            "pct": 0.3
+          }
+        },
+        "Health Benefits": {
+          "2026 Budget": {
+            "adopted": 57740132.0,
+            "amended": 72729994.0,
+            "delta": 14989862.0,
+            "pct": 26.0
+          }
+        },
+        "Operating Departments": {
+          "2026 Budget": {
+            "adopted": 127008333.0,
+            "amended": 139529888.0,
+            "delta": 12521555.0,
+            "pct": 9.9
+          }
+        },
+        "Total Expenditures": {
+          "2026 Budget": {
+            "adopted": 693235671.0,
+            "amended": 721521858.0,
+            "delta": 28286187.0,
+            "pct": 4.1
+          }
+        },
+        "OPERATING RESULT": {
+          "2026 Budget": {
+            "adopted": 15645279.0,
+            "amended": 0.0,
+            "delta": -15645279.0,
+            "pct": -100.0
+          }
+        },
+        "BALANCE": {
+          "2026 Budget": {
+            "adopted": 168102681.0,
+            "amended": 152789472.0,
+            "delta": -15313209.0,
+            "pct": -9.1
+          }
+        },
+        "ENDING RESERVE FUND BALANCE": {
+          "2026 Budget": {
+            "adopted": 143147960.0,
+            "amended": 112189472.0,
+            "delta": -30958488.0,
+            "pct": -21.6
+          }
+        }
+      }
+    },
+    "s4_p2_t0": {
+      "rows": {
+        "City Council Districts": {
+          "2026 Budget": {
+            "adopted": 3664835.0,
+            "amended": 3709073.0,
+            "delta": 44238.0,
+            "pct": 1.2
+          }
+        },
+        "Office of the City Clerk": {
+          "2026 Budget": {
+            "adopted": 2515537.0,
+            "amended": 2540636.0,
+            "delta": 25099.0,
+            "pct": 1.0
+          }
+        },
+        "Office of the Mayor": {
+          "2026 Budget": {
+            "adopted": 3145158.0,
+            "amended": 3547247.0,
+            "delta": 402089.0,
+            "pct": 12.8
+          }
+        },
+        "Office of Management and Budget": {
+          "2026 Budget": {
+            "adopted": 20638819.0,
+            "amended": 23499896.0,
+            "delta": 2861077.0,
+            "pct": 13.9
+          }
+        },
+        "Innovation and Performance": {
+          "2026 Budget": {
+            "adopted": 22303735.0,
+            "amended": 22259453.0,
+            "delta": -44282.0,
+            "pct": -0.2
+          }
+        },
+        "Commission on Human Relations": {
+          "2026 Budget": {
+            "adopted": 827515.0,
+            "amended": 840536.0,
+            "delta": 13021.0,
+            "pct": 1.6
+          }
+        },
+        "Office of the City Controller": {
+          "2026 Budget": {
+            "adopted": 5605383.0,
+            "amended": 5683719.0,
+            "delta": 78336.0,
+            "pct": 1.4
+          }
+        },
+        "Finance": {
+          "2026 Budget": {
+            "adopted": 197799537.0,
+            "amended": 197900940.0,
+            "delta": 101403.0,
+            "pct": 0.1
+          }
+        },
+        "Law": {
+          "2026 Budget": {
+            "adopted": 7705822.0,
+            "amended": 15529184.0,
+            "delta": 7823362.0,
+            "pct": 101.5
+          }
+        },
+        "Office of Municipal Investigations": {
+          "2026 Budget": {
+            "adopted": 778704.0,
+            "amended": 787865.0,
+            "delta": 9161.0,
+            "pct": 1.2
+          }
+        },
+        "Human Resources and Civil Service": {
+          "2026 Budget": {
+            "adopted": 24122781.0,
+            "amended": 33151845.0,
+            "delta": 9029064.0,
+            "pct": 37.4
+          }
+        },
+        "City Planning": {
+          "2026 Budget": {
+            "adopted": 5256349.0,
+            "amended": 5329893.0,
+            "delta": 73544.0,
+            "pct": 1.4
+          }
+        },
+        "Permits, Licenses, and Inspections": {
+          "2026 Budget": {
+            "adopted": 11146276.0,
+            "amended": 11345283.0,
+            "delta": 199007.0,
+            "pct": 1.8
+          }
+        },
+        "Public Safety Administration": {
+          "2026 Budget": {
+            "adopted": 13723803.0,
+            "amended": 13769389.0,
+            "delta": 45586.0,
+            "pct": 0.3
+          }
+        },
+        "Bureau of Emergency Medical Services": {
+          "2026 Budget": {
+            "adopted": 39005906.0,
+            "amended": 37389707.0,
+            "delta": -1616199.0,
+            "pct": -4.1
+          }
+        },
+        "Bureau of Police": {
+          "2026 Budget": {
+            "adopted": 117958522.0,
+            "amended": 119820024.0,
+            "delta": 1861502.0,
+            "pct": 1.6
+          }
+        },
+        "Bureau of Fire": {
+          "2026 Budget": {
+            "adopted": 106816658.0,
+            "amended": 108140401.0,
+            "delta": 1323743.0,
+            "pct": 1.2
+          }
+        },
+        "Bureau of Animal Care and Control": {
+          "2026 Budget": {
+            "adopted": 2461494.0,
+            "amended": 2522085.0,
+            "delta": 60591.0,
+            "pct": 2.5
+          }
+        },
+        "Public Works Administration": {
+          "2026 Budget": {
+            "adopted": 25696815.0,
+            "amended": 26035728.0,
+            "delta": 338913.0,
+            "pct": 1.3
+          }
+        },
+        "Bureau of Operations": {
+          "2026 Budget": {
+            "adopted": 26996116.0,
+            "amended": 28903104.0,
+            "delta": 1906988.0,
+            "pct": 7.1
+          }
+        },
+        "Bureau of Environmental Services": {
+          "2026 Budget": {
+            "adopted": 19166723.0,
+            "amended": 19957803.0,
+            "delta": 791080.0,
+            "pct": 4.1
+          }
+        },
+        "Bureau of Facilities": {
+          "2026 Budget": {
+            "adopted": 11961339.0,
+            "amended": 14789145.0,
+            "delta": 2827806.0,
+            "pct": 23.6
+          }
+        },
+        "Parks and Recreation": {
+          "2026 Budget": {
+            "adopted": 7446545.0,
+            "amended": 7509981.0,
+            "delta": 63436.0,
+            "pct": 0.9
+          }
+        },
+        "Mobility and Infrastructure": {
+          "2026 Budget": {
+            "adopted": 15286603.0,
+            "amended": 15342236.0,
+            "delta": 55633.0,
+            "pct": 0.4
+          }
+        },
+        "Citizen Police Review Board": {
+          "2026 Budget": {
+            "adopted": 958962.0,
+            "amended": 970951.0,
+            "delta": 11989.0,
+            "pct": 1.3
+          }
+        },
+        "Total Expenditures": {
+          "2026 Budget": {
+            "adopted": 693235672.0,
+            "amended": 721521858.0,
+            "delta": 28286186.0,
+            "pct": 4.1
+          }
+        }
+      }
+    },
+    "s5_p1_t0": {
+      "rows": {
+        "41 - Tax Revenue": {
+          "2026": {
+            "adopted": 564315683.0,
+            "amended": 572315683.0,
+            "delta": 8000000.0,
+            "pct": 1.4
+          }
+        },
+        "45 - Intergovernmental Revenues": {
+          "2026": {
+            "adopted": 52937756.0,
+            "amended": 51068924.0,
+            "delta": -1868832.0,
+            "pct": -3.5
+          }
+        },
+        "Total Revenues": {
+          "2026": {
+            "adopted": 708880951.0,
+            "amended": 715012119.0,
+            "delta": 6131168.0,
+            "pct": 0.9
+          }
+        }
+      }
+    },
+    "s5_p1_t1": {
+      "rows": {
+        "Payroll Preparation Tax": {
+          "2026": {
+            "adopted": 79742920.0,
+            "amended": 87742920.0,
+            "delta": 8000000.0,
+            "pct": 10.0
+          }
+        },
+        "41 - Tax Revenue": {
+          "2026": {
+            "adopted": 564315683.0,
+            "amended": 572315683.0,
+            "delta": 8000000.0,
+            "pct": 1.4
+          }
+        }
+      }
+    },
+    "s7_p0_t0": {
+      "rows": {
+        "41 - TAX REVENUE": {
+          "2026": {
+            "adopted": 564315683.0,
+            "amended": 572315683.0,
+            "delta": 8000000.0,
+            "pct": 1.4
+          }
+        },
+        "41441 - Payroll Preparation Tax-Current": {
+          "2026": {
+            "adopted": 77211118.0,
+            "amended": 85211118.0,
+            "delta": 8000000.0,
+            "pct": 10.4
+          }
+        },
+        "45 - INTERGOVERNMENTAL REVENUE": {
+          "2026": {
+            "adopted": 52937756.0,
+            "amended": 51068924.0,
+            "delta": -1868832.0,
+            "pct": -3.5
+          }
+        },
+        "45527 - Intergovernmental Revenue-State": {
+          "2026": {
+            "adopted": 1868832.0,
+            "amended": 0.0,
+            "delta": -1868832.0,
+            "pct": -100.0
+          }
+        },
+        "Total Revenue": {
+          "2026": {
+            "adopted": 708880951.0,
+            "amended": 715012119.0,
+            "delta": 6131168.0,
+            "pct": 0.9
+          }
+        }
+      }
+    },
+    "s8_p1_t0": {
+      "rows": {
+        "City Council Districts": {
+          "2026 Budget": {
+            "adopted": 3664835.0,
+            "amended": 3709073.0,
+            "delta": 44238.0,
+            "pct": 1.2
+          }
+        },
+        "Office of the City Clerk": {
+          "2026 Budget": {
+            "adopted": 2515537.0,
+            "amended": 2540636.0,
+            "delta": 25099.0,
+            "pct": 1.0
+          }
+        },
+        "Office of the Mayor": {
+          "2026 Budget": {
+            "adopted": 3145158.0,
+            "amended": 3547247.0,
+            "delta": 402089.0,
+            "pct": 12.8
+          }
+        },
+        "Office of Management and Budget": {
+          "2026 Budget": {
+            "adopted": 20638819.0,
+            "amended": 23499896.0,
+            "delta": 2861077.0,
+            "pct": 13.9
+          }
+        },
+        "Innovation and Performance": {
+          "2026 Budget": {
+            "adopted": 22303735.0,
+            "amended": 22259453.0,
+            "delta": -44282.0,
+            "pct": -0.2
+          }
+        },
+        "Commission on Human Relations": {
+          "2026 Budget": {
+            "adopted": 827515.0,
+            "amended": 840536.0,
+            "delta": 13021.0,
+            "pct": 1.6
+          }
+        },
+        "Office of the City Controller": {
+          "2026 Budget": {
+            "adopted": 5605383.0,
+            "amended": 5683719.0,
+            "delta": 78336.0,
+            "pct": 1.4
+          }
+        },
+        "Finance": {
+          "2026 Budget": {
+            "adopted": 197799537.0,
+            "amended": 197900940.0,
+            "delta": 101403.0,
+            "pct": 0.1
+          }
+        },
+        "Law": {
+          "2026 Budget": {
+            "adopted": 7705822.0,
+            "amended": 15529184.0,
+            "delta": 7823362.0,
+            "pct": 101.5
+          }
+        },
+        "Office of Municipal Investigations": {
+          "2026 Budget": {
+            "adopted": 778704.0,
+            "amended": 787865.0,
+            "delta": 9161.0,
+            "pct": 1.2
+          }
+        },
+        "Human Resources and Civil Service": {
+          "2026 Budget": {
+            "adopted": 24122781.0,
+            "amended": 33151845.0,
+            "delta": 9029064.0,
+            "pct": 37.4
+          }
+        },
+        "City Planning": {
+          "2026 Budget": {
+            "adopted": 5256349.0,
+            "amended": 5329893.0,
+            "delta": 73544.0,
+            "pct": 1.4
+          }
+        },
+        "Permits, Licenses, and Inspections": {
+          "2026 Budget": {
+            "adopted": 11146276.0,
+            "amended": 11345283.0,
+            "delta": 199007.0,
+            "pct": 1.8
+          }
+        },
+        "Public Safety Administration": {
+          "2026 Budget": {
+            "adopted": 13723803.0,
+            "amended": 13769389.0,
+            "delta": 45586.0,
+            "pct": 0.3
+          }
+        },
+        "Bureau of Emergency Medical Services": {
+          "2026 Budget": {
+            "adopted": 39005906.0,
+            "amended": 37389707.0,
+            "delta": -1616199.0,
+            "pct": -4.1
+          }
+        },
+        "Bureau of Police": {
+          "2026 Budget": {
+            "adopted": 117958522.0,
+            "amended": 119820024.0,
+            "delta": 1861502.0,
+            "pct": 1.6
+          }
+        },
+        "Bureau of Fire": {
+          "2026 Budget": {
+            "adopted": 106816658.0,
+            "amended": 108140401.0,
+            "delta": 1323743.0,
+            "pct": 1.2
+          }
+        },
+        "Bureau of Animal Care and Control": {
+          "2026 Budget": {
+            "adopted": 2461494.0,
+            "amended": 2522085.0,
+            "delta": 60591.0,
+            "pct": 2.5
+          }
+        },
+        "Public Works Administration": {
+          "2026 Budget": {
+            "adopted": 25696815.0,
+            "amended": 26035728.0,
+            "delta": 338913.0,
+            "pct": 1.3
+          }
+        },
+        "Bureau of Operations": {
+          "2026 Budget": {
+            "adopted": 26996116.0,
+            "amended": 28903104.0,
+            "delta": 1906988.0,
+            "pct": 7.1
+          }
+        },
+        "Bureau of Environmental Services": {
+          "2026 Budget": {
+            "adopted": 19166723.0,
+            "amended": 19957803.0,
+            "delta": 791080.0,
+            "pct": 4.1
+          }
+        },
+        "Bureau of Facilities": {
+          "2026 Budget": {
+            "adopted": 11961339.0,
+            "amended": 14789145.0,
+            "delta": 2827806.0,
+            "pct": 23.6
+          }
+        },
+        "Parks and Recreation": {
+          "2026 Budget": {
+            "adopted": 7446545.0,
+            "amended": 7509981.0,
+            "delta": 63436.0,
+            "pct": 0.9
+          }
+        },
+        "Mobility and Infrastructure": {
+          "2026 Budget": {
+            "adopted": 15286603.0,
+            "amended": 15342236.0,
+            "delta": 55633.0,
+            "pct": 0.4
+          }
+        },
+        "Citizen Police Review Board": {
+          "2026 Budget": {
+            "adopted": 958962.0,
+            "amended": 970951.0,
+            "delta": 11989.0,
+            "pct": 1.3
+          }
+        }
+      }
+    },
+    "s8_p1_t2": {
+      "rows": {
+        "51 - Personnel-Salaries & Wages": {
+          "2026 Budget": {
+            "adopted": 309357607.0,
+            "amended": 310132377.0,
+            "delta": 774770.0,
+            "pct": 0.3
+          }
+        },
+        "52 - Personnel-Employee Benefits": {
+          "2026 Budget": {
+            "adopted": 193755690.0,
+            "amended": 208824488.0,
+            "delta": 15068798.0,
+            "pct": 7.8
+          }
+        },
+        "53 - Professional & Technical Services": {
+          "2026 Budget": {
+            "adopted": 25060441.0,
+            "amended": 27420491.0,
+            "delta": 2360050.0,
+            "pct": 9.4
+          }
+        },
+        "54 - Property Services": {
+          "2026 Budget": {
+            "adopted": 47269087.0,
+            "amended": 50630607.0,
+            "delta": 3361520.0,
+            "pct": 7.1
+          }
+        },
+        "55 - Other Services": {
+          "2026 Budget": {
+            "adopted": 4988376.0,
+            "amended": 4996526.0,
+            "delta": 8150.0,
+            "pct": 0.2
+          }
+        },
+        "56 - Supplies": {
+          "2026 Budget": {
+            "adopted": 17511035.0,
+            "amended": 20111035.0,
+            "delta": 2600000.0,
+            "pct": 14.8
+          }
+        },
+        "57 - Property": {
+          "2026 Budget": {
+            "adopted": 8995222.0,
+            "amended": 6358121.0,
+            "delta": -2637101.0,
+            "pct": -29.3
+          }
+        },
+        "58 - Miscellaneous": {
+          "2026 Budget": {
+            "adopted": 7986550.0,
+            "amended": 14736550.0,
+            "delta": 6750000.0,
+            "pct": 84.5
+          }
+        }
+      }
+    },
+    "s9_p0_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 309357607.0,
+            "amended": 310132377.0,
+            "delta": 774770.0,
+            "pct": 0.3
+          }
+        },
+        "51101 - Regular": {
+          "2026": {
+            "adopted": 239786230.0,
+            "amended": 240650531.0,
+            "delta": 864301.0,
+            "pct": 0.4
+          }
+        },
+        "51103 - Part Time": {
+          "2026": {
+            "adopted": 2892889.0,
+            "amended": 3062886.0,
+            "delta": 169997.0,
+            "pct": 5.9
+          }
+        },
+        "51201 - Longevity": {
+          "2026": {
+            "adopted": 5094822.0,
+            "amended": 5143322.0,
+            "delta": 48500.0,
+            "pct": 1.0
+          }
+        },
+        "51203 - Allowances": {
+          "2026": {
+            "adopted": 3238617.0,
+            "amended": 2327939.0,
+            "delta": -910678.0,
+            "pct": -28.1
+          }
+        },
+        "51205 - Uniform": {
+          "2026": {
+            "adopted": 1678548.0,
+            "amended": 1679198.0,
+            "delta": 650.0,
+            "pct": 0.0
+          }
+        },
+        "51401 - Premium Pay": {
+          "2026": {
+            "adopted": 54946501.0,
+            "amended": 55548501.0,
+            "delta": 602000.0,
+            "pct": 1.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 193755690.0,
+            "amended": 208824488.0,
+            "delta": 15068798.0,
+            "pct": 7.8
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026": {
+            "adopted": 40857920.0,
+            "amended": 49742385.0,
+            "delta": 8884465.0,
+            "pct": 21.7
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026": {
+            "adopted": 3732303.0,
+            "amended": 3747700.0,
+            "delta": 15397.0,
+            "pct": 0.4
+          }
+        },
+        "52121 - Retiree Health Insurance": {
+          "2026": {
+            "adopted": 13149909.0,
+            "amended": 19239909.0,
+            "delta": 6090000.0,
+            "pct": 46.3
+          }
+        },
+        "52201 - Social Security": {
+          "2026": {
+            "adopted": 12239620.0,
+            "amended": 12318557.0,
+            "delta": 78937.0,
+            "pct": 0.6
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026": {
+            "adopted": 25060441.0,
+            "amended": 27420491.0,
+            "delta": 2360050.0,
+            "pct": 9.4
+          }
+        },
+        "53101 - Administrative Fees": {
+          "2026": {
+            "adopted": 1912808.0,
+            "amended": 1915308.0,
+            "delta": 2500.0,
+            "pct": 0.1
+          }
+        },
+        "53301 - Workforce Training": {
+          "2026": {
+            "adopted": 710668.0,
+            "amended": 733955.0,
+            "delta": 23287.0,
+            "pct": 3.3
+          }
+        },
+        "53509 - Computer Maintenance": {
+          "2026": {
+            "adopted": 11221243.0,
+            "amended": 11222288.0,
+            "delta": 1045.0,
+            "pct": 0.0
+          }
+        },
+        "53517 - Legal Fees": {
+          "2026": {
+            "adopted": 1048776.0,
+            "amended": 1548776.0,
+            "delta": 500000.0,
+            "pct": 47.7
+          }
+        },
+        "53725 - Maintenance-Miscellaneous": {
+          "2026": {
+            "adopted": 271740.0,
+            "amended": 275016.0,
+            "delta": 3276.0,
+            "pct": 1.2
+          }
+        },
+        "53901 - Professional Services": {
+          "2026": {
+            "adopted": 2371580.0,
+            "amended": 4201522.0,
+            "delta": 1829942.0,
+            "pct": 77.2
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026": {
+            "adopted": 47269087.0,
+            "amended": 50630607.0,
+            "delta": 3361520.0,
+            "pct": 7.1
+          }
+        },
+        "54105 - Landscaping": {
+          "2026": {
+            "adopted": 256000.0,
+            "amended": 556000.0,
+            "delta": 300000.0,
+            "pct": 117.2
+          }
+        },
+        "54201 - Maintenance": {
+          "2026": {
+            "adopted": 11607231.0,
+            "amended": 15147583.0,
+            "delta": 3540352.0,
+            "pct": 30.5
+          }
+        },
+        "54501 - Land & Buildings": {
+          "2026": {
+            "adopted": 3771543.0,
+            "amended": 4021543.0,
+            "delta": 250000.0,
+            "pct": 6.6
+          }
+        },
+        "54513 - Machinery & Equipment": {
+          "2026": {
+            "adopted": 2357332.0,
+            "amended": 1328500.0,
+            "delta": -1028832.0,
+            "pct": -43.6
+          }
+        },
+        "54603 - Natural Gas": {
+          "2026": {
+            "adopted": 1200000.0,
+            "amended": 1500000.0,
+            "delta": 300000.0,
+            "pct": 25.0
+          }
+        },
+        "55 - OTHER SERVICES": {
+          "2026": {
+            "adopted": 4988376.0,
+            "amended": 4996526.0,
+            "delta": 8150.0,
+            "pct": 0.2
+          }
+        },
+        "55101 - Insurance Premiums": {
+          "2026": {
+            "adopted": 897742.0,
+            "amended": 902392.0,
+            "delta": 4650.0,
+            "pct": 0.5
+          }
+        },
+        "55309 - Regulatory": {
+          "2026": {
+            "adopted": 71150.0,
+            "amended": 74650.0,
+            "delta": 3500.0,
+            "pct": 4.9
+          }
+        },
+        "56 - SUPPLIES": {
+          "2026": {
+            "adopted": 17511035.0,
+            "amended": 20111035.0,
+            "delta": 2600000.0,
+            "pct": 14.8
+          }
+        },
+        "56151 - Operational Supplies": {
+          "2026": {
+            "adopted": 6686127.0,
+            "amended": 6736127.0,
+            "delta": 50000.0,
+            "pct": 0.7
+          }
+        },
+        "56201 - Fuel (Energy)": {
+          "2026": {
+            "adopted": 3044325.0,
+            "amended": 3594325.0,
+            "delta": 550000.0,
+            "pct": 18.1
+          }
+        },
+        "56501 - Parts (Vehicles)": {
+          "2026": {
+            "adopted": 3998774.0,
+            "amended": 5998774.0,
+            "delta": 2000000.0,
+            "pct": 50.0
+          }
+        },
+        "57 - PROPERTY": {
+          "2026": {
+            "adopted": 8995222.0,
+            "amended": 6358121.0,
+            "delta": -2637101.0,
+            "pct": -29.3
+          }
+        },
+        "57531 - Vehicles": {
+          "2026": {
+            "adopted": 4206602.0,
+            "amended": 1569500.0,
+            "delta": -2637102.0,
+            "pct": -62.7
+          }
+        },
+        "58 - MISCELLANEOUS": {
+          "2026": {
+            "adopted": 7986550.0,
+            "amended": 14736550.0,
+            "delta": 6750000.0,
+            "pct": 84.5
+          }
+        },
+        "58101 - Grants": {
+          "2026": {
+            "adopted": 4464000.0,
+            "amended": 3964000.0,
+            "delta": -500000.0,
+            "pct": -11.2
+          }
+        },
+        "58105 - Judgments": {
+          "2026": {
+            "adopted": 2082550.0,
+            "amended": 9332550.0,
+            "delta": 7250000.0,
+            "pct": 348.1
+          }
+        },
+        "Expenditures Total": {
+          "2026": {
+            "adopted": 693235671.0,
+            "amended": 721521858.0,
+            "delta": 28286187.0,
+            "pct": 4.1
+          }
+        }
+      }
+    },
+    "s10_p3_t0": {
+      "rows": {
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 723451.0,
+            "amended": 767689.0,
+            "delta": 44238.0,
+            "pct": 6.1
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 383952.0,
+            "amended": 428190.0,
+            "delta": 44238.0,
+            "pct": 11.5
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 3664835.0,
+            "amended": 3709073.0,
+            "delta": 44238.0,
+            "pct": 1.2
+          }
+        }
+      }
+    },
+    "s10_p4_t0": {
+      "rows": {
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 723451.0,
+            "amended": 767689.0,
+            "delta": 44238.0,
+            "pct": 6.1
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 3664835.0,
+            "amended": 3709073.0,
+            "delta": 44238.0,
+            "pct": 1.2
+          }
+        }
+      }
+    },
+    "s11_p3_t0": {
+      "rows": {
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 398474.0,
+            "amended": 423574.0,
+            "delta": 25100.0,
+            "pct": 6.3
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 184401.0,
+            "amended": 209501.0,
+            "delta": 25100.0,
+            "pct": 13.6
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 2515537.0,
+            "amended": 2540637.0,
+            "delta": 25100.0,
+            "pct": 1.0
+          }
+        }
+      }
+    },
+    "s11_p4_t0": {
+      "rows": {
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 398474.0,
+            "amended": 423573.0,
+            "delta": 25099.0,
+            "pct": 6.3
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 2515537.0,
+            "amended": 2540636.0,
+            "delta": 25099.0,
+            "pct": 1.0
+          }
+        }
+      }
+    },
+    "s12_p2_t0": {
+      "rows": {
+        "Temporary, Part-Time, and Seasonal Allowances": {
+          "2026 Budget": {
+            "adopted": 36629.0,
+            "amended": 86629.0,
+            "delta": 50000.0,
+            "pct": 136.5
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 2504297.0,
+            "amended": 2554297.0,
+            "delta": 50000.0,
+            "pct": 2.0
+          }
+        }
+      }
+    },
+    "s12_p3_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 2504297.0,
+            "amended": 2554297.0,
+            "delta": 50000.0,
+            "pct": 2.0
+          }
+        },
+        "51103 - Part-Time": {
+          "2026 Budget": {
+            "adopted": 36629.0,
+            "amended": 86629.0,
+            "delta": 50000.0,
+            "pct": 136.5
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 511599.0,
+            "amended": 566425.0,
+            "delta": 54826.0,
+            "pct": 10.7
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 187342.0,
+            "amended": 238343.0,
+            "delta": 51001.0,
+            "pct": 27.2
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 202052.0,
+            "amended": 205877.0,
+            "delta": 3825.0,
+            "pct": 1.9
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026 Budget": {
+            "adopted": 96712.0,
+            "amended": 90475.0,
+            "delta": -6237.0,
+            "pct": -6.4
+          }
+        },
+        "53101 - Administrative Fees": {
+          "2026 Budget": {
+            "adopted": 6175.0,
+            "amended": 1225.0,
+            "delta": -4950.0,
+            "pct": -80.2
+          }
+        },
+        "53509 - Computer Maintenance": {
+          "2026 Budget": {
+            "adopted": 25137.0,
+            "amended": 3850.0,
+            "delta": -21287.0,
+            "pct": -84.7
+          }
+        },
+        "53901 - Professional Services": {
+          "2026 Budget": {
+            "adopted": 57400.0,
+            "amended": 77400.0,
+            "delta": 20000.0,
+            "pct": 34.8
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 300000.0,
+            "delta": 300000.0,
+            "pct": null
+          }
+        },
+        "54105 - Landscaping": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 300000.0,
+            "delta": 300000.0,
+            "pct": null
+          }
+        },
+        "55 - OTHER SERVICES": {
+          "2026 Budget": {
+            "adopted": 6250.0,
+            "amended": 9750.0,
+            "delta": 3500.0,
+            "pct": 56.0
+          }
+        },
+        "55309 - Regulatory": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 3500.0,
+            "delta": 3500.0,
+            "pct": null
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 3145158.0,
+            "amended": 3547247.0,
+            "delta": 402089.0,
+            "pct": 12.8
+          }
+        }
+      }
+    },
+    "s12_p4_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 2504297.0,
+            "amended": 2554297.0,
+            "delta": 50000.0,
+            "pct": 2.0
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 511599.0,
+            "amended": 566425.0,
+            "delta": 54826.0,
+            "pct": 10.7
+          }
+        },
+        "53 - PROF. & TECHNICAL SERVICES": {
+          "2026": {
+            "adopted": 96712.0,
+            "amended": 90475.0,
+            "delta": -6237.0,
+            "pct": -6.4
+          }
+        },
+        "55 - OTHER SERVICES": {
+          "2026": {
+            "adopted": 6250.0,
+            "amended": 9750.0,
+            "delta": 3500.0,
+            "pct": 56.0
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 3145158.0,
+            "amended": 3547247.0,
+            "delta": 402089.0,
+            "pct": 12.8
+          }
+        }
+      }
+    },
+    "s13_p4_t0": {
+      "rows": {
+        "Director, OMB": {
+          "2026 FTE": {
+            "adopted": 1.0,
+            "amended": 0.0,
+            "delta": -1.0,
+            "pct": -100.0
+          },
+          "2026 Budget": {
+            "adopted": 139651.0,
+            "amended": 0.0,
+            "delta": -139651.0,
+            "pct": -100.0
+          }
+        },
+        "Chief Financial Officer": {
+          "2026 FTE": {
+            "adopted": 1.0,
+            "amended": 0.0,
+            "delta": -1.0,
+            "pct": -100.0
+          },
+          "2026 Budget": {
+            "adopted": 133827.0,
+            "amended": 0.0,
+            "delta": -133827.0,
+            "pct": -100.0
+          }
+        },
+        "Fiscal and Contracting Coordinator": {
+          "2026 Budget": {
+            "adopted": 59301.0,
+            "amended": 59445.0,
+            "delta": 144.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 30.0,
+            "amended": 29.0,
+            "delta": -1.0,
+            "pct": -3.3
+          },
+          "2026 Budget": {
+            "adopted": 2587892.0,
+            "amended": 2435385.0,
+            "delta": -152507.0,
+            "pct": -5.9
+          }
+        }
+      }
+    },
+    "s13_p5_t0": {
+      "rows": {
+        "Total Full-time Positions and Net Salaries": {
+          "29": {
+            "adopted": 30.0,
+            "amended": 29.0,
+            "delta": -1.0,
+            "pct": -3.3
+          },
+          "2,435,385": {
+            "adopted": 2481129.0,
+            "amended": 2328622.0,
+            "delta": -152507.0,
+            "pct": -6.1
+          }
+        }
+      }
+    },
+    "s13_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 2481131.0,
+            "amended": 2462451.0,
+            "delta": -18680.0,
+            "pct": -0.8
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 2476131.0,
+            "amended": 2457451.0,
+            "delta": -18680.0,
+            "pct": -0.8
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 600169.0,
+            "amended": 618931.0,
+            "delta": 18762.0,
+            "pct": 3.1
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 295639.0,
+            "amended": 316400.0,
+            "delta": 20761.0,
+            "pct": 7.0
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 45307.0,
+            "amended": 44737.0,
+            "delta": -570.0,
+            "pct": -1.3
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 195603.0,
+            "amended": 194174.0,
+            "delta": -1429.0,
+            "pct": -0.7
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026 Budget": {
+            "adopted": 735218.0,
+            "amended": 791563.0,
+            "delta": 56345.0,
+            "pct": 7.7
+          }
+        },
+        "53101 - Administrative Fees": {
+          "2026 Budget": {
+            "adopted": 454888.0,
+            "amended": 462338.0,
+            "delta": 7450.0,
+            "pct": 1.6
+          }
+        },
+        "53301 - Workforce Training": {
+          "2026 Budget": {
+            "adopted": 12750.0,
+            "amended": 36037.0,
+            "delta": 23287.0,
+            "pct": 182.6
+          }
+        },
+        "53509 - Computer Maintenance": {
+          "2026 Budget": {
+            "adopted": 232756.0,
+            "amended": 255088.0,
+            "delta": 22332.0,
+            "pct": 9.6
+          }
+        },
+        "53725 - Maintenance-Miscellaneous": {
+          "2026 Budget": {
+            "adopted": 34824.0,
+            "amended": 38100.0,
+            "delta": 3276.0,
+            "pct": 9.4
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026 Budget": {
+            "adopted": 9015214.0,
+            "amended": 9265214.0,
+            "delta": 250000.0,
+            "pct": 2.8
+          }
+        },
+        "54501 - Land & Buildings": {
+          "2026 Budget": {
+            "adopted": 674608.0,
+            "amended": 924608.0,
+            "delta": 250000.0,
+            "pct": 37.1
+          }
+        },
+        "55 - OTHER SERVICES": {
+          "2026 Budget": {
+            "adopted": 832247.0,
+            "amended": 836897.0,
+            "delta": 4650.0,
+            "pct": 0.6
+          }
+        },
+        "55101 - Insurance Premiums": {
+          "2026 Budget": {
+            "adopted": 829747.0,
+            "amended": 834397.0,
+            "delta": 4650.0,
+            "pct": 0.6
+          }
+        },
+        "56 - SUPPLIES": {
+          "2026 Budget": {
+            "adopted": 6949839.0,
+            "amended": 9499839.0,
+            "delta": 2550000.0,
+            "pct": 36.7
+          }
+        },
+        "56201 - Fuel": {
+          "2026 Budget": {
+            "adopted": 3044325.0,
+            "amended": 3594325.0,
+            "delta": 550000.0,
+            "pct": 18.1
+          }
+        },
+        "56501 - Parts": {
+          "2026 Budget": {
+            "adopted": 3873774.0,
+            "amended": 5873774.0,
+            "delta": 2000000.0,
+            "pct": 51.6
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 20638818.0,
+            "amended": 23499895.0,
+            "delta": 2861077.0,
+            "pct": 13.9
+          }
+        }
+      }
+    },
+    "s13_p7_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 2481131.0,
+            "amended": 2462451.0,
+            "delta": -18680.0,
+            "pct": -0.8
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 600169.0,
+            "amended": 618931.0,
+            "delta": 18762.0,
+            "pct": 3.1
+          }
+        },
+        "53 - PROF. & TECHNICAL SERVICES": {
+          "2026": {
+            "adopted": 735218.0,
+            "amended": 791563.0,
+            "delta": 56345.0,
+            "pct": 7.7
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026": {
+            "adopted": 9015214.0,
+            "amended": 9265214.0,
+            "delta": 250000.0,
+            "pct": 2.8
+          }
+        },
+        "55 - OTHER SERVICES": {
+          "2026": {
+            "adopted": 832247.0,
+            "amended": 836897.0,
+            "delta": 4650.0,
+            "pct": 0.6
+          }
+        },
+        "56 - SUPPLIES": {
+          "2026": {
+            "adopted": 6949839.0,
+            "amended": 9499839.0,
+            "delta": 2550000.0,
+            "pct": 36.7
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 20638819.0,
+            "amended": 23499896.0,
+            "delta": 2861077.0,
+            "pct": 13.9
+          }
+        }
+      }
+    },
+    "s14_p3_t0": {
+      "rows": {
+        "Senior Fiscal Administrator": {
+          "2026 Budget": {
+            "adopted": 70200.0,
+            "amended": 70377.0,
+            "delta": 177.0,
+            "pct": 0.3
+          }
+        },
+        "Coordinator, Administrative": {
+          "2026 Budget": {
+            "adopted": 44595.0,
+            "amended": 49500.0,
+            "delta": 4905.0,
+            "pct": 11.0
+          }
+        },
+        "Senior Analyst, IT Service": {
+          "2026 Budget": {
+            "adopted": 138332.0,
+            "amended": 71414.0,
+            "delta": -66918.0,
+            "pct": -48.4
+          }
+        },
+        "Analyst, IT Service": {
+          "2026 Budget": {
+            "adopted": 126911.0,
+            "amended": 262072.0,
+            "delta": 135161.0,
+            "pct": 106.5
+          }
+        },
+        "Systems Administrator": {
+          "2026 FTE": {
+            "adopted": 3.0,
+            "amended": 2.0,
+            "delta": -1.0,
+            "pct": -33.3
+          },
+          "2026 Budget": {
+            "adopted": 238056.0,
+            "amended": 158704.0,
+            "delta": -79352.0,
+            "pct": -33.3
+          }
+        },
+        "Technician, Network": {
+          "2026 Budget": {
+            "adopted": 130770.0,
+            "amended": 135020.0,
+            "delta": 4250.0,
+            "pct": 3.2
+          }
+        },
+        "Analyst, G.I.S.": {
+          "2026 Budget": {
+            "adopted": 67125.0,
+            "amended": 69307.0,
+            "delta": 2182.0,
+            "pct": 3.3
+          }
+        },
+        "Editor/Videographer": {
+          "2026 Budget": {
+            "adopted": 222615.0,
+            "amended": 229848.0,
+            "delta": 7233.0,
+            "pct": 3.2
+          }
+        },
+        "Coordinator, Print Shop": {
+          "2026 Budget": {
+            "adopted": 63455.0,
+            "amended": 65517.0,
+            "delta": 2062.0,
+            "pct": 3.2
+          }
+        },
+        "311 Call Center Representative": {
+          "2026 FTE": {
+            "adopted": 5.0,
+            "amended": 4.0,
+            "delta": -1.0,
+            "pct": -20.0
+          },
+          "2026 Budget": {
+            "adopted": 211509.0,
+            "amended": 189000.0,
+            "delta": -22509.0,
+            "pct": -10.6
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 77.0,
+            "amended": 75.0,
+            "delta": -2.0,
+            "pct": -2.6
+          },
+          "2026 Budget": {
+            "adopted": 5967532.0,
+            "amended": 5957019.0,
+            "delta": -10513.0,
+            "pct": -0.2
+          }
+        }
+      }
+    },
+    "s14_p4_t0": {
+      "rows": {
+        "311 Call Center Representative": {
+          "2026 Budget": {
+            "adopted": 89740.0,
+            "amended": 92432.0,
+            "delta": 2692.0,
+            "pct": 3.0
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 77.0,
+            "amended": 75.0,
+            "delta": -2.0,
+            "pct": -2.6
+          },
+          "2026 Budget": {
+            "adopted": 5967532.0,
+            "amended": 5957019.0,
+            "delta": -10513.0,
+            "pct": -0.2
+          }
+        },
+        "Temporary, Part-Time, and Seasonal Allowances": {
+          "2026 Budget": {
+            "adopted": 177691.0,
+            "amended": 180383.0,
+            "delta": 2692.0,
+            "pct": 1.5
+          }
+        },
+        "Total Full-time Positions and Net Salaries": {
+          "2026 FTE": {
+            "adopted": 77.0,
+            "amended": 75.0,
+            "delta": -2.0,
+            "pct": -2.6
+          },
+          "2026 Budget": {
+            "adopted": 5820174.0,
+            "amended": 5812353.0,
+            "delta": -7821.0,
+            "pct": -0.1
+          }
+        }
+      }
+    },
+    "s14_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 5953711.0,
+            "amended": 5855953.0,
+            "delta": -97758.0,
+            "pct": -1.6
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 5734226.0,
+            "amended": 5631969.0,
+            "delta": -102257.0,
+            "pct": -1.8
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1499795.0,
+            "amended": 1553270.0,
+            "delta": 53475.0,
+            "pct": 3.6
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 799787.0,
+            "amended": 862936.0,
+            "delta": 63149.0,
+            "pct": 7.9
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 108105.0,
+            "amended": 106254.0,
+            "delta": -1851.0,
+            "pct": -1.7
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 467873.0,
+            "amended": 460050.0,
+            "delta": -7823.0,
+            "pct": -1.7
+          }
+        }
+      }
+    },
+    "s14_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 5953711.0,
+            "amended": 5855953.0,
+            "delta": -97758.0,
+            "pct": -1.6
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 1499795.0,
+            "amended": 1553270.0,
+            "delta": 53475.0,
+            "pct": 3.6
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 22303735.0,
+            "amended": 22259453.0,
+            "delta": -44282.0,
+            "pct": -0.2
+          }
+        }
+      }
+    },
+    "s15_p3_t0": {
+      "rows": {
+        "Senior Investigator, Field": {
+          "2026 Budget": {
+            "adopted": 256684.0,
+            "amended": 265024.0,
+            "delta": 8340.0,
+            "pct": 3.2
+          }
+        },
+        "Fiscal & Contracting Coordinator": {
+          "2026 Budget": {
+            "adopted": 59301.0,
+            "amended": 59445.0,
+            "delta": 144.0,
+            "pct": 0.2
+          }
+        },
+        "Administrative Assistant": {
+          "2026 Budget": {
+            "adopted": 56618.0,
+            "amended": 56761.0,
+            "delta": 143.0,
+            "pct": 0.3
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 569391.0,
+            "amended": 578018.0,
+            "delta": 8627.0,
+            "pct": 1.5
+          }
+        }
+      }
+    },
+    "s15_p3_t1": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 569391.0,
+            "amended": 578018.0,
+            "delta": 8627.0,
+            "pct": 1.5
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 574391.0,
+            "amended": 583018.0,
+            "delta": 8627.0,
+            "pct": 1.5
+          }
+        }
+      }
+    },
+    "s15_p4_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 582117.0,
+            "amended": 585021.0,
+            "delta": 2904.0,
+            "pct": 0.5
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 577117.0,
+            "amended": 578021.0,
+            "delta": 904.0,
+            "pct": 0.2
+          }
+        },
+        "51401 - Premium Pay": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 2000.0,
+            "delta": 2000.0,
+            "pct": null
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 179941.0,
+            "amended": 190057.0,
+            "delta": 10116.0,
+            "pct": 5.6
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 113621.0,
+            "amended": 123652.0,
+            "delta": 10031.0,
+            "pct": 8.8
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 11688.0,
+            "amended": 11704.0,
+            "delta": 16.0,
+            "pct": 0.1
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 44532.0,
+            "amended": 44601.0,
+            "delta": 69.0,
+            "pct": 0.2
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 827516.0,
+            "amended": 840536.0,
+            "delta": 13020.0,
+            "pct": 1.6
+          }
+        }
+      }
+    },
+    "s15_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 582117.0,
+            "amended": 585021.0,
+            "delta": 2904.0,
+            "pct": 0.5
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 179941.0,
+            "amended": 190057.0,
+            "delta": 10116.0,
+            "pct": 5.6
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 827515.0,
+            "amended": 840536.0,
+            "delta": 13021.0,
+            "pct": 1.6
+          }
+        }
+      }
+    },
+    "s16_p3_t0": {
+      "rows": {
+        "Financial Systems Administrator": {
+          "2026 Budget": {
+            "adopted": 97656.0,
+            "amended": 48828.0,
+            "delta": -48828.0,
+            "pct": -50.0
+          }
+        },
+        "Controller's Clerk": {
+          "2026 FTE": {
+            "adopted": 5.0,
+            "amended": 1.0,
+            "delta": -4.0,
+            "pct": -80.0
+          },
+          "2026 Budget": {
+            "adopted": 296504.0,
+            "amended": 29650.0,
+            "delta": -266854.0,
+            "pct": -90.0
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 56.0,
+            "amended": 58.0,
+            "delta": 2.0,
+            "pct": 3.6
+          },
+          "2026 Budget": {
+            "adopted": 4392003.0,
+            "amended": 4398545.0,
+            "delta": 6542.0,
+            "pct": 0.1
+          }
+        }
+      }
+    },
+    "s16_p4_t0": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 56.0,
+            "amended": 58.0,
+            "delta": 2.0,
+            "pct": 3.6
+          },
+          "2026 Budget": {
+            "adopted": 4392003.0,
+            "amended": 4398545.0,
+            "delta": 6542.0,
+            "pct": 0.1
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 FTE": {
+            "adopted": 56.0,
+            "amended": 58.0,
+            "delta": 2.0,
+            "pct": 3.6
+          },
+          "2026 Budget": {
+            "adopted": 4233343.0,
+            "amended": 4239885.0,
+            "delta": 6542.0,
+            "pct": 0.2
+          }
+        }
+      }
+    },
+    "s16_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 4233343.0,
+            "amended": 4239885.0,
+            "delta": 6542.0,
+            "pct": 0.2
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 4176694.0,
+            "amended": 4183236.0,
+            "delta": 6542.0,
+            "pct": 0.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1145826.0,
+            "amended": 1217620.0,
+            "delta": 71794.0,
+            "pct": 6.3
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 616390.0,
+            "amended": 687577.0,
+            "delta": 71187.0,
+            "pct": 11.5
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 78913.0,
+            "amended": 79019.0,
+            "delta": 106.0,
+            "pct": 0.1
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 336543.0,
+            "amended": 337043.0,
+            "delta": 500.0,
+            "pct": 0.1
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 5605384.0,
+            "amended": 5683720.0,
+            "delta": 78336.0,
+            "pct": 1.4
+          }
+        }
+      }
+    },
+    "s16_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 4233343.0,
+            "amended": 4239884.0,
+            "delta": 6541.0,
+            "pct": 0.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 1145826.0,
+            "amended": 1217620.0,
+            "delta": 71794.0,
+            "pct": 6.3
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 5605384.0,
+            "amended": 5683719.0,
+            "delta": 78335.0,
+            "pct": 1.4
+          }
+        }
+      }
+    },
+    "s17_p4_t0": {
+      "rows": {
+        "Administrative Assistant": {
+          "2026 Budget": {
+            "adopted": 64542.0,
+            "amended": 64707.0,
+            "delta": 165.0,
+            "pct": 0.3
+          }
+        },
+        "Technician, Remittance": {
+          "2026 Budget": {
+            "adopted": 169207.0,
+            "amended": 189000.0,
+            "delta": 19793.0,
+            "pct": 11.7
+          }
+        },
+        "Cashier": {
+          "2026 Budget": {
+            "adopted": 84604.0,
+            "amended": 94500.0,
+            "delta": 9896.0,
+            "pct": 11.7
+          }
+        },
+        "Cashier II": {
+          "2026 Budget": {
+            "adopted": 46613.0,
+            "amended": 48127.0,
+            "delta": 1514.0,
+            "pct": 3.2
+          }
+        },
+        "Coordinator, Tax Compliance": {
+          "2026 Budget": {
+            "adopted": 119972.0,
+            "amended": 185807.0,
+            "delta": 65835.0,
+            "pct": 54.9
+          }
+        },
+        "Specialist, Tax Compliance": {
+          "2026 Budget": {
+            "adopted": 208098.0,
+            "amended": 214862.0,
+            "delta": 6764.0,
+            "pct": 3.3
+          }
+        },
+        "Senior Assistant, Real Estate*": {
+          "2026 Budget": {
+            "adopted": 23864.0,
+            "amended": 24640.0,
+            "delta": 776.0,
+            "pct": 3.3
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 2568821.0,
+            "amended": 2697993.0,
+            "delta": 129172.0,
+            "pct": 5.0
+          }
+        }
+      }
+    },
+    "s17_p4_t1": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 2568821.0,
+            "amended": 2697993.0,
+            "delta": 129172.0,
+            "pct": 5.0
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 2536171.0,
+            "amended": 2665343.0,
+            "delta": 129172.0,
+            "pct": 5.1
+          }
+        }
+      }
+    },
+    "s17_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 2656349.0,
+            "amended": 2690705.0,
+            "delta": 34356.0,
+            "pct": 1.3
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 2565261.0,
+            "amended": 2599618.0,
+            "delta": 34357.0,
+            "pct": 1.3
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 113160094.0,
+            "amended": 113215140.0,
+            "delta": 55046.0,
+            "pct": 0.0
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 478351.0,
+            "amended": 530147.0,
+            "delta": 51796.0,
+            "pct": 10.8
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 52028.0,
+            "amended": 52650.0,
+            "delta": 622.0,
+            "pct": 1.2
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 206028.0,
+            "amended": 208656.0,
+            "delta": 2628.0,
+            "pct": 1.3
+          }
+        }
+      }
+    },
+    "s17_p8_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 2656349.0,
+            "amended": 2702705.0,
+            "delta": 46356.0,
+            "pct": 1.7
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 113160094.0,
+            "amended": 113215140.0,
+            "delta": 55046.0,
+            "pct": 0.0
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 197799537.0,
+            "amended": 197900940.0,
+            "delta": 101403.0,
+            "pct": 0.1
+          }
+        }
+      }
+    },
+    "s18_p3_t0": {
+      "rows": {
+        "Contract Administrator": {
+          "2026 Budget": {
+            "adopted": 67288.0,
+            "amended": 67456.0,
+            "delta": 168.0,
+            "pct": 0.2
+          }
+        },
+        "Assistant 1, Administrative": {
+          "2026 Budget": {
+            "adopted": 39698.0,
+            "amended": 45000.0,
+            "delta": 5302.0,
+            "pct": 13.4
+          }
+        },
+        "Assistant, Real Estate": {
+          "2026 Budget": {
+            "adopted": 130793.0,
+            "amended": 147150.0,
+            "delta": 16357.0,
+            "pct": 12.5
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 3535326.0,
+            "amended": 3557153.0,
+            "delta": 21827.0,
+            "pct": 0.6
+          }
+        }
+      }
+    },
+    "s18_p3_t1": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 3535326.0,
+            "amended": 3557153.0,
+            "delta": 21827.0,
+            "pct": 0.6
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 3510139.0,
+            "amended": 3531966.0,
+            "delta": 21827.0,
+            "pct": 0.6
+          }
+        }
+      }
+    },
+    "s18_p4_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 3515871.0,
+            "amended": 3532719.0,
+            "delta": 16848.0,
+            "pct": 0.5
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 3368637.0,
+            "amended": 3385485.0,
+            "delta": 16848.0,
+            "pct": 0.5
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 820957.0,
+            "amended": 877472.0,
+            "delta": 56515.0,
+            "pct": 6.9
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 416906.0,
+            "amended": 471827.0,
+            "delta": 54921.0,
+            "pct": 13.2
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 62914.0,
+            "amended": 63219.0,
+            "delta": 305.0,
+            "pct": 0.5
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 275487.0,
+            "amended": 276776.0,
+            "delta": 1289.0,
+            "pct": 0.5
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026 Budget": {
+            "adopted": 1173899.0,
+            "amended": 1673899.0,
+            "delta": 500000.0,
+            "pct": 42.6
+          }
+        },
+        "53517 - Legal Fees": {
+          "2026 Budget": {
+            "adopted": 580000.0,
+            "amended": 1080000.0,
+            "delta": 500000.0,
+            "pct": 86.2
+          }
+        },
+        "58 - MISCELLANEOUS": {
+          "2026 Budget": {
+            "adopted": 2080550.0,
+            "amended": 9330550.0,
+            "delta": 7250000.0,
+            "pct": 348.5
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 7705822.0,
+            "amended": 15529185.0,
+            "delta": 7823363.0,
+            "pct": 101.5
+          }
+        }
+      }
+    },
+    "s18_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 3515871.0,
+            "amended": 3532719.0,
+            "delta": 16848.0,
+            "pct": 0.5
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 820957.0,
+            "amended": 877471.0,
+            "delta": 56514.0,
+            "pct": 6.9
+          }
+        },
+        "53 - PROF. & TECHNICAL SERVICES": {
+          "2026": {
+            "adopted": 1173899.0,
+            "amended": 1673899.0,
+            "delta": 500000.0,
+            "pct": 42.6
+          }
+        },
+        "58 - MISCELLANEOUS": {
+          "2026": {
+            "adopted": 2080550.0,
+            "amended": 9330550.0,
+            "delta": 7250000.0,
+            "pct": 348.5
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 7705822.0,
+            "amended": 15529184.0,
+            "delta": 7823362.0,
+            "pct": 101.5
+          }
+        }
+      }
+    },
+    "s20_p3_t0": {
+      "rows": {
+        "Fiscal Coordinator": {
+          "2026 Budget": {
+            "adopted": 52770.0,
+            "amended": 52895.0,
+            "delta": 125.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 585998.0,
+            "amended": 586123.0,
+            "delta": 125.0,
+            "pct": 0.0
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 566442.0,
+            "amended": 566567.0,
+            "delta": 125.0,
+            "pct": 0.0
+          }
+        }
+      }
+    },
+    "s20_p4_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 567061.0,
+            "amended": 567186.0,
+            "delta": 125.0,
+            "pct": 0.0
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 566442.0,
+            "amended": 566568.0,
+            "delta": 126.0,
+            "pct": 0.0
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 128993.0,
+            "amended": 138029.0,
+            "delta": 9036.0,
+            "pct": 7.0
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 66935.0,
+            "amended": 75959.0,
+            "delta": 9024.0,
+            "pct": 13.5
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 10658.0,
+            "amended": 10660.0,
+            "delta": 2.0,
+            "pct": 0.0
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 45340.0,
+            "amended": 45349.0,
+            "delta": 9.0,
+            "pct": 0.0
+          }
+        }
+      }
+    },
+    "s20_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 567061.0,
+            "amended": 567186.0,
+            "delta": 125.0,
+            "pct": 0.0
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 128993.0,
+            "amended": 138029.0,
+            "delta": 9036.0,
+            "pct": 7.0
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 778704.0,
+            "amended": 787865.0,
+            "delta": 9161.0,
+            "pct": 1.2
+          }
+        }
+      }
+    },
+    "s21_p4_t0": {
+      "rows": {
+        "Assistant Director, Employee Compensation & Benefits": {
+          "2026 FTE": {
+            "adopted": 1.0,
+            "amended": 0.0,
+            "delta": -1.0,
+            "pct": -100.0
+          },
+          "2026 Budget": {
+            "adopted": 114046.0,
+            "amended": 0.0,
+            "delta": -114046.0,
+            "pct": -100.0
+          }
+        },
+        "Senior Human Resources Specialist": {
+          "2026 FTE": {
+            "adopted": 2.0,
+            "amended": 0.0,
+            "delta": -2.0,
+            "pct": -100.0
+          },
+          "2026 Budget": {
+            "adopted": 113235.0,
+            "amended": 0.0,
+            "delta": -113235.0,
+            "pct": -100.0
+          }
+        },
+        "Human Resources Specialist": {
+          "2026 FTE": {
+            "adopted": 2.0,
+            "amended": 3.0,
+            "delta": 1.0,
+            "pct": 50.0
+          },
+          "2026 Budget": {
+            "adopted": 101670.0,
+            "amended": 185766.0,
+            "delta": 84096.0,
+            "pct": 82.7
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 38.0,
+            "amended": 37.0,
+            "delta": -1.0,
+            "pct": -2.6
+          },
+          "2026 Budget": {
+            "adopted": 2877385.0,
+            "amended": 2859062.0,
+            "delta": -18323.0,
+            "pct": -0.6
+          }
+        }
+      }
+    },
+    "s21_p4_t1": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 38.0,
+            "amended": 37.0,
+            "delta": -1.0,
+            "pct": -2.6
+          },
+          "2026 Budget": {
+            "adopted": 2877385.0,
+            "amended": 2859062.0,
+            "delta": -18323.0,
+            "pct": -0.6
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 FTE": {
+            "adopted": 38.0,
+            "amended": 37.0,
+            "delta": -1.0,
+            "pct": -2.6
+          },
+          "2026 Budget": {
+            "adopted": 2763104.0,
+            "amended": 2744781.0,
+            "delta": -18323.0,
+            "pct": -0.7
+          }
+        }
+      }
+    },
+    "s21_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 5513108.0,
+            "amended": 4584105.0,
+            "delta": -929003.0,
+            "pct": -16.9
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 2736308.0,
+            "amended": 2717983.0,
+            "delta": -18325.0,
+            "pct": -0.7
+          }
+        },
+        "51203 - Allowances": {
+          "2026 Budget": {
+            "adopted": 2750000.0,
+            "amended": 1839322.0,
+            "delta": -910678.0,
+            "pct": -33.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 15465199.0,
+            "amended": 25423265.0,
+            "delta": 9958066.0,
+            "pct": 64.4
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 689954.0,
+            "amended": 4559860.0,
+            "delta": 3869906.0,
+            "pct": 560.9
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 495596.0,
+            "amended": 495158.0,
+            "delta": -438.0,
+            "pct": -0.1
+          }
+        },
+        "52121 - Retiree Health Insurance": {
+          "2026 Budget": {
+            "adopted": 13149909.0,
+            "amended": 19239909.0,
+            "delta": 6090000.0,
+            "pct": 46.3
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 218942.0,
+            "amended": 217540.0,
+            "delta": -1402.0,
+            "pct": -0.6
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 24122782.0,
+            "amended": 33151845.0,
+            "delta": 9029063.0,
+            "pct": 37.4
+          }
+        }
+      }
+    },
+    "s21_p8_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 5513108.0,
+            "amended": 4584105.0,
+            "delta": -929003.0,
+            "pct": -16.9
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 15465198.0,
+            "amended": 25423265.0,
+            "delta": 9958067.0,
+            "pct": 64.4
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 24122781.0,
+            "amended": 33151845.0,
+            "delta": 9029064.0,
+            "pct": 37.4
+          }
+        }
+      }
+    },
+    "s22_p4_t0": {
+      "rows": {
+        "Administrator 2": {
+          "2026 Budget": {
+            "adopted": 56618.0,
+            "amended": 56761.0,
+            "delta": 143.0,
+            "pct": 0.3
+          }
+        },
+        "Administrative Specialist": {
+          "2026 Budget": {
+            "adopted": 45490.0,
+            "amended": 45593.0,
+            "delta": 103.0,
+            "pct": 0.2
+          }
+        },
+        "Senior Planner": {
+          "2026 Budget": {
+            "adopted": 498610.0,
+            "amended": 514815.0,
+            "delta": 16205.0,
+            "pct": 3.3
+          }
+        },
+        "Planner": {
+          "2026 Budget": {
+            "adopted": 317275.0,
+            "amended": 327590.0,
+            "delta": 10315.0,
+            "pct": 3.3
+          }
+        },
+        "Principal Planner": {
+          "2026 Budget": {
+            "adopted": 228882.0,
+            "amended": 229428.0,
+            "delta": 546.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 4245200.0,
+            "amended": 4308155.0,
+            "delta": 62955.0,
+            "pct": 1.5
+          }
+        }
+      }
+    },
+    "s22_p5_t0": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 4245200.0,
+            "amended": 4308155.0,
+            "delta": 62955.0,
+            "pct": 1.5
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 4050022.0,
+            "amended": 4112977.0,
+            "delta": 62955.0,
+            "pct": 1.6
+          }
+        }
+      }
+    },
+    "s22_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 4111394.0,
+            "amended": 4117920.0,
+            "delta": 6526.0,
+            "pct": 0.2
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 4044253.0,
+            "amended": 4050779.0,
+            "delta": 6526.0,
+            "pct": 0.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1036011.0,
+            "amended": 1102530.0,
+            "delta": 66519.0,
+            "pct": 6.4
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 530005.0,
+            "amended": 595909.0,
+            "delta": 65904.0,
+            "pct": 12.4
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 78737.0,
+            "amended": 78852.0,
+            "delta": 115.0,
+            "pct": 0.1
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 324497.0,
+            "amended": 324996.0,
+            "delta": 499.0,
+            "pct": 0.2
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 5256349.0,
+            "amended": 5329394.0,
+            "delta": 73045.0,
+            "pct": 1.4
+          }
+        }
+      }
+    },
+    "s22_p7_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 4111394.0,
+            "amended": 4118420.0,
+            "delta": 7026.0,
+            "pct": 0.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 1036011.0,
+            "amended": 1102530.0,
+            "delta": 66519.0,
+            "pct": 6.4
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 5256349.0,
+            "amended": 5329894.0,
+            "delta": 73545.0,
+            "pct": 1.4
+          }
+        }
+      }
+    },
+    "s23_p4_t0": {
+      "rows": {
+        "Administrator 2": {
+          "2026 Budget": {
+            "adopted": 61922.0,
+            "amended": 62066.0,
+            "delta": 144.0,
+            "pct": 0.2
+          }
+        },
+        "Lead Technician, Permit & Licensing": {
+          "2026 Budget": {
+            "adopted": 120878.0,
+            "amended": 124806.0,
+            "delta": 3928.0,
+            "pct": 3.2
+          }
+        },
+        "Technician, Permit & Licensing": {
+          "2026 Budget": {
+            "adopted": 560741.0,
+            "amended": 578970.0,
+            "delta": 18229.0,
+            "pct": 3.3
+          }
+        },
+        "Technician, Records": {
+          "2026 Budget": {
+            "adopted": 90525.0,
+            "amended": 93466.0,
+            "delta": 2941.0,
+            "pct": 3.2
+          }
+        },
+        "Technician, Accounting": {
+          "2026 Budget": {
+            "adopted": 85576.0,
+            "amended": 96300.0,
+            "delta": 10724.0,
+            "pct": 12.5
+          }
+        },
+        "Assistant I, Administrative": {
+          "2026 Budget": {
+            "adopted": 39698.0,
+            "amended": 45000.0,
+            "delta": 5302.0,
+            "pct": 13.4
+          }
+        },
+        "Master Code Professional": {
+          "2026 Budget": {
+            "adopted": 1238648.0,
+            "amended": 1278900.0,
+            "delta": 40252.0,
+            "pct": 3.2
+          }
+        },
+        "Inspector, Combined Electrical": {
+          "2026 Budget": {
+            "adopted": 471349.0,
+            "amended": 486815.0,
+            "delta": 15466.0,
+            "pct": 3.3
+          }
+        },
+        "Inspector, Construction Code": {
+          "2026 Budget": {
+            "adopted": 1398140.0,
+            "amended": 1443580.0,
+            "delta": 45440.0,
+            "pct": 3.3
+          }
+        },
+        "Inspector, Combined Residential Construction": {
+          "2026 Budget": {
+            "adopted": 333109.0,
+            "amended": 343935.0,
+            "delta": 10826.0,
+            "pct": 3.2
+          }
+        },
+        "Inspector, Stormwater Construction": {
+          "2026 Budget": {
+            "adopted": 209721.0,
+            "amended": 216537.0,
+            "delta": 6816.0,
+            "pct": 3.3
+          }
+        },
+        "Inspector, Combined Maintenance": {
+          "2026 Budget": {
+            "adopted": 1586385.0,
+            "amended": 1637950.0,
+            "delta": 51565.0,
+            "pct": 3.3
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 8736495.0,
+            "amended": 8948127.0,
+            "delta": 211632.0,
+            "pct": 2.4
+          }
+        }
+      }
+    },
+    "s23_p5_t1": {
+      "rows": {
+        "Total Full-Time Positions and Net Salaries": {
+          "8,948,127": {
+            "adopted": 8219516.0,
+            "amended": 8431148.0,
+            "delta": 211632.0,
+            "pct": 2.6
+          }
+        }
+      }
+    },
+    "s23_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 8575834.0,
+            "amended": 8603507.0,
+            "delta": 27673.0,
+            "pct": 0.3
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 8398476.0,
+            "amended": 8426148.0,
+            "delta": 27672.0,
+            "pct": 0.3
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 2240064.0,
+            "amended": 2401399.0,
+            "delta": 161335.0,
+            "pct": 7.2
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 1286518.0,
+            "amended": 1445235.0,
+            "delta": 158717.0,
+            "pct": 12.3
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 168925.0,
+            "amended": 169426.0,
+            "delta": 501.0,
+            "pct": 0.3
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 669552.0,
+            "amended": 671669.0,
+            "delta": 2117.0,
+            "pct": 0.3
+          }
+        }
+      }
+    },
+    "s23_p7_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 8575834.0,
+            "amended": 8613507.0,
+            "delta": 37673.0,
+            "pct": 0.4
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 2240064.0,
+            "amended": 2401399.0,
+            "delta": 161335.0,
+            "pct": 7.2
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 11146276.0,
+            "amended": 11345283.0,
+            "delta": 199007.0,
+            "pct": 1.8
+          }
+        }
+      }
+    },
+    "s24_p10_t0": {
+      "rows": {
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 13723803.0,
+            "amended": 13769389.0,
+            "delta": 45586.0,
+            "pct": 0.3
+          }
+        }
+      }
+    },
+    "s24_p11_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 5659971.0,
+            "amended": 5592147.0,
+            "delta": -67824.0,
+            "pct": -1.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 1659353.0,
+            "amended": 1772764.0,
+            "delta": 113411.0,
+            "pct": 6.8
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 13723803.0,
+            "amended": 13769389.0,
+            "delta": 45586.0,
+            "pct": 0.3
+          }
+        }
+      }
+    },
+    "s24_p7_t0": {
+      "rows": {
+        "Administrative Assistant": {
+          "2026 Budget": {
+            "adopted": 56618.0,
+            "amended": 56761.0,
+            "delta": 143.0,
+            "pct": 0.3
+          }
+        },
+        "Administrative Specialist": {
+          "2026 Budget": {
+            "adopted": 132101.0,
+            "amended": 136779.0,
+            "delta": 4678.0,
+            "pct": 3.5
+          }
+        },
+        "Department Business Administrator": {
+          "2026 Budget": {
+            "adopted": 248226.0,
+            "amended": 248227.0,
+            "delta": 1.0,
+            "pct": 0.0
+          }
+        },
+        "Specialist, Accounting": {
+          "2026 Budget": {
+            "adopted": 258173.0,
+            "amended": 266563.0,
+            "delta": 8390.0,
+            "pct": 3.2
+          }
+        },
+        "Technician, Payroll": {
+          "2026 Budget": {
+            "adopted": 385094.0,
+            "amended": 433349.0,
+            "delta": 48255.0,
+            "pct": 12.5
+          }
+        },
+        "Public Information Officer": {
+          "2026 FTE": {
+            "adopted": 2.0,
+            "amended": 1.0,
+            "delta": -1.0,
+            "pct": -50.0
+          },
+          "2026 Budget": {
+            "adopted": 203050.0,
+            "amended": 101525.0,
+            "delta": -101525.0,
+            "pct": -50.0
+          }
+        },
+        "Assistant I, Inventory": {
+          "2026 Budget": {
+            "adopted": 45263.0,
+            "amended": 46732.0,
+            "delta": 1469.0,
+            "pct": 3.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 136.12,
+            "amended": 135.12,
+            "delta": -1.0,
+            "pct": -0.7
+          },
+          "2026 Budget": {
+            "adopted": 5975707.0,
+            "amended": 5928570.0,
+            "delta": -47137.0,
+            "pct": -0.8
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 FTE": {
+            "adopted": 136.12,
+            "amended": 135.12,
+            "delta": -1.0,
+            "pct": -0.7
+          },
+          "2026 Budget": {
+            "adopted": 5588851.0,
+            "amended": 5541714.0,
+            "delta": -47137.0,
+            "pct": -0.8
+          }
+        }
+      }
+    },
+    "s24_p9_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 5659972.0,
+            "amended": 5592147.0,
+            "delta": -67825.0,
+            "pct": -1.2
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 5609541.0,
+            "amended": 5541716.0,
+            "delta": -67825.0,
+            "pct": -1.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1659353.0,
+            "amended": 1772764.0,
+            "delta": 113411.0,
+            "pct": 6.8
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 953696.0,
+            "amended": 1073466.0,
+            "delta": 119770.0,
+            "pct": 12.6
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 113473.0,
+            "amended": 112303.0,
+            "delta": -1170.0,
+            "pct": -1.0
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 445356.0,
+            "amended": 440167.0,
+            "delta": -5189.0,
+            "pct": -1.2
+          }
+        }
+      }
+    },
+    "s25_p4_t0": {
+      "rows": {
+        "Assistant Chief": {
+          "2026 FTE": {
+            "adopted": 1.0,
+            "amended": 2.0,
+            "delta": 1.0,
+            "pct": 100.0
+          },
+          "2026 Budget": {
+            "adopted": 131518.0,
+            "amended": 263036.0,
+            "delta": 131518.0,
+            "pct": 100.0
+          }
+        },
+        "Division Chief": {
+          "2026 FTE": {
+            "adopted": 3.0,
+            "amended": 2.0,
+            "delta": -1.0,
+            "pct": -33.3
+          },
+          "2026 Budget": {
+            "adopted": 363730.0,
+            "amended": 242486.0,
+            "delta": -121244.0,
+            "pct": -33.3
+          }
+        },
+        "Total Uniformed Employees": {
+          "2026 Budget": {
+            "adopted": 17438415.0,
+            "amended": 17448689.0,
+            "delta": 10274.0,
+            "pct": 0.1
+          }
+        },
+        "Assistant I, Administrative": {
+          "2026 Budget": {
+            "adopted": 79396.0,
+            "amended": 90000.0,
+            "delta": 10604.0,
+            "pct": 13.4
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 17517811.0,
+            "amended": 17538689.0,
+            "delta": 20878.0,
+            "pct": 0.1
+          }
+        },
+        "Total Full-Time Positions & Net Salaries": {
+          "2026 Budget": {
+            "adopted": 17267169.0,
+            "amended": 17288047.0,
+            "delta": 20878.0,
+            "pct": 0.1
+          }
+        }
+      }
+    },
+    "s25_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 26078128.0,
+            "amended": 26097118.0,
+            "delta": 18990.0,
+            "pct": 0.1
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 17152743.0,
+            "amended": 17171232.0,
+            "delta": 18489.0,
+            "pct": 0.1
+          }
+        },
+        "51201 - Longevity": {
+          "2026 Budget": {
+            "adopted": 478000.0,
+            "amended": 478500.0,
+            "delta": 500.0,
+            "pct": 0.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 5961312.0,
+            "amended": 6282872.0,
+            "delta": 321560.0,
+            "pct": 5.4
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 2793059.0,
+            "amended": 3112890.0,
+            "delta": 319831.0,
+            "pct": 11.5
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 363392.0,
+            "amended": 363707.0,
+            "delta": 315.0,
+            "pct": 0.1
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 1738325.0,
+            "amended": 1739739.0,
+            "delta": 1414.0,
+            "pct": 0.1
+          }
+        }
+      }
+    },
+    "s25_p6_t0": {
+      "rows": {
+        "57 - PROPERTY": {
+          "2026 Budget": {
+            "adopted": 1998750.0,
+            "amended": 42000.0,
+            "delta": -1956750.0,
+            "pct": -97.9
+          }
+        },
+        "57531 - Vehicles": {
+          "2026 Budget": {
+            "adopted": 1984250.0,
+            "amended": 27500.0,
+            "delta": -1956750.0,
+            "pct": -98.6
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 39005907.0,
+            "amended": 37389707.0,
+            "delta": -1616200.0,
+            "pct": -4.1
+          }
+        }
+      }
+    },
+    "s25_p7_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 26078128.0,
+            "amended": 26097118.0,
+            "delta": 18990.0,
+            "pct": 0.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 5961312.0,
+            "amended": 6282872.0,
+            "delta": 321560.0,
+            "pct": 5.4
+          }
+        },
+        "57 - PROPERTY": {
+          "2026": {
+            "adopted": 1998750.0,
+            "amended": 42000.0,
+            "delta": -1956750.0,
+            "pct": -97.9
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 39005906.0,
+            "amended": 37389707.0,
+            "delta": -1616199.0,
+            "pct": -4.1
+          }
+        }
+      }
+    },
+    "s26_p5_t0": {
+      "rows": {
+        "Police Lieutenant": {
+          "2026 Budget": {
+            "adopted": 3546822.0,
+            "amended": 3653520.0,
+            "delta": 106698.0,
+            "pct": 3.0
+          }
+        },
+        "Police Sergeant": {
+          "2026 Budget": {
+            "adopted": 10578234.0,
+            "amended": 10896538.0,
+            "delta": 318304.0,
+            "pct": 3.0
+          }
+        },
+        "Police Officer - Detective": {
+          "2026 Budget": {
+            "adopted": 16011131.0,
+            "amended": 16491904.0,
+            "delta": 480773.0,
+            "pct": 3.0
+          }
+        },
+        "Police Officer": {
+          "2026 Budget": {
+            "adopted": 39313433.0,
+            "amended": 39615911.0,
+            "delta": 302478.0,
+            "pct": 0.8
+          }
+        },
+        "Total Uniformed Police Officers": {
+          "2026 Budget": {
+            "adopted": 72140538.0,
+            "amended": 73348790.0,
+            "delta": 1208252.0,
+            "pct": 1.7
+          }
+        },
+        "Administrative Assistant": {
+          "2026 Budget": {
+            "adopted": 113235.0,
+            "amended": 113522.0,
+            "delta": 287.0,
+            "pct": 0.3
+          }
+        },
+        "Cashier": {
+          "2026 Budget": {
+            "adopted": 42302.0,
+            "amended": 47250.0,
+            "delta": 4948.0,
+            "pct": 11.7
+          }
+        },
+        "Dispatcher": {
+          "2026 Budget": {
+            "adopted": 41516.0,
+            "amended": 46800.0,
+            "delta": 5284.0,
+            "pct": 12.7
+          }
+        },
+        "Specialist I, Administrative": {
+          "2026 Budget": {
+            "adopted": 974803.0,
+            "amended": 1107001.0,
+            "delta": 132198.0,
+            "pct": 13.6
+          }
+        },
+        "Assistant I, Administrative": {
+          "2026 Budget": {
+            "adopted": 39698.0,
+            "amended": 45000.0,
+            "delta": 5302.0,
+            "pct": 13.4
+          }
+        },
+        "Total Police Civilian Positions": {
+          "2026 FTE": {
+            "adopted": 44.0,
+            "amended": 45.0,
+            "delta": 1.0,
+            "pct": 2.3
+          },
+          "2026 Budget": {
+            "adopted": 2055700.0,
+            "amended": 2286222.0,
+            "delta": 230522.0,
+            "pct": 11.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 844.0,
+            "amended": 845.0,
+            "delta": 1.0,
+            "pct": 0.1
+          },
+          "2026 Budget": {
+            "adopted": 74196237.0,
+            "amended": 75635012.0,
+            "delta": 1438775.0,
+            "pct": 1.9
+          }
+        }
+      }
+    },
+    "s26_p5_t1": {
+      "rows": {
+        "Assistant I, Administrative, Part Time": {
+          "2026 Budget": {
+            "adopted": 28628.0,
+            "amended": 29487.0,
+            "delta": 859.0,
+            "pct": 3.0
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 844.0,
+            "amended": 845.0,
+            "delta": 1.0,
+            "pct": 0.1
+          },
+          "2026 Budget": {
+            "adopted": 74196237.0,
+            "amended": 75635012.0,
+            "delta": 1438775.0,
+            "pct": 1.9
+          }
+        },
+        "Temporary, Part-Time, and Seasonal Allowances": {
+          "2026 Budget": {
+            "adopted": 28628.0,
+            "amended": 29487.0,
+            "delta": 859.0,
+            "pct": 3.0
+          }
+        },
+        "Total Full-Time Positions & Net Salaries": {
+          "2026 FTE": {
+            "adopted": 844.0,
+            "amended": 845.0,
+            "delta": 1.0,
+            "pct": 0.1
+          },
+          "2026 Budget": {
+            "adopted": 68739143.0,
+            "amended": 70178777.0,
+            "delta": 1439634.0,
+            "pct": 2.1
+          }
+        }
+      }
+    },
+    "s26_p7_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 94055583.0,
+            "amended": 94265299.0,
+            "delta": 209716.0,
+            "pct": 0.2
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 69951574.0,
+            "amended": 70149290.0,
+            "delta": 197716.0,
+            "pct": 0.3
+          }
+        },
+        "51201 - Longevity": {
+          "2026 Budget": {
+            "adopted": 2478500.0,
+            "amended": 2490500.0,
+            "delta": 12000.0,
+            "pct": 0.5
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 16512754.0,
+            "amended": 18061355.0,
+            "delta": 1548601.0,
+            "pct": 9.4
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 11832102.0,
+            "amended": 13362083.0,
+            "delta": 1529981.0,
+            "pct": 12.9
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 778082.0,
+            "amended": 781577.0,
+            "delta": 3495.0,
+            "pct": 0.4
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 1495887.0,
+            "amended": 1511012.0,
+            "delta": 15125.0,
+            "pct": 1.0
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026 Budget": {
+            "adopted": 742114.0,
+            "amended": 845300.0,
+            "delta": 103186.0,
+            "pct": 13.9
+          }
+        },
+        "53901 - Professional Services": {
+          "2026 Budget": {
+            "adopted": 150000.0,
+            "amended": 253186.0,
+            "delta": 103186.0,
+            "pct": 68.8
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 117958522.0,
+            "amended": 119820024.0,
+            "delta": 1861502.0,
+            "pct": 1.6
+          }
+        }
+      }
+    },
+    "s26_p9_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 94055583.0,
+            "amended": 94265299.0,
+            "delta": 209716.0,
+            "pct": 0.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 16512754.0,
+            "amended": 18061355.0,
+            "delta": 1548601.0,
+            "pct": 9.4
+          }
+        },
+        "53 - PROF. & TECHNICAL SERVICES": {
+          "2026": {
+            "adopted": 742114.0,
+            "amended": 845300.0,
+            "delta": 103186.0,
+            "pct": 13.9
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 117958522.0,
+            "amended": 119820025.0,
+            "delta": 1861503.0,
+            "pct": 1.6
+          }
+        }
+      }
+    },
+    "s27_p3_t0": {
+      "rows": {
+        "Fire Chief": {
+          "2026 Budget": {
+            "adopted": 156062.0,
+            "amended": 159141.0,
+            "delta": 3079.0,
+            "pct": 2.0
+          }
+        },
+        "Deputy Chief *": {
+          "2026 Budget": {
+            "adopted": 471308.0,
+            "amended": 485472.0,
+            "delta": 14164.0,
+            "pct": 3.0
+          }
+        },
+        "Battalion Chief *": {
+          "2026 Budget": {
+            "adopted": 2085102.0,
+            "amended": 2087096.0,
+            "delta": 1994.0,
+            "pct": 0.1
+          }
+        },
+        "Total Uniformed Firefighters": {
+          "2026 Budget": {
+            "adopted": 58769255.0,
+            "amended": 58788492.0,
+            "delta": 19237.0,
+            "pct": 0.0
+          }
+        },
+        "Deputy Fire Marshal": {
+          "2026 Budget": {
+            "adopted": 63455.0,
+            "amended": 65518.0,
+            "delta": 2063.0,
+            "pct": 3.3
+          }
+        },
+        "Total Fire Civilian Positions": {
+          "2026 Budget": {
+            "adopted": 63455.0,
+            "amended": 65518.0,
+            "delta": 2063.0,
+            "pct": 3.3
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 58832710.0,
+            "amended": 58854010.0,
+            "delta": 21300.0,
+            "pct": 0.0
+          }
+        }
+      }
+    },
+    "s27_p3_t2": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 58832710.0,
+            "amended": 58854010.0,
+            "delta": 21300.0,
+            "pct": 0.0
+          }
+        },
+        "Emergency Management Coordinator Bonus": {
+          "2026 Budget": {
+            "adopted": 10000.0,
+            "amended": 0.0,
+            "delta": -10000.0,
+            "pct": -100.0
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 59403910.0,
+            "amended": 59415210.0,
+            "delta": 11300.0,
+            "pct": 0.0
+          }
+        }
+      }
+    },
+    "s27_p4_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 86623226.0,
+            "amended": 86633121.0,
+            "delta": 9895.0,
+            "pct": 0.0
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 59405814.0,
+            "amended": 59415209.0,
+            "delta": 9395.0,
+            "pct": 0.0
+          }
+        },
+        "51201 - Longevity": {
+          "2026 Budget": {
+            "adopted": 1901322.0,
+            "amended": 1901822.0,
+            "delta": 500.0,
+            "pct": 0.0
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 16704107.0,
+            "amended": 18017955.0,
+            "delta": 1313848.0,
+            "pct": 7.9
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 11124395.0,
+            "amended": 12437708.0,
+            "delta": 1313313.0,
+            "pct": 11.8
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 263767.0,
+            "amended": 263819.0,
+            "delta": 52.0,
+            "pct": 0.0
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 1192119.0,
+            "amended": 1192601.0,
+            "delta": 482.0,
+            "pct": 0.0
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 106816658.0,
+            "amended": 108140401.0,
+            "delta": 1323743.0,
+            "pct": 1.2
+          }
+        }
+      }
+    },
+    "s27_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 86623226.0,
+            "amended": 86633121.0,
+            "delta": 9895.0,
+            "pct": 0.0
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 16704107.0,
+            "amended": 18017955.0,
+            "delta": 1313848.0,
+            "pct": 7.9
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 106816658.0,
+            "amended": 108140401.0,
+            "delta": 1323743.0,
+            "pct": 1.2
+          }
+        }
+      }
+    },
+    "s28_p3_t0": {
+      "rows": {
+        "Animal Care & Control Officer": {
+          "2026 Budget": {
+            "adopted": 775320.0,
+            "amended": 837720.0,
+            "delta": 62400.0,
+            "pct": 8.0
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 945360.0,
+            "amended": 1007760.0,
+            "delta": 62400.0,
+            "pct": 6.6
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 935861.0,
+            "amended": 998261.0,
+            "delta": 62400.0,
+            "pct": 6.7
+          }
+        }
+      }
+    },
+    "s28_p4_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 1087990.0,
+            "amended": 1126990.0,
+            "delta": 39000.0,
+            "pct": 3.6
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 967040.0,
+            "amended": 1006040.0,
+            "delta": 39000.0,
+            "pct": 4.0
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 282276.0,
+            "amended": 303866.0,
+            "delta": 21590.0,
+            "pct": 7.6
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 143282.0,
+            "amended": 161163.0,
+            "delta": 17881.0,
+            "pct": 12.5
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 20376.0,
+            "amended": 21102.0,
+            "delta": 726.0,
+            "pct": 3.6
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 83703.0,
+            "amended": 86687.0,
+            "delta": 2984.0,
+            "pct": 3.6
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 2461494.0,
+            "amended": 2522084.0,
+            "delta": 60590.0,
+            "pct": 2.5
+          }
+        }
+      }
+    },
+    "s28_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 1087990.0,
+            "amended": 1126990.0,
+            "delta": 39000.0,
+            "pct": 3.6
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 282276.0,
+            "amended": 303866.0,
+            "delta": 21590.0,
+            "pct": 7.6
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 2461494.0,
+            "amended": 2522085.0,
+            "delta": 60591.0,
+            "pct": 2.5
+          }
+        }
+      }
+    },
+    "s31_p1_t0": {
+      "rows": {
+        "Administrator 2": {
+          "2026 Budget": {
+            "adopted": 61922.0,
+            "amended": 62065.0,
+            "delta": 143.0,
+            "pct": 0.2
+          }
+        },
+        "Fiscal & Contracting Coordinator": {
+          "2026 Budget": {
+            "adopted": 118602.0,
+            "amended": 118890.0,
+            "delta": 288.0,
+            "pct": 0.2
+          }
+        },
+        "Environmental Enforcement Inspector": {
+          "2026 Budget": {
+            "adopted": 575744.0,
+            "amended": 596573.0,
+            "delta": 20829.0,
+            "pct": 3.6
+          }
+        },
+        "Inspector II": {
+          "2026 Budget": {
+            "adopted": 172039.0,
+            "amended": 177630.0,
+            "delta": 5591.0,
+            "pct": 3.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 2121187.0,
+            "amended": 2148038.0,
+            "delta": 26851.0,
+            "pct": 1.3
+          }
+        }
+      }
+    },
+    "s31_p1_t1": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 2121187.0,
+            "amended": 2148038.0,
+            "delta": 26851.0,
+            "pct": 1.3
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 2035923.0,
+            "amended": 2062774.0,
+            "delta": 26851.0,
+            "pct": 1.3
+          }
+        }
+      }
+    },
+    "s31_p2_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 2087996.0,
+            "amended": 2090326.0,
+            "delta": 2330.0,
+            "pct": 0.1
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 2057444.0,
+            "amended": 2059775.0,
+            "delta": 2331.0,
+            "pct": 0.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 538817.0,
+            "amended": 575400.0,
+            "delta": 36583.0,
+            "pct": 6.8
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 317367.0,
+            "amended": 353505.0,
+            "delta": 36138.0,
+            "pct": 11.4
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 39441.0,
+            "amended": 39707.0,
+            "delta": 266.0,
+            "pct": 0.7
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 160799.0,
+            "amended": 160978.0,
+            "delta": 179.0,
+            "pct": 0.1
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026 Budget": {
+            "adopted": 22965252.0,
+            "amended": 23265252.0,
+            "delta": 300000.0,
+            "pct": 1.3
+          }
+        },
+        "54603 - Natural Gas": {
+          "2026 Budget": {
+            "adopted": 1200000.0,
+            "amended": 1500000.0,
+            "delta": 300000.0,
+            "pct": 25.0
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 25696815.0,
+            "amended": 26035728.0,
+            "delta": 338913.0,
+            "pct": 1.3
+          }
+        }
+      }
+    },
+    "s31_p3_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 2087996.0,
+            "amended": 2090326.0,
+            "delta": 2330.0,
+            "pct": 0.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 538817.0,
+            "amended": 575400.0,
+            "delta": 36583.0,
+            "pct": 6.8
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026": {
+            "adopted": 22965252.0,
+            "amended": 23265252.0,
+            "delta": 300000.0,
+            "pct": 1.3
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 25696815.0,
+            "amended": 26035728.0,
+            "delta": 338913.0,
+            "pct": 1.3
+          }
+        }
+      }
+    },
+    "s32_p1_t0": {
+      "rows": {
+        "Administrator 2": {
+          "2026 Budget": {
+            "adopted": 123843.0,
+            "amended": 124132.0,
+            "delta": 289.0,
+            "pct": 0.2
+          }
+        },
+        "Administrative Aide": {
+          "2026 Budget": {
+            "adopted": 56618.0,
+            "amended": 54592.0,
+            "delta": -2026.0,
+            "pct": -3.6
+          }
+        },
+        "Technician, Payroll": {
+          "2026 Budget": {
+            "adopted": 256730.0,
+            "amended": 288900.0,
+            "delta": 32170.0,
+            "pct": 12.5
+          }
+        },
+        "Heavy Equipment Operator": {
+          "2026 FTE": {
+            "adopted": 10.0,
+            "amended": 11.0,
+            "delta": 1.0,
+            "pct": 10.0
+          },
+          "2026 Budget": {
+            "adopted": 652288.0,
+            "amended": 717517.0,
+            "delta": 65229.0,
+            "pct": 10.0
+          }
+        },
+        "Laborer": {
+          "2026 FTE": {
+            "adopted": 137.0,
+            "amended": 135.0,
+            "delta": -2.0,
+            "pct": -1.5
+          },
+          "2026 Budget": {
+            "adopted": 7112602.0,
+            "amended": 7008768.0,
+            "delta": -103834.0,
+            "pct": -1.5
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 287.0,
+            "amended": 286.0,
+            "delta": -1.0,
+            "pct": -0.3
+          },
+          "2026 Budget": {
+            "adopted": 16555610.0,
+            "amended": 16553096.0,
+            "delta": -2514.0,
+            "pct": -0.0
+          }
+        }
+      }
+    },
+    "s32_p1_t1": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 287.0,
+            "amended": 286.0,
+            "delta": -1.0,
+            "pct": -0.3
+          },
+          "2026 Budget": {
+            "adopted": 16555610.0,
+            "amended": 16553096.0,
+            "delta": -2514.0,
+            "pct": -0.0
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 FTE": {
+            "adopted": 287.0,
+            "amended": 286.0,
+            "delta": -1.0,
+            "pct": -0.3
+          },
+          "2026 Budget": {
+            "adopted": 15813389.0,
+            "amended": 15810875.0,
+            "delta": -2514.0,
+            "pct": -0.0
+          }
+        }
+      }
+    },
+    "s32_p3_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 17568039.0,
+            "amended": 18059954.0,
+            "delta": 491915.0,
+            "pct": 2.8
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 15448153.0,
+            "amended": 15437918.0,
+            "delta": -10235.0,
+            "pct": -0.1
+          }
+        },
+        "51201 - Longevity": {
+          "2026 Budget": {
+            "adopted": 99000.0,
+            "amended": 100500.0,
+            "delta": 1500.0,
+            "pct": 1.5
+          }
+        },
+        "51205 - Uniform": {
+          "2026 Budget": {
+            "adopted": 11050.0,
+            "amended": 11700.0,
+            "delta": 650.0,
+            "pct": 5.9
+          }
+        },
+        "51401 - Premium Pay": {
+          "2026 Budget": {
+            "adopted": 1544513.0,
+            "amended": 2044513.0,
+            "delta": 500000.0,
+            "pct": 32.4
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 5558180.0,
+            "amended": 5946849.0,
+            "delta": 388669.0,
+            "pct": 7.0
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 2961032.0,
+            "amended": 3350787.0,
+            "delta": 389755.0,
+            "pct": 13.2
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 337114.0,
+            "amended": 336761.0,
+            "delta": -353.0,
+            "pct": -0.1
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 1366868.0,
+            "amended": 1366135.0,
+            "delta": -733.0,
+            "pct": -0.1
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026 Budget": {
+            "adopted": 1000.0,
+            "amended": 1707756.0,
+            "delta": 1706756.0,
+            "pct": 170675.6
+          }
+        },
+        "53901 - Professional Services": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 1706756.0,
+            "delta": 1706756.0,
+            "pct": null
+          }
+        },
+        "57 - PROPERTY": {
+          "2026 Budget": {
+            "adopted": 947352.0,
+            "amended": 267000.0,
+            "delta": -680352.0,
+            "pct": -71.8
+          }
+        },
+        "57531 - Vehicles": {
+          "2026 Budget": {
+            "adopted": 847352.0,
+            "amended": 167000.0,
+            "delta": -680352.0,
+            "pct": -80.3
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 26996116.0,
+            "amended": 28903104.0,
+            "delta": 1906988.0,
+            "pct": 7.1
+          }
+        }
+      }
+    },
+    "s32_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 17568039.0,
+            "amended": 18059954.0,
+            "delta": 491915.0,
+            "pct": 2.8
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 5558180.0,
+            "amended": 5946849.0,
+            "delta": 388669.0,
+            "pct": 7.0
+          }
+        },
+        "53 - PROF. & TECHNICAL SERVICES": {
+          "2026": {
+            "adopted": 1000.0,
+            "amended": 1707756.0,
+            "delta": 1706756.0,
+            "pct": 170675.6
+          }
+        },
+        "57 - PROPERTY": {
+          "2026": {
+            "adopted": 947352.0,
+            "amended": 267000.0,
+            "delta": -680352.0,
+            "pct": -71.8
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 26996116.0,
+            "amended": 28903104.0,
+            "delta": 1906988.0,
+            "pct": 7.1
+          }
+        }
+      }
+    },
+    "s33_p1_t0": {
+      "rows": {
+        "Driver": {
+          "2026 Budget": {
+            "adopted": 2754835.0,
+            "amended": 2976563.0,
+            "delta": 221728.0,
+            "pct": 8.0
+          }
+        },
+        "Co-Driver": {
+          "2026 Budget": {
+            "adopted": 4408560.0,
+            "amended": 4762368.0,
+            "delta": 353808.0,
+            "pct": 8.0
+          }
+        },
+        "Loader": {
+          "2026 Budget": {
+            "adopted": 1048320.0,
+            "amended": 1133350.0,
+            "delta": 85030.0,
+            "pct": 8.1
+          }
+        },
+        "Lot Coordinator": {
+          "2026 Budget": {
+            "adopted": 52978.0,
+            "amended": 57242.0,
+            "delta": 4264.0,
+            "pct": 8.0
+          }
+        },
+        "Specialist, Environmental Enforcement": {
+          "2026 Budget": {
+            "adopted": 51635.0,
+            "amended": 53313.0,
+            "delta": 1678.0,
+            "pct": 3.2
+          }
+        },
+        "Administrator 2": {
+          "2026 Budget": {
+            "adopted": 67288.0,
+            "amended": 67456.0,
+            "delta": 168.0,
+            "pct": 0.2
+          }
+        },
+        "Dispatcher": {
+          "2026 Budget": {
+            "adopted": 84025.0,
+            "amended": 93600.0,
+            "delta": 9575.0,
+            "pct": 11.4
+          }
+        },
+        "Assistant I, Administrative": {
+          "2026 Budget": {
+            "adopted": 39698.0,
+            "amended": 45000.0,
+            "delta": 5302.0,
+            "pct": 13.4
+          }
+        },
+        "Technician, Payroll": {
+          "2026 Budget": {
+            "adopted": 85577.0,
+            "amended": 96300.0,
+            "delta": 10723.0,
+            "pct": 12.5
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 10248826.0,
+            "amended": 10945366.0,
+            "delta": 696540.0,
+            "pct": 6.8
+          }
+        }
+      }
+    },
+    "s33_p1_t2": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 10248826.0,
+            "amended": 10945366.0,
+            "delta": 696540.0,
+            "pct": 6.8
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 9549133.0,
+            "amended": 10245673.0,
+            "delta": 696540.0,
+            "pct": 7.3
+          }
+        }
+      }
+    },
+    "s33_p2_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 10784647.0,
+            "amended": 11228929.0,
+            "delta": 444282.0,
+            "pct": 4.1
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 9804390.0,
+            "amended": 10245672.0,
+            "delta": 441282.0,
+            "pct": 4.5
+          }
+        },
+        "51201 - Longevity": {
+          "2026 Budget": {
+            "adopted": 72750.0,
+            "amended": 75750.0,
+            "delta": 3000.0,
+            "pct": 4.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 3560958.0,
+            "amended": 3907757.0,
+            "delta": 346799.0,
+            "pct": 9.7
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 1911866.0,
+            "amended": 2216749.0,
+            "delta": 304883.0,
+            "pct": 15.9
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 216520.0,
+            "amended": 224677.0,
+            "delta": 8157.0,
+            "pct": 3.8
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 839578.0,
+            "amended": 873336.0,
+            "delta": 33758.0,
+            "pct": 4.0
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 19166722.0,
+            "amended": 19957803.0,
+            "delta": 791081.0,
+            "pct": 4.1
+          }
+        }
+      }
+    },
+    "s33_p3_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 10784648.0,
+            "amended": 11228929.0,
+            "delta": 444281.0,
+            "pct": 4.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 3560958.0,
+            "amended": 3907757.0,
+            "delta": 346799.0,
+            "pct": 9.7
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 19166723.0,
+            "amended": 19957803.0,
+            "delta": 791080.0,
+            "pct": 4.1
+          }
+        }
+      }
+    },
+    "s34_p1_t0": {
+      "rows": {
+        "Technician, Payroll": {
+          "2026 Budget": {
+            "adopted": 42788.0,
+            "amended": 48150.0,
+            "delta": 5362.0,
+            "pct": 12.5
+          }
+        },
+        "Contract Administrator": {
+          "2026 Budget": {
+            "adopted": 59301.0,
+            "amended": 59446.0,
+            "delta": 145.0,
+            "pct": 0.2
+          }
+        },
+        "Fiscal & Contracting Coordinator": {
+          "2026 Budget": {
+            "adopted": 118602.0,
+            "amended": 118890.0,
+            "delta": 288.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 86.0,
+            "amended": 87.0,
+            "delta": 1.0,
+            "pct": 1.2
+          },
+          "2026 Budget": {
+            "adopted": 5949864.0,
+            "amended": 6088654.0,
+            "delta": 138790.0,
+            "pct": 2.3
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 FTE": {
+            "adopted": 86.0,
+            "amended": 87.0,
+            "delta": 1.0,
+            "pct": 1.2
+          },
+          "2026 Budget": {
+            "adopted": 5526504.0,
+            "amended": 5665294.0,
+            "delta": 138790.0,
+            "pct": 2.5
+          }
+        }
+      }
+    },
+    "s34_p3_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 5748527.0,
+            "amended": 5886031.0,
+            "delta": 137504.0,
+            "pct": 2.4
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 5527790.0,
+            "amended": 5665294.0,
+            "delta": 137504.0,
+            "pct": 2.5
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1513585.0,
+            "amended": 1647535.0,
+            "delta": 133950.0,
+            "pct": 8.8
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 869140.0,
+            "amended": 989968.0,
+            "delta": 120828.0,
+            "pct": 13.9
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 116198.0,
+            "amended": 118801.0,
+            "delta": 2603.0,
+            "pct": 2.2
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 449467.0,
+            "amended": 459986.0,
+            "delta": 10519.0,
+            "pct": 2.3
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026 Budget": {
+            "adopted": 3243515.0,
+            "amended": 5799867.0,
+            "delta": 2556352.0,
+            "pct": 78.8
+          }
+        },
+        "54201 - Maintenance": {
+          "2026 Budget": {
+            "adopted": 2037275.0,
+            "amended": 4593627.0,
+            "delta": 2556352.0,
+            "pct": 125.5
+          }
+        }
+      }
+    },
+    "s34_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 5748527.0,
+            "amended": 5886031.0,
+            "delta": 137504.0,
+            "pct": 2.4
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 1513585.0,
+            "amended": 1647535.0,
+            "delta": 133950.0,
+            "pct": 8.8
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026": {
+            "adopted": 3243515.0,
+            "amended": 5799867.0,
+            "delta": 2556352.0,
+            "pct": 78.8
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 11961339.0,
+            "amended": 14789145.0,
+            "delta": 2827806.0,
+            "pct": 23.6
+          }
+        }
+      }
+    },
+    "s35_p4_t0": {
+      "rows": {
+        "Senior Fiscal & Contracting Coordinator": {
+          "2026 Budget": {
+            "adopted": 73258.0,
+            "amended": 73426.0,
+            "delta": 168.0,
+            "pct": 0.2
+          }
+        },
+        "Administrative Aide": {
+          "2026 Budget": {
+            "adopted": 52770.0,
+            "amended": 52895.0,
+            "delta": 125.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 FTE": {
+            "adopted": 54.8,
+            "amended": 55.8,
+            "delta": 1.0,
+            "pct": 1.8
+          },
+          "2026 Budget": {
+            "adopted": 3216755.0,
+            "amended": 3337875.0,
+            "delta": 121120.0,
+            "pct": 3.8
+          }
+        }
+      }
+    },
+    "s35_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 4720887.0,
+            "amended": 4962005.0,
+            "delta": 241118.0,
+            "pct": 5.1
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 3013224.0,
+            "amended": 3134345.0,
+            "delta": 121121.0,
+            "pct": 4.0
+          }
+        },
+        "51103 - Part-Time": {
+          "2026 Budget": {
+            "adopted": 1510904.0,
+            "amended": 1630901.0,
+            "delta": 119997.0,
+            "pct": 7.9
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1012258.0,
+            "amended": 1100576.0,
+            "delta": 88318.0,
+            "pct": 8.7
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 446690.0,
+            "amended": 514456.0,
+            "delta": 67766.0,
+            "pct": 15.2
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 57628.0,
+            "amended": 59733.0,
+            "delta": 2105.0,
+            "pct": 3.7
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 371479.0,
+            "amended": 389925.0,
+            "delta": 18446.0,
+            "pct": 5.0
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026 Budget": {
+            "adopted": 24500.0,
+            "amended": 208500.0,
+            "delta": 184000.0,
+            "pct": 751.0
+          }
+        },
+        "56 - SUPPLIES": {
+          "2026 Budget": {
+            "adopted": 402500.0,
+            "amended": 452500.0,
+            "delta": 50000.0,
+            "pct": 12.4
+          }
+        },
+        "56151 - Operational Supplies": {
+          "2026 Budget": {
+            "adopted": 362500.0,
+            "amended": 412500.0,
+            "delta": 50000.0,
+            "pct": 13.8
+          }
+        },
+        "58 - MISCELLANEOUS": {
+          "2026 Budget": {
+            "adopted": 1000000.0,
+            "amended": 500000.0,
+            "delta": -500000.0,
+            "pct": -50.0
+          }
+        },
+        "58101 - Grants": {
+          "2026 Budget": {
+            "adopted": 1000000.0,
+            "amended": 500000.0,
+            "delta": -500000.0,
+            "pct": -50.0
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 7446545.0,
+            "amended": 7509981.0,
+            "delta": 63436.0,
+            "pct": 0.9
+          }
+        }
+      }
+    },
+    "s35_p8_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 4720887.0,
+            "amended": 4962005.0,
+            "delta": 241118.0,
+            "pct": 5.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 1012258.0,
+            "amended": 1100576.0,
+            "delta": 88318.0,
+            "pct": 8.7
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026": {
+            "adopted": 24500.0,
+            "amended": 208500.0,
+            "delta": 184000.0,
+            "pct": 751.0
+          }
+        },
+        "56 - SUPPLIES": {
+          "2026": {
+            "adopted": 402500.0,
+            "amended": 452500.0,
+            "delta": 50000.0,
+            "pct": 12.4
+          }
+        },
+        "58 - MISCELLANEOUS": {
+          "2026": {
+            "adopted": 1000000.0,
+            "amended": 500000.0,
+            "delta": -500000.0,
+            "pct": -50.0
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 7446545.0,
+            "amended": 7509981.0,
+            "delta": 63436.0,
+            "pct": 0.9
+          }
+        }
+      }
+    },
+    "s36_p10_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 9084700.0,
+            "amended": 9208637.0,
+            "delta": 123937.0,
+            "pct": 1.4
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 2370446.0,
+            "amended": 2530974.0,
+            "delta": 160528.0,
+            "pct": 6.8
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026": {
+            "adopted": 3021832.0,
+            "amended": 2793000.0,
+            "delta": -228832.0,
+            "pct": -7.6
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 15286603.0,
+            "amended": 15342236.0,
+            "delta": 55633.0,
+            "pct": 0.4
+          }
+        }
+      }
+    },
+    "s36_p6_t0": {
+      "rows": {
+        "Senior Systems Analyst 3": {
+          "2026 FTE": {
+            "adopted": 1.0,
+            "amended": 0.0,
+            "delta": -1.0,
+            "pct": -100.0
+          },
+          "2026 Budget": {
+            "adopted": 79352.0,
+            "amended": 0.0,
+            "delta": -79352.0,
+            "pct": -100.0
+          }
+        },
+        "Contract Administrator": {
+          "2026 Budget": {
+            "adopted": 70200.0,
+            "amended": 70377.0,
+            "delta": 177.0,
+            "pct": 0.3
+          }
+        },
+        "Operations & Administrative Coordinator": {
+          "2026 Budget": {
+            "adopted": 61922.0,
+            "amended": 62066.0,
+            "delta": 144.0,
+            "pct": 0.2
+          }
+        },
+        "Fiscal & Contracting Coordinator": {
+          "2026 Budget": {
+            "adopted": 118602.0,
+            "amended": 118890.0,
+            "delta": 288.0,
+            "pct": 0.2
+          }
+        },
+        "Principal Planner": {
+          "2026 Budget": {
+            "adopted": 228883.0,
+            "amended": 229428.0,
+            "delta": 545.0,
+            "pct": 0.2
+          }
+        },
+        "Senior Planner": {
+          "2026 Budget": {
+            "adopted": 213689.0,
+            "amended": 220635.0,
+            "delta": 6946.0,
+            "pct": 3.3
+          }
+        },
+        "ROW Construction Inspector": {
+          "2026 Budget": {
+            "adopted": 449196.0,
+            "amended": 463792.0,
+            "delta": 14596.0,
+            "pct": 3.2
+          }
+        },
+        "Lead Technician, Mobility": {
+          "2026 Budget": {
+            "adopted": 58431.0,
+            "amended": 60330.0,
+            "delta": 1899.0,
+            "pct": 3.2
+          }
+        },
+        "Technician, Mobility": {
+          "2026 Budget": {
+            "adopted": 197388.0,
+            "amended": 203816.0,
+            "delta": 6428.0,
+            "pct": 3.3
+          }
+        },
+        "Code Enforcement Inspector": {
+          "2026 Budget": {
+            "adopted": 119972.0,
+            "amended": 123872.0,
+            "delta": 3900.0,
+            "pct": 3.3
+          }
+        },
+        "Technician, Payroll": {
+          "2026 Budget": {
+            "adopted": 85578.0,
+            "amended": 96300.0,
+            "delta": 10722.0,
+            "pct": 12.5
+          }
+        },
+        "Assistant, Land Survey Rod Specialist": {
+          "2026 Budget": {
+            "adopted": 42302.0,
+            "amended": 47250.0,
+            "delta": 4948.0,
+            "pct": 11.7
+          }
+        },
+        "Project Engineer": {
+          "2026 FTE": {
+            "adopted": 2.0,
+            "amended": 3.0,
+            "delta": 1.0,
+            "pct": 50.0
+          },
+          "2026 Budget": {
+            "adopted": 158704.0,
+            "amended": 238056.0,
+            "delta": 79352.0,
+            "pct": 50.0
+          }
+        },
+        "Staff Engineer": {
+          "2026 Budget": {
+            "adopted": 207498.0,
+            "amended": 214242.0,
+            "delta": 6744.0,
+            "pct": 3.3
+          }
+        },
+        "Inspector 2": {
+          "2026 Budget": {
+            "adopted": 57346.0,
+            "amended": 59210.0,
+            "delta": 1864.0,
+            "pct": 3.3
+          }
+        },
+        "Fiscal Coordinator": {
+          "2026 Budget": {
+            "adopted": 52770.0,
+            "amended": 52895.0,
+            "delta": 125.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 9259168.0,
+            "amended": 9330599.0,
+            "delta": 71431.0,
+            "pct": 0.8
+          }
+        }
+      }
+    },
+    "s36_p7_t0": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 9259168.0,
+            "amended": 9330599.0,
+            "delta": 71431.0,
+            "pct": 0.8
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 8867513.0,
+            "amended": 8938944.0,
+            "delta": 71431.0,
+            "pct": 0.8
+          }
+        }
+      }
+    },
+    "s36_p9_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 9084700.0,
+            "amended": 9208637.0,
+            "delta": 123937.0,
+            "pct": 1.4
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 8710182.0,
+            "amended": 8731120.0,
+            "delta": 20938.0,
+            "pct": 0.2
+          }
+        },
+        "51201 - Longevity": {
+          "2026 Budget": {
+            "adopted": 9500.0,
+            "amended": 12500.0,
+            "delta": 3000.0,
+            "pct": 31.6
+          }
+        },
+        "51401 - Premium Pay": {
+          "2026 Budget": {
+            "adopted": 146901.0,
+            "amended": 246901.0,
+            "delta": 100000.0,
+            "pct": 68.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 2370446.0,
+            "amended": 2530974.0,
+            "delta": 160528.0,
+            "pct": 6.8
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 1370486.0,
+            "amended": 1529035.0,
+            "delta": 158549.0,
+            "pct": 11.6
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 174953.0,
+            "amended": 175330.0,
+            "delta": 377.0,
+            "pct": 0.2
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 700777.0,
+            "amended": 702379.0,
+            "delta": 1602.0,
+            "pct": 0.2
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026 Budget": {
+            "adopted": 3021832.0,
+            "amended": 2793000.0,
+            "delta": -228832.0,
+            "pct": -7.6
+          }
+        },
+        "54201 - Maintenance": {
+          "2026 Budget": {
+            "adopted": 1100000.0,
+            "amended": 1900000.0,
+            "delta": 800000.0,
+            "pct": 72.7
+          }
+        },
+        "54513 - Machinery & Equipment": {
+          "2026 Budget": {
+            "adopted": 1871832.0,
+            "amended": 843000.0,
+            "delta": -1028832.0,
+            "pct": -55.0
+          }
+        }
+      }
+    },
+    "s37_p4_t0": {
+      "rows": {
+        "Lead Investigator": {
+          "2026 Budget": {
+            "adopted": 59536.0,
+            "amended": 61471.0,
+            "delta": 1935.0,
+            "pct": 3.3
+          }
+        },
+        "Investigator": {
+          "2026 Budget": {
+            "adopted": 228540.0,
+            "amended": 235968.0,
+            "delta": 7428.0,
+            "pct": 3.3
+          }
+        },
+        "Administrative Assistant": {
+          "2026 Budget": {
+            "adopted": 52770.0,
+            "amended": 52896.0,
+            "delta": 126.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 604133.0,
+            "amended": 613621.0,
+            "delta": 9488.0,
+            "pct": 1.6
+          }
+        }
+      }
+    },
+    "s37_p4_t1": {
+      "rows": {
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 604133.0,
+            "amended": 613621.0,
+            "delta": 9488.0,
+            "pct": 1.6
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 609133.0,
+            "amended": 618621.0,
+            "delta": 9488.0,
+            "pct": 1.6
+          }
+        }
+      }
+    },
+    "s37_p5_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 617747.0,
+            "amended": 619622.0,
+            "delta": 1875.0,
+            "pct": 0.3
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 612747.0,
+            "amended": 613622.0,
+            "delta": 875.0,
+            "pct": 0.1
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 157411.0,
+            "amended": 167525.0,
+            "delta": 10114.0,
+            "pct": 6.4
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 85005.0,
+            "amended": 95037.0,
+            "delta": 10032.0,
+            "pct": 11.8
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 12101.0,
+            "amended": 12116.0,
+            "delta": 15.0,
+            "pct": 0.1
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 48185.0,
+            "amended": 48252.0,
+            "delta": 67.0,
+            "pct": 0.1
+          }
+        }
+      }
+    },
+    "s37_p6_t0": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026": {
+            "adopted": 617747.0,
+            "amended": 619622.0,
+            "delta": 1875.0,
+            "pct": 0.3
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026": {
+            "adopted": 157411.0,
+            "amended": 167525.0,
+            "delta": 10114.0,
+            "pct": 6.4
+          }
+        },
+        "Total": {
+          "2026": {
+            "adopted": 958962.0,
+            "amended": 970951.0,
+            "delta": 11989.0,
+            "pct": 1.3
+          }
+        }
+      }
+    },
+    "s40_p0_t1": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 305577.0,
+            "amended": 314175.0,
+            "delta": 8598.0,
+            "pct": 2.8
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 305577.0,
+            "amended": 314175.0,
+            "delta": 8598.0,
+            "pct": 2.8
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 85628.0,
+            "amended": 96799.0,
+            "delta": 11171.0,
+            "pct": 13.0
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 56969.0,
+            "amended": 66508.0,
+            "delta": 9539.0,
+            "pct": 16.7
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 5282.0,
+            "amended": 6257.0,
+            "delta": 975.0,
+            "pct": 18.5
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 23377.0,
+            "amended": 24034.0,
+            "delta": 657.0,
+            "pct": 2.8
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 669430.0,
+            "amended": 689199.0,
+            "delta": 19769.0,
+            "pct": 3.0
+          }
+        },
+        "Net Total": {
+          "2026 Budget": {
+            "adopted": 669430.0,
+            "amended": 689199.0,
+            "delta": 19769.0,
+            "pct": 3.0
+          }
+        }
+      }
+    },
+    "s40_p1_t0": {
+      "rows": {
+        "Senior Assistant, Real Estate": {
+          "2026 Budget": {
+            "adopted": 71593.0,
+            "amended": 73919.0,
+            "delta": 2326.0,
+            "pct": 3.2
+          }
+        },
+        "Assistant II, Administrative": {
+          "2026 FTE": {
+            "adopted": 0.9,
+            "amended": 1.0,
+            "delta": 0.09999999999999998,
+            "pct": 11.1
+          },
+          "2026 Budget": {
+            "adopted": 36404.0,
+            "amended": 45900.0,
+            "delta": 9496.0,
+            "pct": 26.1
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 FTE": {
+            "adopted": 4.9,
+            "amended": 5.0,
+            "delta": 0.09999999999999964,
+            "pct": 2.0
+          },
+          "2026 Budget": {
+            "adopted": 302352.0,
+            "amended": 314174.0,
+            "delta": 11822.0,
+            "pct": 3.9
+          }
+        }
+      }
+    },
+    "s42_p0_t1": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 828152.0,
+            "amended": 829510.0,
+            "delta": 1358.0,
+            "pct": 0.2
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 828152.0,
+            "amended": 829510.0,
+            "delta": 1358.0,
+            "pct": 0.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 222807.0,
+            "amended": 222935.0,
+            "delta": 128.0,
+            "pct": 0.1
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 16373.0,
+            "amended": 16397.0,
+            "delta": 24.0,
+            "pct": 0.1
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 63354.0,
+            "amended": 63457.0,
+            "delta": 103.0,
+            "pct": 0.2
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 13438828.0,
+            "amended": 13440314.0,
+            "delta": 1486.0,
+            "pct": 0.0
+          }
+        },
+        "Net Total": {
+          "2026 Budget": {
+            "adopted": 40658.0,
+            "amended": 42144.0,
+            "delta": 1486.0,
+            "pct": 3.7
+          }
+        }
+      }
+    },
+    "s42_p1_t0": {
+      "rows": {
+        "Environmental Review Coordinator": {
+          "2026 Budget": {
+            "adopted": 73965.0,
+            "amended": 76369.0,
+            "delta": 2404.0,
+            "pct": 3.3
+          }
+        },
+        "Senior Program Coordinator, CD": {
+          "2026 Budget": {
+            "adopted": 142460.0,
+            "amended": 147090.0,
+            "delta": 4630.0,
+            "pct": 3.3
+          }
+        },
+        "Program Coordinator II, CD": {
+          "2026 Budget": {
+            "adopted": 131758.0,
+            "amended": 136040.0,
+            "delta": 4282.0,
+            "pct": 3.2
+          }
+        },
+        "Program Coordinator, Community Development": {
+          "2026 Budget": {
+            "adopted": 126910.0,
+            "amended": 131036.0,
+            "delta": 4126.0,
+            "pct": 3.3
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 813904.0,
+            "amended": 829346.0,
+            "delta": 15442.0,
+            "pct": 1.9
+          }
+        }
+      }
+    },
+    "s43_p0_t1": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 8498649.0,
+            "amended": 8502945.0,
+            "delta": 4296.0,
+            "pct": 0.1
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 41829.0,
+            "amended": 46125.0,
+            "delta": 4296.0,
+            "pct": 10.3
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 139787.0,
+            "amended": 140194.0,
+            "delta": 407.0,
+            "pct": 0.3
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 898.0,
+            "amended": 976.0,
+            "delta": 78.0,
+            "pct": 8.7
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 129350.0,
+            "amended": 129679.0,
+            "delta": 329.0,
+            "pct": 0.3
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 9033436.0,
+            "amended": 9038139.0,
+            "delta": 4703.0,
+            "pct": 0.1
+          }
+        },
+        "Net Total": {
+          "2026 Budget": {
+            "adopted": 162564.0,
+            "amended": 157861.0,
+            "delta": -4703.0,
+            "pct": -2.9
+          }
+        }
+      }
+    },
+    "s43_p1_t0": {
+      "rows": {
+        "Specialist, Administrative": {
+          "2026 Budget": {
+            "adopted": 12.0,
+            "amended": 46125.0,
+            "delta": 46113.0,
+            "pct": 384275.0
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 46125.0,
+            "delta": 46125.0,
+            "pct": null
+          }
+        }
+      }
+    },
+    "s44_p1_t1": {
+      "rows": {
+        "90 - TRANSFERS": {
+          "2026 Budget": {
+            "adopted": 11780631.0,
+            "amended": 6780631.0,
+            "delta": -5000000.0,
+            "pct": -42.4
+          }
+        },
+        "90106 - General Fund- In": {
+          "2026 Budget": {
+            "adopted": 11780631.0,
+            "amended": 6780631.0,
+            "delta": -5000000.0,
+            "pct": -42.4
+          }
+        },
+        "Revenues Total": {
+          "2026 Budget": {
+            "adopted": 11780631.0,
+            "amended": 6780631.0,
+            "delta": -5000000.0,
+            "pct": -42.4
+          }
+        },
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 4869401.0,
+            "amended": 5282489.0,
+            "delta": 413088.0,
+            "pct": 8.5
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 4725528.0,
+            "amended": 5085056.0,
+            "delta": 359528.0,
+            "pct": 7.6
+          }
+        },
+        "51103 - Part-Time": {
+          "2026 Budget": {
+            "adopted": 143874.0,
+            "amended": 197434.0,
+            "delta": 53560.0,
+            "pct": 37.2
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1251150.0,
+            "amended": 1317405.0,
+            "delta": 66255.0,
+            "pct": 5.3
+          }
+        },
+        "52101 - Health Insurance": {
+          "2026 Budget": {
+            "adopted": 790593.0,
+            "amended": 818018.0,
+            "delta": 27425.0,
+            "pct": 3.5
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 88048.0,
+            "amended": 94384.0,
+            "delta": 6336.0,
+            "pct": 7.2
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 372508.0,
+            "amended": 405003.0,
+            "delta": 32495.0,
+            "pct": 8.7
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026 Budget": {
+            "adopted": 11084841.0,
+            "amended": 10994841.0,
+            "delta": -90000.0,
+            "pct": -0.8
+          }
+        },
+        "53901 - Professional Services": {
+          "2026 Budget": {
+            "adopted": 11053341.0,
+            "amended": 10963341.0,
+            "delta": -90000.0,
+            "pct": -0.8
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 17365392.0,
+            "amended": 17754735.0,
+            "delta": 389343.0,
+            "pct": 2.2
+          }
+        },
+        "Net Total": {
+          "2026 Budget": {
+            "adopted": 5584761.0,
+            "amended": 10974104.0,
+            "delta": 5389343.0,
+            "pct": 96.5
+          }
+        }
+      }
+    },
+    "s44_p2_t0": {
+      "rows": {
+        "Administrative Specialist": {
+          "2026 Budget": {
+            "adopted": 44034.0,
+            "amended": 45593.0,
+            "delta": 1559.0,
+            "pct": 3.5
+          }
+        }
+      }
+    },
+    "s49_p1_t1": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 5137874.0,
+            "amended": 5138115.0,
+            "delta": 241.0,
+            "pct": 0.0
+          }
+        },
+        "51101 - Regular": {
+          "2026 Budget": {
+            "adopted": 3693997.0,
+            "amended": 3694238.0,
+            "delta": 241.0,
+            "pct": 0.0
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 1005199.0,
+            "amended": 1005222.0,
+            "delta": 23.0,
+            "pct": 0.0
+          }
+        },
+        "52111 - Other Insurance/Benefits": {
+          "2026 Budget": {
+            "adopted": 74667.0,
+            "amended": 74671.0,
+            "delta": 4.0,
+            "pct": 0.0
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 339497.0,
+            "amended": 339516.0,
+            "delta": 19.0,
+            "pct": 0.0
+          }
+        },
+        "54 - PROPERTY SERVICES": {
+          "2026 Budget": {
+            "adopted": 770000.0,
+            "amended": 1270000.0,
+            "delta": 500000.0,
+            "pct": 64.9
+          }
+        },
+        "54201 - Maintenance": {
+          "2026 Budget": {
+            "adopted": 520000.0,
+            "amended": 1020000.0,
+            "delta": 500000.0,
+            "pct": 96.2
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 9254799.0,
+            "amended": 9755063.0,
+            "delta": 500264.0,
+            "pct": 5.4
+          }
+        },
+        "Net Total": {
+          "2026 Budget": {
+            "adopted": 432.0,
+            "amended": 499832.0,
+            "delta": 499400.0,
+            "pct": 115601.9
+          }
+        }
+      }
+    },
+    "s49_p2_t0": {
+      "rows": {
+        "Administrative Specialist": {
+          "2026 Budget": {
+            "adopted": 45490.0,
+            "amended": 45593.0,
+            "delta": 103.0,
+            "pct": 0.2
+          }
+        },
+        "Total Full-Time Permanent Positions": {
+          "2026 Budget": {
+            "adopted": 1221168.0,
+            "amended": 1221307.0,
+            "delta": 139.0,
+            "pct": 0.0
+          }
+        },
+        "Administrative Aide": {
+          "2026 Budget": {
+            "adopted": 54454.0,
+            "amended": 54593.0,
+            "delta": 139.0,
+            "pct": 0.3
+          }
+        }
+      }
+    },
+    "s49_p3_t0": {
+      "rows": {
+        "Total Full-Time Permanent Positions (DPR)": {
+          "2,472,932": {
+            "adopted": 1221168.0,
+            "amended": 1221307.0,
+            "delta": 139.0,
+            "pct": 0.0
+          }
+        },
+        "Total Full-Time Positions and Net Salaries": {
+          "2,472,932": {
+            "adopted": 4426450.0,
+            "amended": 4426692.0,
+            "delta": 242.0,
+            "pct": 0.0
+          }
+        }
+      }
+    },
+    "s51_p1_t1": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 1893423.0,
+            "amended": 1897510.0,
+            "delta": 4087.0,
+            "pct": 0.2
+          }
+        },
+        "51103 - Part-Time": {
+          "2026 Budget": {
+            "adopted": 826351.0,
+            "amended": 830438.0,
+            "delta": 4087.0,
+            "pct": 0.5
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 2758358.0,
+            "amended": 2762445.0,
+            "delta": 4087.0,
+            "pct": 0.1
+          }
+        },
+        "Net Total": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 4087.0,
+            "delta": 4087.0,
+            "pct": null
+          }
+        }
+      }
+    },
+    "s52_p0_t1": {
+      "rows": {
+        "51 - PERSONNEL-SALARIES & WAGES": {
+          "2026 Budget": {
+            "adopted": 304593.0,
+            "amended": 320463.0,
+            "delta": 15870.0,
+            "pct": 5.2
+          }
+        },
+        "51103 - Part-Time": {
+          "2026 Budget": {
+            "adopted": 85536.0,
+            "amended": 101406.0,
+            "delta": 15870.0,
+            "pct": 18.6
+          }
+        },
+        "52 - PERSONNEL-EMPLOYEE BENEFITS": {
+          "2026 Budget": {
+            "adopted": 60847.0,
+            "amended": 62061.0,
+            "delta": 1214.0,
+            "pct": 2.0
+          }
+        },
+        "52201 - Social Security": {
+          "2026 Budget": {
+            "adopted": 23301.0,
+            "amended": 24515.0,
+            "delta": 1214.0,
+            "pct": 5.2
+          }
+        },
+        "53 - PROFESSIONAL & TECHNICAL SERVICES": {
+          "2026 Budget": {
+            "adopted": 18000.0,
+            "amended": 68000.0,
+            "delta": 50000.0,
+            "pct": 277.8
+          }
+        },
+        "53907 - Recreational Services": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 50000.0,
+            "delta": 50000.0,
+            "pct": null
+          }
+        },
+        "Expenditures Total": {
+          "2026 Budget": {
+            "adopted": 474840.0,
+            "amended": 541924.0,
+            "delta": 67084.0,
+            "pct": 14.1
+          }
+        },
+        "Net Total": {
+          "2026 Budget": {
+            "adopted": 127287.0,
+            "amended": 194371.0,
+            "delta": 67084.0,
+            "pct": 52.7
+          }
+        }
+      }
+    },
+    "s64_p1_t0": {
+      "rows": {
+        "ALS Ambulance": {
+          "Number": {
+            "adopted": 3.0,
+            "amended": 1.0,
+            "delta": -2.0,
+            "pct": -66.7
+          },
+          "Total Cost": {
+            "adopted": 1983750.0,
+            "amended": 661250.0,
+            "delta": -1322500.0,
+            "pct": -66.7
+          }
+        }
+      }
+    },
+    "s64_p3_t0": {
+      "rows": {
+        "DOMI": {
+          "2026 Budget": {
+            "adopted": 0.0,
+            "amended": 900000.0,
+            "delta": 900000.0,
+            "pct": null
+          }
+        }
+      }
+    }
+  }
+}

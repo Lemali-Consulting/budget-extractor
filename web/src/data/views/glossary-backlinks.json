@@ -2,6 +2,11 @@
   "FTE": {
     "sections": [
       {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
         "slug": "city-council",
         "title": "City Council",
         "budgetType": "operating"
@@ -45,17 +50,17 @@
         "slug": "department-of-law",
         "title": "Department of Law",
         "budgetType": "operating"
-      },
-      {
-        "slug": "ethics-hearing-board",
-        "title": "Ethics Hearing Board",
-        "budgetType": "operating"
       }
     ],
-    "total": 39
+    "total": 40
   },
   "OPEB": {
     "sections": [
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
       {
         "slug": "five-year-financial-forecast",
         "title": "Five-Year Financial Forecast",
@@ -77,10 +82,20 @@
         "budgetType": "operating"
       }
     ],
-    "total": 4
+    "total": 5
   },
   "PAYGO": {
     "sections": [
+      {
+        "slug": "budget-authorizing-legislation",
+        "title": "Budget Authorizing Legislation",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
       {
         "slug": "five-year-financial-forecast",
         "title": "Five-Year Financial Forecast",
@@ -120,19 +135,9 @@
         "slug": "bridge-preservation-and-restoration-fund-tip",
         "title": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
         "budgetType": "capital"
-      },
-      {
-        "slug": "bridge-upgrades",
-        "title": "BRIDGE UPGRADES",
-        "budgetType": "capital"
-      },
-      {
-        "slug": "calera-street-bridge-tip",
-        "title": "CALERA STREET BRIDGE (TIP)",
-        "budgetType": "capital"
       }
     ],
-    "total": 67
+    "total": 69
   },
   "RAD": {
     "sections": [
@@ -159,6 +164,16 @@
     ],
     "total": 4
   },
+  "ARP": {
+    "sections": [
+      {
+        "slug": "american-rescue-plan",
+        "title": "American Rescue Plan",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 1
+  },
   "DCP": {
     "sections": [
       {
@@ -172,15 +187,30 @@
         "budgetType": "operating"
       },
       {
+        "slug": "salary-tables",
+        "title": "Salary Tables",
+        "budgetType": "operating"
+      },
+      {
         "slug": "capital-budget-appendices",
         "title": "Capital Budget Appendices",
         "budgetType": "capital"
       }
     ],
-    "total": 3
+    "total": 4
   },
   "OMB": {
     "sections": [
+      {
+        "slug": "american-rescue-plan",
+        "title": "American Rescue Plan",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
       {
         "slug": "revenue-detail",
         "title": "Revenue Detail",
@@ -207,7 +237,7 @@
         "budgetType": "capital"
       }
     ],
-    "total": 5
+    "total": 7
   },
   "DOMI": {
     "sections": [
@@ -224,6 +254,11 @@
       {
         "slug": "other-special-revenue-funds",
         "title": "Other Special Revenue Funds",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "salary-tables",
+        "title": "Salary Tables",
         "budgetType": "operating"
       },
       {
@@ -255,14 +290,9 @@
         "slug": "capital-equipment-acquisition",
         "title": "CAPITAL EQUIPMENT ACQUISITION",
         "budgetType": "capital"
-      },
-      {
-        "slug": "capital-budget-appendices",
-        "title": "Capital Budget Appendices",
-        "budgetType": "capital"
       }
     ],
-    "total": 10
+    "total": 11
   },
   "PLI": {
     "sections": [
@@ -287,6 +317,11 @@
         "budgetType": "operating"
       },
       {
+        "slug": "salary-tables",
+        "title": "Salary Tables",
+        "budgetType": "operating"
+      },
+      {
         "slug": "master-fee-schedule",
         "title": "Master Fee Schedule",
         "budgetType": "operating"
@@ -297,10 +332,20 @@
         "budgetType": "capital"
       }
     ],
-    "total": 6
+    "total": 7
   },
   "EMS": {
     "sections": [
+      {
+        "slug": "budget-authorizing-legislation",
+        "title": "Budget Authorizing Legislation",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
       {
         "slug": "expenditures-detail",
         "title": "Expenditures Detail",
@@ -340,29 +385,24 @@
         "slug": "public-safety-training-facility",
         "title": "PUBLIC SAFETY TRAINING FACILITY",
         "budgetType": "capital"
-      },
-      {
-        "slug": "capital-equipment-acquisition",
-        "title": "CAPITAL EQUIPMENT ACQUISITION",
-        "budgetType": "capital"
-      },
-      {
-        "slug": "capital-budget-appendices",
-        "title": "Capital Budget Appendices",
-        "budgetType": "capital"
       }
     ],
-    "total": 10
+    "total": 12
   },
   "JDE": {
     "sections": [
+      {
+        "slug": "american-rescue-plan",
+        "title": "American Rescue Plan",
+        "budgetType": "operating"
+      },
       {
         "slug": "grants",
         "title": "Grants",
         "budgetType": "operating"
       }
     ],
-    "total": 1
+    "total": 2
   },
   "SSP": {
     "sections": [
@@ -612,6 +652,21 @@
   "General Fund": {
     "sections": [
       {
+        "slug": "budget-authorizing-legislation",
+        "title": "Budget Authorizing Legislation",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "american-rescue-plan",
+        "title": "American Rescue Plan",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
         "slug": "expenditure-summary",
         "title": "Expenditure Summary",
         "budgetType": "operating"
@@ -645,22 +700,17 @@
         "slug": "regional-asset-district-parks-and-recreation-trust-fund",
         "title": "Regional Asset District - Parks and Recreation Trust Fund",
         "budgetType": "operating"
-      },
-      {
-        "slug": "other-special-revenue-funds",
-        "title": "Other Special Revenue Funds",
-        "budgetType": "operating"
-      },
-      {
-        "slug": "capital-budget-introduction",
-        "title": "Capital Budget Introduction",
-        "budgetType": "capital"
       }
     ],
-    "total": 9
+    "total": 12
   },
   "Reserve Fund": {
     "sections": [
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
       {
         "slug": "five-year-financial-forecast",
         "title": "Five-Year Financial Forecast",
@@ -672,10 +722,15 @@
         "budgetType": "operating"
       }
     ],
-    "total": 2
+    "total": 3
   },
   "Stop the Violence Fund": {
     "sections": [
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
       {
         "slug": "five-year-financial-forecast",
         "title": "Five-Year Financial Forecast",
@@ -687,17 +742,22 @@
         "budgetType": "operating"
       }
     ],
-    "total": 2
+    "total": 3
   },
   "American Rescue Plan Trust Fund": {
     "sections": [
+      {
+        "slug": "american-rescue-plan",
+        "title": "American Rescue Plan",
+        "budgetType": "operating"
+      },
       {
         "slug": "other-special-revenue-funds",
         "title": "Other Special Revenue Funds",
         "budgetType": "operating"
       }
     ],
-    "total": 1
+    "total": 2
   },
   "Special Food Service Trust Fund": {
     "sections": [

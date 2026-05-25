@@ -802,6 +802,16 @@
   {
     "department": "Office of the Mayor",
     "slug": "office-of-the-mayor",
+    "title": "Interns, 2026 Reopener",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 50000.0,
+    "rateGrade": "10.00-15.00"
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
     "title": "311 Call Center Representatives, part-time",
     "fte2025": null,
     "fte2026": null,
@@ -816,7 +826,7 @@
     "fte2025": null,
     "fte2026": null,
     "budget2025": 109740.0,
-    "budget2026": 36629.0,
+    "budget2026": 86629.0,
     "rateGrade": ""
   },
   {
@@ -832,12 +842,32 @@
   {
     "department": "Office of Management and Budget",
     "slug": "office-of-management-and-budget",
+    "title": "Director, OMB/Chief Financial Officer",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 133827.0,
+    "rateGrade": "129,938"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
     "title": "Director, OMB",
     "fte2025": 1.0,
-    "fte2026": 1.0,
+    "fte2026": null,
     "budget2025": 135574.0,
-    "budget2026": 139651.0,
+    "budget2026": null,
     "rateGrade": "135,574"
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "title": "Deputy Director, OMB",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
   },
   {
     "department": "Office of Management and Budget",
@@ -884,9 +914,9 @@
     "slug": "office-of-management-and-budget",
     "title": "Chief Financial Officer",
     "fte2025": 1.0,
-    "fte2026": 1.0,
+    "fte2026": null,
     "budget2025": 129938.0,
-    "budget2026": 133827.0,
+    "budget2026": null,
     "rateGrade": "129,938"
   },
   {
@@ -906,7 +936,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 57574.0,
-    "budget2026": 59301.0,
+    "budget2026": 59445.0,
     "rateGrade": "16G"
   },
   {
@@ -1156,7 +1186,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 68162.0,
-    "budget2026": 70200.0,
+    "budget2026": 70377.0,
     "rateGrade": "20G"
   },
   {
@@ -1176,7 +1206,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 44595.0,
-    "budget2026": 44595.0,
+    "budget2026": 49500.0,
     "rateGrade": "U04-F"
   },
   {
@@ -1236,7 +1266,7 @@
     "fte2025": 2.0,
     "fte2026": 1.0,
     "budget2025": 138332.0,
-    "budget2026": 138332.0,
+    "budget2026": 71414.0,
     "rateGrade": "U08-L"
   },
   {
@@ -1246,7 +1276,7 @@
     "fte2025": 2.0,
     "fte2026": 4.0,
     "budget2025": 126911.0,
-    "budget2026": 126911.0,
+    "budget2026": 262072.0,
     "rateGrade": "U07-L"
   },
   {
@@ -1284,9 +1314,9 @@
     "slug": "department-of-innovation-and-performance",
     "title": "Systems Administrator",
     "fte2025": 2.0,
-    "fte2026": 3.0,
+    "fte2026": 2.0,
     "budget2025": 154086.0,
-    "budget2026": 238056.0,
+    "budget2026": 158704.0,
     "rateGrade": "23G"
   },
   {
@@ -1326,7 +1356,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 130770.0,
-    "budget2026": 130770.0,
+    "budget2026": 135020.0,
     "rateGrade": "U08-I"
   },
   {
@@ -1616,7 +1646,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 70635.0,
-    "budget2026": 70635.0,
+    "budget2026": 72931.0,
     "rateGrade": "D25"
   },
   {
@@ -1626,7 +1656,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 67125.0,
-    "budget2026": 67125.0,
+    "budget2026": 69307.0,
     "rateGrade": "U07-O"
   },
   {
@@ -1696,7 +1726,7 @@
     "fte2025": 4.0,
     "fte2026": 4.0,
     "budget2025": 222615.0,
-    "budget2026": 222615.0,
+    "budget2026": 229848.0,
     "rateGrade": "U07-E"
   },
   {
@@ -1726,7 +1756,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 53409.0,
-    "budget2026": 63455.0,
+    "budget2026": 65517.0,
     "rateGrade": "U05-L"
   },
   {
@@ -1764,9 +1794,9 @@
     "slug": "department-of-innovation-and-performance",
     "title": "311 Call Center Representative",
     "fte2025": null,
-    "fte2026": 5.0,
+    "fte2026": 4.0,
     "budget2025": null,
-    "budget2026": 211509.0,
+    "budget2026": 189000.0,
     "rateGrade": "U01-N"
   },
   {
@@ -1796,7 +1826,7 @@
     "fte2025": null,
     "fte2026": null,
     "budget2025": null,
-    "budget2026": 89740.0,
+    "budget2026": 92432.0,
     "rateGrade": "U01-N"
   },
   {
@@ -1826,7 +1856,7 @@
     "fte2025": null,
     "fte2026": null,
     "budget2025": 48000.0,
-    "budget2026": 177691.0,
+    "budget2026": 180383.0,
     "rateGrade": ""
   },
   {
@@ -1866,7 +1896,7 @@
     "fte2025": 4.0,
     "fte2026": 4.0,
     "budget2025": 256684.0,
-    "budget2026": 256684.0,
+    "budget2026": 265024.0,
     "rateGrade": "U08-H"
   },
   {
@@ -1876,7 +1906,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 57574.0,
-    "budget2026": 59301.0,
+    "budget2026": 59445.0,
     "rateGrade": "16G"
   },
   {
@@ -1886,7 +1916,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 54974.0,
-    "budget2026": 56618.0,
+    "budget2026": 56761.0,
     "rateGrade": "15G"
   },
   {
@@ -2212,12 +2242,12 @@
   {
     "department": "Office of the City Controller",
     "slug": "office-of-the-city-controller",
-    "title": "Controller's Clerk",
+    "title": "Senior Controller's Clerk",
     "fte2025": null,
     "fte2026": 1.0,
     "budget2025": null,
-    "budget2026": 59301.0,
-    "rateGrade": "16G"
+    "budget2026": 32271.0,
+    "rateGrade": "18G"
   },
   {
     "department": "Office of the City Controller",
@@ -2242,11 +2272,21 @@
   {
     "department": "Office of the City Controller",
     "slug": "office-of-the-city-controller",
+    "title": "ERP Manager",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 52749.0,
+    "rateGrade": "30G"
+  },
+  {
+    "department": "Office of the City Controller",
+    "slug": "office-of-the-city-controller",
     "title": "Financial Systems Administrator",
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 94806.0,
-    "budget2026": 97656.0,
+    "budget2026": 48828.0,
     "rateGrade": "28G"
   },
   {
@@ -2303,10 +2343,20 @@
     "department": "Office of the City Controller",
     "slug": "office-of-the-city-controller",
     "title": "Controller's Clerk",
-    "fte2025": 6.0,
+    "fte2025": 5.0,
     "fte2026": 5.0,
-    "budget2025": 345449.0,
-    "budget2026": 296504.0,
+    "budget2025": 287875.0,
+    "budget2026": 296505.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Office of the City Controller",
+    "slug": "office-of-the-city-controller",
+    "title": "Controller's Clerk",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 29650.0,
     "rateGrade": "16G"
   },
   {
@@ -2506,7 +2556,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 62670.0,
-    "budget2026": 64542.0,
+    "budget2026": 64707.0,
     "rateGrade": "18G"
   },
   {
@@ -2616,7 +2666,7 @@
     "fte2025": 4.0,
     "fte2026": 4.0,
     "budget2025": 169207.0,
-    "budget2026": 169207.0,
+    "budget2026": 189000.0,
     "rateGrade": "U01-N"
   },
   {
@@ -2626,7 +2676,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 84604.0,
-    "budget2026": 84604.0,
+    "budget2026": 94500.0,
     "rateGrade": "U01-N"
   },
   {
@@ -2636,7 +2686,7 @@
     "fte2025": null,
     "fte2026": 1.0,
     "budget2025": null,
-    "budget2026": 46613.0,
+    "budget2026": 48127.0,
     "rateGrade": "U02-N"
   },
   {
@@ -2676,7 +2726,7 @@
     "fte2025": 2.0,
     "fte2026": 3.0,
     "budget2025": 119972.0,
-    "budget2026": 119972.0,
+    "budget2026": 185807.0,
     "rateGrade": "U07-I"
   },
   {
@@ -2686,7 +2736,7 @@
     "fte2025": 8.0,
     "fte2026": 8.0,
     "budget2025": 416196.0,
-    "budget2026": 416196.0,
+    "budget2026": 429723.0,
     "rateGrade": "U06-F"
   },
   {
@@ -2736,7 +2786,7 @@
     "fte2025": 0.5,
     "fte2026": 0.5,
     "budget2025": 23864.0,
-    "budget2026": 23864.0,
+    "budget2026": 24640.0,
     "rateGrade": "U05-F"
   },
   {
@@ -2746,17 +2796,17 @@
     "fte2025": 4.0,
     "fte2026": 4.0,
     "budget2025": 208098.0,
-    "budget2026": 208098.0,
+    "budget2026": 214862.0,
     "rateGrade": "U06-F"
   },
   {
     "department": "Department of Finance",
     "slug": "department-of-finance",
-    "title": "Assistant II, Administrative*",
+    "title": "Assistant II, Administrative",
     "fte2025": 2.1,
     "fte2026": 2.0,
     "budget2025": 84943.0,
-    "budget2026": 80898.0,
+    "budget2026": 91800.0,
     "rateGrade": "U02-H"
   },
   {
@@ -2886,7 +2936,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 65333.0,
-    "budget2026": 67288.0,
+    "budget2026": 67456.0,
     "rateGrade": "19G"
   },
   {
@@ -2946,7 +2996,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 39698.0,
-    "budget2026": 39698.0,
+    "budget2026": 45000.0,
     "rateGrade": "U02-G"
   },
   {
@@ -2976,7 +3026,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 130793.0,
-    "budget2026": 130793.0,
+    "budget2026": 147150.0,
     "rateGrade": "U02-L"
   },
   {
@@ -3136,7 +3186,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 51230.0,
-    "budget2026": 52770.0,
+    "budget2026": 52895.0,
     "rateGrade": "13G"
   },
   {
@@ -3152,12 +3202,22 @@
   {
     "department": "Department of Human Resources and Civil Service",
     "slug": "department-of-human-resources-and-civil-service",
-    "title": "Director, Human Resources (EEO Officer)",
+    "title": "Chief of Labor Relations and Director, Human Resources (EEO Officer)",
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 129126.0,
-    "budget2026": 132995.0,
+    "budget2026": 137030.0,
     "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Deputy Director",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
   },
   {
     "department": "Department of Human Resources and Civil Service",
@@ -3194,9 +3254,9 @@
     "slug": "department-of-human-resources-and-civil-service",
     "title": "Assistant Director, Employee Compensation & Benefits",
     "fte2025": 1.0,
-    "fte2026": 1.0,
+    "fte2026": null,
     "budget2025": 110718.0,
-    "budget2026": 114046.0,
+    "budget2026": null,
     "rateGrade": "32G"
   },
   {
@@ -3228,6 +3288,16 @@
     "budget2025": 188011.0,
     "budget2026": 193627.0,
     "rateGrade": "18G"
+  },
+  {
+    "department": "Department of Human Resources and Civil Service",
+    "slug": "department-of-human-resources-and-civil-service",
+    "title": "Payroll Manager",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 87318.0,
+    "budget2026": 89939.0,
+    "rateGrade": "26G"
   },
   {
     "department": "Department of Human Resources and Civil Service",
@@ -3334,9 +3404,9 @@
     "slug": "department-of-human-resources-and-civil-service",
     "title": "Senior Human Resources Specialist",
     "fte2025": 2.0,
-    "fte2026": 2.0,
+    "fte2026": null,
     "budget2025": 109949.0,
-    "budget2026": 113235.0,
+    "budget2026": null,
     "rateGrade": "15G"
   },
   {
@@ -3344,9 +3414,9 @@
     "slug": "department-of-human-resources-and-civil-service",
     "title": "Human Resources Specialist",
     "fte2025": 2.0,
-    "fte2026": 2.0,
+    "fte2026": 3.0,
     "budget2025": 98717.0,
-    "budget2026": 101670.0,
+    "budget2026": 185766.0,
     "rateGrade": "12G"
   },
   {
@@ -3516,7 +3586,7 @@
     "fte2025": null,
     "fte2026": 1.0,
     "budget2025": null,
-    "budget2026": 56618.0,
+    "budget2026": 56761.0,
     "rateGrade": "15G"
   },
   {
@@ -3536,7 +3606,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 44158.0,
-    "budget2026": 45490.0,
+    "budget2026": 45593.0,
     "rateGrade": "09G"
   },
   {
@@ -3566,7 +3636,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 71230.0,
-    "budget2026": 71230.0,
+    "budget2026": 73545.0,
     "rateGrade": "U09-H"
   },
   {
@@ -3576,7 +3646,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 190365.0,
-    "budget2026": 190365.0,
+    "budget2026": 196554.0,
     "rateGrade": "U07-L"
   },
   {
@@ -3606,7 +3676,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 74069.0,
-    "budget2026": 76294.0,
+    "budget2026": 76476.0,
     "rateGrade": "22G"
   },
   {
@@ -3616,7 +3686,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 142460.0,
-    "budget2026": 142460.0,
+    "budget2026": 147090.0,
     "rateGrade": "U09-H"
   },
   {
@@ -3656,7 +3726,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 74069.0,
-    "budget2026": 76294.0,
+    "budget2026": 76476.0,
     "rateGrade": "22G"
   },
   {
@@ -3676,7 +3746,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 213690.0,
-    "budget2026": 213690.0,
+    "budget2026": 220635.0,
     "rateGrade": "U09-H"
   },
   {
@@ -3686,7 +3756,7 @@
     "fte2025": 4.0,
     "fte2026": 4.0,
     "budget2025": 253820.0,
-    "budget2026": 253820.0,
+    "budget2026": 262072.0,
     "rateGrade": "U07-L"
   },
   {
@@ -3726,7 +3796,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 148138.0,
-    "budget2026": 152588.0,
+    "budget2026": 152952.0,
     "rateGrade": "22G"
   },
   {
@@ -3736,7 +3806,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 71230.0,
-    "budget2026": 71230.0,
+    "budget2026": 73545.0,
     "rateGrade": "U09-H"
   },
   {
@@ -3746,7 +3816,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 126910.0,
-    "budget2026": 126910.0,
+    "budget2026": 131036.0,
     "rateGrade": "U07-L"
   },
   {
@@ -3806,7 +3876,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 222207.0,
-    "budget2026": 228882.0,
+    "budget2026": 229428.0,
     "rateGrade": "22G"
   },
   {
@@ -3816,7 +3886,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 54974.0,
-    "budget2026": 56618.0,
+    "budget2026": 56761.0,
     "rateGrade": "15G"
   },
   {
@@ -3826,7 +3896,7 @@
     "fte2025": 7.0,
     "fte2026": 7.0,
     "budget2025": 498610.0,
-    "budget2026": 498610.0,
+    "budget2026": 514815.0,
     "rateGrade": "U09-H"
   },
   {
@@ -3836,7 +3906,7 @@
     "fte2025": 5.0,
     "fte2026": 5.0,
     "budget2025": 317275.0,
-    "budget2026": 317275.0,
+    "budget2026": 327590.0,
     "rateGrade": "U07-L"
   },
   {
@@ -3996,7 +4066,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 60112.0,
-    "budget2026": 61922.0,
+    "budget2026": 62066.0,
     "rateGrade": "17G"
   },
   {
@@ -4016,7 +4086,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 120878.0,
-    "budget2026": 120878.0,
+    "budget2026": 124806.0,
     "rateGrade": "U06-N"
   },
   {
@@ -4026,7 +4096,7 @@
     "fte2025": 10.0,
     "fte2026": 10.0,
     "budget2025": 560741.0,
-    "budget2026": 560741.0,
+    "budget2026": 578970.0,
     "rateGrade": "U06-J"
   },
   {
@@ -4036,7 +4106,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 90525.0,
-    "budget2026": 90525.0,
+    "budget2026": 93466.0,
     "rateGrade": "U02-N"
   },
   {
@@ -4046,7 +4116,7 @@
     "fte2025": 1.0,
     "fte2026": 2.0,
     "budget2025": 42788.0,
-    "budget2026": 85576.0,
+    "budget2026": 96300.0,
     "rateGrade": "U02-K"
   },
   {
@@ -4056,7 +4126,7 @@
     "fte2025": 3.0,
     "fte2026": 1.0,
     "budget2025": 119094.0,
-    "budget2026": 39698.0,
+    "budget2026": 45000.0,
     "rateGrade": "U02-G"
   },
   {
@@ -4116,7 +4186,7 @@
     "fte2025": 14.0,
     "fte2026": 14.0,
     "budget2025": 1238648.0,
-    "budget2026": 1238648.0,
+    "budget2026": 1278900.0,
     "rateGrade": "U10-N"
   },
   {
@@ -4136,7 +4206,7 @@
     "fte2025": 7.0,
     "fte2026": 7.0,
     "budget2025": 471349.0,
-    "budget2026": 471349.0,
+    "budget2026": 486815.0,
     "rateGrade": "U09-E"
   },
   {
@@ -4146,7 +4216,7 @@
     "fte2025": 21.0,
     "fte2026": 20.0,
     "budget2025": 1468054.0,
-    "budget2026": 1398140.0,
+    "budget2026": 1443580.0,
     "rateGrade": "U09-G"
   },
   {
@@ -4156,7 +4226,7 @@
     "fte2025": 5.0,
     "fte2026": 5.0,
     "budget2025": 333109.0,
-    "budget2026": 333109.0,
+    "budget2026": 343935.0,
     "rateGrade": "U08-J"
   },
   {
@@ -4166,7 +4236,7 @@
     "fte2025": 2.0,
     "fte2026": 3.0,
     "budget2025": 139815.0,
-    "budget2026": 209721.0,
+    "budget2026": 216537.0,
     "rateGrade": "U09-G"
   },
   {
@@ -4266,28 +4336,8 @@
     "fte2025": 26.0,
     "fte2026": 25.0,
     "budget2025": 1649840.0,
-    "budget2026": 1586385.0,
+    "budget2026": 1637950.0,
     "rateGrade": "U07-L"
-  },
-  {
-    "department": "Department of Permits, Licenses, and Inspections",
-    "slug": "department-of-permits-licenses-and-inspections",
-    "title": "Temporary, Part-Time, and Seasonal Allowances",
-    "fte2025": null,
-    "fte2026": null,
-    "budget2025": null,
-    "budget2026": null,
-    "rateGrade": ""
-  },
-  {
-    "department": "Department of Permits, Licenses, and Inspections",
-    "slug": "department-of-permits-licenses-and-inspections",
-    "title": "PLI Interns",
-    "fte2025": null,
-    "fte2026": null,
-    "budget2025": 5000.0,
-    "budget2026": 5000.0,
-    "rateGrade": "9.00-14.00"
   },
   {
     "department": "Bureau of Administration (Public Safety)",
@@ -4298,16 +4348,6 @@
     "budget2025": 164237.0,
     "budget2026": 169166.0,
     "rateGrade": "164,237"
-  },
-  {
-    "department": "Bureau of Administration (Public Safety)",
-    "slug": "bureau-of-administration-public-safety",
-    "title": "Assistant Director - Community Affairs",
-    "fte2025": null,
-    "fte2026": 1.0,
-    "budget2025": null,
-    "budget2026": 114046.0,
-    "rateGrade": "32G"
   },
   {
     "department": "Bureau of Administration (Public Safety)",
@@ -4366,7 +4406,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 54974.0,
-    "budget2026": 56618.0,
+    "budget2026": 56761.0,
     "rateGrade": "15G"
   },
   {
@@ -4376,7 +4416,7 @@
     "fte2025": 4.0,
     "fte2026": 3.0,
     "budget2025": 170976.0,
-    "budget2026": 132101.0,
+    "budget2026": 136779.0,
     "rateGrade": "08G"
   },
   {
@@ -4436,7 +4476,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 240989.0,
-    "budget2026": 248226.0,
+    "budget2026": 248227.0,
     "rateGrade": "24G"
   },
   {
@@ -4456,7 +4496,7 @@
     "fte2025": 4.0,
     "fte2026": 5.0,
     "budget2025": 206538.0,
-    "budget2026": 258173.0,
+    "budget2026": 266563.0,
     "rateGrade": "U07-A"
   },
   {
@@ -4466,7 +4506,7 @@
     "fte2025": 8.0,
     "fte2026": 9.0,
     "budget2025": 342306.0,
-    "budget2026": 385094.0,
+    "budget2026": 433349.0,
     "rateGrade": "U02-K"
   },
   {
@@ -4482,11 +4522,21 @@
   {
     "department": "Bureau of Administration (Public Safety)",
     "slug": "bureau-of-administration-public-safety",
+    "title": "Senior Public Information Officer",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 105498.0,
+    "rateGrade": "30G"
+  },
+  {
+    "department": "Bureau of Administration (Public Safety)",
+    "slug": "bureau-of-administration-public-safety",
     "title": "Public Information Officer",
     "fte2025": 2.0,
-    "fte2026": 2.0,
+    "fte2026": 1.0,
     "budget2025": 197142.0,
-    "budget2026": 203050.0,
+    "budget2026": 101525.0,
     "rateGrade": "29G"
   },
   {
@@ -4566,7 +4616,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 45263.0,
-    "budget2026": 45263.0,
+    "budget2026": 46732.0,
     "rateGrade": "U02-N"
   },
   {
@@ -4784,9 +4834,9 @@
     "slug": "bureau-of-emergency-medical-services",
     "title": "Assistant Chief",
     "fte2025": 1.0,
-    "fte2026": 1.0,
+    "fte2026": 2.0,
     "budget2025": 127691.0,
-    "budget2026": 131518.0,
+    "budget2026": 263036.0,
     "rateGrade": "127,691"
   },
   {
@@ -4794,9 +4844,9 @@
     "slug": "bureau-of-emergency-medical-services",
     "title": "Division Chief",
     "fte2025": 3.0,
-    "fte2026": 3.0,
+    "fte2026": 2.0,
     "budget2025": 353122.0,
-    "budget2026": 363730.0,
+    "budget2026": 242486.0,
     "rateGrade": "117,707"
   },
   {
@@ -4856,7 +4906,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 79396.0,
-    "budget2026": 79396.0,
+    "budget2026": 90000.0,
     "rateGrade": "U02-G"
   },
   {
@@ -4906,7 +4956,7 @@
     "fte2025": 30.0,
     "fte2026": 30.0,
     "budget2025": 3546822.0,
-    "budget2026": 3546822.0,
+    "budget2026": 3653520.0,
     "rateGrade": "see below"
   },
   {
@@ -4916,7 +4966,7 @@
     "fte2025": 102.0,
     "fte2026": 102.0,
     "budget2025": 10578234.0,
-    "budget2026": 10578234.0,
+    "budget2026": 10896538.0,
     "rateGrade": "see below"
   },
   {
@@ -4926,7 +4976,7 @@
     "fte2025": 176.0,
     "fte2026": 176.0,
     "budget2025": 16011131.0,
-    "budget2026": 16011131.0,
+    "budget2026": 16491904.0,
     "rateGrade": "see below"
   },
   {
@@ -4936,8 +4986,18 @@
     "fte2025": 474.0,
     "fte2026": 474.0,
     "budget2025": 39313433.0,
-    "budget2026": 39313433.0,
+    "budget2026": 39615911.0,
     "rateGrade": "see below"
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "title": "Head of Wellness",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 82503.0,
+    "rateGrade": ""
   },
   {
     "department": "Bureau of Police",
@@ -4986,7 +5046,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 109949.0,
-    "budget2026": 113235.0,
+    "budget2026": 113522.0,
     "rateGrade": "15G"
   },
   {
@@ -5056,7 +5116,7 @@
     "fte2025": 2.0,
     "fte2026": 1.0,
     "budget2025": 84604.0,
-    "budget2026": 42302.0,
+    "budget2026": 47250.0,
     "rateGrade": "U01-N"
   },
   {
@@ -5066,7 +5126,7 @@
     "fte2025": 3.0,
     "fte2026": 1.0,
     "budget2025": 124549.0,
-    "budget2026": 41516.0,
+    "budget2026": 46800.0,
     "rateGrade": "U01-M"
   },
   {
@@ -5076,7 +5136,7 @@
     "fte2025": 32.0,
     "fte2026": 24.0,
     "budget2025": 1299737.0,
-    "budget2026": 974803.0,
+    "budget2026": 1107001.0,
     "rateGrade": "U04-A"
   },
   {
@@ -5086,7 +5146,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 39698.0,
-    "budget2026": 39698.0,
+    "budget2026": 45000.0,
     "rateGrade": "U02-G"
   },
   {
@@ -5116,7 +5176,7 @@
     "fte2025": null,
     "fte2026": null,
     "budget2025": 28628.0,
-    "budget2026": 28628.0,
+    "budget2026": 29487.0,
     "rateGrade": "U06-A"
   },
   {
@@ -5126,7 +5186,7 @@
     "fte2025": null,
     "fte2026": null,
     "budget2025": 28628.0,
-    "budget2026": 28628.0,
+    "budget2026": 29487.0,
     "rateGrade": ""
   },
   {
@@ -5146,7 +5206,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 154502.0,
-    "budget2026": 156062.0,
+    "budget2026": 159141.0,
     "rateGrade": "154,502"
   },
   {
@@ -5176,7 +5236,7 @@
     "fte2025": 2.0,
     "fte2026": 4.0,
     "budget2025": 235654.0,
-    "budget2026": 471308.0,
+    "budget2026": 485472.0,
     "rateGrade": "117,827"
   },
   {
@@ -5186,7 +5246,7 @@
     "fte2025": 18.0,
     "fte2026": 18.0,
     "budget2025": 2000195.0,
-    "budget2026": 2085102.0,
+    "budget2026": 2087096.0,
     "rateGrade": "111,122"
   },
   {
@@ -5246,7 +5306,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 63455.0,
-    "budget2026": 63455.0,
+    "budget2026": 65518.0,
     "rateGrade": "U07-L"
   },
   {
@@ -5267,7 +5327,7 @@
     "fte2026": null,
     "budget2025": 1081167.0,
     "budget2026": 556200.0,
-    "rateGrade": "24.14"
+    "rateGrade": "24.99"
   },
   {
     "department": "Bureau of Fire",
@@ -5296,7 +5356,7 @@
     "fte2025": null,
     "fte2026": null,
     "budget2025": 10000.0,
-    "budget2026": 10000.0,
+    "budget2026": null,
     "rateGrade": ""
   },
   {
@@ -5336,7 +5396,7 @@
     "fte2025": 15.0,
     "fte2026": 15.0,
     "budget2025": 775320.0,
-    "budget2026": 775320.0,
+    "budget2026": 837720.0,
     "rateGrade": "24.85"
   },
   {
@@ -5466,7 +5526,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 60112.0,
-    "budget2026": 61922.0,
+    "budget2026": 62065.0,
     "rateGrade": "17G"
   },
   {
@@ -5476,7 +5536,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 115149.0,
-    "budget2026": 118602.0,
+    "budget2026": 118890.0,
     "rateGrade": "16G"
   },
   {
@@ -5556,8 +5616,8 @@
     "fte2025": null,
     "fte2026": 10.0,
     "budget2025": null,
-    "budget2026": 575744.0,
-    "rateGrade": "U07G"
+    "budget2026": 596573.0,
+    "rateGrade": "U07-G"
   },
   {
     "department": "Bureau of Administration (Public Works)",
@@ -5576,7 +5636,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 172039.0,
-    "budget2026": 172039.0,
+    "budget2026": 177630.0,
     "rateGrade": "U08-B"
   },
   {
@@ -5642,11 +5702,21 @@
   {
     "department": "Bureau of Operations",
     "slug": "bureau-of-operations",
+    "title": "Support Services Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
     "title": "Administrator 2",
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 120224.0,
-    "budget2026": 123843.0,
+    "budget2026": 124132.0,
     "rateGrade": "17G"
   },
   {
@@ -5656,18 +5726,8 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 52874.0,
-    "budget2026": 56618.0,
+    "budget2026": 54592.0,
     "rateGrade": "14G"
-  },
-  {
-    "department": "Bureau of Operations",
-    "slug": "bureau-of-operations",
-    "title": "Neighborhood Engagement Coordinator",
-    "fte2025": null,
-    "fte2026": 1.0,
-    "budget2025": null,
-    "budget2026": 64542.0,
-    "rateGrade": "18G"
   },
   {
     "department": "Bureau of Operations",
@@ -5686,7 +5746,7 @@
     "fte2025": 6.0,
     "fte2026": 6.0,
     "budget2025": 256730.0,
-    "budget2026": 256730.0,
+    "budget2026": 288900.0,
     "rateGrade": "U02-K"
   },
   {
@@ -5764,9 +5824,9 @@
     "slug": "bureau-of-operations",
     "title": "Heavy Equipment Operator",
     "fte2025": 10.0,
-    "fte2026": 10.0,
+    "fte2026": 11.0,
     "budget2025": 639392.0,
-    "budget2026": 652288.0,
+    "budget2026": 717517.0,
     "rateGrade": "30.74"
   },
   {
@@ -5824,9 +5884,9 @@
     "slug": "bureau-of-operations",
     "title": "Laborer",
     "fte2025": 137.0,
-    "fte2026": 137.0,
+    "fte2026": 135.0,
     "budget2025": 6972971.0,
-    "budget2026": 7112602.0,
+    "budget2026": 7008768.0,
     "rateGrade": "24.47"
   },
   {
@@ -6036,7 +6096,7 @@
     "fte2025": 52.0,
     "fte2026": 52.0,
     "budget2025": 2754835.0,
-    "budget2026": 2754835.0,
+    "budget2026": 2976563.0,
     "rateGrade": "25.47"
   },
   {
@@ -6046,7 +6106,7 @@
     "fte2025": 90.0,
     "fte2026": 90.0,
     "budget2025": 4408560.0,
-    "budget2026": 4408560.0,
+    "budget2026": 4762368.0,
     "rateGrade": "23.54"
   },
   {
@@ -6056,7 +6116,7 @@
     "fte2025": 28.0,
     "fte2026": 28.0,
     "budget2025": 1048320.0,
-    "budget2026": 1048320.0,
+    "budget2026": 1133350.0,
     "rateGrade": "18.00"
   },
   {
@@ -6116,7 +6176,7 @@
     "fte2025": 4.0,
     "fte2026": 1.0,
     "budget2025": 211910.0,
-    "budget2026": 52978.0,
+    "budget2026": 57242.0,
     "rateGrade": "25.47"
   },
   {
@@ -6126,7 +6186,7 @@
     "fte2025": null,
     "fte2026": 2.0,
     "budget2025": null,
-    "budget2026": 52978.0,
+    "budget2026": 57242.0,
     "rateGrade": "25.47"
   },
   {
@@ -6146,7 +6206,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 51635.0,
-    "budget2026": 51635.0,
+    "budget2026": 53313.0,
     "rateGrade": "U07-A"
   },
   {
@@ -6156,7 +6216,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 65333.0,
-    "budget2026": 67288.0,
+    "budget2026": 67456.0,
     "rateGrade": "19G"
   },
   {
@@ -6166,7 +6226,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 84025.0,
-    "budget2026": 84025.0,
+    "budget2026": 93600.0,
     "rateGrade": "U10-D"
   },
   {
@@ -6176,7 +6236,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 39698.0,
-    "budget2026": 39698.0,
+    "budget2026": 45000.0,
     "rateGrade": "U02-G"
   },
   {
@@ -6196,7 +6256,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 85577.0,
-    "budget2026": 85577.0,
+    "budget2026": 96300.0,
     "rateGrade": "U02-K"
   },
   {
@@ -6258,6 +6318,16 @@
     "budget2025": null,
     "budget2026": null,
     "rateGrade": ""
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "title": "Director - Facilities",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 132995.0,
+    "rateGrade": "35G"
   },
   {
     "department": "Bureau of Facilities",
@@ -6626,7 +6696,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 42788.0,
-    "budget2026": 42788.0,
+    "budget2026": 48150.0,
     "rateGrade": "U02-K"
   },
   {
@@ -6656,7 +6726,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 71115.0,
-    "budget2026": 59301.0,
+    "budget2026": 59446.0,
     "rateGrade": "21G"
   },
   {
@@ -6686,7 +6756,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 115149.0,
-    "budget2026": 118602.0,
+    "budget2026": 118890.0,
     "rateGrade": "16G"
   },
   {
@@ -6708,6 +6778,16 @@
     "budget2025": 129126.0,
     "budget2026": 132995.0,
     "rateGrade": "35G"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Deputy Director",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 120827.0,
+    "rateGrade": "33G"
   },
   {
     "department": "Department of Parks and Recreation",
@@ -6736,7 +6816,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 71115.0,
-    "budget2026": 73258.0,
+    "budget2026": 73426.0,
     "rateGrade": "21G"
   },
   {
@@ -6746,7 +6826,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 51230.0,
-    "budget2026": 52770.0,
+    "budget2026": 52895.0,
     "rateGrade": "13G"
   },
   {
@@ -7002,12 +7082,32 @@
   {
     "department": "Department of Parks and Recreation",
     "slug": "department-of-parks-and-recreation",
+    "title": "Regional Manager, OBH",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 66647.0,
+    "rateGrade": "\u2014"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
     "title": "Headguard",
     "fte2025": null,
     "fte2026": null,
     "budget2025": 133056.0,
     "budget2026": 137016.0,
     "rateGrade": "20.16"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Headguard, OBH",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 31140.0,
+    "rateGrade": "\u2014"
   },
   {
     "department": "Department of Parks and Recreation",
@@ -7022,12 +7122,32 @@
   {
     "department": "Department of Parks and Recreation",
     "slug": "department-of-parks-and-recreation",
+    "title": "Assistant Headguard, OBH",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 13111.0,
+    "rateGrade": "\u2014"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
     "title": "Senior Lifeguard",
     "fte2025": null,
     "fte2026": null,
     "budget2025": 294340.0,
     "budget2026": 303155.0,
     "rateGrade": "18.03"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Senior Lifeguard, OBH",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": 9099.0,
+    "rateGrade": "\u2014"
   },
   {
     "department": "Department of Parks and Recreation",
@@ -7082,12 +7202,72 @@
   {
     "department": "Department of Parks and Recreation",
     "slug": "department-of-parks-and-recreation",
-    "title": "\u2014",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
     "fte2025": null,
     "fte2026": null,
     "budget2025": 1467182.0,
-    "budget2026": 1510904.0,
-    "rateGrade": "\u2014"
+    "budget2026": 1630901.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Vacancy Allowance",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 202706.0,
+    "budget2026": 203535.0,
+    "rateGrade": ""
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Department of",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": "Mellon Park"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "2026 Allocations Parks & Recreation",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": "Trust Fund"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Assistant Director 50%",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": "\u2014%"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Operations Administrator 45%",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": "55%"
+  },
+  {
+    "department": "Department of Parks and Recreation",
+    "slug": "department-of-parks-and-recreation",
+    "title": "Program Coordinator 3 85%",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": "\u2014%"
   },
   {
     "department": "Department of Mobility and Infrastructure",
@@ -7124,9 +7304,9 @@
     "slug": "department-of-mobility-and-infrastructure",
     "title": "Senior Systems Analyst 3",
     "fte2025": 1.0,
-    "fte2026": 1.0,
+    "fte2026": null,
     "budget2025": 77043.0,
-    "budget2026": 79352.0,
+    "budget2026": null,
     "rateGrade": "23G"
   },
   {
@@ -7156,7 +7336,7 @@
     "fte2025": null,
     "fte2026": 1.0,
     "budget2025": null,
-    "budget2026": 70200.0,
+    "budget2026": 70377.0,
     "rateGrade": "20G"
   },
   {
@@ -7186,7 +7366,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 60112.0,
-    "budget2026": 61922.0,
+    "budget2026": 62066.0,
     "rateGrade": "17G"
   },
   {
@@ -7206,7 +7386,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 115149.0,
-    "budget2026": 118602.0,
+    "budget2026": 118890.0,
     "rateGrade": "16G"
   },
   {
@@ -7326,7 +7506,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 222206.0,
-    "budget2026": 228883.0,
+    "budget2026": 229428.0,
     "rateGrade": "22G"
   },
   {
@@ -7336,7 +7516,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 213689.0,
-    "budget2026": 213689.0,
+    "budget2026": 220635.0,
     "rateGrade": "U09-H"
   },
   {
@@ -7386,7 +7566,7 @@
     "fte2025": 7.0,
     "fte2026": 7.0,
     "budget2025": 449196.0,
-    "budget2026": 449196.0,
+    "budget2026": 463792.0,
     "rateGrade": "U08-H"
   },
   {
@@ -7396,7 +7576,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 58431.0,
-    "budget2026": 58431.0,
+    "budget2026": 60330.0,
     "rateGrade": "U08-C"
   },
   {
@@ -7416,7 +7596,7 @@
     "fte2025": 4.0,
     "fte2026": 4.0,
     "budget2025": 197388.0,
-    "budget2026": 197388.0,
+    "budget2026": 203816.0,
     "rateGrade": "U03-O"
   },
   {
@@ -7426,7 +7606,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 119972.0,
-    "budget2026": 119972.0,
+    "budget2026": 123872.0,
     "rateGrade": "U07-I"
   },
   {
@@ -7436,7 +7616,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 42789.0,
-    "budget2026": 42789.0,
+    "budget2026": 48150.0,
     "rateGrade": "U02-K"
   },
   {
@@ -7446,7 +7626,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 42302.0,
-    "budget2026": 42302.0,
+    "budget2026": 47250.0,
     "rateGrade": "U01-N"
   },
   {
@@ -7524,9 +7704,9 @@
     "slug": "department-of-mobility-and-infrastructure",
     "title": "Project Engineer",
     "fte2025": 2.0,
-    "fte2026": 2.0,
+    "fte2026": 3.0,
     "budget2025": 154086.0,
-    "budget2026": 158704.0,
+    "budget2026": 238056.0,
     "rateGrade": "23G"
   },
   {
@@ -7556,7 +7736,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 207498.0,
-    "budget2026": 207498.0,
+    "budget2026": 214242.0,
     "rateGrade": "U08-L"
   },
   {
@@ -7606,7 +7786,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 57346.0,
-    "budget2026": 57346.0,
+    "budget2026": 59210.0,
     "rateGrade": "U08-B"
   },
   {
@@ -7626,7 +7806,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 51230.0,
-    "budget2026": 52770.0,
+    "budget2026": 52895.0,
     "rateGrade": "13G"
   },
   {
@@ -7746,7 +7926,7 @@
     "fte2025": 3.0,
     "fte2026": 3.0,
     "budget2025": 207498.0,
-    "budget2026": 207498.0,
+    "budget2026": 214242.0,
     "rateGrade": "U08-L"
   },
   {
@@ -7846,7 +8026,7 @@
     "fte2025": 1.0,
     "fte2026": 2.0,
     "budget2025": 42789.0,
-    "budget2026": 85578.0,
+    "budget2026": 96300.0,
     "rateGrade": "U02-K"
   },
   {
@@ -7946,7 +8126,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 59536.0,
-    "budget2026": 59536.0,
+    "budget2026": 61471.0,
     "rateGrade": "U08-D"
   },
   {
@@ -7956,7 +8136,7 @@
     "fte2025": 4.0,
     "fte2026": 4.0,
     "budget2025": 228540.0,
-    "budget2026": 228540.0,
+    "budget2026": 235968.0,
     "rateGrade": "U06-K"
   },
   {
@@ -7976,7 +8156,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 51231.0,
-    "budget2026": 52770.0,
+    "budget2026": 52896.0,
     "rateGrade": "13G"
   },
   {
@@ -8056,7 +8236,7 @@
     "fte2025": 1.5,
     "fte2026": 1.5,
     "budget2025": 71593.0,
-    "budget2026": 71593.0,
+    "budget2026": 73919.0,
     "rateGrade": "U05-F"
   },
   {
@@ -8064,9 +8244,9 @@
     "slug": "three-taxing-bodies-trust-fund",
     "title": "Assistant II, Administrative",
     "fte2025": null,
-    "fte2026": 0.9,
-    "budget2025": 36404.0,
-    "budget2026": 36404.0,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 45900.0,
     "rateGrade": "U02-H"
   },
   {
@@ -8226,7 +8406,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 73965.0,
-    "budget2026": 73965.0,
+    "budget2026": 76369.0,
     "rateGrade": "U09-J"
   },
   {
@@ -8236,7 +8416,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 142460.0,
-    "budget2026": 142460.0,
+    "budget2026": 147090.0,
     "rateGrade": "U09-H"
   },
   {
@@ -8246,7 +8426,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 131758.0,
-    "budget2026": 131758.0,
+    "budget2026": 136040.0,
     "rateGrade": "U07-N"
   },
   {
@@ -8256,7 +8436,7 @@
     "fte2025": 2.0,
     "fte2026": 2.0,
     "budget2025": 126910.0,
-    "budget2026": 126910.0,
+    "budget2026": 131036.0,
     "rateGrade": "U07-L"
   },
   {
@@ -8274,9 +8454,9 @@
     "slug": "police-secondary-employment-trust-fund",
     "title": "Specialist, Administrative",
     "fte2025": null,
-    "fte2026": 1.0,
+    "fte2026": null,
     "budget2025": null,
-    "budget2026": 40617.0,
+    "budget2026": 46125.0,
     "rateGrade": "U04-A"
   },
   {
@@ -8356,7 +8536,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 42744.0,
-    "budget2026": 44034.0,
+    "budget2026": 45593.0,
     "rateGrade": "08G"
   },
   {
@@ -8598,6 +8778,176 @@
     "budget2025": 83512.0,
     "budget2026": 86008.0,
     "rateGrade": "25G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Assistant Director - Community Affairs",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 110718.0,
+    "budget2026": 114046.0,
+    "rateGrade": "32G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Community Outreach Supervisor",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 80330.0,
+    "budget2026": 82742.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Crime Analyst",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 74069.0,
+    "budget2026": null,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Stop the Violence Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Violence Prevention Manager",
+    "fte2025": null,
+    "fte2026": 5.0,
+    "budget2025": null,
+    "budget2026": 413712.0,
+    "rateGrade": "24G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Violence Prevention Coordinator",
+    "fte2025": null,
+    "fte2026": 1.0,
+    "budget2025": null,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Violence Prevention Analyst",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 76294.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Senior Safer Together PGH Project Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 74069.0,
+    "budget2026": 82742.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Safer Together PGH Project Coordinator",
+    "fte2025": 5.0,
+    "fte2026": 5.0,
+    "budget2025": 340808.0,
+    "budget2026": 351000.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Media Coordinator",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 68162.0,
+    "budget2026": 70200.0,
+    "rateGrade": "20G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Administrative Assistant - Disruptive Properties",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 65333.0,
+    "budget2026": 67456.0,
+    "rateGrade": "19G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Administrative Assistant",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 57574.0,
+    "budget2026": 59445.0,
+    "rateGrade": "16G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "CitiSports, Department of Parks and Recreation",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": null,
+    "budget2026": null,
+    "rateGrade": ""
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Supervisor, CitiSports",
+    "fte2025": 2.0,
+    "fte2026": 2.0,
+    "budget2025": 148138.0,
+    "budget2026": 152589.0,
+    "rateGrade": "22G"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Program Coordinator, CitiSports",
+    "fte2025": 3.0,
+    "fte2026": 2.0,
+    "budget2025": 154517.0,
+    "budget2026": 111404.0,
+    "rateGrade": "54,080"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Program Coordinator, Afterschool Program",
+    "fte2025": 1.0,
+    "fte2026": 1.0,
+    "budget2025": 54080.0,
+    "budget2026": 55702.0,
+    "rateGrade": "54,080"
+  },
+  {
+    "department": "Stop the Violence Trust Fund",
+    "slug": "stop-the-violence-trust-fund",
+    "title": "Recreation Leader, Afterschool Program",
+    "fte2025": 1.0,
+    "fte2026": null,
+    "budget2025": 43264.0,
+    "budget2026": null,
+    "rateGrade": "43,264"
   },
   {
     "department": "Regional Asset District - Public Works Trust Fund",
@@ -8886,7 +9236,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 44158.0,
-    "budget2026": 45490.0,
+    "budget2026": 45593.0,
     "rateGrade": "09G"
   },
   {
@@ -9046,7 +9396,7 @@
     "fte2025": 1.0,
     "fte2026": 1.0,
     "budget2025": 52874.0,
-    "budget2026": 54454.0,
+    "budget2026": 54593.0,
     "rateGrade": "14G"
   },
   {

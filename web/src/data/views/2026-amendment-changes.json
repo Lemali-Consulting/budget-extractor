@@ -1,0 +1,343 @@
+{
+  "totalBudgetAdopted": 693235672.0,
+  "totalBudgetAmended": 721499359.0,
+  "departmentChanges": [
+    {
+      "department": "Bureau of Administration (Public Safety)",
+      "slug": "bureau-of-administration-public-safety",
+      "budgetAdopted": 13723803.0,
+      "budgetAmended": 13769389.0,
+      "dollarChange": 45586.0,
+      "pctChange": 0.3
+    },
+    {
+      "department": "Bureau of Administration (Public Works)",
+      "slug": "bureau-of-administration-public-works",
+      "budgetAdopted": 25696815.0,
+      "budgetAmended": 26035728.0,
+      "dollarChange": 338913.0,
+      "pctChange": 1.3
+    },
+    {
+      "department": "Bureau of Animal Care and Control",
+      "slug": "bureau-of-animal-care-and-control",
+      "budgetAdopted": 2461494.0,
+      "budgetAmended": 2522084.0,
+      "dollarChange": 60590.0,
+      "pctChange": 2.5
+    },
+    {
+      "department": "Bureau of Emergency Medical Services",
+      "slug": "bureau-of-emergency-medical-services",
+      "budgetAdopted": 39005907.0,
+      "budgetAmended": 37389707.0,
+      "dollarChange": -1616200.0,
+      "pctChange": -4.1
+    },
+    {
+      "department": "Bureau of Environmental Services",
+      "slug": "bureau-of-environmental-services",
+      "budgetAdopted": 19166722.0,
+      "budgetAmended": 19957803.0,
+      "dollarChange": 791081.0,
+      "pctChange": 4.1
+    },
+    {
+      "department": "Bureau of Facilities",
+      "slug": "bureau-of-facilities",
+      "budgetAdopted": 11961338.0,
+      "budgetAmended": 14789144.0,
+      "dollarChange": 2827806.0,
+      "pctChange": 23.6
+    },
+    {
+      "department": "Bureau of Fire",
+      "slug": "bureau-of-fire",
+      "budgetAdopted": 106816658.0,
+      "budgetAmended": 108140401.0,
+      "dollarChange": 1323743.0,
+      "pctChange": 1.2
+    },
+    {
+      "department": "Bureau of Operations",
+      "slug": "bureau-of-operations",
+      "budgetAdopted": 26996116.0,
+      "budgetAmended": 28903104.0,
+      "dollarChange": 1906988.0,
+      "pctChange": 7.1
+    },
+    {
+      "department": "Bureau of Police",
+      "slug": "bureau-of-police",
+      "budgetAdopted": 117958522.0,
+      "budgetAmended": 119820024.0,
+      "dollarChange": 1861502.0,
+      "pctChange": 1.6
+    },
+    {
+      "department": "Citizen Police Review Board",
+      "slug": "citizen-police-review-board",
+      "budgetAdopted": 958962.0,
+      "budgetAmended": 970951.0,
+      "dollarChange": 11989.0,
+      "pctChange": 1.3
+    },
+    {
+      "department": "City Council",
+      "slug": "city-council",
+      "budgetAdopted": 3664835.0,
+      "budgetAmended": 3709073.0,
+      "dollarChange": 44238.0,
+      "pctChange": 1.2
+    },
+    {
+      "department": "Commission on Human Relations",
+      "slug": "commission-on-human-relations",
+      "budgetAdopted": 827516.0,
+      "budgetAmended": 840536.0,
+      "dollarChange": 13020.0,
+      "pctChange": 1.6
+    },
+    {
+      "department": "Department of City Planning",
+      "slug": "department-of-city-planning",
+      "budgetAdopted": 5256349.0,
+      "budgetAmended": 5329394.0,
+      "dollarChange": 73045.0,
+      "pctChange": 1.4
+    },
+    {
+      "department": "Department of Finance",
+      "slug": "department-of-finance",
+      "budgetAdopted": 197799537.0,
+      "budgetAmended": 197888939.0,
+      "dollarChange": 89402.0,
+      "pctChange": 0.0
+    },
+    {
+      "department": "Department of Human Resources and Civil Service",
+      "slug": "department-of-human-resources-and-civil-service",
+      "budgetAdopted": 24122782.0,
+      "budgetAmended": 33151845.0,
+      "dollarChange": 9029063.0,
+      "pctChange": 37.4
+    },
+    {
+      "department": "Department of Innovation and Performance",
+      "slug": "department-of-innovation-and-performance",
+      "budgetAdopted": 22303735.0,
+      "budgetAmended": 22259453.0,
+      "dollarChange": -44282.0,
+      "pctChange": -0.2
+    },
+    {
+      "department": "Department of Law",
+      "slug": "department-of-law",
+      "budgetAdopted": 7705822.0,
+      "budgetAmended": 15529185.0,
+      "dollarChange": 7823363.0,
+      "pctChange": 101.5
+    },
+    {
+      "department": "Department of Mobility and Infrastructure",
+      "slug": "department-of-mobility-and-infrastructure",
+      "budgetAdopted": 15286603.0,
+      "budgetAmended": 15342236.0,
+      "dollarChange": 55633.0,
+      "pctChange": 0.4
+    },
+    {
+      "department": "Department of Parks and Recreation",
+      "slug": "department-of-parks-and-recreation",
+      "budgetAdopted": 7446545.0,
+      "budgetAmended": 7509981.0,
+      "dollarChange": 63436.0,
+      "pctChange": 0.9
+    },
+    {
+      "department": "Department of Permits, Licenses, and Inspections",
+      "slug": "department-of-permits-licenses-and-inspections",
+      "budgetAdopted": 11146275.0,
+      "budgetAmended": 11335283.0,
+      "dollarChange": 189008.0,
+      "pctChange": 1.7
+    },
+    {
+      "department": "Ethics Hearing Board",
+      "slug": "ethics-hearing-board",
+      "budgetAdopted": 187735.0,
+      "budgetAmended": 187735.0,
+      "dollarChange": 0.0,
+      "pctChange": 0.0
+    },
+    {
+      "department": "Office of Community Health and Safety",
+      "slug": "office-of-community-health-and-safety",
+      "budgetAdopted": 58000.0,
+      "budgetAmended": 58000.0,
+      "dollarChange": 0.0,
+      "pctChange": 0.0
+    },
+    {
+      "department": "Office of Management and Budget",
+      "slug": "office-of-management-and-budget",
+      "budgetAdopted": 20638818.0,
+      "budgetAmended": 23499895.0,
+      "dollarChange": 2861077.0,
+      "pctChange": 13.9
+    },
+    {
+      "department": "Office of Municipal Investigations",
+      "slug": "office-of-municipal-investigations",
+      "budgetAdopted": 778704.0,
+      "budgetAmended": 787865.0,
+      "dollarChange": 9161.0,
+      "pctChange": 1.2
+    },
+    {
+      "department": "Office of the City Clerk",
+      "slug": "office-of-the-city-clerk",
+      "budgetAdopted": 2515537.0,
+      "budgetAmended": 2540637.0,
+      "dollarChange": 25100.0,
+      "pctChange": 1.0
+    },
+    {
+      "department": "Office of the City Controller",
+      "slug": "office-of-the-city-controller",
+      "budgetAdopted": 5605384.0,
+      "budgetAmended": 5683720.0,
+      "dollarChange": 78336.0,
+      "pctChange": 1.4
+    },
+    {
+      "department": "Office of the Mayor",
+      "slug": "office-of-the-mayor",
+      "budgetAdopted": 3145158.0,
+      "budgetAmended": 3547247.0,
+      "dollarChange": 402089.0,
+      "pctChange": 12.8
+    }
+  ],
+  "topIncreases": [
+    {
+      "department": "Department of Human Resources and Civil Service",
+      "slug": "department-of-human-resources-and-civil-service",
+      "dollarChange": 9029063.0,
+      "pctChange": 37.4
+    },
+    {
+      "department": "Department of Law",
+      "slug": "department-of-law",
+      "dollarChange": 7823363.0,
+      "pctChange": 101.5
+    },
+    {
+      "department": "Office of Management and Budget",
+      "slug": "office-of-management-and-budget",
+      "dollarChange": 2861077.0,
+      "pctChange": 13.9
+    },
+    {
+      "department": "Bureau of Facilities",
+      "slug": "bureau-of-facilities",
+      "dollarChange": 2827806.0,
+      "pctChange": 23.6
+    },
+    {
+      "department": "Bureau of Operations",
+      "slug": "bureau-of-operations",
+      "dollarChange": 1906988.0,
+      "pctChange": 7.1
+    },
+    {
+      "department": "Bureau of Police",
+      "slug": "bureau-of-police",
+      "dollarChange": 1861502.0,
+      "pctChange": 1.6
+    },
+    {
+      "department": "Bureau of Fire",
+      "slug": "bureau-of-fire",
+      "dollarChange": 1323743.0,
+      "pctChange": 1.2
+    },
+    {
+      "department": "Bureau of Environmental Services",
+      "slug": "bureau-of-environmental-services",
+      "dollarChange": 791081.0,
+      "pctChange": 4.1
+    },
+    {
+      "department": "Office of the Mayor",
+      "slug": "office-of-the-mayor",
+      "dollarChange": 402089.0,
+      "pctChange": 12.8
+    },
+    {
+      "department": "Bureau of Administration (Public Works)",
+      "slug": "bureau-of-administration-public-works",
+      "dollarChange": 338913.0,
+      "pctChange": 1.3
+    },
+    {
+      "department": "Department of Permits, Licenses, and Inspections",
+      "slug": "department-of-permits-licenses-and-inspections",
+      "dollarChange": 189008.0,
+      "pctChange": 1.7
+    },
+    {
+      "department": "Department of Finance",
+      "slug": "department-of-finance",
+      "dollarChange": 89402.0,
+      "pctChange": 0.0
+    },
+    {
+      "department": "Office of the City Controller",
+      "slug": "office-of-the-city-controller",
+      "dollarChange": 78336.0,
+      "pctChange": 1.4
+    },
+    {
+      "department": "Department of City Planning",
+      "slug": "department-of-city-planning",
+      "dollarChange": 73045.0,
+      "pctChange": 1.4
+    },
+    {
+      "department": "Department of Parks and Recreation",
+      "slug": "department-of-parks-and-recreation",
+      "dollarChange": 63436.0,
+      "pctChange": 0.9
+    }
+  ],
+  "topDecreases": [
+    {
+      "department": "Bureau of Emergency Medical Services",
+      "slug": "bureau-of-emergency-medical-services",
+      "dollarChange": -1616200.0,
+      "pctChange": -4.1
+    },
+    {
+      "department": "Department of Innovation and Performance",
+      "slug": "department-of-innovation-and-performance",
+      "dollarChange": -44282.0,
+      "pctChange": -0.2
+    }
+  ],
+  "totalFteAdopted": 3547.9,
+  "totalFteAmended": 3572.0,
+  "legislativeChanges": [
+    {
+      "title": "General Fund appropriation increased",
+      "detail": "The total General Fund appropriation rose from $693,235,671 (adopted) to $721,521,858 (as amended) \u2014 about +$28.3M.",
+      "category": "Appropriation"
+    },
+    {
+      "title": "New authorizing legislation",
+      "detail": "Adopted under Resolution 835 of 2025; amended by Resolution 217 of 2026.",
+      "category": "Legislation"
+    }
+  ],
+  "amendmentLabel": "as amended 4-20-26"
+}
