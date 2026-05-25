@@ -77,22 +77,24 @@ export default function PageImage({ slug, page, label, adoptedAvailable = false 
                 aria-label="Choose budget version"
               >
                 <button
-                  class={`px-3 py-1 text-sm font-medium rounded-md transition ${
+                  class={`flex flex-col items-center leading-tight px-3 py-1 text-sm font-medium rounded-md transition ${
                     version === 'amended' ? 'bg-amber-500 text-white' : 'text-gray-600 hover:bg-gray-100'
                   }`}
                   aria-pressed={version === 'amended'}
                   onClick={() => setVersion('amended')}
                 >
-                  Amended
+                  <span>Amended</span>
+                  <span class="text-[10px] font-normal opacity-80">Apr 2026</span>
                 </button>
                 <button
-                  class={`px-3 py-1 text-sm font-medium rounded-md transition ${
+                  class={`flex flex-col items-center leading-tight px-3 py-1 text-sm font-medium rounded-md transition ${
                     version === 'adopted' ? 'bg-gray-700 text-white' : 'text-gray-600 hover:bg-gray-100'
                   }`}
                   aria-pressed={version === 'adopted'}
                   onClick={() => setVersion('adopted')}
                 >
-                  Adopted
+                  <span>Adopted</span>
+                  <span class="text-[10px] font-normal opacity-80">Dec 2025</span>
                 </button>
               </div>
             )}

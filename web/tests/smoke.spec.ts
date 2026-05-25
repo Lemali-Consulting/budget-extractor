@@ -155,8 +155,8 @@ test("amendments page loads with adopted-vs-amended figures", async ({ page }) =
   await page.goto("/amendments/");
 
   await expect(main(page).locator("h1").first()).toContainText(/Amendment/i);
-  await expect(main(page).getByText(/2026 Adopted/i).first()).toBeVisible();
-  await expect(main(page).getByText(/2026 Amended/i).first()).toBeVisible();
+  await expect(main(page).getByText(/Adopted.*Dec 2025/i).first()).toBeVisible();
+  await expect(main(page).getByText(/Amended.*Apr 2026/i).first()).toBeVisible();
   await expect(main(page).getByText(/Legislative Changes/i)).toBeVisible();
 });
 
@@ -175,7 +175,7 @@ test("amended cells are highlighted with adopted-vs-amended tooltips", async ({ 
   await expect(cell).toBeVisible();
   await expect(cell).toHaveAttribute(
     "data-amendment-tip",
-    /Adopted .*Amended .*/,
+    /Adopted \(Dec 2025\).*Amended \(Apr 2026\)/,
   );
 
   // Hovering shows the shared floating tooltip (escapes table overflow clipping).
@@ -195,7 +195,7 @@ test("changed pages offer an adopted/amended source-image toggle", async ({ page
   await sourceBtn.click();
 
   // Lightbox opens on the amended page with an Amended/Adopted toggle.
-  const adoptedToggle = page.getByRole("button", { name: "Adopted", exact: true });
+  const adoptedToggle = page.getByRole("button", { name: /Adopted.*Dec 2025/ });
   await expect(adoptedToggle).toBeVisible();
   const img = page.locator('img[alt^="PDF page"]');
   await expect(img).toHaveAttribute("src", /\/pages\/bureau-of-police\//);

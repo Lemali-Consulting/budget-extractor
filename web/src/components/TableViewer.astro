@@ -119,7 +119,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
     const fmt = /fte/i.test(header) ? (n: number) => `${n}` : fmtUSD;
     const pctStr = d.pct === null ? '' : ` (${d.pct >= 0 ? '+' : ''}${d.pct}%)`;
     const sign = d.delta >= 0 ? '+' : '−';
-    const tip = `Adopted ${fmt(d.adopted)} · Amended ${fmt(d.amended)} · ${sign}${fmt(Math.abs(d.delta))}${pctStr}`;
+    const tip = `Adopted (Dec 2025) ${fmt(d.adopted)} · Amended (Apr 2026) ${fmt(d.amended)} · ${sign}${fmt(Math.abs(d.delta))}${pctStr}`;
     return { cls, tip };
   });
 });
