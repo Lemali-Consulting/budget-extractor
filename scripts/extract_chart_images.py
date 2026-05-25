@@ -72,9 +72,12 @@ def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
 def main() -> None:
     total = 0
 
-    # Operating budget
+    # Operating budget. budget-data.json is built from the amended variant, so
+    # crop charts from the matching amended PDF (falls back to adopted if absent).
     operating_data_path = BASE_DIR / "web" / "src" / "data" / "budget-data.json"
-    operating_pdf_path = BASE_DIR / "input" / "2026" / "operating-budget.pdf"
+    operating_pdf_path = BASE_DIR / "input" / "2026" / "operating-amended-budget.pdf"
+    if not operating_pdf_path.exists():
+        operating_pdf_path = BASE_DIR / "input" / "2026" / "operating-budget.pdf"
     if operating_data_path.exists():
         data = json.load(open(operating_data_path, encoding="utf-8"))
         count = extract_charts_from_data(data, operating_pdf_path)

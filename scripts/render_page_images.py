@@ -13,7 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from utils.paths import DEFAULT_YEAR, expected_dir, input_dir, sections_path, split_pdf_dir
+from utils.paths import DEFAULT_YEAR, expected_dir, input_dir, sections_path, split_pdf_dir, variant_type
 
 WEB_PUBLIC_DIR = Path(__file__).parent.parent / "web" / "public" / "pages"
 
@@ -25,13 +25,14 @@ def slugify(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
 
 
-def render_budget_type(budget_type: str, year: int = DEFAULT_YEAR) -> int:
-    """Render page images for a single budget type. Returns total image count."""
+def render_budget_type(budget_type: str, year: int = DEFAULT_YEAR, variant: str = "adopted") -> int:
+    """Render page images for a single budget type/variant. Returns total image count."""
     import fitz  # PyMuPDF
 
-    sections_file = sections_path(year, budget_type)
-    exp_dir = expected_dir(year, budget_type)
-    split_dir = split_pdf_dir(year, budget_type)
+    subtype = variant_type(budget_type, variant)
+    sections_file = sections_path(year, subtype)
+    exp_dir = expected_dir(year, subtype)
+    split_dir = split_pdf_dir(year, subtype)
 
     if not sections_file.exists():
         print(f"  SKIP {budget_type}: no sections file at {sections_file}")
@@ -139,6 +140,11 @@ def main() -> None:
         default=DEFAULT_YEAR,
         help=f"Budget year (default: {DEFAULT_YEAR})",
     )
+    parser.add_argument(
+        "--variant",
+        default="adopted",
+        help="Budget variant to render (default: adopted; e.g. 'amended')",
+    )
     args = parser.parse_args()
 
     budget_types = ["operating", "capital"] if args.budget_type == "all" else [args.budget_type]
@@ -146,7 +152,7 @@ def main() -> None:
     total = 0
     for bt in budget_types:
         print(f"\n=== {bt.upper()} BUDGET ===")
-        total += render_budget_type(bt, args.year)
+        total += render_budget_type(bt, args.year, args.variant)
 
     print(f"\nRendered {total} total page images to {WEB_PUBLIC_DIR}")
 

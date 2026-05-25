@@ -23,7 +23,11 @@ echo "==> Validating data..."
 uv run scripts/validate_data.py all --year 2026
 
 echo "==> Rendering page images and chart images..."
-uv run scripts/render_page_images.py
+# Clear stale renders so amended operating pages replace any adopted ones
+# (operating + capital share per-section-slug output dirs).
+rm -rf web/public/pages
+uv run scripts/render_page_images.py --budget-type operating --variant amended
+uv run scripts/render_page_images.py --budget-type capital
 uv run scripts/extract_chart_images.py
 
 echo "==> Building Astro site..."
