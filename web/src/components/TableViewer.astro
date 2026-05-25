@@ -21,9 +21,12 @@ interface Props {
   amendmentDiffs?: {
     rows: Record<string, Record<string, { adopted: number; amended: number; delta: number; pct: number | null }>>;
   };
+  // True when an adopted (pre-amendment) image exists for this table's page,
+  // enabling the Amended/Adopted toggle in the source-page lightbox.
+  adoptedPageAvailable?: boolean;
 }
 
-const { table, slug, linkCell, amendmentDiffs } = Astro.props;
+const { table, slug, linkCell, amendmentDiffs, adoptedPageAvailable } = Astro.props;
 
 import { TYPE_COLORS, typeDescription } from '../lib/type-colors';
 
@@ -133,7 +136,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
         {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
       </span>
       {slug && (
-        <PageImage client:load slug={slug} page={table.relative_page} />
+        <PageImage client:load slug={slug} page={table.relative_page} adoptedAvailable={adoptedPageAvailable} />
       )}
       <button
         class="ml-auto text-xs text-gray-400 hover:text-blue-600 print:hidden copy-table-btn"

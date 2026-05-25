@@ -87,7 +87,8 @@ A budget can have multiple **variants** for the same `(year, budget_type)` — e
 - `split_pdf.py` / `test_regression.py` take `--variant`; `build_web_data.py` takes `--operating-variant {adopted,amended}` and `--operating-only`.
 - **2026 operating** is currently published as **amended** ("as amended 4-20-26"). The amended extraction is the canonical site data; the adopted version is rebuilt as a transient `adopted-*.json` baseline (gitignored) only to compute diffs.
 - `scripts/build_amendment_diff.py` reads the amended + adopted bundles and writes `views/2026-amendment-changes.json` (high-level) and `views/2026-amendment-cell-diffs.json` (per-cell, consumed by `TableViewer` for inline highlighting). The `/amendments` page surfaces the high-level comparison.
-- `deploy.sh` runs the amended build → adopted baseline → `build_amendment_diff.py` before the Astro build.
+- **Source-page images come in two versions.** Canonical (amended) images render to `web/public/pages/{slug}/P{n}.webp`; adopted images for *changed pages only* render to `web/public/pages-adopted/{slug}/P{n}.webp` via `render_page_images.py --variant adopted --secondary-of amended`, which also writes the `views/2026-adopted-pages.json` manifest (`{slug: [pages]}`). A page counts as "changed" when its normalized text differs between the adopted and amended split PDFs. `PageImage.tsx` reads the manifest (via `[slug].astro` → `TableViewer`) and shows an Amended/Adopted toggle in the lightbox only where an adopted image exists.
+- `deploy.sh` runs the amended build → adopted baseline → `build_amendment_diff.py` before the Astro build, and renders both the amended and adopted-secondary page images.
 
 # Web Smoke Tests
 

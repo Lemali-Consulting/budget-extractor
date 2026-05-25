@@ -14,9 +14,12 @@ import SectionCharts from '../../components/SectionCharts.tsx';
 import budgetData from '../../data/budget-data.json';
 import departmentBudgets from '../../data/views/department-budgets.json';
 import amendmentCellDiffs from '../../data/views/2026-amendment-cell-diffs.json';
+import adoptedPages from '../../data/views/2026-adopted-pages.json';
 import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
 
 const amendmentByTable = (amendmentCellDiffs as any).byTable || {};
+// {slug: [pages]} — pages with an adopted (pre-amendment) source image available.
+const adoptedPageMap = adoptedPages as Record<string, number[]>;
 
 export function getStaticPaths() {
   return budgetData.sections.map((s, i) => ({
@@ -505,7 +508,7 @@ function parseNarrative(raw: string): Segment[] {
         if (balanceRole === 'middle') {
           return (
             <div id={`table-${tableData.id}`}>
-              <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendmentDiffs={amendmentByTable[tableData.id]} inset />
+              <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendmentDiffs={amendmentByTable[tableData.id]} adoptedPageAvailable={(adoptedPageMap[section.slug] || []).includes(tableData.relative_page)} inset />
             </div>
           );
         }
@@ -521,7 +524,7 @@ function parseNarrative(raw: string): Segment[] {
                 Open in Explorer &rarr;
               </a>
             </div>
-            <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendmentDiffs={amendmentByTable[tableData.id]} />
+            <TableViewer table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendmentDiffs={amendmentByTable[tableData.id]} adoptedPageAvailable={(adoptedPageMap[section.slug] || []).includes(tableData.relative_page)} />
           </div>
         );
       }

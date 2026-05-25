@@ -183,6 +183,28 @@ test("amended cells are highlighted with adopted-vs-amended tooltips", async ({ 
   await expect(page.locator("#amendment-tooltip")).toBeVisible();
 });
 
+test("changed pages offer an adopted/amended source-image toggle", async ({ page }) => {
+  // Bureau of Police has amended pages, so its source-page links carry the badge.
+  await page.goto("/sections/bureau-of-police/");
+
+  const sourceBtn = main(page)
+    .getByRole("button", { name: /View source page/i })
+    .filter({ hasText: /amended/i })
+    .first();
+  await expect(sourceBtn).toBeVisible();
+  await sourceBtn.click();
+
+  // Lightbox opens on the amended page with an Amended/Adopted toggle.
+  const adoptedToggle = page.getByRole("button", { name: "Adopted", exact: true });
+  await expect(adoptedToggle).toBeVisible();
+  const img = page.locator('img[alt^="PDF page"]');
+  await expect(img).toHaveAttribute("src", /\/pages\/bureau-of-police\//);
+
+  // Toggling to Adopted swaps in the pre-amendment image.
+  await adoptedToggle.click();
+  await expect(img).toHaveAttribute("src", /\/pages-adopted\/bureau-of-police\//);
+});
+
 // ---------------------------------------------------------------------------
 // Compare
 // ---------------------------------------------------------------------------

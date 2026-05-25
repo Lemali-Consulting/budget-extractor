@@ -25,9 +25,14 @@ uv run scripts/validate_data.py all --year 2026
 echo "==> Rendering page images and chart images..."
 # Clear stale renders so amended operating pages replace any adopted ones
 # (operating + capital share per-section-slug output dirs).
-rm -rf web/public/pages
+rm -rf web/public/pages web/public/pages-adopted
 uv run scripts/render_page_images.py --budget-type operating --variant amended
 uv run scripts/render_page_images.py --budget-type capital
+# Adopted source pages for the lightbox's amended/adopted toggle — only pages
+# the amendment changed; writes views/2026-adopted-pages.json manifest.
+uv run scripts/render_page_images.py --budget-type operating --variant adopted \
+  --secondary-of amended --output-subdir pages-adopted \
+  --manifest web/src/data/views/2026-adopted-pages.json
 uv run scripts/extract_chart_images.py
 
 echo "==> Building Astro site..."
