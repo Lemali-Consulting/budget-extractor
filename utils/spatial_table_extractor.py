@@ -7,6 +7,8 @@ from typing import Optional
 
 from pdfplumber.page import Page
 
+# Max x-extent difference (pts) for a headerless table to inherit header-derived columns.
+_PROPAGATION_EXTENT_TOLERANCE: float = 30.0
 _DOLLAR: str = "$"
 _PERCENT: str = "%"
 # One whitespace-delimited piece of a numeric cell: 1,234 / (1,234) / 1.2 /
@@ -1611,13 +1613,18 @@ class SpatialTableExtractor:
                     # otherwise it's a different structure (e.g., an
                     # allocation table or footnote block).
                     col_ratio_ok = natural_col_count >= propagated_col_count * 0.5
-                    extent_ok = abs(t_x0 - p_x0) < 30 and abs(t_x1 - p_x1) < 30
+                    tolerance: float = _PROPAGATION_EXTENT_TOLERANCE
+                    extent_ok = abs(t_x0 - p_x0) < tolerance and abs(t_x1 - p_x1) < tolerance
+                    # A narrower block inside the propagated extent (e.g. a
+                    # subtotal row without the trailing CAGR column) is left
+                    # as-is but does not end the propagation for tables below.
+                    within_extent: bool = t_x0 > p_x0 - tolerance and t_x1 < p_x1 + tolerance
                     if extent_ok and col_ratio_ok:
                         table.columns = propagated_columns
                         table.headers = propagated_headers
                         row_groups = self._cluster_rows(table._words)
                         table.rows = self._assign_cells(row_groups, propagated_columns)
-                    else:
+                    elif not within_extent:
                         # Different section — stop propagating
                         propagated_columns = None
                         propagated_headers = None
