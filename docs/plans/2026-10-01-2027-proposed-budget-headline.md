@@ -42,7 +42,8 @@ Extract the 2027 proposed operating budget and the 2027 preliminary capital budg
 
 - Phase 1: sections written and both PDFs split and extracted. Two extractor fixes landed: header boundaries inside data now snap to narrow gaps, and bridged total-row tokens are split. 2025/2026 baselines were updated and pass. The 2027 baselines wait for the user's review.
 - Phase 2: variant plumbing landed. A scratch 2027 build reconciles: 27 operating departments total $728,388,494, against $728,388,498 in the summary table. The gap is ±$1 rounding in ten department pages of the source. Capital totals $145,264,797.
-- Known 2027 source quirks: Parks Tax revenue table labelled "2025/2026 Budget" in the PDF; Stop the Violence funded at — (zero) for 2027; Revenue Summary non-tax sub-table merges the CAGR % into the 2031 cell (extractor limitation).
+- Known 2027 source quirks: the PDF labels the Parks Tax revenue table "2025/2026 Budget". Stop the Violence shows — for 2027 because the proposal ends the annual General Fund transfer and moves its 63 positions to Public Safety (PublicSource, 2026-09-30), so the site should explain it rather than show a bare zero. Public Safety Administration's 54 - Property Services subtotal is $750 more than its line items in the PDF.
+- Spot checks (no paid API): every number in the 106 sections' tables appears in its PDF; all 49 funded capital projects' deliverables sum to their 2027 totals; the 26 operating subclass blocks reconcile apart from source-PDF gaps. The Revenue Summary CAGR merge is fixed (propagation now continues past narrower subtotal rows). The generic Appendix B scoring CSVs merge some wrapped project rows; the site uses the dedicated appendix parser instead.
 
 ## Files Affected
 
