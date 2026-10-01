@@ -38,6 +38,12 @@ Extract the 2027 proposed operating budget and the 2027 preliminary capital budg
 13. Run the Python tests, the regression suite and the Playwright smoke tests. Screenshot the home, operating, capital, changes and a department page on desktop and mobile.
 14. Merge to main, then deploy. Both happen only with the user's go-ahead.
 
+## Progress
+
+- Phase 1: sections written and both PDFs split and extracted. Two extractor fixes landed: header boundaries inside data now snap to narrow gaps, and bridged total-row tokens are split. 2025/2026 baselines were updated and pass. The 2027 baselines wait for the user's review.
+- Phase 2: variant plumbing landed. A scratch 2027 build reconciles: 27 operating departments total $728,388,494, against $728,388,498 in the summary table. The gap is ±$1 rounding in ten department pages of the source. Capital totals $145,264,797.
+- Known 2027 source quirks: Parks Tax revenue table labelled "2025/2026 Budget" in the PDF; Stop the Violence funded at — (zero) for 2027; Revenue Summary non-tax sub-table merges the CAGR % into the 2031 cell (extractor limitation).
+
 ## Files Affected
 
 - `input/2027/*`: new PDFs and section definitions
@@ -49,7 +55,7 @@ Extract the 2027 proposed operating budget and the 2027 preliminary capital budg
 
 ## Open Questions
 
-- What exact column headings does the proposal use ("2027 Proposed" vs "2027 Budget")? This determines step 6.
+- ~~What column headings does the proposal use?~~ Resolved: it uses "2027 Budget", the same as adopted budgets, so step 6 needs no heading changes.
 - Does Appendix D (Parks Tax, new for 2027) get its own appendix tab or a plain table? It defaults to the plain extractor output unless the appendix parser handles it cheaply.
 - Do sections dropped from the proposal (Authorizing Legislation, Budget Guide, and anything after Expenditures absent in 2027) appear as "removed" in structure changes? Proposals are expected to be shorter, so they should be suppressed or annotated rather than reported as cuts.
 
