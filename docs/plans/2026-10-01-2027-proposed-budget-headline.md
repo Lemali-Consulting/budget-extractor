@@ -27,11 +27,21 @@ Extract the 2027 proposed operating budget and the 2027 preliminary capital budg
 6. Handle proposed column headings ("2027 Proposed" or similar instead of "2027 Budget") wherever `"{Y} Budget"` is matched.
 7. Remove per-year special cases (`year == 2026` prefix checks, hardcoded 2026 PDF paths, "2026 salary tables" / "2026 Projects" matches).
 
-**Phase 3: Web year configuration (design on premium; sweep delegated to Sonnet)**
-8. Add one web config module: headline year, headline variant label ("Proposed"), prior year, and the data imports for each. Expose year-neutral accessors so components stop reading `totalBudget2026` directly.
-9. Sweep pages, components and layouts to use the config. Rebuild 2026 data under a `2026-` prefix. The 2026 amendment surfaces stay, pinned to 2026 and demoted from the homepage headline.
-10. Put page images in per-year folders, so 2027 and 2026 source pages can coexist.
-11. Add a site-wide "Proposed budget" indicator, plus wording that year-over-year changes compare a proposal against an adopted (amended) budget.
+**Phase 3: Web year configuration and 2026 archive (design on premium; implementation delegated to Sonnet)**
+
+See `docs/decisions/2026-10-01-2026-budget-archive-routes.md`.
+
+*3a. Pipeline (one agent):*
+8. `build_web_data.py` writes `views/{prefix}budget-meta.json`: `{year, priorYear, operatingVariant, capitalVariant}`. In the views with year-named fields (budget-changes, personnel, personnel-by-department), add year-neutral twins (`budgetCurrent`/`budgetPrior`, `fteCurrent`/`ftePrior`, `totalBudgetCurrent`/`totalBudgetPrior`, `totalFteCurrent`/`totalFtePrior`) and keep the year-named fields.
+9. Page images go to `web/public/pages/{year}/{slug}/` (adopted 2026: `pages-adopted/2026/{slug}/`). Chart crops go to `web/public/charts/{year}/{slug}/`.
+10. `build_amendment_diff.py` reads the `2026-` prefixed amended bundle.
+11. `deploy.sh` builds 2027-proposed unprefixed, 2026 amended plus capital as `2026-`, the transient adopted baseline, the amendment diff, appendices for both years, and 2025 as `2025-`. It renders images for 2027 and 2026.
+
+*3b. Web (one agent, after 3a):*
+12. A year registry (`web/src/lib/budget-year.ts`) imports each year's bundles and meta and exposes the headline year, the archive years, and labels ("2027 Proposed", "2026 Budget (as amended)"). Components read the year-neutral fields and labels from it; there are no hardcoded years in headline code.
+13. The budget-content pages (operating index, sections/[slug], departments index and [slug], capital index and [slug], changes, personnel) become year-parameterized components. Thin route files render them at `/...` (headline) and `/2026/...` (archive).
+14. Amendment cell highlights and the adopted toggle appear only for 2026. Stories, `/amendments` and `/cross-year` read 2026 data and link to `/2026/...`.
+15. A site-wide notice on headline pages says this is the Mayor's proposed budget, pending Council adoption. Archive pages get a "you're viewing the 2026 budget" notice with a link to the current year. Year-over-year wording says a 2027 proposal is being compared with the 2026 budget.
 
 **Phase 4: Deploy and verification**
 12. Update `deploy.sh` for the 2027 headline and 2026/2025 secondary builds, and update smoke tests.
