@@ -22,6 +22,8 @@ uv run scripts/build_web_data.py --year 2026 --operating-variant adopted --opera
 uv run scripts/build_amendment_diff.py --year 2026
 uv run scripts/build_capital_appendices.py --year 2026 --output-prefix 2026
 uv run scripts/build_web_data.py --year 2025 --output-prefix 2025
+# Long-run headline figures across every baselined budget document (views/longitudinal.json).
+uv run scripts/build_longitudinal.py
 
 echo "==> Validating data..."
 uv run scripts/validate_data.py structural --year 2027 --operating-variant proposed --capital-variant proposed
