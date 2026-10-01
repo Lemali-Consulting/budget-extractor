@@ -7,6 +7,35 @@ from typing import Optional
 
 from pdfplumber.page import Page
 
+_DOLLAR: str = "$"
+_PERCENT: str = "%"
+# One whitespace-delimited piece of a numeric cell: 1,234 / (1,234) / 1.2 /
+# 1.2% / an em-dash nil / n/a. Used to recognize tokens made only of values.
+_COMPOUND_VALUE_PIECE: re.Pattern[str] = re.compile(
+    r"^\(?[\d,]*\d(\.\d+)?\)?%?$|^—$|^n/a$"
+)
+
+
+def _whitespace_pieces(chars: list[dict]) -> list[tuple[str, float, float]]:
+    """Group a word's characters into whitespace-separated (text, x0, x1) pieces."""
+    pieces: list[tuple[str, float, float]] = []
+    text: str = ""
+    x0: float = 0.0
+    x1: float = 0.0
+    for ch in chars:
+        if ch["text"].isspace():
+            if text:
+                pieces.append((text, x0, x1))
+                text = ""
+            continue
+        if not text:
+            x0 = ch["x0"]
+        text += ch["text"]
+        x1 = ch["x1"]
+    if text:
+        pieces.append((text, x0, x1))
+    return pieces
+
 
 @dataclass
 class SpatialColumn:
@@ -1043,9 +1072,11 @@ class SpatialTableExtractor:
             keep_blank_chars=True,
             x_tolerance=self.x_tolerance,
             y_tolerance=self.word_y_tolerance,
+            return_chars=True,
         )
         if not words:
             return []
+        words = self._split_compound_value_tokens(words)
 
         # Save whitespace-only words — pdfplumber with keep_blank_chars
         # can produce blank words at positions where '$' signs appear on
@@ -3024,6 +3055,44 @@ class SpatialTableExtractor:
 
     # ── Column detection ────────────────────────────────────────────
 
+    def _nearest_clear_gap(
+        self,
+        header_sep: float,
+        gap_centers: list[float],
+        words: list[dict],
+        separators: list[float],
+    ) -> Optional[float]:
+        """
+        Find a clear data channel near a header separator that can stand in for it.
+
+        Candidates are the sub-threshold data-gap centers plus the position
+        just before the words the header separator cuts through (tokens are
+        often space-padded, so the measured gap center can land on a word's
+        edge while a clean channel sits a point to its left). A candidate
+        must be corroborated by a data gap within one column-gap threshold,
+        cross no word, sit strictly inside the existing separator range
+        (splitting a column rather than extending the table), and not
+        duplicate an existing separator. Returns the closest one, or None.
+        """
+        if not separators or not gap_centers:
+            return None
+        lo, hi = min(separators), max(separators)
+        cut_words: list[dict] = [w for w in words if w["x0"] < header_sep < w["x1"]]
+        just_before_cut: list[float] = (
+            [min(w["x0"] for w in cut_words) - 1.0] if cut_words else []
+        )
+        candidates: list[float] = [
+            c for c in [*gap_centers, *just_before_cut]
+            if abs(c - header_sep) < self.column_gap_threshold
+            and any(abs(c - g) < self.column_gap_threshold for g in gap_centers)
+            and lo < c < hi
+            and not any(w["x0"] < c < w["x1"] for w in words)
+            and not any(abs(c - s) < self.column_gap_threshold for s in separators)
+        ]
+        if not candidates:
+            return None
+        return min(candidates, key=lambda g: abs(g - header_sep))
+
     def _detect_columns(
         self,
         words: list[dict],
@@ -3156,6 +3225,16 @@ class SpatialTableExtractor:
                     w for w in words if w["x0"] < hs < w["x1"]
                 ]
                 if conflicting:
+                    # Prefer a nearby narrow gap that the data rows share
+                    # consistently: the header boundary is slightly offset
+                    # from where the data columns actually part (e.g. a
+                    # right-aligned FTE count sitting ~6pt left of a rate).
+                    data_gap = self._nearest_clear_gap(
+                        hs, sub_cluster_centers, words, separators,
+                    )
+                    if data_gap is not None:
+                        separators.append(data_gap)
+                        continue
                     # Snap to just before the leftmost conflicting word,
                     # but only if the resulting column (from the nearest
                     # smaller separator to the snap point) would be empty.
@@ -3304,6 +3383,58 @@ class SpatialTableExtractor:
         return "right" if right_var < left_var else "left"
 
     # ── Cell assignment ─────────────────────────────────────────────
+
+    @staticmethod
+    def _split_compound_value_tokens(words: list[dict]) -> list[dict]:
+        """Split tokens that pack several column values into one word.
+
+        With keep_blank_chars, pdfplumber bridges tightly spaced values into
+        a single token — e.g. a bold total row
+        "$ 105,595,349 $ 108,140,401 $ 111,745,836 $" or an amount and a
+        percentage "54,790,510   1.2 %". One such token spanning several
+        columns erases those column boundaries for the whole table, so split
+        it before column detection, using per-character positions.
+
+        Only tokens made entirely of values, '$' and '%' are split. A '$'
+        stays attached to the value after it and a '%' to the value before
+        it; a trailing lone '$' becomes its own token. Each word's "chars"
+        list (from return_chars=True) is dropped from the output.
+        """
+        result: list[dict] = []
+        for w in words:
+            base: dict = {k: v for k, v in w.items() if k != "chars"}
+            pieces = _whitespace_pieces(w.get("chars") or [])
+            if not pieces or not all(
+                p[0] in (_DOLLAR, _PERCENT) or _COMPOUND_VALUE_PIECE.match(p[0])
+                for p in pieces
+            ):
+                result.append(base)
+                continue
+
+            groups: list[list[tuple[str, float, float]]] = []
+            for piece in pieces:
+                if piece[0] == _PERCENT and groups:
+                    groups[-1].append(piece)
+                elif groups and [p[0] for p in groups[-1]] == [_DOLLAR] and piece[0] != _DOLLAR:
+                    groups[-1].append(piece)
+                else:
+                    groups.append([piece])
+
+            value_groups: int = sum(
+                1 for g in groups if any(p[0] not in (_DOLLAR, _PERCENT) for p in g)
+            )
+            if value_groups < 2:
+                result.append(base)
+                continue
+
+            for g in groups:
+                result.append({
+                    **base,
+                    "text": " ".join(p[0] for p in g),
+                    "x0": g[0][1],
+                    "x1": g[-1][2],
+                })
+        return result
 
     @staticmethod
     def _split_straddling_words(
