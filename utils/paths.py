@@ -1,5 +1,6 @@
 """Centralized path configuration for multi-year budget data."""
 
+from dataclasses import dataclass
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -83,3 +84,45 @@ def available_years() -> list[int]:
         if d.is_dir() and d.name.isdigit():
             years.append(int(d.name))
     return years
+
+
+# Variants in order of preference when a year has several versions of a budget.
+VARIANT_PRECEDENCE: tuple[str, ...] = ("adopted", "amended", "proposed")
+
+
+@dataclass(frozen=True)
+class VariantPaths:
+    """All input/baseline locations for one (year, budget_type, variant)."""
+
+    subtype: str
+    pdf: Path
+    sections: Path
+    split_dir: Path
+    expected_dir: Path
+
+
+def variant_paths(*, year: int, budget_type: str, variant: str = "adopted") -> VariantPaths:
+    """Resolve every path for a budget type and variant in one place."""
+    subtype: str = variant_type(budget_type, variant)
+    return VariantPaths(
+        subtype=subtype,
+        pdf=pdf_path(year, subtype),
+        sections=sections_path(year, subtype),
+        split_dir=split_pdf_dir(year, subtype),
+        expected_dir=expected_dir(year, subtype),
+    )
+
+
+def best_variant_type(year: int, budget_type: str) -> str | None:
+    """Subtype of the best available variant (adopted > amended > proposed) with a sections file."""
+    for variant in VARIANT_PRECEDENCE:
+        subtype: str = variant_type(budget_type, variant)
+        if sections_path(year, subtype).exists():
+            return subtype
+    return None
+
+
+def best_sections_path(year: int, budget_type: str) -> Path | None:
+    """Sections file of the best available variant for a year, or None if none exists."""
+    subtype: str | None = best_variant_type(year, budget_type)
+    return None if subtype is None else sections_path(year, subtype)

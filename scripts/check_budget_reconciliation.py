@@ -15,6 +15,10 @@ from pathlib import Path
 
 import pdfplumber
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from utils.paths import DEFAULT_YEAR, expected_dir, variant_paths, variant_type
+
 ROOT: Path = Path(__file__).resolve().parent.parent
 
 # Tolerated gap (dollars): the PDF's printed grand totals round, so its line
@@ -43,9 +47,9 @@ def read_data_rows(csv_path: Path) -> list[list[str]]:
     return rows[1:] if rows else []
 
 
-def pdf_total_expenditures(year: int) -> tuple[float, float, float] | None:
-    """Read Section 8's printed 'Total Expenditures' row (2024, 2025, 2026)."""
-    pdf_path: Path = ROOT / "input" / str(year) / "operating-budget.pdf"
+def pdf_total_expenditures(year: int, *, variant: str = "adopted") -> tuple[float, float, float] | None:
+    """Read Section 8's printed 'Total Expenditures' row (prior-prior actual, prior budget, this budget)."""
+    pdf_path: Path = variant_paths(year=year, budget_type="operating", variant=variant).pdf
     if not pdf_path.exists():
         return None
     with pdfplumber.open(pdf_path) as pdf:
@@ -61,14 +65,14 @@ def pdf_total_expenditures(year: int) -> tuple[float, float, float] | None:
     return None
 
 
-def check_expenditures(year: int, failures: list[str]) -> None:
+def check_expenditures(*, year: int, operating_variant: str, view_prefix: str, failures: list[str]) -> None:
     """Reconcile operating expenditure totals and per-department drift."""
     print("EXPENDITURES")
 
     # Section 8 "Expenditures by Department" summary rows.
     section8_path: Path = (
-        ROOT / "output" / "regression" / "expected" / str(year)
-        / "operating" / "08_Expenditure_Summary" / "P1T0.csv"
+        expected_dir(year, variant_type("operating", operating_variant))
+        / "08_Expenditure_Summary" / "P1T0.csv"
     )
     section8: list[tuple[float, float, float]] = []
     for row in read_data_rows(section8_path):
@@ -80,7 +84,7 @@ def check_expenditures(year: int, failures: list[str]) -> None:
 
     # Department section-table totals (what the website's department pages show).
     dept_budgets: list[dict] = json.loads(
-        (ROOT / "web" / "src" / "data" / "views" / "department-budgets.json").read_text()
+        (ROOT / "web" / "src" / "data" / "views" / f"{view_prefix}department-budgets.json").read_text()
     )
     by_slug: dict[str, dict] = {}
     order: list[str] = []
@@ -97,7 +101,7 @@ def check_expenditures(year: int, failures: list[str]) -> None:
         if r.get("fund") == "operating" and r["year"] == f"{year} Budget"
     )
     section8_sum_2026: float = sum(s[2] for s in section8)
-    pdf_total = pdf_total_expenditures(year)
+    pdf_total = pdf_total_expenditures(year, variant=operating_variant)
 
     print(f"  Operating total (department-budgets.json, {year}):  ${operating_2026:>15,.0f}")
     print(f"  Sum of Section 8 department rows ({year}):           ${section8_sum_2026:>15,.0f}")
@@ -144,17 +148,17 @@ def check_expenditures(year: int, failures: list[str]) -> None:
     print()
 
 
-def check_revenue(year: int, failures: list[str]) -> None:
+def check_revenue(*, year: int, operating_variant: str, view_prefix: str, failures: list[str]) -> None:
     """Reconcile the revenue waterfall against the printed 'Total Revenues'."""
     print("REVENUE")
     waterfall: list[dict] = json.loads(
-        (ROOT / "web" / "src" / "data" / "views" / "revenue-waterfall.json").read_text()
+        (ROOT / "web" / "src" / "data" / "views" / f"{view_prefix}revenue-waterfall.json").read_text()
     )
     waterfall_sum: float = sum(r["amount"] for r in waterfall)
 
     rev_path: Path = (
-        ROOT / "output" / "regression" / "expected" / str(year)
-        / "operating" / "05_Revenue_Summary" / "P1T0.csv"
+        expected_dir(year, variant_type("operating", operating_variant))
+        / "05_Revenue_Summary" / "P1T0.csv"
     )
     printed_total: float | None = None
     for row in read_data_rows(rev_path):
@@ -175,19 +179,19 @@ def check_revenue(year: int, failures: list[str]) -> None:
     print()
 
 
-def check_capital(year: int, failures: list[str]) -> None:
+def check_capital(*, year: int, capital_variant: str, view_prefix: str, failures: list[str]) -> None:
     """Reconcile capital funding totals against the capital summary table."""
     print("CAPITAL")
     funding: list[dict] = json.loads(
-        (ROOT / "web" / "src" / "data" / "views" / "capital-funding-sources.json").read_text()
+        (ROOT / "web" / "src" / "data" / "views" / f"{view_prefix}capital-funding-sources.json").read_text()
     )
     by_year: dict[str, float] = {}
     for r in funding:
         by_year[r["year"]] = by_year.get(r["year"], 0.0) + r["amount"]
 
     summary_path: Path = (
-        ROOT / "output" / "regression" / "expected" / str(year)
-        / "capital" / "01_Capital_Budget_Introduction" / "P22T0.csv"
+        expected_dir(year, variant_type("capital", capital_variant))
+        / "01_Capital_Budget_Introduction" / "P22T0.csv"
     )
     printed: dict[str, float] = {}
     for row in read_data_rows(summary_path):
@@ -225,14 +229,23 @@ def check_capital(year: int, failures: list[str]) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--year", type=int, default=2026, help="Budget year (default: 2026)")
+    parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
+    parser.add_argument("--operating-variant", "--variant", dest="operating_variant", default="adopted",
+                        help="Operating budget variant (default: adopted; e.g. amended, proposed)")
+    parser.add_argument("--capital-variant", default="adopted", help="Capital budget variant (default: adopted)")
+    parser.add_argument("--output-prefix", default="",
+                        help="Prefix of the built web views to check, e.g. 'scratch2027' (default: none)")
     args = parser.parse_args()
+    view_prefix: str = f"{args.output_prefix}-" if args.output_prefix else ""
 
     print(f"Budget reconciliation report — fiscal year {args.year}\n")
     failures: list[str] = []
-    check_expenditures(args.year, failures)
-    check_revenue(args.year, failures)
-    check_capital(args.year, failures)
+    check_expenditures(year=args.year, operating_variant=args.operating_variant,
+                       view_prefix=view_prefix, failures=failures)
+    check_revenue(year=args.year, operating_variant=args.operating_variant,
+                  view_prefix=view_prefix, failures=failures)
+    check_capital(year=args.year, capital_variant=args.capital_variant,
+                  view_prefix=view_prefix, failures=failures)
 
     if failures:
         print(f"FAILED — {len(failures)} unexpected discrepancy(ies):")

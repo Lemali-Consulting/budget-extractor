@@ -14,12 +14,59 @@ from typing import Any
 import pdfplumber
 
 
-# Page indices (0-based) within the appendices PDF — data pages only,
-# cover pages with the "Appendix X:" title are intentionally excluded.
-_PAGES_A: tuple[int, int] = (2, 4)    # display pages 3-4
-_PAGES_B: tuple[int, int] = (6, 10)   # display pages 7-10
-_PAGES_C: tuple[int, int] = (12, 15)  # display pages 13-15
-_PAGES_D: tuple[int, int] = (18, 19)  # Appendix D: Parks Tax projects
+# Page layout differs between years, so data pages are discovered from the
+# "Appendix X:" cover pages rather than hardcoded indices.
+_COVER_RE: re.Pattern[str] = re.compile(r"^Appendix ([A-Z]):", re.MULTILINE)
+# A cover or page-number-only page has far fewer words than a data page.
+_MIN_DATA_PAGE_WORDS: int = 20
+
+
+def locate_appendix_pages(pages: list[tuple[str, int]]) -> dict[str, list[int]]:
+    """Map appendix letter -> 0-based indices of its data pages.
+
+    `pages` holds (text, word_count) per PDF page. A cover page is a sparse page
+    whose text has a line starting "Appendix X:"; the data pages for X are the
+    non-sparse pages that follow it until the next cover.
+    """
+    found: dict[str, list[int]] = {}
+    current: str | None = None
+    for idx, (text, word_count) in enumerate(pages):
+        is_sparse: bool = word_count < _MIN_DATA_PAGE_WORDS
+        cover = _COVER_RE.search(text) if is_sparse else None
+        if cover:
+            current = cover.group(1)
+            found[current] = []
+        elif current is not None and not is_sparse:
+            found[current].append(idx)
+    return found
+
+
+def _appendix_data_pages(pdf: pdfplumber.pdf.PDF, letter: str) -> list[int]:
+    """Data-page indices for one appendix letter in an open PDF."""
+    summaries: list[tuple[str, int]] = [
+        (page.extract_text() or "", len(page.extract_words())) for page in pdf.pages
+    ]
+    return locate_appendix_pages(summaries).get(letter, [])
+
+
+_PROJECTS_TITLE_RE: re.Pattern[str] = re.compile(r"^\d{4} Projects")
+_APPENDIX_PDF_GLOB: str = "*_Capital_Budget_Appendices.pdf"
+
+
+def is_projects_title_row(text: str) -> bool:
+    """True for the per-page title row such as "2027 Projects by Department"."""
+    return _PROJECTS_TITLE_RE.match(text) is not None
+
+
+def find_appendix_pdf(split_dir: Path) -> Path:
+    """Locate the Capital Budget Appendices PDF in a split-pdf directory (its numeric prefix varies by year)."""
+    matches: list[Path] = sorted(split_dir.glob(_APPENDIX_PDF_GLOB))
+    if not matches:
+        raise FileNotFoundError(f"No {_APPENDIX_PDF_GLOB} found in {split_dir}")
+    if len(matches) > 1:
+        names: str = ", ".join(m.name for m in matches)
+        raise ValueError(f"Multiple appendix PDFs match {_APPENDIX_PDF_GLOB} in {split_dir}: {names}")
+    return matches[0]
 
 
 def _cluster_rows(words: list[dict[str, Any]], y_tol: float = 3.0) -> list[list[dict[str, Any]]]:
@@ -95,7 +142,7 @@ def parse_appendix_a(pdf_path: Path | str) -> dict[str, Any]:
     totals: dict[str, int] = {"cdbg": 0, "bond": 0, "paygo": 0, "other": 0, "total": 0}
 
     with pdfplumber.open(pdf_path) as pdf:
-        for pidx in range(*_PAGES_A):
+        for pidx in _appendix_data_pages(pdf, "A"):
             page = pdf.pages[pidx]
             words = [
                 w for w in page.extract_words(use_text_flow=False)
@@ -114,8 +161,8 @@ def parse_appendix_a(pdf_path: Path | str) -> dict[str, Any]:
                 # Skip the table header row.
                 if name == "Project Name":
                     continue
-                # Skip the page title row "2026 Projects by Department".
-                if name.startswith("2026 Projects"):
+                # Skip the page title row "<year> Projects by Department".
+                if is_projects_title_row(name):
                     continue
 
                 amounts = {k: _parse_money(" ".join(cols[k])) for k in ("cdbg", "bond", "paygo", "other", "total")}
@@ -188,7 +235,7 @@ def parse_appendix_b(pdf_path: Path | str) -> dict[str, Any]:
     pending_deliverable_parts: list[str] = []
 
     with pdfplumber.open(pdf_path) as pdf:
-        for pidx in range(*_PAGES_B):
+        for pidx in _appendix_data_pages(pdf, "B"):
             page = pdf.pages[pidx]
             words = [
                 w for w in page.extract_words(use_text_flow=False)
@@ -304,7 +351,7 @@ def parse_appendix_c(pdf_path: Path | str) -> dict[str, Any]:
     current: dict[str, Any] | None = None
 
     with pdfplumber.open(pdf_path) as pdf:
-        for pidx in range(*_PAGES_C):
+        for pidx in _appendix_data_pages(pdf, "C"):
             page = pdf.pages[pidx]
             words = [
                 w for w in page.extract_words(use_text_flow=False)

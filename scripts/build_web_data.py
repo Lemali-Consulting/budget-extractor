@@ -20,12 +20,15 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from utils.paths import (
     DEFAULT_YEAR,
     available_years,
+    best_sections_path,
+    best_variant_type,
     expected_dir,
     glossary_path,
     input_dir,
     pdf_path,
     sections_path,
     split_pdf_dir,
+    variant_paths,
     variant_type,
     web_data_dir,
 )
@@ -47,15 +50,33 @@ PRIOR_YEAR: int = BUDGET_YEAR - 1
 
 # Operating budget variant subtype (e.g. "operating" or "operating-amended").
 OPERATING_SUBTYPE: str = "operating"
+# Capital budget variant subtype (e.g. "capital" or "capital-proposed").
+CAPITAL_SUBTYPE: str = "capital"
 
 # Derived paths (re-initialized in main() if --year/--operating-variant is passed)
 INPUT_DIR = input_dir(BUDGET_YEAR)
 OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, OPERATING_SUBTYPE)
-CAPITAL_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "capital")
+CAPITAL_OUTPUT_DIR = expected_dir(BUDGET_YEAR, CAPITAL_SUBTYPE)
 GLOSSARY_PATH = glossary_path()
 PDF_PATH = pdf_path(BUDGET_YEAR, OPERATING_SUBTYPE)
-CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, "capital")
+CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, CAPITAL_SUBTYPE)
 WEB_DATA_DIR = web_data_dir()
+
+# Citywide (non-department) operating sections. Matched by title, not position,
+# because section numbering differs between years and variants.
+REVENUE_DETAIL_TITLE: str = "Revenue Detail"
+FIVE_YEAR_FORECAST_TITLE: str = "Five-Year Financial Forecast"
+OVERVIEW_SECTION_TITLES: frozenset[str] = frozenset({
+    "Budget Authorizing Legislation",
+    "American Rescue Plan",
+    "Budget Guide",
+    FIVE_YEAR_FORECAST_TITLE,
+    "Revenue Summary",
+    "Revenue Narrative",
+    REVENUE_DETAIL_TITLE,
+    "Expenditure Summary",
+    "Expenditures Detail",
+})
 
 # Pattern to extract section number and name from directory names like "10_City_Council"
 DIR_PATTERN = re.compile(r"^(\d+)_(.+)$")
@@ -1178,7 +1199,7 @@ def build_budget_changes(sections: list[dict], personnel: list[dict],
     # Attach FTE counts per department from personnel tables.
     fte_by_slug: dict[str, dict] = {}
     for section in sections:
-        if section["section_number"] <= 9:
+        if section["title"] in OVERVIEW_SECTION_TITLES:
             continue
         for table in section["tables"]:
             if table["table_type"] != "personnel":
@@ -1241,9 +1262,9 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
     """Extract budget totals per department/year from financial tables."""
     rows: list[dict] = []
 
-    # Skip overview sections (1-9) — they contain citywide summaries, not departments
+    # Skip overview sections — they contain citywide summaries, not departments
     for section in sections:
-        if section["section_number"] <= 9:
+        if section["title"] in OVERVIEW_SECTION_TITLES:
             continue
         for table in section["tables"]:
             if table["table_type"] not in ("financial_summary", "financial"):
@@ -1677,11 +1698,11 @@ def build_changes_search_items(budget_changes: dict) -> list[dict]:
 
 
 def load_capital_sections() -> dict[int, dict]:
-    """Load sections-capital.json and index by 1-based position."""
-    sections_path = INPUT_DIR / "sections-capital.json"
-    if not sections_path.exists():
+    """Load the capital sections JSON for the active variant and index by 1-based position."""
+    capital_sections_path = sections_path(BUDGET_YEAR, CAPITAL_SUBTYPE)
+    if not capital_sections_path.exists():
         return {}
-    with open(sections_path, encoding="utf-8") as f:
+    with open(capital_sections_path, encoding="utf-8") as f:
         sections = json.load(f)
     result: dict[int, dict] = {}
     for i, section in enumerate(sections, start=1):
@@ -1986,7 +2007,7 @@ def build_revenue_waterfall(sections: list[dict]) -> list[dict]:
     items: list[dict] = []
 
     for section in sections:
-        if section["section_number"] != 7:  # Revenue Detail = section 7
+        if section["title"] != REVENUE_DETAIL_TITLE:
             continue
         for table in section["tables"]:
             headers = table["headers"]
@@ -2024,7 +2045,7 @@ def build_department_forecast(sections: list[dict]) -> list[dict]:
     rows: list[dict] = []
 
     for section in sections:
-        if section["section_number"] != 4:  # Five-Year Financial Forecast
+        if section["title"] != FIVE_YEAR_FORECAST_TITLE:
             continue
         for table in section["tables"]:
             headers = table["headers"]
@@ -2177,8 +2198,8 @@ def build_structure_changes() -> dict:
     # Load section titles for each year, excluding non-department sections
     sections_by_year: dict[int, list[str]] = {}
     for year in years:
-        sp = sections_path(year, "operating")
-        if sp.exists():
+        sp = best_sections_path(year, "operating")
+        if sp is not None:
             with open(sp, encoding="utf-8") as f:
                 sections_by_year[year] = [
                     s["title"] for s in json.load(f)
@@ -2287,7 +2308,10 @@ def build_structure_changes() -> dict:
             continue
 
         last_year = max(entry["presentInYears"])
-        output_dir = expected_dir(last_year, "operating")
+        last_subtype = best_variant_type(last_year, "operating")
+        if last_subtype is None:
+            continue
+        output_dir = expected_dir(last_year, last_subtype)
         if not output_dir.exists():
             continue
 
@@ -2361,6 +2385,11 @@ def main() -> None:
     parser.add_argument("--output-prefix", type=str, default="", help="Prefix for output filenames (e.g., '2025' → '2025-budget-data.json')")
     parser.add_argument("--operating-variant", default="adopted",
                         help="Operating budget variant to read (default: adopted; e.g. 'amended')")
+    parser.add_argument("--capital-variant", default="adopted",
+                        help="Capital budget variant to read (default: adopted; e.g. 'proposed')")
+    parser.add_argument("--baseline-root", type=Path, default=None,
+                        help="Read extracted CSVs from {root}/{operating,capital}[-variant]/ instead of "
+                             "output/regression/expected/{year}/ (e.g. to preview a year before it is baselined)")
     parser.add_argument("--operating-only", action="store_true",
                         help="Skip the capital budget build (used for the adopted diff baseline)")
     args = parser.parse_args()
@@ -2368,18 +2397,23 @@ def main() -> None:
 
     # Reinitialize globals for the requested year and operating variant
     global BUDGET_YEAR, PRIOR_YEAR, INPUT_DIR, OPERATING_OUTPUT_DIR, CAPITAL_OUTPUT_DIR
-    global PDF_PATH, CAPITAL_SPLIT_DIR, OPERATING_SUBTYPE
+    global PDF_PATH, CAPITAL_SPLIT_DIR, OPERATING_SUBTYPE, CAPITAL_SUBTYPE
     BUDGET_YEAR = args.year
     PRIOR_YEAR = BUDGET_YEAR - 1
     INPUT_DIR = input_dir(BUDGET_YEAR)
     OPERATING_SUBTYPE = variant_type("operating", args.operating_variant)
     OPERATING_OUTPUT_DIR = expected_dir(BUDGET_YEAR, OPERATING_SUBTYPE)
-    CAPITAL_OUTPUT_DIR = expected_dir(BUDGET_YEAR, "capital")
+    capital_paths = variant_paths(year=BUDGET_YEAR, budget_type="capital", variant=args.capital_variant)
+    CAPITAL_SUBTYPE = capital_paths.subtype
+    CAPITAL_OUTPUT_DIR = capital_paths.expected_dir
     PDF_PATH = pdf_path(BUDGET_YEAR, OPERATING_SUBTYPE)
-    CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, "capital")
+    CAPITAL_SPLIT_DIR = capital_paths.split_dir
+    if args.baseline_root is not None:
+        OPERATING_OUTPUT_DIR = args.baseline_root / OPERATING_SUBTYPE
+        CAPITAL_OUTPUT_DIR = args.baseline_root / CAPITAL_SUBTYPE
 
     print(f"Building web data for {BUDGET_YEAR} budget "
-          f"(operating variant: {args.operating_variant}, prior year: {PRIOR_YEAR})")
+          f"(operating variant: {args.operating_variant}, capital variant: {args.capital_variant}, prior year: {PRIOR_YEAR})")
 
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     views_dir = WEB_DATA_DIR / "views"

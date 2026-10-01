@@ -1,18 +1,27 @@
 """Extract detected chart/image regions from budget PDF pages as cropped WebP images.
 
 Reads chart region data from budget-data.json and capital-budget-data.json,
-then crops the corresponding regions from the PDFs, saving them to
+then crops the corresponding regions from the year's (variant) PDFs, saving them to
 web/public/charts/{slug}/.
 """
 
+import argparse
 import json
+import sys
 from pathlib import Path
 
 import pdfplumber
 from PIL import Image
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from utils.paths import DEFAULT_YEAR, variant_paths
+
 BASE_DIR = Path(__file__).parent.parent
 OUTPUT_DIR = BASE_DIR / "web" / "public" / "charts"
+
+# Variant preference when none is requested explicitly.
+AUTO_VARIANT_ORDER: tuple[str, ...] = ("amended", "adopted", "proposed")
 
 DPI = 300  # render resolution (high enough to read map labels and fine text)
 
@@ -69,30 +78,54 @@ def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
     return total
 
 
+def resolve_source_pdf(*, year: int, budget_type: str, variant: str | None) -> Path:
+    """PDF to crop charts from: the requested variant, or the first that exists.
+
+    With no variant requested, prefer amended, then adopted, then proposed (the
+    data bundle is built from whichever variant the deploy chose).
+    """
+    candidates: tuple[str, ...] = (variant,) if variant else AUTO_VARIANT_ORDER
+    for candidate in candidates:
+        pdf_path: Path = variant_paths(year=year, budget_type=budget_type, variant=candidate).pdf
+        if pdf_path.exists():
+            return pdf_path
+    return variant_paths(year=year, budget_type=budget_type, variant=candidates[0]).pdf
+
+
+def extract_budget_type(*, data_path: Path, pdf_path: Path, label: str) -> int:
+    """Extract charts for one budget bundle if its data file exists; returns the image count."""
+    if not data_path.exists():
+        return 0
+    with open(data_path, encoding="utf-8") as f:
+        data: dict = json.load(f)
+    count: int = extract_charts_from_data(data, pdf_path)
+    print(f"  {label}: {count} chart images")
+    return count
+
+
 def main() -> None:
-    total = 0
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
+    parser.add_argument("--operating-variant", default=None,
+                        help="Operating variant whose PDF to crop (default: amended, else adopted, else proposed)")
+    parser.add_argument("--capital-variant", default=None,
+                        help="Capital variant whose PDF to crop (default: amended, else adopted, else proposed)")
+    parser.add_argument("--output-prefix", default="",
+                        help="Filename prefix of the data bundles, e.g. '2025' -> 2025-budget-data.json")
+    args = parser.parse_args()
+    prefix: str = f"{args.output_prefix}-" if args.output_prefix else ""
+    data_dir: Path = BASE_DIR / "web" / "src" / "data"
 
-    # Operating budget. budget-data.json is built from the amended variant, so
-    # crop charts from the matching amended PDF (falls back to adopted if absent).
-    operating_data_path = BASE_DIR / "web" / "src" / "data" / "budget-data.json"
-    operating_pdf_path = BASE_DIR / "input" / "2026" / "operating-amended-budget.pdf"
-    if not operating_pdf_path.exists():
-        operating_pdf_path = BASE_DIR / "input" / "2026" / "operating-budget.pdf"
-    if operating_data_path.exists():
-        data = json.load(open(operating_data_path, encoding="utf-8"))
-        count = extract_charts_from_data(data, operating_pdf_path)
-        print(f"  Operating: {count} chart images")
-        total += count
-
-    # Capital budget
-    capital_data_path = BASE_DIR / "web" / "src" / "data" / "capital-budget-data.json"
-    capital_pdf_path = BASE_DIR / "input" / "2026" / "capital-budget.pdf"
-    if capital_data_path.exists():
-        data = json.load(open(capital_data_path, encoding="utf-8"))
-        count = extract_charts_from_data(data, capital_pdf_path)
-        print(f"  Capital: {count} chart images")
-        total += count
-
+    total: int = extract_budget_type(
+        data_path=data_dir / f"{prefix}budget-data.json",
+        pdf_path=resolve_source_pdf(year=args.year, budget_type="operating", variant=args.operating_variant),
+        label="Operating",
+    )
+    total += extract_budget_type(
+        data_path=data_dir / f"{prefix}capital-budget-data.json",
+        pdf_path=resolve_source_pdf(year=args.year, budget_type="capital", variant=args.capital_variant),
+        label="Capital",
+    )
     print(f"Extracted {total} chart images total to {OUTPUT_DIR}")
 
 

@@ -1,6 +1,7 @@
 """Derive section boundaries from the full budget PDF by detecting section title pages."""
 
 import json
+import re
 from pathlib import Path
 
 import pypdf
@@ -61,6 +62,10 @@ KNOWN_SECTIONS: list[dict[str, str | None]] = [
     {"title": "Master Fee Schedule"},
     {"title": "Appendices"},
 ]
+
+
+# First line of the salary-tables page, e.g. "2027 salary tables" (normalized).
+SALARY_TABLES_RE: re.Pattern[str] = re.compile(r"^\d{4} salary tables$")
 
 
 def normalize(text: str) -> str:
@@ -125,7 +130,7 @@ def detect_section_start(page_text: str, page_num: int) -> str | None:
         return "Revenue Summary"
     if first_line == "revenue narrative":
         return "Revenue Narrative"
-    if first_line == "2026 salary tables":
+    if SALARY_TABLES_RE.match(first_line):
         return "Salary Tables"
     if first_line == "expenditures by department":
         return "Expenditure Summary"
@@ -323,16 +328,19 @@ def main() -> None:
     import argparse
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-    from utils.paths import DEFAULT_YEAR, input_dir, pdf_path as get_pdf_path, sections_path
+    from utils.paths import DEFAULT_YEAR, input_dir, pdf_path as get_pdf_path, sections_path, variant_type
 
     parser = argparse.ArgumentParser(description="Derive section boundaries from a budget PDF.")
     parser.add_argument("--year", type=int, default=DEFAULT_YEAR, help=f"Budget year (default: {DEFAULT_YEAR})")
     parser.add_argument("--budget-type", default="operating", choices=["operating", "capital"])
+    parser.add_argument("--variant", default="adopted", help="Budget variant (default: adopted; e.g. amended, proposed)")
     args = parser.parse_args()
 
-    source_pdf = str(get_pdf_path(args.year, args.budget_type))
-    original_path = str(sections_path(args.year, args.budget_type))
-    output_path = str(input_dir(args.year) / "sections_derived.json")
+    subtype = variant_type(args.budget_type, args.variant)
+    source_pdf = str(get_pdf_path(args.year, subtype))
+    original_path = str(sections_path(args.year, subtype))
+    derived_name = "sections_derived.json" if subtype == "operating" else f"sections_derived-{subtype}.json"
+    output_path = str(input_dir(args.year) / derived_name)
 
     print(f"Scanning {source_pdf}...")
     derived = derive_sections(source_pdf)

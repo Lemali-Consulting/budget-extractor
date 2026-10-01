@@ -14,20 +14,22 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from utils.capital_appendices import (
+    find_appendix_pdf,
     parse_appendix_a,
     parse_appendix_b,
     parse_appendix_c,
 )
-from utils.paths import PROJECT_ROOT, split_pdf_dir
+from utils.paths import DEFAULT_YEAR, PROJECT_ROOT, variant_paths
 
 
-APPENDIX_PDF = "64_Capital_Budget_Appendices.pdf"
+CAPITAL_BUDGET_TYPE: str = "capital"
 
 
-def build(year: int) -> Path:
-    pdf_path = split_pdf_dir(year, "capital") / APPENDIX_PDF
-    if not pdf_path.exists():
-        raise FileNotFoundError(f"Source PDF not found: {pdf_path}")
+def build(*, year: int, variant: str, output_prefix: str) -> Path:
+    """Parse the appendices PDF for a year/variant and write the views JSON ('2025' -> '2025-capital-appendices.json')."""
+    pdf_path: Path = find_appendix_pdf(
+        variant_paths(year=year, budget_type=CAPITAL_BUDGET_TYPE, variant=variant).split_dir
+    )
 
     output = {
         "appendix_a": parse_appendix_a(pdf_path),
@@ -35,8 +37,8 @@ def build(year: int) -> Path:
         "appendix_c": parse_appendix_c(pdf_path),
     }
 
-    prefix = "" if year == 2026 else f"{year}-"
-    out_path = PROJECT_ROOT / "web/src/data/views" / f"{prefix}capital-appendices.json"
+    file_prefix: str = f"{output_prefix}-" if output_prefix else ""
+    out_path = PROJECT_ROOT / "web/src/data/views" / f"{file_prefix}capital-appendices.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(output, indent=2))
     return out_path
@@ -44,9 +46,12 @@ def build(year: int) -> Path:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--year", type=int, default=2026)
+    ap.add_argument("--year", type=int, default=DEFAULT_YEAR)
+    ap.add_argument("--variant", default="adopted", help="Capital budget variant (default: adopted)")
+    ap.add_argument("--output-prefix", default="",
+                    help="Filename prefix, e.g. '2025' -> '2025-capital-appendices.json' (default: none)")
     args = ap.parse_args()
-    out = build(args.year)
+    out = build(year=args.year, variant=args.variant, output_prefix=args.output_prefix)
     a_count = sum(len(d["projects"]) for d in json.loads(out.read_text())["appendix_a"]["departments"])
     b_count = len(json.loads(out.read_text())["appendix_b"]["scoring"])
     c_count = len(json.loads(out.read_text())["appendix_c"]["entries"])
