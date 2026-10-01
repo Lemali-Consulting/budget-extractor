@@ -5,8 +5,10 @@ import PageImage from '../../components/PageImage.tsx';
 import ChartImage from '../../components/ChartImage.tsx';
 import PdfSidebar from '../../components/PdfSidebar.tsx';
 import SectionNav from '../../components/SectionNav.astro';
+import CapitalAppendices from '../../components/CapitalAppendices.tsx';
 import capitalData from '../../data/capital-budget-data.json';
 import budgetData from '../../data/budget-data.json';
+import appendicesData from '../../data/views/capital-appendices.json';
 import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
 
 export function getStaticPaths() {
@@ -166,11 +168,17 @@ function parseNarrative(raw: string): Segment[] {
 
   <p class="text-gray-500 mb-6">
     {section.start_page && section.end_page ? `Pages ${section.start_page}–${section.end_page} in Capital Budget` : ''}
-    · {section.tables.length} {section.tables.length === 1 ? 'table' : 'tables'}
-    {hasNarrative ? ' · includes narrative' : ''}
+    {section.slug !== 'capital-budget-appendices' && (
+      <>
+        · {section.tables.length} {section.tables.length === 1 ? 'table' : 'tables'}
+        {hasNarrative ? ' · includes narrative' : ''}
+      </>
+    )}
   </p>
 
-  {finalItems.length === 0 ? (
+  {section.slug === 'capital-budget-appendices' ? (
+    <CapitalAppendices client:load data={appendicesData as any} />
+  ) : finalItems.length === 0 ? (
     <p class="text-gray-400 italic">No content extracted for this project.</p>
   ) : finalItems.map((item) => {
     if (item.kind === 'page_break') {
