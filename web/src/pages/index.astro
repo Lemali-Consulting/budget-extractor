@@ -192,6 +192,20 @@ const teaserLinks: FlowLink[] = [
     <FlowSankey nodes={teaserNodes} links={teaserLinks} width={1000} height={280} showLabels />
   </a>
 
+  <!-- Trends teaser -->
+  <a
+    href="/trends/"
+    class="block mb-8 p-5 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition"
+  >
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="text-xl font-bold text-blue-900">Budget Trends Over Time</h2>
+      <span class="text-sm text-blue-600 hover:text-blue-800">See the trends &rarr;</span>
+    </div>
+    <p class="text-sm text-gray-600">
+      Revenue, spending and reserves across budget years, with the {HEADLINE.label} budget set against that history.
+    </p>
+  </a>
+
   <!-- What Changed — prominent callout -->
   <a href="/changes/" class="block mb-8 p-6 bg-amber-50 rounded-lg border-2 border-amber-200 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition">
     <h2 class="text-xl font-bold text-amber-900 mb-2">What Changed in {HEADLINE.fiscalLabel}?</h2>

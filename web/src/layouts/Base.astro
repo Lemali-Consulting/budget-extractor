@@ -54,7 +54,7 @@ const archiveLinks = ARCHIVE_YEARS.map((y) => ({
   label: `${y.year} Archive`,
   prefix: `${y.routePrefix}/`,
 }));
-const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/changes/', '/amendments/', '/cross-year/', ...archiveLinks.map((a) => a.prefix)];
+const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/changes/', '/trends/', '/amendments/', '/cross-year/', ...archiveLinks.map((a) => a.prefix)];
 const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/embed/', '/glossary/'];
 ---
 
@@ -108,6 +108,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
                   <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
                   <a href="/changes/" class={dropdownItemClass('/changes/')}>What Changed</a>
+                  <a href="/trends/" class={dropdownItemClass('/trends/')}>Trends</a>
                   <a href="/amendments/" class={dropdownItemClass('/amendments/')}>2026 Amendments</a>
                   <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
                   {archiveLinks.map((a) => (
@@ -147,6 +148,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
             <a href="/capital/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/capital/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Capital</a>
             <a href="/flow/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/flow/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Money Flow</a>
             <a href="/changes/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/changes/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>What Changed</a>
+            <a href="/trends/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/trends/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Trends</a>
             <a href="/amendments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/amendments/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>2026 Amendments</a>
             <a href="/cross-year/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/cross-year/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Proposed vs Adopted</a>
             {archiveLinks.map((a) => (

@@ -558,6 +558,7 @@ test("no JS errors on key pages", async ({ page }) => {
     "/2026/changes/",
     "/2026/personnel/",
     "/cross-year/",
+    "/trends/",
   ];
   for (const route of routes) {
     await page.goto(route);
@@ -565,4 +566,67 @@ test("no JS errors on key pages", async ({ page }) => {
   }
 
   expect(errors, "No JS errors on any page").toEqual([]);
+});
+
+// ---------------------------------------------------------------------------
+// Trends (longitudinal headline figures)
+// ---------------------------------------------------------------------------
+test("trends page charts headline figures over time", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (err) => errors.push(err.message));
+  page.on("console", (msg) => {
+    if (msg.type() === "error") errors.push(msg.text());
+  });
+
+  await page.goto("/trends/");
+  await expect(page).toHaveTitle(/Trends/);
+  await expect(main(page).locator("h1").first()).toContainText(/Trends/i);
+
+  const chartHeadings = [
+    "Recurring revenue",
+    "Total expenditures",
+    "Ending reserve fund balance",
+  ];
+  for (const name of chartHeadings) {
+    const section = main(page).locator("section", {
+      has: page.getByRole("heading", { name, level: 2 }),
+    });
+    await section.scrollIntoViewIfNeeded();
+    await expect(section.locator("svg").first()).toBeVisible();
+    // Legend explains solid vs dashed
+    await expect(section.getByText(/dashed/i).first()).toBeVisible();
+  }
+
+  // Revenue-by-category view renders a chart too
+  const taxes = main(page).locator("section", {
+    has: page.getByRole("heading", { name: /Revenue by category/i, level: 2 }),
+  });
+  await taxes.scrollIntoViewIfNeeded();
+  await expect(taxes.locator("svg").first()).toBeVisible();
+
+  // Callouts mention the headline year and are computed from data
+  const callouts = main(page).locator('[data-testid="trend-callouts"]');
+  await expect(callouts).toContainText(/2027 Proposed/);
+  await expect(callouts).toContainText(/\$\d/);
+
+  // Notes block
+  await expect(main(page).getByRole("heading", { name: "Notes", level: 2 })).toBeVisible();
+
+  // Nav link present (desktop dropdown)
+  await expect(page.locator('header a[href="/trends/"]').first()).toBeAttached();
+  // Home page link card
+  await page.goto("/");
+  await expect(main(page).locator('a[href="/trends/"]').first()).toBeVisible();
+
+  expect(errors, "No console errors on /trends/").toEqual([]);
+});
+
+test("trends page has no horizontal scroll on a phone", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/trends/");
+  await page.waitForLoadState("networkidle");
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - window.innerWidth,
+  );
+  expect(overflow).toBeLessThanOrEqual(0);
 });

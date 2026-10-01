@@ -1,0 +1,140 @@
+---
+import Base from '../layouts/Base.astro';
+import TrendsChart from '../components/TrendsChart.tsx';
+import CategoryTrends from '../components/CategoryTrends.tsx';
+import type { CategorySeries } from '../components/CategoryTrends.tsx';
+import { BUDGET_YEARS, HEADLINE } from '../lib/budget-year';
+import longitudinalJson from '../data/views/longitudinal.json';
+import {
+  METRIC,
+  buildCallouts,
+  buildNotes,
+  buildSeries,
+  majorRevenueCategories,
+  type LongitudinalData,
+  type LongitudinalSource,
+  type Metric,
+} from '../lib/longitudinal';
+
+const data = longitudinalJson as unknown as LongitudinalData;
+
+/** Display name of a source document, from the year registry when it matches. */
+function labelSource(source: LongitudinalSource): string {
+  const known = BUDGET_YEARS[source.sourceYear];
+  if (known && known.operatingVariant === source.sourceVariant) return known.label;
+  return `${source.sourceYear} Budget (${source.sourceVariant})`;
+}
+
+function seriesFor(metric: Metric) {
+  return buildSeries({
+    data,
+    metric,
+    labelSource,
+    headlineSourceYear: HEADLINE.year,
+  });
+}
+
+const charts = [
+  {
+    id: 'recurring-revenue',
+    heading: 'Recurring revenue',
+    blurb: 'Revenue the city expects to collect each year, not counting any use of reserves.',
+    metric: METRIC.RECURRING_REVENUE,
+    zeroLine: false,
+  },
+  {
+    id: 'total-expenditures',
+    heading: 'Total expenditures',
+    blurb: 'Everything the operating budget spends in a year.',
+    metric: METRIC.TOTAL_EXPENDITURES,
+    zeroLine: false,
+  },
+  {
+    id: 'ending-reserve-balance',
+    heading: 'Ending reserve fund balance',
+    blurb: 'The fund balance left at the end of each year. Spending beyond recurring revenue draws it down.',
+    metric: METRIC.ENDING_RESERVE_BALANCE,
+    zeroLine: true,
+  },
+].map((chart) => ({ ...chart, series: seriesFor(chart.metric) }));
+
+const categoryNames = majorRevenueCategories({
+  data,
+  headlineSourceYear: HEADLINE.year,
+  headlineFiscalYear: HEADLINE.year,
+});
+const categories: CategorySeries[] = categoryNames.map((category) => ({
+  category,
+  series: buildSeries({
+    data,
+    metric: METRIC.REVENUE_BY_CATEGORY,
+    category,
+    labelSource,
+    headlineSourceYear: HEADLINE.year,
+  }),
+}));
+
+const callouts = buildCallouts({
+  data,
+  headlineSourceYear: HEADLINE.year,
+  headlineFiscalYear: HEADLINE.year,
+  headlineLabel: HEADLINE.label,
+});
+const notes = buildNotes({ data, labelSource });
+---
+
+<Base
+  title="Trends"
+  description={`Pittsburgh's revenue, spending and reserves over time, with the ${HEADLINE.label} budget set against that history.`}
+>
+  <h1 class="text-3xl font-bold mb-2">Trends</h1>
+  <p class="text-gray-600 mb-6 max-w-3xl">
+    Each budget document reports past actuals plus its own budget and a five-year forecast. This page
+    lines them up, so you can see the {HEADLINE.label} budget against history and how each
+    document's forecast has shifted. Actuals come from the newest document that reports them, and
+    forecasts are not commitments.
+  </p>
+
+  <div
+    data-testid="trend-callouts"
+    class="grid gap-3 mb-8 md:grid-cols-3"
+  >
+    {callouts.map((callout) => (
+      <div class="bg-white rounded-lg border-2 border-blue-200 p-4 text-sm text-gray-700" data-callout={callout.id}>
+        {callout.text}
+      </div>
+    ))}
+  </div>
+
+  {charts.map((chart) => (
+    <section class="mb-10" data-testid={`chart-${chart.id}`}>
+      <h2 class="text-xl font-bold mb-1">{chart.heading}</h2>
+      <p class="text-sm text-gray-500 mb-3 max-w-3xl">{chart.blurb}</p>
+      <div class="bg-white rounded-lg border p-3 sm:p-4">
+        <TrendsChart
+          series={chart.series}
+          zeroLine={chart.zeroLine}
+          ariaLabel={`${chart.heading} over time`}
+          client:visible
+        />
+      </div>
+    </section>
+  ))}
+
+  <section class="mb-10" data-testid="chart-revenue-by-category">
+    <h2 class="text-xl font-bold mb-1">Revenue by category</h2>
+    <p class="text-sm text-gray-500 mb-3 max-w-3xl">
+      The largest revenue sources in the {HEADLINE.label} budget. Pick one to see its history and forecasts.
+    </p>
+    <div class="bg-white rounded-lg border p-3 sm:p-4">
+      <CategoryTrends categories={categories} client:visible />
+    </div>
+  </section>
+
+  <section class="mb-8" data-testid="trend-notes">
+    <h2 class="text-xl font-bold mb-2">Notes</h2>
+    <ul class="list-disc pl-5 space-y-1.5 text-sm text-gray-600 max-w-3xl">
+      {notes.map((note) => <li>{note}</li>)}
+    </ul>
+  </section>
+</Base>
