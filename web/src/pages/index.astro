@@ -6,53 +6,55 @@ import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { revenueColor } from '../lib/flow-colors';
 import { colorForSlug } from '../lib/department-groups';
-import budgetData from '../data/budget-data.json';
-import capitalData from '../data/capital-budget-data.json';
-import searchIndex from '../data/views/search-index.json';
-import departmentBudgets from '../data/views/department-budgets.json';
-import budgetChanges from '../data/views/budget-changes.json';
-import amendmentChanges from '../data/views/2026-amendment-changes.json';
-import amendmentCellDiffs from '../data/views/2026-amendment-cell-diffs.json';
-import revenueWaterfall from '../data/views/revenue-waterfall.json';
-import capitalFunding from '../data/views/capital-funding-sources.json';
-import personnelByDept from '../data/views/personnel-by-department.json';
-import { operating, sumFor, type DeptBudgetRow } from '../lib/department-budgets';
+import { HEADLINE, ARCHIVE_YEARS, yearPath } from '../lib/budget-year';
+import { operating, sumFor } from '../lib/department-budgets';
 
-const operatingSections = budgetData.sections;
-const capitalSections = capitalData.sections;
+const { columns } = HEADLINE;
+const {
+  searchIndex,
+  departmentBudgets,
+  budgetChanges,
+  revenueWaterfall,
+  capitalFundingSources: capitalFunding,
+  personnelByDepartment: personnelByDept,
+} = HEADLINE.views;
+const operatingSections = HEADLINE.operating.sections;
+const capitalSections = HEADLINE.capital.sections;
+// The most recent archived budget, linked from the hero.
+const [archive] = ARCHIVE_YEARS;
 const operatingTables = operatingSections.reduce((n: number, s: any) => n + s.tables.length, 0);
 
 // Count capital functional areas
 const capitalAreas = new Set(capitalSections.map((s: any) => s.functional_area || 'Other'));
 
-// Sum capital 6-year plan total (2026-2031)
+// Sum capital six-year plan total (current year onward)
 const capitalTotal = (capitalFunding as { year: string; amount: number }[])
-  .filter(r => parseInt(r.year) >= 2026)
+  .filter(r => parseInt(r.year) >= HEADLINE.year)
   .reduce((s, r) => s + r.amount, 0);
 
 // Summary stats (same logic as dashboard)
-const budgetRows = departmentBudgets as DeptBudgetRow[];
-const total2026 = sumFor(budgetRows, 'operating', '2026 Budget');
-const total2025 = sumFor(budgetRows, 'operating', '2025 Budget');
-const trustTotal2026 = sumFor(budgetRows, 'trust', '2026 Budget');
-const budgetChange = total2025 > 0 ? ((total2026 - total2025) / total2025 * 100) : 0;
+const budgetRows = departmentBudgets;
+const totalCurrent = sumFor(budgetRows, 'operating', columns.budget);
+const totalPrior = sumFor(budgetRows, 'operating', columns.priorBudget);
+const trustTotalCurrent = sumFor(budgetRows, 'trust', columns.budget);
+const budgetChange = totalPrior > 0 ? ((totalCurrent - totalPrior) / totalPrior * 100) : 0;
 const deptCount = new Set(operating(budgetRows).map(r => r.slug)).size;
 
 const revenueTotal = (revenueWaterfall as { amount: number }[]).reduce((s, r) => s + r.amount, 0);
 
-const capital2026 = (capitalFunding as { year: string; amount: number }[])
-  .filter(r => r.year === '2026')
+const capitalCurrent = (capitalFunding as { year: string; amount: number }[])
+  .filter(r => r.year === String(HEADLINE.year))
   .reduce((s, r) => s + r.amount, 0);
 
-const personnelData = personnelByDept as { totalFte2026: number; totalBudget2026: number }[];
-const totalFte = personnelData.reduce((s, r) => s + r.totalFte2026, 0);
-const totalPersonnelBudget = personnelData.reduce((s, r) => s + r.totalBudget2026, 0);
+const personnelData = personnelByDept as { totalFteCurrent: number; totalBudgetCurrent: number }[];
+const totalFte = personnelData.reduce((s, r) => s + r.totalFteCurrent, 0);
+const totalPersonnelBudget = personnelData.reduce((s, r) => s + r.totalBudgetCurrent, 0);
 
 // Budget changes stats
 const changes = budgetChanges as any;
-const totalDollarChange = changes.totalBudget2026 - changes.totalBudget2025;
-const totalPct = changes.totalBudget2025 > 0 ? ((totalDollarChange / changes.totalBudget2025) * 100).toFixed(1) : '0';
-const fteChange = (changes.totalFte2026 || 0) - (changes.totalFte2025 || 0);
+const totalDollarChange = changes.totalBudgetCurrent - changes.totalBudgetPrior;
+const totalPct = changes.totalBudgetPrior > 0 ? ((totalDollarChange / changes.totalBudgetPrior) * 100).toFixed(1) : '0';
+const fteChange = Math.round(((changes.totalFteCurrent || 0) - (changes.totalFtePrior || 0)) * 10) / 10;
 const newPositions = changes.newPositions?.length || 0;
 const eliminatedPositions = changes.eliminatedPositions?.length || 0;
 const shiftedPositions = changes.shiftedPositions?.length || 0;
@@ -61,20 +63,9 @@ function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
 }
 
-// ---------- Amendment headline (adopted → amended reissue) ----------
-const amd = amendmentChanges as any;
-const amdMeta = (amendmentCellDiffs as any).meta || {};
-const amdAdopted = amd.totalBudgetAdopted as number;
-const amdAmended = amd.totalBudgetAmended as number;
-const amdDelta = amdAmended - amdAdopted;
-const amdPct = amdAdopted > 0 ? (amdDelta / amdAdopted) * 100 : 0;
-const amdChangedDepts = (amd.departmentChanges as any[]).filter((d) => d.dollarChange !== 0).length;
-const amdChangedLineItems = (amdMeta.changedLineItemCount as number) || 0;
-const amdLabel = (amd.amendmentLabel as string) || amdMeta.amendmentLabel || 'as amended';
-
 // ---------- Teaser Sankey: revenue → trunk → top departments ----------
 const teaserDepts = operating(budgetRows)
-  .filter((r) => r.year === '2026 Budget')
+  .filter((r) => r.year === columns.budget)
   .sort((a, b) => b.amount - a.amount);
 const teaserDeptTotal = teaserDepts.reduce((s, d) => s + d.amount, 0);
 const TEASER_TOP = 8;
@@ -128,6 +119,9 @@ const teaserLinks: FlowLink[] = [
       The city's 600-page budget PDF, turned into searchable tables and charts.
       <a href="/about/" class="text-blue-600 hover:underline text-base">How this was built</a>
     </p>
+    <p class="text-sm text-gray-500 mb-3">
+      Showing the <strong>{HEADLINE.label}</strong> budget &mdash; the Mayor's proposal for fiscal year {HEADLINE.year}.
+    </p>
 
     <!-- Example questions -->
     <div class="flex flex-wrap gap-2 text-sm">
@@ -138,57 +132,32 @@ const teaserLinks: FlowLink[] = [
     </div>
   </div>
 
-  <!-- Amendment callout — the 2026 operating budget was amended after adoption -->
+  <!-- Archive pointer: the previous budget stays browsable -->
   <a
-    href="/amendments/"
-    class="block mb-8 p-5 sm:p-6 bg-amber-50 rounded-lg border-2 border-amber-300 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition"
+    href={yearPath({ budgetYear: archive, path: '/operating/' })}
+    class="block mb-8 p-4 bg-slate-50 rounded-lg border border-slate-300 ring-0 hover:ring-2 hover:ring-slate-400 transition"
   >
-    <div class="flex items-center gap-2 mb-2">
-      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-200 text-amber-900 text-xs font-bold uppercase tracking-wide">
-        <span aria-hidden="true">&#9888;&#65039;</span> Budget Amended
-      </span>
-      <span class="text-xs text-amber-700">{amdLabel}</span>
+    <div class="flex items-baseline justify-between gap-3">
+      <h2 class="text-base font-semibold text-slate-800">Looking for the {archive.year} budget?</h2>
+      <span class="text-sm text-slate-600 whitespace-nowrap">Browse the {archive.year} archive &rarr;</span>
     </div>
-    <div class="flex items-baseline justify-between gap-3 mb-2">
-      <h2 class="text-xl font-bold text-amber-900">The 2026 operating budget was amended after adoption</h2>
-      <span class="hidden sm:inline text-sm text-amber-700 whitespace-nowrap">See what changed &rarr;</span>
-    </div>
-    <p class="text-sm text-amber-800 mb-4">
-      These figures now reflect the amended 2026 operating budget &mdash; here's how it differs from the budget as originally adopted in December.
+    <p class="text-sm text-slate-600 mt-1">
+      The {archive.label} operating budget and the {archive.year} capital budget stay available, with every department, table and source page.
     </p>
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <div>
-        <div class="text-xs text-amber-700 uppercase tracking-wide">Adopted &rarr; Amended</div>
-        <div class="text-lg font-bold text-amber-900 mt-0.5">{fmtM(amdAdopted)} &rarr; {fmtM(amdAmended)}</div>
-      </div>
-      <div>
-        <div class="text-xs text-amber-700 uppercase tracking-wide">Net Change</div>
-        <div class="text-lg font-bold text-amber-900 mt-0.5">{amdDelta >= 0 ? '+' : ''}{fmtM(amdDelta)} ({amdPct >= 0 ? '+' : ''}{amdPct.toFixed(1)}%)</div>
-      </div>
-      <div>
-        <div class="text-xs text-amber-700 uppercase tracking-wide">Departments</div>
-        <div class="text-lg font-bold text-amber-900 mt-0.5">{amdChangedDepts} changed</div>
-      </div>
-      <div>
-        <div class="text-xs text-amber-700 uppercase tracking-wide">Line Items</div>
-        <div class="text-lg font-bold text-amber-900 mt-0.5">{amdChangedLineItems.toLocaleString('en-US')} revised</div>
-      </div>
-    </div>
-    <span class="sm:hidden mt-3 inline-block text-sm font-medium text-amber-700">See what changed &rarr;</span>
   </a>
 
   <!-- Summary stats -->
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Operating Budget</div>
-      <div class="text-2xl font-bold text-blue-900 mt-1">{fmtM(total2026)}</div>
+      <div class="text-2xl font-bold text-blue-900 mt-1">{fmtM(totalCurrent)}</div>
       <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-        {budgetChange >= 0 ? '+' : ''}{budgetChange.toFixed(1)}% vs 2025
+        {budgetChange >= 0 ? '+' : ''}{budgetChange.toFixed(1)}% vs {HEADLINE.priorYear}
       </div>
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Trust Funds</div>
-      <div class="text-2xl font-bold text-slate-700 mt-1">{fmtM(trustTotal2026)}</div>
+      <div class="text-2xl font-bold text-slate-700 mt-1">{fmtM(trustTotalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">Separate from operating</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
@@ -197,8 +166,8 @@ const teaserLinks: FlowLink[] = [
       <div class="text-sm text-gray-500 mt-0.5">{(revenueWaterfall as any[]).length} sources</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-400 uppercase tracking-wide">Capital (2026)</div>
-      <div class="text-2xl font-bold text-amber-900 mt-1">{fmtM(capital2026)}</div>
+      <div class="text-xs text-gray-400 uppercase tracking-wide">Capital ({HEADLINE.year})</div>
+      <div class="text-2xl font-bold text-amber-900 mt-1">{fmtM(capitalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
@@ -225,7 +194,7 @@ const teaserLinks: FlowLink[] = [
 
   <!-- What Changed — prominent callout -->
   <a href="/changes/" class="block mb-8 p-6 bg-amber-50 rounded-lg border-2 border-amber-200 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition">
-    <h2 class="text-xl font-bold text-amber-900 mb-2">What Changed in FY2026?</h2>
+    <h2 class="text-xl font-bold text-amber-900 mb-2">What Changed in {HEADLINE.fiscalLabel}?</h2>
     <p class="text-sm text-amber-800 mb-3">The biggest budget increases, decreases, new positions, and eliminated positions — the view you need before a budget hearing.</p>
     <div class="flex flex-wrap gap-4 text-sm">
       <span class="font-semibold text-amber-900">{totalDollarChange > 0 ? '+' : ''}{fmtM(totalDollarChange)} ({totalPct}%)</span>
@@ -253,7 +222,7 @@ const teaserLinks: FlowLink[] = [
       <div class="flex gap-4 text-sm text-gray-500">
         <span class="font-medium">{capitalSections.length} projects</span>
         <span>{capitalAreas.size} functional areas</span>
-        {capital2026 > 0 && <span>2026: {fmtM(capital2026)}</span>}
+        {capitalCurrent > 0 && <span>{HEADLINE.year}: {fmtM(capitalCurrent)}</span>}
       </div>
     </a>
   </div>
@@ -264,7 +233,7 @@ const teaserLinks: FlowLink[] = [
       <h2 class="text-lg font-semibold">Top Departments by Budget</h2>
       <a href="/dashboard/" class="text-sm text-blue-500 hover:text-blue-700">Full dashboard &rarr;</a>
     </div>
-    <p class="text-sm text-gray-500 mb-3">FY2026 operating budget — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
+    <p class="text-sm text-gray-500 mb-3">{HEADLINE.fiscalLabel} operating budget — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
     <BudgetChart data={operating(budgetRows)} client:load />
   </div>
 

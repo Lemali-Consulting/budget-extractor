@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+import SearchBar from '../SearchBar.tsx';
+import FundingSourceChart from '../FundingSourceChart.tsx';
+import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+
+interface Props {
+  budgetYear: BudgetYear;
+}
+
+const { budgetYear } = Astro.props as Props;
+const prefix = budgetYear.routePrefix;
+const sections = budgetYear.capital.sections;
+const searchIndex = budgetYear.views.searchIndex;
+const capitalFunding = budgetYear.views.capitalFundingSources;
+
+// Group projects by functional area
+const grouped = new Map<string, typeof sections>();
+for (const section of sections) {
+  const fa = (section as any).functional_area || 'Other';
+  if (!grouped.has(fa)) grouped.set(fa, []);
+  grouped.get(fa)!.push(section);
+}
+
+// Helper to parse currency from CIP table cells
+function parseCurrency(s: string): number {
+  if (!s) return 0;
+  return parseFloat(s.replace(/[,$]/g, '')) || 0;
+}
+
+// Helper to extract funding from a project's CIP table TOTAL row
+function getProjectFunding(section: typeof sections[0]): { currentYear: number; sixYearTotal: number } {
+  const yearColumn = (section.tables.find((t: any) => t.table_type === 'cip_funding')?.headers || [])
+    .indexOf(String(budgetYear.year));
+  const currentColumn = yearColumn >= 0 ? yearColumn : 2;
+  for (const table of section.tables) {
+    if (table.table_type === 'cip_funding') {
+      for (const row of table.rows) {
+        if (row[0]?.trim().toUpperCase() === 'TOTAL' && row.length > 2) {
+          // Columns: Source, prior year, current year, then the five-plus-year plan, then Total
+          return {
+            currentYear: parseCurrency(row[currentColumn]),
+            sixYearTotal: parseCurrency(row[row.length - 1]),
+          };
+        }
+      }
+    }
+  }
+  return { currentYear: 0, sixYearTotal: 0 };
+}
+
+let totalFunding = 0;
+for (const section of sections) {
+  totalFunding += getProjectFunding(section).currentYear;
+}
+---
+
+<Base title="Capital Budget" budgetYear={budgetYear} currentHref={headlinePath('/capital/')}>
+  <nav class="text-sm text-gray-500 mb-4">
+    <a href="/" class="hover:text-blue-600">Home</a>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <span>Capital Budget</span>
+  </nav>
+
+  <h1 class="text-3xl font-bold mb-2">Capital Budget & Six Year Plan</h1>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} routePrefix={prefix} client:load />
+  </div>
+
+  <p class="text-gray-600 mb-6">
+    City of Pittsburgh {budgetYear.fiscalLabel} Capital Budget.
+    {sections.length} projects across {grouped.size} functional areas.
+    {totalFunding > 0 && ` ${budgetYear.year} total: $${(totalFunding / 1_000_000).toFixed(1)}M.`}
+  </p>
+
+  <div class="mb-10 p-4 bg-white rounded-lg border">
+    <FundingSourceChart data={capitalFunding} client:load />
+  </div>
+
+  {[...grouped.entries()].map(([area, projects]) => (
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b pb-1">
+        {area}
+        <span class="text-sm font-normal text-gray-400 ml-2">{projects.length} projects</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {projects.map((s) => {
+          const { currentYear, sixYearTotal } = getProjectFunding(s);
+          return (
+            <a
+              href={`${prefix}/capital/${s.slug}/`}
+              class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition"
+            >
+              <div class="font-medium">{s.title}</div>
+              {(s as any).department && (
+                <div class="text-sm text-gray-500 mt-1">{(s as any).department}</div>
+              )}
+              {(currentYear > 0 || sixYearTotal > 0) && (
+                <div class="flex gap-4 mt-1.5 text-xs">
+                  <span class={currentYear > 0 ? 'text-green-700 font-semibold' : 'text-gray-400'}>
+                    <span class="text-gray-400 font-normal">{budgetYear.year} </span>
+                    ${currentYear.toLocaleString('en-US')}
+                  </span>
+                  {sixYearTotal > 0 && (
+                    <span class="text-gray-500">
+                      <span class="text-gray-400">6-yr </span>
+                      ${sixYearTotal.toLocaleString('en-US')}
+                    </span>
+                  )}
+                </div>
+              )}
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+</Base>

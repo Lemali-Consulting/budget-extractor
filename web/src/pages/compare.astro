@@ -1,13 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
-import searchIndex from '../data/views/search-index.json';
 import DepartmentCompare from '../components/DepartmentCompare.tsx';
-import departmentBudgets from '../data/views/department-budgets.json';
-import personnelByDept from '../data/views/personnel-by-department.json';
-import { operating, type DeptBudgetRow } from '../lib/department-budgets';
+import { HEADLINE } from '../lib/budget-year';
+import { operating } from '../lib/department-budgets';
 
-const operatingBudgets = operating(departmentBudgets as DeptBudgetRow[]);
+const { searchIndex, departmentBudgets, personnelByDepartment } = HEADLINE.views;
+const operatingBudgets = operating(departmentBudgets);
 ---
 
 <Base title="Compare Departments" description="Compare budgets, staffing, and trends across Pittsburgh city departments side by side.">
@@ -21,6 +20,8 @@ const operatingBudgets = operating(departmentBudgets as DeptBudgetRow[]);
   <DepartmentCompare
     client:load
     budgets={operatingBudgets}
-    personnel={personnelByDept}
+    personnel={personnelByDepartment}
+    year={HEADLINE.year}
+    priorYear={HEADLINE.priorYear}
   />
 </Base>

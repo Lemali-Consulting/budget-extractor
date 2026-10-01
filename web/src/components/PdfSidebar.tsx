@@ -1,19 +1,22 @@
 /**Sticky sidebar showing the PDF page image alongside extracted content.*/
 
 import { useState, useEffect } from 'preact/hooks';
+import { pageImageUrl } from '../lib/image-paths';
 
 interface Props {
+  /** Budget year whose rendered page images to show. */
+  year: number;
   slug: string;
   totalPages: number;
   startPage: number;
 }
 
-export default function PdfSidebar({ slug, totalPages, startPage }: Props) {
+export default function PdfSidebar({ year, slug, totalPages, startPage }: Props) {
   const [open, setOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
 
   const absolutePage = startPage + currentPage;
-  const src = `/pages/${slug}/P${currentPage}.webp`;
+  const src = pageImageUrl({ year, slug, page: currentPage });
 
   // Reserve scroll-space for the floating "Show PDF" button so it never sits
   // on top of the last row of a table or a chart's x-axis.

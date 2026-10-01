@@ -3,11 +3,10 @@
 import Story from '../../layouts/Story.astro';
 import PersonnelChangesChart from '../../components/PersonnelChangesChart.tsx';
 import SimpleBars from '../../components/SimpleBars.tsx';
-import personnelByDept from '../../data/views/personnel-by-department.json';
-import budgetChanges from '../../data/views/budget-changes.json';
+import { BUDGET_2026 } from '../../lib/budget-year';
 
-const personnel = personnelByDept as any[];
-const changes = budgetChanges as any;
+const personnel = BUDGET_2026.views.personnelByDepartment as any[];
+const changes = BUDGET_2026.views.budgetChanges as any;
 
 const totalFte2026 = Math.round(personnel.reduce((s, d) => s + d.totalFte2026, 0));
 const totalFte2025 = Math.round(personnel.reduce((s, d) => s + d.totalFte2025, 0));
@@ -46,6 +45,7 @@ function fmtM(n: number): string {
 ---
 
 <Story
+  budgetYear={BUDGET_2026}
   title="The City's Workforce in 2026"
   subtitle="Who works for Pittsburgh, what they earn, and what's changing"
   description="Pittsburgh's 2026 budget funds 3,500+ city employees. Here's how the workforce is distributed and what positions are being added or cut."
@@ -74,7 +74,7 @@ function fmtM(n: number): string {
   <h2>Who's hiring, who's cutting</h2>
 
   <div class="chart-container">
-    <PersonnelChangesChart data={personnelByDept} client:load />
+    <PersonnelChangesChart data={personnel} year={BUDGET_2026.year} priorYear={BUDGET_2026.priorYear} client:load />
   </div>
 
   <p>
@@ -124,7 +124,7 @@ function fmtM(n: number): string {
 
   <div class="callout">
     <p>
-      <strong>Explore individual positions:</strong> The <a href="/personnel/" class="underline">Personnel Explorer</a> lets
+      <strong>Explore individual positions:</strong> The <a href="/2026/personnel/" class="underline">Personnel Explorer</a> lets
       you search and filter every budgeted position by department, title, and salary.
     </p>
   </div>

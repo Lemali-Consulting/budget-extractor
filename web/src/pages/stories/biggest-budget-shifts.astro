@@ -2,9 +2,9 @@
 /**Story: 5 Biggest Budget Shifts in 2026.*/
 import Story from '../../layouts/Story.astro';
 import ChangesChart from '../../components/ChangesChart.tsx';
-import budgetChanges from '../../data/views/budget-changes.json';
+import { BUDGET_2026 } from '../../lib/budget-year';
 
-const data = budgetChanges as any;
+const data = BUDGET_2026.views.budgetChanges as any;
 const topInc = data.topIncreases.slice(0, 5);
 const topDec = data.topDecreases.slice(0, 5);
 const totalChange = data.totalBudget2026 - data.totalBudget2025;
@@ -16,6 +16,7 @@ function fmtM(n: number): string {
 ---
 
 <Story
+  budgetYear={BUDGET_2026}
   title="5 Biggest Budget Shifts in 2026"
   subtitle="Where the money moved — and what it tells us about city priorities"
   description="The top budget increases and decreases in Pittsburgh's FY2026 operating budget, and what they mean."
@@ -65,7 +66,7 @@ function fmtM(n: number): string {
       <strong>The staffing picture:</strong> Across the city, {data.newPositions.length} positions are
       being created and {data.eliminatedPositions.length} eliminated — a net change of
       {data.totalFte2026 - data.totalFte2025 > 0 ? '+' : ''}{Math.round(data.totalFte2026 - data.totalFte2025)} FTE.
-      See the full breakdown on the <a href="/changes/" class="underline">What Changed</a> page.
+      See the full breakdown on the <a href="/2026/changes/" class="underline">What Changed</a> page.
     </p>
   </div>
 </Story>

@@ -19,6 +19,8 @@ interface Props {
   adoptedPersonnel: any[];
   proposedCapital: any[];
   adoptedCapital: any[];
+  /** Route prefix of the archive year the links point into (e.g. "/2026"). */
+  routePrefix: string;
 }
 
 export default function CrossYearPage(props: Props) {
@@ -65,13 +67,13 @@ export default function CrossYearPage(props: Props) {
       </div>
 
       {active === 'budget' && (
-        <CrossYearComparison proposed={props.proposedBudgets} adopted={props.adoptedBudgets} />
+        <CrossYearComparison proposed={props.proposedBudgets} adopted={props.adoptedBudgets} routePrefix={props.routePrefix} />
       )}
       {active === 'personnel' && (
-        <CrossYearPersonnel proposedPersonnel={props.proposedPersonnel} adoptedPersonnel={props.adoptedPersonnel} />
+        <CrossYearPersonnel proposedPersonnel={props.proposedPersonnel} adoptedPersonnel={props.adoptedPersonnel} routePrefix={props.routePrefix} />
       )}
       {active === 'capital' && (
-        <CrossYearCapital proposedProjects={props.proposedCapital} adoptedProjects={props.adoptedCapital} />
+        <CrossYearCapital proposedProjects={props.proposedCapital} adoptedProjects={props.adoptedCapital} routePrefix={props.routePrefix} />
       )}
     </div>
   );

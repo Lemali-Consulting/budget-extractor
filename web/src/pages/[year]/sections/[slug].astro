@@ -1,0 +1,13 @@
+---
+/**Archive operating section page (e.g. /2026/sections/<slug>/).*/
+import SectionPage from '../../../components/pages/SectionPage.astro';
+import { archiveSlugStaticPaths, sectionStaticPaths } from '../../../lib/static-paths';
+
+export function getStaticPaths() {
+  return archiveSlugStaticPaths(sectionStaticPaths);
+}
+
+const { budgetYear, section, prev, next } = Astro.props;
+---
+
+<SectionPage budgetYear={budgetYear} section={section} prev={prev} next={next} />

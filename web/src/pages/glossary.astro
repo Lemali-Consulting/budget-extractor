@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
-import searchIndex from '../data/views/search-index.json';
-import budgetData from '../data/budget-data.json';
-import backlinksData from '../data/views/glossary-backlinks.json';
+import { HEADLINE } from '../lib/budget-year';
 
-const glossary = budgetData.glossary;
+const searchIndex = HEADLINE.views.searchIndex;
+const backlinksData = HEADLINE.views.glossaryBacklinks;
+const glossary = HEADLINE.operating.glossary;
 const backlinks: Record<string, { sections: { slug: string; title: string; budgetType: string }[]; total: number }> = backlinksData;
 
 function sectionUrl(s: { slug: string; budgetType: string }): string {
@@ -106,7 +106,7 @@ function normalizeSection(key: string): GlossaryEntry[] {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">Budget Glossary</h1>
-  <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh FY2026 Operating and Capital Budgets.</p>
+  <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh {HEADLINE.fiscalLabel} Operating and Capital Budgets.</p>
 
   <div class="mb-6">
     <SearchBar items={searchIndex} client:load />

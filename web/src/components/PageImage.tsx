@@ -3,23 +3,35 @@
  * lightbox offers an Amended/Adopted toggle so readers can cross-reference both.*/
 
 import { useState, useEffect } from 'preact/hooks';
+import { pageImageUrl, adoptedPageImageUrl } from '../lib/image-paths';
+
+/** Short dates of the two documents the Amended/Adopted toggle switches between. */
+interface AmendmentDates {
+  amendedDate: string;
+  adoptedDate: string;
+}
 
 interface Props {
+  /** Budget year whose rendered page images to show. */
+  year: number;
   slug: string;
   page: number;
   label?: string;
   /** True when an adopted (pre-amendment) image exists for this page. */
   adoptedAvailable?: boolean;
+  /** Toggle labels; required for the toggle to appear (amended years only). */
+  amendmentDates?: AmendmentDates;
 }
 
 type Version = 'amended' | 'adopted';
 
-export default function PageImage({ slug, page, label, adoptedAvailable = false }: Props) {
+export default function PageImage({ year, slug, page, label, adoptedAvailable: adoptedImageExists = false, amendmentDates }: Props) {
+  const adoptedAvailable = adoptedImageExists && !!amendmentDates;
   const [open, setOpen] = useState(false);
   const [version, setVersion] = useState<Version>('amended');
 
-  const amendedSrc = `/pages/${slug}/P${page}.webp`;
-  const adoptedSrc = `/pages-adopted/${slug}/P${page}.webp`;
+  const amendedSrc = pageImageUrl({ year, slug, page });
+  const adoptedSrc = adoptedPageImageUrl({ year, slug, page });
   const src = adoptedAvailable && version === 'adopted' ? adoptedSrc : amendedSrc;
 
   useEffect(() => {
@@ -84,7 +96,7 @@ export default function PageImage({ slug, page, label, adoptedAvailable = false 
                   onClick={() => setVersion('amended')}
                 >
                   <span>Amended</span>
-                  <span class="text-[10px] font-normal opacity-80">Apr 2026</span>
+                  <span class="text-[10px] font-normal opacity-80">{amendmentDates?.amendedDate}</span>
                 </button>
                 <button
                   class={`flex flex-col items-center leading-tight px-3 py-1 text-sm font-medium rounded-md transition ${
@@ -94,7 +106,7 @@ export default function PageImage({ slug, page, label, adoptedAvailable = false 
                   onClick={() => setVersion('adopted')}
                 >
                   <span>Adopted</span>
-                  <span class="text-[10px] font-normal opacity-80">Dec 2025</span>
+                  <span class="text-[10px] font-normal opacity-80">{amendmentDates?.adoptedDate}</span>
                 </button>
               </div>
             )}

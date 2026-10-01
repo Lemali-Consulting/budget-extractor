@@ -3,13 +3,13 @@
 import Embed from '../../layouts/Embed.astro';
 import ChangesChart from '../../components/ChangesChart.tsx';
 import EmbedWrapper from '../../components/EmbedWrapper.tsx';
-import budgetChanges from '../../data/views/budget-changes.json';
+import { HEADLINE } from '../../lib/budget-year';
 
-const data = budgetChanges as any;
+const data = HEADLINE.views.budgetChanges;
 ---
 
-<Embed title="Biggest Budget Increases" description="Top department budget increases in the FY2026 Pittsburgh budget vs. 2025.">
-  <EmbedWrapper title="Biggest Budget Increases, FY2026 vs FY2025" client:load>
+<Embed title="Biggest Budget Increases" description={`Top department budget increases, ${HEADLINE.comparisonLabel}.`}>
+  <EmbedWrapper title={`Biggest Budget Increases, ${HEADLINE.comparisonLabel}`} client:load>
     <ChangesChart
       client:load
       data={data.topIncreases}

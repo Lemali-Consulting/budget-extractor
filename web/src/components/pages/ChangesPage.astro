@@ -1,0 +1,260 @@
+---
+import Base from '../../layouts/Base.astro';
+import SearchBar from '../SearchBar.tsx';
+import ChangesChart from '../ChangesChart.tsx';
+import PositionChanges from '../PositionChanges.tsx';
+import EmbedButton from '../EmbedButton.tsx';
+import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+
+interface Props {
+  budgetYear: BudgetYear;
+}
+
+const { budgetYear } = Astro.props as Props;
+const prefix = budgetYear.routePrefix;
+const searchIndex = budgetYear.views.searchIndex;
+const data = budgetYear.views.budgetChanges;
+const totalChange = data.totalBudgetCurrent - data.totalBudgetPrior;
+const totalPct = data.totalBudgetPrior > 0 ? ((totalChange / data.totalBudgetPrior) * 100).toFixed(1) : '0';
+
+// Structure changes are built only for the headline year; the archive omits the panel.
+const sc = budgetYear.structureChanges || {};
+const scYears = sc.availableYears || [];
+const reorganizations = sc.operatingSections?.filter((s: any) => s.changeType === 'reorganization') || [];
+const removed = sc.operatingSections?.filter((s: any) => s.changeType === 'removed') || [];
+const added = sc.operatingSections?.filter((s: any) => s.changeType === 'added') || [];
+const renamed = sc.operatingSections?.filter((s: any) => s.changeType === 'renamed') || [];
+const hasStructureChanges = reorganizations.length + removed.length + added.length + renamed.length > 0;
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
+
+function fmtDollar(n: number): string {
+  return `$${n.toLocaleString('en-US')}`;
+}
+
+// Build jump-nav entries
+const sections = [
+  ...(hasStructureChanges ? [{ id: 'structure', label: 'Structure' }] : []),
+  { id: 'increases', label: 'Increases' },
+  { id: 'decreases', label: 'Decreases' },
+  { id: 'positions', label: 'Positions' },
+  { id: 'all-depts', label: 'All Depts' },
+];
+---
+
+<Base title="What Changed" description={`Biggest budget changes in the ${budgetYear.comparisonLabel} Pittsburgh budget comparison.`} budgetYear={budgetYear} currentHref={headlinePath('/changes/')} ogDescription={`Total operating budget ${totalChange > 0 ? 'increases' : 'decreases'} ${totalPct}% (${fmtM(Math.abs(totalChange))}). ${data.newPositions.length} new positions, ${data.eliminatedPositions.length} eliminated.`}>
+  <h1 class="text-3xl font-bold mb-2">What Changed in {budgetYear.fiscalLabel}?</h1>
+  <p class="text-gray-600 mb-4">Biggest budget changes, {budgetYear.comparisonLabel} — the view you need before a budget hearing.</p>
+
+  <div class="mb-6">
+    <SearchBar items={searchIndex} routePrefix={prefix} client:load />
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">{budgetYear.shortLabel} Operating Budget</div>
+      <div class="text-lg font-semibold">{fmtM(data.totalBudgetCurrent)}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">{budgetYear.comparisonLabel}</div>
+      <div class={`text-lg font-semibold ${totalChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        {totalChange >= 0 ? '+' : ''}{totalPct}% ({fmtM(Math.abs(totalChange))})
+      </div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">New Positions</div>
+      <div class="text-lg font-semibold text-green-600">+{data.newPositions.length}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">Eliminated Positions</div>
+      <div class="text-lg font-semibold text-red-600">-{data.eliminatedPositions.length}</div>
+    </div>
+    <div class="bg-white rounded-lg border p-4">
+      <div class="text-xs text-gray-500 mb-1">Shifted Positions</div>
+      <div class="text-lg font-semibold text-blue-600">{data.shiftedPositions.length}</div>
+    </div>
+  </div>
+
+  <!-- Jump nav -->
+  <nav class="sticky top-0 z-10 bg-gray-50 border-b border-gray-200 -mx-6 px-6 py-2 mb-6 flex gap-3 overflow-x-auto text-sm" aria-label="Page sections">
+    {sections.map(s => (
+      <a href={`#${s.id}`} class="text-blue-600 hover:text-blue-800 whitespace-nowrap font-medium">{s.label}</a>
+    ))}
+  </nav>
+
+  {hasStructureChanges && (
+    <div id="structure" class="mb-8 scroll-mt-12">
+      <h2 class="text-2xl font-bold mb-2">Departments &amp; Offices Added or Removed</h2>
+      <p class="text-gray-600 mb-4 text-sm">
+        Comparing operating budget structure across {scYears.join(', ')}. Some changes reflect policy decisions;
+        others are administrative renames.
+      </p>
+
+      {reorganizations.length > 0 && (
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold mb-2 text-red-800">Reorganized</h3>
+          <div class="grid gap-3 md:grid-cols-2">
+            {reorganizations.map((s: any) => (
+              <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                <div class="font-semibold text-red-900">{s.title}</div>
+                <div class="text-sm text-red-700 mt-1">
+                  Absorbed by <a href={`${prefix}/sections/${s.absorbedBySlug}/`} class="underline hover:text-red-900">{s.absorbedBy}</a>
+                </div>
+                {s.note && (
+                  <div class="text-xs text-red-600 mt-2 italic">{s.note}</div>
+                )}
+                <div class="text-xs text-gray-500 mt-2">
+                  Present in: {s.presentInYears.join(', ')}
+                  {s.lastBudget && ` · Last budget: ${fmtDollar(s.lastBudget)} (${s.lastBudgetYear})`}
+                  {s.lastFte && ` · Last FTE: ${s.lastFte}`}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {removed.length > 0 && (
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold mb-2 text-red-800">Discontinued</h3>
+          <div class="grid gap-3 md:grid-cols-2">
+            {removed.map((s: any) => (
+              <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <div class="font-semibold text-orange-900">{s.title}</div>
+                <div class="text-xs text-gray-500 mt-2">
+                  Present in: {s.presentInYears.join(', ')}
+                  {s.lastBudget && ` · Last budget: ${fmtDollar(s.lastBudget)} (${s.lastBudgetYear})`}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {added.length > 0 && (
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold mb-2 text-green-800">New Sections</h3>
+          <div class="grid gap-3 md:grid-cols-2">
+            {added.map((s: any) => (
+              <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div class="font-semibold text-green-900">
+                  <a href={`${prefix}/sections/${s.slug}/`} class="underline hover:text-green-700">{s.title}</a>
+                </div>
+                <div class="text-xs text-gray-500 mt-2">
+                  First appeared: {Math.min(...s.presentInYears)}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {renamed.length > 0 && (
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold mb-2 text-gray-700">Renamed</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-gray-50">
+                  <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Previous Name</th>
+                  <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Current Name</th>
+                  <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Years</th>
+                </tr>
+              </thead>
+              <tbody>
+                {renamed.map((s: any, i: number) => (
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td class="px-3 py-1.5 border-b border-gray-100 text-gray-500">{s.title}</td>
+                    <td class="px-3 py-1.5 border-b border-gray-100">
+                      <a href={`${prefix}/sections/${s.currentSlug}/`} class="text-blue-600 hover:underline">{s.currentTitle}</a>
+                    </td>
+                    <td class="px-3 py-1.5 border-b border-gray-100 text-xs text-gray-500">
+                      {s.presentInYears.join(', ')} → {s.currentPresentInYears.join(', ')}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+
+  <div id="increases" class="scroll-mt-12">
+    {budgetYear.isHeadline && (
+      <div class="flex justify-end mb-1">
+        <EmbedButton embedPath="/embed/budget-increases/" height={500} client:load />
+      </div>
+    )}
+    <ChangesChart
+      client:load
+      routePrefix={prefix}
+      data={data.topIncreases}
+      title="Biggest Budget Increases"
+      color="#16a34a"
+    />
+  </div>
+
+  <div id="decreases" class="scroll-mt-12">
+    {budgetYear.isHeadline && (
+      <div class="flex justify-end mb-1">
+        <EmbedButton embedPath="/embed/budget-decreases/" height={400} client:load />
+      </div>
+    )}
+    <ChangesChart
+      client:load
+      routePrefix={prefix}
+      data={data.topDecreases}
+      title="Biggest Budget Decreases"
+      color="#dc2626"
+    />
+  </div>
+
+  <div id="positions" class="mb-6 scroll-mt-12">
+    <h2 class="text-lg font-semibold mb-3">Position Changes</h2>
+    <PositionChanges
+      client:load
+      newPositions={data.newPositions}
+      eliminatedPositions={data.eliminatedPositions}
+      shiftedPositions={data.shiftedPositions}
+      priorYear={budgetYear.priorYear}
+    />
+  </div>
+
+  <div id="all-depts" class="bg-white rounded-lg border p-4 scroll-mt-12">
+    <h3 class="text-lg font-semibold mb-3">All Department Changes</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Department</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">{budgetYear.columns.priorBudget}</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">{budgetYear.columns.budget}</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Change</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">%</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.departmentChanges.map((d: any, i: number) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <td class="px-3 py-1.5 border-b border-gray-100">
+                <a href={`${prefix}/sections/${d.slug}/`} class="text-blue-600 hover:underline">{d.department}</a>
+              </td>
+              <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${d.budgetPrior.toLocaleString()}</td>
+              <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${d.budgetCurrent.toLocaleString()}</td>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {d.dollarChange >= 0 ? '+' : ''}{d.dollarChange.toLocaleString()}
+              </td>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.pctChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {d.pctChange >= 0 ? '+' : ''}{d.pctChange}%
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>

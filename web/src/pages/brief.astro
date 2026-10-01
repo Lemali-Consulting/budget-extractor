@@ -1,33 +1,34 @@
 ---
-/**Budget in Brief — plain-language overview of the FY2026 Pittsburgh budget.*/
+/**Budget in Brief — plain-language overview of the headline Pittsburgh budget.*/
 import Base from '../layouts/Base.astro';
 import HeroStat from '../components/HeroStat.tsx';
 import SimpleBars from '../components/SimpleBars.tsx';
 import WaterfallChart from '../components/WaterfallChart.tsx';
 import ChangesChart from '../components/ChangesChart.tsx';
 import EmbedButton from '../components/EmbedButton.tsx';
-import departmentBudgets from '../data/views/department-budgets.json';
-import revenueWaterfall from '../data/views/revenue-waterfall.json';
-import budgetChanges from '../data/views/budget-changes.json';
-import personnelByDept from '../data/views/personnel-by-department.json';
-import capitalFunding from '../data/views/capital-funding-sources.json';
-import { operating, sumFor, type DeptBudgetRow } from '../lib/department-budgets';
+import { HEADLINE } from '../lib/budget-year';
+import { operating, sumFor } from '../lib/department-budgets';
 
 // --- Compute aggregations ---
-const budgets = departmentBudgets as DeptBudgetRow[];
-const changes = budgetChanges as any;
-const personnel = personnelByDept as any[];
+const { columns } = HEADLINE;
+const {
+  departmentBudgets: budgets,
+  revenueWaterfall,
+  budgetChanges: changes,
+  personnelByDepartment: personnel,
+  capitalFundingSources: capitalFunding,
+} = HEADLINE.views;
 const revenue = revenueWaterfall as { label: string; amount: number; type: string }[];
 
 // Total operating budget (trust funds excluded — reported separately)
-const total2026 = sumFor(budgets, 'operating', '2026 Budget');
-const total2025 = sumFor(budgets, 'operating', '2025 Budget');
-const totalChange = total2026 - total2025;
-const changePct = ((totalChange / total2025) * 100).toFixed(1);
+const totalCurrent = sumFor(budgets, 'operating', columns.budget);
+const totalPrior = sumFor(budgets, 'operating', columns.priorBudget);
+const totalChange = totalCurrent - totalPrior;
+const changePct = ((totalChange / totalPrior) * 100).toFixed(1);
 
 // Per-resident (2020 Census: 302,971)
 const PGH_POPULATION = 302_971;
-const perResident = Math.round(total2026 / PGH_POPULATION);
+const perResident = Math.round(totalCurrent / PGH_POPULATION);
 
 // Revenue
 const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
@@ -35,40 +36,40 @@ const taxRevenue = revenue.find(r => r.label.includes('Tax'))?.amount || 0;
 const taxPct = ((taxRevenue / revenueTotal) * 100).toFixed(0);
 
 // Top departments by spending
-const depts2026 = operating(budgets)
-  .filter(r => r.year === '2026 Budget')
+const currentDepts = operating(budgets)
+  .filter(r => r.year === columns.budget)
   .sort((a, b) => b.amount - a.amount);
-const topDepts = depts2026.slice(0, 8).map(d => ({
+const topDepts = currentDepts.slice(0, 8).map(d => ({
   label: d.department,
   value: d.amount,
 }));
 
 // Public safety rollup
 const publicSafetyNames = ['Bureau of Police', 'Bureau of Fire', 'Bureau of Emergency Medical Services'];
-const publicSafety = depts2026
+const publicSafety = currentDepts
   .filter(d => publicSafetyNames.includes(d.department))
   .reduce((s, d) => s + d.amount, 0);
-const publicSafetyPct = ((publicSafety / total2026) * 100).toFixed(0);
+const publicSafetyPct = ((publicSafety / totalCurrent) * 100).toFixed(0);
 
 // Personnel
-const totalFte2026 = Math.round(personnel.reduce((s, d) => s + d.totalFte2026, 0));
-const totalFte2025 = Math.round(personnel.reduce((s, d) => s + d.totalFte2025, 0));
-const fteChange = totalFte2026 - totalFte2025;
+const totalFteCurrent = Math.round(personnel.reduce((s, d) => s + d.totalFteCurrent, 0));
+const totalFtePrior = Math.round(personnel.reduce((s, d) => s + d.totalFtePrior, 0));
+const fteChange = totalFteCurrent - totalFtePrior;
 const topPersonnel = personnel
-  .sort((a: any, b: any) => b.totalFte2026 - a.totalFte2026)
+  .sort((a: any, b: any) => b.totalFteCurrent - a.totalFteCurrent)
   .slice(0, 8)
-  .map((d: any) => ({ label: d.department, value: d.totalFte2026 }));
+  .map((d: any) => ({ label: d.department, value: d.totalFteCurrent }));
 
 // Top changes (limited for brief)
 const topInc = changes.topIncreases.slice(0, 5);
 const topDec = changes.topDecreases.slice(0, 5);
 
 // Capital
-const capital2026 = (capitalFunding as any[])
-  .filter(r => r.year === '2026')
+const capitalCurrent = (capitalFunding as any[])
+  .filter(r => r.year === String(HEADLINE.year))
   .reduce((s: number, r: any) => s + r.amount, 0);
 const capitalTotal = (capitalFunding as any[])
-  .filter(r => parseInt(r.year) >= 2026)
+  .filter(r => parseInt(r.year) >= HEADLINE.year)
   .reduce((s: number, r: any) => s + r.amount, 0);
 
 function fmtM(n: number): string {
@@ -81,11 +82,11 @@ function fmtB(n: number): string {
 
 <Base
   title="Budget in Brief"
-  description="Pittsburgh's FY2026 budget explained in plain language — where the money comes from, where it goes, and what changed."
-  ogDescription={`Pittsburgh's ${fmtM(total2026)} operating budget explained: ${taxPct}% from taxes, ${publicSafetyPct}% to public safety, ${changes.newPositions.length} new positions.`}
+  description={`Pittsburgh's ${HEADLINE.fiscalLabel} budget explained in plain language — where the money comes from, where it goes, and what changed.`}
+  ogDescription={`Pittsburgh's ${fmtM(totalCurrent)} operating budget explained: ${taxPct}% from taxes, ${publicSafetyPct}% to public safety, ${changes.newPositions.length} new positions.`}
 >
   <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl font-bold mb-2">Pittsburgh's 2026 Budget in Brief</h1>
+    <h1 class="text-3xl font-bold mb-2">Pittsburgh's {HEADLINE.label} Budget in Brief</h1>
     <p class="text-gray-600 mb-8 text-lg">Six things to know about how Pittsburgh plans to spend your money this year.</p>
 
     <!-- Jump nav -->
@@ -103,16 +104,16 @@ function fmtB(n: number): string {
       <h2 class="text-2xl font-bold mb-4">How big is the budget?</h2>
       <div class="bg-blue-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <HeroStat label="Operating Budget" value={fmtM(total2026)} detail={`${Number(changePct) >= 0 ? '+' : ''}${changePct}% vs 2025`} />
+          <HeroStat label="Operating Budget" value={fmtM(totalCurrent)} detail={`${Number(changePct) >= 0 ? '+' : ''}${changePct}% vs ${HEADLINE.priorYear}`} />
           <HeroStat label="Per Resident" value={`$${perResident.toLocaleString()}`} detail="Based on 2020 Census" />
-          <HeroStat label="Capital (2026)" value={fmtM(capital2026)} detail={`6-year plan: ${fmtB(capitalTotal)}`} />
+          <HeroStat label={`Capital (${HEADLINE.year})`} value={fmtM(capitalCurrent)} detail={`6-year plan: ${fmtB(capitalTotal)}`} />
         </div>
       </div>
       <p class="text-gray-700 leading-relaxed">
-        The City of Pittsburgh's proposed operating budget for fiscal year 2026 is <strong>{fmtM(total2026)}</strong>,
+        The City of Pittsburgh's proposed operating budget for fiscal year {HEADLINE.year} is <strong>{fmtM(totalCurrent)}</strong>,
         {Number(changePct) >= 0 ? 'up' : 'down'} {Math.abs(Number(changePct))}% ({fmtM(Math.abs(totalChange))}) from last year. That works out to about
         <strong>${perResident.toLocaleString()} per resident</strong> for city services — police, fire, EMS, parks,
-        public works, and more. Separately, the capital budget plans <strong>{fmtM(capital2026)}</strong> in
+        public works, and more. Separately, the capital budget plans <strong>{fmtM(capitalCurrent)}</strong> in
         infrastructure spending this year as part of a six-year, {fmtB(capitalTotal)} plan.
       </p>
     </section>
@@ -123,7 +124,7 @@ function fmtB(n: number): string {
         <h2 class="text-2xl font-bold mb-4">Where does the money come from?</h2>
         <EmbedButton embedPath="/embed/revenue-breakdown/" client:load />
       </div>
-      <WaterfallChart data={revenueWaterfall} client:load />
+      <WaterfallChart data={revenueWaterfall} yearLabel={HEADLINE.label} client:load />
       <p class="text-gray-700 leading-relaxed mt-4">
         The city expects <strong>{fmtM(revenueTotal)}</strong> in revenue. The biggest source by far is
         <strong>tax revenue ({taxPct}% of the total)</strong> — earned income tax, property tax, and various
@@ -189,8 +190,8 @@ function fmtB(n: number): string {
       </div>
       <div class="bg-cyan-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <HeroStat label="Total Positions" value={totalFte2026.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
-          <HeroStat label="Year-over-Year" value={`${fteChange >= 0 ? '+' : ''}${fteChange}`} detail="FTE change vs 2025" color={fteChange >= 0 ? 'text-green-700' : 'text-red-700'} />
+          <HeroStat label="Total Positions" value={totalFteCurrent.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
+          <HeroStat label="Year-over-Year" value={`${fteChange >= 0 ? '+' : ''}${fteChange}`} detail={`FTE change vs ${HEADLINE.priorYear}`} color={fteChange >= 0 ? 'text-green-700' : 'text-red-700'} />
           <HeroStat label="New Positions" value={`${changes.newPositions.length}`} detail={`${changes.eliminatedPositions.length} eliminated`} color="text-cyan-900" />
         </div>
       </div>
@@ -203,8 +204,8 @@ function fmtB(n: number): string {
         />
       </div>
       <p class="text-gray-700 leading-relaxed">
-        The city's workforce is budgeted at <strong>{totalFte2026.toLocaleString()} full-time equivalent positions</strong>,
-        a net change of {fteChange >= 0 ? '+' : ''}{fteChange} from 2025. The Bureau of Police is the largest
+        The city's workforce is budgeted at <strong>{totalFteCurrent.toLocaleString()} full-time equivalent positions</strong>,
+        a net change of {fteChange >= 0 ? '+' : ''}{fteChange} from {HEADLINE.priorYear}. The Bureau of Police is the largest
         employer, followed by Fire and Operations (public works).
       </p>
       <p class="text-sm text-gray-500 mt-2">
@@ -220,8 +221,8 @@ function fmtB(n: number): string {
       </div>
       <div class="bg-orange-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <HeroStat label="2026 Capital Spending" value={fmtM(capital2026)} color="text-orange-900" />
-          <HeroStat label="6-Year Capital Plan" value={fmtB(capitalTotal)} detail="2026 through 2031" color="text-orange-900" />
+          <HeroStat label={`${HEADLINE.year} Capital Spending`} value={fmtM(capitalCurrent)} color="text-orange-900" />
+          <HeroStat label="6-Year Capital Plan" value={fmtB(capitalTotal)} detail={`${HEADLINE.year} through ${HEADLINE.year + 5}`} color="text-orange-900" />
         </div>
       </div>
       <p class="text-gray-700 leading-relaxed">
@@ -240,7 +241,7 @@ function fmtB(n: number): string {
       <summary class="px-4 py-3 text-sm font-medium text-gray-600 cursor-pointer hover:bg-gray-50">About this data</summary>
       <div class="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
         <p class="mb-2">
-          All figures are extracted from the City of Pittsburgh's official FY2026 Operating and Capital Budget documents
+          All figures are extracted from the City of Pittsburgh's official {HEADLINE.fiscalLabel} Operating and Capital Budget documents
           using automated table extraction. Population figure (302,971) is from the 2020 U.S. Census.
         </p>
         <p class="mb-2">

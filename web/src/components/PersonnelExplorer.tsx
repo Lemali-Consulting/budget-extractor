@@ -8,21 +8,29 @@ interface PersonnelRow {
   department: string;
   slug: string;
   title: string;
-  fte2025: number | null;
-  fte2026: number | null;
-  budget2025: number | null;
-  budget2026: number | null;
+  ftePrior: number | null;
+  fteCurrent: number | null;
+  budgetPrior: number | null;
+  budgetCurrent: number | null;
   rateGrade: string;
 }
 
-type SortKey = 'title' | 'department' | 'fte2026' | 'budget2026';
+type SortKey = 'title' | 'department' | 'fteCurrent' | 'budgetCurrent';
+
+interface Props {
+  rows: PersonnelRow[];
+  /** Budget year the rows describe; labels the FTE and budget columns. */
+  year: number;
+  /** Route prefix of that year's pages ("" headline, "/2026" archive). */
+  routePrefix: string;
+}
 
 function formatCurrency(n: number | null): string {
   if (n === null) return '—';
   return `$${n.toLocaleString()}`;
 }
 
-export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
+export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
   const [search, setSearch] = useState('');
   const [deptFilter, setDeptFilter] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('department');
@@ -46,8 +54,8 @@ export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
       let av: string | number | null, bv: string | number | null;
       if (sortKey === 'title') { av = a.title; bv = b.title; }
       else if (sortKey === 'department') { av = a.department; bv = b.department; }
-      else if (sortKey === 'fte2026') { av = a.fte2026; bv = b.fte2026; }
-      else { av = a.budget2026; bv = b.budget2026; }
+      else if (sortKey === 'fteCurrent') { av = a.fteCurrent; bv = b.fteCurrent; }
+      else { av = a.budgetCurrent; bv = b.budgetCurrent; }
       if (av === null) return 1;
       if (bv === null) return -1;
       const cmp = av < bv ? -1 : av > bv ? 1 : 0;
@@ -109,15 +117,15 @@ export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
               <th class="px-3 py-2 text-right font-medium">Rate/Grade</th>
               <th
                 class="px-3 py-2 text-right font-medium cursor-pointer hover:text-blue-600"
-                onClick={() => toggleSort('fte2026')}
+                onClick={() => toggleSort('fteCurrent')}
               >
-                <GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /> 2026{sortIcon('fte2026')}
+                <GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /> {year}{sortIcon('fteCurrent')}
               </th>
               <th
                 class="px-3 py-2 text-right font-medium cursor-pointer hover:text-blue-600"
-                onClick={() => toggleSort('budget2026')}
+                onClick={() => toggleSort('budgetCurrent')}
               >
-                2026 Budget{sortIcon('budget2026')}
+                {year} Budget{sortIcon('budgetCurrent')}
               </th>
             </tr>
           </thead>
@@ -126,14 +134,14 @@ export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
               <tr key={i} class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                 <td class="px-3 py-1.5 border-t">{row.title}</td>
                 <td class="px-3 py-1.5 border-t">
-                  <a href={`/sections/${row.slug}/`} class="text-blue-600 hover:underline">
+                  <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">
                     {row.department}
                   </a>
                 </td>
                 <td class="px-3 py-1.5 border-t text-right">
                   {row.rateGrade === 'see below' ? (
                     <a
-                      href="/sections/salary-tables/"
+                      href={`${routePrefix}/sections/salary-tables/`}
                       class="text-blue-600 hover:underline text-xs"
                       title="Rate set by collective bargaining agreement — see Salary Tables"
                     >
@@ -143,8 +151,8 @@ export default function PersonnelExplorer({ rows }: { rows: PersonnelRow[] }) {
                     row.rateGrade || '—'
                   )}
                 </td>
-                <td class="px-3 py-1.5 border-t text-right">{row.fte2026 ?? '—'}</td>
-                <td class="px-3 py-1.5 border-t text-right">{formatCurrency(row.budget2026)}</td>
+                <td class="px-3 py-1.5 border-t text-right">{row.fteCurrent ?? '—'}</td>
+                <td class="px-3 py-1.5 border-t text-right">{formatCurrency(row.budgetCurrent)}</td>
               </tr>
             ))}
           </tbody>

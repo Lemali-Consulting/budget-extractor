@@ -16,11 +16,13 @@ interface TableData {
 interface Props {
   tables: TableData[];
   sectionTitle: string;
+  /** Budget year of the page; the breakdown tab charts that year's column. */
+  year: number;
 }
 
 type Tab = 'trend' | 'changes' | 'breakdown';
 
-export default function SectionCharts({ tables, sectionTitle }: Props) {
+export default function SectionCharts({ tables, sectionTitle, year }: Props) {
   const [tab, setTab] = useState<Tab>('trend');
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,9 +59,9 @@ export default function SectionCharts({ tables, sectionTitle }: Props) {
   const hasTrend = yearCols.length >= 2;
   const hasChanges = yearCols.length >= 2;
 
-  // Find the 2026 Budget column for breakdown (fallback to last year col)
+  // Find the current-year Budget column for breakdown (fallback to last year col)
   const breakdownCol =
-    yearCols.find((c) => c.header.includes('2026'))?.idx ??
+    yearCols.find((c) => c.header.includes(String(year)))?.idx ??
     (yearCols.length > 0 ? yearCols[yearCols.length - 1].idx : -1);
   const hasBreakdown = breakdownCol >= 0;
 

@@ -7,16 +7,22 @@ import { useContainerWidth } from '../lib/hooks';
 interface DeptData {
   department: string;
   slug: string;
-  totalFte2025: number;
-  totalFte2026: number;
-  totalBudget2025: number;
-  totalBudget2026: number;
+  totalFtePrior: number;
+  totalFteCurrent: number;
+  totalBudgetPrior: number;
+  totalBudgetCurrent: number;
   positionCount: number;
 }
 
 type SizeBy = 'fte' | 'budget';
 
-export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
+interface Props {
+  data: DeptData[];
+  /** Route prefix of the budget year's pages ("" headline, "/2026" archive). */
+  routePrefix: string;
+}
+
+export default function PersonnelTreemap({ data, routePrefix }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -29,12 +35,12 @@ export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
       .map((d) => ({
         department: d.department,
         slug: d.slug,
-        value: sizeBy === 'fte' ? d.totalFte2026 : d.totalBudget2026,
+        value: sizeBy === 'fte' ? d.totalFteCurrent : d.totalBudgetCurrent,
         change: sizeBy === 'fte'
-          ? d.totalFte2026 - d.totalFte2025
-          : d.totalBudget2026 - d.totalBudget2025,
-        fte: d.totalFte2026,
-        budget: d.totalBudget2026,
+          ? d.totalFteCurrent - d.totalFtePrior
+          : d.totalBudgetCurrent - d.totalBudgetPrior,
+        fte: d.totalFteCurrent,
+        budget: d.totalBudgetCurrent,
         positions: d.positionCount,
       }))
       .filter((d) => d.value > 0)
@@ -98,7 +104,7 @@ export default function PersonnelTreemap({ data }: { data: DeptData[] }) {
         rect.setAttribute('data-slug', chartData[i].slug);
         rect.style.cursor = 'pointer';
         rect.addEventListener('click', () => {
-          window.location.href = `/sections/${chartData[i].slug}/`;
+          window.location.href = `${routePrefix}/sections/${chartData[i].slug}/`;
         });
         rect.addEventListener('mouseenter', () => {
           rect.setAttribute('opacity', '0.7');

@@ -3,14 +3,14 @@
 import Embed from '../../layouts/Embed.astro';
 import SpendingPieChart from '../../components/SpendingPieChart.tsx';
 import EmbedWrapper from '../../components/EmbedWrapper.tsx';
-import departmentBudgets from '../../data/views/department-budgets.json';
-import { operating, type DeptBudgetRow } from '../../lib/department-budgets';
+import { HEADLINE } from '../../lib/budget-year';
+import { operating } from '../../lib/department-budgets';
 
-const operatingBudgets = operating(departmentBudgets as DeptBudgetRow[]);
+const operatingBudgets = operating(HEADLINE.views.departmentBudgets);
 ---
 
-<Embed title="Where the Money Goes" description="FY2026 Pittsburgh budget breakdown by department.">
-  <EmbedWrapper title="Where the Money Goes, FY2026" client:load>
-    <SpendingPieChart data={operatingBudgets} client:load />
+<Embed title="Where the Money Goes" description={`${HEADLINE.fiscalLabel} Pittsburgh budget breakdown by department.`}>
+  <EmbedWrapper title={`Where the Money Goes, ${HEADLINE.fiscalLabel}`} client:load>
+    <SpendingPieChart data={operatingBudgets} budgetColumn={HEADLINE.columns.budget} client:load />
   </EmbedWrapper>
 </Embed>

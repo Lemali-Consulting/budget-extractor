@@ -1,0 +1,13 @@
+---
+/**Archive capital project page (e.g. /2026/capital/<slug>/).*/
+import CapitalProjectPage from '../../../components/pages/CapitalProjectPage.astro';
+import { archiveSlugStaticPaths, capitalStaticPaths } from '../../../lib/static-paths';
+
+export function getStaticPaths() {
+  return archiveSlugStaticPaths(capitalStaticPaths);
+}
+
+const { budgetYear, section, prev, next } = Astro.props;
+---
+
+<CapitalProjectPage budgetYear={budgetYear} section={section} prev={prev} next={next} />

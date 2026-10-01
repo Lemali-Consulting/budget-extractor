@@ -37,6 +37,8 @@ interface UnmatchedPosition {
 interface Props {
   proposedPersonnel: PersonnelRecord[];
   adoptedPersonnel: PersonnelRecord[];
+  /** Route prefix of the archive year the links point into (e.g. "/2026"). */
+  routePrefix: string;
 }
 
 function formatDollar(n: number): string {
@@ -115,7 +117,7 @@ function buildComparison(proposed: PersonnelRecord[], adopted: PersonnelRecord[]
   return { matched, addedInAdopted, removedFromProposed };
 }
 
-export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel }: Props) {
+export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel, routePrefix }: Props) {
   const { matched, addedInAdopted, removedFromProposed } = buildComparison(proposedPersonnel, adoptedPersonnel);
   const [view, setView] = useState<'changed' | 'added' | 'removed'>('changed');
   const [sortBy, setSortBy] = useState<SortKey>('budgetDiff');
@@ -283,7 +285,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
               {sortedMatched.map(row => (
                 <tr key={`${row.department}-${row.title}`} class="border-b hover:bg-gray-50">
                   <td class="p-2 text-gray-600 max-w-[180px] truncate" title={row.department}>
-                    <a href={`/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
                   </td>
                   <td class="p-2">{row.title}</td>
                   <td class={`text-right p-2 font-mono ${row.fteDiff > 0 ? 'text-green-600' : row.fteDiff < 0 ? 'text-red-600' : ''}`}>
@@ -318,7 +320,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
               {sortedAdded.map(row => (
                 <tr key={`${row.department}-${row.title}`} class="border-b hover:bg-gray-50">
                   <td class="p-2 text-gray-600 max-w-[180px] truncate" title={row.department}>
-                    <a href={`/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
                   </td>
                   <td class="p-2">{row.title}</td>
                   <td class="text-right p-2 font-mono">{row.fte > 0 ? row.fte.toFixed(0) : '\u2014'}</td>
@@ -347,7 +349,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
               {sortedRemoved.map(row => (
                 <tr key={`${row.department}-${row.title}`} class="border-b hover:bg-gray-50">
                   <td class="p-2 text-gray-600 max-w-[180px] truncate" title={row.department}>
-                    <a href={`/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
                   </td>
                   <td class="p-2">{row.title}</td>
                   <td class="text-right p-2 font-mono">{row.fte > 0 ? row.fte.toFixed(0) : '\u2014'}</td>

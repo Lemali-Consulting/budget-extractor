@@ -1,15 +1,24 @@
 ---
 /**Layout for curated story pages — reading-friendly typography, minimal chrome.*/
 import '../styles/global.css';
+import YearNotice from '../components/YearNotice.astro';
+import { ARCHIVE_YEARS, BUDGET_2026, yearPath, type BudgetYear } from '../lib/budget-year';
 
 interface Props {
   title: string;
   subtitle: string;
   description: string;
   date: string;
+  /** Budget the story's figures come from; stories are pinned to an archive year. */
+  budgetYear?: BudgetYear;
 }
 
-const { title, subtitle, description, date } = Astro.props;
+const { title, subtitle, description, date, budgetYear = BUDGET_2026 } = Astro.props;
+const archiveLinks = ARCHIVE_YEARS.map((y) => ({
+  href: yearPath({ budgetYear: y, path: '/operating/' }),
+  label: `${y.year} Archive`,
+  prefix: `${y.routePrefix}/`,
+}));
 const canonicalUrl = Astro.url.href;
 
 const path = Astro.url.pathname;
@@ -33,7 +42,7 @@ function dropdownItemClass(href: string): string {
 }
 
 const storiesHrefs = ['/stories/', '/departments/'];
-const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/changes/', '/cross-year/'];
+const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/changes/', '/cross-year/', ...archiveLinks.map((a) => a.prefix)];
 const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/embed/', '/glossary/'];
 ---
 
@@ -81,6 +90,9 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                   <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
                   <a href="/changes/" class={dropdownItemClass('/changes/')}>What Changed</a>
                   <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
+                  {archiveLinks.map((a) => (
+                    <a href={a.href} class={dropdownItemClass(a.prefix)}>{a.label}</a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -105,6 +117,8 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
       </div>
     </header>
 
+    <YearNotice budgetYear={budgetYear} />
+
     <article class="max-w-3xl mx-auto px-6 py-10">
       <header class="mb-10">
         <h1 class="text-4xl font-bold leading-tight mb-3">{title}</h1>
@@ -124,8 +138,8 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
         <details class="mb-6">
           <summary class="text-sm font-medium text-gray-500 cursor-pointer hover:text-gray-700">Methodology</summary>
           <p class="mt-2 text-sm text-gray-500 leading-relaxed">
-            All figures are extracted from the City of Pittsburgh's official FY2026 Operating and Capital Budget documents
-            using automated table extraction. Year-over-year comparisons use the FY2025 adopted budget as baseline.
+            All figures are extracted from the City of Pittsburgh's official {budgetYear.fiscalLabel} Operating and Capital Budget documents
+            using automated table extraction. Year-over-year comparisons use the {budgetYear.priorLabel} as baseline.
             For details on data extraction and known limitations, see the
             <a href="/about/" class="text-blue-600 hover:underline">About page</a>.
           </p>

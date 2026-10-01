@@ -1,21 +1,24 @@
 ---
 /**
- * Slim banner noting that 2026 operating figures reflect the amended budget.
- * Reads the amendment label from the cell-diff meta so the date lives in data.
+ * Slim banner noting that a year's operating figures reflect an amended budget.
+ * Renders only for years that have amendment data; the date lives in the data.
  */
-import cellDiffs from '../data/views/2026-amendment-cell-diffs.json';
+import type { BudgetYear } from '../lib/budget-year';
 
 interface Props {
+  budgetYear: BudgetYear;
   showLink?: boolean;
 }
-const { showLink = true } = Astro.props;
-const label = (cellDiffs as any).meta?.amendmentLabel || 'as amended';
+const { budgetYear, showLink = true } = Astro.props;
+const amendment = budgetYear.amendment;
 ---
 
-<div class="mb-6 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg px-4 py-2.5 text-sm text-amber-900 print:hidden">
-  <span aria-hidden="true" class="mr-1">&#9888;&#65039;</span>
-  2026 operating figures reflect the budget <strong>{label}</strong>.
-  {showLink && (
-    <a href="/amendments/" class="font-medium underline hover:text-amber-700">See what changed &rarr;</a>
-  )}
-</div>
+{amendment && (
+  <div class="mb-6 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg px-4 py-2.5 text-sm text-amber-900 print:hidden">
+    <span aria-hidden="true" class="mr-1">&#9888;&#65039;</span>
+    {budgetYear.year} operating figures reflect the budget <strong>{amendment.documentLabel}</strong>.
+    {showLink && (
+      <a href={amendment.path} class="font-medium underline hover:text-amber-700">See what changed &rarr;</a>
+    )}
+  </div>
+)}

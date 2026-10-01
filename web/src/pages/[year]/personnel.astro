@@ -1,0 +1,11 @@
+---
+/**Archive personnel page (e.g. /2026/personnel/).*/
+import PersonnelPage from '../../components/pages/PersonnelPage.astro';
+import { archiveYearStaticPaths } from '../../lib/static-paths';
+
+export const getStaticPaths = archiveYearStaticPaths;
+
+const { budgetYear } = Astro.props;
+---
+
+<PersonnelPage budgetYear={budgetYear} />

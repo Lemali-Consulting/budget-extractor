@@ -1,6 +1,7 @@
 ---
 /**Story index — curated data stories about the Pittsburgh budget.*/
 import Base from '../../layouts/Base.astro';
+import { BUDGET_2026 } from '../../lib/budget-year';
 
 const stories = [
   {
@@ -34,7 +35,7 @@ const stories = [
 ];
 ---
 
-<Base title="Stories" description="Curated data stories about the City of Pittsburgh's FY2026 budget.">
+<Base title="Stories" budgetYear={BUDGET_2026} description="Curated data stories about the City of Pittsburgh's FY2026 budget.">
   <h1 class="text-3xl font-bold mb-2">Budget Stories</h1>
   <p class="text-gray-600 mb-8 text-lg">The Pittsburgh budget, told through data. Each story pairs charts with plain-language context to explain what's happening and why it matters.</p>
 

@@ -5,10 +5,11 @@
 import '../styles/global.css';
 import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
-import revenueWaterfall from '../data/views/revenue-waterfall.json';
-import departmentBudgets from '../data/views/department-budgets.json';
+import { HEADLINE } from '../lib/budget-year';
 import { revenueColor } from '../lib/flow-colors';
 import { colorForSlug } from '../lib/department-groups';
+
+const { revenueWaterfall, departmentBudgets } = HEADLINE.views;
 
 interface RevenueRow { label: string; amount: number; type: string }
 interface DeptRow { department: string; slug: string; year: string; amount: number; fund: string }
@@ -17,14 +18,14 @@ const revenue = revenueWaterfall as RevenueRow[];
 const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
 
 // Operating departments only — trust funds are not part of the operating flow.
-const dept2026 = (departmentBudgets as DeptRow[]).filter((r) => r.year === '2026 Budget' && r.fund === 'operating');
-const deptTotal = dept2026.reduce((s, r) => s + r.amount, 0);
+const currentDepts = (departmentBudgets as DeptRow[]).filter((r) => r.year === HEADLINE.columns.budget && r.fund === 'operating');
+const deptTotal = currentDepts.reduce((s, r) => s + r.amount, 0);
 
 // Group small departments (<2% — slightly higher threshold than the live
 // page so the hero shot has fewer, bigger labels that survive thumbnailing).
 const DEPT_THRESHOLD = 0.02;
-const bigDepts = dept2026.filter((d) => d.amount / deptTotal >= DEPT_THRESHOLD);
-const smallDepts = dept2026.filter((d) => d.amount / deptTotal < DEPT_THRESHOLD);
+const bigDepts = currentDepts.filter((d) => d.amount / deptTotal >= DEPT_THRESHOLD);
+const smallDepts = currentDepts.filter((d) => d.amount / deptTotal < DEPT_THRESHOLD);
 const otherDeptAmount = smallDepts.reduce((s, d) => s + d.amount, 0);
 const deptScale = revenueTotal / deptTotal;
 
@@ -35,7 +36,7 @@ const nodes: FlowNode[] = [
     category: 'revenue',
     color: revenueColor(r.label),
   })),
-  { id: 'trunk', label: '2026 Operating Budget', category: 'trunk' },
+  { id: 'trunk', label: `${HEADLINE.shortLabel} Operating Budget`, category: 'trunk' },
   ...bigDepts
     .slice()
     .sort((a, b) => b.amount - a.amount)
@@ -197,9 +198,9 @@ const totalLabel = `$${(revenueTotal / 1_000_000).toFixed(0)}M`;
       <div class="footer">
         <div>
           <div class="url">pittsburgh-budget-explorer.lemaliconsulting.com</div>
-          <div class="source">Based on the FY2026 budget as published — pre-revision.</div>
+          <div class="source">Based on the {HEADLINE.fiscalLabel} budget as proposed by the Mayor — pending Council adoption.</div>
         </div>
-        <span class="source">Source: City of Pittsburgh FY2026 Operating Budget</span>
+        <span class="source">Source: City of Pittsburgh {HEADLINE.fiscalLabel} Operating Budget</span>
       </div>
     </div>
   </body>

@@ -1,0 +1,11 @@
+---
+/**Archive capital budget index (e.g. /2026/capital/).*/
+import CapitalIndexPage from '../../../components/pages/CapitalIndexPage.astro';
+import { archiveYearStaticPaths } from '../../../lib/static-paths';
+
+export const getStaticPaths = archiveYearStaticPaths;
+
+const { budgetYear } = Astro.props;
+---
+
+<CapitalIndexPage budgetYear={budgetYear} />

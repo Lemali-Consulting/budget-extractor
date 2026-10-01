@@ -22,6 +22,8 @@ interface ComparisonRow {
 interface Props {
   proposed: DeptBudget[];  // from 2025 document
   adopted: DeptBudget[];   // from 2026 document
+  /** Route prefix of the archive year the links point into (e.g. "/2026"). */
+  routePrefix: string;
 }
 
 function formatDollar(n: number): string {
@@ -78,7 +80,7 @@ function buildComparison(proposed: DeptBudget[], adopted: DeptBudget[]): Compari
 
 type SortKey = 'department' | 'proposed' | 'adopted' | 'difference' | 'pctChange';
 
-export default function CrossYearComparison({ proposed, adopted }: Props) {
+export default function CrossYearComparison({ proposed, adopted, routePrefix }: Props) {
   const [sortBy, setSortBy] = useState<SortKey>('difference');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
   const [showOnlyChanges, setShowOnlyChanges] = useState(false);
@@ -217,7 +219,7 @@ export default function CrossYearComparison({ proposed, adopted }: Props) {
             {sorted.map(row => (
               <tr key={row.department} class={`border-b hover:bg-gray-50 ${Math.abs(row.difference) > 10 ? 'font-medium' : 'text-gray-500'}`}>
                 <td class="p-2">
-                  <a href={`/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                  <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
                 </td>
                 <td class="text-right p-2 font-mono">{formatDollar(row.proposed)}</td>
                 <td class="text-right p-2 font-mono">{formatDollar(row.adopted)}</td>

@@ -21,6 +21,8 @@ interface SearchItem {
 
 interface Props {
   items: SearchItem[];
+  /** Route prefix of the budget year being searched ("" for the headline, "/2026" for the archive). */
+  routePrefix?: string;
 }
 
 /** Highlight matched character ranges in text using Fuse.js match indices. */
@@ -65,7 +67,7 @@ function highlightMatches(
   return parts;
 }
 
-export default function SearchBar({ items }: Props) {
+export default function SearchBar({ items, routePrefix = '' }: Props) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -124,8 +126,8 @@ export default function SearchBar({ items }: Props) {
 
   function getItemHref(item: SearchItem): string {
     if (item.href) return item.href;
-    if (item.budgetType === 'capital') return `/capital/${item.slug}/`;
-    return `/sections/${item.slug}/`;
+    if (item.budgetType === 'capital') return `${routePrefix}/capital/${item.slug}/`;
+    return `${routePrefix}/sections/${item.slug}/`;
   }
 
   const budgetTypeLabels: Record<string, { text: string; bg: string; fg: string }> = {

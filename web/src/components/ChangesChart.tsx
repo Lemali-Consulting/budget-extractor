@@ -14,6 +14,8 @@ interface Props {
   data: DeptChange[];
   title: string;
   color: string;
+  /** Route prefix of the budget year's pages ("" headline, "/2026" archive). */
+  routePrefix?: string;
 }
 
 function formatDollar(n: number): string {
@@ -37,7 +39,7 @@ function shortDept(name: string): string {
     .replace(/\bInfrastructure\b/i, 'Infra.');
 }
 
-export default function ChangesChart({ data, title, color }: Props) {
+export default function ChangesChart({ data, title, color, routePrefix = '' }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -131,7 +133,7 @@ export default function ChangesChart({ data, title, color }: Props) {
         rect.setAttribute('data-slug', sorted[i].slug);
         rect.style.cursor = 'pointer';
         rect.addEventListener('click', () => {
-          window.location.href = `/sections/${sorted[i].slug}/`;
+          window.location.href = `${routePrefix}/sections/${sorted[i].slug}/`;
         });
         rect.addEventListener('mouseenter', () => {
           rect.setAttribute('opacity', '0.7');

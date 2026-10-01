@@ -1,6 +1,7 @@
 ---
 /**Minimal layout for embeddable chart pages — no header, nav, or footer.*/
 import '../styles/global.css';
+import { HEADLINE } from '../lib/budget-year';
 
 interface Props {
   title: string;
@@ -30,7 +31,7 @@ const { title, description = 'Pittsburgh Budget Explorer chart embed.' } = Astro
       <span>
         Source: <a href="https://pgh-budget-explorer.netlify.app" target="_blank" rel="noopener" class="text-blue-500 hover:text-blue-700 underline">Pittsburgh Budget Explorer</a>
       </span>
-      <span>City of Pittsburgh FY2026 Budget</span>
+      <span>City of Pittsburgh {HEADLINE.fiscalLabel} Budget</span>
     </footer>
   </body>
 </html>

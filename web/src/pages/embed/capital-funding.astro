@@ -3,10 +3,12 @@
 import Embed from '../../layouts/Embed.astro';
 import FundingSourceChart from '../../components/FundingSourceChart.tsx';
 import EmbedWrapper from '../../components/EmbedWrapper.tsx';
-import capitalFunding from '../../data/views/capital-funding-sources.json';
+import { HEADLINE } from '../../lib/budget-year';
+
+const capitalFunding = HEADLINE.views.capitalFundingSources;
 ---
 
-<Embed title="Capital Funding Sources" description="Pittsburgh capital budget funding by source, 2026-2031.">
+<Embed title="Capital Funding Sources" description={`Pittsburgh capital budget funding by source, ${HEADLINE.fiscalLabel}.`}>
   <EmbedWrapper client:load>
     <FundingSourceChart data={capitalFunding} client:load />
   </EmbedWrapper>

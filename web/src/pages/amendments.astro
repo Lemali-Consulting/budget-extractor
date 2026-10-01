@@ -1,19 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
 import SearchBar from '../components/SearchBar.tsx';
-import searchIndex from '../data/views/search-index.json';
 import ChangesChart from '../components/ChangesChart.tsx';
-import amendmentChanges from '../data/views/2026-amendment-changes.json';
-import cellDiffs from '../data/views/2026-amendment-cell-diffs.json';
+import { BUDGET_2026 } from '../lib/budget-year';
 
-const data = amendmentChanges as any;
-const meta = (cellDiffs as any).meta || {};
+const { amendment } = BUDGET_2026;
+if (!amendment) throw new Error(`${BUDGET_2026.year} has no amendment data`);
+const prefix = BUDGET_2026.routePrefix;
+const searchIndex = BUDGET_2026.views.searchIndex;
+const year = BUDGET_2026.year;
+const data = amendment.changes;
+const meta = amendment.cellDiffs.meta || {};
 const adopted = data.totalBudgetAdopted;
 const amended = data.totalBudgetAmended;
 const netChange = amended - adopted;
 const netPct = adopted > 0 ? ((netChange / adopted) * 100).toFixed(1) : '0';
 const fteChange = (data.totalFteAmended || 0) - (data.totalFteAdopted || 0);
-const label = data.amendmentLabel || meta.amendmentLabel || 'as amended';
+const label = data.amendmentLabel || amendment.documentLabel;
 
 function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -32,26 +35,26 @@ const jump = [
 ];
 ---
 
-<Base title="2026 Amendments" description={`How City Council's amended 2026 operating budget (${label}) differs from the December adopted budget.`} ogDescription={`The amended 2026 operating budget is ${netChange >= 0 ? 'up' : 'down'} ${netPct}% (${fmtM(Math.abs(netChange))}) from the adopted budget.`}>
-  <h1 class="text-3xl font-bold mb-2">2026 Budget Amendments</h1>
+<Base title={`${year} Amendments`} budgetYear={BUDGET_2026} currentHref="/" description={`How City Council's amended ${year} operating budget (${label}) differs from the December adopted budget.`} ogDescription={`The amended ${year} operating budget is ${netChange >= 0 ? 'up' : 'down'} ${netPct}% (${fmtM(Math.abs(netChange))}) from the adopted budget.`}>
+  <h1 class="text-3xl font-bold mb-2">{year} Budget Amendments</h1>
   <p class="text-gray-600 mb-4">
-    The City published an amended 2026 operating budget (<strong>{label}</strong>), revising the
+    The City published an amended {year} operating budget (<strong>{label}</strong>), revising the
     version adopted in December. This page compares it line-by-line against the adopted budget.
-    Amended figures are now used throughout the site; changed cells are highlighted on each
+    Amended figures are used throughout the <a href={`${prefix}/operating/`} class="text-blue-600 hover:underline">{year} archive</a>; changed cells are highlighted on each
     department's tables.
   </p>
 
   <div class="mb-6">
-    <SearchBar items={searchIndex} client:load />
+    <SearchBar items={searchIndex} routePrefix={prefix} client:load />
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-500 mb-1">Adopted &middot; Dec 2025</div>
+      <div class="text-xs text-gray-500 mb-1">{amendment.adoptedLabel.replace(/[()]/g, '')}</div>
       <div class="text-lg font-semibold">{fmtM(adopted)}</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-500 mb-1">Amended &middot; Apr 2026</div>
+      <div class="text-xs text-gray-500 mb-1">{amendment.amendedLabel.replace(/[()]/g, '')}</div>
       <div class="text-lg font-semibold">{fmtM(amended)}</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
@@ -80,11 +83,11 @@ const jump = [
   </nav>
 
   <div id="increases" class="scroll-mt-12">
-    <ChangesChart client:load data={data.topIncreases} title="Largest Amendment Increases" color="#16a34a" />
+    <ChangesChart client:load routePrefix={prefix} data={data.topIncreases} title="Largest Amendment Increases" color="#16a34a" />
   </div>
 
   <div id="decreases" class="scroll-mt-12">
-    <ChangesChart client:load data={data.topDecreases} title="Largest Amendment Decreases" color="#dc2626" />
+    <ChangesChart client:load routePrefix={prefix} data={data.topDecreases} title="Largest Amendment Decreases" color="#dc2626" />
   </div>
 
   {data.legislativeChanges?.length > 0 && (
@@ -110,8 +113,8 @@ const jump = [
         <thead>
           <tr class="bg-gray-50">
             <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Department</th>
-            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Adopted (Dec 2025)</th>
-            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Amended (Apr 2026)</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">{amendment.adoptedLabel}</th>
+            <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">{amendment.amendedLabel}</th>
             <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">Change</th>
             <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">%</th>
           </tr>
@@ -120,7 +123,7 @@ const jump = [
           {data.departmentChanges.map((d: any, i: number) => (
             <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
               <td class="px-3 py-1.5 border-b border-gray-100">
-                <a href={`/sections/${d.slug}/`} class="text-blue-600 hover:underline">{d.department}</a>
+                <a href={`${prefix}/sections/${d.slug}/`} class="text-blue-600 hover:underline">{d.department}</a>
               </td>
               <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${Math.round(d.budgetAdopted).toLocaleString()}</td>
               <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${Math.round(d.budgetAmended).toLocaleString()}</td>

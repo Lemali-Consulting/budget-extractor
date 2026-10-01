@@ -1,0 +1,11 @@
+---
+/**Archive operating budget index (e.g. /2026/operating/).*/
+import OperatingIndexPage from '../../../components/pages/OperatingIndexPage.astro';
+import { archiveYearStaticPaths } from '../../../lib/static-paths';
+
+export const getStaticPaths = archiveYearStaticPaths;
+
+const { budgetYear } = Astro.props;
+---
+
+<OperatingIndexPage budgetYear={budgetYear} />

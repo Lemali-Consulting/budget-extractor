@@ -1,7 +1,10 @@
 ---
 import PageImage from './PageImage.tsx';
+import type { AmendmentInfo } from '../lib/budget-year';
 
 interface Props {
+  /** Budget year the table belongs to (selects the source-page image folder). */
+  year: number;
   table: {
     id: string;
     relative_page: number;
@@ -24,9 +27,15 @@ interface Props {
   // True when an adopted (pre-amendment) image exists for this table's page,
   // enabling the Amended/Adopted toggle in the source-page lightbox.
   adoptedPageAvailable?: boolean;
+  // Amendment labels; passed only on amended years (never on the 2027 headline).
+  amendment?: AmendmentInfo | null;
 }
 
-const { table, slug, linkCell, amendmentDiffs, adoptedPageAvailable } = Astro.props;
+const { year, table, slug, linkCell, amendmentDiffs, adoptedPageAvailable, amendment } = Astro.props;
+const amendmentDiffsForYear = amendment ? amendmentDiffs : undefined;
+const amendmentDates = amendment
+  ? { amendedDate: amendment.amendedDate, adoptedDate: amendment.adoptedDate }
+  : undefined;
 
 import { TYPE_COLORS, typeDescription } from '../lib/type-colors';
 
@@ -107,7 +116,7 @@ function fmtUSD(n: number): string {
   return `$${Math.round(n).toLocaleString('en-US')}`;
 }
 const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map((row) => {
-  const rowDiffs = amendmentDiffs?.rows?.[(row[0] || '').trim()];
+  const rowDiffs = amendmentDiffsForYear?.rows?.[(row[0] || '').trim()];
   return row.map((_, ci) => {
     if (!rowDiffs) return null;
     const header = (table.headers[ci] || '').trim();
@@ -119,7 +128,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
     const fmt = /fte/i.test(header) ? (n: number) => `${n}` : fmtUSD;
     const pctStr = d.pct === null ? '' : ` (${d.pct >= 0 ? '+' : ''}${d.pct}%)`;
     const sign = d.delta >= 0 ? '+' : '−';
-    const tip = `Adopted (Dec 2025) ${fmt(d.adopted)} · Amended (Apr 2026) ${fmt(d.amended)} · ${sign}${fmt(Math.abs(d.delta))}${pctStr}`;
+    const tip = `${amendment!.adoptedLabel} ${fmt(d.adopted)} · ${amendment!.amendedLabel} ${fmt(d.amended)} · ${sign}${fmt(Math.abs(d.delta))}${pctStr}`;
     return { cls, tip };
   });
 });
@@ -136,7 +145,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
         {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
       </span>
       {slug && (
-        <PageImage client:load slug={slug} page={table.relative_page} adoptedAvailable={adoptedPageAvailable} />
+        <PageImage client:load year={year} slug={slug} page={table.relative_page} adoptedAvailable={adoptedPageAvailable} amendmentDates={amendmentDates} />
       )}
       <button
         class="ml-auto text-xs text-gray-400 hover:text-blue-600 print:hidden copy-table-btn"

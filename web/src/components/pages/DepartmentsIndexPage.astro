@@ -1,0 +1,68 @@
+---
+/**Department directory — index of all department one-pagers.*/
+import Base from '../../layouts/Base.astro';
+import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+import { operating } from '../../lib/department-budgets';
+
+interface Props {
+  budgetYear: BudgetYear;
+}
+
+const { budgetYear } = Astro.props as Props;
+const prefix = budgetYear.routePrefix;
+const changes = budgetYear.views.budgetChanges;
+const budgets = budgetYear.views.departmentBudgets;
+const personnel = budgetYear.views.personnelByDepartment;
+
+// Build a lookup of department data
+const deptMap = new Map<string, any>();
+for (const dc of changes.departmentChanges) {
+  deptMap.set(dc.slug, dc);
+}
+
+// Current-year operating-department budgets sorted by amount (trust funds excluded)
+const currentDepts = operating(budgets)
+  .filter(r => r.year === budgetYear.columns.budget)
+  .sort((a, b) => b.amount - a.amount);
+
+function fmtM(n: number): string {
+  if (Math.abs(n) >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (Math.abs(n) >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n.toFixed(0)}`;
+}
+---
+
+<Base title="Departments" description="Simplified one-page summaries for every Pittsburgh city department." budgetYear={budgetYear} currentHref={headlinePath('/departments/')}>
+  <h1 class="text-3xl font-bold mb-2">Department Summaries</h1>
+  <p class="text-gray-600 mb-6">One-page overviews of every city department — budget, staffing, and what changed. Designed for quick reference and easy printing.</p>
+
+  <div class="grid gap-3">
+    {currentDepts.map((dept) => {
+      const dc = deptMap.get(dept.slug);
+      const pers = personnel.find((p: any) => p.slug === dept.slug);
+      const change = dc?.dollarChange ?? 0;
+      const changePct = dc?.pctChange ?? 0;
+      const fte = pers?.totalFteCurrent || dc?.fteCurrent;
+
+      return (
+        <a href={`${prefix}/departments/${dept.slug}/`} class="block bg-white rounded-lg border p-4 hover:border-blue-300 hover:shadow-sm transition-all">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="font-semibold text-blue-900">{dept.department}</h2>
+              <div class="text-sm text-gray-500 mt-0.5">
+                {fmtM(dept.amount)} budget
+                {fte ? ` · ${Math.round(fte)} FTE` : ''}
+              </div>
+            </div>
+            <div class="text-right">
+              <div class={`text-sm font-medium tabular-nums ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {change >= 0 ? '+' : ''}{changePct}%
+              </div>
+              <div class="text-xs text-gray-400">vs {budgetYear.priorLabel}</div>
+            </div>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</Base>

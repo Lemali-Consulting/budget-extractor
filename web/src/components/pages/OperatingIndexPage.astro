@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import SearchBar from '../SearchBar.tsx';
+import Sparkline from '../Sparkline.tsx';
+import AmendmentNotice from '../AmendmentNotice.astro';
+import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+
+interface Props {
+  budgetYear: BudgetYear;
+}
+
+const { budgetYear } = Astro.props as Props;
+const prefix = budgetYear.routePrefix;
+const sections = budgetYear.operating.sections;
+const searchIndex = budgetYear.views.searchIndex;
+const departmentBudgets = budgetYear.views.departmentBudgets;
+
+// Group sections by rough category based on section number
+const categories = [
+  { label: 'Overview', range: [1, 9] },
+  { label: 'Departments', range: [10, 39] },
+  { label: 'Trust Funds', range: [40, 57] },
+  { label: 'Other', range: [58, 99] },
+];
+
+function getSectionCategory(num: number): string {
+  for (const cat of categories) {
+    if (num >= cat.range[0] && num <= cat.range[1]) return cat.label;
+  }
+  return 'Other';
+}
+
+const grouped = new Map<string, typeof sections>();
+for (const section of sections) {
+  const cat = getSectionCategory(section.section_number);
+  if (!grouped.has(cat)) grouped.set(cat, []);
+  grouped.get(cat)!.push(section);
+}
+
+// Extract first narrative snippet for each section
+function getSummary(section: any): string {
+  const pages = section.page_content || [];
+  for (const page of pages) {
+    for (const block of page.text_blocks || []) {
+      if (block.role === 'narrative' || block.role === 'leading_prose' || block.role === 'trailing_prose') {
+        // Take first ~120 chars, break at word boundary
+        const text = block.text.replace(/\n/g, ' ').trim();
+        if (text.length <= 120) return text;
+        return text.substring(0, 120).replace(/\s\S*$/, '') + '...';
+      }
+    }
+  }
+  return '';
+}
+
+// Build sparkline data lookup by slug from department budgets
+const sparklineMap = new Map<string, number[]>();
+for (const row of departmentBudgets as {slug: string; year: string; amount: number}[]) {
+  if (!sparklineMap.has(row.slug)) sparklineMap.set(row.slug, []);
+  sparklineMap.get(row.slug)!.push(row.amount);
+}
+
+// Check if section has chart images
+function hasChart(section: any): boolean {
+  for (const page of section.page_content || []) {
+    if ((page.chart_regions || []).length > 0) return true;
+  }
+  return false;
+}
+---
+
+<Base title="Operating Budget" budgetYear={budgetYear} currentHref={headlinePath('/operating/')}>
+  <nav class="text-sm text-gray-500 mb-4">
+    <a href="/" class="hover:text-blue-600">Home</a>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <span>Operating Budget</span>
+  </nav>
+
+  <h1 class="text-3xl font-bold mb-2">Operating Budget</h1>
+  <p class="text-gray-600 mb-4">City of Pittsburgh {budgetYear.fiscalLabel} Operating Budget. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
+
+  <AmendmentNotice budgetYear={budgetYear} />
+
+  <div class="mb-8">
+    <SearchBar items={searchIndex} routePrefix={prefix} client:load />
+  </div>
+
+  {[...grouped.entries()].map(([category, secs]) => (
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b pb-1">{category}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {secs.map((s) => {
+          const summary = getSummary(s);
+          const hasChartImg = hasChart(s);
+          return (
+            <a
+              href={`${prefix}/sections/${s.slug}/`}
+              class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition"
+            >
+              <div class="font-medium flex items-center gap-2">
+                {s.title}
+                {hasChartImg && (
+                  <span class="text-xs text-blue-500" title="Includes org chart">
+                    <svg class="w-3.5 h-3.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </span>
+                )}
+              </div>
+              <div class="text-sm text-gray-500 mt-1 flex items-center gap-2">
+                <span>
+                  {s.tables.length} {s.tables.length === 1 ? 'table' : 'tables'}
+                  {s.start_page && s.end_page ? ` · pp. ${s.start_page}–${s.end_page}` : ''}
+                </span>
+                {sparklineMap.has(s.slug) && sparklineMap.get(s.slug)!.length >= 2 && (
+                  <Sparkline values={sparklineMap.get(s.slug)!} />
+                )}
+              </div>
+              {summary && (
+                <div class="text-xs text-gray-400 mt-1.5 line-clamp-2">{summary}</div>
+              )}
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+</Base>

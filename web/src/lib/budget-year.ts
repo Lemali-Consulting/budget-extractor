@@ -1,0 +1,386 @@
+/**
+ * Year registry: the one place that knows which budget years the site carries,
+ * which data bundles belong to each, how they are labeled, and where they live
+ * in the URL space. Pages and server-side components read years, labels, route
+ * prefixes and data from here instead of hardcoding them.
+ *
+ * Server-only (it imports the budget JSON bundles). Preact components must not
+ * import this module; pages pass them labels and prefixes as props, and they use
+ * `image-paths.ts` for image URLs.
+ */
+
+import headlineMeta from '../data/views/budget-meta.json';
+import headlineBudget from '../data/budget-data.json';
+import headlineCapital from '../data/capital-budget-data.json';
+import headlineDepartmentBudgets from '../data/views/department-budgets.json';
+import headlineBudgetChanges from '../data/views/budget-changes.json';
+import headlinePersonnel from '../data/views/personnel.json';
+import headlinePersonnelByDepartment from '../data/views/personnel-by-department.json';
+import headlineCapitalProjects from '../data/views/capital-projects.json';
+import headlineCapitalFunding from '../data/views/capital-funding-sources.json';
+import headlineCapitalAppendices from '../data/views/capital-appendices.json';
+import headlineRevenueWaterfall from '../data/views/revenue-waterfall.json';
+import headlineDepartmentForecast from '../data/views/department-forecast.json';
+import headlineSearchIndex from '../data/views/search-index.json';
+import headlineTablesIndex from '../data/views/tables-index.json';
+import headlineGlossaryBacklinks from '../data/views/glossary-backlinks.json';
+import headlineStructureChanges from '../data/views/structure-changes.json';
+
+import meta2026 from '../data/views/2026-budget-meta.json';
+import budget2026 from '../data/2026-budget-data.json';
+import capital2026 from '../data/2026-capital-budget-data.json';
+import departmentBudgets2026 from '../data/views/2026-department-budgets.json';
+import budgetChanges2026 from '../data/views/2026-budget-changes.json';
+import personnel2026 from '../data/views/2026-personnel.json';
+import personnelByDepartment2026 from '../data/views/2026-personnel-by-department.json';
+import capitalProjects2026 from '../data/views/2026-capital-projects.json';
+import capitalFunding2026 from '../data/views/2026-capital-funding-sources.json';
+import capitalAppendices2026 from '../data/views/2026-capital-appendices.json';
+import revenueWaterfall2026 from '../data/views/2026-revenue-waterfall.json';
+import departmentForecast2026 from '../data/views/2026-department-forecast.json';
+import searchIndex2026 from '../data/views/2026-search-index.json';
+import tablesIndex2026 from '../data/views/2026-tables-index.json';
+import glossaryBacklinks2026 from '../data/views/2026-glossary-backlinks.json';
+import amendmentChanges2026 from '../data/views/2026-amendment-changes.json';
+import amendmentCellDiffs2026 from '../data/views/2026-amendment-cell-diffs.json';
+import adoptedPages2026 from '../data/views/2026-adopted-pages.json';
+
+import meta2025 from '../data/views/2025-budget-meta.json';
+import budget2025 from '../data/2025-budget-data.json';
+import capital2025 from '../data/2025-capital-budget-data.json';
+import departmentBudgets2025 from '../data/views/2025-department-budgets.json';
+import budgetChanges2025 from '../data/views/2025-budget-changes.json';
+import personnel2025 from '../data/views/2025-personnel.json';
+import personnelByDepartment2025 from '../data/views/2025-personnel-by-department.json';
+import capitalProjects2025 from '../data/views/2025-capital-projects.json';
+import capitalFunding2025 from '../data/views/2025-capital-funding-sources.json';
+import revenueWaterfall2025 from '../data/views/2025-revenue-waterfall.json';
+import departmentForecast2025 from '../data/views/2025-department-forecast.json';
+import searchIndex2025 from '../data/views/2025-search-index.json';
+import tablesIndex2025 from '../data/views/2025-tables-index.json';
+import glossaryBacklinks2025 from '../data/views/2025-glossary-backlinks.json';
+
+import type { DeptBudgetRow } from './department-budgets';
+
+// ---------------------------------------------------------------------------
+// Constants (defined once; everything else references these)
+// ---------------------------------------------------------------------------
+
+/** Budget document variants, matching the Python pipeline's variant names. */
+export const VARIANT = {
+  PROPOSED: 'proposed',
+  ADOPTED: 'adopted',
+  AMENDED: 'amended',
+} as const;
+export type Variant = (typeof VARIANT)[keyof typeof VARIANT];
+
+/** Route prefix of the headline (unprefixed) budget pages. */
+export const HEADLINE_ROUTE_PREFIX = '';
+
+/** Where a year's budget-content pages live: at the site root, in the archive, or nowhere. */
+export const YEAR_ROLE = {
+  HEADLINE: 'headline',
+  ARCHIVE: 'archive',
+  /** Data only; used by comparison pages, no browsable pages of its own. */
+  COMPARISON_ONLY: 'comparison-only',
+} as const;
+export type YearRole = (typeof YEAR_ROLE)[keyof typeof YEAR_ROLE];
+
+/** Site path of the 2026 amendments comparison page. */
+export const AMENDMENTS_PATH = '/amendments/';
+
+/** Dates of the two 2026 operating documents compared on amendment features. */
+const AMENDMENT_ADOPTED_DATE = 'Dec 2025';
+const AMENDMENT_AMENDED_DATE = 'Apr 2026';
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
+
+interface BudgetMeta {
+  year: number;
+  priorYear: number;
+  operatingVariant: Variant;
+  capitalVariant: Variant;
+}
+
+/** Per-table cell diffs between the adopted and amended operating documents. */
+export interface AmendmentCellDiffs {
+  meta?: { amendmentLabel?: string; changedLineItemCount?: number };
+  byTable?: Record<string, any>;
+}
+
+/** Amendment (adopted vs amended) data and labels; present only on years that were amended. */
+export interface AmendmentInfo {
+  /** Document label from the amended PDF, e.g. "as amended 4-20-26". */
+  documentLabel: string;
+  adoptedDate: string;
+  amendedDate: string;
+  /** e.g. "Adopted (Dec 2025)" */
+  adoptedLabel: string;
+  /** e.g. "Amended (Apr 2026)" */
+  amendedLabel: string;
+  changes: any;
+  cellDiffs: AmendmentCellDiffs;
+  /** {slug: [pages]} of pages with an adopted (pre-amendment) source image. */
+  adoptedPages: Record<string, number[]>;
+  /** Site path of the amendments comparison page. */
+  path: string;
+}
+
+/** Header strings used by the extracted tables and department view for a year. */
+export interface YearColumns {
+  /** e.g. "2027 Budget" */
+  budget: string;
+  /** e.g. "2026 Budget" */
+  priorBudget: string;
+  /** e.g. "2027 FTE" */
+  fte: string;
+  /** e.g. "2026 FTE" */
+  priorFte: string;
+}
+
+/** Derived views for one year. */
+export interface YearViews {
+  departmentBudgets: DeptBudgetRow[];
+  budgetChanges: any;
+  personnel: any[];
+  personnelByDepartment: any[];
+  capitalProjects: any[];
+  capitalFundingSources: any[];
+  revenueWaterfall: any[];
+  departmentForecast: any[];
+  searchIndex: any[];
+  tablesIndex: any[];
+  glossaryBacklinks: Record<string, any>;
+}
+
+export interface BudgetYear {
+  year: number;
+  priorYear: number;
+  operatingVariant: Variant;
+  capitalVariant: Variant;
+  role: YearRole;
+  /** True for the year the unprefixed site pages show. */
+  isHeadline: boolean;
+  /** "" for the headline, "/2026" for the archive; no trailing slash. */
+  routePrefix: string;
+  /** Long label, e.g. "2027 Proposed" or "2026 Budget (as amended)". */
+  label: string;
+  /** Short label, e.g. "2027 Proposed" or "2026 Budget". */
+  shortLabel: string;
+  /** Fiscal-year label for prose, e.g. "FY2027 Proposed" or "FY2026". */
+  fiscalLabel: string;
+  /** What the prior year is called, e.g. "2026 Budget". */
+  priorLabel: string;
+  /** Year-over-year wording, e.g. "2027 Proposed vs 2026 Budget". */
+  comparisonLabel: string;
+  /** Short year-over-year range for headings, e.g. "2026 → 2027". */
+  rangeLabel: string;
+  columns: YearColumns;
+  operating: { sections: any[]; glossary: Record<string, string> };
+  capital: { sections: any[] };
+  views: YearViews;
+  /** Capital appendices (absent for years without them). */
+  capitalAppendices: any | null;
+  /** Year-over-year structure changes (department adds/removals), headline only. */
+  structureChanges: any | null;
+  /** Amendment features apply to this year. */
+  hasAmendments: boolean;
+  amendment: AmendmentInfo | null;
+}
+
+// ---------------------------------------------------------------------------
+// Builders
+// ---------------------------------------------------------------------------
+
+function describeVariant(opts: { year: number; variant: Variant }): {
+  label: string;
+  shortLabel: string;
+  fiscalLabel: string;
+} {
+  const { year, variant } = opts;
+  if (variant === VARIANT.PROPOSED) {
+    return {
+      label: `${year} Proposed`,
+      shortLabel: `${year} Proposed`,
+      fiscalLabel: `FY${year} Proposed`,
+    };
+  }
+  if (variant === VARIANT.AMENDED) {
+    return {
+      label: `${year} Budget (as amended)`,
+      shortLabel: `${year} Budget`,
+      fiscalLabel: `FY${year}`,
+    };
+  }
+  return { label: `${year} Budget`, shortLabel: `${year} Budget`, fiscalLabel: `FY${year}` };
+}
+
+function buildAmendment(opts: {
+  changes: any;
+  cellDiffs: AmendmentCellDiffs;
+  adoptedPages: Record<string, number[]>;
+}): AmendmentInfo {
+  return {
+    documentLabel: opts.cellDiffs.meta?.amendmentLabel || 'as amended',
+    adoptedDate: AMENDMENT_ADOPTED_DATE,
+    amendedDate: AMENDMENT_AMENDED_DATE,
+    adoptedLabel: `Adopted (${AMENDMENT_ADOPTED_DATE})`,
+    amendedLabel: `Amended (${AMENDMENT_AMENDED_DATE})`,
+    changes: opts.changes,
+    cellDiffs: opts.cellDiffs,
+    adoptedPages: opts.adoptedPages,
+    path: AMENDMENTS_PATH,
+  };
+}
+
+function buildYear(opts: {
+  meta: BudgetMeta;
+  role: YearRole;
+  operating: BudgetYear['operating'];
+  capital: BudgetYear['capital'];
+  views: YearViews;
+  capitalAppendices?: any | null;
+  structureChanges?: any | null;
+  amendment?: AmendmentInfo | null;
+}): BudgetYear {
+  const { meta, role } = opts;
+  const { year, priorYear } = meta;
+  const names = describeVariant({ year, variant: meta.operatingVariant });
+  const priorLabel = `${priorYear} Budget`;
+  return {
+    year,
+    priorYear,
+    operatingVariant: meta.operatingVariant,
+    capitalVariant: meta.capitalVariant,
+    role,
+    isHeadline: role === YEAR_ROLE.HEADLINE,
+    routePrefix: role === YEAR_ROLE.ARCHIVE ? `/${year}` : HEADLINE_ROUTE_PREFIX,
+    ...names,
+    priorLabel,
+    comparisonLabel: `${names.shortLabel} vs ${priorLabel}`,
+    rangeLabel: `${priorYear} → ${year}`,
+    columns: {
+      budget: `${year} Budget`,
+      priorBudget: priorLabel,
+      fte: `${year} FTE`,
+      priorFte: `${priorYear} FTE`,
+    },
+    operating: opts.operating,
+    capital: opts.capital,
+    views: opts.views,
+    capitalAppendices: opts.capitalAppendices ?? null,
+    structureChanges: opts.structureChanges ?? null,
+    hasAmendments: !!opts.amendment,
+    amendment: opts.amendment ?? null,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Years
+// ---------------------------------------------------------------------------
+
+const YEAR_2027: BudgetYear = buildYear({
+  meta: headlineMeta as BudgetMeta,
+  role: YEAR_ROLE.HEADLINE,
+  operating: headlineBudget as BudgetYear['operating'],
+  capital: headlineCapital as BudgetYear['capital'],
+  views: {
+    departmentBudgets: headlineDepartmentBudgets as DeptBudgetRow[],
+    budgetChanges: headlineBudgetChanges,
+    personnel: headlinePersonnel,
+    personnelByDepartment: headlinePersonnelByDepartment,
+    capitalProjects: headlineCapitalProjects,
+    capitalFundingSources: headlineCapitalFunding,
+    revenueWaterfall: headlineRevenueWaterfall,
+    departmentForecast: headlineDepartmentForecast,
+    searchIndex: headlineSearchIndex,
+    tablesIndex: headlineTablesIndex,
+    glossaryBacklinks: headlineGlossaryBacklinks,
+  },
+  capitalAppendices: headlineCapitalAppendices,
+  structureChanges: headlineStructureChanges,
+});
+
+const YEAR_2026: BudgetYear = buildYear({
+  meta: meta2026 as BudgetMeta,
+  role: YEAR_ROLE.ARCHIVE,
+  operating: budget2026 as BudgetYear['operating'],
+  capital: capital2026 as BudgetYear['capital'],
+  views: {
+    departmentBudgets: departmentBudgets2026 as DeptBudgetRow[],
+    budgetChanges: budgetChanges2026,
+    personnel: personnel2026,
+    personnelByDepartment: personnelByDepartment2026,
+    capitalProjects: capitalProjects2026,
+    capitalFundingSources: capitalFunding2026,
+    revenueWaterfall: revenueWaterfall2026,
+    departmentForecast: departmentForecast2026,
+    searchIndex: searchIndex2026,
+    tablesIndex: tablesIndex2026,
+    glossaryBacklinks: glossaryBacklinks2026,
+  },
+  capitalAppendices: capitalAppendices2026,
+  amendment: buildAmendment({
+    changes: amendmentChanges2026,
+    cellDiffs: amendmentCellDiffs2026 as AmendmentCellDiffs,
+    adoptedPages: adoptedPages2026 as Record<string, number[]>,
+  }),
+});
+
+const YEAR_2025: BudgetYear = buildYear({
+  meta: meta2025 as BudgetMeta,
+  role: YEAR_ROLE.COMPARISON_ONLY,
+  operating: budget2025 as BudgetYear['operating'],
+  capital: capital2025 as BudgetYear['capital'],
+  views: {
+    departmentBudgets: departmentBudgets2025 as DeptBudgetRow[],
+    budgetChanges: budgetChanges2025,
+    personnel: personnel2025,
+    personnelByDepartment: personnelByDepartment2025,
+    capitalProjects: capitalProjects2025,
+    capitalFundingSources: capitalFunding2025,
+    revenueWaterfall: revenueWaterfall2025,
+    departmentForecast: departmentForecast2025,
+    searchIndex: searchIndex2025,
+    tablesIndex: tablesIndex2025,
+    glossaryBacklinks: glossaryBacklinks2025,
+  },
+});
+
+/** Every year the site carries data for, keyed by year. */
+export const BUDGET_YEARS: Record<number, BudgetYear> = {
+  [YEAR_2027.year]: YEAR_2027,
+  [YEAR_2026.year]: YEAR_2026,
+  [YEAR_2025.year]: YEAR_2025,
+};
+
+/** The year the unprefixed pages show (2027 proposed). */
+export const HEADLINE: BudgetYear = YEAR_2027;
+
+/** Years browsable under their own route prefix (e.g. /2026/...). */
+export const ARCHIVE_YEARS: BudgetYear[] = [YEAR_2026];
+
+/**
+ * The 2026 budget (operating as amended, capital adopted). Stories, the
+ * amendments page and cross-year read this, so they stay pinned to 2026 data.
+ */
+export const BUDGET_2026: BudgetYear = YEAR_2026;
+
+/** The 2025 budget bundle, used only by the cross-year comparison. */
+export const BUDGET_2025: BudgetYear = YEAR_2025;
+
+// ---------------------------------------------------------------------------
+// Link helpers
+// ---------------------------------------------------------------------------
+
+/** Prefix a site path (e.g. "/sections/x/") with a year's route prefix. */
+export function yearPath(opts: { budgetYear: BudgetYear; path: string }): string {
+  return `${opts.budgetYear.routePrefix}${opts.path}`;
+}
+
+/** Same page in the headline version of the site (a path as written without a prefix). */
+export function headlinePath(path: string): string {
+  return `${HEADLINE_ROUTE_PREFIX}${path}`;
+}

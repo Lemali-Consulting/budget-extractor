@@ -3,11 +3,13 @@
 import Embed from '../../layouts/Embed.astro';
 import PersonnelChangesChart from '../../components/PersonnelChangesChart.tsx';
 import EmbedWrapper from '../../components/EmbedWrapper.tsx';
-import personnelByDept from '../../data/views/personnel-by-department.json';
+import { HEADLINE } from '../../lib/budget-year';
+
+const personnelByDept = HEADLINE.views.personnelByDepartment;
 ---
 
-<Embed title="Staffing Changes" description="FTE changes by department, FY2026 vs FY2025.">
-  <EmbedWrapper title="Staffing Changes by Department, FY2026 vs FY2025" client:load>
-    <PersonnelChangesChart data={personnelByDept} client:load />
+<Embed title="Staffing Changes" description={`FTE changes by department, ${HEADLINE.comparisonLabel}.`}>
+  <EmbedWrapper title={`Staffing Changes by Department, ${HEADLINE.comparisonLabel}`} client:load>
+    <PersonnelChangesChart data={personnelByDept} year={HEADLINE.year} priorYear={HEADLINE.priorYear} client:load />
   </EmbedWrapper>
 </Embed>

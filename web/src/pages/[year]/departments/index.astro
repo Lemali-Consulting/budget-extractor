@@ -1,0 +1,11 @@
+---
+/**Archive department directory (e.g. /2026/departments/).*/
+import DepartmentsIndexPage from '../../../components/pages/DepartmentsIndexPage.astro';
+import { archiveYearStaticPaths } from '../../../lib/static-paths';
+
+export const getStaticPaths = archiveYearStaticPaths;
+
+const { budgetYear } = Astro.props;
+---
+
+<DepartmentsIndexPage budgetYear={budgetYear} />

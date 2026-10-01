@@ -8,11 +8,18 @@ import { useContainerWidth } from '../lib/hooks';
 interface DeptPersonnel {
   department: string;
   slug: string;
-  totalFte2025: number;
-  totalFte2026: number;
+  totalFtePrior: number;
+  totalFteCurrent: number;
 }
 
-export default function PersonnelChangesChart({ data }: { data: DeptPersonnel[] }) {
+interface Props {
+  data: DeptPersonnel[];
+  /** Budget year shown and the year it is compared with, for the empty-state text. */
+  year: number;
+  priorYear: number;
+}
+
+export default function PersonnelChangesChart({ data, year, priorYear }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -23,14 +30,14 @@ export default function PersonnelChangesChart({ data }: { data: DeptPersonnel[] 
     const changes = data
       .map((d) => ({
         department: d.department,
-        change: d.totalFte2026 - d.totalFte2025,
-        fte2026: d.totalFte2026,
+        change: d.totalFteCurrent - d.totalFtePrior,
+        fteCurrent: d.totalFteCurrent,
       }))
       .filter((d) => d.change !== 0)
       .sort((a, b) => b.change - a.change);
 
     if (changes.length === 0) {
-      chartRef.current.textContent = 'No FTE changes between 2025 and 2026.';
+      chartRef.current.textContent = `No FTE changes between ${priorYear} and ${year}.`;
       return;
     }
 
@@ -54,7 +61,7 @@ export default function PersonnelChangesChart({ data }: { data: DeptPersonnel[] 
           sort: { y: '-x' },
           tip: true,
           title: (d: typeof changes[0]) =>
-            `${d.department}\n${d.change > 0 ? '+' : ''}${Number.isInteger(d.change) ? d.change : d.change.toFixed(1)} FTE (now ${d.fte2026})`,
+            `${d.department}\n${d.change > 0 ? '+' : ''}${Number.isInteger(d.change) ? d.change : d.change.toFixed(1)} FTE (now ${d.fteCurrent})`,
         }),
         Plot.text(changes, {
           y: 'department',

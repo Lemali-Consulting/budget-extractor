@@ -47,6 +47,8 @@ interface Section {
 interface Props {
   tablesIndex: TableIndex[];
   sections: Section[];
+  /** Budget year whose source-page images the explorer shows. */
+  year: number;
 }
 
 type Tab = 'data' | 'visualize' | 'compare';
@@ -57,7 +59,7 @@ const TAB_LABELS: Record<Tab, string> = {
   compare: 'Compare',
 };
 
-export default function DataExplorer({ tablesIndex, sections }: Props) {
+export default function DataExplorer({ tablesIndex, sections, year }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [compareId, setCompareId] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>('data');
@@ -277,7 +279,7 @@ export default function DataExplorer({ tablesIndex, sections }: Props) {
                 )}
                 <span>Page {selectedMeta!.page + 1}, Table {selectedMeta!.tableIndex + 1}</span>
                 <span>&middot; {selectedMeta!.rowCount} rows, {selectedMeta!.headers.length} columns</span>
-                <PageImage slug={selectedFull.slug} page={selectedMeta!.page} />
+                <PageImage year={year} slug={selectedFull.slug} page={selectedMeta!.page} />
                 <a
                   href={`/${(selectedMeta!.budgetType || 'operating') === 'capital' ? 'capital' : 'sections'}/${selectedMeta!.sectionSlug}/`}
                   class="inline-flex items-center gap-1 px-2 py-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1"

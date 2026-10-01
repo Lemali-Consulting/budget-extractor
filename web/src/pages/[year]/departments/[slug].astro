@@ -1,0 +1,14 @@
+---
+/**Archive department one-pager (e.g. /2026/departments/<slug>/).*/
+import DepartmentPage from '../../../components/pages/DepartmentPage.astro';
+import { archiveSlugStaticPaths, departmentStaticPaths } from '../../../lib/static-paths';
+
+export function getStaticPaths() {
+  return archiveSlugStaticPaths(departmentStaticPaths);
+}
+
+const { slug } = Astro.params;
+const { budgetYear } = Astro.props;
+---
+
+<DepartmentPage budgetYear={budgetYear} slug={slug!} />

@@ -1,0 +1,36 @@
+---
+/**
+ * Site-wide banner stating which budget the page shows: the Mayor's proposed
+ * budget (headline pages) or an archived, already-adopted year (archive pages).
+ */
+import { type BudgetYear, HEADLINE, headlinePath } from '../lib/budget-year';
+
+interface Props {
+  budgetYear: BudgetYear;
+  /** Path of the same page in the current (headline) version, when one exists. */
+  currentHref?: string;
+}
+
+const { budgetYear, currentHref = headlinePath('/') } = Astro.props;
+const isHeadline = budgetYear.isHeadline;
+---
+
+{isHeadline ? (
+  <div data-testid="proposed-notice" class="bg-amber-50 border-b border-amber-200 text-amber-900 text-sm print:hidden">
+    <p class="max-w-6xl mx-auto px-6 py-2">
+      This is the Mayor&rsquo;s <strong>proposed {budgetYear.year} budget</strong>, pending City Council
+      adoption (expected in December). Figures may change before the budget is adopted.
+    </p>
+  </div>
+) : (
+  <div data-testid="archive-notice" class="bg-slate-100 border-b border-slate-300 text-slate-800 text-sm print:hidden">
+    <p class="max-w-6xl mx-auto px-6 py-2">
+      You&rsquo;re viewing the <strong>{budgetYear.year} budget</strong>.
+      <a href={currentHref} class="font-medium underline hover:text-slate-950">
+        {currentHref === headlinePath('/')
+          ? `See the current ${HEADLINE.label} budget`
+          : `See this page in the current ${HEADLINE.label} budget`} &rarr;
+      </a>
+    </p>
+  </div>
+)}

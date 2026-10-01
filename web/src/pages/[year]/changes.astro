@@ -1,0 +1,11 @@
+---
+/**Archive changes page (e.g. /2026/changes/).*/
+import ChangesPage from '../../components/pages/ChangesPage.astro';
+import { archiveYearStaticPaths } from '../../lib/static-paths';
+
+export const getStaticPaths = archiveYearStaticPaths;
+
+const { budgetYear } = Astro.props;
+---
+
+<ChangesPage budgetYear={budgetYear} />

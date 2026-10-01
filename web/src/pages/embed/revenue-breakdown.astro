@@ -3,11 +3,13 @@
 import Embed from '../../layouts/Embed.astro';
 import WaterfallChart from '../../components/WaterfallChart.tsx';
 import EmbedWrapper from '../../components/EmbedWrapper.tsx';
-import revenueWaterfall from '../../data/views/revenue-waterfall.json';
+import { HEADLINE } from '../../lib/budget-year';
+
+const revenueWaterfall = HEADLINE.views.revenueWaterfall;
 ---
 
-<Embed title="Revenue Breakdown" description="FY2026 Pittsburgh revenue sources waterfall chart.">
+<Embed title="Revenue Breakdown" description={`${HEADLINE.fiscalLabel} Pittsburgh revenue sources waterfall chart.`}>
   <EmbedWrapper client:load>
-    <WaterfallChart data={revenueWaterfall} client:load />
+    <WaterfallChart data={revenueWaterfall} yearLabel={HEADLINE.label} client:load />
   </EmbedWrapper>
 </Embed>

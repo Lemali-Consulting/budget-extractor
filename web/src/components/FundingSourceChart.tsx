@@ -70,9 +70,12 @@ export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
     return <div class="text-gray-400 italic py-4">No capital funding data available.</div>;
   }
 
+  const planYears = data.map((d) => d.year).sort();
+  const planRange = `${planYears[0]}-${planYears[planYears.length - 1]}`;
+
   return (
     <div ref={containerRef}>
-      <h3 class="text-lg font-semibold mb-3">Funding by Source (2026-2031)</h3>
+      <h3 class="text-lg font-semibold mb-3">Funding by Source ({planRange})</h3>
       <div ref={chartRef} />
     </div>
   );

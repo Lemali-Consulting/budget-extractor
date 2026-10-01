@@ -21,6 +21,8 @@ interface Props {
   newPositions: Position[];
   eliminatedPositions: Position[];
   shiftedPositions: ShiftedPosition[];
+  /** Year of the comparison budget; eliminated positions carry its figures. */
+  priorYear: number;
 }
 
 function PositionTable({ positions, budgetLabel }: { positions: Position[]; budgetLabel: string }) {
@@ -89,7 +91,7 @@ function ShiftedTable({ positions }: { positions: ShiftedPosition[] }) {
   );
 }
 
-export default function PositionChanges({ newPositions, eliminatedPositions, shiftedPositions }: Props) {
+export default function PositionChanges({ newPositions, eliminatedPositions, shiftedPositions, priorYear }: Props) {
   const [tab, setTab] = useState<'new' | 'eliminated' | 'shifted'>('new');
 
   return (
@@ -137,7 +139,7 @@ export default function PositionChanges({ newPositions, eliminatedPositions, shi
       </div>
 
       {tab === 'new' && <PositionTable positions={newPositions} budgetLabel="Budget" />}
-      {tab === 'eliminated' && <PositionTable positions={eliminatedPositions} budgetLabel="Budget (2025)" />}
+      {tab === 'eliminated' && <PositionTable positions={eliminatedPositions} budgetLabel={`Budget (${priorYear})`} />}
       {tab === 'shifted' && <ShiftedTable positions={shiftedPositions} />}
     </div>
   );

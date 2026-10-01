@@ -13,9 +13,11 @@ interface TrendPoint {
 interface Props {
   data: TrendPoint[];
   height?: number;
+  /** Year whose bar is drawn in the primary color; others are muted. */
+  highlightYear: number;
 }
 
-export default function TrendMini({ data, height = 180 }: Props) {
+export default function TrendMini({ data, height = 180, highlightYear }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -38,7 +40,7 @@ export default function TrendMini({ data, height = 180 }: Props) {
         Plot.barY(data, {
           x: 'year',
           y: 'amount',
-          fill: (d: TrendPoint) => d.year.includes('2026') ? CHART_COLORS.primary : '#93c5fd',
+          fill: (d: TrendPoint) => d.year.includes(String(highlightYear)) ? CHART_COLORS.primary : '#93c5fd',
           tip: true,
           title: (d: TrendPoint) => `${d.year}: $${(d.amount / 1_000_000).toFixed(1)}M`,
         }),

@@ -12,6 +12,8 @@ interface CapitalProject {
 interface Props {
   proposedProjects: CapitalProject[];
   adoptedProjects: CapitalProject[];
+  /** Route prefix of the archive year the links point into (e.g. "/2026"). */
+  routePrefix: string;
 }
 
 // Known project consolidations (proposed entries that were merged in the adopted budget)
@@ -20,7 +22,7 @@ const CONSOLIDATIONS: Record<string, string> = {
   'P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)': 'P.J. MCARDLE ROADWAY (TIP)',
 };
 
-export default function CrossYearCapital({ proposedProjects, adoptedProjects }: Props) {
+export default function CrossYearCapital({ proposedProjects, adoptedProjects, routePrefix }: Props) {
   const [view, setView] = useState<'all' | 'added' | 'dropped'>('all');
 
   const proposedTitles = new Set(proposedProjects.map(p => p.title));
@@ -96,7 +98,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects }: 
                 {onlyAdopted.map(p => (
                   <tr key={p.title} class="border-b hover:bg-gray-50">
                     <td class="p-2">
-                      <a href={`/capital/${p.slug}/`} class="text-blue-600 hover:underline">{p.title}</a>
+                      <a href={`${routePrefix}/capital/${p.slug}/`} class="text-blue-600 hover:underline">{p.title}</a>
                     </td>
                     <td class="p-2 text-gray-600">{p.functionalArea || '\u2014'}</td>
                     <td class="p-2 text-gray-600">{p.department || '\u2014'}</td>
@@ -168,7 +170,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects }: 
                     <tr key={`${p.title}-${d.field}`} class="border-b hover:bg-gray-50">
                       {i === 0 && (
                         <td class="p-2" rowSpan={diffs.length}>
-                          <a href={`/capital/${p.slug}/`} class="text-blue-600 hover:underline">{p.title}</a>
+                          <a href={`${routePrefix}/capital/${p.slug}/`} class="text-blue-600 hover:underline">{p.title}</a>
                         </td>
                       )}
                       <td class="p-2 text-gray-600">{d.field}</td>

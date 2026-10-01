@@ -67,12 +67,12 @@ function fmtMoney(n: number): string {
 
 // ---------- Appendix A ----------
 
-function AppendixA({ data }: { data: { departments: Department[]; totals: Totals } }) {
+function AppendixA({ data, year }: { data: { departments: Department[]; totals: Totals }; year: number }) {
   return (
     <section id="appendix-a" class="scroll-mt-20">
       <h2 class="text-2xl font-semibold mt-10 mb-3">Appendix A — Projects by Department</h2>
       <p class="text-sm text-gray-600 mb-4 max-w-3xl">
-        Every 2026 capital project grouped by the department that owns it, with funding broken
+        Every {year} capital project grouped by the department that owns it, with funding broken
         out by source (CDBG, Bond, Paygo, Other) and the project total.
       </p>
       <div class="overflow-x-auto border border-gray-200 rounded">
@@ -303,7 +303,7 @@ function AppendixC({ data }: { data: { entries: GlossaryEntry[] } }) {
 
 // ---------- Top-level ----------
 
-export default function CapitalAppendices({ data }: { data: AppendicesData }) {
+export default function CapitalAppendices({ data, year }: { data: AppendicesData; year: number }) {
   return (
     <div>
       <nav class="flex flex-wrap gap-3 text-sm bg-gray-50 border border-gray-200 rounded px-3 py-2 mb-2">
@@ -312,7 +312,7 @@ export default function CapitalAppendices({ data }: { data: AppendicesData }) {
         <a href="#appendix-b" class="text-blue-700 hover:underline">B · CPFC Scoring</a>
         <a href="#appendix-c" class="text-blue-700 hover:underline">C · Glossary</a>
       </nav>
-      <AppendixA data={data.appendix_a} />
+      <AppendixA data={data.appendix_a} year={year} />
       <AppendixB data={data.appendix_b} />
       <AppendixC data={data.appendix_c} />
     </div>

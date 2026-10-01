@@ -2,11 +2,10 @@
 /**Story: What's Getting Built — The Capital Plan.*/
 import Story from '../../layouts/Story.astro';
 import FundingSourceChart from '../../components/FundingSourceChart.tsx';
-import capitalFunding from '../../data/views/capital-funding-sources.json';
-import capitalProjects from '../../data/views/capital-projects.json';
+import { BUDGET_2026 } from '../../lib/budget-year';
 
-const funding = capitalFunding as any[];
-const projects = capitalProjects as any[];
+const funding = BUDGET_2026.views.capitalFundingSources as any[];
+const projects = BUDGET_2026.views.capitalProjects as any[];
 
 const capital2026 = funding.filter(r => r.year === '2026').reduce((s: number, r: any) => s + r.amount, 0);
 const capitalTotal = funding.filter(r => parseInt(r.year) >= 2026).reduce((s: number, r: any) => s + r.amount, 0);
@@ -35,6 +34,7 @@ function fmtB(n: number): string {
 ---
 
 <Story
+  budgetYear={BUDGET_2026}
   title="What's Getting Built: The Capital Plan"
   subtitle={`A ${fmtB(capitalTotal)} investment in Pittsburgh's infrastructure`}
   description="Pittsburgh's six-year capital improvement plan funds roads, bridges, buildings, and technology. Here's where the money is going."
@@ -50,7 +50,7 @@ function fmtB(n: number): string {
   <h2>How it's funded</h2>
 
   <div class="chart-container">
-    <FundingSourceChart data={capitalFunding} client:load />
+    <FundingSourceChart data={funding} client:load />
   </div>
 
   <p>
@@ -118,7 +118,7 @@ function fmtB(n: number): string {
 
   <div class="callout">
     <p>
-      <strong>Browse all projects:</strong> The <a href="/capital/" class="underline">Capital Budget section</a> has
+      <strong>Browse all projects:</strong> The <a href="/2026/capital/" class="underline">Capital Budget section</a> has
       the complete project list with six-year funding breakdowns.
     </p>
   </div>

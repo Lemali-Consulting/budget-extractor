@@ -1,0 +1,545 @@
+---
+import Base from '../../layouts/Base.astro';
+import type { BudgetYear } from '../../lib/budget-year';
+import { HEADLINE, headlinePath } from '../../lib/budget-year';
+import { chartImageUrl } from '../../lib/image-paths';
+import TableViewer from '../TableViewer.astro';
+import SummaryCard from '../SummaryCard.astro';
+import SectionToc from '../SectionToc.astro';
+import HighlightsCallout from '../HighlightsCallout.astro';
+import AmendmentNotice from '../AmendmentNotice.astro';
+import ShareButton from '../ShareButton.tsx';
+import PageImage from '../PageImage.tsx';
+import ChartImage from '../ChartImage.tsx';
+import PdfSidebar from '../PdfSidebar.tsx';
+import SectionNav from '../SectionNav.astro';
+import SectionCharts from '../SectionCharts.tsx';
+import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
+
+interface Props {
+  budgetYear: BudgetYear;
+  section: any;
+  prev: { slug: string; title: string } | null;
+  next: { slug: string; title: string } | null;
+}
+
+const { budgetYear, section, prev, next } = Astro.props as Props;
+const prefix = budgetYear.routePrefix;
+const amendment = budgetYear.amendment;
+const amendmentByTable = amendment?.cellDiffs.byTable || {};
+// {slug: [pages]} — pages with an adopted (pre-amendment) source image available.
+const adoptedPageMap = amendment?.adoptedPages || {};
+const departmentBudgets = budgetYear.views.departmentBudgets;
+
+// Same page in the current version, when the headline budget has this section.
+const headlineHasSection = HEADLINE.operating.sections.some((s: any) => s.slug === section.slug);
+const currentHref = headlineHasSection ? headlinePath(`/sections/${section.slug}/`) : headlinePath('/operating/');
+
+const glossaryTerms = buildGlossaryTerms(budgetYear.operating.glossary || {});
+const linkGlossaryTerms = createGlossaryLinker(glossaryTerms);
+
+// Build a unified page-ordered stream of content items
+type ContentItem =
+  | { kind: 'table'; page: number; sortKey: number; data: any }
+  | { kind: 'narrative'; page: number; sortKey: number; text: string; role: string }
+  | { kind: 'chart'; page: number; sortKey: number; chartType: string }
+  | { kind: 'page_break'; page: number; sortKey: number; absolutePage: number };
+
+const items: ContentItem[] = [];
+const pagesWithContent = new Set<number>();
+
+// Add tables
+for (const table of section.tables) {
+  pagesWithContent.add(table.relative_page);
+  // Tables sort after narrative on the same page (bbox y is typically lower)
+  items.push({ kind: 'table', page: table.relative_page, sortKey: 500, data: table });
+}
+
+// Add page content (narrative blocks and chart regions)
+const pageContent = (section as any).page_content || [];
+for (const pc of pageContent) {
+  const relPage = pc.relative_page;
+  pagesWithContent.add(relPage);
+
+  for (const block of pc.text_blocks || []) {
+    // Use bbox y0 for ordering within a page
+    const y = block.bbox?.[1] ?? 0;
+    items.push({ kind: 'narrative', page: relPage, sortKey: y, text: block.text, role: block.role });
+  }
+  (pc.chart_regions || []).forEach((chart: any, ci: number) => {
+    const y = chart.bbox?.[1] ?? 0;
+    items.push({ kind: 'chart', page: relPage, sortKey: y, chartType: chart.chart_type, chartIndex: ci });
+  });
+}
+
+// Sort by page, then by y-position within page
+items.sort((a, b) => a.page - b.page || a.sortKey - b.sortKey);
+
+// Insert page breaks between pages
+const finalItems: ContentItem[] = [];
+let lastPage = -1;
+for (const item of items) {
+  if (item.page !== lastPage) {
+    const absPage = section.start_page ? section.start_page + item.page : item.page;
+    finalItems.push({ kind: 'page_break', page: item.page, sortKey: -1, absolutePage: absPage });
+    lastPage = item.page;
+  }
+  finalItems.push(item);
+}
+
+// Detect trust fund balance groups: Beginning Balance + Detail + Ending Balance
+// Mark items so the renderer can merge them into a single visual container
+function isBalanceRow(item: ContentItem, label: string): boolean {
+  if (item.kind !== 'table') return false;
+  const t = (item as any).data;
+  // Balance rows may appear as a single data row OR as header-only (no data rows)
+  if (t.rows?.length === 1 && (t.rows[0][0] || '').trim().startsWith(label)) return true;
+  if (t.rows?.length === 0 && t.headers?.length === 2 && (t.headers[0] || '').trim().startsWith(label)) return true;
+  return false;
+}
+
+// balanceGroups maps item index → role in a group
+const balanceGroups = new Map<number, 'begin' | 'middle' | 'end'>();
+for (let i = 0; i < finalItems.length; i++) {
+  if (!isBalanceRow(finalItems[i], 'Projected Beginning Balance')) continue;
+  // Find the matching ending balance on the same page
+  for (let j = i + 1; j < finalItems.length && finalItems[j].page === finalItems[i].page; j++) {
+    if (isBalanceRow(finalItems[j], 'Projected Ending Balance')) {
+      balanceGroups.set(i, 'begin');
+      balanceGroups.set(j, 'end');
+      // Mark all tables between as 'middle'
+      for (let k = i + 1; k < j; k++) {
+        if (finalItems[k].kind === 'table') balanceGroups.set(k, 'middle');
+      }
+      break;
+    }
+  }
+}
+
+const hasNarrative = finalItems.some(i => i.kind === 'narrative');
+const hasCharts = finalItems.some(i => i.kind === 'chart');
+
+// --- Extract summary metrics ---
+interface SummaryMetrics {
+  budget?: string;
+  budgetChange?: string;
+  budgetChangePct?: string;
+  fte?: number;
+  priorFte?: number;
+}
+
+function extractMetrics(tables: any[]): SummaryMetrics {
+  const metrics: SummaryMetrics = {};
+
+  for (const table of tables) {
+    const headers: string[] = table.headers || [];
+
+    for (const row of table.rows) {
+      const label = (row[0] || '').trim().toLowerCase();
+
+      // Budget totals from financial_summary tables
+      if (label === 'expenditures total' || label === 'total expenditures') {
+        const colBudget = headers.indexOf(budgetYear.columns.budget);
+        const colChange = headers.findIndex((h: string) => h.includes('Increase') || h.includes('Decrease'));
+        const colPct = headers.findIndex((h: string) => h.includes('% Change'));
+
+        if (colBudget >= 0 && row[colBudget]) metrics.budget = row[colBudget].trim();
+        if (colChange >= 0 && row[colChange]) metrics.budgetChange = row[colChange].trim();
+        if (colPct >= 0 && row[colPct]) metrics.budgetChangePct = row[colPct].trim();
+      }
+
+      // FTE totals from personnel tables
+      if (label === 'total full-time permanent positions') {
+        const colFte = headers.indexOf(budgetYear.columns.fte);
+        const colPriorFte = headers.indexOf(budgetYear.columns.priorFte);
+        if (colFte >= 0 && row[colFte]) metrics.fte = Math.round(parseFloat(row[colFte].replace(/,/g, '')));
+        if (colPriorFte >= 0 && row[colPriorFte]) metrics.priorFte = Math.round(parseFloat(row[colPriorFte].replace(/,/g, '')));
+      }
+    }
+  }
+  return metrics;
+}
+
+const metrics = extractMetrics(section.tables);
+const highlights: string[] = (section as any).highlights || [];
+const ogDesc = highlights.length > 0 ? highlights.join('. ') : undefined;
+
+// Build sparkline values for this section from department budgets
+const sparklineValues: number[] = departmentBudgets
+  .filter((r) => r.slug === section.slug)
+  .map((r) => r.amount);
+
+// Prepare chart table data (serializable subset for client component)
+const chartTables = section.tables
+  .filter((t: any) => ['financial_summary', 'financial'].includes(t.table_type))
+  .map((t: any) => ({
+    id: t.id,
+    table_type: t.table_type,
+    headers: t.headers,
+    rows: t.rows,
+  }));
+
+const pageCount = section.start_page && section.end_page
+  ? section.end_page - section.start_page + 1
+  : new Set(finalItems.map((i: ContentItem) => i.page)).size;
+
+// --- Build TOC entries ---
+import { TYPE_COLORS, typeLabel as getTypeLabel } from '../../lib/type-colors';
+
+const typeColors = Object.fromEntries(
+  Object.entries(TYPE_COLORS).map(([k, cls]) => [k, { badge: getTypeLabel(k), cls }])
+) as Record<string, { badge: string; cls: string }>;
+
+interface TocEntry {
+  label: string;
+  anchor: string;
+  badge?: string;
+  badgeClass?: string;
+  page?: number;
+}
+
+function deriveTableLabel(t: any, heading: string): string {
+  if (t.sections && t.sections.length > 0) {
+    const unique = [...new Set(t.sections.filter(Boolean))] as string[];
+    // Filter out subclass codes (e.g. "52 - PERSONNEL-EMPLOYEE BENEFITS")
+    const cleaned = unique.filter((s: string) => !/^\d{2}\s*-\s/.test(s));
+    if (cleaned.length === 1) return cleaned[0];
+    if (cleaned.length === 2) return cleaned.join(', ');
+    if (cleaned.length > 2) return `${cleaned[0]} + ${cleaned.length - 1} more`;
+    // All were subclass codes — use the heading
+    if (heading) return heading;
+    if (unique.length === 1) return unique[0];
+  }
+  if (heading) return heading;
+  return t.table_type.replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
+}
+
+// Two-pass TOC: first count labels to detect duplicates, then build entries
+const tocEntries: TocEntry[] = [];
+let lastSectionTitle = '';
+const labelCounts = new Map<string, number>();
+const isSubclassCode = (text: string) => /^\d{2}\s*-\s/.test(text);
+
+for (const item of finalItems) {
+  if (item.kind === 'narrative' && (item as any).role === 'section_title') {
+    const title = (item as any).text.replace(/\n/g, ' ').trim();
+    if (!isSubclassCode(title)) lastSectionTitle = title;
+  }
+  if (item.kind === 'table') {
+    const label = deriveTableLabel((item as any).data, lastSectionTitle);
+    labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
+  }
+}
+
+lastSectionTitle = '';
+let tocHeadingCounter = 0;
+const labelSeen = new Map<string, number>();
+
+for (const item of finalItems) {
+  if (item.kind === 'narrative' && (item as any).role === 'section_title') {
+    const title = (item as any).text.replace(/\n/g, ' ').trim();
+    if (!isSubclassCode(title)) lastSectionTitle = title;
+    tocHeadingCounter++;
+  }
+  if (item.kind === 'table') {
+    const t = (item as any).data;
+    const tc = typeColors[t.table_type] || typeColors.unknown;
+    const absPage = section.start_page ? section.start_page + t.relative_page : t.relative_page;
+
+    let label = deriveTableLabel(t, lastSectionTitle);
+    const count = labelCounts.get(label) || 1;
+    if (count > 1) {
+      const seen = (labelSeen.get(label) || 0) + 1;
+      labelSeen.set(label, seen);
+      if (seen > 1) label = `${label} (cont.)`;
+    }
+
+    tocEntries.push({
+      label,
+      anchor: `table-${t.id}`,
+      badge: tc.badge,
+      badgeClass: tc.cls,
+      page: absPage,
+    });
+  }
+}
+
+// Parse raw narrative text into structured segments for rendering
+type Segment =
+  | { type: 'heading'; text: string }
+  | { type: 'paragraph'; text: string }
+  | { type: 'bullets'; items: string[] };
+
+function parseNarrative(raw: string): Segment[] {
+  const lines = raw.split('\n');
+  const segments: Segment[] = [];
+  let pendingProse: string[] = [];
+  let pendingBullets: string[] = [];
+
+  function flushProse() {
+    if (pendingProse.length > 0) {
+      segments.push({ type: 'paragraph', text: pendingProse.join(' ') });
+      pendingProse = [];
+    }
+  }
+  function flushBullets() {
+    if (pendingBullets.length > 0) {
+      segments.push({ type: 'bullets', items: [...pendingBullets] });
+      pendingBullets = [];
+    }
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) { flushProse(); flushBullets(); continue; }
+
+    const isBullet = /^[•◦●▪–-]\s/.test(line) || /^\d+\.\s/.test(line);
+
+    if (isBullet) {
+      flushProse();
+      pendingBullets.push(line);
+    } else if (pendingBullets.length > 0) {
+      // Non-bullet line after bullets = continuation of last bullet (wrapped text)
+      pendingBullets[pendingBullets.length - 1] += ' ' + line;
+    } else {
+      // Is this a sub-heading? Heuristic: short line, not ending with comma/continuation,
+      // and followed by a longer line or is the first line of the block
+      const isShort = line.length < 50;
+      const noTrailingContinuation = !/[,;:\-–]$/.test(line) && !/\b(and|or|the|of|in|to|a|for)$/i.test(line);
+      const nextLine = i + 1 < lines.length ? lines[i + 1].trim() : '';
+      const nextIsLonger = nextLine.length > line.length;
+      const nextIsBullet = /^[•◦●▪–-]\s/.test(nextLine) || /^\d+\.\s/.test(nextLine);
+      const prevLine = pendingProse.length > 0 ? pendingProse[pendingProse.length - 1] : '';
+      const prevEndsSentence = /[.!?]$/.test(prevLine.trim());
+      const proseEmpty = pendingProse.length === 0 || prevEndsSentence;
+      const looksLikeHeading = isShort && noTrailingContinuation && (nextIsLonger || nextIsBullet) && proseEmpty;
+
+      if (looksLikeHeading) {
+        flushProse();
+        flushBullets();
+        segments.push({ type: 'heading', text: line });
+      } else {
+        flushBullets();
+        // Start a new paragraph when the previous line ended a sentence
+        // and the current line begins a new topic (e.g., "Foo Division - ...")
+        if (prevEndsSentence && pendingProse.length > 0) {
+          const startsNewTopic = /^[A-Z][A-Za-z &]+\s[-–—]\s/.test(line);
+          if (startsNewTopic) {
+            flushProse();
+          }
+        }
+        pendingProse.push(line);
+      }
+    }
+  }
+  flushProse();
+  flushBullets();
+  return segments;
+}
+---
+
+<Base title={section.title} ogTitle={section.title} ogDescription={ogDesc} budgetYear={budgetYear} currentHref={currentHref}>
+  <nav class="text-sm text-gray-500 mb-4">
+    <a href="/" class="hover:text-blue-600">Home</a>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <a href={`${prefix}/operating/`} class="hover:text-blue-600">Operating Budget</a>
+    <span class="mx-1" aria-hidden="true">/</span>
+    <span>{section.title}</span>
+  </nav>
+
+  <SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} position="top" />
+
+  <div class="flex items-center gap-3 mb-2">
+    <h1 class="text-3xl font-bold">{section.title}</h1>
+    <ShareButton client:load url={`${prefix}/sections/${section.slug}/`} />
+    <button class="text-xs text-gray-400 hover:text-blue-600 print:hidden" onclick="window.print()" title="Print this section" aria-label="Print">
+      Print
+    </button>
+  </div>
+  <p class="text-gray-500 mb-6">
+    Section {section.section_number}
+    {section.start_page && section.end_page ? ` · Pages ${section.start_page}–${section.end_page}` : ''}
+    · {section.tables.length} {section.tables.length === 1 ? 'table' : 'tables'}
+    {hasNarrative ? ' · includes narrative' : ''}
+  </p>
+
+  <AmendmentNotice budgetYear={budgetYear} />
+
+  <SummaryCard
+    budgetYear={budgetYear}
+    budget={metrics.budget}
+    budgetChange={metrics.budgetChange}
+    budgetChangePct={metrics.budgetChangePct}
+    fte={metrics.fte}
+    priorFte={metrics.priorFte}
+    tableCount={section.tables.length}
+    pageCount={pageCount}
+    sparklineValues={sparklineValues.length >= 2 ? sparklineValues : undefined}
+  />
+
+  <HighlightsCallout highlights={highlights} />
+
+  <SectionToc items={tocEntries} />
+
+  {chartTables.length > 0 && (
+    <SectionCharts client:load year={budgetYear.year} tables={chartTables} sectionTitle={section.title} />
+  )}
+
+  {finalItems.length === 0 ? (
+    <p class="text-gray-400 italic">No content extracted for this section.</p>
+  ) : (() => {
+    let renderHeadingIdx = 0;
+    return finalItems.map((item, itemIdx) => {
+      if (item.kind === 'page_break') {
+        return (
+          <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
+            <div class="flex-1 border-t border-gray-200"></div>
+            <span class="flex items-center gap-2">
+              Page {(item as any).absolutePage}
+              <PageImage client:load year={budgetYear.year} slug={section.slug} page={item.page} label="View image" />
+            </span>
+            <div class="flex-1 border-t border-gray-200"></div>
+          </div>
+        );
+      }
+
+      if (item.kind === 'narrative') {
+        const isTitle = item.role === 'section_title';
+        const isFootnote = item.role === 'footnote';
+        if (isTitle) {
+          renderHeadingIdx++;
+          const titleHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
+          return <h2 id={`heading-${renderHeadingIdx}`} class="text-xl font-semibold text-gray-800 mt-6 mb-2" set:html={titleHtml} />;
+        }
+        if (isFootnote) {
+          const fnHtml = linkGlossaryTerms(item.text.replace(/\n/g, ' '));
+          return <p class="text-xs text-gray-400 mt-1 mb-0" set:html={fnHtml} />;
+        }
+        const segments = parseNarrative(item.text);
+        return (
+          <div class="prose prose-sm max-w-3xl mb-4 text-gray-700 leading-relaxed">
+            {segments.map((seg) => {
+              if (seg.type === 'heading') {
+                const hHtml = linkGlossaryTerms(seg.text);
+                return <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1" set:html={hHtml} />;
+              }
+              if (seg.type === 'bullets') {
+                return (
+                  <ul class="list-disc list-inside ml-2 mb-2 space-y-0.5">
+                    {seg.items.map((b) => {
+                      const cleaned = b.replace(/^[•◦●▪–-]\s*/, '').replace(/^\d+\.\s*/, '');
+                      const isNested = /^[◦▪]/.test(b);
+                      const liHtml = linkGlossaryTerms(cleaned);
+                      return <li class={isNested ? 'ml-4' : ''} set:html={liHtml} />;
+                    })}
+                  </ul>
+                );
+              }
+              const pHtml = linkGlossaryTerms(seg.text);
+              return <p class="mb-2" set:html={pHtml} />;
+            })}
+          </div>
+        );
+      }
+
+      if (item.kind === 'chart') {
+        const chartSrc = chartImageUrl({ year: budgetYear.year, slug: section.slug, page: item.page, chartIndex: (item as any).chartIndex });
+        const cType = (item as any).chartType;
+        const isLogo = cType === 'logo';
+        const label = isLogo ? 'Department seal' : cType === 'raster_image' ? 'Figure' : 'Chart / diagram';
+        if (isLogo) {
+          return (
+            <div class="my-3 flex items-center gap-3">
+              <img
+                src={chartSrc}
+                alt={`${label} for ${section.title}`}
+                class="w-16 h-16 object-contain"
+                loading="lazy"
+              />
+              <span class="text-xs text-gray-400">{section.title}</span>
+            </div>
+          );
+        }
+        return (
+          <ChartImage
+            client:visible
+            src={chartSrc}
+            alt={`${label} for ${section.title}`}
+            label={label}
+          />
+        );
+      }
+
+      if (item.kind === 'table') {
+        const tableData = (item as any).data;
+        const balanceRole = balanceGroups.get(itemIdx);
+
+        // Extract label/value from balance table (may be in rows or headers)
+        function getBalanceLabelValue(td: any): [string, string] {
+          if (td.rows?.length >= 1) return [(td.rows[0][0] || '').trim(), (td.rows[0][1] || '').trim()];
+          return [(td.headers?.[0] || '').trim(), (td.headers?.[1] || '').trim()];
+        }
+
+        // Beginning balance: render as a header bar, no separate table card
+        if (balanceRole === 'begin') {
+          const [label, value] = getBalanceLabelValue(tableData);
+          return (
+            <div id={`table-${tableData.id}`} class="mb-0 bg-white rounded-t-lg border border-b-0 px-4 py-3 flex items-center justify-between">
+              <span class="text-sm font-medium text-gray-700">{label}</span>
+              <span class="text-sm font-semibold tabular-nums">${value}</span>
+            </div>
+          );
+        }
+
+        // Ending balance: render as a footer bar
+        if (balanceRole === 'end') {
+          const [label, value] = getBalanceLabelValue(tableData);
+          return (
+            <div id={`table-${tableData.id}`} class="mt-0 mb-8 bg-white rounded-b-lg border border-t-0 px-4 py-3 flex items-center justify-between">
+              <span class="text-sm font-medium text-gray-700">{label}</span>
+              <span class="text-sm font-semibold tabular-nums">${value}</span>
+            </div>
+          );
+        }
+
+        // Middle tables in a balance group: render inset (no card chrome)
+        if (balanceRole === 'middle') {
+          return (
+            <div id={`table-${tableData.id}`}>
+              <TableViewer year={budgetYear.year} table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendment={amendment} amendmentDiffs={amendmentByTable[tableData.id]} adoptedPageAvailable={(adoptedPageMap[section.slug] || []).includes(tableData.relative_page)} inset />
+            </div>
+          );
+        }
+
+        return (
+          <div id={`table-${tableData.id}`}>
+            <div class="flex justify-end gap-3 mb-1">
+              <ShareButton client:load url={`${prefix}/sections/${section.slug}/#table-${tableData.id}`} label="Share table" />
+              {budgetYear.isHeadline && (
+                <a
+                  href={`/explorer/#${tableData.id}`}
+                  class="text-xs text-blue-500 hover:text-blue-700 hover:underline"
+                >
+                  Open in Explorer &rarr;
+                </a>
+              )}
+            </div>
+            <TableViewer year={budgetYear.year} table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendment={amendment} amendmentDiffs={amendmentByTable[tableData.id]} adoptedPageAvailable={(adoptedPageMap[section.slug] || []).includes(tableData.relative_page)} />
+          </div>
+        );
+      }
+    });
+  })()}
+
+  <SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} />
+
+  {section.start_page && section.end_page && (
+    <PdfSidebar
+      client:load
+      year={budgetYear.year}
+      slug={section.slug}
+      totalPages={section.end_page - section.start_page + 1}
+      startPage={section.start_page}
+    />
+  )}
+</Base>

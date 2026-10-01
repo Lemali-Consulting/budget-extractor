@@ -23,7 +23,13 @@ function formatDollar(n: number): string {
   return `$${n.toFixed(0)}`;
 }
 
-export default function SpendingPieChart({ data }: { data: BudgetRow[] }) {
+interface Props {
+  data: BudgetRow[];
+  /** Department-budget column to chart, e.g. "2027 Budget". */
+  budgetColumn: string;
+}
+
+export default function SpendingPieChart({ data, budgetColumn }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -31,9 +37,9 @@ export default function SpendingPieChart({ data }: { data: BudgetRow[] }) {
   useEffect(() => {
     if (!chartRef.current || data.length === 0) return;
 
-    // Get 2026 budget by department, sorted by amount
+    // Get current-year budget by department, sorted by amount
     const depts = data
-      .filter((d) => d.year === '2026 Budget')
+      .filter((d) => d.year === budgetColumn)
       .sort((a, b) => b.amount - a.amount);
 
     if (depts.length === 0) return;
@@ -84,7 +90,7 @@ export default function SpendingPieChart({ data }: { data: BudgetRow[] }) {
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [data, containerWidth]);
+  }, [data, budgetColumn, containerWidth]);
 
   if (data.length === 0) {
     return <div class="text-gray-400 italic py-4">No budget data available.</div>;

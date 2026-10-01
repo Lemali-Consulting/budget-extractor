@@ -11,7 +11,13 @@ interface WaterfallItem {
   type: string;
 }
 
-export default function WaterfallChart({ data }: { data: WaterfallItem[] }) {
+interface Props {
+  data: WaterfallItem[];
+  /** Budget label for the heading, e.g. "2027 Proposed". */
+  yearLabel: string;
+}
+
+export default function WaterfallChart({ data, yearLabel }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -88,7 +94,7 @@ export default function WaterfallChart({ data }: { data: WaterfallItem[] }) {
 
   return (
     <div ref={containerRef}>
-      <h3 class="text-lg font-semibold mb-2">2026 Revenue Breakdown</h3>
+      <h3 class="text-lg font-semibold mb-2">{yearLabel} Revenue Breakdown</h3>
       <p class="text-sm text-gray-500 mb-4">
         How the city's projected revenue builds up from its component sources.
       </p>
