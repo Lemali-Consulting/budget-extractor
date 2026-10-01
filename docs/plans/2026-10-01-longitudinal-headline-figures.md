@@ -1,7 +1,7 @@
 # Long-run view of Pittsburgh's headline budget figures
 
 **Date:** 2026-10-01
-**Status:** draft
+**Status:** in-progress
 
 ## Goal
 
@@ -18,7 +18,7 @@ Add a trends view showing Pittsburgh's revenue, spending, reserves and major tax
   - Revenue actuals: 2020 $551.6M, 2021 $593.6M, 2022 $658.8M, 2023 $697.6M, 2024 $703.6M.
   - The 2027 proposal has $701.8M of recurring revenue plus $26.6M from reserves. Its forecast projects the reserve balance falling to −$38.2M by 2031.
   - 2025 actual revenue is in none of our documents. The 2027 document has no revenue-history table.
-- Known defect: the 2027 Revenue Detail "Total Revenue" row has all five years merged into one cell.
+- The 2027 Revenue Detail "Total Revenue" row used to have all five years merged into one cell. Fixed in step 1.
 
 ## Proposed Approach
 
@@ -58,3 +58,14 @@ Sequenced after the 2027 headline switch (Phase 3 of `2026-10-01-2027-proposed-b
 
 - Documents restate prior years and change table layouts. Mitigation: per-document parsers with tests, and visible restatement notes.
 - Readers may mistake forecasts for commitments. Mitigation: every point is labelled by kind and source document; forecasts are styled differently from actuals.
+
+## Progress
+
+- **Step 1 (done, 2026-10-01):** rule-split total rows now rejoin their table's columns, guarded so labels left of the first column are never dropped. Re-baselined: 2027 Revenue Detail, plus the same improvement in Expenditure Summary (2025, 2026 both variants), 2025 Parks Tax Trust Fund and PLI personnel (2026 amended, 2027).
+- **Step 2 (extracted, awaiting user review):** the 2024 split PDFs are regenerated, and the three headline sections were extracted to scratch (not yet baselined).
+  - Every table number appears in the PDF; no cell holds two numbers.
+  - The tables the dataset needs are clean: forecast summary and department totals; revenue forecast totals; the 2020–2024 revenue history; spending by subclass.
+  - The rest are chart-label fragments and a garbled "Annual Growth Rate" strip. The same layout exists in 2025–2026 and is unused.
+  - Restatement seen: 2023 actual revenue is $688.1M in the 2024 document but $697.6M in the 2025/2026 history tables.
+- **Step 3 (in progress):** `scripts/build_longitudinal.py` reads the forecast summary table (all years), the forecast department table (actual totals only) and the revenue-history table. Where the 2027 document's two tables disagree on the 2026 expenditure estimate, the summary table is used; that choice is still an open question.
+
