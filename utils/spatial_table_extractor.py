@@ -1666,12 +1666,15 @@ class SpatialTableExtractor:
                 if not self._is_summary_only_table(next_table):
                     break
 
-                # Check for a colored band between the two tables
+                # Check for a colored band separating the two tables. A band
+                # qualifies if its top edge falls inside the inter-table gap —
+                # bands that wrap the next table's row (band starts in the gap
+                # but extends past it) still indicate a visual section break.
                 gap_top = current.bbox[3]   # bottom of current
                 gap_bottom = next_table.bbox[1]  # top of next
                 has_band_between = any(
-                    band_top >= gap_top - 5 and band_bottom <= gap_bottom + 5
-                    for band_top, band_bottom in bg_bands
+                    gap_top - 5 <= band_top <= gap_bottom + 5
+                    for band_top, _band_bottom in bg_bands
                 )
                 if has_band_between:
                     break
