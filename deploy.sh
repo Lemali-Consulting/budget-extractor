@@ -6,9 +6,8 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-# Load environment variables (.env must define NETLIFY_AUTH_TOKEN)
-source .env
-export NETLIFY_AUTH_TOKEN
+# Auth comes from the Netlify CLI's local config (~/.config/netlify/config.json),
+# populated by `netlify login`. Site is targeted via NETLIFY_SITE_ID.
 export NETLIFY_SITE_ID="11c41143-d0e2-4a28-9dde-10e173bf230f"
 
 echo "==> Building web data..."
@@ -17,6 +16,7 @@ uv run scripts/build_web_data.py --year 2026 --operating-variant amended
 # Adopted baseline (transient, gitignored) + adopted-vs-amended diff outputs.
 uv run scripts/build_web_data.py --year 2026 --operating-variant adopted --operating-only --output-prefix adopted
 uv run scripts/build_amendment_diff.py --year 2026
+uv run scripts/build_capital_appendices.py --year 2026
 uv run scripts/build_web_data.py --year 2025 --output-prefix 2025
 
 echo "==> Validating data..."

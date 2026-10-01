@@ -117,7 +117,7 @@ The web app is deployed as a static site to Netlify via manual CLI deploy (not g
 
 - **Site URL**: https://pgh-budget-explorer.netlify.app
 - **Site ID**: `11c41143-d0e2-4a28-9dde-10e173bf230f`
-- **Auth token**: stored in `.env` as `NETLIFY_AUTH_TOKEN`
+- **Auth**: handled by the Netlify CLI's local session (`~/.config/netlify/config.json`), populated by `netlify login`. No PAT is needed in `.env`.
 
 **Deploy alongside every git push** by running `./deploy.sh` from the project root.
 
