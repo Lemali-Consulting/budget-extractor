@@ -1,7 +1,7 @@
 """Render clean PDF page images for the web app.
 
 Produces one WebP per page of each section's split PDF.
-Images go to web/public/pages/{section_slug}/P{page}.webp.
+Images go to web/public/{output_subdir}/{year}/{section_slug}/P{page}.webp.
 Supports both operating and capital budget types.
 """
 
@@ -16,10 +16,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from utils.paths import DEFAULT_YEAR, expected_dir, input_dir, sections_path, split_pdf_dir, variant_type
 
 WEB_PUBLIC_ROOT = Path(__file__).parent.parent / "web" / "public"
-WEB_PUBLIC_DIR = WEB_PUBLIC_ROOT / "pages"
+DEFAULT_OUTPUT_SUBDIR: str = "pages"
 
 DIR_PATTERN = re.compile(r"^(\d+)_(.+)$")
 FILE_PATTERN = re.compile(r"^P(\d+)T\d+\.csv$")
+
+
+def image_output_dir(*, output_subdir: str, year: int) -> Path:
+    """Directory holding one year's page images: web/public/{output_subdir}/{year}."""
+    return WEB_PUBLIC_ROOT / output_subdir / str(year)
 
 
 def slugify(title: str) -> str:
@@ -37,7 +42,9 @@ def page_changed(adopted_text: str, amended_text: str) -> bool:
     return normalize_page_text(adopted_text) != normalize_page_text(amended_text)
 
 
-def render_budget_type(budget_type: str, year: int = DEFAULT_YEAR, variant: str = "adopted") -> int:
+def render_budget_type(
+    budget_type: str, *, out_base: Path, year: int = DEFAULT_YEAR, variant: str = "adopted",
+) -> int:
     """Render page images for a single budget type/variant. Returns total image count."""
     import fitz  # PyMuPDF
 
@@ -90,7 +97,7 @@ def render_budget_type(budget_type: str, year: int = DEFAULT_YEAR, variant: str 
                 print(f"  SKIP {dir_path.name}: no PDF found")
                 continue
 
-            total_images += _render_pdf(found_pdf, slug)
+            total_images += _render_pdf(found_pdf, slug, out_base=out_base)
     else:
         # No expected dir — render all split PDFs directly
         if not split_dir.exists():
@@ -105,12 +112,12 @@ def render_budget_type(budget_type: str, year: int = DEFAULT_YEAR, variant: str 
             section_info = sections_lookup.get(section_num, {})
             title = section_info.get("title", match.group(2).replace("_", " "))
             slug = slugify(title)
-            total_images += _render_pdf(found_pdf, slug)
+            total_images += _render_pdf(found_pdf, slug, out_base=out_base)
 
     return total_images
 
 
-def _render_pdf(pdf_path: Path, slug: str, out_base: Path = WEB_PUBLIC_DIR, pages: list[int] | None = None) -> int:
+def _render_pdf(pdf_path: Path, slug: str, *, out_base: Path, pages: list[int] | None = None) -> int:
     """Render pages of a PDF to WebP images under ``out_base/slug``.
 
     ``pages`` (0-based indices) limits rendering to a subset; ``None`` renders all.
@@ -259,8 +266,9 @@ def main() -> None:
     )
     parser.add_argument(
         "--output-subdir",
-        default="pages",
-        help="Subdirectory under web/public to write images to (default: pages)",
+        default=DEFAULT_OUTPUT_SUBDIR,
+        help="Subdirectory under web/public to write images to, followed by the year "
+             f"(default: {DEFAULT_OUTPUT_SUBDIR} -> web/public/{DEFAULT_OUTPUT_SUBDIR}/{{year}}/)",
     )
     parser.add_argument(
         "--manifest",
@@ -269,7 +277,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    out_base = WEB_PUBLIC_ROOT / args.output_subdir
+    out_base = image_output_dir(output_subdir=args.output_subdir, year=args.year)
     budget_types = ["operating", "capital"] if args.budget_type == "all" else [args.budget_type]
 
     if args.secondary_of:
@@ -288,7 +296,7 @@ def main() -> None:
     total = 0
     for bt in budget_types:
         print(f"\n=== {bt.upper()} BUDGET ===")
-        total += render_budget_type(bt, args.year, args.variant)
+        total += render_budget_type(bt, out_base=out_base, year=args.year, variant=args.variant)
 
     print(f"\nRendered {total} total page images to {out_base}")
 

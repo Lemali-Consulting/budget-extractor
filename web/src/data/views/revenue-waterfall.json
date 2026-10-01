@@ -1,37 +1,37 @@
 [
   {
     "label": "Tax Revenue",
-    "amount": 572315683.0,
+    "amount": 562976114.0,
     "type": "revenue"
   },
   {
     "label": "Licenses & Permits Revenue",
-    "amount": 18366026.0,
+    "amount": 17535888.0,
     "type": "revenue"
   },
   {
     "label": "Charges For Services",
-    "amount": 50688350.0,
+    "amount": 52318730.0,
     "type": "revenue"
   },
   {
     "label": "Fines & Forfeitures",
-    "amount": 9112883.0,
+    "amount": 11338057.0,
     "type": "revenue"
   },
   {
     "label": "Intergovernmental Revenue",
-    "amount": 51068924.0,
+    "amount": 50580439.0,
     "type": "revenue"
   },
   {
     "label": "Interest Earnings",
-    "amount": 13113951.0,
+    "amount": 6923376.0,
     "type": "revenue"
   },
   {
     "label": "Miscellaneous Revenues",
-    "amount": 346301.0,
+    "amount": 120500.0,
     "type": "revenue"
   }
 ]

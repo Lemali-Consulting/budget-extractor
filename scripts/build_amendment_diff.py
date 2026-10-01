@@ -1,11 +1,12 @@
 """Compute adopted-vs-amended differences for the operating budget.
 
-Reads the canonical (amended) and adopted operating budget bundles plus their
+Reads the year's archived amended bundle ("{year}-" prefix) and the adopted
+operating budget baseline bundle plus their
 department-budget / personnel views, and emits two web data files:
   - views/{year}-amendment-changes.json   high-level per-department + legislative
   - views/{year}-amendment-cell-diffs.json per-cell diffs keyed by table id
 
-The amended bundle is the live site data; the adopted bundle is a transient
+The amended bundle is built with `--output-prefix {year}`; the adopted bundle is a transient
 baseline produced by `build_web_data.py --operating-variant adopted
 --operating-only --output-prefix adopted` (gitignored).
 """
@@ -16,10 +17,43 @@ import re
 import sys
 from collections import defaultdict, deque
 from pathlib import Path
+from typing import NamedTuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from utils.paths import DEFAULT_YEAR, web_data_dir
+
+ADOPTED_PREFIX: str = "adopted-"
+BUNDLE_FILE: str = "budget-data.json"
+DEPARTMENTS_FILE: str = "department-budgets.json"
+PERSONNEL_FILE: str = "personnel.json"
+VIEWS_DIRNAME: str = "views"
+
+
+class BundlePaths(NamedTuple):
+    """Input files for one adopted-vs-amended comparison."""
+
+    amended_bundle: Path
+    amended_departments: Path
+    amended_personnel: Path
+    adopted_bundle: Path
+    adopted_departments: Path
+    adopted_personnel: Path
+
+
+def bundle_paths(*, year: int, data_dir: Path) -> BundlePaths:
+    """Locate the year-prefixed amended bundle and the adopted baseline under ``data_dir``."""
+    amended_prefix: str = f"{year}-"
+    views: Path = data_dir / VIEWS_DIRNAME
+    return BundlePaths(
+        amended_bundle=data_dir / f"{amended_prefix}{BUNDLE_FILE}",
+        amended_departments=views / f"{amended_prefix}{DEPARTMENTS_FILE}",
+        amended_personnel=views / f"{amended_prefix}{PERSONNEL_FILE}",
+        adopted_bundle=data_dir / f"{ADOPTED_PREFIX}{BUNDLE_FILE}",
+        adopted_departments=views / f"{ADOPTED_PREFIX}{DEPARTMENTS_FILE}",
+        adopted_personnel=views / f"{ADOPTED_PREFIX}{PERSONNEL_FILE}",
+    )
+
 
 # Hand-verified from the source authorizing legislation (page 6) and front
 # matter (page 2) of the adopted vs "as amended 4-20-26" operating budget PDFs.
@@ -225,14 +259,15 @@ def main() -> None:
     year = args.year
 
     data_dir = web_data_dir()
-    views = data_dir / "views"
+    views = data_dir / VIEWS_DIRNAME
+    inputs: BundlePaths = bundle_paths(year=year, data_dir=data_dir)
 
-    amended = _load(data_dir / "budget-data.json")
-    adopted = _load(data_dir / "adopted-budget-data.json")
-    amended_dept = _load(views / "department-budgets.json")
-    adopted_dept = _load(views / "adopted-department-budgets.json")
-    amended_pers = _load(views / "personnel.json")
-    adopted_pers = _load(views / "adopted-personnel.json")
+    amended = _load(inputs.amended_bundle)
+    adopted = _load(inputs.adopted_bundle)
+    amended_dept = _load(inputs.amended_departments)
+    adopted_dept = _load(inputs.adopted_departments)
+    amended_pers = _load(inputs.amended_personnel)
+    adopted_pers = _load(inputs.adopted_personnel)
 
     changes = build_department_changes(adopted_dept, amended_dept, year)
     changes["totalFteAdopted"] = _total_fte(adopted_pers, year)

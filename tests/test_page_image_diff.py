@@ -26,3 +26,10 @@ def test_leading_trailing_whitespace_only_is_not_changed() -> None:
 
 def test_empty_vs_content_is_changed() -> None:
     assert page_changed("", "New line item added") is True
+
+
+def test_image_output_dir_is_namespaced_by_year() -> None:
+    from scripts.render_page_images import WEB_PUBLIC_ROOT, image_output_dir
+
+    assert image_output_dir(output_subdir="pages", year=2027) == WEB_PUBLIC_ROOT / "pages" / "2027"
+    assert image_output_dir(output_subdir="pages-adopted", year=2026) == WEB_PUBLIC_ROOT / "pages-adopted" / "2026"

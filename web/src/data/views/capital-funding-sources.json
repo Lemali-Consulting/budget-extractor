@@ -3,25 +3,37 @@
     "project": "28TH STREET BRIDGE (TIP)",
     "source": "BOND",
     "year": "2027",
-    "amount": 250000.0
+    "amount": 180000.0
   },
   {
     "project": "28TH STREET BRIDGE (TIP)",
     "source": "BOND",
     "year": "2028",
-    "amount": 250000.0
+    "amount": 125000.0
+  },
+  {
+    "project": "28TH STREET BRIDGE (TIP)",
+    "source": "BOND",
+    "year": "2029",
+    "amount": 125000.0
   },
   {
     "project": "28TH STREET BRIDGE (TIP)",
     "source": "OTHER",
     "year": "2027",
-    "amount": 4750000.0
+    "amount": 3420000.0
   },
   {
     "project": "28TH STREET BRIDGE (TIP)",
     "source": "OTHER",
     "year": "2028",
-    "amount": 4750000.0
+    "amount": 2375000.0
+  },
+  {
+    "project": "28TH STREET BRIDGE (TIP)",
+    "source": "OTHER",
+    "year": "2029",
+    "amount": 2375000.0
   },
   {
     "project": "BEAVER AVENUE TWO-WAY CONVERSION (TIP)",
@@ -44,14 +56,20 @@
   {
     "project": "BLOOMFIELD BRIDGE (TIP)",
     "source": "OTHER",
-    "year": "2029",
-    "amount": 6300000.0
+    "year": "2028",
+    "amount": 50000.0
   },
   {
-    "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
-    "source": "BOND",
-    "year": "2025",
-    "amount": 100000.0
+    "project": "BLOOMFIELD BRIDGE (TIP)",
+    "source": "OTHER",
+    "year": "2029",
+    "amount": 3500000.0
+  },
+  {
+    "project": "BLOOMFIELD BRIDGE (TIP)",
+    "source": "OTHER",
+    "year": "2030",
+    "amount": 3500000.0
   },
   {
     "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
@@ -63,19 +81,19 @@
     "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
     "source": "BOND",
     "year": "2027",
-    "amount": 200625.0
+    "amount": 102188.0
   },
   {
     "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
     "source": "BOND",
     "year": "2028",
-    "amount": 94562.0
+    "amount": 112500.0
   },
   {
     "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 1900000.0
+    "source": "BOND",
+    "year": "2029",
+    "amount": 89688.0
   },
   {
     "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
@@ -87,19 +105,25 @@
     "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
     "source": "OTHER",
     "year": "2027",
-    "amount": 3811875.0
+    "amount": 1582155.0
   },
   {
     "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
     "source": "OTHER",
     "year": "2028",
-    "amount": 1557687.0
+    "amount": 1351900.0
   },
   {
-    "project": "BRIDGE UPGRADES",
-    "source": "BOND",
-    "year": "2025",
-    "amount": 700000.0
+    "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
+    "source": "OTHER",
+    "year": "2029",
+    "amount": 310063.0
+  },
+  {
+    "project": "BRIDGE PRESERVATION AND RESTORATION FUND (TIP)",
+    "source": "OTHER",
+    "year": "2030",
+    "amount": 99000.0
   },
   {
     "project": "BRIDGE UPGRADES",
@@ -111,54 +135,42 @@
     "project": "BRIDGE UPGRADES",
     "source": "BOND",
     "year": "2027",
-    "amount": 500000.0
+    "amount": 3250000.0
   },
   {
     "project": "BRIDGE UPGRADES",
     "source": "BOND",
     "year": "2028",
-    "amount": 500000.0
+    "amount": 1000000.0
   },
   {
     "project": "BRIDGE UPGRADES",
     "source": "BOND",
     "year": "2029",
-    "amount": 500000.0
+    "amount": 1000000.0
   },
   {
     "project": "BRIDGE UPGRADES",
     "source": "BOND",
     "year": "2030",
-    "amount": 563000.0
+    "amount": 1000000.0
   },
   {
     "project": "BRIDGE UPGRADES",
     "source": "BOND",
     "year": "2031",
-    "amount": 775000.0
+    "amount": 1000000.0
   },
   {
     "project": "BRIDGE UPGRADES",
-    "source": "OTHER",
-    "year": "2030",
-    "amount": 1797000.0
-  },
-  {
-    "project": "BRIDGE UPGRADES",
-    "source": "OTHER",
-    "year": "2031",
-    "amount": 5225000.0
+    "source": "BOND",
+    "year": "2032",
+    "amount": 1000000.0
   },
   {
     "project": "CALERA STREET BRIDGE (TIP)",
     "source": "BOND",
     "year": "2028",
-    "amount": 200000.0
-  },
-  {
-    "project": "CALERA STREET BRIDGE (TIP)",
-    "source": "OTHER",
-    "year": "2025",
     "amount": 200000.0
   },
   {
@@ -170,8 +182,14 @@
   {
     "project": "CALIFORNIA AVENUE BRIDGE (TIP)",
     "source": "BOND",
-    "year": "2028",
-    "amount": 1150000.0
+    "year": "2030",
+    "amount": 300000.0
+  },
+  {
+    "project": "CALIFORNIA AVENUE BRIDGE (TIP)",
+    "source": "BOND",
+    "year": "2031",
+    "amount": 900000.0
   },
   {
     "project": "CALIFORNIA AVENUE BRIDGE (TIP)",
@@ -182,38 +200,32 @@
   {
     "project": "CALIFORNIA AVENUE BRIDGE (TIP)",
     "source": "OTHER",
-    "year": "2027",
-    "amount": 450000.0
+    "year": "2030",
+    "amount": 5700000.0
   },
   {
     "project": "CALIFORNIA AVENUE BRIDGE (TIP)",
     "source": "OTHER",
-    "year": "2028",
-    "amount": 22400000.0
+    "year": "2031",
+    "amount": 17100000.0
+  },
+  {
+    "project": "COMPLETE STREETS",
+    "source": "BOND",
+    "year": "2027",
+    "amount": 839037.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "BOND",
     "year": "2028",
-    "amount": 848000.0
+    "amount": 741238.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "BOND",
     "year": "2029",
-    "amount": 848000.0
-  },
-  {
-    "project": "COMPLETE STREETS",
-    "source": "BOND",
-    "year": "2030",
-    "amount": 848000.0
-  },
-  {
-    "project": "COMPLETE STREETS",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 1135000.0
+    "amount": 200000.0
   },
   {
     "project": "COMPLETE STREETS",
@@ -225,55 +237,61 @@
     "project": "COMPLETE STREETS",
     "source": "PAYGO",
     "year": "2027",
-    "amount": 1300000.0
+    "amount": 1000000.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "PAYGO",
     "year": "2028",
-    "amount": 800000.0
+    "amount": 1500000.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "PAYGO",
     "year": "2029",
-    "amount": 800000.0
+    "amount": 1500000.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "PAYGO",
     "year": "2030",
-    "amount": 900000.0
+    "amount": 1500000.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "PAYGO",
     "year": "2031",
-    "amount": 900000.0
+    "amount": 1500000.0
   },
   {
     "project": "COMPLETE STREETS",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 2571661.0
+    "source": "PAYGO",
+    "year": "2032",
+    "amount": 1500000.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "OTHER",
     "year": "2026",
-    "amount": 5583886.0
+    "amount": 5633886.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "OTHER",
     "year": "2027",
-    "amount": 2060000.0
+    "amount": 3216148.0
   },
   {
     "project": "COMPLETE STREETS",
     "source": "OTHER",
     "year": "2028",
-    "amount": 1214629.0
+    "amount": 3779581.0
+  },
+  {
+    "project": "COMPLETE STREETS",
+    "source": "OTHER",
+    "year": "2029",
+    "amount": 2240000.0
   },
   {
     "project": "CORLEY STREET BRIDGE (TIP)",
@@ -320,12 +338,6 @@
   {
     "project": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
     "source": "PAYGO",
-    "year": "2025",
-    "amount": 100000.0
-  },
-  {
-    "project": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
-    "source": "PAYGO",
     "year": "2026",
     "amount": 100000.0
   },
@@ -342,22 +354,46 @@
     "amount": 100000.0
   },
   {
-    "project": "EAST SYCAMORE STREET BRIDGE (TIP)",
-    "source": "OTHER",
-    "year": "2027",
-    "amount": 550000.0
+    "project": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
+    "source": "PAYGO",
+    "year": "2029",
+    "amount": 100000.0
+  },
+  {
+    "project": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
+    "source": "PAYGO",
+    "year": "2030",
+    "amount": 100000.0
+  },
+  {
+    "project": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
+    "source": "PAYGO",
+    "year": "2031",
+    "amount": 100000.0
+  },
+  {
+    "project": "DESIGN, CONSTRUCTION, AND INSPECTION SERVICES",
+    "source": "PAYGO",
+    "year": "2032",
+    "amount": 100000.0
   },
   {
     "project": "EAST SYCAMORE STREET BRIDGE (TIP)",
-    "source": "OTHER",
-    "year": "2028",
-    "amount": 4000000.0
-  },
-  {
-    "project": "ELIZABETH STREET BRIDGE (TIP)",
     "source": "BOND",
-    "year": "2025",
-    "amount": 75000.0
+    "year": "2031",
+    "amount": 200000.0
+  },
+  {
+    "project": "EAST SYCAMORE STREET BRIDGE (TIP)",
+    "source": "OTHER",
+    "year": "2029",
+    "amount": 700000.0
+  },
+  {
+    "project": "EAST SYCAMORE STREET BRIDGE (TIP)",
+    "source": "OTHER",
+    "year": "2031",
+    "amount": 3800000.0
   },
   {
     "project": "ELIZABETH STREET BRIDGE (TIP)",
@@ -380,12 +416,6 @@
   {
     "project": "FLEX BEAM GUIDERAILS AND FENCING",
     "source": "BOND",
-    "year": "2025",
-    "amount": 100000.0
-  },
-  {
-    "project": "FLEX BEAM GUIDERAILS AND FENCING",
-    "source": "BOND",
     "year": "2026",
     "amount": 100000.0
   },
@@ -420,10 +450,10 @@
     "amount": 100000.0
   },
   {
-    "project": "FLOOD CONTROL PROJECTS",
+    "project": "FLEX BEAM GUIDERAILS AND FENCING",
     "source": "BOND",
-    "year": "2025",
-    "amount": 700000.0
+    "year": "2032",
+    "amount": 100000.0
   },
   {
     "project": "FLOOD CONTROL PROJECTS",
@@ -435,37 +465,49 @@
     "project": "FLOOD CONTROL PROJECTS",
     "source": "BOND",
     "year": "2027",
-    "amount": 900000.0
+    "amount": 1165000.0
   },
   {
     "project": "FLOOD CONTROL PROJECTS",
     "source": "BOND",
     "year": "2028",
-    "amount": 1800000.0
+    "amount": 1300000.0
   },
   {
     "project": "FLOOD CONTROL PROJECTS",
     "source": "BOND",
     "year": "2029",
-    "amount": 2000000.0
+    "amount": 1500000.0
   },
   {
     "project": "FLOOD CONTROL PROJECTS",
     "source": "BOND",
     "year": "2030",
-    "amount": 2000000.0
+    "amount": 1500000.0
   },
   {
     "project": "FLOOD CONTROL PROJECTS",
     "source": "BOND",
     "year": "2031",
-    "amount": 2000000.0
+    "amount": 1500000.0
+  },
+  {
+    "project": "FLOOD CONTROL PROJECTS",
+    "source": "BOND",
+    "year": "2032",
+    "amount": 1500000.0
+  },
+  {
+    "project": "FLOOD CONTROL PROJECTS",
+    "source": "PAYGO",
+    "year": "2026",
+    "amount": 169647.0
   },
   {
     "project": "HERRON AVENUE BRIDGE (TIP)",
     "source": "BOND",
-    "year": "2028",
-    "amount": 300000.0
+    "year": "2031",
+    "amount": 450000.0
   },
   {
     "project": "HERRON AVENUE BRIDGE (TIP)",
@@ -476,8 +518,8 @@
   {
     "project": "HERRON AVENUE BRIDGE (TIP)",
     "source": "OTHER",
-    "year": "2028",
-    "amount": 5700000.0
+    "year": "2031",
+    "amount": 8550000.0
   },
   {
     "project": "LARIMER BRIDGE (TIP)",
@@ -488,13 +530,13 @@
   {
     "project": "LARIMER BRIDGE (TIP)",
     "source": "BOND",
-    "year": "2029",
+    "year": "2028",
     "amount": 668750.0
   },
   {
     "project": "LARIMER BRIDGE (TIP)",
     "source": "BOND",
-    "year": "2030",
+    "year": "2029",
     "amount": 831250.0
   },
   {
@@ -506,14 +548,26 @@
   {
     "project": "LARIMER BRIDGE (TIP)",
     "source": "OTHER",
-    "year": "2029",
+    "year": "2028",
     "amount": 12706250.0
   },
   {
     "project": "LARIMER BRIDGE (TIP)",
     "source": "OTHER",
-    "year": "2030",
-    "amount": 15793750.0
+    "year": "2029",
+    "amount": 12793750.0
+  },
+  {
+    "project": "LIBERTY AVENUE (HSIP)",
+    "source": "BOND",
+    "year": "2028",
+    "amount": 395519.0
+  },
+  {
+    "project": "LIBERTY AVENUE (HSIP)",
+    "source": "OTHER",
+    "year": "2028",
+    "amount": 1582077.0
   },
   {
     "project": "MAPLE AVENUE BRIDGE (TIP)",
@@ -528,10 +582,94 @@
     "amount": 3800000.0
   },
   {
+    "project": "MISSION STREET BRIDGE EAST (TIP)",
+    "source": "BOND",
+    "year": "2031",
+    "amount": 275000.0
+  },
+  {
+    "project": "MISSION STREET BRIDGE EAST (TIP)",
+    "source": "OTHER",
+    "year": "2028",
+    "amount": 500000.0
+  },
+  {
+    "project": "MISSION STREET BRIDGE EAST (TIP)",
+    "source": "OTHER",
+    "year": "2029",
+    "amount": 500000.0
+  },
+  {
+    "project": "MISSION STREET BRIDGE EAST (TIP)",
+    "source": "OTHER",
+    "year": "2031",
+    "amount": 5225000.0
+  },
+  {
+    "project": "MISSION STREET BRIDGE WEST (TIP)",
+    "source": "BOND",
+    "year": "2029",
+    "amount": 500000.0
+  },
+  {
+    "project": "MISSION STREET BRIDGE WEST (TIP)",
+    "source": "BOND",
+    "year": "2031",
+    "amount": 250000.0
+  },
+  {
+    "project": "MISSION STREET BRIDGE WEST (TIP)",
+    "source": "OTHER",
+    "year": "2028",
+    "amount": 500000.0
+  },
+  {
+    "project": "MISSION STREET BRIDGE WEST (TIP)",
+    "source": "OTHER",
+    "year": "2031",
+    "amount": 4750000.0
+  },
+  {
+    "project": "MURRAY AVENUE (HSIP)",
+    "source": "BOND",
+    "year": "2027",
+    "amount": 49500.0
+  },
+  {
+    "project": "MURRAY AVENUE (HSIP)",
+    "source": "BOND",
+    "year": "2029",
+    "amount": 463500.0
+  },
+  {
+    "project": "MURRAY AVENUE (HSIP)",
+    "source": "OTHER",
+    "year": "2027",
+    "amount": 495000.0
+  },
+  {
+    "project": "MURRAY AVENUE (HSIP)",
+    "source": "OTHER",
+    "year": "2029",
+    "amount": 4635000.0
+  },
+  {
     "project": "P.J. MCARDLE ROADWAY (TIP)",
     "source": "BOND",
     "year": "2026",
     "amount": 240000.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY (TIP)",
+    "source": "BOND",
+    "year": "2028",
+    "amount": 200000.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY (TIP)",
+    "source": "BOND",
+    "year": "2030",
+    "amount": 800000.0
   },
   {
     "project": "P.J. MCARDLE ROADWAY (TIP)",
@@ -540,58 +678,76 @@
     "amount": 960000.0
   },
   {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
-    "source": "BOND",
-    "year": "2025",
+    "project": "P.J. MCARDLE ROADWAY (TIP)",
+    "source": "OTHER",
+    "year": "2028",
     "amount": 800000.0
   },
   {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
-    "source": "BOND",
-    "year": "2027",
-    "amount": 534752.0
-  },
-  {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
+    "project": "P.J. MCARDLE ROADWAY (TIP)",
     "source": "OTHER",
-    "year": "2025",
-    "amount": 3427520.0
-  },
-  {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
-    "source": "OTHER",
-    "year": "2027",
-    "amount": 2139006.0
-  },
-  {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE III (TIP)",
-    "source": "BOND",
-    "year": "2025",
-    "amount": 800000.0
-  },
-  {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE III (TIP)",
-    "source": "BOND",
-    "year": "2029",
-    "amount": 200000.0
-  },
-  {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE III (TIP)",
-    "source": "OTHER",
-    "year": "2025",
+    "year": "2030",
     "amount": 3200000.0
   },
   {
-    "project": "PENN AVENUE RECONSTRUCTION, PHASE III (TIP)",
-    "source": "OTHER",
-    "year": "2029",
-    "amount": 800000.0
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)",
+    "source": "BOND",
+    "year": "2030",
+    "amount": 125000.0
   },
   {
-    "project": "PENN AVENUE SIGNAL IMPROVEMENTS (TIP)",
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)",
+    "source": "OTHER",
+    "year": "2027",
+    "amount": 500000.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)",
+    "source": "OTHER",
+    "year": "2028",
+    "amount": 50000.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)",
+    "source": "OTHER",
+    "year": "2030",
+    "amount": 2375000.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)",
     "source": "BOND",
-    "year": "2025",
-    "amount": 220000.0
+    "year": "2030",
+    "amount": 137500.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)",
+    "source": "OTHER",
+    "year": "2027",
+    "amount": 500000.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)",
+    "source": "OTHER",
+    "year": "2028",
+    "amount": 50000.0
+  },
+  {
+    "project": "P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)",
+    "source": "OTHER",
+    "year": "2030",
+    "amount": 2612500.0
+  },
+  {
+    "project": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
+    "source": "BOND",
+    "year": "2027",
+    "amount": 489752.0
+  },
+  {
+    "project": "PENN AVENUE RECONSTRUCTION, PHASE II (TIP)",
+    "source": "OTHER",
+    "year": "2027",
+    "amount": 1959006.0
   },
   {
     "project": "PENN AVENUE SIGNAL IMPROVEMENTS (TIP)",
@@ -608,12 +764,6 @@
   {
     "project": "PENN AVENUE SIGNAL IMPROVEMENTS (TIP)",
     "source": "OTHER",
-    "year": "2025",
-    "amount": 880000.0
-  },
-  {
-    "project": "PENN AVENUE SIGNAL IMPROVEMENTS (TIP)",
-    "source": "OTHER",
     "year": "2028",
     "amount": 1500000.0
   },
@@ -626,12 +776,6 @@
   {
     "project": "RAMP AND PUBLIC SIDEWALK",
     "source": "BOND",
-    "year": "2025",
-    "amount": 810000.0
-  },
-  {
-    "project": "RAMP AND PUBLIC SIDEWALK",
-    "source": "BOND",
     "year": "2026",
     "amount": 510000.0
   },
@@ -639,19 +783,19 @@
     "project": "RAMP AND PUBLIC SIDEWALK",
     "source": "BOND",
     "year": "2027",
-    "amount": 700000.0
+    "amount": 1250000.0
   },
   {
     "project": "RAMP AND PUBLIC SIDEWALK",
     "source": "BOND",
     "year": "2028",
-    "amount": 800000.0
+    "amount": 500000.0
   },
   {
     "project": "RAMP AND PUBLIC SIDEWALK",
     "source": "BOND",
     "year": "2029",
-    "amount": 1000000.0
+    "amount": 800000.0
   },
   {
     "project": "RAMP AND PUBLIC SIDEWALK",
@@ -666,10 +810,10 @@
     "amount": 1000000.0
   },
   {
-    "project": "SLOPE FAILURE REMEDIATION",
+    "project": "RAMP AND PUBLIC SIDEWALK",
     "source": "BOND",
-    "year": "2025",
-    "amount": 4200000.0
+    "year": "2032",
+    "amount": 1000000.0
   },
   {
     "project": "SLOPE FAILURE REMEDIATION",
@@ -681,25 +825,25 @@
     "project": "SLOPE FAILURE REMEDIATION",
     "source": "BOND",
     "year": "2027",
-    "amount": 4500000.0
+    "amount": 6440000.0
   },
   {
     "project": "SLOPE FAILURE REMEDIATION",
     "source": "BOND",
     "year": "2028",
-    "amount": 1500000.0
+    "amount": 4100000.0
   },
   {
     "project": "SLOPE FAILURE REMEDIATION",
     "source": "BOND",
     "year": "2029",
-    "amount": 3000000.0
+    "amount": 2500000.0
   },
   {
     "project": "SLOPE FAILURE REMEDIATION",
     "source": "BOND",
     "year": "2030",
-    "amount": 3000000.0
+    "amount": 2500000.0
   },
   {
     "project": "SLOPE FAILURE REMEDIATION",
@@ -708,10 +852,22 @@
     "amount": 3000000.0
   },
   {
-    "project": "SOUTH NEGLEY AVENUE BRIDGE (TIP)",
+    "project": "SLOPE FAILURE REMEDIATION",
     "source": "BOND",
-    "year": "2025",
-    "amount": 20750.0
+    "year": "2032",
+    "amount": 2600000.0
+  },
+  {
+    "project": "SMITHFIELD STREET RECONSTRUCTION, PHASE II (TIP)",
+    "source": "BOND",
+    "year": "2027",
+    "amount": 180000.0
+  },
+  {
+    "project": "SMITHFIELD STREET RECONSTRUCTION, PHASE II (TIP)",
+    "source": "OTHER",
+    "year": "2027",
+    "amount": 720000.0
   },
   {
     "project": "SOUTH NEGLEY AVENUE BRIDGE (TIP)",
@@ -728,12 +884,6 @@
   {
     "project": "SOUTH NEGLEY AVENUE BRIDGE (TIP)",
     "source": "OTHER",
-    "year": "2025",
-    "amount": 394250.0
-  },
-  {
-    "project": "SOUTH NEGLEY AVENUE BRIDGE (TIP)",
-    "source": "OTHER",
     "year": "2028",
     "amount": 3325000.0
   },
@@ -742,12 +892,6 @@
     "source": "OTHER",
     "year": "2029",
     "amount": 3325000.0
-  },
-  {
-    "project": "STEP REPAIR AND REPLACEMENT",
-    "source": "BOND",
-    "year": "2025",
-    "amount": 650000.0
   },
   {
     "project": "STEP REPAIR AND REPLACEMENT",
@@ -759,13 +903,13 @@
     "project": "STEP REPAIR AND REPLACEMENT",
     "source": "BOND",
     "year": "2027",
-    "amount": 1353000.0
+    "amount": 2277000.0
   },
   {
     "project": "STEP REPAIR AND REPLACEMENT",
     "source": "BOND",
     "year": "2028",
-    "amount": 600000.0
+    "amount": 800000.0
   },
   {
     "project": "STEP REPAIR AND REPLACEMENT",
@@ -783,25 +927,25 @@
     "project": "STEP REPAIR AND REPLACEMENT",
     "source": "BOND",
     "year": "2031",
-    "amount": 1000000.0
+    "amount": 1500000.0
+  },
+  {
+    "project": "STEP REPAIR AND REPLACEMENT",
+    "source": "BOND",
+    "year": "2032",
+    "amount": 1500000.0
   },
   {
     "project": "STEP REPAIR AND REPLACEMENT",
     "source": "OTHER",
     "year": "2026",
-    "amount": 908000.0
+    "amount": 919850.0
   },
   {
     "project": "STEP REPAIR AND REPLACEMENT",
     "source": "OTHER",
     "year": "2027",
-    "amount": 5412000.0
-  },
-  {
-    "project": "STREET RESURFACING",
-    "source": "BOND",
-    "year": "2025",
-    "amount": 18957000.0
+    "amount": 6308000.0
   },
   {
     "project": "STREET RESURFACING",
@@ -813,37 +957,37 @@
     "project": "STREET RESURFACING",
     "source": "BOND",
     "year": "2027",
-    "amount": 12672662.0
+    "amount": 22688714.0
   },
   {
     "project": "STREET RESURFACING",
     "source": "BOND",
     "year": "2028",
-    "amount": 14335501.0
+    "amount": 16424218.0
   },
   {
     "project": "STREET RESURFACING",
     "source": "BOND",
     "year": "2029",
-    "amount": 18556106.0
+    "amount": 19771743.0
   },
   {
     "project": "STREET RESURFACING",
     "source": "BOND",
     "year": "2030",
-    "amount": 19457750.0
+    "amount": 19729150.0
   },
   {
     "project": "STREET RESURFACING",
     "source": "BOND",
     "year": "2031",
-    "amount": 21525000.0
+    "amount": 23525000.0
   },
   {
     "project": "STREET RESURFACING",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 690000.0
+    "source": "BOND",
+    "year": "2032",
+    "amount": 22500000.0
   },
   {
     "project": "STREET RESURFACING",
@@ -855,13 +999,13 @@
     "project": "STREET RESURFACING",
     "source": "PAYGO",
     "year": "2027",
-    "amount": 775000.0
+    "amount": 1100000.0
   },
   {
     "project": "STREET RESURFACING",
     "source": "PAYGO",
     "year": "2028",
-    "amount": 850000.0
+    "amount": 1100000.0
   },
   {
     "project": "STREET RESURFACING",
@@ -879,6 +1023,12 @@
     "project": "STREET RESURFACING",
     "source": "PAYGO",
     "year": "2031",
+    "amount": 1150000.0
+  },
+  {
+    "project": "STREET RESURFACING",
+    "source": "PAYGO",
+    "year": "2032",
     "amount": 1100000.0
   },
   {
@@ -902,44 +1052,38 @@
   {
     "project": "SWINDELL BRIDGE (TIP)",
     "source": "BOND",
-    "year": "2025",
-    "amount": 105000.0
-  },
-  {
-    "project": "SWINDELL BRIDGE (TIP)",
-    "source": "BOND",
     "year": "2028",
-    "amount": 750000.0
+    "amount": 195838.0
   },
   {
     "project": "SWINDELL BRIDGE (TIP)",
     "source": "BOND",
     "year": "2029",
-    "amount": 850000.0
+    "amount": 391675.0
   },
   {
     "project": "SWINDELL BRIDGE (TIP)",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 1995000.0
+    "source": "BOND",
+    "year": "2030",
+    "amount": 158350.0
   },
   {
     "project": "SWINDELL BRIDGE (TIP)",
     "source": "OTHER",
     "year": "2028",
-    "amount": 14250000.0
+    "amount": 3720913.0
   },
   {
     "project": "SWINDELL BRIDGE (TIP)",
     "source": "OTHER",
     "year": "2029",
-    "amount": 16150000.0
+    "amount": 7441825.0
   },
   {
-    "project": "TRAIL DEVELOPMENT",
-    "source": "BOND",
-    "year": "2025",
-    "amount": 550000.0
+    "project": "SWINDELL BRIDGE (TIP)",
+    "source": "OTHER",
+    "year": "2030",
+    "amount": 3008650.0
   },
   {
     "project": "TRAIL DEVELOPMENT",
@@ -950,32 +1094,32 @@
   {
     "project": "TRAIL DEVELOPMENT",
     "source": "BOND",
-    "year": "2027",
-    "amount": 2800000.0
-  },
-  {
-    "project": "TRAIL DEVELOPMENT",
-    "source": "BOND",
     "year": "2028",
-    "amount": 3064000.0
+    "amount": 764000.0
   },
   {
     "project": "TRAIL DEVELOPMENT",
     "source": "BOND",
     "year": "2029",
-    "amount": 3400000.0
+    "amount": 600000.0
   },
   {
     "project": "TRAIL DEVELOPMENT",
     "source": "BOND",
     "year": "2030",
-    "amount": 3400000.0
+    "amount": 800000.0
   },
   {
     "project": "TRAIL DEVELOPMENT",
     "source": "BOND",
     "year": "2031",
-    "amount": 3400000.0
+    "amount": 1000000.0
+  },
+  {
+    "project": "TRAIL DEVELOPMENT",
+    "source": "BOND",
+    "year": "2032",
+    "amount": 1000000.0
   },
   {
     "project": "TRAIL DEVELOPMENT",
@@ -1017,7 +1161,13 @@
     "project": "SMITHFIELD STREET (TIP)",
     "source": "BOND",
     "year": "2027",
-    "amount": 40000.0
+    "amount": 167200.0
+  },
+  {
+    "project": "SMITHFIELD STREET (TIP)",
+    "source": "OTHER",
+    "year": "2027",
+    "amount": 684800.0
   },
   {
     "project": "SWINBURNE BRIDGE (TIP)",
@@ -1039,12 +1189,6 @@
   },
   {
     "project": "SWINBURNE BRIDGE (TIP)",
-    "source": "BOND",
-    "year": "2029",
-    "amount": 240000.0
-  },
-  {
-    "project": "SWINBURNE BRIDGE (TIP)",
     "source": "OTHER",
     "year": "2026",
     "amount": 617500.0
@@ -1062,18 +1206,6 @@
     "amount": 3817812.0
   },
   {
-    "project": "SWINBURNE BRIDGE (TIP)",
-    "source": "OTHER",
-    "year": "2029",
-    "amount": 4560000.0
-  },
-  {
-    "project": "BOB O'CONNOR GOLF COURSE",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 44000.0
-  },
-  {
     "project": "BOB O'CONNOR GOLF COURSE",
     "source": "PAYGO",
     "year": "2026",
@@ -1110,10 +1242,10 @@
     "amount": 44000.0
   },
   {
-    "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
-    "source": "BOND",
-    "year": "2025",
-    "amount": 3408000.0
+    "project": "BOB O'CONNOR GOLF COURSE",
+    "source": "PAYGO",
+    "year": "2032",
+    "amount": 44000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
@@ -1125,37 +1257,37 @@
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
     "source": "BOND",
     "year": "2027",
-    "amount": 8543000.0
+    "amount": 9191296.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
     "source": "BOND",
     "year": "2028",
-    "amount": 2672000.0
+    "amount": 1572000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
     "source": "BOND",
     "year": "2029",
-    "amount": 5200000.0
+    "amount": 1800000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
     "source": "BOND",
     "year": "2030",
-    "amount": 3000000.0
+    "amount": 2200000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
     "source": "BOND",
     "year": "2031",
-    "amount": 3000000.0
+    "amount": 3500000.0
   },
   {
-    "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
+    "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
     "source": "BOND",
-    "year": "2025",
-    "amount": 18905327.0
+    "year": "2032",
+    "amount": 3500000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
@@ -1166,92 +1298,98 @@
   {
     "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
     "source": "BOND",
-    "year": "2027",
-    "amount": 3000000.0
-  },
-  {
-    "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
-    "source": "BOND",
     "year": "2028",
-    "amount": 3000000.0
+    "amount": 1500000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
     "source": "BOND",
     "year": "2029",
-    "amount": 4800000.0
+    "amount": 1500000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
     "source": "BOND",
     "year": "2030",
-    "amount": 5600000.0
+    "amount": 2200000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
     "source": "BOND",
     "year": "2031",
-    "amount": 5000000.0
+    "amount": 3500000.0
   },
   {
-    "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
+    "project": "FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
     "source": "BOND",
-    "year": "2025",
-    "amount": 4300000.0
+    "year": "2032",
+    "amount": 3500000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2026",
-    "amount": 9454032.0
+    "amount": 9371856.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2027",
-    "amount": 23745649.0
+    "amount": 9350000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2028",
-    "amount": 2000000.0
+    "amount": 6400000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2029",
-    "amount": 15000000.0
+    "amount": 2000000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2030",
-    "amount": 3000000.0
+    "amount": 8000000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2031",
-    "amount": 3000000.0
+    "amount": 2000000.0
+  },
+  {
+    "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
+    "source": "BOND",
+    "year": "2032",
+    "amount": 6000000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
-    "source": "BOND",
+    "source": "CDBG",
     "year": "2026",
     "amount": 250000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
     "source": "BOND",
+    "year": "2026",
+    "amount": 476142.0
+  },
+  {
+    "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
+    "source": "BOND",
     "year": "2027",
-    "amount": 350000.0
+    "amount": 400000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
     "source": "BOND",
     "year": "2028",
-    "amount": 300000.0
+    "amount": 400000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
@@ -1269,61 +1407,55 @@
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
     "source": "BOND",
     "year": "2031",
-    "amount": 400000.0
+    "amount": 500000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 1254100.0
-  },
-  {
-    "project": "PARK RECONSTRUCTION",
     "source": "BOND",
-    "year": "2025",
-    "amount": 5723834.0
+    "year": "2032",
+    "amount": 500000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2026",
-    "amount": 5953125.0
+    "amount": 5809159.0
   },
   {
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2027",
-    "amount": 15400000.0
+    "amount": 6150000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2028",
-    "amount": 14040000.0
+    "amount": 19050000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2029",
-    "amount": 17250000.0
+    "amount": 15840000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2030",
-    "amount": 6000000.0
+    "amount": 10250000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2031",
-    "amount": 6000000.0
+    "amount": 8000000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 600000.0
+    "source": "BOND",
+    "year": "2032",
+    "amount": 7500000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
@@ -1335,37 +1467,7 @@
     "project": "PARK RECONSTRUCTION",
     "source": "OTHER",
     "year": "2027",
-    "amount": 1000000.0
-  },
-  {
-    "project": "PARK RECONSTRUCTION",
-    "source": "OTHER",
-    "year": "2028",
-    "amount": 1000000.0
-  },
-  {
-    "project": "PARK RECONSTRUCTION",
-    "source": "OTHER",
-    "year": "2029",
-    "amount": 1000000.0
-  },
-  {
-    "project": "PARK RECONSTRUCTION",
-    "source": "OTHER",
-    "year": "2030",
-    "amount": 1000000.0
-  },
-  {
-    "project": "PARK RECONSTRUCTION",
-    "source": "OTHER",
-    "year": "2031",
-    "amount": 1000000.0
-  },
-  {
-    "project": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 2300000.0
+    "amount": 1700000.0
   },
   {
     "project": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
@@ -1377,7 +1479,7 @@
     "project": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
     "source": "OTHER",
     "year": "2027",
-    "amount": 2500000.0
+    "amount": 2400000.0
   },
   {
     "project": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
@@ -1404,10 +1506,10 @@
     "amount": 2500000.0
   },
   {
-    "project": "PLAY AREA IMPROVEMENTS",
-    "source": "BOND",
-    "year": "2027",
-    "amount": 250000.0
+    "project": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
+    "source": "OTHER",
+    "year": "2032",
+    "amount": 2500000.0
   },
   {
     "project": "PLAY AREA IMPROVEMENTS",
@@ -1435,15 +1537,9 @@
   },
   {
     "project": "PLAY AREA IMPROVEMENTS",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 550000.0
-  },
-  {
-    "project": "PUBLIC SAFETY TRAINING FACILITY",
     "source": "BOND",
-    "year": "2025",
-    "amount": 900000.0
+    "year": "2032",
+    "amount": 300000.0
   },
   {
     "project": "PUBLIC SAFETY TRAINING FACILITY",
@@ -1455,37 +1551,37 @@
     "project": "PUBLIC SAFETY TRAINING FACILITY",
     "source": "BOND",
     "year": "2027",
-    "amount": 6200000.0
+    "amount": 1500000.0
   },
   {
     "project": "PUBLIC SAFETY TRAINING FACILITY",
     "source": "BOND",
     "year": "2028",
-    "amount": 20000000.0
+    "amount": 10000000.0
   },
   {
     "project": "PUBLIC SAFETY TRAINING FACILITY",
     "source": "BOND",
     "year": "2029",
-    "amount": 26100000.0
+    "amount": 8000000.0
   },
   {
     "project": "PUBLIC SAFETY TRAINING FACILITY",
     "source": "BOND",
     "year": "2030",
-    "amount": 21375000.0
+    "amount": 8000000.0
   },
   {
     "project": "PUBLIC SAFETY TRAINING FACILITY",
     "source": "BOND",
     "year": "2031",
-    "amount": 15000000.0
+    "amount": 8000000.0
   },
   {
-    "project": "BEDFORD DWELLINGS CHOICE NEIGHBORHOOD",
-    "source": "CDBG",
-    "year": "2025",
-    "amount": 5175000.0
+    "project": "PUBLIC SAFETY TRAINING FACILITY",
+    "source": "BOND",
+    "year": "2032",
+    "amount": 8000000.0
   },
   {
     "project": "BEDFORD DWELLINGS CHOICE NEIGHBORHOOD",
@@ -1506,18 +1602,6 @@
     "amount": 5112500.0
   },
   {
-    "project": "BEDFORD DWELLINGS CHOICE NEIGHBORHOOD",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 100000.0
-  },
-  {
-    "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 1986154.0
-  },
-  {
     "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
     "source": "OTHER",
     "year": "2026",
@@ -1527,37 +1611,37 @@
     "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
     "source": "OTHER",
     "year": "2027",
-    "amount": 1995569.0
+    "amount": 1900000.0
   },
   {
     "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
     "source": "OTHER",
     "year": "2028",
-    "amount": 1995569.0
+    "amount": 1900000.0
   },
   {
     "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
     "source": "OTHER",
     "year": "2029",
-    "amount": 1995569.0
+    "amount": 1900000.0
   },
   {
     "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
     "source": "OTHER",
     "year": "2030",
-    "amount": 1995569.0
+    "amount": 1900000.0
   },
   {
     "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
     "source": "OTHER",
     "year": "2031",
-    "amount": 1995569.0
+    "amount": 1900000.0
   },
   {
-    "project": "HOUSING DEVELOPMENT",
-    "source": "CDBG",
-    "year": "2025",
-    "amount": 600000.0
+    "project": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
+    "source": "OTHER",
+    "year": "2032",
+    "amount": 1900000.0
   },
   {
     "project": "HOUSING DEVELOPMENT",
@@ -1568,134 +1652,122 @@
   {
     "project": "HOUSING DEVELOPMENT",
     "source": "CDBG",
-    "year": "2027",
+    "year": "2028",
     "amount": 800000.0
   },
   {
     "project": "HOUSING DEVELOPMENT",
     "source": "CDBG",
-    "year": "2028",
-    "amount": 900000.0
+    "year": "2029",
+    "amount": 4180000.0
   },
   {
     "project": "HOUSING DEVELOPMENT",
+    "source": "CDBG",
+    "year": "2030",
+    "amount": 4240000.0
+  },
+  {
+    "project": "HOUSING DEVELOPMENT",
+    "source": "CDBG",
+    "year": "2031",
+    "amount": 4240000.0
+  },
+  {
+    "project": "HOUSING DEVELOPMENT",
+    "source": "CDBG",
+    "year": "2032",
+    "amount": 4240000.0
+  },
+  {
+    "project": "MAJOR DEVELOPMENTS",
+    "source": "CDBG",
+    "year": "2027",
+    "amount": 1000000.0
+  },
+  {
+    "project": "WAR MEMORIALS AND PUBLIC ART",
+    "source": "PAYGO",
+    "year": "2026",
+    "amount": 100000.0
+  },
+  {
+    "project": "WAR MEMORIALS AND PUBLIC ART",
+    "source": "PAYGO",
+    "year": "2027",
+    "amount": 100000.0
+  },
+  {
+    "project": "WAR MEMORIALS AND PUBLIC ART",
+    "source": "PAYGO",
+    "year": "2028",
+    "amount": 100000.0
+  },
+  {
+    "project": "WAR MEMORIALS AND PUBLIC ART",
+    "source": "PAYGO",
+    "year": "2029",
+    "amount": 100000.0
+  },
+  {
+    "project": "WAR MEMORIALS AND PUBLIC ART",
+    "source": "PAYGO",
+    "year": "2030",
+    "amount": 100000.0
+  },
+  {
+    "project": "WAR MEMORIALS AND PUBLIC ART",
+    "source": "PAYGO",
+    "year": "2031",
+    "amount": 100000.0
+  },
+  {
+    "project": "WAR MEMORIALS AND PUBLIC ART",
+    "source": "PAYGO",
+    "year": "2032",
+    "amount": 100000.0
+  },
+  {
+    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
+    "source": "CDBG",
+    "year": "2026",
+    "amount": 2228351.0
+  },
+  {
+    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
+    "source": "CDBG",
+    "year": "2027",
+    "amount": 2127500.0
+  },
+  {
+    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
+    "source": "CDBG",
+    "year": "2028",
+    "amount": 2327500.0
+  },
+  {
+    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "CDBG",
     "year": "2029",
     "amount": 4000000.0
   },
   {
-    "project": "HOUSING DEVELOPMENT",
-    "source": "CDBG",
-    "year": "2030",
-    "amount": 4100000.0
-  },
-  {
-    "project": "HOUSING DEVELOPMENT",
-    "source": "CDBG",
-    "year": "2031",
-    "amount": 4100000.0
-  },
-  {
-    "project": "SMALL BUSINESS DEVELOPMENT",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 500000.0
-  },
-  {
-    "project": "SMALL BUSINESS DEVELOPMENT",
-    "source": "PAYGO",
-    "year": "2026",
-    "amount": 1100000.0
-  },
-  {
-    "project": "WAR MEMORIALS AND PUBLIC ART",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 100000.0
-  },
-  {
-    "project": "WAR MEMORIALS AND PUBLIC ART",
-    "source": "PAYGO",
-    "year": "2026",
-    "amount": 100000.0
-  },
-  {
-    "project": "WAR MEMORIALS AND PUBLIC ART",
-    "source": "PAYGO",
-    "year": "2027",
-    "amount": 100000.0
-  },
-  {
-    "project": "WAR MEMORIALS AND PUBLIC ART",
-    "source": "PAYGO",
-    "year": "2028",
-    "amount": 100000.0
-  },
-  {
-    "project": "WAR MEMORIALS AND PUBLIC ART",
-    "source": "PAYGO",
-    "year": "2029",
-    "amount": 100000.0
-  },
-  {
-    "project": "WAR MEMORIALS AND PUBLIC ART",
-    "source": "PAYGO",
-    "year": "2030",
-    "amount": 100000.0
-  },
-  {
-    "project": "WAR MEMORIALS AND PUBLIC ART",
-    "source": "PAYGO",
-    "year": "2031",
-    "amount": 100000.0
-  },
-  {
-    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
-    "source": "CDBG",
-    "year": "2025",
-    "amount": 2560500.0
-  },
-  {
-    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
-    "source": "CDBG",
-    "year": "2026",
-    "amount": 2065000.0
-  },
-  {
-    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
-    "source": "CDBG",
-    "year": "2027",
-    "amount": 1817500.0
-  },
-  {
-    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
-    "source": "CDBG",
-    "year": "2028",
-    "amount": 1707500.0
-  },
-  {
-    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
-    "source": "CDBG",
-    "year": "2029",
-    "amount": 3650000.0
-  },
-  {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "CDBG",
     "year": "2030",
-    "amount": 3600000.0
+    "amount": 4000000.0
   },
   {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "CDBG",
     "year": "2031",
-    "amount": 3588000.0
+    "amount": 4000000.0
   },
   {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 2708342.0
+    "source": "CDBG",
+    "year": "2032",
+    "amount": 4000000.0
   },
   {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
@@ -1707,37 +1779,37 @@
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "PAYGO",
     "year": "2027",
-    "amount": 1733583.0
+    "amount": 1096695.0
   },
   {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "PAYGO",
     "year": "2028",
-    "amount": 1458583.0
+    "amount": 1258583.0
   },
   {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "PAYGO",
     "year": "2029",
-    "amount": 1508583.0
+    "amount": 1108583.0
   },
   {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "PAYGO",
     "year": "2030",
-    "amount": 1408583.0
+    "amount": 1108583.0
   },
   {
     "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "PAYGO",
     "year": "2031",
-    "amount": 1408583.0
+    "amount": 1206000.0
   },
   {
-    "project": "CAPITAL EQUIPMENT ACQUISITION",
+    "project": "REMEDIATION OF CONDEMNED BUILDINGS",
     "source": "PAYGO",
-    "year": "2025",
-    "amount": 4559658.0
+    "year": "2032",
+    "amount": 1256000.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
@@ -1749,37 +1821,37 @@
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "PAYGO",
     "year": "2027",
-    "amount": 3073330.0
+    "amount": 5259305.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "PAYGO",
     "year": "2028",
-    "amount": 1647417.0
+    "amount": 2047417.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "PAYGO",
     "year": "2029",
-    "amount": 1447417.0
+    "amount": 1547417.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "PAYGO",
     "year": "2030",
-    "amount": 1447417.0
+    "amount": 1547417.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "PAYGO",
     "year": "2031",
-    "amount": 900000.0
+    "amount": 1200000.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 1465000.0
+    "source": "PAYGO",
+    "year": "2032",
+    "amount": 1200000.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
@@ -1791,37 +1863,37 @@
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "OTHER",
     "year": "2027",
-    "amount": 2000000.0
+    "amount": 15120000.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "OTHER",
     "year": "2028",
-    "amount": 2000000.0
+    "amount": 11000000.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "OTHER",
     "year": "2029",
-    "amount": 2000000.0
+    "amount": 11000000.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "OTHER",
     "year": "2030",
-    "amount": 2000000.0
+    "amount": 11000000.0
   },
   {
     "project": "CAPITAL EQUIPMENT ACQUISITION",
     "source": "OTHER",
     "year": "2031",
-    "amount": 2000000.0
+    "amount": 11000000.0
   },
   {
-    "project": "CDBG ADMINISTRATION",
-    "source": "CDBG",
-    "year": "2025",
-    "amount": 222093.0
+    "project": "CAPITAL EQUIPMENT ACQUISITION",
+    "source": "OTHER",
+    "year": "2032",
+    "amount": 2000000.0
   },
   {
     "project": "CDBG ADMINISTRATION",
@@ -1860,10 +1932,10 @@
     "amount": 220000.0
   },
   {
-    "project": "CDBG PERSONNEL",
+    "project": "CDBG ADMINISTRATION",
     "source": "CDBG",
-    "year": "2025",
-    "amount": 1100000.0
+    "year": "2032",
+    "amount": 220000.0
   },
   {
     "project": "CDBG PERSONNEL",
@@ -1902,6 +1974,12 @@
     "amount": 1100000.0
   },
   {
+    "project": "CDBG PERSONNEL",
+    "source": "CDBG",
+    "year": "2032",
+    "amount": 1100000.0
+  },
+  {
     "project": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
     "source": "CDBG",
     "year": "2026",
@@ -1935,23 +2013,23 @@
     "project": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
     "source": "CDBG",
     "year": "2031",
+    "amount": 650000.0
+  },
+  {
+    "project": "CITY COUNCIL'S PUBLIC SERVICE GRANTS",
+    "source": "CDBG",
+    "year": "2032",
     "amount": 650000.0
   },
   {
     "project": "EMERGENCY SOLUTIONS GRANT",
     "source": "OTHER",
-    "year": "2025",
+    "year": "2026",
     "amount": 1177534.0
   },
   {
     "project": "EMERGENCY SOLUTIONS GRANT",
     "source": "OTHER",
-    "year": "2026",
-    "amount": 1177534.0
-  },
-  {
-    "project": "EMERGENCY SOLUTIONS GRANT",
-    "source": "OTHER",
     "year": "2027",
     "amount": 1100000.0
   },
@@ -1980,10 +2058,10 @@
     "amount": 1100000.0
   },
   {
-    "project": "FAIR HOUSING",
-    "source": "CDBG",
-    "year": "2025",
-    "amount": 94500.0
+    "project": "EMERGENCY SOLUTIONS GRANT",
+    "source": "OTHER",
+    "year": "2032",
+    "amount": 1100000.0
   },
   {
     "project": "FAIR HOUSING",
@@ -2022,10 +2100,10 @@
     "amount": 30000.0
   },
   {
-    "project": "HOUSING COUNSELING",
+    "project": "FAIR HOUSING",
     "source": "CDBG",
-    "year": "2025",
-    "amount": 100000.0
+    "year": "2032",
+    "amount": 30000.0
   },
   {
     "project": "HOUSING COUNSELING",
@@ -2064,10 +2142,10 @@
     "amount": 100000.0
   },
   {
-    "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
-    "source": "OTHER",
-    "year": "2025",
-    "amount": 1401162.0
+    "project": "HOUSING COUNSELING",
+    "source": "CDBG",
+    "year": "2032",
+    "amount": 100000.0
   },
   {
     "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
@@ -2079,55 +2157,37 @@
     "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
     "source": "OTHER",
     "year": "2027",
-    "amount": 1350000.0
+    "amount": 1400000.0
   },
   {
     "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
     "source": "OTHER",
     "year": "2028",
-    "amount": 1350000.0
+    "amount": 1400000.0
   },
   {
     "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
     "source": "OTHER",
     "year": "2029",
-    "amount": 1350000.0
+    "amount": 1400000.0
   },
   {
     "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
     "source": "OTHER",
     "year": "2030",
-    "amount": 1350000.0
+    "amount": 1400000.0
   },
   {
     "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
     "source": "OTHER",
     "year": "2031",
-    "amount": 1350000.0
+    "amount": 1400000.0
   },
   {
-    "project": "INFORMATION SYSTEMS MODERNIZATION",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 1500000.0
-  },
-  {
-    "project": "INFORMATION SYSTEMS MODERNIZATION",
-    "source": "PAYGO",
-    "year": "2026",
-    "amount": 410000.0
-  },
-  {
-    "project": "INFORMATION SYSTEMS MODERNIZATION",
-    "source": "PAYGO",
-    "year": "2027",
-    "amount": 210000.0
-  },
-  {
-    "project": "INFORMATION SYSTEMS MODERNIZATION",
-    "source": "PAYGO",
-    "year": "2028",
-    "amount": 210000.0
+    "project": "HOUSING OPPORTUNITIES FOR PERSONS WITH AIDS",
+    "source": "OTHER",
+    "year": "2032",
+    "amount": 1400000.0
   },
   {
     "project": "MAYOR'S PUBLIC SERVICE GRANTS",
@@ -2166,10 +2226,10 @@
     "amount": 100000.0
   },
   {
-    "project": "NEIGHBORHOOD ECONOMIC DEVELOPMENT",
+    "project": "MAYOR'S PUBLIC SERVICE GRANTS",
     "source": "CDBG",
-    "year": "2025",
-    "amount": 720000.0
+    "year": "2032",
+    "amount": 100000.0
   },
   {
     "project": "NEIGHBORHOOD ECONOMIC DEVELOPMENT",
@@ -2208,10 +2268,10 @@
     "amount": 720000.0
   },
   {
-    "project": "NEIGHBORHOOD EMPLOYMENT CENTERS",
+    "project": "NEIGHBORHOOD ECONOMIC DEVELOPMENT",
     "source": "CDBG",
-    "year": "2025",
-    "amount": 210000.0
+    "year": "2032",
+    "amount": 720000.0
   },
   {
     "project": "NEIGHBORHOOD EMPLOYMENT CENTERS",
@@ -2250,10 +2310,10 @@
     "amount": 210000.0
   },
   {
-    "project": "PITTSBURGH EMPLOYMENT PROGRAM",
+    "project": "NEIGHBORHOOD EMPLOYMENT CENTERS",
     "source": "CDBG",
-    "year": "2025",
-    "amount": 320000.0
+    "year": "2032",
+    "amount": 210000.0
   },
   {
     "project": "PITTSBURGH EMPLOYMENT PROGRAM",
@@ -2265,37 +2325,37 @@
     "project": "PITTSBURGH EMPLOYMENT PROGRAM",
     "source": "CDBG",
     "year": "2027",
-    "amount": 340000.0
+    "amount": 330000.0
   },
   {
     "project": "PITTSBURGH EMPLOYMENT PROGRAM",
     "source": "CDBG",
     "year": "2028",
-    "amount": 350000.0
+    "amount": 330000.0
   },
   {
     "project": "PITTSBURGH EMPLOYMENT PROGRAM",
     "source": "CDBG",
     "year": "2029",
-    "amount": 360000.0
+    "amount": 330000.0
   },
   {
     "project": "PITTSBURGH EMPLOYMENT PROGRAM",
     "source": "CDBG",
     "year": "2030",
-    "amount": 370000.0
+    "amount": 330000.0
   },
   {
     "project": "PITTSBURGH EMPLOYMENT PROGRAM",
     "source": "CDBG",
     "year": "2031",
-    "amount": 382000.0
+    "amount": 330000.0
   },
   {
-    "project": "SENIOR COMMUNITY PROGRAM",
+    "project": "PITTSBURGH EMPLOYMENT PROGRAM",
     "source": "CDBG",
-    "year": "2025",
-    "amount": 1000000.0
+    "year": "2032",
+    "amount": 330000.0
   },
   {
     "project": "SENIOR COMMUNITY PROGRAM",
@@ -2307,78 +2367,36 @@
     "project": "SENIOR COMMUNITY PROGRAM",
     "source": "CDBG",
     "year": "2027",
-    "amount": 1300000.0
+    "amount": 800000.0
   },
   {
     "project": "SENIOR COMMUNITY PROGRAM",
     "source": "CDBG",
     "year": "2028",
-    "amount": 1300000.0
+    "amount": 800000.0
   },
   {
     "project": "SENIOR COMMUNITY PROGRAM",
     "source": "CDBG",
     "year": "2029",
-    "amount": 1300000.0
+    "amount": 800000.0
   },
   {
     "project": "SENIOR COMMUNITY PROGRAM",
     "source": "CDBG",
     "year": "2030",
-    "amount": 1300000.0
+    "amount": 800000.0
   },
   {
     "project": "SENIOR COMMUNITY PROGRAM",
     "source": "CDBG",
     "year": "2031",
-    "amount": 1300000.0
+    "amount": 800000.0
   },
   {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
+    "project": "SENIOR COMMUNITY PROGRAM",
     "source": "CDBG",
-    "year": "2026",
-    "amount": 175000.0
-  },
-  {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "source": "PAYGO",
-    "year": "2025",
-    "amount": 657175.0
-  },
-  {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "source": "PAYGO",
-    "year": "2026",
-    "amount": 575000.0
-  },
-  {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "source": "PAYGO",
-    "year": "2027",
-    "amount": 664087.0
-  },
-  {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "source": "PAYGO",
-    "year": "2028",
-    "amount": 669200.0
-  },
-  {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "source": "PAYGO",
-    "year": "2029",
-    "amount": 674466.0
-  },
-  {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "source": "PAYGO",
-    "year": "2030",
-    "amount": 679700.0
-  },
-  {
-    "project": "URBAN REDEVELOPMENT AUTHORITY PERSONNEL",
-    "source": "PAYGO",
-    "year": "2031",
-    "amount": 185091.0
+    "year": "2032",
+    "amount": 800000.0
   }
 ]

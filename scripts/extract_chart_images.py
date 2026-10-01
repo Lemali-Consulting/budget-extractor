@@ -2,7 +2,7 @@
 
 Reads chart region data from budget-data.json and capital-budget-data.json,
 then crops the corresponding regions from the year's (variant) PDFs, saving them to
-web/public/charts/{slug}/.
+web/public/charts/{year}/{slug}/.
 """
 
 import argparse
@@ -26,7 +26,12 @@ AUTO_VARIANT_ORDER: tuple[str, ...] = ("amended", "adopted", "proposed")
 DPI = 300  # render resolution (high enough to read map labels and fine text)
 
 
-def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
+def chart_output_dir(year: int) -> Path:
+    """Directory holding one year's chart crops: web/public/charts/{year}."""
+    return OUTPUT_DIR / str(year)
+
+
+def extract_charts_from_data(data: dict, *, pdf_path: Path, out_base: Path) -> int:
     """Extract chart images for all sections in a budget data bundle.
 
     Returns the number of chart images extracted.
@@ -68,7 +73,7 @@ def extract_charts_from_data(data: dict, pdf_path: Path) -> int:
 
                 cropped = pil_img.crop(crop_box)
 
-                out_dir = OUTPUT_DIR / slug
+                out_dir = out_base / slug
                 out_dir.mkdir(parents=True, exist_ok=True)
                 out_path = out_dir / f"P{rel_page}C{i}.webp"
                 cropped.save(str(out_path), "WEBP", quality=80)
@@ -92,13 +97,13 @@ def resolve_source_pdf(*, year: int, budget_type: str, variant: str | None) -> P
     return variant_paths(year=year, budget_type=budget_type, variant=candidates[0]).pdf
 
 
-def extract_budget_type(*, data_path: Path, pdf_path: Path, label: str) -> int:
+def extract_budget_type(*, data_path: Path, pdf_path: Path, out_base: Path, label: str) -> int:
     """Extract charts for one budget bundle if its data file exists; returns the image count."""
     if not data_path.exists():
         return 0
     with open(data_path, encoding="utf-8") as f:
         data: dict = json.load(f)
-    count: int = extract_charts_from_data(data, pdf_path)
+    count: int = extract_charts_from_data(data, pdf_path=pdf_path, out_base=out_base)
     print(f"  {label}: {count} chart images")
     return count
 
@@ -115,18 +120,21 @@ def main() -> None:
     args = parser.parse_args()
     prefix: str = f"{args.output_prefix}-" if args.output_prefix else ""
     data_dir: Path = BASE_DIR / "web" / "src" / "data"
+    out_base: Path = chart_output_dir(args.year)
 
     total: int = extract_budget_type(
         data_path=data_dir / f"{prefix}budget-data.json",
         pdf_path=resolve_source_pdf(year=args.year, budget_type="operating", variant=args.operating_variant),
+        out_base=out_base,
         label="Operating",
     )
     total += extract_budget_type(
         data_path=data_dir / f"{prefix}capital-budget-data.json",
         pdf_path=resolve_source_pdf(year=args.year, budget_type="capital", variant=args.capital_variant),
+        out_base=out_base,
         label="Capital",
     )
-    print(f"Extracted {total} chart images total to {OUTPUT_DIR}")
+    print(f"Extracted {total} chart images total to {out_base}")
 
 
 if __name__ == "__main__":

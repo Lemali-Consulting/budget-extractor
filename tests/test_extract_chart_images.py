@@ -38,3 +38,9 @@ def test_unspecified_variant_prefers_amended_then_adopted(fake_root: Path) -> No
 def test_unspecified_variant_falls_back_to_proposed(fake_root: Path) -> None:
     proposed: Path = _pdf(fake_root, "capital-proposed-budget.pdf")
     assert resolve_source_pdf(year=2026, budget_type="capital", variant=None) == proposed
+
+
+def test_chart_crops_are_namespaced_by_year() -> None:
+    from scripts.extract_chart_images import OUTPUT_DIR, chart_output_dir
+
+    assert chart_output_dir(2027) == OUTPUT_DIR / "2027"

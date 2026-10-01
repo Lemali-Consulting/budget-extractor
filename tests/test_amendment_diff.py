@@ -135,3 +135,16 @@ def test_build_department_changes() -> None:
     # top increases/decreases are sorted by magnitude
     assert changes["topIncreases"][0]["slug"] == "city-council"
     assert changes["topDecreases"][0]["slug"] == "police"
+
+
+def test_bundle_paths_read_year_prefixed_amended_and_adopted_baseline() -> None:
+    from pathlib import Path
+
+    m = _mod()
+    paths = m.bundle_paths(year=2026, data_dir=Path("/d"))
+    assert paths.amended_bundle == Path("/d/2026-budget-data.json")
+    assert paths.amended_departments == Path("/d/views/2026-department-budgets.json")
+    assert paths.amended_personnel == Path("/d/views/2026-personnel.json")
+    assert paths.adopted_bundle == Path("/d/adopted-budget-data.json")
+    assert paths.adopted_departments == Path("/d/views/adopted-department-budgets.json")
+    assert paths.adopted_personnel == Path("/d/views/adopted-personnel.json")

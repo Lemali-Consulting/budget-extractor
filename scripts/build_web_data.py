@@ -62,6 +62,43 @@ PDF_PATH = pdf_path(BUDGET_YEAR, OPERATING_SUBTYPE)
 CAPITAL_SPLIT_DIR = split_pdf_dir(BUDGET_YEAR, CAPITAL_SUBTYPE)
 WEB_DATA_DIR = web_data_dir()
 
+# Year-named field stems that get a year-neutral twin ("{stem}Current" / "{stem}Prior").
+YEAR_NAMED_FIELD_STEMS: tuple[str, ...] = ("budget", "fte", "totalBudget", "totalFte")
+CURRENT_SUFFIX: str = "Current"
+PRIOR_SUFFIX: str = "Prior"
+
+# budget-meta.json field names.
+META_YEAR: str = "year"
+META_PRIOR_YEAR: str = "priorYear"
+META_OPERATING_VARIANT: str = "operatingVariant"
+META_CAPITAL_VARIANT: str = "capitalVariant"
+
+
+def build_budget_meta(*, year: int, operating_variant: str, capital_variant: str) -> dict:
+    """Describe which budget year and variants a built bundle holds."""
+    return {
+        META_YEAR: year,
+        META_PRIOR_YEAR: year - 1,
+        META_OPERATING_VARIANT: operating_variant,
+        META_CAPITAL_VARIANT: capital_variant,
+    }
+
+
+def add_year_neutral_fields(record: dict) -> dict:
+    """Add year-neutral twins of year-named fields to ``record`` (in place) and return it.
+
+    ``budget2027`` -> ``budgetCurrent`` and ``budget2026`` -> ``budgetPrior`` (likewise
+    fte, totalBudget, totalFte), so the web layer need not know which year it renders.
+    The year-named fields are kept.
+    """
+    for stem in YEAR_NAMED_FIELD_STEMS:
+        for year, suffix in ((BUDGET_YEAR, CURRENT_SUFFIX), (PRIOR_YEAR, PRIOR_SUFFIX)):
+            named: str = f"{stem}{year}"
+            if named in record:
+                record[f"{stem}{suffix}"] = record[named]
+    return record
+
+
 # Citywide (non-department) operating sections. Matched by title, not position,
 # because section numbering differs between years and variants.
 REVENUE_DETAIL_TITLE: str = "Revenue Detail"
@@ -1226,6 +1263,8 @@ def build_budget_changes(sections: list[dict], personnel: list[dict],
             entry[f"fte{PRIOR_YEAR}"] = fte[f"fte{PRIOR_YEAR}"]
         if fte[f"fte{BUDGET_YEAR}"] is not None:
             entry[f"fte{BUDGET_YEAR}"] = fte[f"fte{BUDGET_YEAR}"]
+    for entry in dept_changes:
+        add_year_neutral_fields(entry)
 
     dept_changes.sort(key=lambda x: x["dollarChange"], reverse=True)
 
@@ -1244,7 +1283,7 @@ def build_budget_changes(sections: list[dict], personnel: list[dict],
     total_fte_prior = round(sum(d.get(f"fte{PRIOR_YEAR}", 0) or 0 for d in dept_changes), 2)
     total_fte_current = round(sum(d.get(f"fte{BUDGET_YEAR}", 0) or 0 for d in dept_changes), 2)
 
-    return {
+    return add_year_neutral_fields({
         f"totalBudget{PRIOR_YEAR}": total_prior,
         f"totalBudget{BUDGET_YEAR}": total_current,
         f"totalFte{PRIOR_YEAR}": total_fte_prior,
@@ -1255,7 +1294,7 @@ def build_budget_changes(sections: list[dict], personnel: list[dict],
         "newPositions": new_positions,
         "eliminatedPositions": eliminated_positions,
         "shiftedPositions": shifted_positions,
-    }
+    })
 
 
 def build_department_budgets(sections: list[dict]) -> list[dict]:
@@ -1362,7 +1401,7 @@ def build_personnel(sections: list[dict]) -> list[dict]:
                 def cell(idx: int) -> str:
                     return row[idx] if 0 <= idx < len(row) else ""
 
-                rows.append({
+                rows.append(add_year_neutral_fields({
                     "department": section["title"],
                     "slug": section["slug"],
                     "title": title,
@@ -1371,7 +1410,7 @@ def build_personnel(sections: list[dict]) -> list[dict]:
                     f"budget{PRIOR_YEAR}": parse_currency(cell(budget_prior_idx)),
                     f"budget{BUDGET_YEAR}": parse_currency(cell(budget_current_idx)),
                     "rateGrade": cell(rate_idx),
-                })
+                }))
 
     return rows
 
@@ -1998,6 +2037,7 @@ def build_personnel_by_department(personnel: list[dict]) -> list[dict]:
     for d in dept_map.values():
         d[f"totalFte{PRIOR_YEAR}"] = round(d[f"totalFte{PRIOR_YEAR}"], 2)
         d[f"totalFte{BUDGET_YEAR}"] = round(d[f"totalFte{BUDGET_YEAR}"], 2)
+        add_year_neutral_fields(d)
 
     return sorted(dept_map.values(), key=lambda d: d[f"totalBudget{BUDGET_YEAR}"], reverse=True)
 
@@ -2418,6 +2458,19 @@ def main() -> None:
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     views_dir = WEB_DATA_DIR / "views"
     views_dir.mkdir(parents=True, exist_ok=True)
+
+    meta_path = views_dir / f"{prefix}budget-meta.json"
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(
+            build_budget_meta(
+                year=BUDGET_YEAR,
+                operating_variant=args.operating_variant,
+                capital_variant=args.capital_variant,
+            ),
+            f,
+            indent=2,
+        )
+    print(f"Wrote {meta_path.name}")
 
     data = build_data()
     sections = data["sections"]

@@ -3,7 +3,7 @@
     "amendmentLabel": "as amended 4-20-26",
     "adoptedTotal": 693235672.0,
     "amendedTotal": 721499359.0,
-    "changedTableCount": 114,
+    "changedTableCount": 113,
     "changedLineItemCount": 682,
     "changedCellCount": 723
   },
@@ -664,6 +664,14 @@
             "amended": 14736550.0,
             "delta": 6750000.0,
             "pct": 84.5
+          }
+        },
+        "Total Expenditures": {
+          "2026 Budget": {
+            "adopted": 693235671.0,
+            "amended": 721521858.0,
+            "delta": 28286187.0,
+            "pct": 4.1
           }
         }
       }
@@ -3010,18 +3018,6 @@
             "amended": 8948127.0,
             "delta": 211632.0,
             "pct": 2.4
-          }
-        }
-      }
-    },
-    "s23_p5_t1": {
-      "rows": {
-        "Total Full-Time Positions and Net Salaries": {
-          "8,948,127": {
-            "adopted": 8219516.0,
-            "amended": 8431148.0,
-            "delta": 211632.0,
-            "pct": 2.6
           }
         }
       }

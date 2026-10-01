@@ -1,0 +1,1816 @@
+[
+  {
+    "department": "Real Estate Tax",
+    "slug": "real-estate-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 145474580.0
+      },
+      {
+        "year": "2026",
+        "amount": 171185945.0
+      },
+      {
+        "year": "2027",
+        "amount": 170207606.0
+      },
+      {
+        "year": "2028",
+        "amount": 168979916.0
+      },
+      {
+        "year": "2029",
+        "amount": 167664663.0
+      },
+      {
+        "year": "2030",
+        "amount": 166488493.0
+      }
+    ]
+  },
+  {
+    "department": "Earned Income Tax",
+    "slug": "earned-income-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 141331652.0
+      },
+      {
+        "year": "2026",
+        "amount": 147985312.0
+      },
+      {
+        "year": "2027",
+        "amount": 150797033.0
+      },
+      {
+        "year": "2028",
+        "amount": 153511379.0
+      },
+      {
+        "year": "2029",
+        "amount": 156274584.0
+      },
+      {
+        "year": "2030",
+        "amount": 159243801.0
+      }
+    ]
+  },
+  {
+    "department": "Payroll Preparation Tax",
+    "slug": "payroll-preparation-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 69324430.0
+      },
+      {
+        "year": "2026",
+        "amount": 87742920.0
+      },
+      {
+        "year": "2027",
+        "amount": 81258036.0
+      },
+      {
+        "year": "2028",
+        "amount": 82720680.0
+      },
+      {
+        "year": "2029",
+        "amount": 84209653.0
+      },
+      {
+        "year": "2030",
+        "amount": 85809636.0
+      }
+    ]
+  },
+  {
+    "department": "Parking Tax",
+    "slug": "parking-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 58966579.0
+      },
+      {
+        "year": "2026",
+        "amount": 59681939.0
+      },
+      {
+        "year": "2027",
+        "amount": 62438022.0
+      },
+      {
+        "year": "2028",
+        "amount": 64688968.0
+      },
+      {
+        "year": "2029",
+        "amount": 67127805.0
+      },
+      {
+        "year": "2030",
+        "amount": 69538868.0
+      }
+    ]
+  },
+  {
+    "department": "Regional Asset District Tax Relief",
+    "slug": "regional-asset-district-tax-relief",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 27798710.0
+      },
+      {
+        "year": "2026",
+        "amount": 28302643.0
+      },
+      {
+        "year": "2027",
+        "amount": 29172758.0
+      },
+      {
+        "year": "2028",
+        "amount": 30084656.0
+      },
+      {
+        "year": "2029",
+        "amount": 30817844.0
+      },
+      {
+        "year": "2030",
+        "amount": 31568899.0
+      }
+    ]
+  },
+  {
+    "department": "Deed Transfer Tax",
+    "slug": "deed-transfer-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 47573764.0
+      },
+      {
+        "year": "2026",
+        "amount": 39001668.0
+      },
+      {
+        "year": "2027",
+        "amount": 39001668.0
+      },
+      {
+        "year": "2028",
+        "amount": 39001668.0
+      },
+      {
+        "year": "2029",
+        "amount": 39001668.0
+      },
+      {
+        "year": "2030",
+        "amount": 39001668.0
+      }
+    ]
+  },
+  {
+    "department": "Amusement Tax",
+    "slug": "amusement-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 18535804.0
+      },
+      {
+        "year": "2026",
+        "amount": 22697715.0
+      },
+      {
+        "year": "2027",
+        "amount": 23529325.0
+      },
+      {
+        "year": "2028",
+        "amount": 24377297.0
+      },
+      {
+        "year": "2029",
+        "amount": 25211436.0
+      },
+      {
+        "year": "2030",
+        "amount": 26074141.0
+      }
+    ]
+  },
+  {
+    "department": "Local Service Tax",
+    "slug": "local-service-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 12574107.0
+      },
+      {
+        "year": "2026",
+        "amount": 13866788.0
+      },
+      {
+        "year": "2027",
+        "amount": 13741987.0
+      },
+      {
+        "year": "2028",
+        "amount": 13618309.0
+      },
+      {
+        "year": "2029",
+        "amount": 13495744.0
+      },
+      {
+        "year": "2030",
+        "amount": 13495744.0
+      }
+    ]
+  },
+  {
+    "department": "Telecommunications Licensing Tax",
+    "slug": "telecommunications-licensing-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 1167731.0
+      },
+      {
+        "year": "2026",
+        "amount": 1139256.0
+      },
+      {
+        "year": "2027",
+        "amount": 1150648.0
+      },
+      {
+        "year": "2028",
+        "amount": 1162155.0
+      },
+      {
+        "year": "2029",
+        "amount": 1173776.0
+      },
+      {
+        "year": "2030",
+        "amount": 1185514.0
+      }
+    ]
+  },
+  {
+    "department": "Institution Service Privilege Tax",
+    "slug": "institution-service-privilege-tax",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 89407.0
+      },
+      {
+        "year": "2026",
+        "amount": 64846.0
+      },
+      {
+        "year": "2027",
+        "amount": 64846.0
+      },
+      {
+        "year": "2028",
+        "amount": 64846.0
+      },
+      {
+        "year": "2029",
+        "amount": 64846.0
+      },
+      {
+        "year": "2030",
+        "amount": 64846.0
+      }
+    ]
+  },
+  {
+    "department": "Non-Profit Payment for Services",
+    "slug": "non-profit-payment-for-services",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 631643.0
+      },
+      {
+        "year": "2026",
+        "amount": 646651.0
+      },
+      {
+        "year": "2027",
+        "amount": 658937.0
+      },
+      {
+        "year": "2028",
+        "amount": 670798.0
+      },
+      {
+        "year": "2029",
+        "amount": 682872.0
+      },
+      {
+        "year": "2030",
+        "amount": 695847.0
+      }
+    ]
+  },
+  {
+    "department": "Licenses and Permits",
+    "slug": "licenses-and-permits",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 18879653.0
+      },
+      {
+        "year": "2026",
+        "amount": 18366026.0
+      },
+      {
+        "year": "2027",
+        "amount": 18712209.0
+      },
+      {
+        "year": "2028",
+        "amount": 19046423.0
+      },
+      {
+        "year": "2029",
+        "amount": 19386627.0
+      },
+      {
+        "year": "2030",
+        "amount": 19752176.0
+      }
+    ]
+  },
+  {
+    "department": "Charges for Services",
+    "slug": "charges-for-services",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 42663223.0
+      },
+      {
+        "year": "2026",
+        "amount": 50688350.0
+      },
+      {
+        "year": "2027",
+        "amount": 51225950.0
+      },
+      {
+        "year": "2028",
+        "amount": 51854922.0
+      },
+      {
+        "year": "2029",
+        "amount": 52394455.0
+      },
+      {
+        "year": "2030",
+        "amount": 53027935.0
+      }
+    ]
+  },
+  {
+    "department": "Fines and Forfeitures",
+    "slug": "fines-and-forfeitures",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 8343879.0
+      },
+      {
+        "year": "2026",
+        "amount": 9112883.0
+      },
+      {
+        "year": "2027",
+        "amount": 9287176.0
+      },
+      {
+        "year": "2028",
+        "amount": 9454580.0
+      },
+      {
+        "year": "2029",
+        "amount": 9624762.0
+      },
+      {
+        "year": "2030",
+        "amount": 9807388.0
+      }
+    ]
+  },
+  {
+    "department": "Intergovernmental Revenue",
+    "slug": "intergovernmental-revenue",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 48394206.0
+      },
+      {
+        "year": "2026",
+        "amount": 51068924.0
+      },
+      {
+        "year": "2027",
+        "amount": 53556529.0
+      },
+      {
+        "year": "2028",
+        "amount": 54154184.0
+      },
+      {
+        "year": "2029",
+        "amount": 54763435.0
+      },
+      {
+        "year": "2030",
+        "amount": 55407364.0
+      }
+    ]
+  },
+  {
+    "department": "Interest Earnings",
+    "slug": "interest-earnings",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 11705929.0
+      },
+      {
+        "year": "2026",
+        "amount": 13113951.0
+      },
+      {
+        "year": "2027",
+        "amount": 12982812.0
+      },
+      {
+        "year": "2028",
+        "amount": 12852984.0
+      },
+      {
+        "year": "2029",
+        "amount": 12724454.0
+      },
+      {
+        "year": "2030",
+        "amount": 12597209.0
+      }
+    ]
+  },
+  {
+    "department": "Miscellaneous Revenues",
+    "slug": "miscellaneous-revenues",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 1340438.0
+      },
+      {
+        "year": "2026",
+        "amount": 346301.0
+      },
+      {
+        "year": "2027",
+        "amount": 352815.0
+      },
+      {
+        "year": "2028",
+        "amount": 359105.0
+      },
+      {
+        "year": "2029",
+        "amount": 365439.0
+      },
+      {
+        "year": "2030",
+        "amount": 372318.0
+      }
+    ]
+  },
+  {
+    "department": "Salaries",
+    "slug": "salaries",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 299111779.0
+      },
+      {
+        "year": "2026",
+        "amount": 310132377.0
+      },
+      {
+        "year": "2027",
+        "amount": 319120635.0
+      },
+      {
+        "year": "2028",
+        "amount": 329950792.0
+      },
+      {
+        "year": "2029",
+        "amount": 333140352.0
+      },
+      {
+        "year": "2030",
+        "amount": 336551806.0
+      }
+    ]
+  },
+  {
+    "department": "Health Benefits",
+    "slug": "health-benefits",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 62503159.0
+      },
+      {
+        "year": "2026",
+        "amount": 72729994.0
+      },
+      {
+        "year": "2027",
+        "amount": 68103366.0
+      },
+      {
+        "year": "2028",
+        "amount": 69124347.0
+      },
+      {
+        "year": "2029",
+        "amount": 70644132.0
+      },
+      {
+        "year": "2030",
+        "amount": 72243404.0
+      }
+    ]
+  },
+  {
+    "department": "Workers' Comp.",
+    "slug": "workers-comp",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 13626904.0
+      },
+      {
+        "year": "2026",
+        "amount": 8419500.0
+      },
+      {
+        "year": "2027",
+        "amount": 10419500.0
+      },
+      {
+        "year": "2028",
+        "amount": 10419500.0
+      },
+      {
+        "year": "2029",
+        "amount": 10419500.0
+      },
+      {
+        "year": "2030",
+        "amount": 10419500.0
+      }
+    ]
+  },
+  {
+    "department": "Pension & OPEB",
+    "slug": "pension-opeb",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 112289799.0
+      },
+      {
+        "year": "2026",
+        "amount": 112398437.0
+      },
+      {
+        "year": "2027",
+        "amount": 112770313.0
+      },
+      {
+        "year": "2028",
+        "amount": 113289677.0
+      },
+      {
+        "year": "2029",
+        "amount": 113575531.0
+      },
+      {
+        "year": "2030",
+        "amount": 113863877.0
+      }
+    ]
+  },
+  {
+    "department": "Operating Departments",
+    "slug": "operating-departments",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 106994240.0
+      },
+      {
+        "year": "2026",
+        "amount": 139529888.0
+      },
+      {
+        "year": "2027",
+        "amount": 130686466.0
+      },
+      {
+        "year": "2028",
+        "amount": 126578501.0
+      },
+      {
+        "year": "2029",
+        "amount": 127464634.0
+      },
+      {
+        "year": "2030",
+        "amount": 128080127.0
+      }
+    ]
+  },
+  {
+    "department": "Debt Service",
+    "slug": "debt-service",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 72500000.0
+      },
+      {
+        "year": "2026",
+        "amount": 78311662.0
+      },
+      {
+        "year": "2027",
+        "amount": 48092021.0
+      },
+      {
+        "year": "2028",
+        "amount": 54479964.0
+      },
+      {
+        "year": "2029",
+        "amount": 60966674.0
+      },
+      {
+        "year": "2030",
+        "amount": 68495753.0
+      }
+    ]
+  },
+  {
+    "department": "OPERATING RESULT",
+    "slug": "operating-result",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 8639805.0
+      },
+      {
+        "year": "2027",
+        "amount": 28946057.0
+      },
+      {
+        "year": "2028",
+        "amount": 22760089.0
+      },
+      {
+        "year": "2029",
+        "amount": 18773240.0
+      },
+      {
+        "year": "2030",
+        "amount": 14477381.0
+      }
+    ]
+  },
+  {
+    "department": "BALANCE",
+    "slug": "balance",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 203189081.0
+      },
+      {
+        "year": "2026",
+        "amount": 152789472.0
+      },
+      {
+        "year": "2027",
+        "amount": 112189472.0
+      },
+      {
+        "year": "2028",
+        "amount": 107635530.0
+      },
+      {
+        "year": "2029",
+        "amount": 100016419.0
+      },
+      {
+        "year": "2030",
+        "amount": 88715193.0
+      }
+    ]
+  },
+  {
+    "department": "Transfer to PAYGO",
+    "slug": "transfer-to-paygo",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 12704175.0
+      },
+      {
+        "year": "2026",
+        "amount": 21000000.0
+      },
+      {
+        "year": "2027",
+        "amount": 8000000.0
+      },
+      {
+        "year": "2028",
+        "amount": 7879200.0
+      },
+      {
+        "year": "2029",
+        "amount": 7574466.0
+      },
+      {
+        "year": "2030",
+        "amount": 7579700.0
+      }
+    ]
+  },
+  {
+    "department": "Opportunity Fund",
+    "slug": "opportunity-fund",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2026",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2027",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2028",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2029",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2030",
+        "amount": 10000000.0
+      }
+    ]
+  },
+  {
+    "department": "Transfer for Housing Issuance",
+    "slug": "transfer-for-housing-issuance",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 2500000.0
+      },
+      {
+        "year": "2026",
+        "amount": 2500000.0
+      },
+      {
+        "year": "2027",
+        "amount": 2500000.0
+      },
+      {
+        "year": "2028",
+        "amount": 2500000.0
+      },
+      {
+        "year": "2029",
+        "amount": 2500000.0
+      },
+      {
+        "year": "2030",
+        "amount": 2500000.0
+      }
+    ]
+  },
+  {
+    "department": "Transfer to Stop the Violence Fund",
+    "slug": "transfer-to-stop-the-violence-fund",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2026",
+        "amount": 5000000.0
+      },
+      {
+        "year": "2027",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2028",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2029",
+        "amount": 10000000.0
+      },
+      {
+        "year": "2030",
+        "amount": 10000000.0
+      }
+    ]
+  },
+  {
+    "department": "ENDING RESERVE FUND BALANCE",
+    "slug": "ending-reserve-fund-balance",
+    "values": [
+      {
+        "year": "2025",
+        "amount": 159299212.0
+      },
+      {
+        "year": "2026",
+        "amount": 112189472.0
+      },
+      {
+        "year": "2027",
+        "amount": 107635530.0
+      },
+      {
+        "year": "2028",
+        "amount": 100016419.0
+      },
+      {
+        "year": "2029",
+        "amount": 88715193.0
+      },
+      {
+        "year": "2030",
+        "amount": 73112874.0
+      }
+    ]
+  },
+  {
+    "department": "City Council Districts",
+    "slug": "city-council-districts",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 3254223.0
+      },
+      {
+        "year": "2025",
+        "amount": 3305028.0
+      },
+      {
+        "year": "2026",
+        "amount": 3709073.0
+      },
+      {
+        "year": "2027",
+        "amount": 3759949.0
+      },
+      {
+        "year": "2028",
+        "amount": 3807424.0
+      },
+      {
+        "year": "2029",
+        "amount": 3854820.0
+      },
+      {
+        "year": "2030",
+        "amount": 3887773.0
+      }
+    ]
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 3148475.0
+      },
+      {
+        "year": "2025",
+        "amount": 2187750.0
+      },
+      {
+        "year": "2026",
+        "amount": 2540636.0
+      },
+      {
+        "year": "2027",
+        "amount": 2563997.0
+      },
+      {
+        "year": "2028",
+        "amount": 2591712.0
+      },
+      {
+        "year": "2029",
+        "amount": 2615044.0
+      },
+      {
+        "year": "2030",
+        "amount": 2642129.0
+      }
+    ]
+  },
+  {
+    "department": "Office of the Mayor",
+    "slug": "office-of-the-mayor",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 4241787.0
+      },
+      {
+        "year": "2025",
+        "amount": 4071710.0
+      },
+      {
+        "year": "2026",
+        "amount": 3547247.0
+      },
+      {
+        "year": "2027",
+        "amount": 3579528.0
+      },
+      {
+        "year": "2028",
+        "amount": 3614351.0
+      },
+      {
+        "year": "2029",
+        "amount": 3648705.0
+      },
+      {
+        "year": "2030",
+        "amount": 3684728.0
+      }
+    ]
+  },
+  {
+    "department": "Office of Management and Budget",
+    "slug": "office-of-management-and-budget",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 19872071.0
+      },
+      {
+        "year": "2025",
+        "amount": 23728179.0
+      },
+      {
+        "year": "2026",
+        "amount": 23499896.0
+      },
+      {
+        "year": "2027",
+        "amount": 21017567.0
+      },
+      {
+        "year": "2028",
+        "amount": 21656198.0
+      },
+      {
+        "year": "2029",
+        "amount": 22291335.0
+      },
+      {
+        "year": "2030",
+        "amount": 22337831.0
+      }
+    ]
+  },
+  {
+    "department": "Innovation and Performance",
+    "slug": "innovation-and-performance",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 18577107.0
+      },
+      {
+        "year": "2025",
+        "amount": 19677937.0
+      },
+      {
+        "year": "2026",
+        "amount": 22259453.0
+      },
+      {
+        "year": "2027",
+        "amount": 22273057.0
+      },
+      {
+        "year": "2028",
+        "amount": 22499608.0
+      },
+      {
+        "year": "2029",
+        "amount": 22593992.0
+      },
+      {
+        "year": "2030",
+        "amount": 22667948.0
+      }
+    ]
+  },
+  {
+    "department": "Commission on Human Relations",
+    "slug": "commission-on-human-relations",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 657676.0
+      },
+      {
+        "year": "2025",
+        "amount": 769553.0
+      },
+      {
+        "year": "2026",
+        "amount": 840536.0
+      },
+      {
+        "year": "2027",
+        "amount": 859344.0
+      },
+      {
+        "year": "2028",
+        "amount": 882956.0
+      },
+      {
+        "year": "2029",
+        "amount": 894518.0
+      },
+      {
+        "year": "2030",
+        "amount": 905793.0
+      }
+    ]
+  },
+  {
+    "department": "Office of the City Controller",
+    "slug": "office-of-the-city-controller",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 4704803.0
+      },
+      {
+        "year": "2025",
+        "amount": 5000411.0
+      },
+      {
+        "year": "2026",
+        "amount": 5683719.0
+      },
+      {
+        "year": "2027",
+        "amount": 5755813.0
+      },
+      {
+        "year": "2028",
+        "amount": 5821574.0
+      },
+      {
+        "year": "2029",
+        "amount": 5888432.0
+      },
+      {
+        "year": "2030",
+        "amount": 5956939.0
+      }
+    ]
+  },
+  {
+    "department": "Finance",
+    "slug": "finance",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 183959507.0
+      },
+      {
+        "year": "2025",
+        "amount": 183971819.0
+      },
+      {
+        "year": "2026",
+        "amount": 197900940.0
+      },
+      {
+        "year": "2027",
+        "amount": 168198563.0
+      },
+      {
+        "year": "2028",
+        "amount": 175267319.0
+      },
+      {
+        "year": "2029",
+        "amount": 182168445.0
+      },
+      {
+        "year": "2030",
+        "amount": 190036865.0
+      }
+    ]
+  },
+  {
+    "department": "Law",
+    "slug": "law",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 10977574.0
+      },
+      {
+        "year": "2025",
+        "amount": 7835484.0
+      },
+      {
+        "year": "2026",
+        "amount": 15529184.0
+      },
+      {
+        "year": "2027",
+        "amount": 12268042.0
+      },
+      {
+        "year": "2028",
+        "amount": 7838316.0
+      },
+      {
+        "year": "2029",
+        "amount": 7889887.0
+      },
+      {
+        "year": "2030",
+        "amount": 7949694.0
+      }
+    ]
+  },
+  {
+    "department": "Ethics Hearing Board",
+    "slug": "ethics-hearing-board",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 145503.0
+      },
+      {
+        "year": "2025",
+        "amount": 140477.0
+      },
+      {
+        "year": "2026",
+        "amount": 187736.0
+      },
+      {
+        "year": "2027",
+        "amount": 188986.0
+      },
+      {
+        "year": "2028",
+        "amount": 190236.0
+      },
+      {
+        "year": "2029",
+        "amount": 191509.0
+      },
+      {
+        "year": "2030",
+        "amount": 192804.0
+      }
+    ]
+  },
+  {
+    "department": "Office of Municipal Investigations",
+    "slug": "office-of-municipal-investigations",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 705525.0
+      },
+      {
+        "year": "2025",
+        "amount": 707896.0
+      },
+      {
+        "year": "2026",
+        "amount": 787865.0
+      },
+      {
+        "year": "2027",
+        "amount": 797945.0
+      },
+      {
+        "year": "2028",
+        "amount": 808868.0
+      },
+      {
+        "year": "2029",
+        "amount": 818149.0
+      },
+      {
+        "year": "2030",
+        "amount": 827533.0
+      }
+    ]
+  },
+  {
+    "department": "Human Resources and Civil Service",
+    "slug": "human-resources-and-civil-service",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 34834352.0
+      },
+      {
+        "year": "2025",
+        "amount": 30358137.0
+      },
+      {
+        "year": "2026",
+        "amount": 33151845.0
+      },
+      {
+        "year": "2027",
+        "amount": 29141422.0
+      },
+      {
+        "year": "2028",
+        "amount": 28264524.0
+      },
+      {
+        "year": "2029",
+        "amount": 27422699.0
+      },
+      {
+        "year": "2030",
+        "amount": 27454217.0
+      }
+    ]
+  },
+  {
+    "department": "City Planning",
+    "slug": "city-planning",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 5274791.0
+      },
+      {
+        "year": "2025",
+        "amount": 8119309.0
+      },
+      {
+        "year": "2026",
+        "amount": 5329893.0
+      },
+      {
+        "year": "2027",
+        "amount": 5446656.0
+      },
+      {
+        "year": "2028",
+        "amount": 5596341.0
+      },
+      {
+        "year": "2029",
+        "amount": 5658674.0
+      },
+      {
+        "year": "2030",
+        "amount": 5722000.0
+      }
+    ]
+  },
+  {
+    "department": "Permits, Licenses, and Inspections",
+    "slug": "permits-licenses-and-inspections",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 8888222.0
+      },
+      {
+        "year": "2025",
+        "amount": 9659769.0
+      },
+      {
+        "year": "2026",
+        "amount": 11345283.0
+      },
+      {
+        "year": "2027",
+        "amount": 11656005.0
+      },
+      {
+        "year": "2028",
+        "amount": 12031961.0
+      },
+      {
+        "year": "2029",
+        "amount": 12171862.0
+      },
+      {
+        "year": "2030",
+        "amount": 12308928.0
+      }
+    ]
+  },
+  {
+    "department": "Public Safety Administration",
+    "slug": "public-safety-administration",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 14604053.0
+      },
+      {
+        "year": "2025",
+        "amount": 15414521.0
+      },
+      {
+        "year": "2026",
+        "amount": 13769389.0
+      },
+      {
+        "year": "2027",
+        "amount": 14016134.0
+      },
+      {
+        "year": "2028",
+        "amount": 14263833.0
+      },
+      {
+        "year": "2029",
+        "amount": 14473888.0
+      },
+      {
+        "year": "2030",
+        "amount": 14641990.0
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Emergency Medical Services",
+    "slug": "bureau-of-emergency-medical-services",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 31569433.0
+      },
+      {
+        "year": "2025",
+        "amount": 30765211.0
+      },
+      {
+        "year": "2026",
+        "amount": 37389707.0
+      },
+      {
+        "year": "2027",
+        "amount": 38021756.0
+      },
+      {
+        "year": "2028",
+        "amount": 38851397.0
+      },
+      {
+        "year": "2029",
+        "amount": 39506716.0
+      },
+      {
+        "year": "2030",
+        "amount": 39991094.0
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Police",
+    "slug": "bureau-of-police",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 118567528.0
+      },
+      {
+        "year": "2025",
+        "amount": 116222274.0
+      },
+      {
+        "year": "2026",
+        "amount": 119820024.0
+      },
+      {
+        "year": "2027",
+        "amount": 125626329.0
+      },
+      {
+        "year": "2028",
+        "amount": 128971965.0
+      },
+      {
+        "year": "2029",
+        "amount": 130995786.0
+      },
+      {
+        "year": "2030",
+        "amount": 132978528.0
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Fire",
+    "slug": "bureau-of-fire",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 101896596.0
+      },
+      {
+        "year": "2025",
+        "amount": 105598644.0
+      },
+      {
+        "year": "2026",
+        "amount": 108140401.0
+      },
+      {
+        "year": "2027",
+        "amount": 110533302.0
+      },
+      {
+        "year": "2028",
+        "amount": 115647419.0
+      },
+      {
+        "year": "2029",
+        "amount": 117040419.0
+      },
+      {
+        "year": "2030",
+        "amount": 118297898.0
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Animal Care and Control",
+    "slug": "bureau-of-animal-care-and-control",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 1744633.0
+      },
+      {
+        "year": "2025",
+        "amount": 2201577.0
+      },
+      {
+        "year": "2026",
+        "amount": 2522085.0
+      },
+      {
+        "year": "2027",
+        "amount": 2764856.0
+      },
+      {
+        "year": "2028",
+        "amount": 2815043.0
+      },
+      {
+        "year": "2029",
+        "amount": 2833109.0
+      },
+      {
+        "year": "2030",
+        "amount": 2872174.0
+      }
+    ]
+  },
+  {
+    "department": "Office of Community Health and Safety",
+    "slug": "office-of-community-health-and-safety",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 829216.0
+      },
+      {
+        "year": "2025",
+        "amount": 767967.0
+      },
+      {
+        "year": "2026",
+        "amount": 58000.0
+      },
+      {
+        "year": "2027",
+        "amount": 58000.0
+      },
+      {
+        "year": "2028",
+        "amount": 58000.0
+      },
+      {
+        "year": "2029",
+        "amount": 58000.0
+      },
+      {
+        "year": "2030",
+        "amount": 58000.0
+      }
+    ]
+  },
+  {
+    "department": "Public Works Administration",
+    "slug": "public-works-administration",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 13488260.0
+      },
+      {
+        "year": "2025",
+        "amount": 17055036.0
+      },
+      {
+        "year": "2026",
+        "amount": 26035728.0
+      },
+      {
+        "year": "2027",
+        "amount": 25768032.0
+      },
+      {
+        "year": "2028",
+        "amount": 25832342.0
+      },
+      {
+        "year": "2029",
+        "amount": 25865075.0
+      },
+      {
+        "year": "2030",
+        "amount": 25903206.0
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Operations",
+    "slug": "bureau-of-operations",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 26981760.0
+      },
+      {
+        "year": "2025",
+        "amount": 26420384.0
+      },
+      {
+        "year": "2026",
+        "amount": 28903104.0
+      },
+      {
+        "year": "2027",
+        "amount": 26862437.0
+      },
+      {
+        "year": "2028",
+        "amount": 27596695.0
+      },
+      {
+        "year": "2029",
+        "amount": 27882841.0
+      },
+      {
+        "year": "2030",
+        "amount": 28225321.0
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Environmental Services",
+    "slug": "bureau-of-environmental-services",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 18361348.0
+      },
+      {
+        "year": "2025",
+        "amount": 19759385.0
+      },
+      {
+        "year": "2026",
+        "amount": 19957803.0
+      },
+      {
+        "year": "2027",
+        "amount": 20540764.0
+      },
+      {
+        "year": "2028",
+        "amount": 21099879.0
+      },
+      {
+        "year": "2029",
+        "amount": 21309353.0
+      },
+      {
+        "year": "2030",
+        "amount": 21559643.0
+      }
+    ]
+  },
+  {
+    "department": "Bureau of Facilities",
+    "slug": "bureau-of-facilities",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 12915074.0
+      },
+      {
+        "year": "2025",
+        "amount": 12091307.0
+      },
+      {
+        "year": "2026",
+        "amount": 14789145.0
+      },
+      {
+        "year": "2027",
+        "amount": 12741663.0
+      },
+      {
+        "year": "2028",
+        "amount": 12853062.0
+      },
+      {
+        "year": "2029",
+        "amount": 12989833.0
+      },
+      {
+        "year": "2030",
+        "amount": 13120816.0
+      }
+    ]
+  },
+  {
+    "department": "Parks and Recreation",
+    "slug": "parks-and-recreation",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 5914818.0
+      },
+      {
+        "year": "2025",
+        "amount": 6505791.0
+      },
+      {
+        "year": "2026",
+        "amount": 7509981.0
+      },
+      {
+        "year": "2027",
+        "amount": 7127084.0
+      },
+      {
+        "year": "2028",
+        "amount": 7247134.0
+      },
+      {
+        "year": "2029",
+        "amount": 7348612.0
+      },
+      {
+        "year": "2030",
+        "amount": 7467850.0
+      }
+    ]
+  },
+  {
+    "department": "Mobility and Infrastructure",
+    "slug": "mobility-and-infrastructure",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 11399675.0
+      },
+      {
+        "year": "2025",
+        "amount": 12470267.0
+      },
+      {
+        "year": "2026",
+        "amount": 15342236.0
+      },
+      {
+        "year": "2027",
+        "amount": 16635874.0
+      },
+      {
+        "year": "2028",
+        "amount": 16722536.0
+      },
+      {
+        "year": "2029",
+        "amount": 16776476.0
+      },
+      {
+        "year": "2030",
+        "amount": 16929313.0
+      }
+    ]
+  },
+  {
+    "department": "Citizen Police Review Board",
+    "slug": "citizen-police-review-board",
+    "values": [
+      {
+        "year": "2024",
+        "amount": 791303.0
+      },
+      {
+        "year": "2025",
+        "amount": 770756.0
+      },
+      {
+        "year": "2026",
+        "amount": 970951.0
+      },
+      {
+        "year": "2027",
+        "amount": 989197.0
+      },
+      {
+        "year": "2028",
+        "amount": 1012086.0
+      },
+      {
+        "year": "2029",
+        "amount": 1022645.0
+      },
+      {
+        "year": "2030",
+        "amount": 1033451.0
+      }
+    ]
+  }
+]

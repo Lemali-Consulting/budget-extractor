@@ -5280,20 +5280,28 @@
               "73,949,315",
               "4,559,043",
               "6.6%"
+            ],
+            [
+              "Total Expenditures",
+              "620,861,537",
+              "685,732,246",
+              "665,619,090",
+              "(20,113,156)",
+              "(2.9)%"
             ]
           ],
-          "absolute_page": 49
-        },
-        {
-          "id": "s8_p0_t3",
-          "relative_page": 0,
-          "table_index": 3,
-          "table_type": "unknown",
-          "headers": [
-            "Total Expenditures",
-            "620,861,537  $ 685,732,246  $ 665,619,090  (20,113,156)  (2.9)%"
+          "sections": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "82 - Debt Service",
+            "82 - Debt Service"
           ],
-          "rows": [],
           "absolute_page": 49
         }
       ],
@@ -5550,6 +5558,9 @@
           ],
           "chart_regions": []
         }
+      ],
+      "highlights": [
+        "Budget decreases 2.9% ($20.1M), led by $8.9M less in Personnel-Employee Benefits"
       ]
     },
     {
@@ -6538,29 +6549,35 @@
           "table_type": "personnel",
           "headers": [
             "Title",
-            "2024 Rate/ FTE Grade",
+            "2024 FTE",
+            "Rate/ Grade",
             "Hours/ Months",
             "2024 Budget",
-            "2025 Rate/ FTE Grade",
+            "2025 FTE",
+            "Rate/ Grade",
             "Hours/ Months",
             "2025 Budget"
           ],
           "rows": [
             [
               "Member of Council",
-              "9   86,970",
+              "9",
+              "86,970",
               "12",
               "782,739",
-              "9   89,585",
+              "9",
+              "89,585",
               "12",
               "806,270"
             ],
             [
               "Council Staff",
-              "28  varies",
+              "28",
+              "varies",
               "12",
               "1,619,991",
-              "27  varies",
+              "27",
+              "varies",
               "12",
               "1,946,568"
             ],
@@ -6568,8 +6585,10 @@
               "Total Full-Time Permanent Positions",
               "37",
               "",
+              "",
               "2,402,730",
               "36",
+              "",
               "",
               "2,752,838"
             ]
@@ -6583,10 +6602,12 @@
           "table_type": "personnel",
           "headers": [
             "Title",
-            "2024 Rate/ FTE Grade",
+            "2024 FTE",
+            "Rate/ Grade",
             "Hours/ Months",
             "2024 Budget",
-            "2025 Rate/ FTE Grade",
+            "2025 FTE",
+            "Rate/ Grade",
             "Hours/ Months",
             "2025 Budget"
           ],
@@ -6598,14 +6619,18 @@
               "",
               "",
               "",
+              "",
+              "",
               ""
             ],
             [
               "Administrative/Research",
-              "\u2014  varies",
+              "\u2014",
+              "varies",
               "\u2014",
               "270,000",
-              "\u2014  varies",
+              "\u2014",
+              "varies",
               "\u2014",
               "26,000"
             ],
@@ -6613,8 +6638,10 @@
               "Total Full-Time Permanent Positions",
               "37",
               "",
+              "",
               "2,402,730",
               "36",
+              "",
               "",
               "2,752,838"
             ],
@@ -6622,8 +6649,10 @@
               "Temporary, Part-Time, and Seasonal Allowances",
               "\u2014",
               "",
+              "",
               "270,000",
               "\u2014",
+              "",
               "",
               "26,000"
             ],
@@ -6631,8 +6660,10 @@
               "Vacancy Allowance",
               "\u2014",
               "",
+              "",
               "\u2014",
               "\u2014",
+              "",
               "",
               "\u2014"
             ],
@@ -6640,8 +6671,10 @@
               "Total Full-Time Positions and Net Salaries",
               "37",
               "",
+              "",
               "2,672,730",
               "36",
+              "",
               "",
               "2,778,838"
             ]
@@ -18111,8 +18144,8 @@
           "table_type": "personnel",
           "headers": [
             "2024 Title FTE",
-            "Rate/ Grade",
             "",
+            "Rate/ Grade",
             "Hours/ Months",
             "2024 Budget",
             "2025 FTE",
@@ -39787,42 +39820,41 @@
               "\u2014",
               "",
               "717,059"
-            ]
-          ],
-          "absolute_page": 271
-        },
-        {
-          "id": "s49_p2_t2",
-          "relative_page": 2,
-          "table_index": 2,
-          "table_type": "personnel",
-          "headers": [
-            "Total Full-Time Permanent Positions (DPW)",
-            "37",
-            "2,218,189",
-            "38",
-            "2,348,031"
-          ],
-          "rows": [
+            ],
+            [
+              "Total Full-Time Permanent Positions (DPW)",
+              "37",
+              "",
+              "2,218,189",
+              "38",
+              "",
+              "2,348,031"
+            ],
             [
               "Total Full-Time Permanent Positions (DPR)",
               "17",
+              "",
               "949,442",
               "19",
+              "",
               "1,051,254"
             ],
             [
               "Temporary, Part-Time & Seasonal Allowances",
               "\u2014",
+              "",
               "668,034",
               "\u2014",
+              "",
               "717,059"
             ],
             [
               "Total Full-Time Positions and Net Salaries",
               "54",
+              "",
               "3,835,665",
               "57",
+              "",
               "4,116,344"
             ]
           ],

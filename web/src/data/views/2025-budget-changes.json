@@ -12,7 +12,11 @@
       "dollarChange": 3251938.0,
       "pctChange": 57.7,
       "fte2024": 53.8,
-      "fte2025": 52.8
+      "fte2025": 52.8,
+      "budgetCurrent": 8886563.0,
+      "budgetPrior": 5634625.0,
+      "fteCurrent": 52.8,
+      "ftePrior": 53.8
     },
     {
       "department": "Bureau of Fire",
@@ -22,7 +26,11 @@
       "dollarChange": 2193861.0,
       "pctChange": 2.3,
       "fte2024": 679.0,
-      "fte2025": 679.0
+      "fte2025": 679.0,
+      "budgetCurrent": 99021429.0,
+      "budgetPrior": 96827568.0,
+      "fteCurrent": 679.0,
+      "ftePrior": 679.0
     },
     {
       "department": "Department of Finance",
@@ -32,7 +40,11 @@
       "dollarChange": 2161419.0,
       "pctChange": 1.1,
       "fte2024": 39.95,
-      "fte2025": 40.95
+      "fte2025": 40.95,
+      "budgetCurrent": 193056054.0,
+      "budgetPrior": 190894635.0,
+      "fteCurrent": 40.95,
+      "ftePrior": 39.95
     },
     {
       "department": "Department of Mobility and Infrastructure",
@@ -42,7 +54,11 @@
       "dollarChange": 1896602.0,
       "pctChange": 16.1,
       "fte2024": 118.0,
-      "fte2025": 122.0
+      "fte2025": 122.0,
+      "budgetCurrent": 13664365.0,
+      "budgetPrior": 11767763.0,
+      "fteCurrent": 122.0,
+      "ftePrior": 118.0
     },
     {
       "department": "Bureau of Administration (Public Works)",
@@ -52,7 +68,11 @@
       "dollarChange": 1135347.0,
       "pctChange": 8.6,
       "fte2024": 24.0,
-      "fte2025": 31.0
+      "fte2025": 31.0,
+      "budgetCurrent": 14269913.0,
+      "budgetPrior": 13134566.0,
+      "fteCurrent": 31.0,
+      "ftePrior": 24.0
     },
     {
       "department": "Department of Permits, Licenses, and Inspections",
@@ -62,7 +82,11 @@
       "dollarChange": 909042.0,
       "pctChange": 9.0,
       "fte2024": 120.0,
-      "fte2025": 120.0
+      "fte2025": 120.0,
+      "budgetCurrent": 11009437.0,
+      "budgetPrior": 10100395.0,
+      "fteCurrent": 120.0,
+      "ftePrior": 120.0
     },
     {
       "department": "Office of the City Controller",
@@ -72,7 +96,11 @@
       "dollarChange": 497791.0,
       "pctChange": 10.1,
       "fte2024": 58.0,
-      "fte2025": 57.0
+      "fte2025": 57.0,
+      "budgetCurrent": 5402279.0,
+      "budgetPrior": 4904488.0,
+      "fteCurrent": 57.0,
+      "ftePrior": 58.0
     },
     {
       "department": "Bureau of Animal Care and Control",
@@ -82,7 +110,11 @@
       "dollarChange": 431156.0,
       "pctChange": 22.6,
       "fte2024": 16.0,
-      "fte2025": 17.0
+      "fte2025": 17.0,
+      "budgetCurrent": 2337259.0,
+      "budgetPrior": 1906103.0,
+      "fteCurrent": 17.0,
+      "ftePrior": 16.0
     },
     {
       "department": "Department of Innovation and Performance",
@@ -92,7 +124,11 @@
       "dollarChange": 280828.0,
       "pctChange": 1.3,
       "fte2024": 67.0,
-      "fte2025": 68.0
+      "fte2025": 68.0,
+      "budgetCurrent": 22725604.0,
+      "budgetPrior": 22444776.0,
+      "fteCurrent": 68.0,
+      "ftePrior": 67.0
     },
     {
       "department": "City Council",
@@ -102,7 +138,11 @@
       "dollarChange": 198670.0,
       "pctChange": 5.9,
       "fte2024": 37.0,
-      "fte2025": 36.0
+      "fte2025": 36.0,
+      "budgetCurrent": 3539772.0,
+      "budgetPrior": 3341102.0,
+      "fteCurrent": 36.0,
+      "ftePrior": 37.0
     },
     {
       "department": "Office of the City Clerk",
@@ -112,7 +152,11 @@
       "dollarChange": 67717.0,
       "pctChange": 2.7,
       "fte2024": 21.0,
-      "fte2025": 21.0
+      "fte2025": 21.0,
+      "budgetCurrent": 2542149.0,
+      "budgetPrior": 2474432.0,
+      "fteCurrent": 21.0,
+      "ftePrior": 21.0
     },
     {
       "department": "Commission on Human Relations",
@@ -122,7 +166,11 @@
       "dollarChange": 27718.0,
       "pctChange": 3.7,
       "fte2024": 8.0,
-      "fte2025": 8.0
+      "fte2025": 8.0,
+      "budgetCurrent": 776018.0,
+      "budgetPrior": 748300.0,
+      "fteCurrent": 8.0,
+      "ftePrior": 8.0
     },
     {
       "department": "Citizen Police Review Board",
@@ -132,7 +180,11 @@
       "dollarChange": 19002.0,
       "pctChange": 2.1,
       "fte2024": 9.0,
-      "fte2025": 9.0
+      "fte2025": 9.0,
+      "budgetCurrent": 933156.0,
+      "budgetPrior": 914154.0,
+      "fteCurrent": 9.0,
+      "ftePrior": 9.0
     },
     {
       "department": "Office of Municipal Investigations",
@@ -142,7 +194,11 @@
       "dollarChange": 13063.0,
       "pctChange": 1.7,
       "fte2024": 8.0,
-      "fte2025": 8.0
+      "fte2025": 8.0,
+      "budgetCurrent": 765377.0,
+      "budgetPrior": 752314.0,
+      "fteCurrent": 8.0,
+      "ftePrior": 8.0
     },
     {
       "department": "Ethics Hearing Board",
@@ -152,7 +208,11 @@
       "dollarChange": 1724.0,
       "pctChange": 0.9,
       "fte2024": 1.0,
-      "fte2025": 1.0
+      "fte2025": 1.0,
+      "budgetCurrent": 190695.0,
+      "budgetPrior": 188971.0,
+      "fteCurrent": 1.0,
+      "ftePrior": 1.0
     },
     {
       "department": "Office of Community Health and Safety",
@@ -160,7 +220,9 @@
       "budget2024": 58000.0,
       "budget2025": 58000.0,
       "dollarChange": 0.0,
-      "pctChange": 0.0
+      "pctChange": 0.0,
+      "budgetCurrent": 58000.0,
+      "budgetPrior": 58000.0
     },
     {
       "department": "Office of the Mayor",
@@ -170,7 +232,11 @@
       "dollarChange": -70456.0,
       "pctChange": -1.4,
       "fte2024": 43.0,
-      "fte2025": 39.0
+      "fte2025": 39.0,
+      "budgetCurrent": 4963344.0,
+      "budgetPrior": 5033800.0,
+      "fteCurrent": 39.0,
+      "ftePrior": 43.0
     },
     {
       "department": "Office of Management and Budget",
@@ -178,7 +244,9 @@
       "budget2024": 21346876.0,
       "budget2025": 21188171.0,
       "dollarChange": -158705.0,
-      "pctChange": -0.7
+      "pctChange": -0.7,
+      "budgetCurrent": 21188171.0,
+      "budgetPrior": 21346876.0
     },
     {
       "department": "Bureau of Operations",
@@ -188,7 +256,11 @@
       "dollarChange": -715605.0,
       "pctChange": -2.7,
       "fte2024": 316.0,
-      "fte2025": 286.0
+      "fte2025": 286.0,
+      "budgetCurrent": 25312349.0,
+      "budgetPrior": 26027954.0,
+      "fteCurrent": 286.0,
+      "ftePrior": 316.0
     },
     {
       "department": "Bureau of Emergency Medical Services",
@@ -198,7 +270,11 @@
       "dollarChange": -1521180.0,
       "pctChange": -5.2,
       "fte2024": 219.0,
-      "fte2025": 219.0
+      "fte2025": 219.0,
+      "budgetCurrent": 27666043.0,
+      "budgetPrior": 29187223.0,
+      "fteCurrent": 219.0,
+      "ftePrior": 219.0
     },
     {
       "department": "Bureau of Police",
@@ -208,7 +284,11 @@
       "dollarChange": -2518409.0,
       "pctChange": -2.0,
       "fte2024": 909.0,
-      "fte2025": 875.0
+      "fte2025": 875.0,
+      "budgetCurrent": 120642195.0,
+      "budgetPrior": 123160604.0,
+      "fteCurrent": 875.0,
+      "ftePrior": 909.0
     },
     {
       "department": "Bureau of Administration (Public Safety)",
@@ -218,7 +298,11 @@
       "dollarChange": -3904559.0,
       "pctChange": -24.0,
       "fte2024": 135.0,
-      "fte2025": 134.0
+      "fte2025": 134.0,
+      "budgetCurrent": 12345508.0,
+      "budgetPrior": 16250067.0,
+      "fteCurrent": 134.0,
+      "ftePrior": 135.0
     },
     {
       "department": "Department of City Planning",
@@ -227,7 +311,10 @@
       "budget2025": 4936342.0,
       "dollarChange": -4138529.0,
       "pctChange": -45.6,
-      "fte2025": 54.0
+      "fte2025": 54.0,
+      "budgetCurrent": 4936342.0,
+      "budgetPrior": 9074871.0,
+      "fteCurrent": 54.0
     },
     {
       "department": "Bureau of Facilities",
@@ -237,7 +324,11 @@
       "dollarChange": -4379523.0,
       "pctChange": -26.7,
       "fte2024": 90.0,
-      "fte2025": 88.0
+      "fte2025": 88.0,
+      "budgetCurrent": 12033312.0,
+      "budgetPrior": 16412835.0,
+      "fteCurrent": 88.0,
+      "ftePrior": 90.0
     },
     {
       "department": "Department of Law",
@@ -247,7 +338,11 @@
       "dollarChange": -6001354.0,
       "pctChange": -46.2,
       "fte2024": 40.0,
-      "fte2025": 40.0
+      "fte2025": 40.0,
+      "budgetCurrent": 6989174.0,
+      "budgetPrior": 12990528.0,
+      "fteCurrent": 40.0,
+      "ftePrior": 40.0
     },
     {
       "department": "Department of Human Resources and Civil Service",
@@ -256,7 +351,10 @@
       "budget2025": 30822882.0,
       "dollarChange": -10092969.0,
       "pctChange": -24.7,
-      "fte2025": 38.0
+      "fte2025": 38.0,
+      "budgetCurrent": 30822882.0,
+      "budgetPrior": 40915851.0,
+      "fteCurrent": 38.0
     }
   ],
   "topIncreases": [
@@ -268,7 +366,11 @@
       "dollarChange": 3251938.0,
       "pctChange": 57.7,
       "fte2024": 53.8,
-      "fte2025": 52.8
+      "fte2025": 52.8,
+      "budgetCurrent": 8886563.0,
+      "budgetPrior": 5634625.0,
+      "fteCurrent": 52.8,
+      "ftePrior": 53.8
     },
     {
       "department": "Bureau of Fire",
@@ -278,7 +380,11 @@
       "dollarChange": 2193861.0,
       "pctChange": 2.3,
       "fte2024": 679.0,
-      "fte2025": 679.0
+      "fte2025": 679.0,
+      "budgetCurrent": 99021429.0,
+      "budgetPrior": 96827568.0,
+      "fteCurrent": 679.0,
+      "ftePrior": 679.0
     },
     {
       "department": "Department of Finance",
@@ -288,7 +394,11 @@
       "dollarChange": 2161419.0,
       "pctChange": 1.1,
       "fte2024": 39.95,
-      "fte2025": 40.95
+      "fte2025": 40.95,
+      "budgetCurrent": 193056054.0,
+      "budgetPrior": 190894635.0,
+      "fteCurrent": 40.95,
+      "ftePrior": 39.95
     },
     {
       "department": "Department of Mobility and Infrastructure",
@@ -298,7 +408,11 @@
       "dollarChange": 1896602.0,
       "pctChange": 16.1,
       "fte2024": 118.0,
-      "fte2025": 122.0
+      "fte2025": 122.0,
+      "budgetCurrent": 13664365.0,
+      "budgetPrior": 11767763.0,
+      "fteCurrent": 122.0,
+      "ftePrior": 118.0
     },
     {
       "department": "Bureau of Administration (Public Works)",
@@ -308,7 +422,11 @@
       "dollarChange": 1135347.0,
       "pctChange": 8.6,
       "fte2024": 24.0,
-      "fte2025": 31.0
+      "fte2025": 31.0,
+      "budgetCurrent": 14269913.0,
+      "budgetPrior": 13134566.0,
+      "fteCurrent": 31.0,
+      "ftePrior": 24.0
     },
     {
       "department": "Department of Permits, Licenses, and Inspections",
@@ -318,7 +436,11 @@
       "dollarChange": 909042.0,
       "pctChange": 9.0,
       "fte2024": 120.0,
-      "fte2025": 120.0
+      "fte2025": 120.0,
+      "budgetCurrent": 11009437.0,
+      "budgetPrior": 10100395.0,
+      "fteCurrent": 120.0,
+      "ftePrior": 120.0
     },
     {
       "department": "Office of the City Controller",
@@ -328,7 +450,11 @@
       "dollarChange": 497791.0,
       "pctChange": 10.1,
       "fte2024": 58.0,
-      "fte2025": 57.0
+      "fte2025": 57.0,
+      "budgetCurrent": 5402279.0,
+      "budgetPrior": 4904488.0,
+      "fteCurrent": 57.0,
+      "ftePrior": 58.0
     },
     {
       "department": "Bureau of Animal Care and Control",
@@ -338,7 +464,11 @@
       "dollarChange": 431156.0,
       "pctChange": 22.6,
       "fte2024": 16.0,
-      "fte2025": 17.0
+      "fte2025": 17.0,
+      "budgetCurrent": 2337259.0,
+      "budgetPrior": 1906103.0,
+      "fteCurrent": 17.0,
+      "ftePrior": 16.0
     },
     {
       "department": "Department of Innovation and Performance",
@@ -348,7 +478,11 @@
       "dollarChange": 280828.0,
       "pctChange": 1.3,
       "fte2024": 67.0,
-      "fte2025": 68.0
+      "fte2025": 68.0,
+      "budgetCurrent": 22725604.0,
+      "budgetPrior": 22444776.0,
+      "fteCurrent": 68.0,
+      "ftePrior": 67.0
     },
     {
       "department": "City Council",
@@ -358,7 +492,11 @@
       "dollarChange": 198670.0,
       "pctChange": 5.9,
       "fte2024": 37.0,
-      "fte2025": 36.0
+      "fte2025": 36.0,
+      "budgetCurrent": 3539772.0,
+      "budgetPrior": 3341102.0,
+      "fteCurrent": 36.0,
+      "ftePrior": 37.0
     }
   ],
   "topDecreases": [
@@ -369,7 +507,10 @@
       "budget2025": 30822882.0,
       "dollarChange": -10092969.0,
       "pctChange": -24.7,
-      "fte2025": 38.0
+      "fte2025": 38.0,
+      "budgetCurrent": 30822882.0,
+      "budgetPrior": 40915851.0,
+      "fteCurrent": 38.0
     },
     {
       "department": "Department of Law",
@@ -379,7 +520,11 @@
       "dollarChange": -6001354.0,
       "pctChange": -46.2,
       "fte2024": 40.0,
-      "fte2025": 40.0
+      "fte2025": 40.0,
+      "budgetCurrent": 6989174.0,
+      "budgetPrior": 12990528.0,
+      "fteCurrent": 40.0,
+      "ftePrior": 40.0
     },
     {
       "department": "Bureau of Facilities",
@@ -389,7 +534,11 @@
       "dollarChange": -4379523.0,
       "pctChange": -26.7,
       "fte2024": 90.0,
-      "fte2025": 88.0
+      "fte2025": 88.0,
+      "budgetCurrent": 12033312.0,
+      "budgetPrior": 16412835.0,
+      "fteCurrent": 88.0,
+      "ftePrior": 90.0
     },
     {
       "department": "Department of City Planning",
@@ -398,7 +547,10 @@
       "budget2025": 4936342.0,
       "dollarChange": -4138529.0,
       "pctChange": -45.6,
-      "fte2025": 54.0
+      "fte2025": 54.0,
+      "budgetCurrent": 4936342.0,
+      "budgetPrior": 9074871.0,
+      "fteCurrent": 54.0
     },
     {
       "department": "Bureau of Administration (Public Safety)",
@@ -408,7 +560,11 @@
       "dollarChange": -3904559.0,
       "pctChange": -24.0,
       "fte2024": 135.0,
-      "fte2025": 134.0
+      "fte2025": 134.0,
+      "budgetCurrent": 12345508.0,
+      "budgetPrior": 16250067.0,
+      "fteCurrent": 134.0,
+      "ftePrior": 135.0
     },
     {
       "department": "Bureau of Police",
@@ -418,7 +574,11 @@
       "dollarChange": -2518409.0,
       "pctChange": -2.0,
       "fte2024": 909.0,
-      "fte2025": 875.0
+      "fte2025": 875.0,
+      "budgetCurrent": 120642195.0,
+      "budgetPrior": 123160604.0,
+      "fteCurrent": 875.0,
+      "ftePrior": 909.0
     },
     {
       "department": "Bureau of Emergency Medical Services",
@@ -428,7 +588,11 @@
       "dollarChange": -1521180.0,
       "pctChange": -5.2,
       "fte2024": 219.0,
-      "fte2025": 219.0
+      "fte2025": 219.0,
+      "budgetCurrent": 27666043.0,
+      "budgetPrior": 29187223.0,
+      "fteCurrent": 219.0,
+      "ftePrior": 219.0
     },
     {
       "department": "Bureau of Operations",
@@ -438,7 +602,11 @@
       "dollarChange": -715605.0,
       "pctChange": -2.7,
       "fte2024": 316.0,
-      "fte2025": 286.0
+      "fte2025": 286.0,
+      "budgetCurrent": 25312349.0,
+      "budgetPrior": 26027954.0,
+      "fteCurrent": 286.0,
+      "ftePrior": 316.0
     },
     {
       "department": "Office of Management and Budget",
@@ -446,7 +614,9 @@
       "budget2024": 21346876.0,
       "budget2025": 21188171.0,
       "dollarChange": -158705.0,
-      "pctChange": -0.7
+      "pctChange": -0.7,
+      "budgetCurrent": 21188171.0,
+      "budgetPrior": 21346876.0
     },
     {
       "department": "Office of the Mayor",
@@ -456,7 +626,11 @@
       "dollarChange": -70456.0,
       "pctChange": -1.4,
       "fte2024": 43.0,
-      "fte2025": 39.0
+      "fte2025": 39.0,
+      "budgetCurrent": 4963344.0,
+      "budgetPrior": 5033800.0,
+      "fteCurrent": 39.0,
+      "ftePrior": 43.0
     }
   ],
   "newPositions": [
@@ -1360,5 +1534,9 @@
       "budgetPrior": 63437.0,
       "budgetCurrent": 68162.0
     }
-  ]
+  ],
+  "totalBudgetCurrent": 646077390.0,
+  "totalBudgetPrior": 686034502.0,
+  "totalFteCurrent": 3043.75,
+  "totalFtePrior": 3011.75
 }
