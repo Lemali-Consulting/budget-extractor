@@ -9,6 +9,9 @@ from pdfplumber.page import Page
 
 # Max x-extent difference (pts) for a headerless table to inherit header-derived columns.
 _PROPAGATION_EXTENT_TOLERANCE: float = 30.0
+# Max distance (pts) a headerless totals block may start left of a table's first
+# column and still be re-slotted into that table's columns.
+_RESLOT_EXTENT_TOLERANCE: float = 5.0
 _DOLLAR: str = "$"
 _PERCENT: str = "%"
 # One whitespace-delimited piece of a numeric cell: 1,234 / (1,234) / 1.2 /
@@ -1656,6 +1659,22 @@ class SpatialTableExtractor:
                 return False
         return True
 
+    @staticmethod
+    def _has_numeric_values(table: SpatialTable) -> bool:
+        """True if any non-label cell of the table contains a digit."""
+        return any(
+            any(ch.isdigit() for ch in cell)
+            for row in table.rows for cell in row.cells[1:]
+        )
+
+    @staticmethod
+    def _words_within_columns(words: list[dict], columns: list[SpatialColumn]) -> bool:
+        """True if no word starts left of the first column (allowing a small tolerance)."""
+        if not columns:
+            return False
+        left_edge: float = min(c.x0 for c in columns) - _RESLOT_EXTENT_TOLERANCE
+        return all(w["x0"] >= left_edge for w in words)
+
     def _merge_continuation_tables(
         self,
         tables: list[SpatialTable],
@@ -1694,10 +1713,14 @@ class SpatialTableExtractor:
             while i + 1 < len(tables):
                 next_table = tables[i + 1]
 
-                # Must have the same headers
-                if current.headers != next_table.headers:
+                # Must have the same headers — or be a headerless block of
+                # totals (split off by a rule) that takes the table's columns.
+                headerless_totals: bool = (
+                    not next_table.headers and self._has_numeric_values(next_table)
+                )
+                if current.headers != next_table.headers and not headerless_totals:
                     break
-                if not current.headers:
+                if not current.headers and not headerless_totals:
                     break
 
                 # Only merge if the next table is summary-only
@@ -1716,6 +1739,18 @@ class SpatialTableExtractor:
                 )
                 if has_band_between:
                     break
+
+                # A headerless summary block has no columns of its own worth
+                # keeping (its values may sit too close to split); re-slot its
+                # words into the continuation table's columns.
+                if headerless_totals and not self._columns_match(current.columns, next_table.columns):
+                    # Words left of every column would be dropped (e.g. the
+                    # labels under a table that has no title column).
+                    if not self._words_within_columns(next_table._words, current.columns):
+                        break
+                    next_table.rows = self._assign_cells(
+                        self._cluster_rows(next_table._words), current.columns,
+                    )
 
                 # Merge: append next_table's rows and words into current
                 current.rows.extend(next_table.rows)
