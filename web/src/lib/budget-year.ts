@@ -25,6 +25,7 @@ import headlineSearchIndex from '../data/views/search-index.json';
 import headlineTablesIndex from '../data/views/tables-index.json';
 import headlineGlossaryBacklinks from '../data/views/glossary-backlinks.json';
 import headlineStructureChanges from '../data/views/structure-changes.json';
+import headlineCorrections from '../data/views/corrections.json';
 
 import meta2026 from '../data/views/2026-budget-meta.json';
 import budget2026 from '../data/2026-budget-data.json';
@@ -44,6 +45,7 @@ import glossaryBacklinks2026 from '../data/views/2026-glossary-backlinks.json';
 import amendmentChanges2026 from '../data/views/2026-amendment-changes.json';
 import amendmentCellDiffs2026 from '../data/views/2026-amendment-cell-diffs.json';
 import adoptedPages2026 from '../data/views/2026-adopted-pages.json';
+import corrections2026 from '../data/views/2026-corrections.json';
 
 import meta2025 from '../data/views/2025-budget-meta.json';
 import budget2025 from '../data/2025-budget-data.json';
@@ -61,6 +63,7 @@ import tablesIndex2025 from '../data/views/2025-tables-index.json';
 import glossaryBacklinks2025 from '../data/views/2025-glossary-backlinks.json';
 
 import type { DeptBudgetRow } from './department-budgets';
+import type { SourceCorrection } from './corrections';
 
 // ---------------------------------------------------------------------------
 // Constants (defined once; everything else references these)
@@ -185,6 +188,8 @@ export interface BudgetYear {
   capitalAppendices: any | null;
   /** Year-over-year structure changes (department adds/removals), headline only. */
   structureChanges: any | null;
+  /** Labelling errors in the source PDF that we corrected when building the data (empty for most years). */
+  corrections: SourceCorrection[];
   /** Amendment features apply to this year. */
   hasAmendments: boolean;
   amendment: AmendmentInfo | null;
@@ -243,6 +248,7 @@ function buildYear(opts: {
   views: YearViews;
   capitalAppendices?: any | null;
   structureChanges?: any | null;
+  corrections?: SourceCorrection[];
   amendment?: AmendmentInfo | null;
 }): BudgetYear {
   const { meta, role } = opts;
@@ -272,6 +278,7 @@ function buildYear(opts: {
     views: opts.views,
     capitalAppendices: opts.capitalAppendices ?? null,
     structureChanges: opts.structureChanges ?? null,
+    corrections: opts.corrections ?? [],
     hasAmendments: !!opts.amendment,
     amendment: opts.amendment ?? null,
   };
@@ -301,6 +308,7 @@ const YEAR_2027: BudgetYear = buildYear({
   },
   capitalAppendices: headlineCapitalAppendices,
   structureChanges: headlineStructureChanges,
+  corrections: headlineCorrections as SourceCorrection[],
 });
 
 const YEAR_2026: BudgetYear = buildYear({
@@ -322,6 +330,7 @@ const YEAR_2026: BudgetYear = buildYear({
     glossaryBacklinks: glossaryBacklinks2026,
   },
   capitalAppendices: capitalAppendices2026,
+  corrections: corrections2026 as SourceCorrection[],
   amendment: buildAmendment({
     changes: amendmentChanges2026,
     cellDiffs: amendmentCellDiffs2026 as AmendmentCellDiffs,

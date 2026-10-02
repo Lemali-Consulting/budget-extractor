@@ -8,6 +8,8 @@ import SummaryCard from '../SummaryCard.astro';
 import SectionToc from '../SectionToc.astro';
 import HighlightsCallout from '../HighlightsCallout.astro';
 import AmendmentNotice from '../AmendmentNotice.astro';
+import CorrectionNotice from '../CorrectionNotice.astro';
+import { correctionsForSection } from '../../lib/corrections';
 import ShareButton from '../ShareButton.tsx';
 import PageImage from '../PageImage.tsx';
 import ChartImage from '../ChartImage.tsx';
@@ -364,6 +366,11 @@ function parseNarrative(raw: string): Segment[] {
   </p>
 
   <AmendmentNotice budgetYear={budgetYear} />
+
+  <CorrectionNotice
+    year={budgetYear.year}
+    corrections={correctionsForSection({ corrections: budgetYear.corrections, sectionSlug: section.slug })}
+  />
 
   <SummaryCard
     budgetYear={budgetYear}

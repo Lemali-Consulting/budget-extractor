@@ -9,6 +9,7 @@ import {
   KIND_LABEL,
   formatMillions,
   splitVintage,
+  type AlternatePoint,
   type TrendPoint,
   type TrendSeries,
   type Vintage,
@@ -30,6 +31,8 @@ const FORECAST_DASH = '6,4';
 const HEADLINE_WIDTH = 3;
 const OLDER_WIDTH = 1.75;
 const ACTUAL_WIDTH = 2.5;
+const ALTERNATE_RADIUS = 5;
+const ALTERNATE_STROKE_WIDTH = 2;
 const CHART_HEIGHT = 320;
 const COMPACT_WIDTH = 480;
 const COMPACT_HEIGHT = 280;
@@ -42,6 +45,13 @@ function vintageColor(opts: { vintage: Vintage; olderIndex: number }): string {
 
 function tipTitle(p: TrendPoint): string {
   return `${p.sourceLabel}\n${KIND_LABEL[p.kind]} ${p.fiscalYear}: ${formatMillions(p.value)}`;
+}
+
+function alternateTipTitle(p: AlternatePoint): string {
+  return (
+    `${p.sourceLabel}\n${KIND_LABEL[p.kind]} ${p.fiscalYear}: ${formatMillions(p.value)}\n` +
+    `From the ${p.tableLabel}. The line shows ${formatMillions(p.lineValue)} from the summary table.`
+  );
 }
 
 function formatAxisMillions(value: number): string {
@@ -64,7 +74,15 @@ function styleVintages(vintages: Vintage[]): StyledVintage[] {
   return [...styled.filter((s) => !s.vintage.isHeadline), ...styled.filter((s) => s.vintage.isHeadline)];
 }
 
-function Legend({ styled, hasActuals }: { styled: StyledVintage[]; hasActuals: boolean }) {
+function Legend({
+  styled,
+  hasActuals,
+  hasAlternates,
+}: {
+  styled: StyledVintage[];
+  hasActuals: boolean;
+  hasAlternates: boolean;
+}) {
   const swatch = (color: string, width: number) => (
     <svg width="28" height="10" aria-hidden="true" class="shrink-0">
       <line x1="0" y1="5" x2="28" y2="5" stroke={color} stroke-width={width} />
@@ -91,6 +109,7 @@ function Legend({ styled, hasActuals }: { styled: StyledVintage[]; hasActuals: b
       </ul>
       <p class="mt-1 text-gray-500">
         Solid = actual, estimate or budget; dashed = forecast (a projection, not a commitment).
+        {hasAlternates && ' Hollow diamond = a different figure for the same year from another table in the same document (see Notes).'}
       </p>
     </div>
   );
@@ -101,6 +120,7 @@ export default function TrendsChart({ series, zeroLine = false, ariaLabel }: Pro
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
   const styled = styleVintages(series.vintages);
+  const alternatePoints: AlternatePoint[] = series.vintages.flatMap((v) => v.alternates);
 
   useEffect(() => {
     if (!chartRef.current) return;
@@ -129,6 +149,15 @@ export default function TrendsChart({ series, zeroLine = false, ariaLabel }: Pro
           fill: 'white',
           r: 2.5,
         }),
+        Plot.dot(vintage.alternates, {
+          x: 'fiscalYear',
+          y: 'value',
+          symbol: 'diamond',
+          stroke: color,
+          strokeWidth: ALTERNATE_STROKE_WIDTH,
+          fill: 'white',
+          r: ALTERNATE_RADIUS,
+        }),
       ];
     });
 
@@ -154,6 +183,9 @@ export default function TrendsChart({ series, zeroLine = false, ariaLabel }: Pro
         }),
         Plot.dot(series.actuals, { x: 'fiscalYear', y: 'value', fill: ACTUAL_COLOR, r: 3.5 }),
         Plot.tip(everyPoint, Plot.pointer({ x: 'fiscalYear', y: 'value', title: tipTitle })),
+        ...(alternatePoints.length > 0
+          ? [Plot.tip(alternatePoints, Plot.pointer({ x: 'fiscalYear', y: 'value', title: alternateTipTitle }))]
+          : []),
       ],
     });
 
@@ -167,7 +199,7 @@ export default function TrendsChart({ series, zeroLine = false, ariaLabel }: Pro
 
   return (
     <div ref={containerRef} role="group" aria-label={ariaLabel}>
-      <Legend styled={styled} hasActuals={series.actuals.length > 0} />
+      <Legend styled={styled} hasActuals={series.actuals.length > 0} hasAlternates={alternatePoints.length > 0} />
       <div ref={chartRef} />
       {!zeroLine && (
         <p class="mt-1 text-xs text-gray-400">The vertical axis does not start at zero.</p>

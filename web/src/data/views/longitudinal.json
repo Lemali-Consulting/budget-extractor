@@ -11,9 +11,2783 @@
     {
       "sourceYear": 2025,
       "sourceVariant": "adopted"
+    },
+    {
+      "sourceYear": 2024,
+      "sourceVariant": "adopted"
     }
   ],
   "records": [
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2023,
+      "value": 149266923.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2024,
+      "value": 151837378.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2025,
+      "value": 152795704.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2026,
+      "value": 153923913.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2027,
+      "value": 155173913.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2028,
+      "value": 156513449.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2023,
+      "value": 131687536.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2024,
+      "value": 136190443.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2025,
+      "value": 142046631.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2026,
+      "value": 148438729.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2027,
+      "value": 155266910.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2028,
+      "value": 161632825.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2023,
+      "value": 72534509.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2024,
+      "value": 76327936.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2025,
+      "value": 78236134.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2026,
+      "value": 79957329.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2027,
+      "value": 81716390.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2028,
+      "value": 83350718.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2023,
+      "value": 47544612.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2024,
+      "value": 51554031.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2025,
+      "value": 53627771.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2026,
+      "value": 55581123.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2027,
+      "value": 57609383.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2028,
+      "value": 59594838.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2023,
+      "value": 26632671.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2024,
+      "value": 25751367.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2025,
+      "value": 26277833.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2026,
+      "value": 26817174.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2027,
+      "value": 27349108.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2028,
+      "value": 27894308.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2023,
+      "value": 47482534.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2024,
+      "value": 59133757.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2025,
+      "value": 60086254.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2026,
+      "value": 61054092.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2027,
+      "value": 62037520.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2028,
+      "value": 62037520.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2023,
+      "value": 18410133.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2024,
+      "value": 18882489.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2025,
+      "value": 19451222.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2026,
+      "value": 19940901.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2027,
+      "value": 20413358.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2028,
+      "value": 20955390.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2023,
+      "value": 13581038.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2024,
+      "value": 15737659.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2025,
+      "value": 15768351.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2026,
+      "value": 15626436.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2027,
+      "value": 15485798.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2028,
+      "value": 15349423.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2023,
+      "value": 5954948.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2024,
+      "value": 4364463.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2025,
+      "value": 4464846.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2026,
+      "value": 4567537.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2027,
+      "value": 4672590.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2028,
+      "value": 4780060.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2023,
+      "value": 1235417.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2024,
+      "value": 1156620.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2025,
+      "value": 1168186.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2026,
+      "value": 1179868.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2027,
+      "value": 1191666.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2028,
+      "value": 1203583.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2023,
+      "value": 137901.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2024,
+      "value": 460644.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2025,
+      "value": 467925.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2026,
+      "value": 476709.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2027,
+      "value": 494611.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2028,
+      "value": 513193.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2023,
+      "value": 500378.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2024,
+      "value": 438891.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2025,
+      "value": 449864.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2026,
+      "value": 459761.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2027,
+      "value": 469875.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2028,
+      "value": 479273.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2023,
+      "value": -9390.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2024,
+      "value": 0.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2025,
+      "value": 0.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2026,
+      "value": 0.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2027,
+      "value": 0.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2028,
+      "value": 0.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2023,
+      "value": 14063171.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2024,
+      "value": 17059497.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2025,
+      "value": 19066886.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2026,
+      "value": 19483734.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2027,
+      "value": 19921066.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2028,
+      "value": 20334521.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2023,
+      "value": 37048759.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2024,
+      "value": 41223252.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2025,
+      "value": 41974788.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2026,
+      "value": 42644929.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2027,
+      "value": 43318711.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2028,
+      "value": 44074492.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2023,
+      "value": 9056224.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2024,
+      "value": 8691404.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2025,
+      "value": 8908689.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2026,
+      "value": 9104681.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2027,
+      "value": 9304984.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2028,
+      "value": 9491083.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2023,
+      "value": 43982806.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2024,
+      "value": 42015764.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2025,
+      "value": 42438921.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2026,
+      "value": 42949460.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2027,
+      "value": 43989939.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2028,
+      "value": 43989939.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2023,
+      "value": 18337435.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2024,
+      "value": 16545503.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2025,
+      "value": 16049138.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2026,
+      "value": 15939547.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2027,
+      "value": 15831561.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2028,
+      "value": 15725169.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2023,
+      "value": 50643933.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2024,
+      "value": 46843825.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2025,
+      "value": 369231.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2026,
+      "value": 377292.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2027,
+      "value": 385531.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2028,
+      "value": 393186.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 688091539.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2024,
+      "value": 714214923.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2025,
+      "value": 683648373.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2026,
+      "value": 698523214.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2027,
+      "value": 714632914.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2028,
+      "value": 728312970.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Salaries",
+      "fiscalYear": 2023,
+      "value": 269185335.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Salaries",
+      "fiscalYear": 2024,
+      "value": 291639184.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Salaries",
+      "fiscalYear": 2025,
+      "value": 299445332.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Salaries",
+      "fiscalYear": 2026,
+      "value": 304457543.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Salaries",
+      "fiscalYear": 2027,
+      "value": 315633336.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Salaries",
+      "fiscalYear": 2028,
+      "value": 328470824.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Health Benefits",
+      "fiscalYear": 2023,
+      "value": 65975780.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Health Benefits",
+      "fiscalYear": 2024,
+      "value": 67301217.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Health Benefits",
+      "fiscalYear": 2025,
+      "value": 71104162.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Health Benefits",
+      "fiscalYear": 2026,
+      "value": 75205548.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Health Benefits",
+      "fiscalYear": 2027,
+      "value": 78600234.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Health Benefits",
+      "fiscalYear": 2028,
+      "value": 82972322.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Workers' Comp.",
+      "fiscalYear": 2023,
+      "value": 16839778.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Workers' Comp.",
+      "fiscalYear": 2024,
+      "value": 16760467.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Workers' Comp.",
+      "fiscalYear": 2025,
+      "value": 16806906.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Workers' Comp.",
+      "fiscalYear": 2026,
+      "value": 16855202.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Workers' Comp.",
+      "fiscalYear": 2027,
+      "value": 16880316.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Workers' Comp.",
+      "fiscalYear": 2028,
+      "value": 16899500.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Pension & OPEB",
+      "fiscalYear": 2023,
+      "value": 110140487.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Pension & OPEB",
+      "fiscalYear": 2024,
+      "value": 113699165.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Pension & OPEB",
+      "fiscalYear": 2025,
+      "value": 114387285.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Pension & OPEB",
+      "fiscalYear": 2026,
+      "value": 115410261.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Pension & OPEB",
+      "fiscalYear": 2027,
+      "value": 116486069.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Pension & OPEB",
+      "fiscalYear": 2028,
+      "value": 117759000.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Operating Departments",
+      "fiscalYear": 2023,
+      "value": 98752041.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Operating Departments",
+      "fiscalYear": 2024,
+      "value": 126941941.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Operating Departments",
+      "fiscalYear": 2025,
+      "value": 106304636.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Operating Departments",
+      "fiscalYear": 2026,
+      "value": 107267864.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Operating Departments",
+      "fiscalYear": 2027,
+      "value": 108310725.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Operating Departments",
+      "fiscalYear": 2028,
+      "value": 111111471.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Debt Service",
+      "fiscalYear": 2023,
+      "value": 59968317.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Debt Service",
+      "fiscalYear": 2024,
+      "value": 69390272.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Debt Service",
+      "fiscalYear": 2025,
+      "value": 74404315.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Debt Service",
+      "fiscalYear": 2026,
+      "value": 79023162.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Debt Service",
+      "fiscalYear": 2027,
+      "value": 48176521.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Debt Service",
+      "fiscalYear": 2028,
+      "value": 53298214.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 620861736.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2024,
+      "value": 685732246.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2025,
+      "value": 682452636.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2026,
+      "value": 698219579.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2027,
+      "value": 684087201.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2028,
+      "value": 710511331.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "operatingResult",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 67229802.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "operatingResult",
+      "category": null,
+      "fiscalYear": 2024,
+      "value": 28482677.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "operatingResult",
+      "category": null,
+      "fiscalYear": 2025,
+      "value": 1195737.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "operatingResult",
+      "category": null,
+      "fiscalYear": 2026,
+      "value": 303635.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "operatingResult",
+      "category": null,
+      "fiscalYear": 2027,
+      "value": 30545713.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "operatingResult",
+      "category": null,
+      "fiscalYear": 2028,
+      "value": 17801639.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "endingReserveBalance",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 173694475.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "endingReserveBalance",
+      "category": null,
+      "fiscalYear": 2024,
+      "value": 153736267.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "endingReserveBalance",
+      "category": null,
+      "fiscalYear": 2025,
+      "value": 127850729.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "endingReserveBalance",
+      "category": null,
+      "fiscalYear": 2026,
+      "value": 99069046.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "endingReserveBalance",
+      "category": null,
+      "fiscalYear": 2027,
+      "value": 98425969.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "endingReserveBalance",
+      "category": null,
+      "fiscalYear": 2028,
+      "value": 84635209.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "fundBalancePctOfExpenditures",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 28.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "fundBalancePctOfExpenditures",
+      "category": null,
+      "fiscalYear": 2024,
+      "value": 22.4,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "fundBalancePctOfExpenditures",
+      "category": null,
+      "fiscalYear": 2025,
+      "value": 18.7,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "fundBalancePctOfExpenditures",
+      "category": null,
+      "fiscalYear": 2026,
+      "value": 14.2,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "fundBalancePctOfExpenditures",
+      "category": null,
+      "fiscalYear": 2027,
+      "value": 14.4,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "fundBalancePctOfExpenditures",
+      "category": null,
+      "fiscalYear": 2028,
+      "value": 11.9,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2022,
+      "value": 587733443.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P2T0"
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 620861736.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P2T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2020,
+      "value": 149707179.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2021,
+      "value": 151540925.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Real Estate Tax",
+      "fiscalYear": 2022,
+      "value": 151373606.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2020,
+      "value": 109401066.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2021,
+      "value": 110546825.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Earned Income Tax",
+      "fiscalYear": 2022,
+      "value": 116852303.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2020,
+      "value": 63682649.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2021,
+      "value": 56720062.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Payroll Preparation Tax",
+      "fiscalYear": 2022,
+      "value": 66381418.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2020,
+      "value": 33792650.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2021,
+      "value": 31939851.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Parking Tax",
+      "fiscalYear": 2022,
+      "value": 56952255.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2020,
+      "value": 45053202.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2021,
+      "value": 62154372.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Deed Transfer Tax",
+      "fiscalYear": 2022,
+      "value": 51989852.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2020,
+      "value": 21383956.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2021,
+      "value": 24108030.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Regional Asset District Tax Relief",
+      "fiscalYear": 2022,
+      "value": 22913458.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2020,
+      "value": 3873982.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2021,
+      "value": 7462276.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Amusement Tax",
+      "fiscalYear": 2022,
+      "value": 16996845.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2020,
+      "value": 13985131.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2021,
+      "value": 11684413.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Local Service Tax",
+      "fiscalYear": 2022,
+      "value": 14717414.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2020,
+      "value": 3347518.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2021,
+      "value": 3427118.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Facility Usage Fee",
+      "fiscalYear": 2022,
+      "value": 4347937.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2020,
+      "value": 995980.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2021,
+      "value": 983530.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Telecommunications Licensing Tax",
+      "fiscalYear": 2022,
+      "value": 1049454.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2020,
+      "value": 574081.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2021,
+      "value": 515314.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Institution Service Privilege Tax",
+      "fiscalYear": 2022,
+      "value": 604825.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2020,
+      "value": 492842.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2021,
+      "value": 523676.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Non-Profit Payment for Services",
+      "fiscalYear": 2022,
+      "value": 444769.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2020,
+      "value": -5138.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2021,
+      "value": -17248.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Other Taxes",
+      "fiscalYear": 2022,
+      "value": 0.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2020,
+      "value": 11648919.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2021,
+      "value": 13418544.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Licenses and Permits",
+      "fiscalYear": 2022,
+      "value": 13338307.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2020,
+      "value": 35122274.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2021,
+      "value": 32158981.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Charges for Services",
+      "fiscalYear": 2022,
+      "value": 40192884.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2020,
+      "value": 6458582.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2021,
+      "value": 3135750.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Fines and Forfeitures",
+      "fiscalYear": 2022,
+      "value": 8960626.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2020,
+      "value": 50543093.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2021,
+      "value": 49305649.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Intergovernmental Revenue",
+      "fiscalYear": 2022,
+      "value": 43411643.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2020,
+      "value": 1419408.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2021,
+      "value": 112526.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Interest Earnings",
+      "fiscalYear": 2022,
+      "value": 139840.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2020,
+      "value": 157483.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2021,
+      "value": 33883898.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "revenueByCategory",
+      "category": "Miscellaneous Revenues",
+      "fiscalYear": 2022,
+      "value": 48134858.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2020,
+      "value": 551634859.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2021,
+      "value": 593604491.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "totalRevenues",
+      "category": null,
+      "fiscalYear": 2022,
+      "value": 658802293.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0"
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 688091539.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2024,
+      "value": 714214923.0,
+      "kind": "budget",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2025,
+      "value": 683648373.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2026,
+      "value": 698523214.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2027,
+      "value": 714632914.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2028,
+      "value": 728312970.0,
+      "kind": "forecast",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2020,
+      "value": 551634859.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2021,
+      "value": 593604491.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
+    {
+      "metric": "recurringRevenue",
+      "category": null,
+      "fiscalYear": 2022,
+      "value": 658802293.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P1T0",
+      "derived": true
+    },
     {
       "metric": "revenueByCategory",
       "category": "Real Estate Tax",
@@ -8426,6 +11200,114 @@
   ],
   "actuals": [
     {
+      "metric": "endingReserveBalance",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 173694475.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Debt Service",
+      "fiscalYear": 2023,
+      "value": 59968317.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Health Benefits",
+      "fiscalYear": 2023,
+      "value": 65975780.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Operating Departments",
+      "fiscalYear": 2023,
+      "value": 98752041.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Pension & OPEB",
+      "fiscalYear": 2023,
+      "value": 110140487.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Salaries",
+      "fiscalYear": 2023,
+      "value": 269185335.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "expenditureByCategory",
+      "category": "Workers' Comp.",
+      "fiscalYear": 2023,
+      "value": 16839778.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "fundBalancePctOfExpenditures",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 28.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
+      "metric": "operatingResult",
+      "category": null,
+      "fiscalYear": 2023,
+      "value": 67229802.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
+      "sourceTable": "P1T0",
+      "restatements": []
+    },
+    {
       "metric": "recurringRevenue",
       "category": null,
       "fiscalYear": 2020,
@@ -8475,7 +11357,12 @@
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
       "derived": true,
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 688091539.0
+        }
+      ]
     },
     {
       "metric": "recurringRevenue",
@@ -8536,7 +11423,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 18410133.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -8596,7 +11488,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 37048759.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -8656,7 +11553,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 47482534.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -8716,7 +11618,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 131687536.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -8776,7 +11683,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 5954948.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -8836,7 +11748,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 9056224.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -8896,7 +11813,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 137901.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -8956,7 +11878,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 18337435.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9016,7 +11943,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 43982806.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9076,7 +12008,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 14063171.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9136,7 +12073,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 13581038.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9196,7 +12138,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 50643933.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9256,7 +12203,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 500378.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9316,7 +12268,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": -9390.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9376,7 +12333,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 47544612.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9436,7 +12398,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 72534509.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9496,7 +12463,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 149266923.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9556,7 +12528,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 26632671.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9616,7 +12593,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 1235417.0
+        }
+      ]
     },
     {
       "metric": "revenueByCategory",
@@ -9627,6 +12609,18 @@
       "sourceYear": 2026,
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
+      "sourceTable": "P2T0",
+      "restatements": []
+    },
+    {
+      "metric": "totalExpenditures",
+      "category": null,
+      "fiscalYear": 2022,
+      "value": 587733443.0,
+      "kind": "actual",
+      "sourceYear": 2024,
+      "sourceVariant": "adopted",
+      "sourceSection": "04_Five-Year_Financial_Forecast",
       "sourceTable": "P2T0",
       "restatements": []
     },
@@ -9712,7 +12706,12 @@
       "sourceVariant": "amended",
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
-      "restatements": []
+      "restatements": [
+        {
+          "sourceYear": 2024,
+          "value": 688091539.0
+        }
+      ]
     },
     {
       "metric": "totalRevenues",
@@ -9725,6 +12724,50 @@
       "sourceSection": "05_Revenue_Summary",
       "sourceTable": "P2T0",
       "restatements": []
+    }
+  ],
+  "conflicts": [
+    {
+      "metric": "totalExpenditures",
+      "fiscalYear": 2024,
+      "kind": "estimate",
+      "sourceYear": 2025,
+      "sourceVariant": "adopted",
+      "values": [
+        {
+          "value": 681960430.0,
+          "sourceSection": "04_Five-Year_Financial_Forecast",
+          "sourceTable": "P1T0",
+          "table": "summary"
+        },
+        {
+          "value": 684810650.0,
+          "sourceSection": "04_Five-Year_Financial_Forecast",
+          "sourceTable": "P2T0",
+          "table": "department"
+        }
+      ]
+    },
+    {
+      "metric": "totalExpenditures",
+      "fiscalYear": 2026,
+      "kind": "estimate",
+      "sourceYear": 2027,
+      "sourceVariant": "proposed",
+      "values": [
+        {
+          "value": 741095775.0,
+          "sourceSection": "02_Five-Year_Financial_Forecast",
+          "sourceTable": "P1T0",
+          "table": "summary"
+        },
+        {
+          "value": 728595778.0,
+          "sourceSection": "02_Five-Year_Financial_Forecast",
+          "sourceTable": "P2T0",
+          "table": "department"
+        }
+      ]
     }
   ]
 }

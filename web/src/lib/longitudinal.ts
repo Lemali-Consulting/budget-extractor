@@ -26,6 +26,19 @@ export const KIND = {
 } as const;
 export type Kind = (typeof KIND)[keyof typeof KIND];
 
+/** Which table of a budget document a figure was read from (matches the build script's table kinds). */
+export const TABLE_KIND = {
+  SUMMARY: 'summary',
+  DEPARTMENT: 'department',
+} as const;
+export type TableKind = (typeof TABLE_KIND)[keyof typeof TABLE_KIND];
+
+/** Human wording for each table, used in tooltips and notes. */
+export const TABLE_LABEL: Record<TableKind, string> = {
+  [TABLE_KIND.SUMMARY]: 'Five-Year Financial Forecast summary table',
+  [TABLE_KIND.DEPARTMENT]: 'department table (forecast detail) of the same section',
+};
+
 /** Human wording for each kind, used in tooltips and notes. */
 export const KIND_LABEL: Record<Kind, string> = {
   [KIND.ACTUAL]: 'Actual',
@@ -77,10 +90,27 @@ export interface LongitudinalActual extends LongitudinalRecord {
   restatements: { sourceYear: number; value: number }[];
 }
 
+/** One table's figure in a conflict. */
+export interface ConflictValue {
+  value: number;
+  sourceSection: string;
+  sourceTable: string;
+  table: TableKind;
+}
+
+/** One document's tables disagreeing about the same figure; the series line uses the summary table's value. */
+export interface LongitudinalConflict extends LongitudinalSource {
+  metric: Metric;
+  fiscalYear: number;
+  kind: Kind;
+  values: ConflictValue[];
+}
+
 export interface LongitudinalData {
   sources: LongitudinalSource[];
   records: LongitudinalRecord[];
   actuals: LongitudinalActual[];
+  conflicts: LongitudinalConflict[];
 }
 
 /** One plotted point. */
@@ -92,12 +122,22 @@ export interface TrendPoint {
   sourceLabel: string;
 }
 
+/** A figure the same document reports differently in another table, drawn as its own marker. */
+export interface AlternatePoint extends TrendPoint {
+  /** Wording for the table this figure comes from. */
+  tableLabel: string;
+  /** The figure the line shows for the same year. */
+  lineValue: number;
+}
+
 /** One source document's own estimate/budget/forecast line. */
 export interface Vintage {
   key: string;
   label: string;
   isHeadline: boolean;
   points: TrendPoint[];
+  /** Conflicting figures from the document's other table; empty for most metrics. */
+  alternates: AlternatePoint[];
 }
 
 export interface TrendSeries {
@@ -182,9 +222,38 @@ export function buildSeries(opts: {
         sourceLabel: labelSource(source),
       }))
       .sort(byFiscalYear),
+    alternates: alternatePoints({ data, metric, category, source, label: labelSource(source) }),
   }));
 
   return { actuals, vintages: vintages.filter((v) => v.points.length > 0) };
+}
+
+/** The non-line figures of a document's conflicting tables, for one metric (category-level metrics have none). */
+function alternatePoints(opts: {
+  data: LongitudinalData;
+  metric: Metric;
+  category: string | null;
+  source: LongitudinalSource;
+  label: string;
+}): AlternatePoint[] {
+  const { data, metric, category, source, label } = opts;
+  if (category !== null) return [];
+  return (data.conflicts ?? [])
+    .filter((c) => c.metric === metric && sourceKey(c) === sourceKey(source))
+    .flatMap((c) => {
+      const line = c.values.find((v) => v.table === TABLE_KIND.SUMMARY);
+      return c.values
+        .filter((v) => v.table !== TABLE_KIND.SUMMARY && line !== undefined)
+        .map((v) => ({
+          fiscalYear: c.fiscalYear,
+          value: v.value,
+          kind: c.kind,
+          sourceLabel: label,
+          tableLabel: TABLE_LABEL[v.table],
+          lineValue: (line as ConflictValue).value,
+        }));
+    })
+    .sort(byFiscalYear);
 }
 
 /**
@@ -392,9 +461,28 @@ export function buildNotes(opts: { data: LongitudinalData; labelSource: SourceLa
     );
   }
 
+  notes.push(...buildConflictNotes({ data, labelSource }));
+
   notes.push(
     'Each vintage line is that document’s own estimate, budget and forecast. Actuals come from the newest ' +
       'document that reports them. Forecasts are projections, not commitments.',
   );
   return notes;
+}
+
+/** One neutral note per conflict: the document disagrees with itself, and we say which figure the line uses. */
+function buildConflictNotes(opts: { data: LongitudinalData; labelSource: SourceLabeler }): string[] {
+  const { data, labelSource } = opts;
+  return (data.conflicts ?? []).flatMap((conflict) => {
+    const summary = conflict.values.find((v) => v.table === TABLE_KIND.SUMMARY);
+    const other = conflict.values.find((v) => v.table !== TABLE_KIND.SUMMARY);
+    if (!summary || !other) return [];
+    return [
+      `The ${labelSource(conflict)} document gives two different ${conflict.fiscalYear} ` +
+        `${KIND_LABEL[conflict.kind].toLowerCase()} figures for ${METRIC_LABEL[conflict.metric].toLowerCase()}: ` +
+        `${formatMillions(summary.value)} in its ${TABLE_LABEL[summary.table]} and ` +
+        `${formatMillions(other.value)} in its ${TABLE_LABEL[other.table]}. ` +
+        `The line uses the ${TABLE_LABEL[summary.table]}'s figure; the other is marked with a hollow diamond.`,
+    ];
+  });
 }

@@ -1,8 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import { HEADLINE, ARCHIVE_YEARS, yearPath } from '../lib/budget-year';
+import { BUDGET_YEARS, HEADLINE, ARCHIVE_YEARS, YEAR_ROLE, yearPath } from '../lib/budget-year';
+import { changedHeaders, correctionAnchor, quoteList } from '../lib/corrections';
 
 const [archive] = ARCHIVE_YEARS;
+// Every year the site carries, newest first, with the corrections (if any) we made to its source PDF.
+const yearsWithCorrections = Object.values(BUDGET_YEARS).sort((a, b) => b.year - a.year);
+const yearsWithoutCorrections = yearsWithCorrections.filter((y) => y.corrections.length === 0);
 ---
 
 <Base title="About This Site" description="How the Pittsburgh Budget Explorer was built, the role of AI in its construction, and important caveats about data accuracy.">
@@ -112,11 +116,49 @@ const [archive] = ARCHIVE_YEARS;
         <a href={yearPath({ budgetYear: archive, path: '/operating/' })} class="text-blue-600 hover:underline">{archive.year} archive</a>.
       </p>
       <p class="text-gray-700 mb-3">
-        No data on this site comes from sources other than these two documents. No figures have been manually entered, estimated, or editorially adjusted — every number shown was extracted programmatically from the PDFs.
+        No data on this site comes from sources other than these two documents. No figures have been manually entered or estimated, and no number has been changed. The only editorial adjustments are the few column-heading corrections listed under <a href="#corrections" class="text-blue-600 hover:underline">Corrections</a> below; each is flagged wherever it appears on the site.
       </p>
       <p class="text-gray-700">
         The extraction code, test suite, and website source code are available for inspection. Transparency about how the data was processed is a core goal of this project.
       </p>
+    </section>
+
+    <!-- Corrections -->
+    <section class="mb-10" id="corrections">
+      <h2 class="text-xl font-bold text-blue-900 mb-3">Corrections we made to the source documents</h2>
+      <p class="text-gray-700 mb-3">
+        Now and then a city budget PDF contains a labelling error that, taken literally, makes this site show wrong or missing figures. Where the evidence is clear, <strong>Pittsburgh Budget Explorer corrects the heading when it builds the data</strong>, and says so on the affected table and section page. These corrections are ours, not the city's: the source PDFs are unchanged, and only column headings are relabelled; no dollar amount is altered. Each entry below shows what the PDF says, what we show instead, and why.
+      </p>
+
+      {yearsWithCorrections.filter((y) => y.corrections.length > 0).map((y) => (
+        <div class="mb-6" data-testid="corrections-year" data-year={y.year}>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">{y.label}</h3>
+          {y.corrections.map((c) => {
+            const { printed, shown } = changedHeaders(c);
+            return (
+              <article id={correctionAnchor({ year: y.year, id: c.id })} class="mb-4 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg px-4 py-3 text-sm text-amber-900 scroll-mt-20" data-testid="correction-entry">
+                <h4 class="font-semibold mb-1">
+                  {c.section}, page {c.pdfPage} of the full PDF
+                </h4>
+                <p class="mb-1"><strong>What the PDF says:</strong> the table's year columns are headed {quoteList(printed)}.</p>
+                <p class="mb-1"><strong>What we show:</strong> {quoteList(shown)}. The PDF itself is unchanged; the relabelling is ours.</p>
+                <p class="mb-1"><strong>Why:</strong> {c.evidence}</p>
+                {y.role !== YEAR_ROLE.COMPARISON_ONLY && (
+                  <p>
+                    <a href={yearPath({ budgetYear: y, path: `/sections/${c.sectionSlug}/#table-${c.tableId}` })} class="font-medium underline hover:text-amber-700">See the corrected table &rarr;</a>
+                  </p>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      ))}
+
+      {yearsWithoutCorrections.length > 0 && (
+        <p class="text-gray-700">
+          No corrections were made to the {yearsWithoutCorrections.map((y) => y.label).join(' or the ')} documents.
+        </p>
+      )}
     </section>
 
     <!-- Who Made This -->

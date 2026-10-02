@@ -126,3 +126,12 @@ def best_sections_path(year: int, budget_type: str) -> Path | None:
     """Sections file of the best available variant for a year, or None if none exists."""
     subtype: str | None = best_variant_type(year, budget_type)
     return None if subtype is None else sections_path(year, subtype)
+
+
+def corrections_path(year: int, subtype: str) -> Path:
+    """Source-correction file for a year and variant subtype (e.g. "operating-proposed").
+
+    The file lists labelling errors in the source PDF that we correct when building web data;
+    it may not exist, which means "no corrections".
+    """
+    return input_dir(year) / f"corrections-{subtype}.json"

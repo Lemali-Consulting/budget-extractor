@@ -612,6 +612,15 @@ test("trends page charts headline figures over time", async ({ page }) => {
   // Notes block
   await expect(main(page).getByRole("heading", { name: "Notes", level: 2 })).toBeVisible();
 
+  // The 2027 document's two different 2026 expenditure estimates are both stated, neutrally
+  const notes = main(page).locator('[data-testid="trend-notes"]');
+  const conflictNote = notes.locator("li", { hasText: /two different 2026 estimate figures/ });
+  await expect(conflictNote).toContainText("$741.1M");
+  await expect(conflictNote).toContainText("$728.6M");
+  await expect(conflictNote).toContainText(/summary table/);
+  await expect(conflictNote).toContainText(/department table/);
+  await expect(conflictNote).toContainText(/The line uses the Five-Year Financial Forecast summary table/);
+
   // Nav link present (desktop dropdown)
   await expect(page.locator('header a[href="/trends/"]').first()).toBeAttached();
   // Home page link card
@@ -629,4 +638,62 @@ test("trends page has no horizontal scroll on a phone", async ({ page }) => {
     () => document.documentElement.scrollWidth - window.innerWidth,
   );
   expect(overflow).toBeLessThanOrEqual(0);
+});
+
+// ---------------------------------------------------------------------------
+// Source corrections (labelling errors in the PDF that we fix and disclose)
+// ---------------------------------------------------------------------------
+const PARKS_CORRECTION_ID = "correction-2027-parks-tax-trust-fund-year-labels";
+
+test("parks tax section discloses our heading correction", async ({ page }) => {
+  await page.goto("/sections/parks-tax-trust-fund/");
+
+  const notice = main(page).locator('[data-testid="section-correction-notice"]');
+  await expect(notice).toContainText(/made by Pittsburgh Budget Explorer/);
+  await expect(notice).toContainText(/The source PDF is unchanged/);
+
+  // The corrected table is badged and explains what the PDF prints vs what we show
+  const badge = main(page).locator('[data-testid="table-correction-badge"]');
+  await expect(badge).toHaveCount(1);
+  await expect(badge).toContainText("Corrected by us");
+  const note = main(page).locator('[data-testid="table-correction-note"]');
+  await expect(note).toContainText("“2025 Budget” and “2026 Budget”");
+  await expect(note).toContainText("“2026 Budget” and “2027 Budget”");
+  await expect(note.locator(`a[href="/about/#${PARKS_CORRECTION_ID}"]`)).toBeVisible();
+
+  // The table itself now shows the corrected year columns, with 2027 figures
+  const table = main(page).locator("#table-s35_p0_t1");
+  await expect(table.locator("th", { hasText: "2027 Budget" })).toBeVisible();
+  await expect(table.getByText("9,355,441").first()).toBeVisible();
+  await expect(table.locator("th", { hasText: "2025 Budget" })).toHaveCount(0);
+});
+
+test("about page lists the corrections with the evidence", async ({ page }) => {
+  await page.goto("/about/#corrections");
+
+  const section = main(page).locator("#corrections");
+  await expect(section.getByRole("heading", { name: /Corrections we made/, level: 2 })).toBeVisible();
+  await expect(section).toContainText(/These corrections are ours, not the city's/);
+
+  const entry = section.locator(`#${PARKS_CORRECTION_ID}`);
+  await expect(entry).toContainText("Parks Tax Trust Fund");
+  await expect(entry).toContainText("“2025 Budget” and “2026 Budget”");
+  await expect(entry).toContainText("“2026 Budget” and “2027 Budget”");
+  await expect(entry).toContainText("$9,255,231");
+  await expect(entry.locator('a[href="/sections/parks-tax-trust-fund/#table-s35_p0_t1"]')).toBeVisible();
+  // Years without corrections are said to have none
+  await expect(section).toContainText(/No corrections were made to the/);
+});
+
+test("home trust funds card includes the corrected Parks Tax figures", async ({ page }) => {
+  await page.goto("/");
+
+  const card = main(page).locator("div", {
+    has: page.getByText("Trust Funds", { exact: false }),
+  }).filter({ hasText: "Separate from operating" }).last();
+  await expect(card).not.toContainText("$0.0M");
+  await expect(card).toContainText(/\$\d+\.\dM/);
+  const footnote = card.locator('[data-testid="trust-fund-correction-footnote"]');
+  await expect(footnote).toContainText(/heading correction by us/);
+  await expect(footnote).toHaveAttribute("href", `/about/#${PARKS_CORRECTION_ID}`);
 });

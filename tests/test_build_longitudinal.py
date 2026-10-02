@@ -254,7 +254,7 @@ def test_actuals_use_latest_source_and_record_restatements(
 ) -> None:
     monkeypatch.setattr(paths, "PROJECT_ROOT", tmp_path)
     _fake_source_tree(tmp_path, year=2026, subtype="operating-amended")
-    newer: str = DEPARTMENT_CSV.replace('"800"', '"801"')
+    newer: str = DEPARTMENT_CSV.replace('"800"', '"900"')
     _fake_source_tree(tmp_path, year=2027, subtype="operating-proposed")
     _write_table(root=tmp_path, year=2027, subtype="operating-proposed", folder=FORECAST_FOLDER, name="P2T0", text=newer)
     dataset: dict[str, Any] = mod.build_dataset(
@@ -262,7 +262,7 @@ def test_actuals_use_latest_source_and_record_restatements(
     )
     matches = _find(dataset["actuals"], metric=mod.Metric.TOTAL_EXPENDITURES, fiscal_year=2024)
     assert len(matches) == 1
-    assert matches[0]["value"] == 801.0 and matches[0]["sourceYear"] == 2027
+    assert matches[0]["value"] == 900.0 and matches[0]["sourceYear"] == 2027
     assert matches[0]["restatements"] == [{"sourceYear": 2026, "value": 800.0}]
     unchanged = _find(dataset["actuals"], metric=mod.Metric.TOTAL_REVENUES, fiscal_year=2023)[0]
     assert unchanged["restatements"] == []
@@ -270,7 +270,79 @@ def test_actuals_use_latest_source_and_record_restatements(
     assert dataset["sources"][0] == {"sourceYear": 2027, "sourceVariant": "proposed"}
 
 
+
+def _expenditure_actual(mod: types.ModuleType, *, value: float, source_year: int, table: str) -> dict[str, Any]:
+    """A total-expenditures actual for 2023 as one document's table reports it."""
+    return {
+        "metric": mod.Metric.TOTAL_EXPENDITURES, "category": None, "fiscalYear": 2023, "value": value,
+        "kind": "actual", "sourceYear": source_year, "sourceVariant": "adopted",
+        "sourceSection": "04_Five-Year_Financial_Forecast", "sourceTable": table,
+    }
+
+
+def test_restatements_ignore_rounding_and_list_each_document_once(mod: types.ModuleType) -> None:
+    """A few dollars' difference is rounding, and one document's two tables give one restatement."""
+    records: list[dict[str, Any]] = [
+        _expenditure_actual(mod, value=620_861_745.0, source_year=2026, table="P2T0"),
+        _expenditure_actual(mod, value=620_861_736.0, source_year=2025, table="P1T0"),
+        _expenditure_actual(mod, value=620_861_736.0, source_year=2025, table="P2T0"),
+        _expenditure_actual(mod, value=620_000_000.0, source_year=2024, table="P1T0"),
+        _expenditure_actual(mod, value=620_000_000.0, source_year=2024, table="P2T0"),
+    ]
+
+    actuals: list[dict[str, Any]] = mod.build_actuals(records)
+
+    assert actuals[0]["restatements"] == [{"sourceYear": 2024, "value": 620_000_000.0}]
+
+
+# ---------- conflicts between the summary and department tables ----------
+
+def _build_one_source(mod: types.ModuleType, tmp_path: Path, monkeypatch: pytest.MonkeyPatch, *,
+                      department_csv: str = DEPARTMENT_CSV) -> dict[str, Any]:
+    monkeypatch.setattr(paths, "PROJECT_ROOT", tmp_path)
+    _fake_source_tree(tmp_path, year=2026, subtype="operating-amended")
+    _write_table(root=tmp_path, year=2026, subtype="operating-amended", folder=FORECAST_FOLDER, name="P2T0",
+                 text=department_csv)
+    return mod.build_dataset(sources=[_source(mod, year=2026, variant="amended")])
+
+
+def test_disagreeing_department_total_is_a_conflict(
+    mod: types.ModuleType, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    dataset: dict[str, Any] = _build_one_source(mod, tmp_path, monkeypatch)
+    by_year: dict[int, dict[str, Any]] = {c["fiscalYear"]: c for c in dataset["conflicts"]}
+    assert set(by_year) == {2025, 2026}
+    conflict: dict[str, Any] = by_year[2026]
+    assert conflict["metric"] == "totalExpenditures"
+    assert conflict["kind"] == "budget"
+    assert (conflict["sourceYear"], conflict["sourceVariant"]) == (2026, "amended")
+    assert conflict["values"] == [
+        {"value": 1800.0, "sourceSection": FORECAST_FOLDER, "sourceTable": "P1T0", "table": "summary"},
+        {"value": 950.0, "sourceSection": FORECAST_FOLDER, "sourceTable": "P2T0", "table": "department"},
+    ]
+    assert by_year[2025]["kind"] == "estimate"
+
+
+def test_conflicts_leave_the_series_on_the_summary_value(
+    mod: types.ModuleType, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    dataset: dict[str, Any] = _build_one_source(mod, tmp_path, monkeypatch)
+    (record,) = _find(dataset["records"], metric="totalExpenditures", fiscal_year=2026)
+    assert record["value"] == 1800.0 and record["sourceTable"] == "P1T0"
+    assert not [r for r in dataset["records"] if r["metric"] == "totalExpenditures" and r["sourceTable"] == "P2T0"
+                and r["kind"] != "actual"]
+
+
+def test_equal_or_rounding_level_values_are_not_conflicts(
+    mod: types.ModuleType, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    agreeing: str = DEPARTMENT_CSV.replace('"850","950"', '"901","1,800"')  # 1 dollar apart, and exactly equal
+    dataset: dict[str, Any] = _build_one_source(mod, tmp_path, monkeypatch, department_csv=agreeing)
+    assert dataset["conflicts"] == []
+
+
 # ---------- real baselines (hand-checked figures) ----------
+
 
 @pytest.fixture(scope="module")
 def real_dataset() -> dict[str, Any]:
@@ -336,3 +408,23 @@ def test_real_revenue_categories_present(real_dataset: dict[str, Any]) -> None:
     assert eit["value"] == 150502766.0
     (eit_2020,) = _find(real_dataset["actuals"], metric="revenueByCategory", fiscal_year=2020, category="Earned Income Tax")
     assert eit_2020["value"] == 109401066.0
+
+
+def test_real_2027_document_gives_two_2026_expenditure_estimates(real_dataset: dict[str, Any]) -> None:
+    (conflict,) = [
+        c for c in real_dataset["conflicts"]
+        if c["metric"] == "totalExpenditures" and c["fiscalYear"] == 2026 and c["sourceYear"] == 2027
+    ]
+    assert conflict["kind"] == "estimate" and conflict["sourceVariant"] == "proposed"
+    by_table: dict[str, dict[str, Any]] = {v["table"]: v for v in conflict["values"]}
+    assert by_table["summary"]["value"] == 741095775.0
+    assert by_table["department"]["value"] == 728595778.0
+    assert by_table["summary"]["value"] / 1e6 == pytest.approx(741.1, abs=0.05)
+    assert by_table["department"]["value"] / 1e6 == pytest.approx(728.6, abs=0.05)
+    assert by_table["summary"]["sourceTable"] == "P1T0" and by_table["department"]["sourceTable"] == "P2T0"
+
+
+def test_real_rounding_level_differences_are_not_conflicts(real_dataset: dict[str, Any]) -> None:
+    flagged: set[tuple[int, int]] = {(c["sourceYear"], c["fiscalYear"]) for c in real_dataset["conflicts"]}
+    assert (2027, 2028) not in flagged  # 742,638,590 vs 742,638,591
+    assert (2027, 2027) not in flagged  # identical

@@ -1,0 +1,28 @@
+---
+/**
+ * Section-page notice that Pittsburgh Budget Explorer (not the source PDF)
+ * corrected a labelling error on this section. Renders nothing when the section
+ * has no corrections.
+ */
+import { correctionHref, type SourceCorrection } from '../lib/corrections';
+
+interface Props {
+  year: number;
+  corrections: SourceCorrection[];
+}
+const { year, corrections } = Astro.props;
+---
+
+{corrections.length > 0 && (
+  <div class="mb-6 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg px-4 py-3 text-sm text-amber-900" data-testid="section-correction-notice">
+    <p class="font-semibold mb-1">
+      <span aria-hidden="true" class="mr-1">&#9888;&#65039;</span>Heading correction made by Pittsburgh Budget Explorer
+    </p>
+    {corrections.map((c) => (
+      <p class="mb-1 last:mb-0">
+        {c.summary} The source PDF is unchanged.
+        <a href={correctionHref({ year, id: c.id })} class="font-medium underline hover:text-amber-700 ml-1">Why we made this correction &rarr;</a>
+      </p>
+    ))}
+  </div>
+)}

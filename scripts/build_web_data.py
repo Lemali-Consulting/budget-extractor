@@ -17,11 +17,13 @@ from pathlib import Path
 # Allow importing from project root
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from utils.corrections import apply_corrections, load_corrections
 from utils.paths import (
     DEFAULT_YEAR,
     available_years,
     best_sections_path,
     best_variant_type,
+    corrections_path,
     expected_dir,
     glossary_path,
     input_dir,
@@ -2474,6 +2476,15 @@ def main() -> None:
 
     data = build_data()
     sections = data["sections"]
+
+    # Correct documented labelling errors in the source PDF before any view is derived from the tables
+    applied_corrections = apply_corrections(
+        sections=sections,
+        corrections=load_corrections(corrections_path(BUDGET_YEAR, OPERATING_SUBTYPE)),
+    )
+    with open(views_dir / f"{prefix}corrections.json", "w", encoding="utf-8") as f:
+        json.dump(applied_corrections, f, indent=2)
+    print(f"Wrote {prefix}corrections.json ({len(applied_corrections)} corrected tables)")
 
     # Generate highlights for each section
     for section in sections:

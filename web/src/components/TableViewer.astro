@@ -1,6 +1,13 @@
 ---
 import PageImage from './PageImage.tsx';
-import type { AmendmentInfo } from '../lib/budget-year';
+import { BUDGET_YEARS, type AmendmentInfo } from '../lib/budget-year';
+import {
+  changedHeaders,
+  correctionHref,
+  quoteList,
+  type CorrectionRef,
+  type SourceCorrection,
+} from '../lib/corrections';
 
 interface Props {
   /** Budget year the table belongs to (selects the source-page image folder). */
@@ -15,6 +22,8 @@ interface Props {
     sections?: string[];
     absolute_page?: number;
     description?: string;
+    /** Set when we corrected this table's headings; see utils/corrections.py. */
+    corrections?: CorrectionRef[];
   };
   slug?: string;
   linkCell?: (text: string) => string;
@@ -36,6 +45,13 @@ const amendmentDiffsForYear = amendment ? amendmentDiffs : undefined;
 const amendmentDates = amendment
   ? { amendedDate: amendment.amendedDate, adoptedDate: amendment.adoptedDate }
   : undefined;
+
+// Full records (printed vs shown headings, PDF page) of the corrections applied to this table.
+const tableCorrections: SourceCorrection[] = (table.corrections || [])
+  .map((ref) =>
+    (BUDGET_YEARS[year]?.corrections || []).find((c) => c.id === ref.id && c.tableId === table.id),
+  )
+  .filter((c): c is SourceCorrection => c !== undefined);
 
 import { TYPE_COLORS, typeDescription } from '../lib/type-colors';
 
@@ -140,6 +156,15 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
       <span class={`px-2 py-0.5 rounded text-xs font-medium ${badgeClass}`}>
         {table.table_type}
       </span>
+      {tableCorrections.length > 0 && (
+        <span
+          class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-300"
+          data-testid="table-correction-badge"
+          title="Column headings relabelled by Pittsburgh Budget Explorer; not what the source PDF prints"
+        >
+          Corrected by us
+        </span>
+      )}
       <span class="text-gray-500">
         Page {table.relative_page}, Table {table.table_index}
         {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
@@ -157,6 +182,18 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
       </button>
     </div>
     <p class="text-xs text-gray-400 italic mt-1">{annotation}</p>
+    {tableCorrections.map((c) => {
+      const { printed, shown } = changedHeaders(c);
+      return (
+        <p class="mt-2 border-l-4 border-amber-400 bg-amber-50 rounded-r px-3 py-2 text-xs text-amber-900" data-testid="table-correction-note">
+          <strong>Corrected by Pittsburgh Budget Explorer.</strong>{' '}
+          The source PDF (page {c.pdfPage} of the full document) prints this table's headings as {quoteList(printed)}.
+          The figures are really the {shown.map((h) => h.replace(/ Budget$/, '')).join(' and ')} budgets, so we show them as {quoteList(shown)}.
+          The PDF itself is unchanged.{' '}
+          <a href={correctionHref({ year, id: c.id })} class="font-medium underline hover:text-amber-700">Why we made this correction &rarr;</a>
+        </p>
+      );
+    })}
   </div>
   <div class="table-scroll-wrap relative">
     <div class="overflow-x-auto">
