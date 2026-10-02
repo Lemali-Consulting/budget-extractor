@@ -1,7 +1,7 @@
 # Long-run view of Pittsburgh's headline budget figures
 
 **Date:** 2026-10-01
-**Status:** in-progress
+**Status:** in-progress (built on `feat/2027-proposed`; merge and deploy await the user)
 
 ## Goal
 
@@ -62,10 +62,11 @@ Sequenced after the 2027 headline switch (Phase 3 of `2026-10-01-2027-proposed-b
 ## Progress
 
 - **Step 1 (done, 2026-10-01):** rule-split total rows now rejoin their table's columns, guarded so labels left of the first column are never dropped. Re-baselined: 2027 Revenue Detail, plus the same improvement in Expenditure Summary (2025, 2026 both variants), 2025 Parks Tax Trust Fund and PLI personnel (2026 amended, 2027).
-- **Step 2 (extracted, awaiting user review):** the 2024 split PDFs are regenerated, and the three headline sections were extracted to scratch (not yet baselined).
+- **Step 2 (done, 2026-10-01):** the 2024 headline sections are baselined (the user approved them). the 2024 split PDFs are regenerated, and the three headline sections were extracted to scratch (not yet baselined).
   - Every table number appears in the PDF; no cell holds two numbers.
   - The tables the dataset needs are clean: forecast summary and department totals; revenue forecast totals; the 2020–2024 revenue history; spending by subclass.
   - The rest are chart-label fragments and a garbled "Annual Growth Rate" strip. The same layout exists in 2025–2026 and is unused.
   - Restatement seen: 2023 actual revenue is $688.1M in the 2024 document but $697.6M in the 2025/2026 history tables.
-- **Step 3 (in progress):** `scripts/build_longitudinal.py` reads the forecast summary table (all years), the forecast department table (actual totals only) and the revenue-history table. Where the 2027 document's two tables disagree on the 2026 expenditure estimate, the summary table is used; that choice is still an open question.
+- **Step 3 (done):** `scripts/build_longitudinal.py` reads the forecast summary table (all years), the forecast department table (actual totals only) and the revenue-history table. Where the 2027 document's two tables disagree on the 2026 expenditure estimate, the summary table drives the line and the department table's figure is kept as a conflict, drawn as a hollow diamond with a note (the user chose to show both). There are two conflicts: 2027 doc 2026 estimate, $741.1M vs $728.6M; 2025 doc 2024 estimate, $682.0M vs $684.8M. Restatements ignore sub-dollar rounding.
+- **Step 4 (done):** the `/trends` page charts revenue, expenditures and reserve balance across the 2024–2027 documents; `deploy.sh` runs the builder.
 

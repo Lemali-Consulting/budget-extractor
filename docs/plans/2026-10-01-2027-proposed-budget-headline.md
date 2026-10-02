@@ -1,7 +1,7 @@
 # Add the 2027 proposed budgets and make them the site headline
 
 **Date:** 2026-10-01
-**Status:** in-progress
+**Status:** in-progress (implementation complete on `feat/2027-proposed`; merge and deploy await the user)
 
 ## Goal
 
@@ -54,6 +54,7 @@ See `docs/decisions/2026-10-01-2026-budget-archive-routes.md`.
 - Phase 2: variant plumbing landed. A scratch 2027 build reconciles: 27 operating departments total $728,388,494, against $728,388,498 in the summary table. The gap is ±$1 rounding in ten department pages of the source. Capital totals $145,264,797.
 - Known 2027 source quirks: the PDF labels the Parks Tax revenue table "2025/2026 Budget". Stop the Violence shows — for 2027 because the proposal ends the annual General Fund transfer and moves its 63 positions to Public Safety (PublicSource, 2026-09-30), so the site should explain it rather than show a bare zero. Public Safety Administration's 54 - Property Services subtotal is $750 more than its line items in the PDF.
 - Spot checks (no paid API): every number in the 106 sections' tables appears in its PDF; all 49 funded capital projects' deliverables sum to their 2027 totals; the 26 operating subclass blocks reconcile apart from source-PDF gaps. The Revenue Summary CAGR merge is fixed (propagation now continues past narrower subtotal rows). The generic Appendix B scoring CSVs merge some wrapped project rows; the site uses the dedicated appendix parser instead.
+- Phases 3–4 (2026-10-02): the 2027 proposed budget is the site headline; 2026 is a full archive under `/2026/` (see `docs/decisions/2026-10-01-2026-budget-archive-routes.md`). Page and chart images are per-year. The Parks Tax heading mislabel is corrected at build time through `input/2027/corrections-operating-proposed.json`, and the site discloses it as our correction (table badge, section notice, home footnote, About `#corrections`). The validator no longer flags headerless tables' blank section cell, so the 2026 and 2027 validation runs are clean. CLAUDE.md now documents all of this. 59 smoke tests pass.
 
 ## Files Affected
 

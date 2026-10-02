@@ -1,6 +1,6 @@
 # Budget Extractor
 
-Extracts tabular data from City of Pittsburgh budget PDFs (operating and capital) into structured CSVs, then powers an Astro-based web explorer for browsing department budgets, revenue, expenditures, and capital projects. Currently processes the 2026 budget, with multi-year support in progress.
+Extracts tabular data from City of Pittsburgh budget PDFs (operating and capital) into structured CSVs, then powers an Astro-based web explorer for browsing department budgets, revenue, expenditures, and capital projects. The site headline is the **2027 proposed** budget; the 2026 budget (operating as amended) stays fully browsable under `/2026/...`, 2025 feeds cross-year comparisons, and a long-run trends page spans the 2024–2027 documents.
 
 Key components:
 - **Spatial table extractor** (`utils/spatial_table_extractor.py`) — core PDF-to-CSV engine using pdfplumber word positions
@@ -84,11 +84,20 @@ Run `python3 scripts/test_regression.py` to verify extractor output against expe
 A budget can have multiple **variants** for the same `(year, budget_type)` — e.g. the December "adopted" budget and a later "as amended" reissue. Variants ride on the existing path scheme via `paths.variant_type(budget_type, variant)` (default `adopted` → plain `budget_type`; otherwise `{budget_type}-{variant}`, e.g. `operating-amended`).
 
 - Inputs: `input/{year}/{budget_type}-{variant}-budget.pdf` + `sections-{budget_type}-{variant}.json`; baselines under `expected/{year}/{budget_type}-{variant}/`.
-- `split_pdf.py` / `test_regression.py` take `--variant`; `build_web_data.py` takes `--operating-variant {adopted,amended}` and `--operating-only`.
+- `split_pdf.py` and `render_page_images.py` take `--variant`; `test_regression.py` has no variant flag — it walks every `expected/{year}/{subtype}/` directory. `build_web_data.py` takes `--operating-variant`/`--capital-variant` (`adopted`, `amended`, `proposed`), `--output-prefix` and `--operating-only`.
+- **2027** is filed as the `proposed` variant (`operating-proposed`, `capital-proposed`) and is the **headline**: its bundle and views are unprefixed. The 2026 archive uses the `2026-` prefix, 2025 uses `2025-`. Years are registered in `web/src/lib/budget-year.ts` (`HEADLINE`, `ARCHIVE_YEARS`); archive routes under `src/pages/[year]/` are thin wrappers around `src/components/pages/`.
 - **2026 operating** is currently published as **amended** ("as amended 4-20-26"). The amended extraction is the canonical site data; the adopted version is rebuilt as a transient `adopted-*.json` baseline (gitignored) only to compute diffs.
 - `scripts/build_amendment_diff.py` reads the amended + adopted bundles and writes `views/2026-amendment-changes.json` (high-level) and `views/2026-amendment-cell-diffs.json` (per-cell, consumed by `TableViewer` for inline highlighting). The `/amendments` page surfaces the high-level comparison.
-- **Source-page images come in two versions.** Canonical (amended) images render to `web/public/pages/{slug}/P{n}.webp`; adopted images for *changed pages only* render to `web/public/pages-adopted/{slug}/P{n}.webp` via `render_page_images.py --variant adopted --secondary-of amended`, which also writes the `views/2026-adopted-pages.json` manifest (`{slug: [pages]}`). A page counts as "changed" when its normalized text differs between the adopted and amended split PDFs. `PageImage.tsx` reads the manifest (via `[slug].astro` → `TableViewer`) and shows an Amended/Adopted toggle in the lightbox only where an adopted image exists.
-- `deploy.sh` runs the amended build → adopted baseline → `build_amendment_diff.py` before the Astro build, and renders both the amended and adopted-secondary page images.
+- **Source-page images come in two versions.** Canonical (amended) images render to `web/public/pages/{year}/{slug}/P{n}.webp` (chart crops likewise under `charts/{year}/`); adopted images for *changed pages only* render to `web/public/pages-adopted/{year}/{slug}/P{n}.webp` via `render_page_images.py --variant adopted --secondary-of amended`, which also writes the `views/2026-adopted-pages.json` manifest (`{slug: [pages]}`). A page counts as "changed" when its normalized text differs between the adopted and amended split PDFs. `PageImage.tsx` reads the manifest (via `[slug].astro` → `TableViewer`) and shows an Amended/Adopted toggle in the lightbox only where an adopted image exists.
+- `deploy.sh` builds 2027 proposed → 2026 amended archive → adopted baseline → `build_amendment_diff.py` → 2025 → `build_longitudinal.py`, validates, then renders page images per year before the Astro build.
+
+# Source Corrections
+
+When a source PDF mislabels something (e.g. the 2027 Parks Tax Trust Fund table heads its 2026/2027 columns "2025 Budget"/"2026 Budget"), record the fix in `input/{year}/corrections-{subtype}.json` rather than editing baselines or the PDF. `utils/corrections.py` applies it during `build_web_data.py` (it raises if a correction matches nothing) and writes `views/{prefix}corrections.json`; the site labels each one "Corrected by us" on the table, section page and About `#corrections`. Only headings are relabelled — never amounts — and each entry carries its evidence.
+
+# Long-run Trends
+
+`scripts/build_longitudinal.py` reads the headline-figure tables (forecast, revenue, expenditure summaries) from every budget document's baselines and writes `views/longitudinal.json`: per-year records by source document, actuals with restatements, and `conflicts` where one document gives two different figures for the same year. The `/trends` page charts it.
 
 # Web Smoke Tests
 
