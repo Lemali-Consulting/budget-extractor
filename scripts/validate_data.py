@@ -101,14 +101,15 @@ def validate_csv_structural(csv_path: Path, pdf_stem: str, year: int) -> list[Fi
         return findings
 
     coord_row = rows[0]
-    # Strip section column from coord row
-    if coord_row and coord_row[-1] == "section":
+    # The geometry row says whether a section column exists; strip it there and
+    # from the first row, which on a headerless table is data with a blank cell.
+    has_section_column: bool = bool(coord_row) and coord_row[-1] == "section"
+    if has_section_column:
         coord_row = coord_row[:-1]
 
     num_data_cols = len(coord_row)
     headers = rows[1] if len(rows) > 1 else []
-    # Strip section column from headers
-    if headers and headers[-1] == "section":
+    if has_section_column and headers:
         headers = headers[:-1]
 
     data_rows = rows[2:] if len(rows) > 2 else []
