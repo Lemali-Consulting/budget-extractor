@@ -227,6 +227,11 @@
   "DOMI": {
     "sections": [
       {
+        "slug": "department-of-public-works",
+        "title": "Department of Public Works",
+        "budgetType": "operating"
+      },
+      {
         "slug": "department-of-mobility-and-infrastructure",
         "title": "Department of Mobility and Infrastructure",
         "budgetType": "operating"
@@ -272,7 +277,7 @@
         "budgetType": "capital"
       }
     ],
-    "total": 9
+    "total": 10
   },
   "PLI": {
     "sections": [

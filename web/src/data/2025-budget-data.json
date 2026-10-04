@@ -3384,6 +3384,161 @@
       ]
     },
     {
+      "section_number": 6,
+      "title": "Revenue Narrative",
+      "slug": "revenue-narrative",
+      "start_page": 39,
+      "end_page": 43,
+      "tables": [],
+      "page_content": [
+        {
+          "relative_page": 0,
+          "absolute_page": 39,
+          "text_blocks": [
+            {
+              "text": "Revenue Narrative\nThe following revenue forecasts are intended to provide policy makers and the public with a revenue baseline to\ninform the budget process. The forecasts are based on economic assumptions, recent collection trends, and\ncurrent laws and policies. However, actual revenues could vary from forecasts due to unforeseeable economic\nand technical factors.\n2025 Operating Budget Revenue\nRevenues are divided into tax and non-tax revenues. In 2025, tax revenues are budgeted at approximately $530.3\nmillion and non-tax revenues are budgeted at $138.5 million, comprising approximately 79.3 percent and 20.7\npercent of total revenues, respectively. Total revenues are forecast to decrease by 6.2 percent in 2025 over the\n2024 budget.\nTax Revenue\nTax revenues incorporate all major taxes that are levied by the City of Pittsburgh. For each tax, total revenues\ninclude current year collections, prior year collections and penalties and interest. Tax revenues are forecast to\ndecrease by 2.1 percent in 2025 over the 2024 budget and to increase by 1.9 percent each year through 2029.\nReal Estate Tax\nTotal real estate tax revenues are budgeted at $143.9 million in 2025, an estimated 5.3 percent decrease from the\nprior year. The real estate tax comprises approximately 27.1 percent of tax revenues and 21.5 percent of total\nrevenues. Current year real estate tax liability (the amount billed at the beginning of the year) is calculated by\napplying the millage rate (8.06 mills) to Allegheny County's assessed value of property. On average, residential\nproperty comprises approximately 55 percent of the total assessed value of property in the City of Pittsburgh and\nnon-residential property comprises approximately 45 percent. Prior to the county-wide reassessment effective in\n2013, the total assessed value of property in the City grew by approximately 1.2 percent on average per year\nsince 2003. The county-wide reassessment led to appeals, most notably for non-residential property, and the total\nassessed value decreased by 7.8 percent in 2014. Until 2024, Since then, the total assessed value of property\ngrew by about 1.6 percent on average per year. In 2024, the total assessed value decreased by 4.7 percent.\nThe largest taxpayer incentives that reduce current year real estate tax liability are the homestead exemption, the\nAllegheny County Act 77 of 2000 property tax relief (for senior citizens who meet certain requirements), and the 2\npercent early-filer discount. Non-profits are exempt from this tax.  Real estate tax incentives for future years are\nestimated as an average percentage of tax liability based on data since the reassessment. Total real estate tax\nrevenues are forecast to decrease by 0.8 percent each year through 2029.\nEarned Income Tax\nTotal earned income tax revenues are budgeted at $145.0 million in 2025, an estimated 6.5 percent increase over\nthe prior year. The earned income tax is a 1.25 percent levy on the wages and net profits of residents of the City\nof Pittsburgh. The earned income tax forecast projects tax year liabilities based on a varying growth rate, with a\ndownward adjustment for the City of Pittsburgh, and splits current and prior year liabilities based on historical\ncollections. Total earned income tax revenues are forecast to increase by 3.8 percent each year through 2029.\nPayroll Preparation Tax\nTotal payroll preparation tax revenues are budgeted at $77.3 million in 2025, an estimated 1.2 percent increase\nover the prior year. The payroll preparation tax is levied at a rate of 0.55 percent on the gross payroll of employers\nand net income from self-employed individuals, members of partnerships, associations and joint ventures who\nperform work or provide services within the City of Pittsburgh. Non-profits an exempt from this tax. The payroll\npreparation tax forecast uses total non-farm wages for Allegheny County to forecast future revenues. Total non-\n39",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                89.3,
+                560.8,
+                768.0
+              ]
+            }
+          ],
+          "chart_regions": []
+        },
+        {
+          "relative_page": 1,
+          "absolute_page": 40,
+          "text_blocks": [
+            {
+              "text": "farm wages for Allegheny County are forecast to increase by 2.2 percent on average. Total payroll preparation tax\nrevenues are forecast to increase by 2.1 percent each year through 2029.\nParking Tax\nTotal parking tax revenues are budgeted at $53.6 million in 2025, a 4.0 percent increase from the prior year. The\nparking tax is levied at a rate of 37.5 percent on fees charged for parking or storing cars within the City of\nPittsburgh. The parking tax forecast uses a multivariate regression with collections as the dependent variable and\nthe tax rate and gross Allegheny County product as independent variables. Estimated gross Allegheny County\nproduct is the total value of goods produced and services provided in the county, and serves as a broad economic\nindicator of activity in and around the City. Total parking tax revenues are forecast to increase by 4.0 percent each\nyear through 2029.\nDeed Transfer Tax\nDeed transfer tax revenues are budgeted at $42.3 million in 2025, an estimated 28.4 percent decrease compared\nwith the prior year. The tax is levied at a rate of 3 percent on real property transfers within the City of Pittsburgh.\nThe total tax paid, which is typically split between the buyer and seller of a property, is 5% as of 2020, as the state\nand school board each also levy 1% taxes of their own.\nThe deed transfer tax forecast uses a multivariate regression with collections as the dependent variable and three\nindependent variables. The first independent variable is the residential tax base, which consists of existing single-\nfamily home sales multiplied by the average price of an existing single-family home. The other independent\nvariables are the tax rate and a dummy variable for years in which the sale of a non-residential property exceeded\n$100 million. Total deed transfer tax revenues are forecast to increase by 0.8 percent on average each year over\nthe next five years.",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                87.6,
+                560.8,
+                399.4
+              ]
+            },
+            {
+              "text": "Regional Asset District Tax Relief\nRegional Asset District tax relief is budgeted at $27.3 million in 2025, an estimated 6.2 percent increase over the\nprior year. This relief, created by Pennsylvania Act 77 of 1993, provides the City of Pittsburgh with a percentage of\n1/4 of the 1 percent additional sales tax in Allegheny County. The City of Pittsburgh\u2019s percentage is determined by\na formula that compares the City\u2019s tax revenues and the market value of property per capita with that of all\nmunicipalities in Allegheny County. Retail sales (a proxy for sales tax collections) are forecast to grow by 2.4\npercent on average over the same period. Act 77 tax relief is forecast to increase by 2.5 percent each year\nthrough 2029.\nAmusement Tax\nTotal amusement tax revenues are budgeted at $19.5 million in 2025, an estimated 3.1 percent increase over the\nprior year. The amusement tax is levied at a rate of 5 percent on the gross admission to events that provide\nentertainment within the City of Pittsburgh, excluding non-profit performing arts organizations. Amusement tax\ncollections are primarily motivated by sporting events within the City. Revenues from the three professional sports\nteams have historically comprised 70 percent of amusement tax revenues on average per year. Revenues from\nopposing teams and non-resident performers comprise the remainder of the amusement tax revenues. A sports\nteams and clubs economic indicator is used to forecast 70 percent of amusement tax revenues. The remaining 30\npercent is forecast with consumer price index (inflation) to generate a more conservative forecast. Total\namusement tax revenues are forecast to increase by 2.5 percent each year through 2029.",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                418.2,
+                560.8,
+                668.2
+              ]
+            }
+          ],
+          "chart_regions": []
+        },
+        {
+          "relative_page": 2,
+          "absolute_page": 41,
+          "text_blocks": [
+            {
+              "text": "Local Service Tax\nTotal local service tax revenues are budgeted at $13.3 million in 2025, an estimated 15.5 percent decrease over\nthe prior year. The local service tax is a weekly tax of $1 per employee working within the City of Pittsburgh\nearning greater than $12,000 annually. The local service tax forecast uses annual employment forecasts for the\nCity of Pittsburgh to project revenues. Total local service tax revenues are forecast to decrease by 0.9 percent per\nyear through 2029.\nNon-Resident Sports Facility Usage Fee\nTo offset the revenue loss from phasing out the tax on non-profit performing arts organizations, the non-resident\nsports facility usage fee was established in 2005. Total non-resident sports facility usage fee revenues are\nbudgeted at $6.1 million in 2025, an estimated 39.6 percent increase over the prior year. The fee is 3 percent of\nthe earned income generated by non-residents using a publicly funded facility to engage in an athletic event or\nperformance.  This results in a conservative forecast with growth slightly above the consumer price index. Total\nnon-resident sports facility usage fee revenues are forecast to increase by 2.3 percent each year through 2029.\nTelecommunication Licensing Fee\nThe telecommunication licensing fee is budgeted at $1.3 million in 2025, a 9.0 percent increase compared with\nthe prior year. The fee is levied on telecommunications companies for the privilege of running lines under public\nstreets, bridges and sidewalks. Total telecommunication licensing fee collections are forecast to increase by 1.0\npercent each year through 2029.\nInstitution and Service Privilege Tax\nThe institution and service privilege tax is budgeted at $158,748 in 2025, an estimated 65.5 percent decrease\nover the prior year. The tax is levied on the gross income of foundations, partnerships and non-profit organizations\nthat provide a public service. Total revenues are forecast to decrease by 1.5 percent each year through 2029,\nroughly in line with inflation.\nNon-Profit Payments for Services\nNon-profit payments for services are contractual payments from the Housing Authority of the City of Pittsburgh for\nsome of their properties that have been taken off the tax rolls. The total budget for this line item is $598,839 in\n2025.\nNon-Tax Revenues\nNon-tax revenues are divided into six categories: licenses and permits, charges for service, fines and forfeitures,\nintergovernmental revenue, interest earnings, and miscellaneous revenues. Non-tax revenues are forecast to\ndecrease by 19.0 percent in 2025 over the prior year and increase by 0.9 percent each year through 2029.\nLicenses and Permits\nTotal revenues for the licenses and permits category are budgeted at $17.5 million in 2025, an estimated 11.7\npercent increase over the prior year. Licenses account for 5.3 percent of this revenue and permits account for\n94.1 percent 2025. Licenses are issued to businesses and vendors for a variety of purposes. The largest source\nof license revenue is liquor and malt beverage licenses, budgeted at $404 thousand in 2025 and increasing by 2.1\npercent per year thereafter. Permits are generally issued for building construction and renovation. The largest\nsource of permit revenues are commercial building permits, budgeted at $4.0 million in 2025. Total license and\npermit revenues are forecast to increase by 2.1 percent each year through 2029.",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                89.4,
+                560.8,
+                710.2
+              ]
+            }
+          ],
+          "chart_regions": []
+        },
+        {
+          "relative_page": 3,
+          "absolute_page": 42,
+          "text_blocks": [
+            {
+              "text": "Chapter 170 of the City Code requires City Council to annually authorize a fee schedule for all licenses and\npermits. The master fee schedule is a separate piece of legislation from the appropriations and salaries\nresolutions.\nCharges for Service\nTotal revenues for the charges for service category are budgeted at $42.8 million in 2025, an estimated 3.8\npercent increase over the prior year. The City of Pittsburgh charges various entities to recoup costs for services\nprovided throughout the year. The largest source of revenue in the category is medical service revenues,\nbudgeted at $18.1 million in 2025 and forecast to increase by 2.1 percent each year thereafter. Other large\nrevenues in the category include: daily parking meters, budgeted at $10.5 million in 2025; reimbursements from\nPittsburgh Water, budgeted at $1.2 million; and cable bureau revenues, budgeted at $4.1 million. Total charges for\nservice revenues are forecast to increase by 1.5 percent each year through 2029.\nFines and Forfeitures\nTotal revenues for the fines and forfeitures category are budgeted at $9.3 million in 2025, an estimated 7.1\npercent increase over the prior year. The largest sources of revenue in the category are parking authority tickets\n($8.2 million in 2025) and traffic court ($0.9 million). Total revenues for the fines and forfeitures category are\nforecast to increase by 2.1 percent each year through 2029.\nIntergovernmental Revenues\nTotal intergovernmental revenues are budgeted at $53.8 million in 2025, an estimated 27.9 percent increase\ncompared with the prior year. The largest payment in the category is state pension aid, budgeted at $31.2 million\nin 2025, an estimated 17.5 percent increase over the prior year. The City receives an annual payment based on\nits number of police, fire, and municipal employees. The state\u2019s allocation per employee is determined by the\ninsurance premiums tax on foreign casualty insurers. The 2 percent share of local slots revenue is budgeted at\n$10.0 million per year through 2029 and the liquid fuels tax transfer is budgeted at $4.0 million per year.  Total\nintergovernmental revenues are forecast to increase by 0.5 percent each year through 2029.\nInterest Earnings and Miscellaneous Revenues\nTotal revenues from interest earnings are budgeted at $14.9 million in 2025, an estimated 10.1 percent decrease\nfrom the prior year. Interest earnings are forecast to decrease by 1.0 percent each year through 2029.\nMiscellaneous revenues are budgeted at $238,361 in 2025. Miscellaneous revenues include proceeds from the\nsale of public property and scrap metal.",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                89.4,
+                560.8,
+                531.4
+              ]
+            }
+          ],
+          "chart_regions": []
+        },
+        {
+          "relative_page": 4,
+          "absolute_page": 43,
+          "text_blocks": [
+            {
+              "text": "Four Major Tax Revenues Comprise 63% of the 2025 Budget\nParking Tax\n8.0%\nPayroll Preparation Tax\n11.6%\nAll Other Revenues\n37.2%",
+              "role": "narrative",
+              "bbox": [
+                106.2,
+                139.6,
+                505.8,
+                229.3
+              ]
+            },
+            {
+              "text": "Earned Income Tax\n21.7%",
+              "role": "section_title",
+              "bbox": [
+                135.0,
+                281.6,
+                203.7,
+                299.3
+              ]
+            },
+            {
+              "text": "Real Estate Tax\n21.5%",
+              "role": "section_title",
+              "bbox": [
+                320.5,
+                336.6,
+                376.4,
+                354.2
+              ]
+            },
+            {
+              "text": "Four Main Non-Tax Revenues Comprise 18% of the 2025 Budget\nFines & Forfeitures\nLicenses & Permits\n1.4%\n2.6%\nCharges for Services\n6.4%",
+              "role": "narrative",
+              "bbox": [
+                93.0,
+                462.3,
+                519.0,
+                534.2
+              ]
+            },
+            {
+              "text": "Intergovernmental\n8.0%",
+              "role": "section_title",
+              "bbox": [
+                135.0,
+                559.2,
+                199.4,
+                576.8
+              ]
+            },
+            {
+              "text": "All Other Revenues\n81.6%",
+              "role": "section_title",
+              "bbox": [
+                369.0,
+                653.2,
+                438.3,
+                670.8
+              ]
+            }
+          ],
+          "chart_regions": []
+        }
+      ]
+    },
+    {
       "section_number": 7,
       "title": "Revenue Detail",
       "slug": "revenue-detail",
@@ -27034,6 +27189,110 @@
       ]
     },
     {
+      "section_number": 30,
+      "title": "Department of Public Works",
+      "slug": "department-of-public-works",
+      "start_page": 200,
+      "end_page": 204,
+      "tables": [],
+      "page_content": [
+        {
+          "relative_page": 0,
+          "absolute_page": 200,
+          "text_blocks": [
+            {
+              "text": "Department of\nPublic Works",
+              "role": "section_title",
+              "bbox": [
+                126.4,
+                150.4,
+                485.6,
+                267.0
+              ]
+            }
+          ],
+          "chart_regions": [
+            {
+              "bbox": [
+                218.5,
+                408.0,
+                393.5,
+                583.0
+              ],
+              "chart_type": "logo"
+            }
+          ]
+        },
+        {
+          "relative_page": 1,
+          "absolute_page": 201,
+          "text_blocks": [],
+          "chart_regions": [
+            {
+              "bbox": [
+                54.0,
+                186.0,
+                558.0,
+                446.9
+              ],
+              "chart_type": "raster_image"
+            }
+          ]
+        },
+        {
+          "relative_page": 2,
+          "absolute_page": 202,
+          "text_blocks": [
+            {
+              "text": "Mission Statement\nMaintain the City\u2019s assets related to accessing public streets, parks, facilities, rehabilitating public structures, and\nmaintaining the City's natural environment; provide support to other departments; administer a solid waste and\nrecycling system that promotes a litter-free environment; and ensure public safety responding to weather-related\nevents.\nDepartment/Bureau Overview\nThe Department of Public Works (DPW) is separated into four (4) bureaus:\nAdministration - The Bureau of Administration is connected to the other three (3) Bureaus in the Department and\nis divided into three (3) sections and one (1) Division:\nFiscal - Responsible for the Bureau\u2019s and Division\u2019s procuring commodities, services, and repairs within\nbudgetary limits. Fiscal also handles all personnel transactions for the department\nPermits - Responsible for issuing Park Shelter/Field Permits/General Permits ensuring permit holders are\nin compliance with established rules and regulations and the Pittsburgh Code via the inspection process\nWarehouse - Responsible for maintaining proper stock levels for commodities and equipment used by\ndepartmental divisions, and for the delivery of those assets to various locations\nForestry Division - Provides prompt, efficient and safe delivery of Arboricultural services to residents in\nmanaging the city\u2019s urban forest consisting of 33,000 street trees and vast acreage of park trees.\nFunctions and duties include:\n\u2022 Removal of trees\n\u2022 Pruning\n\u2022 Root Pruning\n\u2022 Planting\n\u2022 Inspection/Investigation\n\u2022 Permits\n\u2022 Holiday Tree Installation\n\u2022 Maintain Computerized Street Tree Database\n\u2022 Ordinance Enforcement\n\u2022 Integrated Pest Management (IPM)\nOperations - The Bureau of Operations is divided into three (3) divisions: Streets Maintenance, Parks\nMaintenance, and Heavy Equipment.\nStreets/Park Maintenance - Ensure that all public roadways, streets, bridges, walkways, parks,\ngreenspaces, and recreational areas and facilities are functional, safe, and attractive. Functions and\nduties include:\n\u2022 Cleaning, repairing, maintaining, and patching City streets and other public areas\n\u2022 Removing graffiti and illegal signs from public property\n\u2022 Ensuring public safety by responding to weather-related events such as flooding, land\nsubsidence, snow and ice storms, and other disasters\n\u2022 Litter collection\n\u2022 Emptying trash receptacles\n\u2022 Turf maintenance\n\u2022 Landscape maintenance\n\u2022 Weed control\n\u2022 Leaf collection and removal\n\u2022 Snow and ice control\n\u2022 Field maintenance\n202",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                89.3,
+                559.9,
+                768.0
+              ]
+            }
+          ],
+          "chart_regions": []
+        },
+        {
+          "relative_page": 3,
+          "absolute_page": 203,
+          "text_blocks": [
+            {
+              "text": "\u2022 Court maintenance including courts for tennis, basketball, hockey, horseshoes, and bocce\n\u2022 Shelter maintenance\n\u2022 Play equipment maintenance\n\u2022 Building maintenance\n\u2022 Trail maintenance\nThe inventory of public infrastructure maintained by the Streets/Park Maintenance section includes:\n\u2022 1,060 lineal miles of streets (890 asphalt, 90 concrete, 80 brick/block stone)\n\u2022 2,423 lane miles of streets (2,034 asphalt, 206 concrete, 183 brick/block stone)\n\u2022 675 sets of steps covering 23.3 lineal miles\n\u2022 2,000 litter receptacles\n\u2022 1,672 lots owned by the City that are part of parks, greenways, and City government facilities\n\u2022 7,600 lots owned by the City or jointly by the City, County, and Board of Education\n\u2022 1,249 additional privately owned vacant lots for which the owner cannot be found (\u201cDead End\u201d\nlots)\n\u2022 3,647 acres of parkland\n\u2022 654 acres of turf\n\u2022 160 parks\n\u2022 230 courts (basketball, tennis, volleyball, street hockey, horseshoe, bocce, pickleball, and\nmultipurpose)\n\u2022 122 fields (ball diamonds and/or rectangular)\n\u2022 119 modular playgrounds\nHeavy Equipment - Responsible for the repair and preventative maintenance of over 1,018 pieces of\nequipment including but not limited to hilifts/front end loaders, gradalls, skid steers, large area mowers,\nindustrial tractors, plows/spreaders, and a multitude of small landscape equipment (mowers, line\ntrimmers, edgers, blowers, etc.), and the delivery/setup/pickup of large mobile stages and bleachers.\nEnvironmental Services - The Bureau of Environmental Services is divided into two (2) divisions, Refuse and\nRecycling\nRefuse - The role of this section is to collect regular mixed and bulk solid waste weekly from residential\nproperties, the Housing Authority, the Borough of Wilkinsburg, and City government buildings and to\ndispose of that solid waste at two (2) landfill locations.\nRecycling - The City is required by State law to have a recycling program. The role of this section is to\nmaintain, monitor, and advance waste reduction and recycling activities that are fiscally responsible,\nenvironmentally-friendly, and compliant with State law for all city residents, businesses, and\norganizations. Recycling collections are bi-weekly from residential properties with five (5) dwelling units or\nless, the Housing Authority, Pittsburgh Public Schools, and municipal buildings throughout the city. Private\nhaulers are monitored for compliance with recycling ordinances.\nTwice a year special compost (yard debris) collections are provided for city residents.\nAn inventory of outputs:\n\u2022 115,200 city residential properties serviced weekly\n\u2022 7,500 Wilkinsburg properties serviced weekly\n\u2022 122 sidewalk recycling bins serviced in Business Districts twice per week\n\u2022 88,000 tons of residential refuse landfille\n\u2022 15,222 tons of recycling materials collected\n\u2022 50,000 tires recycled\n\u2022 4,144 tons of yard debris composted\n\u2022 17 tons of electronic products collected\n\u2022 100 tons of scrap metal recycled",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                89.4,
+                559.5,
+                735.4
+              ]
+            }
+          ],
+          "chart_regions": []
+        },
+        {
+          "relative_page": 4,
+          "absolute_page": 204,
+          "text_blocks": [
+            {
+              "text": "Facilities - The Bureau of Facilities ensures the functional, operational, and aesthetic integrity of the City\u2019s Facility\nAsset Inventory including its 300 buildings and structures as well as its numerous recreational assets by delivering\ndesign, construction, maintenance, and repair services in a timely and proficient manner. The Bureau is divided\ninto three (3) Divisions:\nProject Management\n\u2022 Performs quality asset management for facility inventory\n\u2022 Performs in-house project management and project coordination for all Capital-funded\nconstruction projects\n\u2022 Provides in-house planning and cost-estimation services for construction projects\n\u2022 Provides in-house design services and design quality review\n\u2022 Preparation of construction bid documents\n\u2022 Construction project management\n\u2022 Outside and agency project liaison and coordination\nConstruction\n\u2022 Utilizes skilled tradespersons to perform a variety of minor and major renovation projects related\nto trails, roads, sidewalks, playgrounds, fields, walls, and steps\n\u2022 Performs infrastructure assessments of assets\n\u2022 Provides construction cost details and analysis for all in-house construction services\nFacilities Maintenance\n\u2022 Utilizes skilled tradespersons to perform a variety of minor renovation and repair projects related\nto building systems\n\u2022 Performs building and system condition assessments and preventative maintenance\n\u2022 Provides construction cost details and analysis for all in-house facilities maintenance and trade\nservices\n2024 Accomplishments\n\u2022 Public Works has continued to make significant reduction in injuries, year-over-year with the\nimplementation of the Real-Time Safety System (RTSS), including reducing the DART rate from Q3 2023\nfrom 17 to 12, a 30% reduction, and yielding approximately $300,000 savings in reduced workers'\ncompensation claim costs.\n\u2022 In addition to perennial preventative maintenance programs, Public Works has supported other\ndepartments in providing services for residents, including finalizing the 412 Blvd of Allies project, opening\nservices to the public on November 18th, 2024, creating a home for the DOMI Bridge Maintenance\nDivision. Public Works has also coordinated directly with Public Safety and Allegheny County partners to\nimprove responsiveness for unhoused residents.\n\u2022 Public Work has supported the Department of Human Resources and Civil Service through increased\ncoordination and responsiveness, resulting in greater diversity in hiring and promotions and reduced time\nto contact candidates and hire new staff, and improved qualification requirements for promotional\nopportunities.\n\u2022 Employees have performed vacant property clean-ups at over 260 private properties this year, an\nincrease of over 300% from the 86 clean ups performed in 2023. This was accomplished without\ninvestment in additional personnel and equipment.\n\u2022 The department has improved operational capability through a series of staff-led trainings. Senior\nleadership has conducted 15 \"go-and-see\" exercises and self-identified improvement practices in the core\nservices of Forestry, Administration, Heavy Equipment Operation, Facilities Maintenance, Vehicle\nMaintenance, and Anti-Litter Enforcement.",
+              "role": "narrative",
+              "bbox": [
+                54.0,
+                89.4,
+                560.6,
+                689.8
+              ]
+            }
+          ],
+          "chart_regions": []
+        }
+      ]
+    },
+    {
       "section_number": 31,
       "title": "Bureau of Administration (Public Works)",
       "slug": "bureau-of-administration-public-works",
@@ -45199,6 +45458,48 @@
       ]
     },
     {
+      "section_number": 59,
+      "title": "City of Pittsburgh Organization Chart",
+      "slug": "city-of-pittsburgh-organization-chart",
+      "start_page": 307,
+      "end_page": 308,
+      "tables": [],
+      "page_content": [
+        {
+          "relative_page": 0,
+          "absolute_page": 307,
+          "text_blocks": [],
+          "chart_regions": [
+            {
+              "bbox": [
+                218.6,
+                408.0,
+                393.4,
+                582.8
+              ],
+              "chart_type": "logo"
+            }
+          ]
+        },
+        {
+          "relative_page": 1,
+          "absolute_page": 308,
+          "text_blocks": [],
+          "chart_regions": [
+            {
+              "bbox": [
+                54.0,
+                90.0,
+                558.0,
+                518.8
+              ],
+              "chart_type": "raster_image"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "section_number": 60,
       "title": "Salary Tables",
       "slug": "salary-tables",
@@ -50649,6 +50950,91 @@
             }
           ],
           "chart_regions": []
+        }
+      ]
+    },
+    {
+      "section_number": 62,
+      "title": "Pension Funding",
+      "slug": "pension-funding",
+      "start_page": 328,
+      "end_page": 331,
+      "tables": [],
+      "page_content": [
+        {
+          "relative_page": 0,
+          "absolute_page": 328,
+          "text_blocks": [
+            {
+              "text": "Pension Funding",
+              "role": "section_title",
+              "bbox": [
+                91.1,
+                214.0,
+                521.0,
+                267.0
+              ]
+            }
+          ],
+          "chart_regions": [
+            {
+              "bbox": [
+                218.6,
+                408.0,
+                393.4,
+                582.8
+              ],
+              "chart_type": "logo"
+            }
+          ]
+        },
+        {
+          "relative_page": 1,
+          "absolute_page": 329,
+          "text_blocks": [],
+          "chart_regions": [
+            {
+              "bbox": [
+                54.0,
+                90.0,
+                558.0,
+                727.7
+              ],
+              "chart_type": "raster_image"
+            }
+          ]
+        },
+        {
+          "relative_page": 2,
+          "absolute_page": 330,
+          "text_blocks": [],
+          "chart_regions": [
+            {
+              "bbox": [
+                54.0,
+                90.0,
+                558.0,
+                711.0
+              ],
+              "chart_type": "raster_image"
+            }
+          ]
+        },
+        {
+          "relative_page": 3,
+          "absolute_page": 331,
+          "text_blocks": [],
+          "chart_regions": [
+            {
+              "bbox": [
+                54.0,
+                90.0,
+                558.0,
+                741.3
+              ],
+              "chart_type": "raster_image"
+            }
+          ]
         }
       ]
     },

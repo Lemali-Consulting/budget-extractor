@@ -814,6 +814,21 @@ def load_descriptions() -> dict[str, str]:
     return {}
 
 
+def section_table_dirs(*, sections_lookup: dict[int, dict], output_dir: Path) -> list[tuple[int, Path | None]]:
+    """Pair every section number with its baseline folder, or None for a text-only section that has none.
+
+    Sections come from the section definitions, not the folders: git cannot store an empty folder,
+    so a section with no tables would otherwise vanish from any fresh checkout's build.
+    """
+    dirs_by_number: dict[int, Path] = {}
+    for dir_path in sorted(output_dir.iterdir()):
+        match: re.Match[str] | None = DIR_PATTERN.match(dir_path.name)
+        if dir_path.is_dir() and match:
+            dirs_by_number[int(match.group(1))] = dir_path
+    numbers: list[int] = sorted(set(sections_lookup) | set(dirs_by_number))
+    return [(number, dirs_by_number.get(number)) for number in numbers]
+
+
 def build_data() -> dict:
     """Build the complete data bundle."""
     sections_lookup = load_sections()
@@ -827,24 +842,16 @@ def build_data() -> dict:
 
     sections: list[dict] = []
 
-    for dir_path in sorted(OPERATING_OUTPUT_DIR.iterdir()):
-        if not dir_path.is_dir():
-            continue
-
-        match = DIR_PATTERN.match(dir_path.name)
-        if not match:
-            continue
-
-        section_num = int(match.group(1))
-        section_name = match.group(2).replace("_", " ")
-
-        # Get section info from sections JSON
+    for section_num, dir_path in section_table_dirs(sections_lookup=sections_lookup, output_dir=OPERATING_OUTPUT_DIR):
+        # Get section info from sections JSON; a folder beyond the definitions falls back to its name
         section_info = sections_lookup.get(section_num, {})
-        title = section_info.get("title", section_name)
+        folder_name: str = DIR_PATTERN.match(dir_path.name).group(2).replace("_", " ") if dir_path else ""
+        title = section_info.get("title", folder_name)
         start_page = section_info.get("start_page")
 
+        csv_paths: list[Path] = sorted(dir_path.glob("*.csv")) if dir_path else []
         tables: list[dict] = []
-        for csv_path in sorted(dir_path.glob("*.csv")):
+        for csv_path in csv_paths:
             file_match = FILE_PATTERN.match(csv_path.name)
             if not file_match:
                 continue
