@@ -45,6 +45,7 @@ interface DisplayResult {
 const BADGE_STYLES: Record<string, { bg: string; fg: string }> = {
   [PAGEFIND_BUDGET_TYPE.CAPITAL]: { bg: 'bg-blue-100', fg: 'text-blue-700' },
   [PAGEFIND_BUDGET_TYPE.OPERATING]: { bg: 'bg-gray-100', fg: 'text-gray-700' },
+  [PAGEFIND_BUDGET_TYPE.GLOSSARY]: { bg: 'bg-purple-100', fg: 'text-purple-700' },
 };
 const DEFAULT_BADGE_STYLE = BADGE_STYLES[PAGEFIND_BUDGET_TYPE.OPERATING];
 

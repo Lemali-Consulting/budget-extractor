@@ -3,10 +3,11 @@
 /** URL of the Pagefind runtime that `pagefind --site dist` writes into the build. */
 export const PAGEFIND_PATH = '/pagefind/pagefind.js';
 
-/** Budget types shown as a badge on search results (Pagefind metadata values). */
+/** Kinds of indexed page, shown as a badge on search results (Pagefind metadata values). */
 export const PAGEFIND_BUDGET_TYPE = {
   OPERATING: 'Operating',
   CAPITAL: 'Capital',
+  GLOSSARY: 'Glossary',
 } as const;
 export type PagefindBudgetType = (typeof PAGEFIND_BUDGET_TYPE)[keyof typeof PAGEFIND_BUDGET_TYPE];
 

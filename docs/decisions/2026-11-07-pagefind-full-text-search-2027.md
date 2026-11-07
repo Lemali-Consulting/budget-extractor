@@ -11,7 +11,7 @@ The site search (Fuse.js over `views/search-index.json`) did not search the body
 
 Use **Pagefind** for full-text search, scoped to the **2027 headline budget only** (choice of library and scope made by Max on 2026-11-07).
 
-- Pagefind runs after `astro build` and indexes the built HTML. Only pages that opt in with `data-pagefind-body` are indexed: the 2027 operating section pages (`/sections/*`) and capital project pages (`/capital/*`). Archive routes (`/2026/...`) and every other page are not indexed.
+- Pagefind runs after `astro build` and indexes the built HTML. Only pages that opt in with `data-pagefind-body` are indexed: the 2027 operating section pages (`/sections/*`), capital project pages (`/capital/*`) and the glossary (`/glossary/`, added the same day at Max's request; its "Used in" section links are ignored so department names don't all match the glossary). Archive routes (`/2026/...`) and every other page are not indexed.
 - Page chrome inside indexed pages (navigation, table of contents, notices, PDF sidebar) is marked `data-pagefind-ignore`.
 - Search boxes on headline pages use Pagefind; archive pages (2026, 2025, amendments, cross-year) keep the existing Fuse search unchanged.
 
@@ -31,6 +31,6 @@ Pagefind over the whole built site: 339 pages, 2.8 MB of index spread over ~35 K
 - Search finds words anywhere in the 2027 section and capital project text, with stemming.
 - Results link to pages (with heading anchors where available), not to individual tables.
 - `npm run build` gains a Pagefind post-step; search does not work under `astro dev`, only on a built site.
-- Glossary terms and "what changed" items are no longer surfaced by the headline search box, since those pages are not indexed.
+- "What changed" items are no longer surfaced by the headline search box, since that page is not indexed. Glossary results link to the matching group of terms (heading anchors such as `/glossary/#general_terms`).
 - Headline pages stop embedding the Fuse search index.
 - 2026 and 2025 search behaviour is unchanged and still has the prose-truncation limitation.

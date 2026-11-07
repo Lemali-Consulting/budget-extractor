@@ -101,7 +101,7 @@ When a source PDF mislabels something (e.g. the 2027 Parks Tax Trust Fund table 
 
 # Site Search
 
-The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 section and capital project pages opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years (`/2026/...`, amendments, cross-year) keep the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
+The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 section pages, capital project pages and the glossary opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years (`/2026/...`, amendments, cross-year) keep the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
 
 # Web Smoke Tests
 

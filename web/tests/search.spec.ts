@@ -44,6 +44,15 @@ test("headline search results show the budget type and a text excerpt", async ({
   await expect(hit.locator("mark").first()).toContainText(/Hutchinson/i);
 });
 
+test("headline search finds glossary definitions, labelled as glossary", async ({ page }) => {
+  // "bondholders" appears only in a glossary definition, not on any budget page.
+  await page.goto("/operating/");
+  const results = await search(page, "bondholders");
+  const hit = results.locator('a[href^="/glossary/"]').first();
+  await expect(hit).toBeVisible();
+  await expect(hit).toContainText("Glossary");
+});
+
 test("archive search still finds 2026 sections inside the archive", async ({ page }) => {
   await page.goto("/2026/operating/");
   const results = await search(page, "Bureau of Police");

@@ -2,6 +2,10 @@
 import Base from '../layouts/Base.astro';
 import SiteSearch from '../components/SiteSearch.tsx';
 import { HEADLINE } from '../lib/budget-year';
+import { pagefindBodyAttrs, PAGEFIND_BUDGET_TYPE } from '../lib/pagefind';
+
+// The glossary describes the headline budget, so it is always indexed for search.
+const indexAttrs = pagefindBodyAttrs({ isHeadline: true, budgetType: PAGEFIND_BUDGET_TYPE.GLOSSARY });
 
 const backlinksData = HEADLINE.views.glossaryBacklinks;
 const glossary = HEADLINE.operating.glossary;
@@ -98,7 +102,8 @@ function normalizeSection(key: string): GlossaryEntry[] {
 ---
 
 <Base title="Glossary">
-  <nav class="text-sm text-gray-500 mb-4">
+  <div {...indexAttrs}>
+  <nav class="text-sm text-gray-500 mb-4" data-pagefind-ignore>
     <a href="/" class="hover:text-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>Glossary</span>
@@ -107,11 +112,11 @@ function normalizeSection(key: string): GlossaryEntry[] {
   <h1 class="text-3xl font-bold mb-2">Budget Glossary</h1>
   <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh {HEADLINE.fiscalLabel} Operating and Capital Budgets.</p>
 
-  <div class="mb-6">
+  <div class="mb-6" data-pagefind-ignore>
     <SiteSearch client:load />
   </div>
 
-  <nav class="mb-8 border rounded-lg bg-white p-4">
+  <nav class="mb-8 border rounded-lg bg-white p-4" data-pagefind-ignore>
     <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">On this page</h2>
     <ul class="columns-2 md:columns-3 gap-x-6 text-sm">
       {sections.map((s) => (
@@ -126,8 +131,8 @@ function normalizeSection(key: string): GlossaryEntry[] {
     const entries = normalizeSection(s.key);
     if (!entries.length) return null;
     return (
-      <section id={s.key} class="mb-10">
-        <h2 class="text-xl font-semibold mb-3 border-b pb-1">{s.title}</h2>
+      <section class="mb-10">
+        <h2 id={s.key} class="text-xl font-semibold mb-3 border-b pb-1">{s.title}</h2>
         <dl class="bg-white rounded-lg border divide-y">
           {entries.map((entry) => {
             const bl = entry.backlinkKey ? backlinks[entry.backlinkKey] : undefined;
@@ -143,7 +148,7 @@ function normalizeSection(key: string): GlossaryEntry[] {
                   <dd class="text-sm text-gray-600 mt-1">{entry.description}</dd>
                 )}
                 {bl && (
-                  <dd class="flex flex-wrap gap-1 mt-2">
+                  <dd class="flex flex-wrap gap-1 mt-2" data-pagefind-ignore>
                     <span class="text-xs text-gray-400 mr-1">Used in:</span>
                     {bl.sections.slice(0, 5).map((sec) => (
                       <a href={sectionUrl(sec)} class="inline-block text-xs px-2 py-0.5 bg-blue-50 text-blue-700 rounded hover:bg-blue-100 whitespace-nowrap">{sec.title}</a>
@@ -160,4 +165,5 @@ function normalizeSection(key: string): GlossaryEntry[] {
       </section>
     );
   })}
+  </div>
 </Base>
