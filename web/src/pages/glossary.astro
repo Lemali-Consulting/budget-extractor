@@ -1,9 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import SearchBar from '../components/SearchBar.tsx';
+import SiteSearch from '../components/SiteSearch.tsx';
 import { HEADLINE } from '../lib/budget-year';
 
-const searchIndex = HEADLINE.views.searchIndex;
 const backlinksData = HEADLINE.views.glossaryBacklinks;
 const glossary = HEADLINE.operating.glossary;
 const backlinks: Record<string, { sections: { slug: string; title: string; budgetType: string }[]; total: number }> = backlinksData;
@@ -109,7 +108,7 @@ function normalizeSection(key: string): GlossaryEntry[] {
   <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh {HEADLINE.fiscalLabel} Operating and Capital Budgets.</p>
 
   <div class="mb-6">
-    <SearchBar items={searchIndex} client:load />
+    <SiteSearch client:load />
   </div>
 
   <nav class="mb-8 border rounded-lg bg-white p-4">

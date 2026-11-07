@@ -99,6 +99,10 @@ When a source PDF mislabels something (e.g. the 2027 Parks Tax Trust Fund table 
 
 `scripts/build_longitudinal.py` reads the headline-figure tables (forecast, revenue, expenditure summaries) from every budget document's baselines and writes `views/longitudinal.json`: per-year records by source document, actuals with restatements, and `conflicts` where one document gives two different figures for the same year. The `/trends` page charts it.
 
+# Site Search
+
+The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 section and capital project pages opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years (`/2026/...`, amendments, cross-year) keep the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
+
 # Web Smoke Tests
 
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.
@@ -118,7 +122,7 @@ This project runs in a devcontainer with limited memory. Follow these rules to a
 - **Never run dev servers as background jobs** (`&`). Use `run_in_background` instead, which is managed properly.
 - **Never spawn multiple dev server instances.** Always confirm the previous one is stopped before starting a new one.
 - To start the web dev server: `cd web && npm run dev` (foreground, or with `run_in_background`)
-- **For browser access through port forwarding, use Python's HTTP server, not `astro preview` or `astro dev`.** Both Astro servers use keep-alive/chunked connections that hang through devcontainer port forwarding. Use: `cd web && npx astro build && cd dist && python3 -m http.server 8080 --bind 0.0.0.0`. After making changes, rebuild with `cd web && npx astro build` and have the user refresh the browser — no live reload.
+- **For browser access through port forwarding, use Python's HTTP server, not `astro preview` or `astro dev`.** Both Astro servers use keep-alive/chunked connections that hang through devcontainer port forwarding. Use: `cd web && npm run build && cd dist && python3 -m http.server 8080 --bind 0.0.0.0`. After making changes, rebuild with `cd web && npm run build` and have the user refresh the browser — no live reload. (Use `npm run build`, not bare `npx astro build`: the npm script also builds the search index.)
 
 # Netlify Deployment
 

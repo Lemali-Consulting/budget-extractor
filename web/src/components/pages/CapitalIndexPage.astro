@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import SearchBar from '../SearchBar.tsx';
+import SiteSearch from '../SiteSearch.tsx';
 import FundingSourceChart from '../FundingSourceChart.tsx';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
 
@@ -65,7 +66,11 @@ for (const section of sections) {
   <h1 class="text-3xl font-bold mb-2">Capital Budget & Six Year Plan</h1>
 
   <div class="mb-6">
-    <SearchBar items={searchIndex} routePrefix={prefix} client:load />
+    {budgetYear.isHeadline ? (
+      <SiteSearch client:load />
+    ) : (
+      <SearchBar items={searchIndex} routePrefix={prefix} client:load />
+    )}
   </div>
 
   <p class="text-gray-600 mb-6">

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { pagefindBodyAttrs, PAGEFIND_BUDGET_TYPE } from '../../lib/pagefind';
 import TableViewer from '../TableViewer.astro';
 import PageImage from '../PageImage.tsx';
 import ChartImage from '../ChartImage.tsx';
@@ -20,6 +21,7 @@ interface Props {
 const { budgetYear, section, prev, next } = Astro.props as Props;
 const meta = section as any;
 const prefix = budgetYear.routePrefix;
+const indexAttrs = pagefindBodyAttrs({ isHeadline: budgetYear.isHeadline, budgetType: PAGEFIND_BUDGET_TYPE.CAPITAL });
 const appendicesData = budgetYear.capitalAppendices;
 
 // Same project in the current version, when the headline capital budget has it.
@@ -138,7 +140,8 @@ function parseNarrative(raw: string): Segment[] {
 ---
 
 <Base title={section.title} budgetYear={budgetYear} currentHref={currentHref}>
-  <nav class="text-sm text-gray-500 mb-4">
+  <div {...indexAttrs}>
+  <nav class="text-sm text-gray-500 mb-4" data-pagefind-ignore>
     <a href="/" class="hover:text-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <a href={`${prefix}/capital/`} class="hover:text-blue-600">Capital Budget</a>
@@ -146,7 +149,7 @@ function parseNarrative(raw: string): Segment[] {
     <span>{section.title}</span>
   </nav>
 
-  <SectionNav prev={prev} next={next} basePath={`${prefix}/capital`} position="top" />
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/capital`} position="top" /></div>
 
   <h1 class="text-3xl font-bold mb-2">{section.title}</h1>
 
@@ -184,7 +187,7 @@ function parseNarrative(raw: string): Segment[] {
   ) : finalItems.map((item) => {
     if (item.kind === 'page_break') {
       return (
-        <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
+        <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page} data-pagefind-ignore>
           <div class="flex-1 border-t border-gray-200"></div>
           <span class="flex items-center gap-2">
             Page {(item as any).absolutePage}
@@ -265,8 +268,9 @@ function parseNarrative(raw: string): Segment[] {
     }
   })}
 
-  <SectionNav prev={prev} next={next} basePath={`${prefix}/capital`} />
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/capital`} /></div>
 
+  <div data-pagefind-ignore>
   {section.start_page && section.end_page && pageCount > 0 && (
     <PdfSidebar
       client:load
@@ -276,4 +280,6 @@ function parseNarrative(raw: string): Segment[] {
       startPage={section.start_page}
     />
   )}
+  </div>
+  </div>
 </Base>

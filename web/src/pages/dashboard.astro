@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import SearchBar from '../components/SearchBar.tsx';
+import SiteSearch from '../components/SiteSearch.tsx';
 import BudgetChart from '../components/BudgetChart.tsx';
 import WaterfallChart from '../components/WaterfallChart.tsx';
 import FundingSourceChart from '../components/FundingSourceChart.tsx';
@@ -10,7 +10,6 @@ import { HEADLINE } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
 
 const {
-  searchIndex,
   departmentBudgets: budgetRows,
   revenueWaterfall,
   capitalFundingSources: capitalFunding,
@@ -54,7 +53,7 @@ function fmtM(n: number): string {
   <p class="text-gray-600 mb-4">City of Pittsburgh budget at a glance — operating, capital, and personnel.</p>
 
   <div class="mb-6">
-    <SearchBar items={searchIndex} client:load />
+    <SiteSearch client:load />
   </div>
 
   <!-- Summary stats -->

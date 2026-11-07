@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { pagefindBodyAttrs, PAGEFIND_BUDGET_TYPE } from '../../lib/pagefind';
 import type { BudgetYear } from '../../lib/budget-year';
 import { HEADLINE, headlinePath } from '../../lib/budget-year';
 import { chartImageUrl } from '../../lib/image-paths';
@@ -27,6 +28,7 @@ interface Props {
 
 const { budgetYear, section, prev, next } = Astro.props as Props;
 const prefix = budgetYear.routePrefix;
+const indexAttrs = pagefindBodyAttrs({ isHeadline: budgetYear.isHeadline, budgetType: PAGEFIND_BUDGET_TYPE.OPERATING });
 const amendment = budgetYear.amendment;
 const amendmentByTable = amendment?.cellDiffs.byTable || {};
 // {slug: [pages]} — pages with an adopted (pre-amendment) source image available.
@@ -341,7 +343,8 @@ function parseNarrative(raw: string): Segment[] {
 ---
 
 <Base title={section.title} ogTitle={section.title} ogDescription={ogDesc} budgetYear={budgetYear} currentHref={currentHref}>
-  <nav class="text-sm text-gray-500 mb-4">
+  <div {...indexAttrs}>
+  <nav class="text-sm text-gray-500 mb-4" data-pagefind-ignore>
     <a href="/" class="hover:text-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <a href={`${prefix}/operating/`} class="hover:text-blue-600">Operating Budget</a>
@@ -349,12 +352,12 @@ function parseNarrative(raw: string): Segment[] {
     <span>{section.title}</span>
   </nav>
 
-  <SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} position="top" />
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} position="top" /></div>
 
   <div class="flex items-center gap-3 mb-2">
     <h1 class="text-3xl font-bold">{section.title}</h1>
-    <ShareButton client:load url={`${prefix}/sections/${section.slug}/`} />
-    <button class="text-xs text-gray-400 hover:text-blue-600 print:hidden" onclick="window.print()" title="Print this section" aria-label="Print">
+    <span data-pagefind-ignore><ShareButton client:load url={`${prefix}/sections/${section.slug}/`} /></span>
+    <button data-pagefind-ignore class="text-xs text-gray-400 hover:text-blue-600 print:hidden" onclick="window.print()" title="Print this section" aria-label="Print">
       Print
     </button>
   </div>
@@ -365,12 +368,14 @@ function parseNarrative(raw: string): Segment[] {
     {hasNarrative ? ' · includes narrative' : ''}
   </p>
 
-  <AmendmentNotice budgetYear={budgetYear} />
+  <div data-pagefind-ignore><AmendmentNotice budgetYear={budgetYear} /></div>
 
+  <div data-pagefind-ignore>
   <CorrectionNotice
     year={budgetYear.year}
     corrections={correctionsForSection({ corrections: budgetYear.corrections, sectionSlug: section.slug })}
   />
+  </div>
 
   <SummaryCard
     budgetYear={budgetYear}
@@ -386,7 +391,7 @@ function parseNarrative(raw: string): Segment[] {
 
   <HighlightsCallout highlights={highlights} />
 
-  <SectionToc items={tocEntries} />
+  <div data-pagefind-ignore><SectionToc items={tocEntries} /></div>
 
   {chartTables.length > 0 && (
     <SectionCharts client:load year={budgetYear.year} tables={chartTables} sectionTitle={section.title} />
@@ -399,7 +404,7 @@ function parseNarrative(raw: string): Segment[] {
     return finalItems.map((item, itemIdx) => {
       if (item.kind === 'page_break') {
         return (
-          <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page}>
+          <div id={`page-${item.page}`} class="flex items-center gap-3 my-6 text-xs text-gray-400" data-page-marker={item.page} data-pagefind-ignore>
             <div class="flex-1 border-t border-gray-200"></div>
             <span class="flex items-center gap-2">
               Page {(item as any).absolutePage}
@@ -520,7 +525,7 @@ function parseNarrative(raw: string): Segment[] {
 
         return (
           <div id={`table-${tableData.id}`}>
-            <div class="flex justify-end gap-3 mb-1">
+            <div class="flex justify-end gap-3 mb-1" data-pagefind-ignore>
               <ShareButton client:load url={`${prefix}/sections/${section.slug}/#table-${tableData.id}`} label="Share table" />
               {budgetYear.isHeadline && (
                 <a
@@ -538,8 +543,9 @@ function parseNarrative(raw: string): Segment[] {
     });
   })()}
 
-  <SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} />
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} /></div>
 
+  <div data-pagefind-ignore>
   {section.start_page && section.end_page && (
     <PdfSidebar
       client:load
@@ -549,4 +555,6 @@ function parseNarrative(raw: string): Segment[] {
       startPage={section.start_page}
     />
   )}
+  </div>
+  </div>
 </Base>

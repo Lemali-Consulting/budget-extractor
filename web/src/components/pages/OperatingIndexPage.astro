@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import SearchBar from '../SearchBar.tsx';
+import SiteSearch from '../SiteSearch.tsx';
 import Sparkline from '../Sparkline.tsx';
 import AmendmentNotice from '../AmendmentNotice.astro';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
@@ -82,7 +83,11 @@ function hasChart(section: any): boolean {
   <AmendmentNotice budgetYear={budgetYear} />
 
   <div class="mb-8">
-    <SearchBar items={searchIndex} routePrefix={prefix} client:load />
+    {budgetYear.isHeadline ? (
+      <SiteSearch client:load />
+    ) : (
+      <SearchBar items={searchIndex} routePrefix={prefix} client:load />
+    )}
   </div>
 
   {[...grouped.entries()].map(([category, secs]) => (

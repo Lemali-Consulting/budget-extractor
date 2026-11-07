@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import SearchBar from '../components/SearchBar.tsx';
+import SiteSearch from '../components/SiteSearch.tsx';
 import BudgetChart from '../components/BudgetChart.tsx';
 import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
@@ -12,7 +12,6 @@ import { correctionHref, trustFundCorrections } from '../lib/corrections';
 
 const { columns } = HEADLINE;
 const {
-  searchIndex,
   departmentBudgets,
   budgetChanges,
   revenueWaterfall,
@@ -270,7 +269,7 @@ const teaserLinks: FlowLink[] = [
   <!-- Search -->
   <div class="mb-8">
     <h2 class="text-lg font-semibold mb-2">Search</h2>
-    <SearchBar items={searchIndex} client:load />
+    <SiteSearch client:load />
   </div>
 
   <!-- Quick links -->
