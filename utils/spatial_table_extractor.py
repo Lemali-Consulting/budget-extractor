@@ -114,6 +114,10 @@ class PageContent:
 # ── Section detection for row grouping ────────────────────────────────
 
 _CATEGORY_CODE_RE = re.compile(r"^\d{2}\s*-\s+[A-Z]")
+# A numbered list entry such as a capital project-summary row ("129HOUSING
+# DEVELOPMENT", its page number fused to the title). Consecutive entries are
+# siblings, so one with blank amounts is still a data row, not a heading.
+_NUMBERED_ENTRY_RE = re.compile(r"^\d+\s*[A-Za-z]")
 
 
 def assign_sections(table: "SpatialTable") -> list[str]:
@@ -131,6 +135,8 @@ def assign_sections(table: "SpatialTable") -> list[str]:
     sections: list[str] = []
     current_section = ""
 
+    previous_first_cell = ""
+
     for row in table.rows:
         cells = row.cells
         first_cell = cells[0].strip() if cells else ""
@@ -147,7 +153,11 @@ def assign_sections(table: "SpatialTable") -> list[str]:
 
         # Pattern 2: Text-only rows (first cell has text, rest empty)
         # — catches program headers, bureau headers, "Expenditures"/"Revenues" labels
-        elif num_cols > 1 and all(c.strip() == "" for c in cells[1:]):
+        elif (
+            num_cols > 1
+            and all(c.strip() == "" for c in cells[1:])
+            and not (_NUMBERED_ENTRY_RE.match(first_cell) and _NUMBERED_ENTRY_RE.match(previous_first_cell))
+        ):
             # Exclude notes/footnotes
             if not first_cell.startswith("*") and not first_cell.startswith("Note:"):
                 # Exclude date-only rows (debt service)
@@ -160,6 +170,7 @@ def assign_sections(table: "SpatialTable") -> list[str]:
             current_section = first_cell
 
         sections.append(current_section)
+        previous_first_cell = first_cell
 
     # Post-processing: collapse single-row category-code sections.
     # In summary/forecast tables every row is a category code, making each
