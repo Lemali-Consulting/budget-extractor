@@ -698,3 +698,58 @@ test("body links use the Public Source blue", async ({ page }) => {
   await page.goto("/");
   await expect(main(page).getByRole("link", { name: "How this was built" })).toHaveCSS("color", PS_LINK_BLUE_RGB);
 });
+
+// Public Source's brand fonts (Mallory Condensed, Calluna Sans) are licensed
+// for desktop use only, which forbids styling live web text with them. Live
+// text uses free, self-hosted lookalikes; the real faces appear only inside
+// fixed-size images such as the header wordmark.
+const HEADLINE_FONT = "Fira Sans Extra Condensed";
+const BODY_FONT = "Alegreya Sans";
+
+function primaryFamily(fontFamily: string): string {
+  return fontFamily.split(",")[0].trim().replace(/^["']|["']$/g, "");
+}
+
+for (const route of BRANDED_ROUTES) {
+  test(`${route} sets headlines and body text in the brand lookalike fonts`, async ({ page }) => {
+    await page.goto(route);
+    const fonts = await page.evaluate(async () => {
+      await document.fonts.ready;
+      const h1 = document.querySelector("h1, h2") as HTMLElement;
+      return {
+        heading: getComputedStyle(h1).fontFamily,
+        body: getComputedStyle(document.body).fontFamily,
+        loaded: [...document.fonts].filter((f) => f.status === "loaded").map((f) => f.family.replace(/["']/g, "")),
+      };
+    });
+    expect(primaryFamily(fonts.heading)).toBe(HEADLINE_FONT);
+    expect(primaryFamily(fonts.body)).toBe(BODY_FONT);
+    // Served from this site, so the faces load with no third-party request.
+    expect(fonts.loaded).toEqual(expect.arrayContaining([HEADLINE_FONT, BODY_FONT]));
+  });
+}
+
+test("embedded charts use the brand body font", async ({ page }) => {
+  // Embeds load in other sites' pages, so they carry their own font loading.
+  await page.goto("/embed/revenue-breakdown/");
+  const body = await page.evaluate(async () => {
+    await document.fonts.ready;
+    return getComputedStyle(document.body).fontFamily;
+  });
+  expect(primaryFamily(body)).toBe(BODY_FONT);
+});
+
+test("the site requests no fonts from Google", async ({ page }) => {
+  const googleFontRequests: string[] = [];
+  page.on("request", (req) => {
+    if (/fonts\.(googleapis|gstatic)\.com/.test(req.url())) googleFontRequests.push(req.url());
+  });
+  await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
+  expect(googleFontRequests).toEqual([]);
+});
+
+test("header wordmark is an image of the brand headline face, with a text alternative", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator("header").first().getByRole("img", { name: "Budget Explorer" })).toBeVisible();
+});

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/brand-fonts';
 import YearNotice from '../components/YearNotice.astro';
 import { type BudgetYear, HEADLINE, ARCHIVE_YEARS, yearPath } from '../lib/budget-year';
 
@@ -69,18 +70,15 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231277E2'/><text x='16' y='22' font-size='15' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>PS</text></svg>" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title} | Pittsburgh Budget Explorer</title>
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-900">
     <header class="bg-ps-ink text-white px-6 py-3">
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between">
-          <a href="/" class="flex items-center gap-3 group">
+          <a href="/" class="flex shrink-0 items-center gap-3 group">
             <img src="/images/public-source-logo-white.png" alt="Pittsburgh's Public Source" width="150" height="34" class="h-8 w-auto sm:h-9" />
-            <span class="border-l border-gray-500 pl-3 text-lg sm:text-xl font-bold leading-tight text-white group-hover:text-ps-yellow-100">Budget Explorer</span>
+            <span class="border-l border-gray-500 pl-3"><img src="/images/budget-explorer-wordmark-white.png" alt="Budget Explorer" width="187" height="36" class="h-7 w-auto sm:h-8" /></span>
           </a>
           <button id="mobile-nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded text-gray-200 hover:text-white hover:bg-neutral-800" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
             <svg id="mobile-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>

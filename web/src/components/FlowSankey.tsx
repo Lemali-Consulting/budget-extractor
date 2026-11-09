@@ -3,6 +3,7 @@
  * or interactively (client:visible) with hover-dim and tooltips. */
 
 import { useMemo, useRef, useState, useEffect } from 'preact/hooks';
+import { BODY_FONT_CSS } from '../lib/brand-fonts.mjs';
 import {
   sankey as d3Sankey,
   sankeyLinkHorizontal,
@@ -263,7 +264,7 @@ export default function FlowSankey({
                 font-weight={isYearLabel ? 600 : 400}
                 fill="#1f2937"
                 fill-opacity={lit ? 1 : 0.35}
-                style="pointer-events: none; font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;"
+                style={`pointer-events: none; font-family: ${BODY_FONT_CSS};`}
               >
                 {truncatedLabel}
               </text>

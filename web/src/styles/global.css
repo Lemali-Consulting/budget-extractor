@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Brand lookalike fonts (see src/lib/brand-fonts.mjs). Alegreya Sans defaults
+   to old-style figures; budget numbers read better as lining figures. This is
+   set as a font feature rather than font-variant-numeric so Tailwind's
+   `tabular-nums` utility, which rewrites font-variant-numeric, can't undo it. */
+@layer base {
+  body {
+    font-feature-settings: 'lnum' 1;
+  }
+  h1,
+  h2 {
+    font-family: theme('fontFamily.display');
+  }
+}
+
+/* Observable Plot styles each chart with system-ui; follow the page's face. */
+svg[class^='plot-'] {
+  font-family: inherit;
+}
+
 /* Rotate TOC chevron when details is open */
 details[open] > summary .toc-chevron {
   transform: rotate(90deg);

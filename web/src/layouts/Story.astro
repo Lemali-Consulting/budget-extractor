@@ -1,6 +1,7 @@
 ---
 /**Layout for curated story pages — reading-friendly typography, minimal chrome.*/
 import '../styles/global.css';
+import '../styles/brand-fonts';
 import YearNotice from '../components/YearNotice.astro';
 import { ARCHIVE_YEARS, BUDGET_2026, yearPath, type BudgetYear } from '../lib/budget-year';
 
@@ -62,10 +63,10 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
   <body class="min-h-screen bg-white text-gray-900">
     <header class="bg-ps-ink text-white px-6 py-3">
       <div class="max-w-6xl mx-auto">
-        <div class="flex items-center justify-between">
-          <a href="/" class="flex items-center gap-3 group">
+        <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+          <a href="/" class="flex shrink-0 items-center gap-3 group">
             <img src="/images/public-source-logo-white.png" alt="Pittsburgh's Public Source" width="150" height="34" class="h-8 w-auto sm:h-9" />
-            <span class="border-l border-gray-500 pl-3 text-lg sm:text-xl font-bold leading-tight text-white group-hover:text-ps-yellow-100">Budget Explorer</span>
+            <span class="border-l border-gray-500 pl-3"><img src="/images/budget-explorer-wordmark-white.png" alt="Budget Explorer" width="187" height="36" class="h-7 w-auto sm:h-8" /></span>
           </a>
           <nav class="flex items-center gap-4 text-sm" aria-label="Main navigation">
             <a href="/brief/" class={navClass('/brief/')}>Brief</a>
