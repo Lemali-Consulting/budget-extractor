@@ -19,3 +19,12 @@ web/public/charts/
 web/.astro/
 web/.netlify/
 web/node_modules/
+
+# Public Source brand source files (kept locally for reference). The fonts are
+# desktop-licensed and must never be committed or served; the full-size logos
+# are reduced into web/public/images/ for the site.
+/Calluna_Sans.zip
+/Mallory-8183.zip
+/PublicSource-Brand-Guidelines-2025.pdf
+/ps_black_logo_full.png
+/ps_white_logo_full.png
