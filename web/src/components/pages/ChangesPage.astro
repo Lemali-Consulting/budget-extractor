@@ -64,7 +64,7 @@ const sections = [
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-500 mb-1">{budgetYear.comparisonLabel}</div>
-      <div class={`text-lg font-semibold ${totalChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+      <div class={`text-lg font-semibold ${totalChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {totalChange >= 0 ? '+' : ''}{totalPct}% ({fmtM(Math.abs(totalChange))})
       </div>
     </div>
@@ -74,18 +74,18 @@ const sections = [
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-500 mb-1">Eliminated Positions</div>
-      <div class="text-lg font-semibold text-red-600">-{data.eliminatedPositions.length}</div>
+      <div class="text-lg font-semibold text-ps-red-600">-{data.eliminatedPositions.length}</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-500 mb-1">Shifted Positions</div>
-      <div class="text-lg font-semibold text-blue-600">{data.shiftedPositions.length}</div>
+      <div class="text-lg font-semibold text-ps-blue-600">{data.shiftedPositions.length}</div>
     </div>
   </div>
 
   <!-- Jump nav -->
   <nav class="sticky top-0 z-10 bg-gray-50 border-b border-gray-200 -mx-6 px-6 py-2 mb-6 flex gap-3 overflow-x-auto text-sm" aria-label="Page sections">
     {sections.map(s => (
-      <a href={`#${s.id}`} class="text-blue-600 hover:text-blue-800 whitespace-nowrap font-medium">{s.label}</a>
+      <a href={`#${s.id}`} class="text-ps-blue-600 hover:text-ps-blue-800 whitespace-nowrap font-medium">{s.label}</a>
     ))}
   </nav>
 
@@ -99,16 +99,16 @@ const sections = [
 
       {reorganizations.length > 0 && (
         <div class="mb-4">
-          <h3 class="text-lg font-semibold mb-2 text-red-800">Reorganized</h3>
+          <h3 class="text-lg font-semibold mb-2 text-ps-red-800">Reorganized</h3>
           <div class="grid gap-3 md:grid-cols-2">
             {reorganizations.map((s: any) => (
-              <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                <div class="font-semibold text-red-900">{s.title}</div>
-                <div class="text-sm text-red-700 mt-1">
-                  Absorbed by <a href={`${prefix}/sections/${s.absorbedBySlug}/`} class="underline hover:text-red-900">{s.absorbedBy}</a>
+              <div class="bg-ps-red-50 border border-ps-red-200 rounded-lg p-4">
+                <div class="font-semibold text-ps-red-900">{s.title}</div>
+                <div class="text-sm text-ps-red-700 mt-1">
+                  Absorbed by <a href={`${prefix}/sections/${s.absorbedBySlug}/`} class="underline hover:text-ps-red-900">{s.absorbedBy}</a>
                 </div>
                 {s.note && (
-                  <div class="text-xs text-red-600 mt-2 italic">{s.note}</div>
+                  <div class="text-xs text-ps-red-600 mt-2 italic">{s.note}</div>
                 )}
                 <div class="text-xs text-gray-500 mt-2">
                   Present in: {s.presentInYears.join(', ')}
@@ -123,7 +123,7 @@ const sections = [
 
       {removed.length > 0 && (
         <div class="mb-4">
-          <h3 class="text-lg font-semibold mb-2 text-red-800">Discontinued</h3>
+          <h3 class="text-lg font-semibold mb-2 text-ps-red-800">Discontinued</h3>
           <div class="grid gap-3 md:grid-cols-2">
             {removed.map((s: any) => (
               <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
@@ -173,7 +173,7 @@ const sections = [
                   <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                     <td class="px-3 py-1.5 border-b border-gray-100 text-gray-500">{s.title}</td>
                     <td class="px-3 py-1.5 border-b border-gray-100">
-                      <a href={`${prefix}/sections/${s.currentSlug}/`} class="text-blue-600 hover:underline">{s.currentTitle}</a>
+                      <a href={`${prefix}/sections/${s.currentSlug}/`} class="text-ps-blue-600 hover:underline">{s.currentTitle}</a>
                     </td>
                     <td class="px-3 py-1.5 border-b border-gray-100 text-xs text-gray-500">
                       {s.presentInYears.join(', ')} → {s.currentPresentInYears.join(', ')}
@@ -214,7 +214,7 @@ const sections = [
       routePrefix={prefix}
       data={data.topDecreases}
       title="Biggest Budget Decreases"
-      color="#dc2626"
+      color="#DC2725"
     />
   </div>
 
@@ -246,14 +246,14 @@ const sections = [
           {data.departmentChanges.map((d: any, i: number) => (
             <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
               <td class="px-3 py-1.5 border-b border-gray-100">
-                <a href={`${prefix}/sections/${d.slug}/`} class="text-blue-600 hover:underline">{d.department}</a>
+                <a href={`${prefix}/sections/${d.slug}/`} class="text-ps-blue-600 hover:underline">{d.department}</a>
               </td>
               <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${d.budgetPrior.toLocaleString()}</td>
               <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${d.budgetCurrent.toLocaleString()}</td>
-              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
                 {d.dollarChange >= 0 ? '+' : ''}{d.dollarChange.toLocaleString()}
               </td>
-              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.pctChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.pctChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
                 {d.pctChange >= 0 ? '+' : ''}{d.pctChange}%
               </td>
             </tr>

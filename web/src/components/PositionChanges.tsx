@@ -114,12 +114,12 @@ export default function PositionChanges({ newPositions, eliminatedPositions, shi
           onClick={() => setTab('eliminated')}
           class={`px-4 py-2 text-sm font-medium border-b-2 transition ${
             tab === 'eliminated'
-              ? 'border-red-600 text-red-700'
+              ? 'border-ps-red-600 text-ps-red-700'
               : 'border-transparent text-gray-500 hover:text-gray-700'
           }`}
         >
           Eliminated Positions
-          <span class="ml-1.5 text-xs bg-red-100 text-red-700 rounded-full px-1.5 py-0.5">
+          <span class="ml-1.5 text-xs bg-ps-red-100 text-ps-red-700 rounded-full px-1.5 py-0.5">
             -{eliminatedPositions.length}
           </span>
         </button>
@@ -127,12 +127,12 @@ export default function PositionChanges({ newPositions, eliminatedPositions, shi
           onClick={() => setTab('shifted')}
           class={`px-4 py-2 text-sm font-medium border-b-2 transition ${
             tab === 'shifted'
-              ? 'border-blue-600 text-blue-700'
+              ? 'border-ps-blue-600 text-ps-blue-700'
               : 'border-transparent text-gray-500 hover:text-gray-700'
           }`}
         >
           Shifted
-          <span class="ml-1.5 text-xs bg-blue-100 text-blue-700 rounded-full px-1.5 py-0.5">
+          <span class="ml-1.5 text-xs bg-ps-blue-100 text-ps-blue-700 rounded-full px-1.5 py-0.5">
             {shiftedPositions.length}
           </span>
         </button>

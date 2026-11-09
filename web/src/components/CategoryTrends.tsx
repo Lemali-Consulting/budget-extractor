@@ -29,8 +29,8 @@ export default function CategoryTrends({ categories }: Props) {
             aria-pressed={c.category === current.category}
             class={`px-3 py-1.5 rounded-full text-sm border transition ${
               c.category === current.category
-                ? 'bg-blue-700 text-white border-blue-700'
-                : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
+                ? 'bg-ps-blue-700 text-white border-ps-blue-700'
+                : 'bg-white text-gray-700 border-gray-300 hover:border-ps-blue-400'
             }`}
             onClick={() => setSelected(c.category)}
           >

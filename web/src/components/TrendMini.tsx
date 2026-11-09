@@ -40,7 +40,7 @@ export default function TrendMini({ data, height = 180, highlightYear }: Props) 
         Plot.barY(data, {
           x: 'year',
           y: 'amount',
-          fill: (d: TrendPoint) => d.year.includes(String(highlightYear)) ? CHART_COLORS.primary : '#93c5fd',
+          fill: (d: TrendPoint) => d.year.includes(String(highlightYear)) ? CHART_COLORS.primary : '#97C4FE',
           tip: true,
           title: (d: TrendPoint) => `${d.year}: $${(d.amount / 1_000_000).toFixed(1)}M`,
         }),

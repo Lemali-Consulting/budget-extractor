@@ -124,8 +124,8 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
               onClick={() => toggle(dept)}
               class={`px-3 py-1 rounded-full text-xs border transition ${
                 selected.includes(dept)
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400'
+                  ? 'bg-ps-blue-600 text-white border-ps-blue-600'
+                  : 'bg-white text-gray-600 border-gray-300 hover:border-ps-blue-400'
               } ${!selected.includes(dept) && selected.length >= 4 ? 'opacity-40 cursor-not-allowed' : ''}`}
               disabled={!selected.includes(dept) && selected.length >= 4}
             >
@@ -138,7 +138,7 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {selectedPersonnel.map(p => (
           <div key={p.department} class="bg-white rounded-lg border p-4">
-            <a href={`/sections/${p.slug}/`} class="text-sm font-semibold text-blue-700 hover:underline block mb-2 truncate" title={p.department}>
+            <a href={`/sections/${p.slug}/`} class="text-sm font-semibold text-ps-blue-700 hover:underline block mb-2 truncate" title={p.department}>
               {p.department}
             </a>
             <div class="space-y-1 text-sm">
@@ -150,7 +150,7 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
                 <span class="text-gray-500"><GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} />:</span>{' '}
                 <span class="font-medium">{Math.round(p.totalFteCurrent)}</span>
                 {p.totalFtePrior > 0 && (
-                  <span class={`ml-1 text-xs ${p.totalFteCurrent >= p.totalFtePrior ? 'text-green-600' : 'text-red-600'}`}>
+                  <span class={`ml-1 text-xs ${p.totalFteCurrent >= p.totalFtePrior ? 'text-green-600' : 'text-ps-red-600'}`}>
                     ({p.totalFteCurrent >= p.totalFtePrior ? '+' : ''}{Math.round(p.totalFteCurrent - p.totalFtePrior)})
                   </span>
                 )}
@@ -200,7 +200,7 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
                   const change = p.totalBudgetCurrent - p.totalBudgetPrior;
                   const pct = p.totalBudgetPrior > 0 ? ((change / p.totalBudgetPrior) * 100).toFixed(1) : '0';
                   return (
-                    <td key={p.department} class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    <td key={p.department} class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${change >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
                       {formatDollar(change)} ({change >= 0 ? '+' : ''}{pct}%)
                     </td>
                   );
@@ -217,7 +217,7 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
                 {selectedPersonnel.map(p => {
                   const change = Math.round(p.totalFteCurrent - p.totalFtePrior);
                   return (
-                    <td key={p.department} class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    <td key={p.department} class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${change >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
                       {change >= 0 ? '+' : ''}{change}
                     </td>
                   );

@@ -23,8 +23,8 @@ function fmtM(n: number): string {
 }
 
 const categoryStyle: Record<string, string> = {
-  Appropriation: 'bg-amber-50 border-amber-200 text-amber-900',
-  Legislation: 'bg-blue-50 border-blue-200 text-blue-900',
+  Appropriation: 'bg-ps-yellow-50 border-ps-yellow-200 text-ps-yellow-900',
+  Legislation: 'bg-ps-blue-50 border-ps-blue-200 text-ps-blue-900',
 };
 
 const jump = [
@@ -40,7 +40,7 @@ const jump = [
   <p class="text-gray-600 mb-4">
     The City published an amended {year} operating budget (<strong>{label}</strong>), revising the
     version adopted in December. This page compares it line-by-line against the adopted budget.
-    Amended figures are used throughout the <a href={`${prefix}/operating/`} class="text-blue-600 hover:underline">{year} archive</a>; changed cells are highlighted on each
+    Amended figures are used throughout the <a href={`${prefix}/operating/`} class="text-ps-blue-600 hover:underline">{year} archive</a>; changed cells are highlighted on each
     department's tables.
   </p>
 
@@ -59,13 +59,13 @@ const jump = [
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-500 mb-1">Net Change</div>
-      <div class={`text-lg font-semibold ${netChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+      <div class={`text-lg font-semibold ${netChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {netChange >= 0 ? '+' : ''}{netPct}% ({fmtM(Math.abs(netChange))})
       </div>
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-500 mb-1">FTE Change</div>
-      <div class={`text-lg font-semibold ${fteChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+      <div class={`text-lg font-semibold ${fteChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {fteChange >= 0 ? '+' : ''}{Math.round(fteChange * 10) / 10}
       </div>
     </div>
@@ -78,7 +78,7 @@ const jump = [
   <!-- Jump nav -->
   <nav class="sticky top-0 z-10 bg-gray-50 border-b border-gray-200 -mx-6 px-6 py-2 mb-6 flex gap-3 overflow-x-auto text-sm" aria-label="Page sections">
     {jump.map(s => (
-      <a href={`#${s.id}`} class="text-blue-600 hover:text-blue-800 whitespace-nowrap font-medium">{s.label}</a>
+      <a href={`#${s.id}`} class="text-ps-blue-600 hover:text-ps-blue-800 whitespace-nowrap font-medium">{s.label}</a>
     ))}
   </nav>
 
@@ -87,7 +87,7 @@ const jump = [
   </div>
 
   <div id="decreases" class="scroll-mt-12">
-    <ChangesChart client:load routePrefix={prefix} data={data.topDecreases} title="Largest Amendment Decreases" color="#dc2626" />
+    <ChangesChart client:load routePrefix={prefix} data={data.topDecreases} title="Largest Amendment Decreases" color="#DC2725" />
   </div>
 
   {data.legislativeChanges?.length > 0 && (
@@ -123,14 +123,14 @@ const jump = [
           {data.departmentChanges.map((d: any, i: number) => (
             <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
               <td class="px-3 py-1.5 border-b border-gray-100">
-                <a href={`${prefix}/sections/${d.slug}/`} class="text-blue-600 hover:underline">{d.department}</a>
+                <a href={`${prefix}/sections/${d.slug}/`} class="text-ps-blue-600 hover:underline">{d.department}</a>
               </td>
               <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${Math.round(d.budgetAdopted).toLocaleString()}</td>
               <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">${Math.round(d.budgetAmended).toLocaleString()}</td>
-              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange > 0 ? 'text-green-600' : d.dollarChange < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange > 0 ? 'text-green-600' : d.dollarChange < 0 ? 'text-ps-red-600' : 'text-gray-400'}`}>
                 {d.dollarChange === 0 ? '—' : `${d.dollarChange > 0 ? '+' : ''}${Math.round(d.dollarChange).toLocaleString()}`}
               </td>
-              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange > 0 ? 'text-green-600' : d.dollarChange < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+              <td class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${d.dollarChange > 0 ? 'text-green-600' : d.dollarChange < 0 ? 'text-ps-red-600' : 'text-gray-400'}`}>
                 {d.pctChange === null || d.dollarChange === 0 ? '—' : `${d.pctChange > 0 ? '+' : ''}${d.pctChange}%`}
               </td>
             </tr>

@@ -23,7 +23,7 @@ export default function ChartImage({ src, alt, label }: Props) {
   return (
     <>
       <div class="my-4 rounded-lg border overflow-hidden bg-white">
-        <div class="px-4 py-2 bg-blue-50 border-b text-xs text-blue-700 font-medium">
+        <div class="px-4 py-2 bg-ps-blue-50 border-b text-xs text-ps-blue-700 font-medium">
           {label}
         </div>
         <div class="p-4 flex justify-center">
@@ -45,7 +45,7 @@ export default function ChartImage({ src, alt, label }: Props) {
         >
           <div class="relative max-w-[90vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
             <button
-              class="absolute -top-3 -right-3 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              class="absolute -top-3 -right-3 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ps-blue-500"
               onClick={() => setOpen(false)}
               aria-label="Close image viewer"
             >

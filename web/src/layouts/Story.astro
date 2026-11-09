@@ -27,18 +27,18 @@ function isActive(href: string): boolean {
 }
 function navClass(href: string): string {
   return isActive(href)
-    ? 'text-white font-semibold border-b-2 border-white pb-0.5'
-    : 'text-blue-300 hover:text-white';
+    ? 'text-white font-semibold border-b-2 border-ps-yellow-100 pb-0.5'
+    : 'text-gray-300 hover:text-white';
 }
 function dropdownParentClass(hrefs: string[]): string {
   return hrefs.some(h => isActive(h))
     ? 'text-white font-semibold'
-    : 'text-blue-300 hover:text-white';
+    : 'text-gray-300 hover:text-white';
 }
 function dropdownItemClass(href: string): string {
   return isActive(href)
-    ? 'block px-3 py-1.5 text-white bg-blue-700 font-semibold'
-    : 'block px-3 py-1.5 text-blue-100 hover:bg-blue-700 hover:text-white';
+    ? 'block px-3 py-1.5 text-white bg-neutral-700 font-semibold'
+    : 'block px-3 py-1.5 text-gray-200 hover:bg-neutral-700 hover:text-white';
 }
 
 const storiesHrefs = ['/stories/', '/departments/'];
@@ -56,14 +56,17 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="article" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231e3a5f'/><text x='16' y='23' font-size='20' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>P</text></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231277E2'/><text x='16' y='22' font-size='15' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>PS</text></svg>" />
     <title>{title} | Pittsburgh Budget Explorer</title>
   </head>
   <body class="min-h-screen bg-white text-gray-900">
-    <header class="bg-blue-900 text-white px-6 py-3">
+    <header class="bg-ps-ink text-white px-6 py-3">
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
+          <a href="/" class="flex items-center gap-3 group">
+            <img src="/images/public-source-logo-white.png" alt="Pittsburgh's Public Source" width="150" height="34" class="h-8 w-auto sm:h-9" />
+            <span class="border-l border-gray-500 pl-3 text-lg sm:text-xl font-bold leading-tight text-white group-hover:text-ps-yellow-100">Budget Explorer</span>
+          </a>
           <nav class="flex items-center gap-4 text-sm" aria-label="Main navigation">
             <a href="/brief/" class={navClass('/brief/')}>Brief</a>
 
@@ -72,7 +75,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 Stories <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
               </a>
               <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
-                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[10rem]">
+                <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[10rem]">
                   <a href="/stories/" class={dropdownItemClass('/stories/')}>Stories</a>
                   <a href="/departments/" class={dropdownItemClass('/departments/')}>Departments</a>
                 </div>
@@ -84,7 +87,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 Budgets <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
               </a>
               <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
-                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[12rem]">
+                <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[12rem]">
                   <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
                   <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
@@ -102,7 +105,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 Explore <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
               </a>
               <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
-                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[10rem]">
+                <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[10rem]">
                   <a href="/dashboard/" class={dropdownItemClass('/dashboard/')}>Dashboard</a>
                   <a href="/explorer/" class={dropdownItemClass('/explorer/')}>Explorer</a>
                   <a href="/compare/" class={dropdownItemClass('/compare/')}>Compare</a>
@@ -141,13 +144,13 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
             All figures are extracted from the City of Pittsburgh's official {budgetYear.fiscalLabel} Operating and Capital Budget documents
             using automated table extraction. Year-over-year comparisons use the {budgetYear.priorLabel} as baseline.
             For details on data extraction and known limitations, see the
-            <a href="/about/" class="text-blue-600 hover:underline">About page</a>.
+            <a href="/about/" class="text-ps-blue-600 hover:underline">About page</a>.
           </p>
         </details>
         <div class="flex items-center gap-4 text-sm">
-          <a href="/stories/" class="text-blue-600 hover:underline">&larr; More stories</a>
-          <a href="/brief/" class="text-blue-600 hover:underline">Budget in Brief</a>
-          <a href="/" class="text-blue-600 hover:underline">Full Explorer</a>
+          <a href="/stories/" class="text-ps-blue-600 hover:underline">&larr; More stories</a>
+          <a href="/brief/" class="text-ps-blue-600 hover:underline">Budget in Brief</a>
+          <a href="/" class="text-ps-blue-600 hover:underline">Full Explorer</a>
         </div>
       </footer>
     </article>
@@ -169,10 +172,10 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
         @apply bg-gray-50 rounded-xl p-5 my-6 border;
       }
       .story-content :global(.callout) {
-        @apply bg-blue-50 border-l-4 border-blue-500 p-4 my-6 text-blue-900;
+        @apply bg-ps-blue-50 border-l-4 border-ps-blue-500 p-4 my-6 text-ps-blue-900;
       }
       .story-content :global(.callout p) {
-        @apply text-blue-900 mb-0;
+        @apply text-ps-blue-900 mb-0;
       }
     </style>
     <script is:inline>

@@ -103,26 +103,26 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
           <thead>
             <tr class="bg-gray-50">
               <th
-                class="px-3 py-2 text-left font-medium cursor-pointer hover:text-blue-600"
+                class="px-3 py-2 text-left font-medium cursor-pointer hover:text-ps-blue-600"
                 onClick={() => toggleSort('title')}
               >
                 Title{sortIcon('title')}
               </th>
               <th
-                class="px-3 py-2 text-left font-medium cursor-pointer hover:text-blue-600"
+                class="px-3 py-2 text-left font-medium cursor-pointer hover:text-ps-blue-600"
                 onClick={() => toggleSort('department')}
               >
                 Department{sortIcon('department')}
               </th>
               <th class="px-3 py-2 text-right font-medium">Rate/Grade</th>
               <th
-                class="px-3 py-2 text-right font-medium cursor-pointer hover:text-blue-600"
+                class="px-3 py-2 text-right font-medium cursor-pointer hover:text-ps-blue-600"
                 onClick={() => toggleSort('fteCurrent')}
               >
                 <GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /> {year}{sortIcon('fteCurrent')}
               </th>
               <th
-                class="px-3 py-2 text-right font-medium cursor-pointer hover:text-blue-600"
+                class="px-3 py-2 text-right font-medium cursor-pointer hover:text-ps-blue-600"
                 onClick={() => toggleSort('budgetCurrent')}
               >
                 {year} Budget{sortIcon('budgetCurrent')}
@@ -134,7 +134,7 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
               <tr key={i} class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                 <td class="px-3 py-1.5 border-t">{row.title}</td>
                 <td class="px-3 py-1.5 border-t">
-                  <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">
+                  <a href={`${routePrefix}/sections/${row.slug}/`} class="text-ps-blue-600 hover:underline">
                     {row.department}
                   </a>
                 </td>
@@ -142,7 +142,7 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
                   {row.rateGrade === 'see below' ? (
                     <a
                       href={`${routePrefix}/sections/salary-tables/`}
-                      class="text-blue-600 hover:underline text-xs"
+                      class="text-ps-blue-600 hover:underline text-xs"
                       title="Rate set by collective bargaining agreement — see Salary Tables"
                     >
                       CBA rates

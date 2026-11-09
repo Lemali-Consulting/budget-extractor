@@ -118,7 +118,7 @@ export default function VizTab({ headers, rows, numericCols, tableId, tableType,
               key={vt}
               class={`px-3 py-1.5 rounded text-sm font-medium transition ${
                 activeViz === vt
-                  ? 'bg-blue-100 text-blue-700'
+                  ? 'bg-ps-blue-100 text-ps-blue-700'
                   : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700'
               }`}
               onClick={() => setVizType(vt)}

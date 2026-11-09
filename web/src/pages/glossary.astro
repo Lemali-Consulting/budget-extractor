@@ -104,7 +104,7 @@ function normalizeSection(key: string): GlossaryEntry[] {
 <Base title="Glossary">
   <div {...indexAttrs}>
   <nav class="text-sm text-gray-500 mb-4" data-pagefind-ignore>
-    <a href="/" class="hover:text-blue-600">Home</a>
+    <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>Glossary</span>
   </nav>
@@ -121,7 +121,7 @@ function normalizeSection(key: string): GlossaryEntry[] {
     <ul class="columns-2 md:columns-3 gap-x-6 text-sm">
       {sections.map((s) => (
         <li class="py-0.5">
-          <a href={`#${s.key}`} class="text-blue-600 hover:text-blue-800 hover:underline">{s.title}</a>
+          <a href={`#${s.key}`} class="text-ps-blue-600 hover:text-ps-blue-800 hover:underline">{s.title}</a>
         </li>
       ))}
     </ul>
@@ -151,7 +151,7 @@ function normalizeSection(key: string): GlossaryEntry[] {
                   <dd class="flex flex-wrap gap-1 mt-2" data-pagefind-ignore>
                     <span class="text-xs text-gray-400 mr-1">Used in:</span>
                     {bl.sections.slice(0, 5).map((sec) => (
-                      <a href={sectionUrl(sec)} class="inline-block text-xs px-2 py-0.5 bg-blue-50 text-blue-700 rounded hover:bg-blue-100 whitespace-nowrap">{sec.title}</a>
+                      <a href={sectionUrl(sec)} class="inline-block text-xs px-2 py-0.5 bg-ps-blue-50 text-ps-blue-700 rounded hover:bg-ps-blue-100 whitespace-nowrap">{sec.title}</a>
                     ))}
                     {bl.total > 5 && (
                       <span class="text-xs text-gray-400">+{bl.total - 5} more</span>

@@ -68,7 +68,7 @@ export default function ExplorerSidebar({
           id="explorer-search"
           type="text"
           placeholder="Search tables..."
-          class="w-full px-3 py-1.5 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full px-3 py-1.5 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-ps-blue-400"
           value={search}
           onInput={(e) => onSearchChange((e.target as HTMLInputElement).value)}
         />
@@ -138,7 +138,7 @@ export default function ExplorerSidebar({
                 <span class="text-gray-400 text-xs" aria-hidden="true">{expandedSections.has(key) ? '▼' : '▶'}</span>
                 {!budgetFilter && (
                   <span class={`px-1 py-0.5 rounded text-[9px] font-bold uppercase tracking-wide shrink-0 ${
-                    budgetType === 'capital' ? 'bg-orange-100 text-orange-600' : 'bg-blue-100 text-blue-600'
+                    budgetType === 'capital' ? 'bg-orange-100 text-orange-600' : 'bg-ps-blue-100 text-ps-blue-600'
                   }`}>{budgetType === 'capital' ? 'CAP' : 'OP'}</span>
                 )}
                 <span class="truncate flex-1">{title}</span>
@@ -146,7 +146,7 @@ export default function ExplorerSidebar({
               </button>
               <a
                 href={`/${budgetType === 'capital' ? 'capital' : 'sections'}/${slug}/`}
-                class="px-2 py-1 text-gray-400 hover:text-blue-600 shrink-0"
+                class="px-2 py-1 text-gray-400 hover:text-ps-blue-600 shrink-0"
                 title={`View ${title} detail page`}
                 aria-label={`View ${title} detail page`}
                 onClick={(e) => e.stopPropagation()}
@@ -161,8 +161,8 @@ export default function ExplorerSidebar({
                 {tables.map((t) => (
                   <button
                     key={t.id}
-                    class={`w-full px-3 py-1.5 pl-8 text-left text-xs hover:bg-blue-50 flex items-center gap-2 ${
-                      selectedId === t.id ? 'bg-blue-100 text-blue-800' : 'text-gray-600'
+                    class={`w-full px-3 py-1.5 pl-8 text-left text-xs hover:bg-ps-blue-50 flex items-center gap-2 ${
+                      selectedId === t.id ? 'bg-ps-blue-100 text-ps-blue-800' : 'text-gray-600'
                     }`}
                     onClick={() => onSelectTable(t.id)}
                   >

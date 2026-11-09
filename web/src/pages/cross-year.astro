@@ -34,23 +34,23 @@ const fteDiff = Math.round((adoptedFte - proposedFte) * 10) / 10;
 
   {/* Aggregate summary */}
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
-      <div class="text-xs text-blue-600 mb-1">Proposed Budget</div>
+    <div class="bg-ps-blue-50 rounded-lg border border-ps-blue-200 p-4">
+      <div class="text-xs text-ps-blue-600 mb-1">Proposed Budget</div>
       <div class="text-lg font-semibold">${(proposedTotal / 1_000_000).toFixed(1)}M</div>
     </div>
-    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
-      <div class="text-xs text-blue-600 mb-1">Adopted Budget</div>
+    <div class="bg-ps-blue-50 rounded-lg border border-ps-blue-200 p-4">
+      <div class="text-xs text-ps-blue-600 mb-1">Adopted Budget</div>
       <div class="text-lg font-semibold">${(adoptedTotal / 1_000_000).toFixed(1)}M</div>
     </div>
-    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
-      <div class="text-xs text-blue-600 mb-1">Budget Change</div>
-      <div class={`text-lg font-semibold ${budgetDiff >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+    <div class="bg-ps-blue-50 rounded-lg border border-ps-blue-200 p-4">
+      <div class="text-xs text-ps-blue-600 mb-1">Budget Change</div>
+      <div class={`text-lg font-semibold ${budgetDiff >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {budgetDiff >= 0 ? '+' : ''}${(budgetDiff / 1_000_000).toFixed(1)}M
       </div>
     </div>
-    <div class="bg-blue-50 rounded-lg border border-blue-200 p-4">
-      <div class="text-xs text-blue-600 mb-1"><a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a> Change</div>
-      <div class={`text-lg font-semibold ${fteDiff >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+    <div class="bg-ps-blue-50 rounded-lg border border-ps-blue-200 p-4">
+      <div class="text-xs text-ps-blue-600 mb-1"><a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a> Change</div>
+      <div class={`text-lg font-semibold ${fteDiff >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {fteDiff >= 0 ? '+' : ''}{fteDiff} FTE
       </div>
     </div>

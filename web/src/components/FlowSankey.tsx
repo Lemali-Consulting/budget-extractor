@@ -49,7 +49,7 @@ interface FlowSankeyProps {
 // Destinations (trunk, department, project, year) are intentionally pale so
 // that the colored flows from sources read as the visual foreground.
 const CATEGORY_COLORS: Record<string, string> = {
-  revenue: '#2563eb',
+  revenue: '#046BD1',
   trunk: '#cbd5e1',
   department: '#94a3b8',
   'department-other': '#cbd5e1',

@@ -57,7 +57,7 @@ export default function CrossYearPage(props: Props) {
             onClick={() => handleClick(tab.id)}
             class={`px-4 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${
               active === tab.id
-                ? 'border-blue-600 text-blue-600'
+                ? 'border-ps-blue-600 text-ps-blue-600'
                 : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
             }`}
           >

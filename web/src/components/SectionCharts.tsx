@@ -256,7 +256,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
             aria-selected={activeTab === t.key}
             class={`px-4 py-2 text-sm font-medium transition ${
               activeTab === t.key
-                ? 'text-blue-700 border-b-2 border-blue-600 bg-white'
+                ? 'text-ps-blue-700 border-b-2 border-ps-blue-600 bg-white'
                 : 'text-gray-500 hover:text-gray-700'
             }`}
             onClick={() => setTab(t.key)}

@@ -43,7 +43,7 @@ interface DisplayResult {
 }
 
 const BADGE_STYLES: Record<string, { bg: string; fg: string }> = {
-  [PAGEFIND_BUDGET_TYPE.CAPITAL]: { bg: 'bg-blue-100', fg: 'text-blue-700' },
+  [PAGEFIND_BUDGET_TYPE.CAPITAL]: { bg: 'bg-ps-blue-100', fg: 'text-ps-blue-700' },
   [PAGEFIND_BUDGET_TYPE.OPERATING]: { bg: 'bg-gray-100', fg: 'text-gray-700' },
   [PAGEFIND_BUDGET_TYPE.GLOSSARY]: { bg: 'bg-purple-100', fg: 'text-purple-700' },
 };
@@ -168,7 +168,7 @@ export default function SiteSearch() {
         aria-activedescendant={activeIndex >= 0 ? `search-option-${activeIndex}` : undefined}
         aria-autocomplete="list"
         placeholder="Search the 2027 budget…"
-        class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+        class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-ps-blue-400"
         value={query}
         onInput={(e) => {
           setQuery((e.target as HTMLInputElement).value);
@@ -200,7 +200,7 @@ export default function SiteSearch() {
                 role="option"
                 aria-selected={isActive}
                 href={result.href}
-                class={`block px-4 py-2 border-b last:border-b-0 ${isActive ? 'bg-blue-100' : 'hover:bg-blue-50'}`}
+                class={`block px-4 py-2 border-b last:border-b-0 ${isActive ? 'bg-ps-blue-100' : 'hover:bg-ps-blue-50'}`}
               >
                 <div class="font-medium text-sm">
                   <span class={`text-xs px-1.5 py-0.5 ${badge.bg} ${badge.fg} rounded mr-2`}>{result.budgetType}</span>

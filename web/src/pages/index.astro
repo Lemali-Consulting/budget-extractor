@@ -113,7 +113,7 @@ const teaserLinks: FlowLink[] = [
     <h1 class="text-3xl font-bold mb-2">Pittsburgh Budget Explorer</h1>
     <p class="text-lg text-gray-600 mb-3">
       The city's 600-page budget PDF, turned into searchable tables and charts.
-      <a href="/about/" class="text-blue-600 hover:underline text-base">How this was built</a>
+      <a href="/about/" class="text-ps-blue-600 hover:underline text-base">How this was built</a>
     </p>
     <p class="text-sm text-gray-500 mb-3">
       Showing the <strong>{HEADLINE.label}</strong> budget &mdash; the Mayor's proposal for fiscal year {HEADLINE.year}.
@@ -122,7 +122,7 @@ const teaserLinks: FlowLink[] = [
     <!-- Example questions -->
     <div class="flex flex-wrap gap-2 text-sm">
       <span class="text-gray-400">Try:</span>
-      <a href="/sections/bureau-of-police/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition">How much does policing cost?</a>
+      <a href="/sections/bureau-of-police/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-ps-blue-50 text-ps-blue-700 rounded-full hover:bg-ps-blue-100 transition">How much does policing cost?</a>
       <a href="/dashboard/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-green-50 text-green-700 rounded-full hover:bg-green-100 transition">Where does the money come from?</a>
     </div>
   </div>
@@ -145,8 +145,8 @@ const teaserLinks: FlowLink[] = [
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Operating Budget</div>
-      <div class="text-2xl font-bold text-blue-900 mt-1">{fmtM(totalCurrent)}</div>
-      <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+      <div class="text-2xl font-bold text-ps-blue-900 mt-1">{fmtM(totalCurrent)}</div>
+      <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {budgetChange >= 0 ? '+' : ''}{budgetChange.toFixed(1)}% vs {HEADLINE.priorYear}
       </div>
     </div>
@@ -157,7 +157,7 @@ const teaserLinks: FlowLink[] = [
       {trustCorrections.length > 0 && (
         <a
           href={correctionHref({ year: HEADLINE.year, id: trustCorrections[0].id })}
-          class="block text-xs text-amber-800 underline hover:text-amber-600 mt-1"
+          class="block text-xs text-ps-yellow-800 underline hover:text-ps-yellow-600 mt-1"
           data-testid="trust-fund-correction-footnote"
         >
           &dagger; Includes a heading correction by us ({trustCorrections.map((c) => c.section).join(', ')}): the PDF mislabels its years. Details
@@ -171,7 +171,7 @@ const teaserLinks: FlowLink[] = [
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Capital ({HEADLINE.year})</div>
-      <div class="text-2xl font-bold text-amber-900 mt-1">{fmtM(capitalCurrent)}</div>
+      <div class="text-2xl font-bold text-ps-yellow-900 mt-1">{fmtM(capitalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
@@ -184,11 +184,11 @@ const teaserLinks: FlowLink[] = [
   <!-- Money Flow teaser -->
   <a
     href="/flow/"
-    class="block mb-8 p-5 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition"
+    class="block mb-8 p-5 bg-white rounded-lg border-2 border-ps-blue-200 ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow-lg transition"
   >
     <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-xl font-bold text-blue-900">Where the Money Flows</h2>
-      <span class="text-sm text-blue-600 hover:text-blue-800">See the full money flow &rarr;</span>
+      <h2 class="text-xl font-bold text-ps-blue-900">Where the Money Flows</h2>
+      <span class="text-sm text-ps-blue-600 hover:text-ps-blue-800">See the full money flow &rarr;</span>
     </div>
     <p class="text-sm text-gray-600 mb-3">
       From {(revenueWaterfall as any[]).length} revenue sources, through the operating budget, out to {teaserDepts.length} departments.
@@ -199,11 +199,11 @@ const teaserLinks: FlowLink[] = [
   <!-- Trends teaser -->
   <a
     href="/trends/"
-    class="block mb-8 p-5 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition"
+    class="block mb-8 p-5 bg-white rounded-lg border-2 border-ps-blue-200 ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow-lg transition"
   >
     <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-xl font-bold text-blue-900">Budget Trends Over Time</h2>
-      <span class="text-sm text-blue-600 hover:text-blue-800">See the trends &rarr;</span>
+      <h2 class="text-xl font-bold text-ps-blue-900">Budget Trends Over Time</h2>
+      <span class="text-sm text-ps-blue-600 hover:text-ps-blue-800">See the trends &rarr;</span>
     </div>
     <p class="text-sm text-gray-600">
       Revenue, spending and reserves across budget years, with the {HEADLINE.label} budget set against that history.
@@ -212,8 +212,8 @@ const teaserLinks: FlowLink[] = [
 
   <!-- Operating & Capital cards -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-    <a href="/operating/" class="block p-6 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition">
-      <h2 class="text-2xl font-bold text-blue-900 mb-2">Operating Budget</h2>
+    <a href="/operating/" class="block p-6 bg-white rounded-lg border-2 border-ps-blue-200 ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow-lg transition">
+      <h2 class="text-2xl font-bold text-ps-blue-900 mb-2">Operating Budget</h2>
       <p class="text-gray-600 mb-3">Department budgets, revenue, trust funds, and financial forecasts for day-to-day city operations.</p>
       <div class="flex gap-4 text-sm text-gray-500">
         <span class="font-medium">{operatingSections.length} sections</span>
@@ -236,7 +236,7 @@ const teaserLinks: FlowLink[] = [
   <div class="bg-white rounded-lg border p-5 mb-8">
     <div class="flex items-baseline justify-between mb-1">
       <h2 class="text-lg font-semibold">Top Departments by Budget</h2>
-      <a href="/dashboard/" class="text-sm text-blue-500 hover:text-blue-700">Full dashboard &rarr;</a>
+      <a href="/dashboard/" class="text-sm text-ps-blue-500 hover:text-ps-blue-700">Full dashboard &rarr;</a>
     </div>
     <p class="text-sm text-gray-500 mb-3">{HEADLINE.fiscalLabel} operating budget — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
     <BudgetChart data={operating(budgetRows)} client:load />
@@ -250,19 +250,19 @@ const teaserLinks: FlowLink[] = [
 
   <!-- Quick links -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-    <a href="/compare/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+    <a href="/compare/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Compare</div>
       <div class="text-xs text-gray-400 mt-1">Departments side by side</div>
     </a>
-    <a href="/explorer/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+    <a href="/explorer/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Data Explorer</div>
       <div class="text-xs text-gray-400 mt-1">Search all tables</div>
     </a>
-    <a href="/dashboard/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+    <a href="/dashboard/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Dashboard</div>
       <div class="text-xs text-gray-400 mt-1">Budget at a glance</div>
     </a>
-    <a href="/personnel/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
+    <a href="/personnel/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Personnel</div>
       <div class="text-xs text-gray-400 mt-1">Positions by department</div>
     </a>

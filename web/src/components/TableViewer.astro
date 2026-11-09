@@ -158,7 +158,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
       </span>
       {tableCorrections.length > 0 && (
         <span
-          class="px-2 py-0.5 rounded text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-300"
+          class="px-2 py-0.5 rounded text-xs font-semibold bg-ps-yellow-100 text-ps-yellow-900 border border-ps-yellow-300"
           data-testid="table-correction-badge"
           title="Column headings relabelled by Pittsburgh Budget Explorer; not what the source PDF prints"
         >
@@ -173,7 +173,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
         <PageImage client:load year={year} slug={slug} page={table.relative_page} adoptedAvailable={adoptedPageAvailable} amendmentDates={amendmentDates} />
       )}
       <button
-        class="ml-auto text-xs text-gray-400 hover:text-blue-600 print:hidden copy-table-btn"
+        class="ml-auto text-xs text-gray-400 hover:text-ps-blue-600 print:hidden copy-table-btn"
         data-table-id={table.id}
         title="Copy table as tab-separated text"
         aria-label="Copy table"
@@ -185,12 +185,12 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
     {tableCorrections.map((c) => {
       const { printed, shown } = changedHeaders(c);
       return (
-        <p class="mt-2 border-l-4 border-amber-400 bg-amber-50 rounded-r px-3 py-2 text-xs text-amber-900" data-testid="table-correction-note">
+        <p class="mt-2 border-l-4 border-ps-yellow-400 bg-ps-yellow-50 rounded-r px-3 py-2 text-xs text-ps-yellow-900" data-testid="table-correction-note">
           <strong>Corrected by Pittsburgh Budget Explorer.</strong>{' '}
           The source PDF (page {c.pdfPage} of the full document) prints this table's headings as {quoteList(printed)}.
           The figures are really the {shown.map((h) => h.replace(/ Budget$/, '')).join(' and ')} budgets, so we show them as {quoteList(shown)}.
           The PDF itself is unchanged.{' '}
-          <a href={correctionHref({ year, id: c.id })} class="font-medium underline hover:text-amber-700">Why we made this correction &rarr;</a>
+          <a href={correctionHref({ year, id: c.id })} class="font-medium underline hover:text-ps-yellow-700">Why we made this correction &rarr;</a>
         </p>
       );
     })}
@@ -220,7 +220,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
             const isSectionRow = showDivider && row[0]?.trim() === section;
             const isTotal = isTotalRow(row);
             const rowBg = isSectionRow
-              ? 'bg-amber-50'
+              ? 'bg-ps-yellow-50'
               : isTotal
                 ? 'bg-gray-100'
                 : i % 2 === 0 ? 'bg-white' : 'bg-gray-50';
@@ -228,16 +228,16 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
             return (
               <>
                 {showDivider && !isSectionRow && (
-                  <tr class="bg-amber-50 border-t-2 border-amber-200" data-row-type="divider" data-section={section} data-orig-index={i}>
+                  <tr class="bg-ps-yellow-50 border-t-2 border-ps-yellow-200" data-row-type="divider" data-section={section} data-orig-index={i}>
                     {linkCell
-                      ? <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide" set:html={linkCell(section)} />
-                      : <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">{section}</td>
+                      ? <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-ps-yellow-800 uppercase tracking-wide" set:html={linkCell(section)} />
+                      : <td colspan={colCount} class="px-3 py-1.5 text-xs font-semibold text-ps-yellow-800 uppercase tracking-wide">{section}</td>
                     }
                   </tr>
                 )}
                 <tr class={
                   isSectionRow
-                    ? 'bg-amber-50 border-t-2 border-amber-200 font-semibold text-amber-900'
+                    ? 'bg-ps-yellow-50 border-t-2 border-ps-yellow-200 font-semibold text-ps-yellow-900'
                     : isTotal
                       ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
                       : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'

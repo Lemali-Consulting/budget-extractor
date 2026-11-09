@@ -44,7 +44,7 @@ export default function EmptyState({ tablesIndex, totalCount, onSelectTable }: P
           {suggestions.map((t) => (
             <button
               key={t.id}
-              class="text-left p-3 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition group"
+              class="text-left p-3 rounded-lg border border-gray-200 hover:border-ps-blue-300 hover:bg-ps-blue-50 transition group"
               onClick={() => onSelectTable(t.id)}
             >
               <div class="flex items-center gap-2 mb-1">
@@ -53,7 +53,7 @@ export default function EmptyState({ tablesIndex, totalCount, onSelectTable }: P
                 </span>
                 <span class="text-xs text-gray-400">{t.rowCount} rows</span>
               </div>
-              <div class="text-sm font-medium text-gray-700 group-hover:text-blue-700 truncate">
+              <div class="text-sm font-medium text-gray-700 group-hover:text-ps-blue-700 truncate">
                 {t.sectionTitle}
               </div>
               <div class="text-xs text-gray-400 mt-0.5">

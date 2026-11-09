@@ -52,7 +52,7 @@ export default function PageImage({ year, slug, page, label, adoptedAvailable: a
   return (
     <>
       <button
-        class="inline-flex items-center gap-1 px-2 py-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1"
+        class="inline-flex items-center gap-1 px-2 py-1 text-xs text-ps-blue-600 hover:text-ps-blue-800 hover:bg-ps-blue-50 rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ps-blue-500 focus-visible:ring-offset-1"
         onClick={openViewer}
         title="View original PDF page"
       >
@@ -62,7 +62,7 @@ export default function PageImage({ year, slug, page, label, adoptedAvailable: a
         </svg>
         {label || 'View source page'}
         {adoptedAvailable && (
-          <span class="ml-1 px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-semibold uppercase tracking-wide">
+          <span class="ml-1 px-1.5 py-0.5 rounded-full bg-ps-yellow-100 text-ps-yellow-800 text-[10px] font-semibold uppercase tracking-wide">
             amended
           </span>
         )}
@@ -75,7 +75,7 @@ export default function PageImage({ year, slug, page, label, adoptedAvailable: a
         >
           <div class="relative max-w-[90vw] max-h-[90vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
             <button
-              class="absolute -top-3 -right-3 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              class="absolute -top-3 -right-3 w-11 h-11 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ps-blue-500"
               onClick={() => setOpen(false)}
               aria-label="Close image viewer"
             >
@@ -90,7 +90,7 @@ export default function PageImage({ year, slug, page, label, adoptedAvailable: a
               >
                 <button
                   class={`flex flex-col items-center leading-tight px-3 py-1 text-sm font-medium rounded-md transition ${
-                    version === 'amended' ? 'bg-amber-500 text-white' : 'text-gray-600 hover:bg-gray-100'
+                    version === 'amended' ? 'bg-ps-yellow-500 text-white' : 'text-gray-600 hover:bg-gray-100'
                   }`}
                   aria-pressed={version === 'amended'}
                   onClick={() => setVersion('amended')}

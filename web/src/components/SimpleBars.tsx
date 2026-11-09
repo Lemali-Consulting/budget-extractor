@@ -43,7 +43,7 @@ export default function SimpleBars({ items, format = 'dollar', maxItems = 8 }: P
                 class="h-full rounded-full"
                 style={{
                   width: `${pct}%`,
-                  backgroundColor: item.color || '#2563eb',
+                  backgroundColor: item.color || '#046BD1',
                 }}
               />
             </div>

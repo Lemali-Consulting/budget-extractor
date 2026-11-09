@@ -345,9 +345,9 @@ function parseNarrative(raw: string): Segment[] {
 <Base title={section.title} ogTitle={section.title} ogDescription={ogDesc} budgetYear={budgetYear} currentHref={currentHref}>
   <div {...indexAttrs}>
   <nav class="text-sm text-gray-500 mb-4" data-pagefind-ignore>
-    <a href="/" class="hover:text-blue-600">Home</a>
+    <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
-    <a href={`${prefix}/operating/`} class="hover:text-blue-600">Operating Budget</a>
+    <a href={`${prefix}/operating/`} class="hover:text-ps-blue-600">Operating Budget</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>{section.title}</span>
   </nav>
@@ -357,7 +357,7 @@ function parseNarrative(raw: string): Segment[] {
   <div class="flex items-center gap-3 mb-2">
     <h1 class="text-3xl font-bold">{section.title}</h1>
     <span data-pagefind-ignore><ShareButton client:load url={`${prefix}/sections/${section.slug}/`} /></span>
-    <button data-pagefind-ignore class="text-xs text-gray-400 hover:text-blue-600 print:hidden" onclick="window.print()" title="Print this section" aria-label="Print">
+    <button data-pagefind-ignore class="text-xs text-gray-400 hover:text-ps-blue-600 print:hidden" onclick="window.print()" title="Print this section" aria-label="Print">
       Print
     </button>
   </div>
@@ -530,7 +530,7 @@ function parseNarrative(raw: string): Segment[] {
               {budgetYear.isHeadline && (
                 <a
                   href={`/explorer/#${tableData.id}`}
-                  class="text-xs text-blue-500 hover:text-blue-700 hover:underline"
+                  class="text-xs text-ps-blue-500 hover:text-ps-blue-700 hover:underline"
                 >
                   Open in Explorer &rarr;
                 </a>

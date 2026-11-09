@@ -12,7 +12,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
 <Base title="About This Site" description="How the Pittsburgh Budget Explorer was built, the role of AI in its construction, and important caveats about data accuracy.">
   <nav class="text-sm text-gray-500 mb-4">
-    <a href="/" class="hover:text-blue-600">Home</a>
+    <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>About</span>
   </nav>
@@ -24,7 +24,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
     <!-- What This Is -->
     <section class="mb-10">
-      <h2 class="text-xl font-bold text-blue-900 mb-3">What is the Pittsburgh Budget Explorer?</h2>
+      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">What is the Pittsburgh Budget Explorer?</h2>
       <p class="text-gray-700 mb-3">
         This site makes the City of Pittsburgh's {HEADLINE.fiscalLabel} Operating and Capital Budgets easier to browse. The city publishes its budget as large PDF documents — hundreds of pages of tables, narratives, and financial data. This project extracts that data from the PDFs and presents it in a searchable, sortable, and visual format.
       </p>
@@ -35,7 +35,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
     <!-- How It Was Built -->
     <section class="mb-10">
-      <h2 class="text-xl font-bold text-blue-900 mb-3">How was it built?</h2>
+      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">How was it built?</h2>
       <p class="text-gray-700 mb-3">
         The project has two main parts: <strong>data extraction</strong> (getting numbers out of the PDFs) and the <strong>web application</strong> (this site, which presents the data). Both were built through a collaboration between a human developer and AI tools.
       </p>
@@ -50,15 +50,15 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
       <h3 class="text-lg font-semibold text-gray-800 mt-6 mb-2">The web application</h3>
       <p class="text-gray-700">
-        This site is a static website built with <a href="https://astro.build" class="text-blue-600 hover:underline">Astro</a> and styled with <a href="https://tailwindcss.com" class="text-blue-600 hover:underline">Tailwind CSS</a>. Charts are rendered with <a href="https://observablehq.com/plot/" class="text-blue-600 hover:underline">Observable Plot</a>. The site is generated from the extracted CSV data — there is no backend server or database. Once built, the site is entirely static HTML, CSS, and JavaScript.
+        This site is a static website built with <a href="https://astro.build" class="text-ps-blue-600 hover:underline">Astro</a> and styled with <a href="https://tailwindcss.com" class="text-ps-blue-600 hover:underline">Tailwind CSS</a>. Charts are rendered with <a href="https://observablehq.com/plot/" class="text-ps-blue-600 hover:underline">Observable Plot</a>. The site is generated from the extracted CSV data — there is no backend server or database. Once built, the site is entirely static HTML, CSS, and JavaScript.
       </p>
     </section>
 
     <!-- Role of AI -->
     <section class="mb-10">
-      <h2 class="text-xl font-bold text-blue-900 mb-3">What role did AI play?</h2>
+      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">What role did AI play?</h2>
       <p class="text-gray-700 mb-3">
-        This project was built using <strong>AI-assisted development</strong> — specifically, <a href="https://claude.com/claude-code" class="text-blue-600 hover:underline">Claude Code</a>, an AI coding tool made by Anthropic. The AI was used extensively throughout the project:
+        This project was built using <strong>AI-assisted development</strong> — specifically, <a href="https://claude.com/claude-code" class="text-ps-blue-600 hover:underline">Claude Code</a>, an AI coding tool made by Anthropic. The AI was used extensively throughout the project:
       </p>
       <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
         <li><strong>Writing code:</strong> The AI wrote the majority of the Python extraction code, the web application components, and the data transformation scripts.</li>
@@ -76,12 +76,12 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
     <!-- Accuracy and Risks -->
     <section class="mb-10">
-      <h2 class="text-xl font-bold text-blue-900 mb-3">Important caveats about accuracy</h2>
+      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Important caveats about accuracy</h2>
 
-      <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-5">
-        <p class="text-amber-900 font-semibold mb-2">This site is not an official City of Pittsburgh publication.</p>
-        <p class="text-amber-800 text-sm">
-          The data shown here was mechanically extracted from the city's published budget PDFs. It has not been reviewed or endorsed by the City of Pittsburgh. For authoritative budget figures, always refer to the <a href="https://www.pittsburghpa.gov/City-Government/Finance-Budget/Management-Budget/Budgets-and-Reports" class="text-amber-900 underline hover:no-underline">official budget documents</a>.
+      <div class="bg-ps-yellow-50 border border-ps-yellow-200 rounded-lg p-5 mb-5">
+        <p class="text-ps-yellow-900 font-semibold mb-2">This site is not an official City of Pittsburgh publication.</p>
+        <p class="text-ps-yellow-800 text-sm">
+          The data shown here was mechanically extracted from the city's published budget PDFs. It has not been reviewed or endorsed by the City of Pittsburgh. For authoritative budget figures, always refer to the <a href="https://www.pittsburghpa.gov/City-Government/Finance-Budget/Management-Budget/Budgets-and-Reports" class="text-ps-yellow-900 underline hover:no-underline">official budget documents</a>.
         </p>
       </div>
 
@@ -104,7 +104,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
     <!-- Source and Transparency -->
     <section class="mb-10">
-      <h2 class="text-xl font-bold text-blue-900 mb-3">Source data and transparency</h2>
+      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Source data and transparency</h2>
       <p class="text-gray-700 mb-3">
         The source data for this site comes from two PDF documents published by the City of Pittsburgh's Office of Management and Budget:
       </p>
@@ -114,13 +114,13 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
       </ul>
       <p class="text-gray-700 mb-3">
         The {archive.label} budget remains browsable in the
-        <a href={yearPath({ budgetYear: archive, path: '/operating/' })} class="text-blue-600 hover:underline">{archive.year} archive</a>.
+        <a href={yearPath({ budgetYear: archive, path: '/operating/' })} class="text-ps-blue-600 hover:underline">{archive.year} archive</a>.
       </p>
       <p class="text-gray-700 mb-3">
         No data on this site comes from sources other than these two documents. No figures have been manually entered or estimated, and no number has been changed.
         {anyCorrections
-          ? <>The only editorial adjustments are the few column-heading corrections listed under <a href="#corrections" class="text-blue-600 hover:underline">Corrections</a> below; each is flagged wherever it appears on the site.</>
-          : <>No column headings have been relabelled either; see <a href="#corrections" class="text-blue-600 hover:underline">Corrections</a> below.</>}
+          ? <>The only editorial adjustments are the few column-heading corrections listed under <a href="#corrections" class="text-ps-blue-600 hover:underline">Corrections</a> below; each is flagged wherever it appears on the site.</>
+          : <>No column headings have been relabelled either; see <a href="#corrections" class="text-ps-blue-600 hover:underline">Corrections</a> below.</>}
       </p>
       <p class="text-gray-700">
         The extraction code, test suite, and website source code are available for inspection. Transparency about how the data was processed is a core goal of this project.
@@ -129,7 +129,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
     <!-- Corrections -->
     <section class="mb-10" id="corrections">
-      <h2 class="text-xl font-bold text-blue-900 mb-3">Corrections we made to the source documents</h2>
+      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Corrections we made to the source documents</h2>
       <p class="text-gray-700 mb-3">
         Now and then a city budget PDF contains a labelling error that, taken literally, makes this site show wrong or missing figures. Where the evidence is clear, <strong>Pittsburgh Budget Explorer corrects the heading when it builds the data</strong>, and says so on the affected table and section page. These corrections are ours, not the city's: the source PDFs are unchanged, and only column headings are relabelled; no dollar amount is altered.{anyCorrections && ' Each entry below shows what the PDF says, what we show instead, and why.'}
       </p>
@@ -140,7 +140,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
           {y.corrections.map((c) => {
             const { printed, shown } = changedHeaders(c);
             return (
-              <article id={correctionAnchor({ year: y.year, id: c.id })} class="mb-4 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg px-4 py-3 text-sm text-amber-900 scroll-mt-20" data-testid="correction-entry">
+              <article id={correctionAnchor({ year: y.year, id: c.id })} class="mb-4 border-l-4 border-ps-yellow-400 bg-ps-yellow-50 rounded-r-lg px-4 py-3 text-sm text-ps-yellow-900 scroll-mt-20" data-testid="correction-entry">
                 <h4 class="font-semibold mb-1">
                   {c.section}, page {c.pdfPage} of the full PDF
                 </h4>
@@ -149,7 +149,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
                 <p class="mb-1"><strong>Why:</strong> {c.evidence}</p>
                 {y.role !== YEAR_ROLE.COMPARISON_ONLY && (
                   <p>
-                    <a href={yearPath({ budgetYear: y, path: `/sections/${c.sectionSlug}/#table-${c.tableId}` })} class="font-medium underline hover:text-amber-700">See the corrected table &rarr;</a>
+                    <a href={yearPath({ budgetYear: y, path: `/sections/${c.sectionSlug}/#table-${c.tableId}` })} class="font-medium underline hover:text-ps-yellow-700">See the corrected table &rarr;</a>
                   </p>
                 )}
               </article>
@@ -171,7 +171,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
 
     <!-- Who Made This -->
     <section class="mb-10">
-      <h2 class="text-xl font-bold text-blue-900 mb-3">Who made this?</h2>
+      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Who made this?</h2>
       <p class="text-gray-700">
         This project was created by a Pittsburgh resident interested in making public budget data more accessible. It is an independent, volunteer effort and is not affiliated with or endorsed by the City of Pittsburgh government.
       </p>

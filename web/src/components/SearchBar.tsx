@@ -131,9 +131,9 @@ export default function SearchBar({ items, routePrefix = '' }: Props) {
   }
 
   const budgetTypeLabels: Record<string, { text: string; bg: string; fg: string }> = {
-    capital: { text: 'Capital', bg: 'bg-blue-100', fg: 'text-blue-700' },
+    capital: { text: 'Capital', bg: 'bg-ps-blue-100', fg: 'text-ps-blue-700' },
     glossary: { text: 'Glossary', bg: 'bg-purple-100', fg: 'text-purple-700' },
-    changes: { text: 'Changes', bg: 'bg-amber-100', fg: 'text-amber-700' },
+    changes: { text: 'Changes', bg: 'bg-ps-yellow-100', fg: 'text-ps-yellow-700' },
   };
 
   // Scroll active option into view
@@ -155,7 +155,7 @@ export default function SearchBar({ items, routePrefix = '' }: Props) {
         aria-activedescendant={activeIndex >= 0 ? `search-option-${activeIndex}` : undefined}
         aria-autocomplete="list"
         placeholder="Search sections, tables, narrative content..."
-        class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+        class="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-ps-blue-400"
         value={query}
         onInput={(e) => {
           setQuery((e.target as HTMLInputElement).value);
@@ -191,7 +191,7 @@ export default function SearchBar({ items, routePrefix = '' }: Props) {
                 role="option"
                 aria-selected={isActive}
                 href={href}
-                class={`block px-4 py-2 border-b last:border-b-0 ${isActive ? 'bg-blue-100' : 'hover:bg-blue-50'}`}
+                class={`block px-4 py-2 border-b last:border-b-0 ${isActive ? 'bg-ps-blue-100' : 'hover:bg-ps-blue-50'}`}
               >
                 <div class="font-medium text-sm">
                   {badge && <span class={`text-xs px-1.5 py-0.5 ${badge.bg} ${badge.fg} rounded mr-2`}>{badge.text}</span>}

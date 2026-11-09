@@ -14,11 +14,11 @@ const amendment = budgetYear.amendment;
 ---
 
 {amendment && (
-  <div class="mb-6 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg px-4 py-2.5 text-sm text-amber-900 print:hidden">
+  <div class="mb-6 border-l-4 border-ps-yellow-400 bg-ps-yellow-50 rounded-r-lg px-4 py-2.5 text-sm text-ps-yellow-900 print:hidden">
     <span aria-hidden="true" class="mr-1">&#9888;&#65039;</span>
     {budgetYear.year} operating figures reflect the budget <strong>{amendment.documentLabel}</strong>.
     {showLink && (
-      <a href={amendment.path} class="font-medium underline hover:text-amber-700">See what changed &rarr;</a>
+      <a href={amendment.path} class="font-medium underline hover:text-ps-yellow-700">See what changed &rarr;</a>
     )}
   </div>
 )}

@@ -103,6 +103,10 @@ When a source PDF mislabels something (e.g. the September 2027 preliminary heade
 
 The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 section pages, capital project pages and the glossary opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years (`/2026/...`, amendments, cross-year) keep the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
 
+# Brand Colors
+
+The site uses Public Source's 2025 brand colors. They are defined once in `web/src/lib/brand-colors.mjs`, exposed to Tailwind as `ps-*` (`ps-blue-600`, `ps-red-700`, `ps-yellow-100`, `ps-ink`, …) and imported by chart code. Use `ps-blue` / `ps-red` / `ps-yellow` rather than Tailwind's `blue` / `red` / `amber`; the scales are luminance-matched to Tailwind's, so the same step number gives the same contrast. Don't use bare PS Blue (`ps-blue`, #1277E2) for small text — it is under 4.5:1 on white; links use `ps-blue-600`. The brand fonts are not licensed for web text — don't add them via `@font-face`. See `docs/decisions/2026-11-09-public-source-brand-colors-and-logo.md`.
+
 # Web Smoke Tests
 
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.

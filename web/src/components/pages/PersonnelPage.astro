@@ -30,7 +30,7 @@ function fmtDollar(n: number): string {
 
 <Base title="Personnel" budgetYear={budgetYear} currentHref={headlinePath('/personnel/')}>
   <nav class="text-sm text-gray-500 mb-4">
-    <a href="/" class="hover:text-blue-600">Home</a>
+    <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>Personnel</span>
   </nav>
@@ -44,7 +44,7 @@ function fmtDollar(n: number): string {
     <div class="grid grid-cols-3 gap-4 mb-4">
       <div class="bg-gray-50 rounded-lg p-3">
         <div class="text-xs text-gray-500 mb-1">Net <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a> Change</div>
-        <div class={`text-lg font-semibold ${fteChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        <div class={`text-lg font-semibold ${fteChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
           {fteChange >= 0 ? '+' : ''}{Math.round(fteChange)}
         </div>
       </div>
@@ -54,7 +54,7 @@ function fmtDollar(n: number): string {
       </div>
       <div class="bg-gray-50 rounded-lg p-3">
         <div class="text-xs text-gray-500 mb-1">Eliminated Positions</div>
-        <div class="text-lg font-semibold text-red-600">-{elimCount}</div>
+        <div class="text-lg font-semibold text-ps-red-600">-{elimCount}</div>
       </div>
     </div>
 
@@ -74,12 +74,12 @@ function fmtDollar(n: number): string {
       )}
       {topElim.length > 0 && (
         <div>
-          <h3 class="text-sm font-semibold text-red-700 mb-2">Top Eliminated Positions</h3>
+          <h3 class="text-sm font-semibold text-ps-red-700 mb-2">Top Eliminated Positions</h3>
           <ul class="text-sm space-y-1">
             {topElim.map((p: any) => (
               <li class="flex justify-between">
                 <span class="truncate mr-2" title={`${p.title} — ${p.department}`}>{p.title} <span class="text-gray-400">({p.department})</span></span>
-                <span class="font-mono text-red-600 whitespace-nowrap">{p.fte} FTE · {fmtDollar(p.budget)}</span>
+                <span class="font-mono text-ps-red-600 whitespace-nowrap">{p.fte} FTE · {fmtDollar(p.budget)}</span>
               </li>
             ))}
           </ul>
@@ -89,10 +89,10 @@ function fmtDollar(n: number): string {
 
     <div class="flex gap-4 mt-4 text-sm">
       {!budgetYear.isHeadline && (
-        <a href={`${prefix}/changes/`} class="text-blue-600 hover:underline">All new &amp; eliminated positions &rarr;</a>
+        <a href={`${prefix}/changes/`} class="text-ps-blue-600 hover:underline">All new &amp; eliminated positions &rarr;</a>
       )}
       {!budgetYear.isHeadline && (
-        <a href="/cross-year/#personnel" class="text-blue-600 hover:underline">Proposed vs. adopted staffing &rarr;</a>
+        <a href="/cross-year/#personnel" class="text-ps-blue-600 hover:underline">Proposed vs. adopted staffing &rarr;</a>
       )}
     </div>
   </div>

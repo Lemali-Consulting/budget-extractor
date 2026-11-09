@@ -21,7 +21,7 @@ export default function ShareButton({ url, label = 'Share' }: Props) {
   return (
     <button
       onClick={handleClick}
-      class="text-xs text-gray-400 hover:text-blue-600 print:hidden"
+      class="text-xs text-gray-400 hover:text-ps-blue-600 print:hidden"
       title="Copy link to clipboard"
     >
       {label}

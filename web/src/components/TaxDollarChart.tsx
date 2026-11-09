@@ -10,8 +10,8 @@ interface DeptShare {
 }
 
 const COLORS = [
-  '#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd',
-  '#16a34a', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#6b7280',
+  '#014A93', '#046BD1', '#2284F4', '#61A4FA', '#97C4FE',
+  '#16a34a', '#BEB402', '#EE453C', '#8b5cf6', '#ec4899', '#6b7280',
 ];
 
 export default function TaxDollarChart({ data }: { data: DeptShare[] }) {

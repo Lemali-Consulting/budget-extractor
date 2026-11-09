@@ -11,12 +11,12 @@ const { highlights } = Astro.props;
 ---
 
 {highlights.length > 0 && (
-  <div class="mb-6 border-l-4 border-blue-400 bg-blue-50 rounded-r-lg p-4 print:break-inside-avoid">
+  <div class="mb-6 border-l-4 border-ps-blue-400 bg-ps-blue-50 rounded-r-lg p-4 print:break-inside-avoid">
     <div class="flex items-start gap-2">
-      <span class="text-blue-500 text-lg leading-none" aria-hidden="true">&#x1f4a1;</span>
+      <span class="text-ps-blue-500 text-lg leading-none" aria-hidden="true">&#x1f4a1;</span>
       <div>
-        <p class="text-sm font-semibold text-blue-900 mb-1">Key changes</p>
-        <ul class="text-sm text-blue-800 space-y-0.5">
+        <p class="text-sm font-semibold text-ps-blue-900 mb-1">Key changes</p>
+        <ul class="text-sm text-ps-blue-800 space-y-0.5">
           {highlights.map((h) => (
             <li>{h}</li>
           ))}

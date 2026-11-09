@@ -672,3 +672,29 @@ test("home trust funds card shows figures without a correction footnote", async 
   await expect(card).toContainText(/\$\d+\.\dM/);
   await expect(card.locator('[data-testid="trust-fund-correction-footnote"]')).toHaveCount(0);
 });
+
+// ---------------------------------------------------------------------------
+// Public Source branding (2025 brand guidelines)
+// ---------------------------------------------------------------------------
+// The site is presented with Pittsburgh's Public Source, so every page carries
+// its logo and colors. Both page layouts (Base and Story) are covered.
+const PS_LOGO_ALT = "Pittsburgh's Public Source";
+const PS_INK_RGB = "rgb(18, 18, 18)";
+// Text links use the brand blue's text-safe shade (5.2:1 on white); PS Blue
+// itself is 4.41:1, under the 4.5:1 minimum for body text.
+const PS_LINK_BLUE_RGB = "rgb(4, 107, 209)";
+const BRANDED_ROUTES = ["/", "/2026/operating/", "/stories/capital-plan/"];
+
+for (const route of BRANDED_ROUTES) {
+  test(`${route} header carries the Public Source logo on brand ink`, async ({ page }) => {
+    await page.goto(route);
+    const header = page.locator("header").first();
+    await expect(header.getByRole("img", { name: PS_LOGO_ALT })).toBeVisible();
+    await expect(header).toHaveCSS("background-color", PS_INK_RGB);
+  });
+}
+
+test("body links use the Public Source blue", async ({ page }) => {
+  await page.goto("/");
+  await expect(main(page).getByRole("link", { name: "How this was built" })).toHaveCSS("color", PS_LINK_BLUE_RGB);
+});

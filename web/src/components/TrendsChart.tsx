@@ -100,7 +100,7 @@ function Legend({
         {[...styled].reverse().map(({ vintage, color }) => (
           <li class="flex items-center gap-1.5">
             {swatch(color, vintage.isHeadline ? HEADLINE_WIDTH : OLDER_WIDTH)}
-            <span class={vintage.isHeadline ? 'font-semibold text-blue-700' : ''}>
+            <span class={vintage.isHeadline ? 'font-semibold text-ps-blue-700' : ''}>
               {vintage.label}
               {vintage.isHeadline ? ' (headline)' : ''}
             </span>

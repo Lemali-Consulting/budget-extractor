@@ -31,14 +31,14 @@ const hasMetrics = hasBudget || hasFte;
 
 // Determine if change is negative for color coding
 const isNegativeChange = budgetChange?.startsWith('(') || budgetChange?.startsWith('-');
-const changeColor = isNegativeChange ? 'text-red-600' : 'text-green-600';
+const changeColor = isNegativeChange ? 'text-ps-red-600' : 'text-green-600';
 
 const fteChangeRaw = hasFte && priorFte != null ? fte! - priorFte : null;
 const fteChange = fteChangeRaw != null ? Math.round(fteChangeRaw * 10) / 10 : null;
 const fteChangeStr = fteChange != null && fteChange !== 0
   ? (fteChange > 0 ? `+${fteChange}` : `${fteChange}`)
   : null;
-const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-red-600' : 'text-green-600';
+const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-ps-red-600' : 'text-green-600';
 ---
 
 {hasMetrics && (

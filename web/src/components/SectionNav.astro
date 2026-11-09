@@ -20,12 +20,12 @@ const wrapperClass = isTop
     {prev ? (
       <a
         href={`${basePath}/${prev.slug}/`}
-        class="flex-1 group flex items-start gap-2 px-4 py-3 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition text-left"
+        class="flex-1 group flex items-start gap-2 px-4 py-3 rounded-lg border border-gray-200 hover:border-ps-blue-300 hover:bg-ps-blue-50 transition text-left"
       >
-        <span class="text-gray-400 group-hover:text-blue-500 mt-0.5 shrink-0" aria-hidden="true">&larr;</span>
+        <span class="text-gray-400 group-hover:text-ps-blue-500 mt-0.5 shrink-0" aria-hidden="true">&larr;</span>
         <span>
-          <span class="block text-xs text-gray-400 group-hover:text-blue-500">Previous</span>
-          <span class="block text-sm font-medium text-gray-700 group-hover:text-blue-700 line-clamp-2">{prev.title}</span>
+          <span class="block text-xs text-gray-400 group-hover:text-ps-blue-500">Previous</span>
+          <span class="block text-sm font-medium text-gray-700 group-hover:text-ps-blue-700 line-clamp-2">{prev.title}</span>
         </span>
       </a>
     ) : (
@@ -34,13 +34,13 @@ const wrapperClass = isTop
     {next ? (
       <a
         href={`${basePath}/${next.slug}/`}
-        class="flex-1 group flex items-start gap-2 px-4 py-3 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition text-right justify-end"
+        class="flex-1 group flex items-start gap-2 px-4 py-3 rounded-lg border border-gray-200 hover:border-ps-blue-300 hover:bg-ps-blue-50 transition text-right justify-end"
       >
         <span class="text-right">
-          <span class="block text-xs text-gray-400 group-hover:text-blue-500">Next</span>
-          <span class="block text-sm font-medium text-gray-700 group-hover:text-blue-700 line-clamp-2">{next.title}</span>
+          <span class="block text-xs text-gray-400 group-hover:text-ps-blue-500">Next</span>
+          <span class="block text-sm font-medium text-gray-700 group-hover:text-ps-blue-700 line-clamp-2">{next.title}</span>
         </span>
-        <span class="text-gray-400 group-hover:text-blue-500 mt-0.5 shrink-0" aria-hidden="true">&rarr;</span>
+        <span class="text-gray-400 group-hover:text-ps-blue-500 mt-0.5 shrink-0" aria-hidden="true">&rarr;</span>
       </a>
     ) : (
       <div class="flex-1"></div>

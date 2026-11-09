@@ -138,7 +138,7 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
         Plot.barX(chartData, {
           y: 'department',
           x: 'difference',
-          fill: (d: ComparisonRow) => d.difference >= 0 ? '#16a34a' : '#dc2626',
+          fill: (d: ComparisonRow) => d.difference >= 0 ? '#16a34a' : '#DC2725',
           sort: { y: 'x' },
         }),
         Plot.ruleX([0]),
@@ -166,7 +166,7 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
         </div>
         <div class="bg-white rounded-lg border p-4">
           <div class="text-xs text-gray-500 mb-1">Net Change</div>
-          <div class={`text-lg font-semibold ${totalDiff >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+          <div class={`text-lg font-semibold ${totalDiff >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
             {totalDiff >= 0 ? '+' : ''}{formatDollar(totalDiff)}
           </div>
         </div>
@@ -219,14 +219,14 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
             {sorted.map(row => (
               <tr key={row.department} class={`border-b hover:bg-gray-50 ${Math.abs(row.difference) > 10 ? 'font-medium' : 'text-gray-500'}`}>
                 <td class="p-2">
-                  <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                  <a href={`${routePrefix}/sections/${row.slug}/`} class="text-ps-blue-600 hover:underline">{row.department}</a>
                 </td>
                 <td class="text-right p-2 font-mono">{formatDollar(row.proposed)}</td>
                 <td class="text-right p-2 font-mono">{formatDollar(row.adopted)}</td>
-                <td class={`text-right p-2 font-mono ${row.difference > 10 ? 'text-green-600' : row.difference < -10 ? 'text-red-600' : ''}`}>
+                <td class={`text-right p-2 font-mono ${row.difference > 10 ? 'text-green-600' : row.difference < -10 ? 'text-ps-red-600' : ''}`}>
                   {Math.abs(row.difference) > 10 ? `${row.difference > 0 ? '+' : ''}${formatDollar(row.difference)}` : '\u2014'}
                 </td>
-                <td class={`text-right p-2 font-mono ${row.difference > 10 ? 'text-green-600' : row.difference < -10 ? 'text-red-600' : ''}`}>
+                <td class={`text-right p-2 font-mono ${row.difference > 10 ? 'text-green-600' : row.difference < -10 ? 'text-ps-red-600' : ''}`}>
                   {Math.abs(row.difference) > 10 ? `${row.pctChange > 0 ? '+' : ''}${row.pctChange.toFixed(1)}%` : '\u2014'}
                 </td>
               </tr>
@@ -237,10 +237,10 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
               <td class="p-2">Total</td>
               <td class="text-right p-2 font-mono">{formatDollar(totalProposed)}</td>
               <td class="text-right p-2 font-mono">{formatDollar(totalAdopted)}</td>
-              <td class={`text-right p-2 font-mono ${totalDiff >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+              <td class={`text-right p-2 font-mono ${totalDiff >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
                 {totalDiff >= 0 ? '+' : ''}{formatDollar(totalDiff)}
               </td>
-              <td class={`text-right p-2 font-mono ${totalDiff >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+              <td class={`text-right p-2 font-mono ${totalDiff >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
                 {totalProposed > 0 ? `${totalDiff >= 0 ? '+' : ''}${((totalDiff / totalProposed) * 100).toFixed(1)}%` : '\u2014'}
               </td>
             </tr>

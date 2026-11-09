@@ -75,7 +75,7 @@ function TablePicker({ candidates, onSelect, onClose }: {
           <input
             type="text"
             placeholder="Search by section, label, or column name..."
-            class="w-full px-3 py-1.5 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full px-3 py-1.5 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-ps-blue-400"
             value={query}
             onInput={(e) => setQuery((e.target as HTMLInputElement).value)}
             autoFocus
@@ -88,7 +88,7 @@ function TablePicker({ candidates, onSelect, onClose }: {
           {filtered.map((t) => (
             <button
               key={t.id}
-              class="w-full px-3 py-2 text-left text-sm hover:bg-blue-50 flex items-center gap-2 border-b border-gray-50"
+              class="w-full px-3 py-2 text-left text-sm hover:bg-ps-blue-50 flex items-center gap-2 border-b border-gray-50"
               onClick={() => { onSelect(t.id); }}
             >
               <span class={`px-1.5 py-0.5 rounded text-[10px] font-medium shrink-0 ${TYPE_COLORS[t.type] || TYPE_COLORS.unknown}`}>
@@ -128,7 +128,7 @@ export default function CompareTab({ currentTable, currentMeta, compareTable, ca
               &times; Clear
             </button>
             <button
-              class="text-xs text-blue-600 hover:text-blue-800 px-1.5 py-0.5 rounded hover:bg-blue-50"
+              class="text-xs text-ps-blue-600 hover:text-ps-blue-800 px-1.5 py-0.5 rounded hover:bg-ps-blue-50"
               onClick={() => setPickerOpen(true)}
             >
               Change
@@ -136,7 +136,7 @@ export default function CompareTab({ currentTable, currentMeta, compareTable, ca
           </div>
         ) : (
           <button
-            class="px-3 py-1.5 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition"
+            class="px-3 py-1.5 bg-ps-blue-600 text-white text-sm rounded hover:bg-ps-blue-700 transition"
             onClick={() => setPickerOpen(true)}
           >
             Choose a table to compare...

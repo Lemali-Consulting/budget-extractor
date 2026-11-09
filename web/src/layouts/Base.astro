@@ -34,18 +34,18 @@ function isActive(href: string): boolean {
 }
 function navClass(href: string): string {
   return isActive(href)
-    ? 'text-white font-semibold border-b-2 border-white pb-0.5'
-    : 'text-blue-300 hover:text-white';
+    ? 'text-white font-semibold border-b-2 border-ps-yellow-100 pb-0.5'
+    : 'text-gray-300 hover:text-white';
 }
 function dropdownParentClass(hrefs: string[]): string {
   return hrefs.some(h => isActive(h))
     ? 'text-white font-semibold'
-    : 'text-blue-300 hover:text-white';
+    : 'text-gray-300 hover:text-white';
 }
 function dropdownItemClass(href: string): string {
   return isActive(href)
-    ? 'block px-3 py-1.5 text-white bg-blue-700 font-semibold'
-    : 'block px-3 py-1.5 text-blue-100 hover:bg-blue-700 hover:text-white';
+    ? 'block px-3 py-1.5 text-white bg-neutral-700 font-semibold'
+    : 'block px-3 py-1.5 text-gray-200 hover:bg-neutral-700 hover:text-white';
 }
 
 const storiesHrefs = ['/stories/', '/departments/'];
@@ -68,18 +68,21 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
     <meta property="og:description" content={resolvedOgDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231e3a5f'/><text x='16' y='23' font-size='20' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>P</text></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231277E2'/><text x='16' y='22' font-size='15' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>PS</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title} | Pittsburgh Budget Explorer</title>
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-900">
-    <header class="bg-blue-900 text-white px-6 py-3">
+    <header class="bg-ps-ink text-white px-6 py-3">
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-xl font-bold hover:text-blue-200">Pittsburgh Budget Explorer</a>
-          <button id="mobile-nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded text-blue-100 hover:text-white hover:bg-blue-800" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+          <a href="/" class="flex items-center gap-3 group">
+            <img src="/images/public-source-logo-white.png" alt="Pittsburgh's Public Source" width="150" height="34" class="h-8 w-auto sm:h-9" />
+            <span class="border-l border-gray-500 pl-3 text-lg sm:text-xl font-bold leading-tight text-white group-hover:text-ps-yellow-100">Budget Explorer</span>
+          </a>
+          <button id="mobile-nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded text-gray-200 hover:text-white hover:bg-neutral-800" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
             <svg id="mobile-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             <svg id="mobile-nav-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
@@ -91,7 +94,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 Stories <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
               </a>
               <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
-                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[10rem]">
+                <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[10rem]">
                   <a href="/stories/" class={dropdownItemClass('/stories/')}>Stories</a>
                   <a href="/departments/" class={dropdownItemClass('/departments/')}>Departments</a>
                 </div>
@@ -103,7 +106,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 Budgets <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
               </a>
               <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
-                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[12rem]">
+                <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[12rem]">
                   <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
                   <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
@@ -122,7 +125,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 Explore <span class="text-[0.6rem] ml-0.5" aria-hidden="true">&#9662;</span>
               </a>
               <div class="nav-dropdown-menu absolute top-full left-0 pt-2 hidden z-50">
-                <div class="bg-blue-800 rounded shadow-lg py-1 min-w-[10rem]">
+                <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[10rem]">
                   <a href="/dashboard/" class={dropdownItemClass('/dashboard/')}>Dashboard</a>
                   <a href="/explorer/" class={dropdownItemClass('/explorer/')}>Explorer</a>
                   <a href="/compare/" class={dropdownItemClass('/compare/')}>Compare</a>
@@ -135,32 +138,32 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
           </nav>
         </div>
         <nav id="mobile-nav" class="hidden md:hidden mt-3 pb-2 text-sm" aria-label="Mobile navigation">
-          <a href="/brief/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/brief/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Brief</a>
+          <a href="/brief/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/brief/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Brief</a>
           <div class="mt-3">
-            <div class="px-2 text-xs uppercase tracking-wide text-blue-300 font-semibold">Stories</div>
-            <a href="/stories/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/stories/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Stories</a>
-            <a href="/departments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/departments/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Departments</a>
+            <div class="px-2 text-xs uppercase tracking-wide text-ps-yellow-100 font-semibold">Stories</div>
+            <a href="/stories/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/stories/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Stories</a>
+            <a href="/departments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/departments/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Departments</a>
           </div>
           <div class="mt-3">
-            <div class="px-2 text-xs uppercase tracking-wide text-blue-300 font-semibold">Budgets</div>
-            <a href="/operating/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/operating/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Operating</a>
-            <a href="/capital/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/capital/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Capital</a>
-            <a href="/flow/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/flow/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Money Flow</a>
-            <a href="/trends/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/trends/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Trends</a>
-            <a href="/amendments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/amendments/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>2026 Amendments</a>
-            <a href="/cross-year/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/cross-year/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Proposed vs Adopted</a>
+            <div class="px-2 text-xs uppercase tracking-wide text-ps-yellow-100 font-semibold">Budgets</div>
+            <a href="/operating/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/operating/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Operating</a>
+            <a href="/capital/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/capital/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Capital</a>
+            <a href="/flow/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/flow/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Money Flow</a>
+            <a href="/trends/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/trends/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Trends</a>
+            <a href="/amendments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/amendments/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>2026 Amendments</a>
+            <a href="/cross-year/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/cross-year/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Proposed vs Adopted</a>
             {archiveLinks.map((a) => (
-              <a href={a.href} class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive(a.prefix) ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>{a.label}</a>
+              <a href={a.href} class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive(a.prefix) ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>{a.label}</a>
             ))}
           </div>
           <div class="mt-3">
-            <div class="px-2 text-xs uppercase tracking-wide text-blue-300 font-semibold">Explore</div>
-            <a href="/dashboard/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/dashboard/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Dashboard</a>
-            <a href="/explorer/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/explorer/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Explorer</a>
-            <a href="/compare/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/compare/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Compare</a>
-            <a href="/personnel/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/personnel/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Personnel</a>
-            <a href="/embed/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/embed/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Embeds</a>
-            <a href="/glossary/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/glossary/') ? 'bg-blue-800 text-white font-semibold' : 'text-blue-100 hover:bg-blue-800 hover:text-white'}`}>Glossary</a>
+            <div class="px-2 text-xs uppercase tracking-wide text-ps-yellow-100 font-semibold">Explore</div>
+            <a href="/dashboard/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/dashboard/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Dashboard</a>
+            <a href="/explorer/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/explorer/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Explorer</a>
+            <a href="/compare/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/compare/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Compare</a>
+            <a href="/personnel/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/personnel/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Personnel</a>
+            <a href="/embed/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/embed/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Embeds</a>
+            <a href="/glossary/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/glossary/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Glossary</a>
           </div>
         </nav>
       </div>
@@ -221,7 +224,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
     </script>
     <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-200">
       <p>Data extracted from the City of Pittsburgh {HEADLINE.fiscalLabel} Operating &amp; Capital Budgets</p>
-      <p class="mt-1"><a href="/about/" class="hover:text-blue-600 underline">About this site</a> &mdash; how it was built, the role of AI, and important caveats</p>
+      <p class="mt-1"><a href="/about/" class="hover:text-ps-blue-600 underline">About this site</a> &mdash; how it was built, the role of AI, and important caveats</p>
       <p class="mt-3">
         <a href="https://lemaliconsulting.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-gray-600 transition-colors">
           <span>Built by</span>

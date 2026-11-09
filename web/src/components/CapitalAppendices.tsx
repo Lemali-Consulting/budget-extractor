@@ -90,8 +90,8 @@ function AppendixA({ data, year }: { data: { departments: Department[]; totals: 
           <tbody>
             {data.departments.map((dept) => (
               <>
-                <tr class="bg-blue-50">
-                  <td colSpan={6} class="px-3 py-1.5 font-semibold text-blue-900 text-xs uppercase tracking-wide">
+                <tr class="bg-ps-blue-50">
+                  <td colSpan={6} class="px-3 py-1.5 font-semibold text-ps-blue-900 text-xs uppercase tracking-wide">
                     {dept.name}
                   </td>
                 </tr>
@@ -291,7 +291,7 @@ function AppendixC({ data }: { data: { entries: GlossaryEntry[] } }) {
       <dl class="divide-y divide-gray-100 border border-gray-200 rounded">
         {data.entries.map((e) => (
           <div class="grid grid-cols-1 md:grid-cols-[minmax(0,15rem)_minmax(0,14rem)_minmax(0,1fr)] gap-2 md:gap-4 px-3 py-2.5">
-            <dt class="font-mono font-semibold text-blue-700 break-words text-sm">{e.acronym}</dt>
+            <dt class="font-mono font-semibold text-ps-blue-700 break-words text-sm">{e.acronym}</dt>
             <dd class="text-gray-800 break-words">{e.name}</dd>
             <dd class="text-gray-600 text-sm">{e.description}</dd>
           </div>
@@ -308,9 +308,9 @@ export default function CapitalAppendices({ data, year }: { data: AppendicesData
     <div>
       <nav class="flex flex-wrap gap-3 text-sm bg-gray-50 border border-gray-200 rounded px-3 py-2 mb-2">
         <span class="text-gray-500 font-medium">Jump to:</span>
-        <a href="#appendix-a" class="text-blue-700 hover:underline">A · Projects by Department</a>
-        <a href="#appendix-b" class="text-blue-700 hover:underline">B · CPFC Scoring</a>
-        <a href="#appendix-c" class="text-blue-700 hover:underline">C · Glossary</a>
+        <a href="#appendix-a" class="text-ps-blue-700 hover:underline">A · Projects by Department</a>
+        <a href="#appendix-b" class="text-ps-blue-700 hover:underline">B · CPFC Scoring</a>
+        <a href="#appendix-c" class="text-ps-blue-700 hover:underline">C · Glossary</a>
       </nav>
       <AppendixA data={data.appendix_a} year={year} />
       <AppendixB data={data.appendix_b} />

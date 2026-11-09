@@ -7,7 +7,7 @@ interface Props {
   color?: string;
 }
 
-export default function Sparkline({ values, width = 60, height = 20, color = '#2563eb' }: Props) {
+export default function Sparkline({ values, width = 60, height = 20, color = '#046BD1' }: Props) {
   if (values.length < 2) return null;
 
   const min = Math.min(...values);
@@ -42,7 +42,7 @@ export default function Sparkline({ values, width = 60, height = 20, color = '#2
       <polyline
         points={points}
         fill="none"
-        stroke={trending ? color : '#dc2626'}
+        stroke={trending ? color : '#DC2725'}
         stroke-width="1.5"
         stroke-linejoin="round"
         stroke-linecap="round"
@@ -51,7 +51,7 @@ export default function Sparkline({ values, width = 60, height = 20, color = '#2
         cx={lastX}
         cy={lastY}
         r="2"
-        fill={trending ? color : '#dc2626'}
+        fill={trending ? color : '#DC2725'}
       />
     </svg>
   );

@@ -59,11 +59,11 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
         </div>
         <div class="bg-white rounded-lg border p-4">
           <div class="text-xs text-gray-500 mb-1">Dropped / Consolidated</div>
-          <div class="text-lg font-semibold text-red-600">{onlyProposed.length}</div>
+          <div class="text-lg font-semibold text-ps-red-600">{onlyProposed.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
           <div class="text-xs text-gray-500 mb-1">Metadata Changed</div>
-          <div class="text-lg font-semibold text-amber-600">{metadataChanges.length}</div>
+          <div class="text-lg font-semibold text-ps-yellow-600">{metadataChanges.length}</div>
         </div>
       </div>
 
@@ -73,7 +73,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
           <button
             key={v}
             onClick={() => setView(v)}
-            class={`px-3 py-1.5 text-sm rounded-md ${view === v ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+            class={`px-3 py-1.5 text-sm rounded-md ${view === v ? 'bg-ps-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
           >
             {v === 'all' ? `All Projects (${inBoth.length + onlyAdopted.length + onlyProposed.length})` : v === 'added' ? `Added (${onlyAdopted.length})` : `Dropped (${onlyProposed.length})`}
           </button>
@@ -98,7 +98,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
                 {onlyAdopted.map(p => (
                   <tr key={p.title} class="border-b hover:bg-gray-50">
                     <td class="p-2">
-                      <a href={`${routePrefix}/capital/${p.slug}/`} class="text-blue-600 hover:underline">{p.title}</a>
+                      <a href={`${routePrefix}/capital/${p.slug}/`} class="text-ps-blue-600 hover:underline">{p.title}</a>
                     </td>
                     <td class="p-2 text-gray-600">{p.functionalArea || '\u2014'}</td>
                     <td class="p-2 text-gray-600">{p.department || '\u2014'}</td>
@@ -114,11 +114,11 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
       {/* Dropped projects */}
       {(view === 'all' || view === 'dropped') && onlyProposed.length > 0 && (
         <div class="mb-6">
-          <h3 class="text-sm font-semibold text-red-700 mb-2">Projects Dropped or Consolidated</h3>
+          <h3 class="text-sm font-semibold text-ps-red-700 mb-2">Projects Dropped or Consolidated</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead>
-                <tr class="bg-red-50 border-b">
+                <tr class="bg-ps-red-50 border-b">
                   <th class="text-left p-2">Project</th>
                   <th class="text-left p-2">Functional Area</th>
                   <th class="text-left p-2">Type</th>
@@ -148,11 +148,11 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
       {/* Projects in both with metadata changes */}
       {view === 'all' && metadataChanges.length > 0 && (
         <div class="mb-6">
-          <h3 class="text-sm font-semibold text-amber-700 mb-2">Projects with Metadata Changes</h3>
+          <h3 class="text-sm font-semibold text-ps-yellow-700 mb-2">Projects with Metadata Changes</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead>
-                <tr class="bg-amber-50 border-b">
+                <tr class="bg-ps-yellow-50 border-b">
                   <th class="text-left p-2">Project</th>
                   <th class="text-left p-2">Field</th>
                   <th class="text-left p-2">Proposed</th>
@@ -170,11 +170,11 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
                     <tr key={`${p.title}-${d.field}`} class="border-b hover:bg-gray-50">
                       {i === 0 && (
                         <td class="p-2" rowSpan={diffs.length}>
-                          <a href={`${routePrefix}/capital/${p.slug}/`} class="text-blue-600 hover:underline">{p.title}</a>
+                          <a href={`${routePrefix}/capital/${p.slug}/`} class="text-ps-blue-600 hover:underline">{p.title}</a>
                         </td>
                       )}
                       <td class="p-2 text-gray-600">{d.field}</td>
-                      <td class="p-2 text-red-600">{d.from}</td>
+                      <td class="p-2 text-ps-red-600">{d.from}</td>
                       <td class="p-2 text-green-600">{d.to}</td>
                     </tr>
                   ));

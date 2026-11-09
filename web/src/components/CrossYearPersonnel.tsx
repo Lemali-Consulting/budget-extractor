@@ -196,7 +196,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
         Plot.barX(chartData, {
           y: 'department',
           x: 'change',
-          fill: (d: { change: number }) => d.change >= 0 ? '#16a34a' : '#dc2626',
+          fill: (d: { change: number }) => d.change >= 0 ? '#16a34a' : '#DC2725',
           sort: { y: 'x' },
         }),
         Plot.ruleX([0]),
@@ -228,11 +228,11 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
         </div>
         <div class="bg-white rounded-lg border p-4">
           <div class="text-xs text-gray-500 mb-1">Positions Removed</div>
-          <div class="text-lg font-semibold text-red-600">{removedFromProposed.length}</div>
+          <div class="text-lg font-semibold text-ps-red-600">{removedFromProposed.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
           <div class="text-xs text-gray-500 mb-1">Net <GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /> Change</div>
-          <div class={`text-lg font-semibold ${netFteChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+          <div class={`text-lg font-semibold ${netFteChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
             {netFteChange >= 0 ? '+' : ''}{netFteChange.toFixed(0)}
           </div>
         </div>
@@ -251,7 +251,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
             <button
               key={v}
               onClick={() => setView(v)}
-              class={`px-3 py-1.5 text-sm rounded-md ${view === v ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+              class={`px-3 py-1.5 text-sm rounded-md ${view === v ? 'bg-ps-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
             >
               {v === 'changed' ? `Changed (${matched.length})` : v === 'added' ? `Added (${addedInAdopted.length})` : `Removed (${removedFromProposed.length})`}
             </button>
@@ -285,15 +285,15 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
               {sortedMatched.map(row => (
                 <tr key={`${row.department}-${row.title}`} class="border-b hover:bg-gray-50">
                   <td class="p-2 text-gray-600 max-w-[180px] truncate" title={row.department}>
-                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-ps-blue-600 hover:underline">{row.department}</a>
                   </td>
                   <td class="p-2">{row.title}</td>
-                  <td class={`text-right p-2 font-mono ${row.fteDiff > 0 ? 'text-green-600' : row.fteDiff < 0 ? 'text-red-600' : ''}`}>
+                  <td class={`text-right p-2 font-mono ${row.fteDiff > 0 ? 'text-green-600' : row.fteDiff < 0 ? 'text-ps-red-600' : ''}`}>
                     {Math.abs(row.fteDiff) > 0.01 ? `${row.fteDiff > 0 ? '+' : ''}${row.fteDiff.toFixed(0)}` : '\u2014'}
                   </td>
                   <td class="text-right p-2 font-mono">{formatDollar(row.proposedBudget)}</td>
                   <td class="text-right p-2 font-mono">{formatDollar(row.adoptedBudget)}</td>
-                  <td class={`text-right p-2 font-mono ${row.budgetDiff > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  <td class={`text-right p-2 font-mono ${row.budgetDiff > 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
                     {row.budgetDiff > 0 ? '+' : ''}{formatDollar(row.budgetDiff)}
                   </td>
                 </tr>
@@ -320,7 +320,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
               {sortedAdded.map(row => (
                 <tr key={`${row.department}-${row.title}`} class="border-b hover:bg-gray-50">
                   <td class="p-2 text-gray-600 max-w-[180px] truncate" title={row.department}>
-                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-ps-blue-600 hover:underline">{row.department}</a>
                   </td>
                   <td class="p-2">{row.title}</td>
                   <td class="text-right p-2 font-mono">{row.fte > 0 ? row.fte.toFixed(0) : '\u2014'}</td>
@@ -349,11 +349,11 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
               {sortedRemoved.map(row => (
                 <tr key={`${row.department}-${row.title}`} class="border-b hover:bg-gray-50">
                   <td class="p-2 text-gray-600 max-w-[180px] truncate" title={row.department}>
-                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-blue-600 hover:underline">{row.department}</a>
+                    <a href={`${routePrefix}/sections/${row.slug}/`} class="text-ps-blue-600 hover:underline">{row.department}</a>
                   </td>
                   <td class="p-2">{row.title}</td>
                   <td class="text-right p-2 font-mono">{row.fte > 0 ? row.fte.toFixed(0) : '\u2014'}</td>
-                  <td class="text-right p-2 font-mono text-red-600">{row.budget > 0 ? `-${formatDollar(row.budget)}` : '\u2014'}</td>
+                  <td class="text-right p-2 font-mono text-ps-red-600">{row.budget > 0 ? `-${formatDollar(row.budget)}` : '\u2014'}</td>
                 </tr>
               ))}
             </tbody>

@@ -58,7 +58,7 @@ export default function PdfSidebar({ year, slug, totalPages, startPage }: Props)
         class={`fixed bottom-4 right-4 z-40 px-3 py-2 rounded-lg shadow-lg text-sm font-medium transition ${
           open
             ? 'bg-gray-800 text-white hover:bg-gray-700'
-            : 'bg-blue-600 text-white hover:bg-blue-700'
+            : 'bg-ps-blue-600 text-white hover:bg-ps-blue-700'
         }`}
       >
         {open ? 'Hide PDF' : 'Show PDF'}

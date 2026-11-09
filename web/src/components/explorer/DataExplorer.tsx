@@ -210,7 +210,7 @@ export default function DataExplorer({ tablesIndex, sections, year }: Props) {
     <div class="flex print:block" style={{ height: 'calc(100vh - 7rem)' }}>
       {/* Mobile sidebar toggle */}
       <button
-        class="md:hidden fixed bottom-4 left-4 z-40 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg text-sm font-medium"
+        class="md:hidden fixed bottom-4 left-4 z-40 px-4 py-2 bg-ps-blue-600 text-white rounded-lg shadow-lg text-sm font-medium"
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
         {sidebarOpen ? 'Close' : 'Filter'}
@@ -265,7 +265,7 @@ export default function DataExplorer({ tablesIndex, sections, year }: Props) {
               <h2 class="text-xl font-bold">
                 <a
                   href={`/${(selectedMeta!.budgetType || 'operating') === 'capital' ? 'capital' : 'sections'}/${selectedMeta!.sectionSlug}/`}
-                  class="hover:text-blue-600 hover:underline"
+                  class="hover:text-ps-blue-600 hover:underline"
                 >
                   {selectedMeta!.sectionTitle}
                 </a>
@@ -282,7 +282,7 @@ export default function DataExplorer({ tablesIndex, sections, year }: Props) {
                 <PageImage year={year} slug={selectedFull.slug} page={selectedMeta!.page} />
                 <a
                   href={`/${(selectedMeta!.budgetType || 'operating') === 'capital' ? 'capital' : 'sections'}/${selectedMeta!.sectionSlug}/`}
-                  class="inline-flex items-center gap-1 px-2 py-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1"
+                  class="inline-flex items-center gap-1 px-2 py-1 text-xs text-ps-blue-600 hover:text-ps-blue-800 hover:bg-ps-blue-50 rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ps-blue-500 focus-visible:ring-offset-1"
                 >
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h7l2 2h5a2 2 0 012 2v12a2 2 0 01-2 2z" />
@@ -301,7 +301,7 @@ export default function DataExplorer({ tablesIndex, sections, year }: Props) {
                   aria-selected={tab === t}
                   class={`px-4 py-2 text-sm font-medium border-b-2 transition ${
                     tab === t
-                      ? 'border-blue-600 text-blue-600'
+                      ? 'border-ps-blue-600 text-ps-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                   onClick={() => setTab(t)}

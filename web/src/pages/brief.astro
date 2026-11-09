@@ -87,7 +87,7 @@ function fmtB(n: number): string {
 
     <!-- Jump nav -->
     <nav class="flex flex-wrap gap-2 mb-10 text-sm" aria-label="Page sections">
-      <a href="#how-big" class="bg-blue-50 text-blue-700 rounded-full px-3 py-1 hover:bg-blue-100">The big picture</a>
+      <a href="#how-big" class="bg-ps-blue-50 text-ps-blue-700 rounded-full px-3 py-1 hover:bg-ps-blue-100">The big picture</a>
       <a href="#revenue" class="bg-green-50 text-green-700 rounded-full px-3 py-1 hover:bg-green-100">Revenue</a>
       <a href="#spending" class="bg-purple-50 text-purple-700 rounded-full px-3 py-1 hover:bg-purple-100">Spending</a>
       <a href="#workforce" class="bg-cyan-50 text-cyan-700 rounded-full px-3 py-1 hover:bg-cyan-100">Workforce</a>
@@ -97,7 +97,7 @@ function fmtB(n: number): string {
     <!-- 1. How big is the budget? -->
     <section id="how-big" class="mb-12 scroll-mt-8">
       <h2 class="text-2xl font-bold mb-4">How big is the budget?</h2>
-      <div class="bg-blue-50 rounded-xl p-6 mb-4">
+      <div class="bg-ps-blue-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <HeroStat label="Operating Budget" value={fmtM(totalCurrent)} detail={`${Number(changePct) >= 0 ? '+' : ''}${changePct}% vs ${HEADLINE.priorYear}`} />
           <HeroStat label="Per Resident" value={`$${perResident.toLocaleString()}`} detail="Based on 2020 Census" />
@@ -127,7 +127,7 @@ function fmtB(n: number): string {
         fines, and interest earnings.
       </p>
       <p class="text-sm text-gray-500 mt-2">
-        <a href="/dashboard/" class="text-blue-600 hover:underline">Explore the full dashboard &rarr;</a>
+        <a href="/dashboard/" class="text-ps-blue-600 hover:underline">Explore the full dashboard &rarr;</a>
       </p>
     </section>
 
@@ -147,7 +147,7 @@ function fmtB(n: number): string {
         the biggest spending areas are public works, parks, and general government operations.
       </p>
       <p class="text-sm text-gray-500 mt-2">
-        <a href="/operating/" class="text-blue-600 hover:underline">Browse all departments &rarr;</a>
+        <a href="/operating/" class="text-ps-blue-600 hover:underline">Browse all departments &rarr;</a>
       </p>
     </section>
 
@@ -161,7 +161,7 @@ function fmtB(n: number): string {
       <div class="bg-cyan-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <HeroStat label="Total Positions" value={totalFteCurrent.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
-          <HeroStat label="Year-over-Year" value={`${fteChange >= 0 ? '+' : ''}${fteChange}`} detail={`FTE change vs ${HEADLINE.priorYear}`} color={fteChange >= 0 ? 'text-green-700' : 'text-red-700'} />
+          <HeroStat label="Year-over-Year" value={`${fteChange >= 0 ? '+' : ''}${fteChange}`} detail={`FTE change vs ${HEADLINE.priorYear}`} color={fteChange >= 0 ? 'text-green-700' : 'text-ps-red-700'} />
           <HeroStat label="New Positions" value={`${changes.newPositions.length}`} detail={`${changes.eliminatedPositions.length} eliminated`} color="text-cyan-900" />
         </div>
       </div>
@@ -179,7 +179,7 @@ function fmtB(n: number): string {
         employer, followed by Fire and Operations (public works).
       </p>
       <p class="text-sm text-gray-500 mt-2">
-        <a href="/personnel/" class="text-blue-600 hover:underline">Explore all positions &rarr;</a>
+        <a href="/personnel/" class="text-ps-blue-600 hover:underline">Explore all positions &rarr;</a>
       </p>
     </section>
 
@@ -202,7 +202,7 @@ function fmtB(n: number): string {
         Community Development Block Grants (CDBG), and other sources.
       </p>
       <p class="text-sm text-gray-500 mt-2">
-        <a href="/capital/" class="text-blue-600 hover:underline">Browse all capital projects &rarr;</a>
+        <a href="/capital/" class="text-ps-blue-600 hover:underline">Browse all capital projects &rarr;</a>
       </p>
     </section>
 
@@ -219,9 +219,9 @@ function fmtB(n: number): string {
           "Capital budget" covers long-term infrastructure investments. The two are separate funds.
         </p>
         <p>
-          This analysis was produced by <a href="/about/" class="text-blue-600 hover:underline">Pittsburgh Budget Explorer</a>,
+          This analysis was produced by <a href="/about/" class="text-ps-blue-600 hover:underline">Pittsburgh Budget Explorer</a>,
           an independent project. For the underlying data and methodology, see the
-          <a href="/about/" class="text-blue-600 hover:underline">About page</a>.
+          <a href="/about/" class="text-ps-blue-600 hover:underline">About page</a>.
         </p>
       </div>
     </details>

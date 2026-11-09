@@ -41,15 +41,15 @@ export default function TableView({ headers, rows, sections = [], numericCols }:
             return (
               <>
                 {showDivider && !isSectionRow && (
-                  <tr key={`sec-${i}`} class="bg-amber-50 border-t-2 border-amber-200">
-                    <td colSpan={colCount} class="px-3 py-1.5 text-xs font-semibold text-amber-800 uppercase tracking-wide">
+                  <tr key={`sec-${i}`} class="bg-ps-yellow-50 border-t-2 border-ps-yellow-200">
+                    <td colSpan={colCount} class="px-3 py-1.5 text-xs font-semibold text-ps-yellow-800 uppercase tracking-wide">
                       {section}
                     </td>
                   </tr>
                 )}
                 <tr key={i} class={
                   isSectionRow
-                    ? 'bg-amber-50 border-t-2 border-amber-200 font-semibold text-amber-900'
+                    ? 'bg-ps-yellow-50 border-t-2 border-ps-yellow-200 font-semibold text-ps-yellow-900'
                     : isTotal
                       ? 'bg-gray-100 border-t-2 border-gray-300 font-semibold text-gray-900'
                       : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'

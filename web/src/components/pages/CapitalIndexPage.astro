@@ -58,7 +58,7 @@ for (const section of sections) {
 
 <Base title="Capital Budget" budgetYear={budgetYear} currentHref={headlinePath('/capital/')}>
   <nav class="text-sm text-gray-500 mb-4">
-    <a href="/" class="hover:text-blue-600">Home</a>
+    <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>Capital Budget</span>
   </nav>
@@ -95,7 +95,7 @@ for (const section of sections) {
           return (
             <a
               href={`${prefix}/capital/${s.slug}/`}
-              class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition"
+              class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition"
             >
               <div class="font-medium">{s.title}</div>
               {(s as any).department && (
