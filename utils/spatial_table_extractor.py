@@ -12,6 +12,11 @@ _PROPAGATION_EXTENT_TOLERANCE: float = 30.0
 # Max distance (pts) a headerless totals block may start left of a table's first
 # column and still be re-slotted into that table's columns.
 _RESLOT_EXTENT_TOLERANCE: float = 5.0
+# Grant tables (JDE Number, Funder, Grant, three amounts) put their column
+# rules at these x-positions in the 2026 and 2027 operating budgets. A table
+# that draws only its left and right border falls back to them.
+STANDARD_GRANT_COLUMN_RULES_X: tuple[float, ...] = (54, 107, 212, 407, 458, 508, 558)
+_OUTER_BORDER_RULE_COUNT: int = 2
 _DOLLAR: str = "$"
 _PERCENT: str = "%"
 # One whitespace-delimited piece of a numeric cell: 1,234 / (1,234) / 1.2 /
@@ -659,6 +664,10 @@ class SpatialTableExtractor:
 
         if len(col_boundaries) < 2:
             return []
+        if len(col_boundaries) == _OUTER_BORDER_RULE_COUNT:
+            # Some grant pages draw only the table's outer border; their
+            # columns sit where every other grant page's rules put them.
+            col_boundaries = list(STANDARD_GRANT_COLUMN_RULES_X)
 
         # Monetary columns start at the 4th column boundary (index 3)
         monetary_x0 = col_boundaries[3] if len(col_boundaries) > 3 else 400
