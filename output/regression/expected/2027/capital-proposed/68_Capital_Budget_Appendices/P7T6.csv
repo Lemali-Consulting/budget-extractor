@@ -1,7 +1,8 @@
-"C0 (l, x:20-108)","C1 (l, x:108-229)","C2 (r, x:229-291)","C3 (l, x:291-326)","C4 (r, x:326-356)","C5 (r, x:356-397)","C6 (l, x:397-420)","C7 (l, x:420-444)","C8 (l, x:444-482)","C9 (l, x:482-525)","C10 (l, x:525-563)","C11 (r, x:563-585)"
-7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES,South Side Park Pump Track,"100,000",0,0,"100,000N",N,Y,N N,N,1,0.5
-,wo Bathroom Remodels and One Kitchen/ Sitting Area,,,,,,,,,,
-7558 - PUBLIC SAFETY EQUIPMENT,Remodel,0,0,0,0N,Y,N,N N,N,1,0.5
-1002 - PLAY AREA IMPROVEMENTS,Farmhouse Playground Reconstruction,0,0,"100,000",0N,Y,N,N N,N,1,0.5
-7500 - FACILITY IMPROVEMENTS - CITY FACILITIES,City-Wide Boiler Replacements,"475,203",0,0,"475,203N",N,N,N N,N,0,0
-7401 - COMPLETE STREETS,Main Street traffic calming & safety improvement,"250,000",0,0,"250,000N",N,N,N,N,0,0
+"C0 (l, x:19-128)","C1 (l, x:128-224)","C2 (l, x:224-257)","C3 (r, x:257-294)","C4 (r, x:294-329)","C5 (r, x:329-359)","C6 (r, x:359-400)","C7 (l, x:400-423)","C8 (l, x:423-447)","C9 (l, x:447-471)","C10 (l, x:471-495)","C11 (l, x:495-528)","C12 (l, x:528-546)","C13 (l, x:546-569)","C14 (l, x:569-589)"
+Project Name 7401 - COMPLETE STREETS,Project Deliverable Second/Greenfield/Saline Study,$ City,"$ CDBG $100,000",$ Other $0,$0,"$ City or CDBG Scorer 1 $100,000N",Scorer 2 Y,Scorer 3 Y,Scorer 4 N,Scorer 5 N,Scorer 6 N,Count,Adjusted Count 2,1
+7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES,South Side Park Pump Track,,"100,000",0,0,"100,000N",N,Y,N,N,N,,1,0.5
+,wo Bathroom Remodels and One Kitchen/ Sitting Area,,,,,,,,,,,,,
+7558 - PUBLIC SAFETY EQUIPMENT,Remodel,,0,0,0,0N,Y,N,N,N,N,,1,0.5
+1002 - PLAY AREA IMPROVEMENTS,Farmhouse Playground Reconstruction,,0,0,"100,000",0N,Y,N,N,N,N,,1,0.5
+7500 - FACILITY IMPROVEMENTS - CITY FACILITIES,City-Wide Boiler Replacements,,"475,203",0,0,"475,203N",N,N,N,N,N,,0,0
+7401 - COMPLETE STREETS,Main Street traffic calming & safety improvement,,"250,000",0,0,"250,000N",N,N,N,,N,,0,0

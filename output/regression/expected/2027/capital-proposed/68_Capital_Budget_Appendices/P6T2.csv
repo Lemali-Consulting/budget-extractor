@@ -1,9 +1,11 @@
-"C0 (l, x:20-106)","C1 (l, x:106-226)","C2 (r, x:226-291)","C3 (l, x:291-326)","C4 (l, x:326-356)","C5 (r, x:356-397)","C6 (l, x:397-420)","C7 (l, x:420-444)","C8 (l, x:444-468)","C9 (l, x:468-491)","C10 (l, x:491-525)","C11 (l, x:525-563)","C12 (l, x:563-585)"
-0036 - STEP REPAIR AND REPLACEMENT,Highnote Way Steps - Alries to The Blvd,"483,000",0,0,"483,000N",N,Y,N,Y,Y,3,2.5
-3101 - BRIDGE UPGRADES,Second Ave Bridge Preservation - Eng. & Construction,"100,000",0,0,"100,000Y",N,Y,N,Y,N,3,2.5
-7401 - COMPLETE STREETS,Signal-controlled and Engineered Pedestrian Crossing,"100,000",0,0,"100,000Y",Y,N,N,Y,N,3,2.5
-7558 - PUBLIC SAFETY EQUIPMENT,Firefighting Foam Replacement,"404,100",0,0,"404,100N",Y,N,N,Y,Y,3,2.5
-0036 - STEP REPAIR AND REPLACEMENT,Tell Street Steps - To Voskamp St,"133,000",0,0,"133,000Y",N,Y,N,Y,N,3,2.5
-,Boulevard of the Allies Streetscape (may want to be own,,,,,,,,,,,
-7401 - COMPLETE STREETS,project type),"1,000,000",0,0,"1,000,000N",Y,N,Y,Y,N,3,2.5
-7558 - PUBLIC SAFETY EQUIPMENT,Nozzles & Appliances,"133,400",0,0,"133,400N",Y,N,Y,Y,N,3,2.5
+"C0 (l, x:19-120)","C1 (l, x:120-229)","C2 (l, x:229-260)","C3 (r, x:260-294)","C4 (r, x:294-329)","C5 (r, x:329-359)","C6 (r, x:359-399)","C7 (l, x:399-423)","C8 (l, x:423-447)","C9 (l, x:447-471)","C10 (l, x:471-495)","C11 (l, x:495-528)","C12 (l, x:528-546)","C13 (l, x:546-569)","C14 (l, x:569-589)"
+Project Name,Project Deliverable,$ City,$ CDBG,$ Other,,$ City or CDBG Scorer 1,Scorer 2,Scorer 3,Scorer 4,Scorer 5,Scorer 6,Count,Adjusted Count,
+7401 - COMPLETE STREETS,Signal-controlled and Engineered Pedestrian Crossing,,"100,000",0,0,"100,000Y",Y,N,N,Y,N,,3,2.5
+7558 - PUBLIC SAFETY EQUIPMENT,Firefighting Foam Replacement,,"404,100",0,0,"404,100N",Y,N,N,Y,Y,,3,2.5
+0036 - STEP REPAIR AND REPLACEMENT,Tell Street Steps - To Voskamp St,,"133,000",0,0,"133,000Y",N,Y,N,Y,N,,3,2.5
+7401 - COMPLETE STREETS,Boulevard of the Allies Streetscape,,"1,000,000",0,0,"1,000,000N",Y,N,Y,Y,N,,3,2.5
+7558 - PUBLIC SAFETY EQUIPMENT,Nozzles & Appliances,,"133,400",0,0,"133,400N",Y,N,Y,Y,N,,3,2.5
+0036 - STEP REPAIR AND REPLACEMENT,Murdoch Rd Steps - Hobart to Guarino,,"87,000",0,0,"87,000Y",N,Y,N,Y,N,,3,2.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Fire Station 20 / Medic 12,,"1,000,000",0,0,"1,000,000N",Y,N,Y,Y,N,,3,2.5
+5000 - PARK RECONSTRUCTION,Lower McKinley Park Reconstruction,,"750,000",0,0,"750,000N",Y,N,Y,Y,N,,3,2.5
+5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, EMA, Com. Vehicle Systems Upgrade",,"120,000",0,0,"120,000N",Y,N,N,Y,Y,,3,2.5

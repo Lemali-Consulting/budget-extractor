@@ -1,6 +1,8 @@
-"C0 (l, x:20-127)","C1 (l, x:127-259)","C2 (r, x:259-292)","C3 (l, x:292-328)","C4 (r, x:328-347)","C5 (r, x:347-399)","C6 (l, x:399-423)","C7 (l, x:423-446)","C8 (l, x:446-470)","C9 (l, x:470-494)","C10 (l, x:494-525)","C11 (l, x:525-577)","C12 (l, x:577-585)"
-Project Name,Project Deliverable City,CDBG,Other,,City or CDBG Scorer 1,Scorer 2,Scorer 3,Scorer 4,Scorer 5,Scorer 6,Count Adjusted Count,
-7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Temporary Fire Station,"600,000",0,0,"600,000N",N,N,Y,N,N,1,1
-5000 - PARK RECONSTRUCTION,Baxter Park Rehabilitation Project,0,0,"950,000",0N,Y,Y,N,N,N,2,1
-5000 - PARK RECONSTRUCTION,Dallas Park Upgrades,"650,000",0,0,"650,000N",N,N,Y,N,N,1,1
-5000 - PARK RECONSTRUCTION,Ormsby Master Plan + Lighting,"400,000",0,0,"400,000N",Y,Y,N,N,N,2,1
+"C0 (l, x:19-128)","C1 (l, x:128-224)","C2 (l, x:224-257)","C3 (r, x:257-294)","C4 (r, x:294-329)","C5 (r, x:329-359)","C6 (r, x:359-400)","C7 (l, x:400-423)","C8 (l, x:423-447)","C9 (l, x:447-471)","C10 (l, x:471-495)","C11 (l, x:495-528)","C12 (l, x:528-546)","C13 (l, x:546-569)","C14 (l, x:569-589)"
+Project Name 7401 - COMPLETE STREETS,Project Deliverable Second/Greenfield/Saline Study,$ City,"$ CDBG $100,000",$ Other $0,$0,"$ City or CDBG Scorer 1 $100,000N",Scorer 2 Y,Scorer 3 Y,Scorer 4 N,Scorer 5 N,Scorer 6 N,Count,Adjusted Count 2,1
+0036 - STEP REPAIR AND REPLACEMENT,Eleanor St Steps Construction,,"1,130,200",0,0,"1,130,200Y",N,N,N,N,N,,1,1
+5899 - CAPITAL EQUIPMENT ACQUISITION,"Parks & Rec, Crew Cab Pickup Truck",,"65,000",0,0,"65,000Y",N,N,N,N,N,,1,1
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Temporary Fire Station,,"600,000",0,0,"600,000N",N,N,Y,N,N,,1,1
+5000 - PARK RECONSTRUCTION,Baxter Park Rehabilitation Project,,0,0,"950,000",0N,Y,Y,N,N,N,,2,1
+5000 - PARK RECONSTRUCTION,Dallas Park Upgrades,,"650,000",0,0,"650,000N",N,N,Y,N,N,,1,1
+5000 - PARK RECONSTRUCTION,Ormsby Master Plan + Lighting,,"400,000",0,0,"400,000N",Y,Y,N,N,N,,2,1

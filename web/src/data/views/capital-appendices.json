@@ -183,10 +183,10 @@
           {
             "name": "STREET RESURFACING",
             "cdbg": 0,
-            "bond": 22688714,
+            "bond": 22713714,
             "paygo": 1100000,
             "other": 0,
-            "total": 23788714
+            "total": 23813714
           },
           {
             "name": "SWINBURNE BRIDGE (TIP)",
@@ -328,34 +328,34 @@
           {
             "name": "FACILITY IMPROVEMENTS - CITY FACILITIES",
             "cdbg": 0,
-            "bond": 9191296,
+            "bond": 8191296,
             "paygo": 0,
             "other": 0,
-            "total": 9191296
+            "total": 8191296
           },
           {
             "name": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
             "cdbg": 0,
-            "bond": 9350000,
+            "bond": 9600000,
             "paygo": 0,
             "other": 0,
-            "total": 9350000
+            "total": 9600000
           },
           {
             "name": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
             "cdbg": 0,
-            "bond": 400000,
+            "bond": 650000,
             "paygo": 0,
             "other": 0,
-            "total": 400000
+            "total": 650000
           },
           {
             "name": "PARK RECONSTRUCTION",
             "cdbg": 0,
-            "bond": 6150000,
+            "bond": 5800000,
             "paygo": 0,
             "other": 1700000,
-            "total": 7850000
+            "total": 7500000
           },
           {
             "name": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
@@ -364,6 +364,14 @@
             "paygo": 0,
             "other": 2400000,
             "total": 2400000
+          },
+          {
+            "name": "PLAY AREA IMPROVEMENTS",
+            "cdbg": 0,
+            "bond": 825000,
+            "paygo": 0,
+            "other": 0,
+            "total": 825000
           },
           {
             "name": "PUBLIC SAFETY TRAINING FACILITY",
@@ -562,7 +570,7 @@
       },
       {
         "project": "7401 - COMPLETE STREETS",
-        "deliverable": "Murray Ave Mobility & Accessibility Enhancements (Should be new project type)",
+        "deliverable": "Murray Ave Mobility & Accessibility Enhancements",
         "city": 49500,
         "cdbg": 0,
         "other": 495000,
@@ -2145,6 +2153,22 @@
         "adjusted_count": 3.0
       },
       {
+        "project": "1009 - BEDFORD DWELLINGS CHOICE NEIGHBORHOOD",
+        "deliverable": "Targeted Facade Repair",
+        "city": 0,
+        "cdbg": 225000,
+        "other": 0,
+        "adjusted": 225000,
+        "omb1": "Y",
+        "omb2": "Y",
+        "omb3": "N",
+        "cc1": "N",
+        "cc2": "Y",
+        "co1": "",
+        "count": 4,
+        "adjusted_count": 3.0
+      },
+      {
         "project": "0011 - REMEDIATION OF CONDEMNED BUILDINGS",
         "deliverable": "Pittsburgh Land Bank Pilot Residential Rehab Program Property Acquisition",
         "city": 509600,
@@ -2354,7 +2378,7 @@
       },
       {
         "project": "7401 - COMPLETE STREETS",
-        "deliverable": "Boulevard of the Allies Streetscape (may want to be own project type)",
+        "deliverable": "Boulevard of the Allies Streetscape",
         "city": 1000000,
         "cdbg": 0,
         "other": 0,
@@ -5002,9 +5026,19 @@
         "description": "A phone number and team within the Department of Innovation and Performance that handles non- emergency City of Pittsburgh concerns or questions"
       },
       {
+        "acronym": "ADA",
+        "name": "The Americans with Disabilities Act",
+        "description": "A federal civil rights law enacted in 1990 that prohibits discrimination based on disability"
+      },
+      {
+        "acronym": "CBD",
+        "name": "Central Business District",
+        "description": "Coterminous with Downtown Pittsburgh or the Golden Triangle"
+      },
+      {
         "acronym": "CDBG (team)",
         "name": "Community Development Division",
-        "description": "A City team that is a part of the Office of Management and Budget and administers the Community Development Block Grant (CDBG), Emergency Solutions Grant (ESG), and Housing for Persons with AIDS (HOPWA) grant."
+        "description": "A City team that is a part of the Office of Management and Budget and administers the Community Development Block Grant (CDBG), Emergency Solutions Grant (ESG), and Housing for Persons with AIDS (HOPWA) grant"
       },
       {
         "acronym": "CDBG (program)",
@@ -5012,9 +5046,19 @@
         "description": "A federal program from the Department of Housing and Urban Development \"that provides communities with resources to address a wide range of unique community development needs\""
       },
       {
+        "acronym": "CHDO",
+        "name": "Community Housing Development Organization",
+        "description": "A HUD-designated nonprofit organization with a mission of developing affordable housing for the local community"
+      },
+      {
         "acronym": "CPFC",
         "name": "Capital Program Facilitation Committee",
-        "description": "The internal group of City staff that assist with Capital programming and facilitation."
+        "description": "The internal group of City staff that assist with Capital programming and facilitation"
+      },
+      {
+        "acronym": "DCED",
+        "name": "Department of Community and Economic Development",
+        "description": "A state department responsible for administering grant programs such as the Multimodal Transportation Fund and Local Share Account"
       },
       {
         "acronym": "DCP",
@@ -5032,6 +5076,11 @@
         "description": "A City department that maintains much of the City's non-transportation infrastructure including parks, pools, ballfields, and buildings"
       },
       {
+        "acronym": "ELA",
+        "name": "Equipment Leasing Authority",
+        "description": "A municipal authority responsible for purchasing or leasing vehicles and heavy equipment for the City\u2019s fleet"
+      },
+      {
         "acronym": "ESG",
         "name": "Emergency Solutions Grant Program",
         "description": "A federal program from the Department of Housing and Urban Development \"to assist individuals and families quickly regain stability in permanent housing after experiencing a housing crisis or homelessness\""
@@ -5039,12 +5088,17 @@
       {
         "acronym": "HOF",
         "name": "Housing Opportunity Fund",
-        "description": "The Housing Opportunity Fund supports the development and preservation of affordable and accessible housing within the City of Pittsburgh. It is funded by the City of Pittsburgh Operating Budget and is administered by the Urban Redevelopment Authority."
+        "description": "The Housing Opportunity Fund supports the development and preservation of affordable and accessible housing within the City of Pittsburgh. It is funded by the City of Pittsburgh Operating Budget and is administered by the Urban Redevelopment Authority"
       },
       {
         "acronym": "HOPWA",
         "name": "Housing Opportunities for Persons with AIDS",
         "description": "A federal program from the Department of Housing and Urban Development dedicated to addressing the housing needs of people living with HIV/AIDS"
+      },
+      {
+        "acronym": "HSIP",
+        "name": "Highway Safety Improvement Program",
+        "description": "A federal funding program administered regionally by the Southwestern Pennsylvania Commission, with the goal of reducing traffic fatalities and injuries"
       },
       {
         "acronym": "HUD",
@@ -5057,9 +5111,14 @@
         "description": "A City department that provides technology services to all City departments"
       },
       {
+        "acronym": "LSA",
+        "name": "Local Share Account",
+        "description": "A state grant program administered by DCED that funds public infrastructure and asset acquisitions and improvements"
+      },
+      {
         "acronym": "NED",
         "name": "Neighborhood Economic Development",
-        "description": "A project in the Capital Budget that acts as a competitive grant program providing CDBG funding to development-focused community organizations."
+        "description": "A project in the Capital Budget that acts as a competitive grant program providing CDBG funding to development-focused community organizations"
       },
       {
         "acronym": "OMB",
@@ -5082,14 +5141,29 @@
         "description": "A project in the Capital Budget that funds qualifying nonprofit organizations with CDBG money"
       },
       {
+        "acronym": "RAD",
+        "name": "Allegheny Regional Asset District",
+        "description": "A special purpose unit of Allegheny County government responsible for disbursing 1% of sales tax collected within the County. By state law, at least 1% of total revenues collected are obligated to be allocated to the City for capital improvements in the six designated regional parks within the City (Emerald View Park, Frick Park, Highland Park, Riverview Park, Schenley Park, and Hays Woods Park)"
+      },
+      {
+        "acronym": "TASA",
+        "name": "Transportation Alternatives Set-Aside Program",
+        "description": "A federal funding program administered regionally by the Southwestern Pennsylvania Commission which provides support for \u201cprojects and activities defined as transportation alternatives, including on- and off-road pedestrian and bicycle facilities, infrastructure projects for improving non-driver access to public transportation and enhanced mobility, community improvement activities, environmental mitigation, trails that serve a transportation purpose, and safe routes to school projects\u201d"
+      },
+      {
+        "acronym": "TIP",
+        "name": "Transportation Improvement Plan",
+        "description": "A federally-designated regional infrastructure plan, administered locally by the Southwestern Pennsylvania Commission"
+      },
+      {
         "acronym": "Unexpended/Unencumbered Prior Year Funds",
         "name": "Unexpended/Unencumbered Prior Year Funds",
-        "description": "Amount of money remaining for the project from prior years as of September 2024"
+        "description": "Amount of money remaining for the project from prior years as of October 2026"
       },
       {
         "acronym": "URA",
         "name": "Urban Redevelopment Authority",
-        "description": "A Pittsburgh Authority that completes projects designed to improve the quality of life in City neighborhoods. Projects include small business loans, large developments like Southside Works and Bakery Square, affordable housing development, and transportation projects."
+        "description": "A Pittsburgh Authority that completes projects designed to improve the quality of life in City neighborhoods. Projects include small business loans, large developments like Southside Works and Bakery Square, affordable housing development, and transportation projects"
       }
     ]
   }

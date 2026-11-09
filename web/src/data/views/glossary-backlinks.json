@@ -2,6 +2,11 @@
   "FTE": {
     "sections": [
       {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
         "slug": "city-council",
         "title": "City Council",
         "budgetType": "operating"
@@ -45,17 +50,47 @@
         "slug": "department-of-law",
         "title": "Department of Law",
         "budgetType": "operating"
-      },
-      {
-        "slug": "ethics-hearing-board",
-        "title": "Ethics Hearing Board",
-        "budgetType": "operating"
       }
     ],
-    "total": 29
+    "total": 42
   },
   "OPEB": {
     "sections": [
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "five-year-financial-forecast",
+        "title": "Five-Year Financial Forecast",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "expenditures-detail",
+        "title": "Expenditures Detail",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "other-special-revenue-funds",
+        "title": "Other Special Revenue Funds",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 4
+  },
+  "PAYGO": {
+    "sections": [
+      {
+        "slug": "budget-authorizing-legislation",
+        "title": "Budget Authorizing Legislation",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
       {
         "slug": "five-year-financial-forecast",
         "title": "Five-Year Financial Forecast",
@@ -64,21 +99,6 @@
       {
         "slug": "expenditure-summary",
         "title": "Expenditure Summary",
-        "budgetType": "operating"
-      },
-      {
-        "slug": "department-of-finance",
-        "title": "Department of Finance",
-        "budgetType": "operating"
-      }
-    ],
-    "total": 3
-  },
-  "PAYGO": {
-    "sections": [
-      {
-        "slug": "five-year-financial-forecast",
-        "title": "Five-Year Financial Forecast",
         "budgetType": "operating"
       },
       {
@@ -110,24 +130,9 @@
         "slug": "bridge-upgrades",
         "title": "BRIDGE UPGRADES",
         "budgetType": "capital"
-      },
-      {
-        "slug": "calera-street-bridge-tip",
-        "title": "CALERA STREET BRIDGE (TIP)",
-        "budgetType": "capital"
-      },
-      {
-        "slug": "california-avenue-bridge-tip",
-        "title": "CALIFORNIA AVENUE BRIDGE (TIP)",
-        "budgetType": "capital"
-      },
-      {
-        "slug": "complete-streets",
-        "title": "COMPLETE STREETS",
-        "budgetType": "capital"
       }
     ],
-    "total": 69
+    "total": 72
   },
   "RAD": {
     "sections": [
@@ -137,38 +142,53 @@
         "budgetType": "operating"
       },
       {
+        "slug": "department-of-parks-and-recreation",
+        "title": "Department of Parks and Recreation",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+        "title": "Regional Asset District - Parks and Recreation Trust Fund",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "mellon-park-trust-fund",
+        "title": "Mellon Park Trust Fund",
+        "budgetType": "operating"
+      },
+      {
         "slug": "park-reconstruction-regional-asset-district-parks",
         "title": "PARK RECONSTRUCTION - REGIONAL ASSET DISTRICT PARKS",
         "budgetType": "capital"
-      }
-    ],
-    "total": 2
-  },
-  "ARP": {
-    "sections": [
-      {
-        "slug": "american-rescue-plan",
-        "title": "American Rescue Plan",
-        "budgetType": "operating"
-      }
-    ],
-    "total": 1
-  },
-  "DCP": {
-    "sections": [
+      },
       {
         "slug": "capital-budget-appendices",
         "title": "Capital Budget Appendices",
         "budgetType": "capital"
       }
     ],
-    "total": 1
+    "total": 6
   },
-  "OMB": {
+  "DCP": {
     "sections": [
       {
-        "slug": "office-of-management-and-budget",
-        "title": "Office of Management and Budget",
+        "slug": "department-of-innovation-and-performance",
+        "title": "Department of Innovation and Performance",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-city-planning",
+        "title": "Department of City Planning",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-permits-licenses-and-inspections",
+        "title": "Department of Permits, Licenses, and Inspections",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-mobility-and-infrastructure",
+        "title": "Department of Mobility and Infrastructure",
         "budgetType": "operating"
       },
       {
@@ -177,13 +197,73 @@
         "budgetType": "capital"
       }
     ],
-    "total": 2
+    "total": 5
+  },
+  "OMB": {
+    "sections": [
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "five-year-financial-forecast",
+        "title": "Five-Year Financial Forecast",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "revenue-detail",
+        "title": "Revenue Detail",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "expenditure-summary",
+        "title": "Expenditure Summary",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "office-of-management-and-budget",
+        "title": "Office of Management and Budget",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "other-special-revenue-funds",
+        "title": "Other Special Revenue Funds",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "capital-budget-appendices",
+        "title": "Capital Budget Appendices",
+        "budgetType": "capital"
+      }
+    ],
+    "total": 7
   },
   "DOMI": {
     "sections": [
       {
+        "slug": "department-of-innovation-and-performance",
+        "title": "Department of Innovation and Performance",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-city-planning",
+        "title": "Department of City Planning",
+        "budgetType": "operating"
+      },
+      {
         "slug": "department-of-mobility-and-infrastructure",
         "title": "Department of Mobility and Infrastructure",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "other-special-revenue-funds",
+        "title": "Other Special Revenue Funds",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "master-fee-schedule",
+        "title": "Master Fee Schedule",
         "budgetType": "operating"
       },
       {
@@ -212,7 +292,7 @@
         "budgetType": "capital"
       }
     ],
-    "total": 6
+    "total": 10
   },
   "PLI": {
     "sections": [
@@ -222,8 +302,33 @@
         "budgetType": "operating"
       },
       {
+        "slug": "department-of-innovation-and-performance",
+        "title": "Department of Innovation and Performance",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-city-planning",
+        "title": "Department of City Planning",
+        "budgetType": "operating"
+      },
+      {
         "slug": "department-of-permits-licenses-and-inspections",
         "title": "Department of Permits, Licenses, and Inspections",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-mobility-and-infrastructure",
+        "title": "Department of Mobility and Infrastructure",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "other-special-revenue-funds",
+        "title": "Other Special Revenue Funds",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "master-fee-schedule",
+        "title": "Master Fee Schedule",
         "budgetType": "operating"
       },
       {
@@ -232,18 +337,48 @@
         "budgetType": "capital"
       }
     ],
-    "total": 3
+    "total": 8
   },
   "EMS": {
     "sections": [
       {
-        "slug": "expenditure-summary",
-        "title": "Expenditure Summary",
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "expenditures-detail",
+        "title": "Expenditures Detail",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "department-of-human-resources-and-civil-service",
+        "title": "Department of Human Resources and Civil Service",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "bureau-of-administration-public-safety",
+        "title": "Bureau of Administration (Public Safety)",
         "budgetType": "operating"
       },
       {
         "slug": "bureau-of-emergency-medical-services",
         "title": "Bureau of Emergency Medical Services",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "office-of-community-health-and-safety",
+        "title": "Office of Community Health and Safety",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "other-special-revenue-funds",
+        "title": "Other Special Revenue Funds",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "master-fee-schedule",
+        "title": "Master Fee Schedule",
         "budgetType": "operating"
       },
       {
@@ -255,20 +390,60 @@
         "slug": "public-safety-training-facility",
         "title": "PUBLIC SAFETY TRAINING FACILITY",
         "budgetType": "capital"
-      },
-      {
-        "slug": "capital-budget-appendices",
-        "title": "Capital Budget Appendices",
-        "budgetType": "capital"
       }
     ],
-    "total": 5
+    "total": 11
+  },
+  "JDE": {
+    "sections": [
+      {
+        "slug": "grants",
+        "title": "Grants",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 1
+  },
+  "SSP": {
+    "sections": [
+      {
+        "slug": "master-fee-schedule",
+        "title": "Master Fee Schedule",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 1
+  },
+  "FAS": {
+    "sections": [
+      {
+        "slug": "master-fee-schedule",
+        "title": "Master Fee Schedule",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 1
   },
   "CDBG": {
     "sections": [
       {
         "slug": "revenue-detail",
         "title": "Revenue Detail",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "office-of-management-and-budget",
+        "title": "Office of Management and Budget",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "community-development-trust-fund",
+        "title": "Community Development Trust Fund",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "senior-citizens-program-trust-fund",
+        "title": "Senior Citizens Program Trust Fund",
         "budgetType": "operating"
       },
       {
@@ -300,27 +475,17 @@
         "slug": "bridge-upgrades",
         "title": "BRIDGE UPGRADES",
         "budgetType": "capital"
-      },
-      {
-        "slug": "calera-street-bridge-tip",
-        "title": "CALERA STREET BRIDGE (TIP)",
-        "budgetType": "capital"
-      },
-      {
-        "slug": "california-avenue-bridge-tip",
-        "title": "CALIFORNIA AVENUE BRIDGE (TIP)",
-        "budgetType": "capital"
-      },
-      {
-        "slug": "complete-streets",
-        "title": "COMPLETE STREETS",
-        "budgetType": "capital"
       }
     ],
-    "total": 69
+    "total": 72
   },
   "TIP": {
     "sections": [
+      {
+        "slug": "department-of-mobility-and-infrastructure",
+        "title": "Department of Mobility and Infrastructure",
+        "budgetType": "operating"
+      },
       {
         "slug": "capital-budget-introduction",
         "title": "Capital Budget Introduction",
@@ -365,17 +530,17 @@
         "slug": "corley-street-bridge-tip",
         "title": "CORLEY STREET BRIDGE (TIP)",
         "budgetType": "capital"
-      },
-      {
-        "slug": "corliss-street-tunnel-tip",
-        "title": "CORLISS STREET TUNNEL (TIP)",
-        "budgetType": "capital"
       }
     ],
-    "total": 30
+    "total": 31
   },
   "HOPWA": {
     "sections": [
+      {
+        "slug": "office-of-management-and-budget",
+        "title": "Office of Management and Budget",
+        "budgetType": "operating"
+      },
       {
         "slug": "cdbg-personnel",
         "title": "CDBG PERSONNEL",
@@ -392,10 +557,15 @@
         "budgetType": "capital"
       }
     ],
-    "total": 3
+    "total": 4
   },
   "HOME": {
     "sections": [
+      {
+        "slug": "office-of-management-and-budget",
+        "title": "Office of Management and Budget",
+        "budgetType": "operating"
+      },
       {
         "slug": "home-investment-partnerships-program",
         "title": "HOME INVESTMENT PARTNERSHIPS PROGRAM",
@@ -412,10 +582,15 @@
         "budgetType": "capital"
       }
     ],
-    "total": 3
+    "total": 4
   },
   "ESG": {
     "sections": [
+      {
+        "slug": "office-of-management-and-budget",
+        "title": "Office of Management and Budget",
+        "budgetType": "operating"
+      },
       {
         "slug": "cdbg-personnel",
         "title": "CDBG PERSONNEL",
@@ -432,7 +607,7 @@
         "budgetType": "capital"
       }
     ],
-    "total": 3
+    "total": 4
   },
   "CIP": {
     "sections": [
@@ -472,6 +647,21 @@
   "General Fund": {
     "sections": [
       {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "expenditure-summary",
+        "title": "Expenditure Summary",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "expenditures-detail",
+        "title": "Expenditures Detail",
+        "budgetType": "operating"
+      },
+      {
         "slug": "office-of-management-and-budget",
         "title": "Office of Management and Budget",
         "budgetType": "operating"
@@ -482,64 +672,94 @@
         "budgetType": "operating"
       },
       {
+        "slug": "bureau-of-administration-public-safety",
+        "title": "Bureau of Administration (Public Safety)",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "three-taxing-bodies-trust-fund",
+        "title": "Three Taxing Bodies Trust Fund",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "police-secondary-employment-trust-fund",
+        "title": "Police Secondary Employment Trust Fund",
+        "budgetType": "operating"
+      },
+      {
         "slug": "stop-the-violence-trust-fund",
         "title": "Stop the Violence Trust Fund",
         "budgetType": "operating"
       },
       {
-        "slug": "capital-budget-introduction",
-        "title": "Capital Budget Introduction",
-        "budgetType": "capital"
+        "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+        "title": "Regional Asset District - Parks and Recreation Trust Fund",
+        "budgetType": "operating"
       }
     ],
-    "total": 4
+    "total": 12
   },
   "Reserve Fund": {
     "sections": [
       {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
         "slug": "five-year-financial-forecast",
         "title": "Five-Year Financial Forecast",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "mellon-park-trust-fund",
+        "title": "Mellon Park Trust Fund",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 3
+  },
+  "Stop the Violence Fund": {
+    "sections": [
+      {
+        "slug": "budget-guide",
+        "title": "Budget Guide",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "five-year-financial-forecast",
+        "title": "Five-Year Financial Forecast",
+        "budgetType": "operating"
+      },
+      {
+        "slug": "stop-the-violence-trust-fund",
+        "title": "Stop the Violence Trust Fund",
+        "budgetType": "operating"
+      }
+    ],
+    "total": 3
+  },
+  "Special Food Service Trust Fund": {
+    "sections": [
+      {
+        "slug": "special-food-service-trust-fund",
+        "title": "Special Food Service Trust Fund",
         "budgetType": "operating"
       }
     ],
     "total": 1
   },
-  "Stop the Violence Fund": {
-    "sections": [
-      {
-        "slug": "five-year-financial-forecast",
-        "title": "Five-Year Financial Forecast",
-        "budgetType": "operating"
-      },
-      {
-        "slug": "stop-the-violence-trust-fund",
-        "title": "Stop the Violence Trust Fund",
-        "budgetType": "operating"
-      }
-    ],
-    "total": 2
-  },
   "Three Taxing Bodies Trust Fund": {
     "sections": [
       {
-        "slug": "department-of-finance",
-        "title": "Department of Finance",
+        "slug": "three-taxing-bodies-trust-fund",
+        "title": "Three Taxing Bodies Trust Fund",
         "budgetType": "operating"
       }
     ],
     "total": 1
   },
   "Housing Opportunity Fund": {
-    "sections": [
-      {
-        "slug": "five-year-financial-forecast",
-        "title": "Five-Year Financial Forecast",
-        "budgetType": "operating"
-      }
-    ],
-    "total": 1
-  },
-  "Technology Modernization Fund": {
     "sections": [
       {
         "slug": "five-year-financial-forecast",
@@ -657,6 +877,6 @@
         "budgetType": "operating"
       }
     ],
-    "total": 93
+    "total": 102
   }
 }

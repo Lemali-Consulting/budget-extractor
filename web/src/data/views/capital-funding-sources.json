@@ -561,13 +561,13 @@
     "project": "LIBERTY AVENUE (HSIP)",
     "source": "BOND",
     "year": "2028",
-    "amount": 395519.0
+    "amount": 424621.0
   },
   {
     "project": "LIBERTY AVENUE (HSIP)",
     "source": "OTHER",
     "year": "2028",
-    "amount": 1582077.0
+    "amount": 2123105.0
   },
   {
     "project": "MAPLE AVENUE BRIDGE (TIP)",
@@ -939,7 +939,7 @@
     "project": "STEP REPAIR AND REPLACEMENT",
     "source": "OTHER",
     "year": "2026",
-    "amount": 919850.0
+    "amount": 923350.0
   },
   {
     "project": "STEP REPAIR AND REPLACEMENT",
@@ -957,13 +957,13 @@
     "project": "STREET RESURFACING",
     "source": "BOND",
     "year": "2027",
-    "amount": 22688714.0
+    "amount": 22713714.0
   },
   {
     "project": "STREET RESURFACING",
     "source": "BOND",
     "year": "2028",
-    "amount": 16424218.0
+    "amount": 16395116.0
   },
   {
     "project": "STREET RESURFACING",
@@ -1257,7 +1257,7 @@
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
     "source": "BOND",
     "year": "2027",
-    "amount": 9191296.0
+    "amount": 8191296.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - CITY FACILITIES",
@@ -1329,13 +1329,13 @@
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2026",
-    "amount": 9371856.0
+    "amount": 9454032.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
     "source": "BOND",
     "year": "2027",
-    "amount": 9350000.0
+    "amount": 9600000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - RECREATION AND SENIOR CENTERS",
@@ -1377,13 +1377,13 @@
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
     "source": "BOND",
     "year": "2026",
-    "amount": 476142.0
+    "amount": 250000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
     "source": "BOND",
     "year": "2027",
-    "amount": 400000.0
+    "amount": 650000.0
   },
   {
     "project": "FACILITY IMPROVEMENTS - SPORT FACILITIES",
@@ -1419,13 +1419,13 @@
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2026",
-    "amount": 5809159.0
+    "amount": 5953125.0
   },
   {
     "project": "PARK RECONSTRUCTION",
     "source": "BOND",
     "year": "2027",
-    "amount": 6150000.0
+    "amount": 5800000.0
   },
   {
     "project": "PARK RECONSTRUCTION",
@@ -1510,6 +1510,12 @@
     "source": "OTHER",
     "year": "2032",
     "amount": 2500000.0
+  },
+  {
+    "project": "PLAY AREA IMPROVEMENTS",
+    "source": "BOND",
+    "year": "2027",
+    "amount": 825000.0
   },
   {
     "project": "PLAY AREA IMPROVEMENTS",

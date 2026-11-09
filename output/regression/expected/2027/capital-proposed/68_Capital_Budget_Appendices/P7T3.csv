@@ -1,6 +1,7 @@
-"C0 (l, x:20-128)","C1 (l, x:128-249)","C2 (r, x:249-291)","C3 (l, x:291-326)","C4 (r, x:326-362)","C5 (r, x:362-397)","C6 (l, x:397-420)","C7 (l, x:420-444)","C8 (l, x:444-468)","C9 (l, x:468-491)","C10 (l, x:491-525)","C11 (l, x:525-563)","C12 (l, x:563-585)",section
-7325 - SMALL BUSINESS DEVELOPMENT,Business District Facade,"2,000,000",0,0,"2,000,000N",Y,N,N,N,N,1,0.5,
-5002 - PARK RECONSTRUCTION - PARKS TAX,Citywide Park Stewardship & Ecological Restoration,0,0,"250,000",0N,Y,N,N,N,N,1,0.5,
-5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR,,,,,,,,,,,,,5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR
-CENTERS,Bloomfield Recreation Center Renovations,"1,400,000",0,0,"1,400,000N",Y,N,N,N,N,1,0.5,5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR
-5000 - PARK RECONSTRUCTION,Hays Woods Recreation & Access Implementation Plan,0,0,"305,000",0N,Y,N,N,N,N,1,0.5,5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR
+"C0 (l, x:19-128)","C1 (l, x:128-224)","C2 (l, x:224-257)","C3 (r, x:257-294)","C4 (r, x:294-329)","C5 (r, x:329-359)","C6 (r, x:359-400)","C7 (l, x:400-423)","C8 (l, x:423-447)","C9 (l, x:447-471)","C10 (l, x:471-495)","C11 (l, x:495-528)","C12 (l, x:528-546)","C13 (l, x:546-569)","C14 (l, x:569-589)",section
+Project Name 7401 - COMPLETE STREETS,Project Deliverable Second/Greenfield/Saline Study,$ City,"$ CDBG $100,000",$ Other $0,$0,"$ City or CDBG Scorer 1 $100,000N",Scorer 2 Y,Scorer 3 Y,Scorer 4 N,Scorer 5 N,Scorer 6 N,Count,Adjusted Count 2,1,section
+7325 - SMALL BUSINESS DEVELOPMENT,Business District Facade,,"2,000,000",0,0,"2,000,000N",Y,N,N,N,N,,1,0.5,
+5002 - PARK RECONSTRUCTION - PARKS TAX,Citywide Park Stewardship & Ecological Restoration,,0,0,"250,000",0N,Y,N,N,N,N,,1,0.5,
+5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR,,,,,,,,,,,,,,,5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR
+CENTERS,Bloomfield Recreation Center Renovations,,"1,400,000",0,0,"1,400,000N",Y,N,N,N,N,,1,0.5,5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR
+5000 - PARK RECONSTRUCTION,Hays Woods Recreation & Access Implementation Plan,,0,0,"305,000",0N,Y,N,N,N,N,,1,0.5,5010 - FACILITY IMPROVEMENTS - RECREATION AND SENIOR

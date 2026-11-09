@@ -1,5 +1,17 @@
-"C0 (l, x:20-127)","C1 (l, x:127-230)","C2 (r, x:230-291)","C3 (l, x:291-326)","C4 (l, x:326-356)","C5 (r, x:356-397)","C6 (l, x:397-420)","C7 (l, x:420-444)","C8 (l, x:444-468)","C9 (l, x:468-491)","C10 (l, x:491-525)","C11 (l, x:525-563)","C12 (l, x:563-585)"
-0036 - STEP REPAIR AND REPLACEMENT,Murdoch Rd Steps - Hobart to Guarino,"87,000",0,0,"87,000Y",N,Y,N,Y,N,3,2.5
-7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Fire Station 20 / Medic 12,"1,000,000",0,0,"1,000,000N",Y,N,Y,Y,N,3,2.5
-5000 - PARK RECONSTRUCTION,Lower McKinley Park Reconstruction,"750,000",0,0,"750,000N",Y,N,Y,Y,N,3,2.5
-5899 - CAPITAL EQUIPMENT ACQUISITION,"PS, EMA, Com. Vehicle Systems Upgrade","120,000",0,0,"120,000N",Y,N,N,Y,Y,3,2.5
+"C0 (l, x:19-120)","C1 (l, x:120-229)","C2 (l, x:229-260)","C3 (r, x:260-294)","C4 (r, x:294-329)","C5 (r, x:329-359)","C6 (r, x:359-399)","C7 (l, x:399-423)","C8 (l, x:423-447)","C9 (l, x:447-471)","C10 (l, x:471-495)","C11 (l, x:495-528)","C12 (l, x:528-546)","C13 (l, x:546-569)","C14 (l, x:569-589)"
+Project Name,Project Deliverable,$ City,$ CDBG,$ Other,,$ City or CDBG Scorer 1,Scorer 2,Scorer 3,Scorer 4,Scorer 5,Scorer 6,Count,Adjusted Count,
+7558 - PUBLIC SAFETY EQUIPMENT,FIREFIGHTING EQUIPMENT,,"78,757",0,0,"78,757N",Y,N,Y,Y,N,,3,2.5
+7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES,Public Safety Training Campus Design,,"3,000,000",0,0,"3,000,000N",Y,N,Y,Y,N,,3,2.5
+0090 - FLOOD CONTROL PROJECTS,Stewart Ave,,"1,165,000",0,0,"1,165,000Y",N,Y,Y,N,N,,3,2.5
+9103 - SLOPE FAILURE REMEDIATION,Emerald View Park Landslide,,"1,500,000",0,0,"1,500,000Y",N,Y,Y,N,N,,3,2.5
+9103 - SLOPE FAILURE REMEDIATION,Andover Terrace Landslide,,"2,200,000",0,0,"2,200,000Y",N,Y,Y,N,N,,3,2.5
+7430 - WAR MEMORIALS AND PUBLIC ART,Percent for Art - Park + Steps,,"100,000",0,0,"100,000N",N,N,N,Y,Y,,2,2
+5000 - PARK RECONSTRUCTION,Panther Hollow Lake Master Plan,,"300,000",0,0,"300,000N",N,N,N,Y,Y,,2,2
+7501 - RAMP AND PUBLIC SIDEWALK,Transit Stop Improvement Program,,"175,000",0,0,"175,000Y",N,N,N,Y,N,,2,2
+3101 - BRIDGE UPGRADES,Fritz St Bridge - Replacement,,"95,000",0,0,"95,000N",Y,Y,N,Y,N,,3,2
+9103 - SLOPE FAILURE REMEDIATION,Chartiers Ave Lower 1 Retaining Wall,,"190,000",0,0,"190,000N",N,N,Y,Y,N,,2,2
+7401 - COMPLETE STREETS,Morrowfield/Shady Intersection Improvements,,"150,000",0,0,"150,000N",Y,Y,N,Y,N,,3,2
+5000 - PARK RECONSTRUCTION,Garland Park,,"1,225,000",0,0,"1,225,000N",N,N,Y,Y,N,,2,2
+5899 - CAPITAL EQUIPMENT ACQUISITION,"DPW, Streets, Flusher Remounts",,"400,000",0,0,"400,000N",N,N,N,Y,Y,,2,2
+3101 - BRIDGE UPGRADES,Pensdale St Bridge No. 2 - Rehabilitation,,"260,000",0,0,"260,000N",Y,Y,N,Y,N,,3,2
+3101 - BRIDGE UPGRADES,E Liberty Blvd Bridges - Preservation,,"250,000",0,0,"250,000N",Y,Y,N,Y,N,,3,2

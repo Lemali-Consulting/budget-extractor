@@ -17,7 +17,7 @@
     "department": "City Council",
     "slug": "city-council",
     "year": "2027 Budget",
-    "amount": 3937502.0,
+    "amount": 3932117.0,
     "fund": "operating"
   },
   {
@@ -38,7 +38,7 @@
     "department": "Office of the City Clerk",
     "slug": "office-of-the-city-clerk",
     "year": "2027 Budget",
-    "amount": 2642773.0,
+    "amount": 2646773.0,
     "fund": "operating"
   },
   {
@@ -59,7 +59,7 @@
     "department": "Office of the Mayor",
     "slug": "office-of-the-mayor",
     "year": "2027 Budget",
-    "amount": 3860525.0,
+    "amount": 3987256.0,
     "fund": "operating"
   },
   {
@@ -80,28 +80,28 @@
     "department": "Office of Management and Budget",
     "slug": "office-of-management-and-budget",
     "year": "2027 Budget",
-    "amount": 30725472.0,
+    "amount": 31019763.0,
     "fund": "operating"
   },
   {
     "department": "Department of Innovation and Performance",
     "slug": "department-of-innovation-and-performance",
     "year": "2025 Actual",
-    "amount": 20671592.0,
+    "amount": 20671590.0,
     "fund": "operating"
   },
   {
     "department": "Department of Innovation and Performance",
     "slug": "department-of-innovation-and-performance",
     "year": "2026 Budget",
-    "amount": 22259452.0,
+    "amount": 22259453.0,
     "fund": "operating"
   },
   {
     "department": "Department of Innovation and Performance",
     "slug": "department-of-innovation-and-performance",
     "year": "2027 Budget",
-    "amount": 26452915.0,
+    "amount": 26451529.0,
     "fund": "operating"
   },
   {
@@ -143,14 +143,14 @@
     "department": "Office of the City Controller",
     "slug": "office-of-the-city-controller",
     "year": "2027 Budget",
-    "amount": 6873766.0,
+    "amount": 6859771.0,
     "fund": "operating"
   },
   {
     "department": "Department of Finance",
     "slug": "department-of-finance",
     "year": "2025 Actual",
-    "amount": 191380842.0,
+    "amount": 191380843.0,
     "fund": "operating"
   },
   {
@@ -164,7 +164,7 @@
     "department": "Department of Finance",
     "slug": "department-of-finance",
     "year": "2027 Budget",
-    "amount": 159994650.0,
+    "amount": 160015622.0,
     "fund": "operating"
   },
   {
@@ -185,7 +185,7 @@
     "department": "Department of Law",
     "slug": "department-of-law",
     "year": "2027 Budget",
-    "amount": 13201575.0,
+    "amount": 13200190.0,
     "fund": "operating"
   },
   {
@@ -248,7 +248,7 @@
     "department": "Department of Human Resources and Civil Service",
     "slug": "department-of-human-resources-and-civil-service",
     "year": "2027 Budget",
-    "amount": 36423987.0,
+    "amount": 36435487.0,
     "fund": "operating"
   },
   {
@@ -269,7 +269,7 @@
     "department": "Department of City Planning",
     "slug": "department-of-city-planning",
     "year": "2027 Budget",
-    "amount": 5755985.0,
+    "amount": 5617661.0,
     "fund": "operating"
   },
   {
@@ -290,14 +290,14 @@
     "department": "Department of Permits, Licenses, and Inspections",
     "slug": "department-of-permits-licenses-and-inspections",
     "year": "2027 Budget",
-    "amount": 11341756.0,
+    "amount": 11352960.0,
     "fund": "operating"
   },
   {
     "department": "Bureau of Administration (Public Safety)",
     "slug": "bureau-of-administration-public-safety",
     "year": "2025 Actual",
-    "amount": 14483174.0,
+    "amount": 14483175.0,
     "fund": "operating"
   },
   {
@@ -311,7 +311,7 @@
     "department": "Bureau of Administration (Public Safety)",
     "slug": "bureau-of-administration-public-safety",
     "year": "2027 Budget",
-    "amount": 22027565.0,
+    "amount": 21269163.0,
     "fund": "operating"
   },
   {
@@ -332,7 +332,7 @@
     "department": "Bureau of Emergency Medical Services",
     "slug": "bureau-of-emergency-medical-services",
     "year": "2027 Budget",
-    "amount": 39784973.0,
+    "amount": 39385034.0,
     "fund": "operating"
   },
   {
@@ -353,7 +353,7 @@
     "department": "Bureau of Police",
     "slug": "bureau-of-police",
     "year": "2027 Budget",
-    "amount": 128403417.0,
+    "amount": 128237594.0,
     "fund": "operating"
   },
   {
@@ -402,7 +402,7 @@
     "department": "Office of Community Health and Safety",
     "slug": "office-of-community-health-and-safety",
     "year": "2025 Actual",
-    "amount": 812820.0,
+    "amount": 812819.0,
     "fund": "operating"
   },
   {
@@ -416,14 +416,14 @@
     "department": "Office of Community Health and Safety",
     "slug": "office-of-community-health-and-safety",
     "year": "2027 Budget",
-    "amount": 4192055.0,
+    "amount": 4133821.0,
     "fund": "operating"
   },
   {
     "department": "Bureau of Administration (Public Works)",
     "slug": "bureau-of-administration-public-works",
     "year": "2025 Actual",
-    "amount": 11196763.0,
+    "amount": 11196762.0,
     "fund": "operating"
   },
   {
@@ -444,7 +444,7 @@
     "department": "Bureau of Operations",
     "slug": "bureau-of-operations",
     "year": "2025 Actual",
-    "amount": 27006906.0,
+    "amount": 27006655.0,
     "fund": "operating"
   },
   {
@@ -458,7 +458,7 @@
     "department": "Bureau of Operations",
     "slug": "bureau-of-operations",
     "year": "2027 Budget",
-    "amount": 28582787.0,
+    "amount": 28575964.0,
     "fund": "operating"
   },
   {
@@ -479,35 +479,35 @@
     "department": "Bureau of Environmental Services",
     "slug": "bureau-of-environmental-services",
     "year": "2027 Budget",
-    "amount": 22143109.0,
+    "amount": 22145911.0,
     "fund": "operating"
   },
   {
     "department": "Bureau of Facilities",
     "slug": "bureau-of-facilities",
     "year": "2025 Actual",
-    "amount": 12395185.0,
+    "amount": 12395183.0,
     "fund": "operating"
   },
   {
     "department": "Bureau of Facilities",
     "slug": "bureau-of-facilities",
     "year": "2026 Budget",
-    "amount": 14789145.0,
+    "amount": 14789144.0,
     "fund": "operating"
   },
   {
     "department": "Bureau of Facilities",
     "slug": "bureau-of-facilities",
     "year": "2027 Budget",
-    "amount": 13367835.0,
+    "amount": 13383037.0,
     "fund": "operating"
   },
   {
     "department": "Department of Parks and Recreation",
     "slug": "department-of-parks-and-recreation",
     "year": "2025 Actual",
-    "amount": 6233557.0,
+    "amount": 6233558.0,
     "fund": "operating"
   },
   {
@@ -521,7 +521,14 @@
     "department": "Department of Parks and Recreation",
     "slug": "department-of-parks-and-recreation",
     "year": "2027 Budget",
-    "amount": 7914902.0,
+    "amount": 7914903.0,
+    "fund": "operating"
+  },
+  {
+    "department": "Department of Mobility and Infrastructure",
+    "slug": "department-of-mobility-and-infrastructure",
+    "year": "2025 Actual",
+    "amount": 12272308.0,
     "fund": "operating"
   },
   {
@@ -535,7 +542,7 @@
     "department": "Department of Mobility and Infrastructure",
     "slug": "department-of-mobility-and-infrastructure",
     "year": "2027 Budget",
-    "amount": 17389292.0,
+    "amount": 17390565.0,
     "fund": "operating"
   },
   {
@@ -560,6 +567,90 @@
     "fund": "operating"
   },
   {
+    "department": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "year": "2026 Budget",
+    "amount": 70000.0,
+    "fund": "trust"
+  },
+  {
+    "department": "HUD Fair Housing Program Trust Fund",
+    "slug": "hud-fair-housing-program-trust-fund",
+    "year": "2027 Budget",
+    "amount": 80765.0,
+    "fund": "trust"
+  },
+  {
+    "department": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "year": "2026 Budget",
+    "amount": 39938.0,
+    "fund": "trust"
+  },
+  {
+    "department": "EEOC Trust Fund",
+    "slug": "eeoc-trust-fund",
+    "year": "2027 Budget",
+    "amount": 50703.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "year": "2026 Budget",
+    "amount": 689199.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Three Taxing Bodies Trust Fund",
+    "slug": "three-taxing-bodies-trust-fund",
+    "year": "2027 Budget",
+    "amount": 735425.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "year": "2026 Budget",
+    "amount": 3250469.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Pittsburgh Partnership Trust Fund",
+    "slug": "pittsburgh-partnership-trust-fund",
+    "year": "2027 Budget",
+    "amount": 3355519.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "year": "2026 Budget",
+    "amount": 13440314.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Community Development Trust Fund",
+    "slug": "community-development-trust-fund",
+    "year": "2027 Budget",
+    "amount": 13435871.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "year": "2026 Budget",
+    "amount": 9038138.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Police Secondary Employment Trust Fund",
+    "slug": "police-secondary-employment-trust-fund",
+    "year": "2027 Budget",
+    "amount": 9039949.0,
+    "fund": "trust"
+  },
+  {
     "department": "Stop the Violence Trust Fund",
     "slug": "stop-the-violence-trust-fund",
     "year": "2026 Budget",
@@ -567,17 +658,185 @@
     "fund": "trust"
   },
   {
+    "department": "Opioid Misuse Abatement Trust Fund",
+    "slug": "opioid-misuse-abatement-trust-fund",
+    "year": "2026 Budget",
+    "amount": 269515.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Opioid Misuse Abatement Trust Fund",
+    "slug": "opioid-misuse-abatement-trust-fund",
+    "year": "2027 Budget",
+    "amount": 269133.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Liquid Fuels Trust Fund",
+    "slug": "liquid-fuels-trust-fund",
+    "year": "2026 Budget",
+    "amount": 5845148.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Liquid Fuels Trust Fund",
+    "slug": "liquid-fuels-trust-fund",
+    "year": "2027 Budget",
+    "amount": 6692500.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Regional Asset District - Public Works Trust Fund",
+    "slug": "regional-asset-district-public-works-trust-fund",
+    "year": "2026 Budget",
+    "amount": 7890039.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Regional Asset District - Public Works Trust Fund",
+    "slug": "regional-asset-district-public-works-trust-fund",
+    "year": "2027 Budget",
+    "amount": 8118011.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "year": "2026 Budget",
+    "amount": 982040.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Public Works Trust Fund",
+    "slug": "public-works-trust-fund",
+    "year": "2027 Budget",
+    "amount": 982040.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "year": "2026 Budget",
+    "amount": 150000.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Shade Tree Trust Fund",
+    "slug": "shade-tree-trust-fund",
+    "year": "2027 Budget",
+    "amount": 150000.0,
+    "fund": "trust"
+  },
+  {
     "department": "Parks Tax Trust Fund",
     "slug": "parks-tax-trust-fund",
     "year": "2026 Budget",
-    "amount": 9505063.0,
+    "amount": 9755063.0,
     "fund": "trust"
   },
   {
     "department": "Parks Tax Trust Fund",
     "slug": "parks-tax-trust-fund",
     "year": "2027 Budget",
-    "amount": 9355441.0,
+    "amount": 9367373.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "year": "2026 Budget",
+    "amount": 238314.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Special Events Trust Fund",
+    "slug": "special-events-trust-fund",
+    "year": "2027 Budget",
+    "amount": 252541.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "year": "2026 Budget",
+    "amount": 2762446.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Regional Asset District - Parks and Recreation Trust Fund",
+    "slug": "regional-asset-district-parks-and-recreation-trust-fund",
+    "year": "2027 Budget",
+    "amount": 2852995.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "year": "2026 Budget",
+    "amount": 541924.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Mellon Park Trust Fund",
+    "slug": "mellon-park-trust-fund",
+    "year": "2027 Budget",
+    "amount": 552382.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "year": "2026 Budget",
+    "amount": 157000.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Schenley Park Rink Trust Fund",
+    "slug": "schenley-park-rink-trust-fund",
+    "year": "2027 Budget",
+    "amount": 157000.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "year": "2026 Budget",
+    "amount": 2429280.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Senior Citizens Program Trust Fund",
+    "slug": "senior-citizens-program-trust-fund",
+    "year": "2027 Budget",
+    "amount": 2516061.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "year": "2026 Budget",
+    "amount": 671328.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Special Food Service Trust Fund",
+    "slug": "special-food-service-trust-fund",
+    "year": "2027 Budget",
+    "amount": 682709.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "year": "2026 Budget",
+    "amount": 729725.0,
+    "fund": "trust"
+  },
+  {
+    "department": "Frick Park Trust Fund",
+    "slug": "frick-park-trust-fund",
+    "year": "2027 Budget",
+    "amount": 729725.0,
     "fund": "trust"
   }
 ]

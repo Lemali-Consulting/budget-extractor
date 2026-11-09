@@ -377,15 +377,15 @@ def test_real_total_expenditure_actuals(real_dataset: dict[str, Any]) -> None:
 def test_real_2027_proposed_figures(real_dataset: dict[str, Any]) -> None:
     records: list[dict[str, Any]] = real_dataset["records"]
     ufb = _find(records, metric="useOfFundBalance", fiscal_year=2027, source_year=2027)
-    assert [r["value"] for r in ufb] == [26595395.0]
+    assert [r["value"] for r in ufb] == [28253606.0]
     recurring = _find(records, metric="recurringRevenue", fiscal_year=2027, source_year=2027)
-    assert [r["value"] for r in recurring] == [701793103.0]
+    assert [r["value"] for r in recurring] == [699073170.0]
     total = _find(records, metric="totalRevenues", fiscal_year=2027, source_year=2027)
-    assert total[0]["value"] == pytest.approx(701793103.0 + 26595395.0)
+    assert total[0]["value"] == pytest.approx(699073170.0 + 28253606.0)
     reserve = _find(records, metric="endingReserveBalance", fiscal_year=2031, source_year=2027)
-    assert reserve[0]["value"] == -38219649.0 and reserve[0]["kind"] == "forecast"
+    assert reserve[0]["value"] == -31404625.0 and reserve[0]["kind"] == "forecast"
     pct = _find(records, metric="fundBalancePctOfExpenditures", fiscal_year=2031, source_year=2027)
-    assert pct[0]["value"] == -4.9
+    assert pct[0]["value"] == -4.0
 
 
 def test_real_2027_column_kinds(real_dataset: dict[str, Any]) -> None:
@@ -399,7 +399,7 @@ def test_real_2027_column_kinds(real_dataset: dict[str, Any]) -> None:
     assert all(kinds[year] == {"forecast"} for year in range(2028, 2032))
     # the department table's 2026 estimate must not leak in; the summary table is authoritative
     (est_2026,) = _find(records, metric="totalExpenditures", fiscal_year=2026, source_year=2027)
-    assert est_2026["value"] == 741095775.0
+    assert est_2026["value"] == 715078329.0
 
 
 def test_real_revenue_categories_present(real_dataset: dict[str, Any]) -> None:
@@ -417,14 +417,14 @@ def test_real_2027_document_gives_two_2026_expenditure_estimates(real_dataset: d
     ]
     assert conflict["kind"] == "estimate" and conflict["sourceVariant"] == "proposed"
     by_table: dict[str, dict[str, Any]] = {v["table"]: v for v in conflict["values"]}
-    assert by_table["summary"]["value"] == 741095775.0
-    assert by_table["department"]["value"] == 728595778.0
-    assert by_table["summary"]["value"] / 1e6 == pytest.approx(741.1, abs=0.05)
-    assert by_table["department"]["value"] / 1e6 == pytest.approx(728.6, abs=0.05)
+    assert by_table["summary"]["value"] == 715078329.0
+    assert by_table["department"]["value"] == 715038329.0
+    assert by_table["summary"]["value"] / 1e6 == pytest.approx(715.1, abs=0.05)
+    assert by_table["department"]["value"] / 1e6 == pytest.approx(715.0, abs=0.05)
     assert by_table["summary"]["sourceTable"] == "P1T0" and by_table["department"]["sourceTable"] == "P2T0"
 
 
 def test_real_rounding_level_differences_are_not_conflicts(real_dataset: dict[str, Any]) -> None:
     flagged: set[tuple[int, int]] = {(c["sourceYear"], c["fiscalYear"]) for c in real_dataset["conflicts"]}
-    assert (2027, 2028) not in flagged  # 742,638,590 vs 742,638,591
+    assert (2027, 2028) not in flagged  # 741,529,397 vs 741,529,398
     assert (2027, 2027) not in flagged  # identical

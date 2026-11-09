@@ -11,10 +11,10 @@ async function search(page: Page, query: string) {
 }
 
 test("headline search finds a word from the middle of a section's prose", async ({ page }) => {
-  // "arbitration" sits deep in the Bureau of Police narrative, past the point the
+  // "accreditation" sits deep in the Bureau of Police narrative, past the point the
   // old title-and-opening-words search could reach.
   await page.goto("/operating/");
-  const results = await search(page, "arbitration");
+  const results = await search(page, "accreditation");
   await expect(results.locator('a[href^="/sections/bureau-of-police/"]').first()).toBeVisible();
 });
 
@@ -27,10 +27,10 @@ test("headline search finds text on capital project pages", async ({ page }) => 
 });
 
 test("headline search returns only 2027 pages, never the archive", async ({ page }) => {
-  // "arbitration" also appears in the 2026 Bureau of Police page; the headline
+  // "accreditation" also appears in the 2026 Bureau of Police page; the headline
   // search is scoped to the 2027 budget, so the archive copy must not appear.
   await page.goto("/operating/");
-  const results = await search(page, "arbitration");
+  const results = await search(page, "accreditation");
   await expect(results.locator("a").first()).toBeVisible();
   await expect(results.locator('a[href^="/2026/"], a[href^="/2025/"]')).toHaveCount(0);
 });

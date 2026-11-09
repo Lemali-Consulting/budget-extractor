@@ -1,7 +1,33 @@
-"C0 (l, x:78-213)","C1 (l, x:213-342)","C2 (l, x:342-538)"
-HOPWA,Housing Opportunities for Persons with AIDS,A federal program from the Department of Housing and Urban Development dedicated to addressing
+"C0 (l, x:78-160)","C1 (l, x:160-344)","C2 (l, x:344-535)"
+DPW,Department of Public Works,"A City department that maintains much of the City's non-transportation infrastructure including parks, pools,"
+,,"ballfields, and buildings"
+ELA,Equipment Leasing Authority,A municipal authority responsible for
+,,purchasing or leasing vehicles and
+,,heavy equipment for the City’s fleet
+ESG,Emergency Solutions Grant,A federal program from the
+,Program,Department of Housing and Urban
+,,"Development ""to assist individuals"
+,,and families quickly regain stability in
+,,permanent housing after experiencing
+,,"a housing crisis or homelessness"""
+HOF,Housing Opportunity Fund,The Housing Opportunity Fund
+,,supports the development and
+,,preservation of affordable and
+,,accessible housing within the City of
+,,Pittsburgh.  It is funded by the City of
+,,Pittsburgh Operating Budget and is
+,,administered by the Urban
+,,Redevelopment Authority
+HOPWA,Housing Opportunities for,A federal program from the
+,Persons with AIDS,Department of Housing and Urban
+,,Development dedicated to addressing
 ,,the housing needs of people living
 ,,with HIV/AIDS
+HSIP,Highway Safety,A federal funding program
+,Improvement Program,administered regionally by the
+,,Southwestern Pennsylvania
+,,"Commission, with the goal of reducing"
+,,traffic fatalities and injuries
 HUD,Department of Housing and,Federal agency in charge of creating
 ,Urban,"strong, sustainable, inclusive"
 ,Development (federal),communities and quality affordable
@@ -9,29 +35,9 @@ HUD,Department of Housing and,Federal agency in charge of creating
 I&P,Department of Innovation &,A City department that provides
 ,Performance,technology services to all City
 ,,departments
+LSA,Local Share Account,A state grant program administered
+,,by DCED that funds public
+,,infrastructure and asset acquisitions
+,,and improvements
 NED,Neighborhood Economic,A project in the Capital Budget that
 ,Development,acts as a competitive grant program
-,,providing CDBG funding to
-,,development-focused community
-,,organizations.
-OMB,Office of Management and,A City division within the Mayor’s
-,Budget,Office that creates the Capital and
-,,"Operating Budgets, runs the"
-,,Community Development Block Grant
-,,"(CDBG) program for the City, and"
-,,procures goods and services
-PAYGO,Pay-As-You-Go,A type of funding that
-,,is transferred from the operating
-,,budget to the capital budget when the
-,,appropriate fund balance has been
-,,met
-,,Funds leftover from the Operating
-,,Budget that are transferred to the
-,,Capital Budget
-PLI,"Department of Permits,","A City department that issues,"
-,"Licenses, & Inspections","reviews, and inspects building permits"
-PSG,Public Service Grant,A project in the Capital Budget that
-,,funds qualifying nonprofit
-,,organizations with CDBG money
-Unexpended/Unencumbered,Unexpended/Unencumbered,Amount of money remaining for the
-Prior Year Funds,Prior Year Funds,project from prior years as of

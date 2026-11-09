@@ -510,12 +510,12 @@
     "funding": {
       "2026": 0.0,
       "2027": 0.0,
-      "2028": 1977596.0,
+      "2028": 2547726.0,
       "2029": 0.0,
       "2030": 0.0,
       "2031": 0.0,
       "2032": 0.0,
-      "Total 2027-2032": 1977596.0
+      "Total 2027-2032": 2547726.0
     }
   },
   {
@@ -603,32 +603,32 @@
     },
     "deliverables": [
       {
-        "Deliverable/Objective": "MURRAY AVE - FINAL DESIGN",
-        "Location": "Murray Ave & Wilkins Ave",
-        "District": "District 5",
-        "Fund": "BOND",
-        "Cost": "22,500"
-      },
-      {
         "Deliverable/Objective": "MURRAY AVE - FINAL DESIGN (HSIP)",
         "Location": "Murray Ave & Wilkins Ave",
-        "District": "District 5",
+        "District": "District 8",
         "Fund": "OTHER",
         "Cost": "225,000"
       },
       {
-        "Deliverable/Objective": "MURRAY AVE - PRELIMINARY ENGINEERING",
-        "Location": "Murray Ave & Wilkins Ave",
-        "District": "District 5",
-        "Fund": "BOND",
-        "Cost": "27,000"
-      },
-      {
         "Deliverable/Objective": "MURRAY AVE - PRELIMINARY ENGINEERING (HSIP)",
         "Location": "Murray Ave & Wilkins Ave",
-        "District": "District 5",
+        "District": "District 8",
         "Fund": "OTHER",
         "Cost": "270,000"
+      },
+      {
+        "Deliverable/Objective": "MURRAY AVE - FINAL DESIGN",
+        "Location": "Murray Ave & Wilkins Ave",
+        "District": "District 8",
+        "Fund": "BOND",
+        "Cost": "22,500"
+      },
+      {
+        "Deliverable/Objective": "MURRAY AVE - PRELIMINARY ENGINEERING",
+        "Location": "Murray Ave & Wilkins Ave",
+        "District": "District 8",
+        "Fund": "BOND",
+        "Cost": "27,000"
       }
     ]
   },
@@ -916,7 +916,7 @@
     "department": "DEPARTMENT OF MOBILITY AND INFRASTRUCTURE",
     "projectType": "Recurring, Capital Project",
     "funding": {
-      "2026": 1146850.0,
+      "2026": 1150350.0,
       "2027": 8585000.0,
       "2028": 800000.0,
       "2029": 1000000.0,
@@ -957,13 +957,13 @@
     "projectType": "Recurring, Capital Project",
     "funding": {
       "2026": 16151336.0,
-      "2027": 23788714.0,
-      "2028": 18724218.0,
+      "2027": 23813714.0,
+      "2028": 18695116.0,
       "2029": 20771743.0,
       "2030": 26729150.0,
       "2031": 30675000.0,
       "2032": 23600000.0,
-      "Total 2027-2032": 144288825.0
+      "Total 2027-2032": 144284723.0
     },
     "deliverables": [
       {
@@ -978,7 +978,7 @@
         "Location": "City-Wide",
         "District": "City-Wide",
         "Fund": "BOND",
-        "Cost": "22,688,714"
+        "Cost": "22,713,714"
       }
     ]
   },
@@ -1133,13 +1133,13 @@
     "projectType": "Recurring, Capital Project",
     "funding": {
       "2026": 4522000.0,
-      "2027": 9191296.0,
+      "2027": 8191296.0,
       "2028": 1572000.0,
       "2029": 1800000.0,
       "2030": 2200000.0,
       "2031": 3500000.0,
       "2032": 3500000.0,
-      "Total 2027-2032": 21763296.0
+      "Total 2027-2032": 20763296.0
     },
     "deliverables": [
       {
@@ -1148,13 +1148,6 @@
         "District": "District 3",
         "Fund": "BOND",
         "Cost": "648,296"
-      },
-      {
-        "Deliverable/Objective": "62nd STREET WAREHOUSE - CONSTRUCTION",
-        "Location": "6300 AVRR St",
-        "District": "District 7",
-        "Fund": "BOND",
-        "Cost": "1,000,000"
       },
       {
         "Deliverable/Objective": "STREETS DIVISIONS REQUIRED UPGRADES",
@@ -1196,16 +1189,23 @@
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF FACILITIES",
     "projectType": "Recurring, Capital Project",
     "funding": {
-      "2026": 9371856.0,
-      "2027": 9350000.0,
+      "2026": 9454032.0,
+      "2027": 9600000.0,
       "2028": 6400000.0,
       "2029": 2000000.0,
       "2030": 8000000.0,
       "2031": 2000000.0,
       "2032": 6000000.0,
-      "Total 2027-2032": 33750000.0
+      "Total 2027-2032": 34000000.0
     },
     "deliverables": [
+      {
+        "Deliverable/Objective": "PAULSON RECREATION CENTER - BASKETBALL COURT UPGRADES",
+        "Location": "1201 Paulson Ave",
+        "District": "District 9",
+        "Fund": "BOND",
+        "Cost": "250,000"
+      },
       {
         "Deliverable/Objective": "FOWLER RECREATION CENTER - CONSTRUCTION",
         "Location": "2435 Wilson Ave",
@@ -1229,14 +1229,14 @@
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF FACILITIES",
     "projectType": "Recurring, Capital Project",
     "funding": {
-      "2026": 726142.0,
-      "2027": 400000.0,
+      "2026": 500000.0,
+      "2027": 650000.0,
       "2028": 400000.0,
       "2029": 400000.0,
       "2030": 400000.0,
       "2031": 500000.0,
       "2032": 500000.0,
-      "Total 2027-2032": 2600000.0
+      "Total 2027-2032": 2850000.0
     },
     "deliverables": [
       {
@@ -1247,7 +1247,14 @@
         "Cost": "200,000"
       },
       {
-        "Deliverable/Objective": "PAUL J. SCIULLO DEK HOCKEY COURT UPGRADES",
+        "Deliverable/Objective": "ARSENAL PARK - BASKETBALL COURT UPGRADES",
+        "Location": "276 39th St",
+        "District": "District 7",
+        "Fund": "BOND",
+        "Cost": "250,000"
+      },
+      {
+        "Deliverable/Objective": "PAUL J. SCIULLO BASKETBALL COURT AND WATER FOUNTAIN UPGRADES",
         "Location": "408 Ella St",
         "District": "District 7",
         "Fund": "BOND",
@@ -1262,14 +1269,14 @@
     "department": "DEPARTMENT OF PUBLIC WORKS - BUREAU OF FACILITIES",
     "projectType": "Recurring, Capital Project",
     "funding": {
-      "2026": 6918159.0,
-      "2027": 7850000.0,
+      "2026": 7062125.0,
+      "2027": 7500000.0,
       "2028": 19050000.0,
       "2029": 15840000.0,
       "2030": 10250000.0,
       "2031": 8000000.0,
       "2032": 7500000.0,
-      "Total 2027-2032": 68490000.0
+      "Total 2027-2032": 68140000.0
     },
     "deliverables": [
       {
@@ -1280,11 +1287,11 @@
         "Cost": "350,000"
       },
       {
-        "Deliverable/Objective": "ARSENAL PARK - PHASE II CONSTRUCTION",
+        "Deliverable/Objective": "ARSENAL PARK - DESIGN",
         "Location": "276 39th St",
         "District": "District 7",
         "Fund": "BOND",
-        "Cost": "500,000"
+        "Cost": "150,000"
       },
       {
         "Deliverable/Objective": "LOWER MCKINLEY PARK UPGRADES (PARKS TAX)",
@@ -1331,7 +1338,7 @@
       {
         "Deliverable/Objective": "PANTHER HOLLOW LAKE MASTER PLAN",
         "Location": "Schenley Park",
-        "District": "District 8",
+        "District": "District 5",
         "Fund": "BOND",
         "Cost": "150,000"
       },
@@ -1362,6 +1369,13 @@
     },
     "deliverables": [
       {
+        "Deliverable/Objective": "HIGHLAND PARK - FARMHOUSE FIELD IMPROVEMENTS",
+        "Location": "Bunkerhill St & Highland Ave",
+        "District": "District 7",
+        "Fund": "OTHER",
+        "Cost": "740,000"
+      },
+      {
         "Deliverable/Objective": "BLUE SLIDE PLAYGROUND UPGRADES",
         "Location": "Frick Park",
         "District": "District 5",
@@ -1376,13 +1390,6 @@
         "Cost": "400,000"
       },
       {
-        "Deliverable/Objective": "FARMHOUSE FIELD IMPROVEMENTS",
-        "Location": "Highland Park",
-        "District": "District 7",
-        "Fund": "OTHER",
-        "Cost": "740,000"
-      },
-      {
         "Deliverable/Objective": "RIVERVIEW PARK TRAIL ENHANCEMENTS",
         "Location": "Riverview Park",
         "District": "District 1",
@@ -1392,7 +1399,7 @@
       {
         "Deliverable/Objective": "OVERLOOK DRIVE PEDESTRIAN PATH",
         "Location": "Schenley Park",
-        "District": "District 8",
+        "District": "District 5",
         "Fund": "OTHER",
         "Cost": "250,000"
       }
@@ -1406,14 +1413,30 @@
     "projectType": "Recurring, Capital Project",
     "funding": {
       "2026": 0.0,
-      "2027": 0.0,
+      "2027": 825000.0,
       "2028": 300000.0,
       "2029": 300000.0,
       "2030": 300000.0,
       "2031": 300000.0,
       "2032": 300000.0,
-      "Total 2027-2032": 1500000.0
-    }
+      "Total 2027-2032": 2325000.0
+    },
+    "deliverables": [
+      {
+        "Deliverable/Objective": "McBRIDE PARK - PLAYGROUND UPGRADES",
+        "Location": "1785 McBride Ave",
+        "District": "District 5",
+        "Fund": "BOND",
+        "Cost": "200,000"
+      },
+      {
+        "Deliverable/Objective": "DAVIS PLAYGROUND - UPGRADES",
+        "Location": "5680 Hobart St",
+        "District": "District 5",
+        "Fund": "BOND",
+        "Cost": "625,000"
+      }
+    ]
   },
   {
     "title": "PUBLIC SAFETY TRAINING FACILITY",
@@ -1997,60 +2020,225 @@
     "projectType": "",
     "deliverables": [
       {
-        "Project Name": "7507 - FACILITY IMPROVEMENTS - PUBLIC SAFETY FACILITIES",
-        "Project Deliverable City": "Temporary Fire Station",
-        "CDBG": "600,000",
-        "Other": "0",
-        "": "1",
-        "City or CDBG Scorer 1": "600,000N",
-        "Scorer 2": "N",
-        "Scorer 3": "N",
-        "Scorer 4": "Y",
-        "Scorer 5": "N",
-        "Scorer 6": "N",
-        "Count Adjusted Count": "1"
+        "Project Name 7401 - COMPLETE STREETS": "1002 - PLAY AREA IMPROVEMENTS",
+        "Project Deliverable Second/Greenfield/Saline Study": "Denny Park Playground Upgrades",
+        "$ City": "",
+        "$ CDBG $100,000": "200,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "200,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
       },
       {
-        "Project Name": "5000 - PARK RECONSTRUCTION",
-        "Project Deliverable City": "Baxter Park Rehabilitation Project",
-        "CDBG": "0",
-        "Other": "0",
-        "": "1",
-        "City or CDBG Scorer 1": "0N",
-        "Scorer 2": "Y",
-        "Scorer 3": "Y",
-        "Scorer 4": "N",
-        "Scorer 5": "N",
-        "Scorer 6": "N",
-        "Count Adjusted Count": "2"
+        "Project Name 7401 - COMPLETE STREETS": "7401 - COMPLETE STREETS",
+        "Project Deliverable Second/Greenfield/Saline Study": "Baum Graham Pedestrian Crossing",
+        "$ City": "",
+        "$ CDBG $100,000": "100,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "100,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
       },
       {
-        "Project Name": "5000 - PARK RECONSTRUCTION",
-        "Project Deliverable City": "Dallas Park Upgrades",
-        "CDBG": "650,000",
-        "Other": "0",
-        "": "1",
-        "City or CDBG Scorer 1": "650,000N",
-        "Scorer 2": "N",
-        "Scorer 3": "N",
-        "Scorer 4": "Y",
-        "Scorer 5": "N",
-        "Scorer 6": "N",
-        "Count Adjusted Count": "1"
+        "Project Name 7401 - COMPLETE STREETS": "7325 - SMALL BUSINESS DEVELOPMENT",
+        "Project Deliverable Second/Greenfield/Saline Study": "Small Business Support",
+        "$ City": "",
+        "$ CDBG $100,000": "2,500,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "2,500,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
       },
       {
-        "Project Name": "5000 - PARK RECONSTRUCTION",
-        "Project Deliverable City": "Ormsby Master Plan + Lighting",
-        "CDBG": "400,000",
-        "Other": "0",
-        "": "1",
-        "City or CDBG Scorer 1": "400,000N",
-        "Scorer 2": "Y",
-        "Scorer 3": "Y",
-        "Scorer 4": "N",
-        "Scorer 5": "N",
-        "Scorer 6": "N",
-        "Count Adjusted Count": "2"
+        "Project Name 7401 - COMPLETE STREETS": "7348 - FACILITY IMPROVEMENTS - SPORT FACILITIES",
+        "Project Deliverable Second/Greenfield/Saline Study": "Riverview Tennis and Dog Park",
+        "$ City": "",
+        "$ CDBG $100,000": "550,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "550,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "5002 - PARK RECONSTRUCTION - PARKS TAX",
+        "Project Deliverable Second/Greenfield/Saline Study": "Sheraden Park Spray Park",
+        "$ City": "",
+        "$ CDBG $100,000": "2,000,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "2,000,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "7401 - COMPLETE STREETS",
+        "Project Deliverable Second/Greenfield/Saline Study": "Pedestrian Safety Improvements - S. Pacific and Liberty",
+        "$ City": "",
+        "$ CDBG $100,000": "150,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "150,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "5899 - CAPITAL EQUIPMENT ACQUISITION",
+        "Project Deliverable Second/Greenfield/Saline Study": "City Planning, Sedan",
+        "$ City": "",
+        "$ CDBG $100,000": "35,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "35,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "7501 - RAMP AND PUBLIC SIDEWALK",
+        "Project Deliverable Second/Greenfield/Saline Study": "Lawn Street Promenade Phase 2",
+        "$ City": "",
+        "$ CDBG $100,000": "750,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "750,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "5000 - PARK RECONSTRUCTION",
+        "Project Deliverable Second/Greenfield/Saline Study": "Panther Hollow Lake Master Plan",
+        "$ City": "",
+        "$ CDBG $100,000": "300,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "300,000",
+        "Scorer 2 Y": "",
+        "Scorer 3 Y": "",
+        "Scorer 4 N": "",
+        "Scorer 5 N": "",
+        "Scorer 6 N": "",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "2008 - EMS EQUIPMENT",
+        "Project Deliverable Second/Greenfield/Saline Study": "EMS HQ, Office Space/ Conference Area",
+        "$ City": "",
+        "$ CDBG $100,000": "0",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "0N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "1810 - FLEX BEAM GUIDERAILS AND FENCING",
+        "Project Deliverable Second/Greenfield/Saline Study": "Shelly Street Railings",
+        "$ City": "",
+        "$ CDBG $100,000": "200,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "200,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "9000 - STREET RESURFACING",
+        "Project Deliverable Second/Greenfield/Saline Study": "11th Street - Liberty to Penn",
+        "$ City": "",
+        "$ CDBG $100,000": "950,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "950,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
+      },
+      {
+        "Project Name 7401 - COMPLETE STREETS": "9000 - STREET RESURFACING",
+        "Project Deliverable Second/Greenfield/Saline Study": "Repairs to 11th Street",
+        "$ City": "",
+        "$ CDBG $100,000": "950,000",
+        "$ Other $0": "0",
+        "$0": "0",
+        "$ City or CDBG Scorer 1 $100,000N": "950,000N",
+        "Scorer 2 Y": "N",
+        "Scorer 3 Y": "N",
+        "Scorer 4 N": "N",
+        "Scorer 5 N": "N",
+        "Scorer 6 N": "N",
+        "Count": "",
+        "Adjusted Count 2": "0",
+        "1": "0"
       }
     ]
   }

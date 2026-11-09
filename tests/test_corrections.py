@@ -137,14 +137,14 @@ def _build_module() -> types.ModuleType:
 
 
 def _real_parks_section(mod: types.ModuleType) -> dict:
-    """The Parks Tax section built from the real 2027 proposed baseline CSV (financial table only)."""
+    """The Parks Tax section built from the real 2027 Mayor's budget baseline CSV (financial table only)."""
     csv_path: Path = (
-        paths.expected_dir(2027, "operating-proposed") / "35_Parks_Tax_Trust_Fund" / "P0T1.csv"
+        paths.expected_dir(2027, "operating-proposed") / "49_Parks_Tax_Trust_Fund" / "P1T1.csv"
     )
     parsed: dict = mod.parse_csv(csv_path)
     headers: list[str] = mod.fill_blank_year_headers(parsed["headers"], 2027)
     table: dict = {
-        "id": "s35_p0_t1",
+        "id": "s49_p1_t1",
         "table_type": mod.classify_table(headers, section_title=PARKS_SECTION),
         "headers": headers,
         "rows": parsed["rows"],
@@ -156,17 +156,16 @@ def _parks_amounts(rows: list[dict]) -> dict[str, float]:
     return {r["year"]: r["amount"] for r in rows if r["slug"] == "parks-tax-trust-fund"}
 
 
-def test_real_2027_parks_tax_view_gains_2027_row() -> None:
+def test_real_2027_parks_tax_view_has_2027_row_without_corrections() -> None:
+    """The 2027 Parks Tax figures reach the site with no correction file.
+
+    The September edition mislabelled these columns "2025/2026 Budget" and needed
+    our relabelling; the November Mayor's budget prints "2026/2027 Budget" itself,
+    so carrying the old correction would now fail the build.
+    """
     mod = _build_module()
-    real_file: Path = paths.corrections_path(2027, "operating-proposed")
-    loaded = corrections.load_corrections(real_file)
-    assert [c.id for c in loaded] == ["parks-tax-trust-fund-year-labels"]
+    assert corrections.load_corrections(paths.corrections_path(2027, "operating-proposed")) == []
 
-    uncorrected: dict[str, float] = _parks_amounts(mod.build_department_budgets([_real_parks_section(mod)]))
-    assert "2027 Budget" not in uncorrected
-
-    sections: list[dict] = [_real_parks_section(mod)]
-    corrections.apply_corrections(sections=sections, corrections=loaded)
-    amounts: dict[str, float] = _parks_amounts(mod.build_department_budgets(sections))
-    assert amounts["2027 Budget"] == 9_355_441
-    assert amounts["2026 Budget"] == 9_505_063
+    amounts: dict[str, float] = _parks_amounts(mod.build_department_budgets([_real_parks_section(mod)]))
+    assert amounts["2027 Budget"] == 9_367_373
+    assert amounts["2026 Budget"] == 9_755_063

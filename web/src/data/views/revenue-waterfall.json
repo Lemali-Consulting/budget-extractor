@@ -1,7 +1,7 @@
 [
   {
     "label": "Tax Revenue",
-    "amount": 562976114.0,
+    "amount": 562976113.0,
     "type": "revenue"
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "label": "Interest Earnings",
-    "amount": 6923376.0,
+    "amount": 3902141.0,
     "type": "revenue"
   },
   {

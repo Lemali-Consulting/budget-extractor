@@ -4,22 +4,22 @@ from pathlib import Path
 
 import pdfplumber
 
-from utils.paths import variant_paths
 from utils.spatial_table_extractor import SpatialTableExtractor
 
-# 2027 proposed Revenue Summary, "Revenue by Tax" page (1-based page 13). The
+# September 2027 preliminary Revenue Summary, "Revenue by Tax" page (page 13 of
+# that PDF, kept as a one-page fixture since the November document dropped this
+# table). The
 # CAGR column sits only ~15pt right of the 2031 amounts; the tax rows get it
 # from the header, the non-tax rows below the "Major Tax Revenue" subtotal must
 # inherit it rather than merging "54,790,510 1.2 %" into one cell.
-REVENUE_BY_TAX_PAGE_INDEX: int = 12
+REVENUE_BY_TAX_PDF: Path = Path(__file__).parent / "fixtures" / "sept-2027-revenue-by-tax.pdf"
 AMOUNT_THEN_PERCENT: re.Pattern[str] = re.compile(r"\d[\d,]*\s+\(?[\d.—]+\)?\s*%")
 
 
 def _revenue_by_tax_cells() -> list[str]:
-    """All cell texts extracted from the 2027 proposed Revenue by Tax page."""
-    pdf_path: Path = variant_paths(year=2027, budget_type="operating", variant="proposed").pdf
-    with pdfplumber.open(pdf_path) as pdf:
-        tables = SpatialTableExtractor().extract_tables(pdf.pages[REVENUE_BY_TAX_PAGE_INDEX])
+    """All cell texts extracted from the September 2027 Revenue by Tax page."""
+    with pdfplumber.open(REVENUE_BY_TAX_PDF) as pdf:
+        tables = SpatialTableExtractor().extract_tables(pdf.pages[0])
     return [cell for t in tables for row in t.rows for cell in row.cells]
 
 

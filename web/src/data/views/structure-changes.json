@@ -29,187 +29,6 @@
       "note": "Budget lines shifted into the Office of the Mayor cost center in 2023. Manager position downgraded to Coordinator, Policy Coordinator eliminated by 2026."
     },
     {
-      "title": "Community Development Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "community-development-trust-fund",
-      "lastBudget": 13438828.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Department of Public Works",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "department-of-public-works"
-    },
-    {
-      "title": "EEOC Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "eeoc-trust-fund",
-      "lastBudget": 39938.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Frick Park Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "frick-park-trust-fund",
-      "lastBudget": 729725.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "HUD Fair Housing Program Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "hud-fair-housing-program-trust-fund",
-      "lastBudget": 70000.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Liquid Fuels Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "liquid-fuels-trust-fund",
-      "lastBudget": 5845148.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Mellon Park Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "mellon-park-trust-fund",
-      "lastBudget": 474840.0,
-      "lastBudgetYear": 2026,
-      "lastFte": 3.95
-    },
-    {
-      "title": "Pittsburgh Partnership Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "pittsburgh-partnership-trust-fund",
-      "lastBudget": 3267469.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Police Secondary Employment Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "police-secondary-employment-trust-fund",
-      "lastBudget": 9033436.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Public Works Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "public-works-trust-fund",
-      "lastBudget": 982040.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Regional Asset District - Parks and Recreation Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "regional-asset-district-parks-and-recreation-trust-fund",
-      "lastBudget": 2758358.0,
-      "lastBudgetYear": 2026,
-      "lastFte": 17.48
-    },
-    {
-      "title": "Regional Asset District - Public Works Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "regional-asset-district-public-works-trust-fund",
-      "lastBudget": 7890039.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Schenley Park Rink Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "schenley-park-rink-trust-fund",
-      "lastBudget": 157000.0,
-      "lastBudgetYear": 2026
-    },
-    {
-      "title": "Senior Citizens Program Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "senior-citizens-program-trust-fund",
-      "lastBudget": 2429280.0,
-      "lastBudgetYear": 2026,
-      "lastFte": 27.5
-    },
-    {
-      "title": "Shade Tree Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "shade-tree-trust-fund",
-      "lastBudget": 150000.0,
-      "lastBudgetYear": 2026
-    },
-    {
       "title": "Solid Waste Trust Fund",
       "presentInYears": [
         2024
@@ -218,50 +37,20 @@
       "slug": "solid-waste-trust-fund"
     },
     {
-      "title": "Special Events Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "special-events-trust-fund",
-      "lastBudget": 238314.0,
-      "lastBudgetYear": 2026,
-      "lastFte": 1.15
-    },
-    {
-      "title": "Special Food Service Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "special-food-service-trust-fund",
-      "lastBudget": 671328.0,
-      "lastBudgetYear": 2026,
-      "lastFte": 1.0
-    },
-    {
-      "title": "Three Taxing Bodies Trust Fund",
-      "presentInYears": [
-        2024,
-        2025,
-        2026
-      ],
-      "changeType": "removed",
-      "slug": "three-taxing-bodies-trust-fund",
-      "lastBudget": 669430.0,
-      "lastBudgetYear": 2026
-    },
-    {
       "title": "Wayfinders Signage Trust Fund",
       "presentInYears": [
         2024
       ],
       "changeType": "removed",
       "slug": "wayfinders-signage-trust-fund"
+    },
+    {
+      "title": "Opioid Misuse Abatement Trust Fund",
+      "presentInYears": [
+        2027
+      ],
+      "changeType": "added",
+      "slug": "opioid-misuse-abatement-trust-fund"
     },
     {
       "title": "City Council as a Body",
@@ -286,7 +75,8 @@
       ],
       "currentPresentInYears": [
         2025,
-        2026
+        2026,
+        2027
       ],
       "changeType": "renamed",
       "slug": "smaller-trust-funds",
@@ -425,6 +215,17 @@
       "slug": "commission-on-human-relations"
     },
     {
+      "title": "Community Development Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "community-development-trust-fund"
+    },
+    {
       "title": "Department of City Planning",
       "presentInYears": [
         2024,
@@ -513,6 +314,28 @@
       "slug": "department-of-permits-licenses-and-inspections"
     },
     {
+      "title": "Department of Public Works",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "department-of-public-works"
+    },
+    {
+      "title": "EEOC Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "eeoc-trust-fund"
+    },
+    {
       "title": "Ethics Hearing Board",
       "presentInYears": [
         2024,
@@ -522,6 +345,50 @@
       ],
       "changeType": "unchanged",
       "slug": "ethics-hearing-board"
+    },
+    {
+      "title": "Frick Park Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "frick-park-trust-fund"
+    },
+    {
+      "title": "HUD Fair Housing Program Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "hud-fair-housing-program-trust-fund"
+    },
+    {
+      "title": "Liquid Fuels Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "liquid-fuels-trust-fund"
+    },
+    {
+      "title": "Mellon Park Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "mellon-park-trust-fund"
     },
     {
       "title": "Office of Community Health and Safety",
@@ -590,6 +457,116 @@
       "slug": "parks-tax-trust-fund"
     },
     {
+      "title": "Pittsburgh Partnership Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "pittsburgh-partnership-trust-fund"
+    },
+    {
+      "title": "Police Secondary Employment Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "police-secondary-employment-trust-fund"
+    },
+    {
+      "title": "Public Works Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "public-works-trust-fund"
+    },
+    {
+      "title": "Regional Asset District - Parks and Recreation Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "regional-asset-district-parks-and-recreation-trust-fund"
+    },
+    {
+      "title": "Regional Asset District - Public Works Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "regional-asset-district-public-works-trust-fund"
+    },
+    {
+      "title": "Schenley Park Rink Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "schenley-park-rink-trust-fund"
+    },
+    {
+      "title": "Senior Citizens Program Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "senior-citizens-program-trust-fund"
+    },
+    {
+      "title": "Shade Tree Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "shade-tree-trust-fund"
+    },
+    {
+      "title": "Special Events Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "special-events-trust-fund"
+    },
+    {
+      "title": "Special Food Service Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "special-food-service-trust-fund"
+    },
+    {
       "title": "Stop the Violence Trust Fund",
       "presentInYears": [
         2024,
@@ -599,6 +576,17 @@
       ],
       "changeType": "unchanged",
       "slug": "stop-the-violence-trust-fund"
+    },
+    {
+      "title": "Three Taxing Bodies Trust Fund",
+      "presentInYears": [
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "changeType": "unchanged",
+      "slug": "three-taxing-bodies-trust-fund"
     }
   ]
 }

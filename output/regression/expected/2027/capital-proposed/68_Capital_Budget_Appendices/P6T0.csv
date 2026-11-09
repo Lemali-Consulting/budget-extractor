@@ -1,4 +1,7 @@
-"C0 (l, x:20-120)","C1 (l, x:120-259)","C2 (r, x:259-292)","C3 (l, x:292-328)","C4 (l, x:328-347)","C5 (r, x:347-399)","C6 (l, x:399-423)","C7 (l, x:423-446)","C8 (l, x:446-470)","C9 (l, x:470-494)","C10 (l, x:494-524)","C11 (l, x:524-577)","C12 (l, x:577-585)"
-Project Name,Project Deliverable City Pittsburgh Land Bank Pilot Residential Rehab Program,CDBG,Other,,City or CDBG Scorer 1,Scorer 2,Scorer 3,Scorer 4,Scorer 5,Scorer 6,Count Adjusted Count,
-0011 - REMEDIATION OF CONDEMNED BUILDINGS,Property Acquisition,"509,600",0,0,"509,600Y",Y,Y,N,N,Y,4,3
-7401 - COMPLETE STREETS,Safe Routes to School Traffic Garden,"100,000",0,0,"100,000Y",Y,Y,N,N,Y,4,3
+"C0 (l, x:19-120)","C1 (l, x:120-229)","C2 (l, x:229-260)","C3 (r, x:260-294)","C4 (r, x:294-329)","C5 (r, x:329-359)","C6 (r, x:359-399)","C7 (l, x:399-423)","C8 (l, x:423-447)","C9 (l, x:447-471)","C10 (l, x:471-495)","C11 (l, x:495-528)","C12 (l, x:528-546)","C13 (l, x:546-569)","C14 (l, x:569-589)"
+Project Name,Project Deliverable,$ City,$ CDBG,$ Other,,$ City or CDBG Scorer 1,Scorer 2,Scorer 3,Scorer 4,Scorer 5,Scorer 6,Count,Adjusted Count,
+7321 - ECONOMIC DEVELOPMENT AND HOUSING,Housing Development,,0,"3,000,000",0,"3,000,000Y",Y,Y,N,N,Y,,4,3
+1009 - BEDFORD DWELLINGS CHOICE NEIGHBORHOOD,Targeted Facade Repair,,0,"225,000",0,"225,000Y",Y,Y,N,N,Y,,4,3
+,Pittsburgh Land Bank Pilot Residential Rehab Program,,,,,,,,,,,,,
+0011 - REMEDIATION OF CONDEMNED BUILDINGS,Property Acquisition,,"509,600",0,0,"509,600Y",Y,Y,N,N,Y,,4,3
+7401 - COMPLETE STREETS,Safe Routes to School Traffic Garden,,"100,000",0,0,"100,000Y",Y,Y,N,N,Y,,4,3

@@ -6,11 +6,12 @@ import pdfplumber
 from utils.paths import variant_paths
 from utils.spatial_table_extractor import SpatialTable, SpatialTableExtractor
 
-# 2027 proposed Revenue Detail, last page (1-based page 17): a headerless
-# continuation of the account table, then "Total Revenue" below a rule. The
-# five totals sit closer together than the column gap threshold, so on their
-# own they collapse into a single cell.
-REVENUE_DETAIL_LAST_PAGE_INDEX: int = 16
+# September 2027 preliminary Revenue Detail, last page (page 17 of that PDF,
+# kept as a one-page fixture since the November document replaced it): a
+# headerless continuation of the account table, then "Total Revenue" below a
+# rule. The five totals sit closer together than the column gap threshold, so
+# on their own they collapse into a single cell.
+REVENUE_DETAIL_LAST_PAGE_PDF: Path = Path(__file__).parent / "fixtures" / "sept-2027-revenue-detail-last-page.pdf"
 LAST_ACCOUNT_ROW: str = "48303 - Proceeds from Lobbyist Register"
 TOTAL_ROW: list[str] = [
     "Total Revenue", "701,793,104", "717,589,345", "725,161,727", "732,370,309", "739,480,902",
@@ -19,9 +20,8 @@ TOTAL_ROW: list[str] = [
 
 def _last_page_tables() -> list[SpatialTable]:
     """Tables extracted from the last Revenue Detail page."""
-    pdf_path: Path = variant_paths(year=2027, budget_type="operating", variant="proposed").pdf
-    with pdfplumber.open(pdf_path) as pdf:
-        return SpatialTableExtractor().extract_tables(pdf.pages[REVENUE_DETAIL_LAST_PAGE_INDEX])
+    with pdfplumber.open(REVENUE_DETAIL_LAST_PAGE_PDF) as pdf:
+        return SpatialTableExtractor().extract_tables(pdf.pages[0])
 
 
 def test_total_row_joins_the_account_table() -> None:
