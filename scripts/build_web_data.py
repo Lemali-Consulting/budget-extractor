@@ -2592,10 +2592,16 @@ def main() -> None:
     search_index.extend(glossary_items)
     print(f"  Added {len(glossary_items)} glossary terms to search index")
 
-    # Add budget changes to search index
-    changes_items = build_changes_search_items(budget_changes)
-    search_index.extend(changes_items)
-    print(f"  Added {len(changes_items)} budget change items to search index")
+    # Add budget changes to search index. The headline (unprefixed) build has no
+    # What Changed page: it was retired for 2027 because functions moving between
+    # departments make a department-by-department comparison misleading.
+    is_headline_build: bool = prefix == ""
+    if is_headline_build:
+        print("  Skipped budget change items (the headline year has no What Changed page)")
+    else:
+        changes_items = build_changes_search_items(budget_changes)
+        search_index.extend(changes_items)
+        print(f"  Added {len(changes_items)} budget change items to search index")
 
     with open(views_dir / f"{prefix}search-index.json", "w", encoding="utf-8") as f:
         json.dump(search_index, f, indent=2)

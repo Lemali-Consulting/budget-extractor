@@ -88,7 +88,9 @@ function fmtDollar(n: number): string {
     </div>
 
     <div class="flex gap-4 mt-4 text-sm">
-      <a href={`${prefix}/changes/`} class="text-blue-600 hover:underline">All new &amp; eliminated positions &rarr;</a>
+      {!budgetYear.isHeadline && (
+        <a href={`${prefix}/changes/`} class="text-blue-600 hover:underline">All new &amp; eliminated positions &rarr;</a>
+      )}
       {!budgetYear.isHeadline && (
         <a href="/cross-year/#personnel" class="text-blue-600 hover:underline">Proposed vs. adopted staffing &rarr;</a>
       )}

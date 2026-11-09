@@ -13,7 +13,6 @@ import { correctionHref, trustFundCorrections } from '../lib/corrections';
 const { columns } = HEADLINE;
 const {
   departmentBudgets,
-  budgetChanges,
   revenueWaterfall,
   capitalFundingSources: capitalFunding,
   personnelByDepartment: personnelByDept,
@@ -55,15 +54,6 @@ const capitalCurrent = (capitalFunding as { year: string; amount: number }[])
 const personnelData = personnelByDept as { totalFteCurrent: number; totalBudgetCurrent: number }[];
 const totalFte = personnelData.reduce((s, r) => s + r.totalFteCurrent, 0);
 const totalPersonnelBudget = personnelData.reduce((s, r) => s + r.totalBudgetCurrent, 0);
-
-// Budget changes stats
-const changes = budgetChanges as any;
-const totalDollarChange = changes.totalBudgetCurrent - changes.totalBudgetPrior;
-const totalPct = changes.totalBudgetPrior > 0 ? ((totalDollarChange / changes.totalBudgetPrior) * 100).toFixed(1) : '0';
-const fteChange = Math.round(((changes.totalFteCurrent || 0) - (changes.totalFtePrior || 0)) * 10) / 10;
-const newPositions = changes.newPositions?.length || 0;
-const eliminatedPositions = changes.eliminatedPositions?.length || 0;
-const shiftedPositions = changes.shiftedPositions?.length || 0;
 
 function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -133,7 +123,6 @@ const teaserLinks: FlowLink[] = [
     <div class="flex flex-wrap gap-2 text-sm">
       <span class="text-gray-400">Try:</span>
       <a href="/sections/bureau-of-police/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition">How much does policing cost?</a>
-      <a href="/changes/#positions" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-amber-50 text-amber-700 rounded-full hover:bg-amber-100 transition">What new positions were added?</a>
       <a href="/dashboard/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-green-50 text-green-700 rounded-full hover:bg-green-100 transition">Where does the money come from?</a>
     </div>
   </div>
@@ -221,19 +210,6 @@ const teaserLinks: FlowLink[] = [
     </p>
   </a>
 
-  <!-- What Changed — prominent callout -->
-  <a href="/changes/" class="block mb-8 p-6 bg-amber-50 rounded-lg border-2 border-amber-200 ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow-lg transition">
-    <h2 class="text-xl font-bold text-amber-900 mb-2">What Changed in {HEADLINE.fiscalLabel}?</h2>
-    <p class="text-sm text-amber-800 mb-3">The biggest budget increases, decreases, new positions, and eliminated positions — the view you need before a budget hearing.</p>
-    <div class="flex flex-wrap gap-4 text-sm">
-      <span class="font-semibold text-amber-900">{totalDollarChange > 0 ? '+' : ''}{fmtM(totalDollarChange)} ({totalPct}%)</span>
-      <span class="text-amber-700">{newPositions} new positions</span>
-      <span class="text-amber-700">{eliminatedPositions} eliminated</span>
-      {shiftedPositions > 0 && <span class="text-amber-700">{shiftedPositions} shifted</span>}
-      {fteChange !== 0 && <span class="text-amber-700">Net {fteChange > 0 ? '+' : ''}{fteChange} FTE</span>}
-    </div>
-  </a>
-
   <!-- Operating & Capital cards -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
     <a href="/operating/" class="block p-6 bg-white rounded-lg border-2 border-blue-200 ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow-lg transition">
@@ -273,11 +249,7 @@ const teaserLinks: FlowLink[] = [
   </div>
 
   <!-- Quick links -->
-  <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-    <a href="/changes/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-amber-400 hover:shadow transition text-center">
-      <div class="font-medium text-gray-700">What Changed</div>
-      <div class="text-xs text-gray-400 mt-1">Key budget changes</div>
-    </a>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
     <a href="/compare/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Compare</div>
       <div class="text-xs text-gray-400 mt-1">Departments side by side</div>

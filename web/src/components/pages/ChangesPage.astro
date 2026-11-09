@@ -5,7 +5,7 @@ import SiteSearch from '../SiteSearch.tsx';
 import ChangesChart from '../ChangesChart.tsx';
 import PositionChanges from '../PositionChanges.tsx';
 import EmbedButton from '../EmbedButton.tsx';
-import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+import { type BudgetYear } from '../../lib/budget-year';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -45,7 +45,7 @@ const sections = [
 ];
 ---
 
-<Base title="What Changed" description={`Biggest budget changes in the ${budgetYear.comparisonLabel} Pittsburgh budget comparison.`} budgetYear={budgetYear} currentHref={headlinePath('/changes/')} ogDescription={`Total operating budget ${totalChange > 0 ? 'increases' : 'decreases'} ${totalPct}% (${fmtM(Math.abs(totalChange))}). ${data.newPositions.length} new positions, ${data.eliminatedPositions.length} eliminated.`}>
+<Base title="What Changed" description={`Biggest budget changes in the ${budgetYear.comparisonLabel} Pittsburgh budget comparison.`} budgetYear={budgetYear} ogDescription={`Total operating budget ${totalChange > 0 ? 'increases' : 'decreases'} ${totalPct}% (${fmtM(Math.abs(totalChange))}). ${data.newPositions.length} new positions, ${data.eliminatedPositions.length} eliminated.`}>
   <h1 class="text-3xl font-bold mb-2">What Changed in {budgetYear.fiscalLabel}?</h1>
   <p class="text-gray-600 mb-4">Biggest budget changes, {budgetYear.comparisonLabel} — the view you need before a budget hearing.</p>
 

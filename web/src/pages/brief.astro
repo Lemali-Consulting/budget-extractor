@@ -4,7 +4,6 @@ import Base from '../layouts/Base.astro';
 import HeroStat from '../components/HeroStat.tsx';
 import SimpleBars from '../components/SimpleBars.tsx';
 import WaterfallChart from '../components/WaterfallChart.tsx';
-import ChangesChart from '../components/ChangesChart.tsx';
 import EmbedButton from '../components/EmbedButton.tsx';
 import { HEADLINE } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
@@ -60,9 +59,6 @@ const topPersonnel = personnel
   .slice(0, 8)
   .map((d: any) => ({ label: d.department, value: d.totalFteCurrent }));
 
-// Top changes (limited for brief)
-const topInc = changes.topIncreases.slice(0, 5);
-const topDec = changes.topDecreases.slice(0, 5);
 
 // Capital
 const capitalCurrent = (capitalFunding as any[])
@@ -87,14 +83,13 @@ function fmtB(n: number): string {
 >
   <div class="max-w-3xl mx-auto">
     <h1 class="text-3xl font-bold mb-2">Pittsburgh's {HEADLINE.label} Budget in Brief</h1>
-    <p class="text-gray-600 mb-8 text-lg">Six things to know about how Pittsburgh plans to spend your money this year.</p>
+    <p class="text-gray-600 mb-8 text-lg">Five things to know about how Pittsburgh plans to spend your money this year.</p>
 
     <!-- Jump nav -->
     <nav class="flex flex-wrap gap-2 mb-10 text-sm" aria-label="Page sections">
       <a href="#how-big" class="bg-blue-50 text-blue-700 rounded-full px-3 py-1 hover:bg-blue-100">The big picture</a>
       <a href="#revenue" class="bg-green-50 text-green-700 rounded-full px-3 py-1 hover:bg-green-100">Revenue</a>
       <a href="#spending" class="bg-purple-50 text-purple-700 rounded-full px-3 py-1 hover:bg-purple-100">Spending</a>
-      <a href="#changed" class="bg-amber-50 text-amber-700 rounded-full px-3 py-1 hover:bg-amber-100">What changed</a>
       <a href="#workforce" class="bg-cyan-50 text-cyan-700 rounded-full px-3 py-1 hover:bg-cyan-100">Workforce</a>
       <a href="#capital" class="bg-orange-50 text-orange-700 rounded-full px-3 py-1 hover:bg-orange-100">Big projects</a>
     </nav>
@@ -156,33 +151,8 @@ function fmtB(n: number): string {
       </p>
     </section>
 
-    <!-- 4. What changed this year? -->
-    <section id="changed" class="mb-12 scroll-mt-8">
-      <div class="flex items-start justify-between">
-        <h2 class="text-2xl font-bold mb-4">What changed this year?</h2>
-        <EmbedButton embedPath="/embed/budget-increases/" height={500} client:load />
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-        <div>
-          <ChangesChart data={topInc} title="Biggest Increases" color="#16a34a" client:load />
-        </div>
-        <div>
-          <ChangesChart data={topDec} title="Biggest Decreases" color="#dc2626" client:load />
-        </div>
-      </div>
-      <p class="text-gray-700 leading-relaxed">
-        The biggest dollar increase goes to the <strong>{topInc[0]?.department}</strong>
-        (+{fmtM(topInc[0]?.dollarChange)}, {topInc[0]?.pctChange > 0 ? '+' : ''}{topInc[0]?.pctChange}%).
-        On the staffing side, the city is adding <strong>{changes.newPositions.length} new positions</strong>
-        while eliminating {changes.eliminatedPositions.length}
-        {changes.shiftedPositions.length > 0 ? ` and shifting ${changes.shiftedPositions.length} between departments` : ''}.
-      </p>
-      <p class="text-sm text-gray-500 mt-2">
-        <a href="/changes/" class="text-blue-600 hover:underline">See all changes in detail &rarr;</a>
-      </p>
-    </section>
 
-    <!-- 5. Who works for the city? -->
+    <!-- 4. Who works for the city? -->
     <section id="workforce" class="mb-12 scroll-mt-8">
       <div class="flex items-start justify-between">
         <h2 class="text-2xl font-bold mb-4">Who works for the city?</h2>
@@ -213,7 +183,7 @@ function fmtB(n: number): string {
       </p>
     </section>
 
-    <!-- 6. What about big projects? -->
+    <!-- 5. What about big projects? -->
     <section id="capital" class="mb-12 scroll-mt-8">
       <div class="flex items-start justify-between">
         <h2 class="text-2xl font-bold mb-4">What about big projects?</h2>

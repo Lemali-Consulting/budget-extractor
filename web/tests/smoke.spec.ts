@@ -129,23 +129,27 @@ test("personnel page loads", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // What Changed
 // ---------------------------------------------------------------------------
-test("changes page loads with budget figures", async ({ page }) => {
-  await page.goto("/changes/");
+// The 2027 page was retired at the client's request: functions moving between
+// departments make a department-by-department comparison misleading. The
+// archive years keep their What Changed pages.
+const RETIRED_CHANGES_HREF = "/changes/";
 
-  await expect(main(page).locator("h1").first()).toContainText(
-    /What Changed/i,
-  );
-  await expect(main(page).getByText(/\$/).first()).toBeVisible();
+test("the headline What Changed page is no longer published", async ({ page }) => {
+  const response = await page.goto(RETIRED_CHANGES_HREF);
+  expect(response?.status()).toBe(404);
 });
 
-test("changes page shows structure changes", async ({ page }) => {
-  await page.goto("/changes/");
+for (const route of ["/", "/brief/", "/personnel/", "/operating/", "/stories/"]) {
+  test(`headline ${route} has no link to the retired What Changed page`, async ({ page }) => {
+    await page.goto(route);
+    await expect(page.locator(`a[href^="${RETIRED_CHANGES_HREF}"]`)).toHaveCount(0);
+  });
+}
 
-  await expect(
-    main(page).getByText(/Departments.*Offices Added or Removed/i),
-  ).toBeVisible();
-  await expect(main(page).getByText(/Reorganized/i)).toBeVisible();
-  await expect(main(page).getByText(/Office of Equity/)).toBeVisible();
+test("the brief drops its What changed this year section", async ({ page }) => {
+  await page.goto("/brief/");
+  await expect(page.locator("#changed")).toHaveCount(0);
+  await expect(main(page).getByRole("heading", { name: /What changed this year/i })).toHaveCount(0);
 });
 
 // ---------------------------------------------------------------------------
@@ -238,7 +242,7 @@ test("headline section pages carry no amendment highlights or adopted toggle", a
 const PROPOSED_NOTICE = '[data-testid="proposed-notice"]';
 const ARCHIVE_NOTICE = '[data-testid="archive-notice"]';
 
-for (const route of ["/", "/operating/", "/sections/revenue-detail/", "/capital/", "/changes/", "/departments/bureau-of-police/", "/personnel/"]) {
+for (const route of ["/", "/operating/", "/sections/revenue-detail/", "/capital/", "/departments/bureau-of-police/", "/personnel/"]) {
   test(`headline ${route} shows the proposed-budget notice`, async ({ page }) => {
     await page.goto(route);
     const notice = page.locator(PROPOSED_NOTICE).first();
@@ -257,10 +261,6 @@ test("headline pages are labeled 2027 Proposed", async ({ page }) => {
   await page.goto("/capital/");
   await expect(main(page).getByText(/FY2027 Proposed Capital Budget/).first()).toBeVisible();
 
-  await page.goto("/changes/");
-  await expect(main(page).getByText(/2027 Proposed vs 2026 Budget/).first()).toBeVisible();
-  await expect(main(page).getByText(/2027 vs 2026 adopted/i)).toHaveCount(0);
-
   await page.goto("/sections/revenue-detail/");
   await expect(main(page).getByText(/2027/).first()).toBeVisible();
 });
@@ -275,7 +275,7 @@ const ARCHIVE_ROUTES: { route: string; current: string; heading: RegExp }[] = [
   { route: "/2026/departments/bureau-of-police/", current: "/departments/bureau-of-police/", heading: /Bureau of Police/i },
   { route: "/2026/capital/", current: "/capital/", heading: /Capital Budget/i },
   { route: "/2026/capital/28th-street-bridge-tip/", current: "/capital/28th-street-bridge-tip/", heading: /28TH STREET BRIDGE/i },
-  { route: "/2026/changes/", current: "/changes/", heading: /What Changed/i },
+  { route: "/2026/changes/", current: "/", heading: /What Changed/i },
   { route: "/2026/personnel/", current: "/personnel/", heading: /Personnel/i },
 ];
 
@@ -314,6 +314,7 @@ test("archive chart bars link inside the archive", async ({ page }) => {
   await page.goto("/2026/changes/");
   const bar = main(page).locator("#increases rect[data-slug]").first();
   await expect(bar).toBeVisible({ timeout: 10_000 });
+  await expect(bar).toHaveCSS("cursor", "pointer");
   const slug = await bar.getAttribute("data-slug");
   await bar.click();
   await expect(page).toHaveURL(new RegExp(`/2026/sections/${slug}/`));
@@ -404,20 +405,6 @@ test("header navigation links are present on all pages", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // Clickable chart bars
 // ---------------------------------------------------------------------------
-test("changes chart bars link to section pages", async ({ page }) => {
-  await page.goto("/changes/");
-
-  // Wait for chart SVG to render and bars to get data-slug attributes (set after hydration)
-  const bar = main(page).locator("#increases rect[data-slug]").first();
-  await expect(bar).toBeVisible({ timeout: 10_000 });
-  await expect(bar).toHaveCSS("cursor", "pointer");
-
-  // Click a bar and verify navigation to a section page
-  const slug = await bar.getAttribute("data-slug");
-  await bar.click();
-  await expect(page).toHaveURL(new RegExp(`/sections/${slug}/`));
-});
-
 test("dashboard personnel chart bars link to section pages", async ({ page }) => {
   await page.goto("/dashboard/");
 
@@ -551,7 +538,6 @@ test("no JS errors on key pages", async ({ page }) => {
     "/capital/",
     "/dashboard/",
     "/personnel/",
-    "/changes/",
     "/amendments/",
     "/glossary/",
     "/brief/",

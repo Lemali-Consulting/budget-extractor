@@ -108,7 +108,7 @@ The headline (2027) search box uses **Pagefind**, which indexes the built HTML a
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.
 
 - Tests build the site and serve it via `astro preview`, then verify all major routes render correctly
-- Covers: home, operating index + detail, capital index + detail, charts, explorer, personnel, changes, compare, glossary, about
+- Covers: home, operating index + detail, capital index + detail, charts, explorer, personnel, 2026 changes (the 2027 page is retired), compare, glossary, about
 - Checks: page titles, key content visible, navigation present, no JS console errors
 - Run before deploying to Netlify to catch template, routing, or data regressions
 - Requires Playwright browsers: `npx playwright install chromium` (and system deps: `npx playwright install-deps chromium`)

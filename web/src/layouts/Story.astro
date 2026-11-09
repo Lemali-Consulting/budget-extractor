@@ -42,7 +42,7 @@ function dropdownItemClass(href: string): string {
 }
 
 const storiesHrefs = ['/stories/', '/departments/'];
-const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/changes/', '/trends/', '/cross-year/', ...archiveLinks.map((a) => a.prefix)];
+const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/trends/', '/cross-year/', ...archiveLinks.map((a) => a.prefix)];
 const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '/embed/', '/glossary/'];
 ---
 
@@ -88,7 +88,6 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                   <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
                   <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
-                  <a href="/changes/" class={dropdownItemClass('/changes/')}>What Changed</a>
                   <a href="/trends/" class={dropdownItemClass('/trends/')}>Trends</a>
                   <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
                   {archiveLinks.map((a) => (
