@@ -33,7 +33,7 @@ All project documentation lives in `docs/`, organized by type:
 - **`docs/decisions/`** — Decision records (ADR-lite): what was chosen and why. Use `/decision` to create.
 - **`docs/plans/`** — Forward-looking implementation plans. Use `/plan` to create.
 - **`docs/audits/`** — State-of-the-world snapshots before major changes. Use `/audit` to create.
-- **`docs/notes/`** — Research, observations, explorations.
+- **`docs/notes/`** — Research, observations, explorations. When the issue a note records is fixed and verified, mark it `fixed` and move it to `docs/notes/archive/` in the same change.
 
 Conventions:
 - Files are named `YYYY-MM-DD-short-kebab-description.md`
