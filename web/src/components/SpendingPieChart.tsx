@@ -46,13 +46,13 @@ export default function SpendingPieChart({ data, budgetColumn }: Props) {
 
     const total = depts.reduce((s, d) => s + d.amount, 0);
 
-    // Top 10 + "All Other"
+    // Top 10 + "All other"
     const top = depts.slice(0, 10);
     const otherAmount = depts.slice(10).reduce((s, d) => s + d.amount, 0);
     const display = [
       ...top.map((d) => ({ label: d.department, amount: d.amount, pct: (d.amount / total) * 100 })),
       ...(otherAmount > 0
-        ? [{ label: `All Other (${depts.length - 10} depts)`, amount: otherAmount, pct: (otherAmount / total) * 100 }]
+        ? [{ label: `All other (${depts.length - 10} depts)`, amount: otherAmount, pct: (otherAmount / total) * 100 }]
         : []),
     ];
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import { CHART_COLORS } from '../lib/chart-colors';
 import { useContainerWidth } from '../lib/hooks';
+import { sentenceCase } from '../lib/text-case';
 
 interface BudgetRow {
   department: string;
@@ -112,7 +113,7 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
           onChange={(e) => setSelectedYear((e.target as HTMLSelectElement).value)}
         >
           {years.map((y) => (
-            <option key={y} value={y}>{y}</option>
+            <option key={y} value={y}>{sentenceCase(y)}</option>
           ))}
         </select>
       </div>

@@ -143,7 +143,7 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
             </a>
             <div class="space-y-1 text-sm">
               <div>
-                <span class="text-gray-500">{year} Budget:</span>{' '}
+                <span class="text-gray-500">{year} budget:</span>{' '}
                 <span class="font-medium">{formatDollar(p.totalBudgetCurrent)}</span>
               </div>
               <div>
@@ -165,7 +165,7 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
       </div>
 
       <div ref={chartContainerRef} class="bg-white rounded-lg border p-4 mb-6">
-        <h3 class="text-lg font-semibold mb-3">Budget Trend</h3>
+        <h3 class="text-lg font-semibold mb-3">Budget trend</h3>
         <div ref={chartRef} />
       </div>
 
@@ -183,19 +183,19 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
             </thead>
             <tbody>
               <tr class="bg-white">
-                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">{year} Budget</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">{year} budget</td>
                 {selectedPersonnel.map(p => (
                   <td key={p.department} class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{formatDollar(p.totalBudgetCurrent)}</td>
                 ))}
               </tr>
               <tr class="bg-gray-50">
-                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">{priorYear} Budget</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">{priorYear} budget</td>
                 {selectedPersonnel.map(p => (
                   <td key={p.department} class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{formatDollar(p.totalBudgetPrior)}</td>
                 ))}
               </tr>
               <tr class="bg-white">
-                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">Budget Change</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">Budget change</td>
                 {selectedPersonnel.map(p => {
                   const change = p.totalBudgetCurrent - p.totalBudgetPrior;
                   const pct = p.totalBudgetPrior > 0 ? ((change / p.totalBudgetPrior) * 100).toFixed(1) : '0';
@@ -224,7 +224,7 @@ export default function DepartmentCompare({ budgets, personnel, year, priorYear 
                 })}
               </tr>
               <tr class="bg-gray-50">
-                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">Total Positions</td>
+                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">Total positions</td>
                 {selectedPersonnel.map(p => (
                   <td key={p.department} class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.positionCount}</td>
                 ))}

@@ -39,14 +39,14 @@ function fmtM(n: number): string {
 }
 ---
 
-<Base title="Budget Dashboard">
+<Base title="Budget dashboard">
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>Dashboard</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">{HEADLINE.fiscalLabel} Budget Dashboard</h1>
+  <h1 class="text-3xl font-bold mb-2">{HEADLINE.fiscalLabel} budget dashboard</h1>
   <p class="text-gray-600 mb-4">City of Pittsburgh budget at a glance — operating, capital, and personnel.</p>
 
   <div class="mb-6">
@@ -56,25 +56,25 @@ function fmtM(n: number): string {
   <!-- Summary stats -->
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-400 uppercase tracking-wide">Operating Budget</div>
+      <div class="text-xs text-gray-400">Operating budget</div>
       <div class="text-2xl font-bold text-ps-blue-900 mt-1">{fmtM(totalCurrent)}</div>
       <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {budgetChange >= 0 ? '↑ +' : '↓ '}{budgetChange.toFixed(1)}% vs {HEADLINE.priorYear}
       </div>
     </div>
     <div class="bg-white rounded-lg border p-4" data-testid="trust-fund-total">
-      <div class="text-xs text-gray-400 uppercase tracking-wide">Trust Funds</div>
+      <div class="text-xs text-gray-400">Trust funds</div>
       <div class="text-2xl font-bold text-slate-700 mt-1" data-testid="trust-fund-total-amount">{fmtM(trustTotalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">Separate from operating</div>
       <a href="/trust-funds/" class="block text-xs text-ps-blue-600 hover:underline mt-1">See the funds &rarr;</a>
     </div>
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-400 uppercase tracking-wide">Projected Revenue</div>
+      <div class="text-xs text-gray-400">Projected revenue</div>
       <div class="text-2xl font-bold text-green-900 mt-1">{fmtM(revenueTotal)}</div>
       <div class="text-sm text-gray-500 mt-0.5">{(revenueWaterfall as any[]).length} sources</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-400 uppercase tracking-wide">Capital ({HEADLINE.year})</div>
+      <div class="text-xs text-gray-400">Capital ({HEADLINE.year})</div>
       <div class="text-2xl font-bold text-ps-yellow-900 mt-1">{fmtM(capitalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
     </div>
@@ -84,7 +84,7 @@ function fmtM(n: number): string {
   <!-- Operating Budget section -->
   <div class="mb-12">
     <div class="flex items-baseline justify-between mb-1">
-      <h2 class="text-2xl font-semibold">Operating Budget</h2>
+      <h2 class="text-2xl font-semibold">Operating budget</h2>
       <a href="/operating/" class="text-sm text-ps-blue-500 hover:text-ps-blue-700">Browse all {deptCount} departments &rarr;</a>
     </div>
     <p class="text-gray-500 text-sm mb-6">Department spending and revenue for day-to-day city operations.</p>
@@ -92,7 +92,7 @@ function fmtM(n: number): string {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class="bg-white rounded-lg border p-5">
         <div class="flex items-start justify-between mb-1">
-          <h3 class="text-lg font-semibold">Department Comparison</h3>
+          <h3 class="text-lg font-semibold">Department comparison</h3>
           <EmbedButton embedPath="/embed/department-comparison/" client:load />
         </div>
         <p class="text-sm text-gray-500 mb-3">Top departments by budget total.</p>
@@ -112,7 +112,7 @@ function fmtM(n: number): string {
   <!-- Capital Budget section -->
   <div class="mb-12">
     <div class="flex items-baseline justify-between mb-1">
-      <h2 class="text-2xl font-semibold">Capital Budget</h2>
+      <h2 class="text-2xl font-semibold">Capital budget</h2>
       <a href="/capital/" class="text-sm text-ps-blue-500 hover:text-ps-blue-700">Browse all projects &rarr;</a>
     </div>
     <p class="text-gray-500 text-sm mb-6">Six-year capital improvement plan — infrastructure, facilities, and major projects.</p>

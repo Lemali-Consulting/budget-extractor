@@ -9,8 +9,8 @@ import { operating } from '../../lib/department-budgets';
 const operatingBudgets = operating(HEADLINE.views.departmentBudgets);
 ---
 
-<Embed title="Where the Money Goes" description={`${HEADLINE.fiscalLabel} Pittsburgh budget breakdown by department.`}>
-  <EmbedWrapper title={`Where the Money Goes, ${HEADLINE.fiscalLabel}`} client:load>
+<Embed title="Where the money goes" description={`${HEADLINE.fiscalLabel} Pittsburgh budget breakdown by department.`}>
+  <EmbedWrapper title={`Where the money goes, ${HEADLINE.fiscalLabel}`} client:load>
     <SpendingPieChart data={operatingBudgets} budgetColumn={HEADLINE.columns.budget} client:load />
   </EmbedWrapper>
 </Embed>

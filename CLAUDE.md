@@ -95,6 +95,10 @@ A budget can have multiple **variants** for the same `(year, budget_type)` — e
 
 When a source PDF mislabels something (e.g. the September 2027 preliminary headed the Parks Tax Trust Fund's 2026/2027 columns "2025 Budget"/"2026 Budget"), record the fix in `input/{year}/corrections-{subtype}.json` rather than editing baselines or the PDF. `utils/corrections.py` applies it during `build_web_data.py` (it raises if a correction matches nothing) and writes `views/{prefix}corrections.json`; the site labels each one "Corrected by us" on the table, section page and About `#corrections`. Only headings are relabelled — never amounts — and each entry carries its evidence.
 
+# House Style: Sentence Case
+
+Public Source capitalizes only the first word and proper nouns in headings, chart titles, labels, buttons, nav items and page titles ("Proposed capital budget", "Bureau of Police"). This applies to names taken from the PDF too: generic section titles ("Expenditure Summary" → "Expenditure summary") are converted when each year loads in `web/src/lib/budget-year.ts` via `web/src/lib/text-case.ts`, which keeps the PDF's wording in `pdf_title`; labels the data build derives (revenue categories, highlight drivers) go through `utils/text_case.py`. Department, bureau, office and fund names, Pittsburgh Budget Explorer, General Fund and Five-Year Forecast keep their capitals. The two case modules share a proper-noun and acronym list — keep them in step. Data column headers (`columns.budget` = "2027 Budget") stay as printed because code matches on them; sentence-case them only where shown. Don't pair `tracking-wide` with lowercase labels.
+
 # Long-run Trends
 
 `scripts/build_longitudinal.py` reads the headline-figure tables (forecast, revenue, expenditure summaries) from every budget document's baselines and writes `views/longitudinal.json`: per-year records by source document, actuals with restatements, and `conflicts` where one document gives two different figures for the same year. The `/trends` page charts it.

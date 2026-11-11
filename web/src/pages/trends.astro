@@ -22,7 +22,7 @@ const data = longitudinalJson as unknown as LongitudinalData;
 function labelSource(source: LongitudinalSource): string {
   const known = BUDGET_YEARS[source.sourceYear];
   if (known && known.operatingVariant === source.sourceVariant) return known.label;
-  return `${source.sourceYear} Budget (${source.sourceVariant})`;
+  return `${source.sourceYear} budget (${source.sourceVariant})`;
 }
 
 function seriesFor(metric: Metric) {

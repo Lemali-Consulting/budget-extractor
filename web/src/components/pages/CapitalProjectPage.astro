@@ -144,7 +144,7 @@ function parseNarrative(raw: string): Segment[] {
   <nav class="text-sm text-gray-500 mb-4" data-pagefind-ignore>
     <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
-    <a href={`${prefix}/capital/`} class="hover:text-ps-blue-600">Capital Budget</a>
+    <a href={`${prefix}/capital/`} class="hover:text-ps-blue-600">Capital budget</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>{section.title}</span>
   </nav>
@@ -171,7 +171,7 @@ function parseNarrative(raw: string): Segment[] {
   )}
 
   <p class="text-gray-500 mb-6">
-    {section.start_page && section.end_page ? `Pages ${section.start_page}–${section.end_page} in Capital Budget` : ''}
+    {section.start_page && section.end_page ? `Pages ${section.start_page}–${section.end_page} in capital budget` : ''}
     {section.slug !== 'capital-budget-appendices' && (
       <>
         · {section.tables.length} {section.tables.length === 1 ? 'table' : 'tables'}

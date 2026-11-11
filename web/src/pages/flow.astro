@@ -52,7 +52,7 @@ const operatingNodes: FlowNode[] = [
     category: 'revenue',
     color: revenueColor(r.label),
   })),
-  { id: 'trunk', label: `${HEADLINE.shortLabel} Operating Budget`, category: 'trunk' },
+  { id: 'trunk', label: `${HEADLINE.shortLabel} operating budget`, category: 'trunk' },
   ...bigDepts
     .slice()
     .sort((a, b) => b.amount - a.amount)
@@ -177,11 +177,11 @@ const capitalLinks: FlowLink[] = [
 ---
 
 <Base
-  title="Money Flow"
+  title="Money flow"
   description={`Where Pittsburgh's ${HEADLINE.label} budget comes from and where it goes — operating revenue and capital spending visualized as flows.`}
   ogDescription={`Operating: ${fmtM(revenueTotal)} revenue across ${revenue.length} sources flows to ${currentDepts.length} departments. Capital: ${fmtM(capitalTotal)} across ${sources.length} funding sources, ${sortedProjects.length} projects, ${years.length} years.`}
 >
-  <h1 class="text-3xl font-bold mb-2">Money Flow</h1>
+  <h1 class="text-3xl font-bold mb-2">Money flow</h1>
   <p class="text-gray-600 mb-6 max-w-3xl">
     Where the city's money comes from, and where it goes. Hover any band to trace
     the dollars; click a department to drill in.
@@ -190,7 +190,7 @@ const capitalLinks: FlowLink[] = [
   <!-- Operating -->
   <section class="mb-12">
     <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-xl font-semibold">Operating Budget — Revenue to Departments</h2>
+      <h2 class="text-xl font-semibold">Operating budget — revenue to departments</h2>
       <span class="text-sm text-gray-500">{HEADLINE.fiscalLabel} · {fmtM(revenueTotal)}</span>
     </div>
     <p class="text-sm text-gray-500 mb-4 max-w-3xl">
@@ -212,7 +212,7 @@ const capitalLinks: FlowLink[] = [
         client:visible
       />
       <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600">
-        <span class="text-gray-400 uppercase tracking-wide">Departments grouped by:</span>
+        <span class="text-gray-400">Departments grouped by:</span>
         {Object.entries(GROUP_COLORS).map(([name, color]) => (
           <span class="inline-flex items-center gap-1.5">
             <span class="inline-block w-3 h-3 rounded-sm" style={`background-color: ${color}`}></span>
@@ -226,7 +226,7 @@ const capitalLinks: FlowLink[] = [
   <!-- Capital -->
   <section class="mb-12">
     <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-xl font-semibold">Capital Plan — Sources, Projects, Years</h2>
+      <h2 class="text-xl font-semibold">Capital plan — sources, projects, years</h2>
       <span class="text-sm text-gray-500">{years[0]}–{years[years.length - 1]} · {fmtM(capitalTotal)}</span>
     </div>
     <p class="text-sm text-gray-500 mb-4 max-w-3xl">
@@ -250,6 +250,6 @@ const capitalLinks: FlowLink[] = [
   </section>
 
   <p class="text-xs text-gray-400">
-    Source: {HEADLINE.label} Pittsburgh Operating &amp; Capital Budget (extracted tables).
+    Source: {HEADLINE.label} Pittsburgh operating &amp; capital budget (extracted tables).
   </p>
 </Base>

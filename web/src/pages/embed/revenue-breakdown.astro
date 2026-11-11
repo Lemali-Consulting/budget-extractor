@@ -8,7 +8,7 @@ import { HEADLINE } from '../../lib/budget-year';
 const revenueWaterfall = HEADLINE.views.revenueWaterfall;
 ---
 
-<Embed title="Revenue Breakdown" description={`${HEADLINE.fiscalLabel} Pittsburgh revenue sources waterfall chart.`}>
+<Embed title="Revenue breakdown" description={`${HEADLINE.fiscalLabel} Pittsburgh revenue sources waterfall chart.`}>
   <EmbedWrapper client:load>
     <WaterfallChart data={revenueWaterfall} yearLabel={HEADLINE.label} client:load />
   </EmbedWrapper>

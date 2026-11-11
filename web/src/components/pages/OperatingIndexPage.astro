@@ -20,7 +20,7 @@ const departmentBudgets = budgetYear.views.departmentBudgets;
 const categories = [
   { label: 'Overview', range: [1, 9] },
   { label: 'Departments', range: [10, 39] },
-  { label: 'Trust Funds', range: [40, 57] },
+  { label: 'Trust funds', range: [40, 57] },
   { label: 'Other', range: [58, 99] },
 ];
 
@@ -70,15 +70,15 @@ function hasChart(section: any): boolean {
 }
 ---
 
-<Base title="Operating Budget" budgetYear={budgetYear} currentHref={headlinePath('/operating/')}>
+<Base title="Operating budget" budgetYear={budgetYear} currentHref={headlinePath('/operating/')}>
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
-    <span>Operating Budget</span>
+    <span>Operating budget</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">Operating Budget</h1>
-  <p class="text-gray-600 mb-4">City of Pittsburgh {budgetYear.fiscalLabel} Operating Budget. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
+  <h1 class="text-3xl font-bold mb-2">Operating budget</h1>
+  <p class="text-gray-600 mb-4">City of Pittsburgh {budgetYear.fiscalLabel} operating budget. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
 
   <AmendmentNotice budgetYear={budgetYear} />
 

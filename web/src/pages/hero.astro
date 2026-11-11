@@ -36,7 +36,7 @@ const nodes: FlowNode[] = [
     category: 'revenue',
     color: revenueColor(r.label),
   })),
-  { id: 'trunk', label: `${HEADLINE.shortLabel} Operating Budget`, category: 'trunk' },
+  { id: 'trunk', label: `${HEADLINE.shortLabel} operating budget`, category: 'trunk' },
   ...bigDepts
     .slice()
     .sort((a, b) => b.amount - a.amount)
@@ -200,7 +200,7 @@ const totalLabel = `$${(revenueTotal / 1_000_000).toFixed(0)}M`;
           <div class="url">pittsburgh-budget-explorer.lemaliconsulting.com</div>
           <div class="source">Based on the {HEADLINE.fiscalLabel} budget as proposed by the Mayor — pending Council adoption.</div>
         </div>
-        <span class="source">Source: City of Pittsburgh {HEADLINE.fiscalLabel} Operating Budget</span>
+        <span class="source">Source: City of Pittsburgh {HEADLINE.fiscalLabel} operating budget</span>
       </div>
     </div>
   </body>

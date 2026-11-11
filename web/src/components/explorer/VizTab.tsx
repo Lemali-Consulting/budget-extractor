@@ -16,10 +16,10 @@ interface Props {
 }
 
 const VIZ_LABELS: Record<VizType, string> = {
-  bar: 'Bar Chart',
+  bar: 'Bar chart',
   trend: 'Trend',
-  changes: 'Year Changes',
-  funding: 'Funding Sources',
+  changes: 'Year changes',
+  funding: 'Funding sources',
 };
 
 // Lazy-loaded component cache — shared across renders

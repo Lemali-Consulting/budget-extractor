@@ -105,7 +105,7 @@ export default function PositionChanges({ newPositions, eliminatedPositions, shi
               : 'border-transparent text-gray-500 hover:text-gray-700'
           }`}
         >
-          New Positions
+          New positions
           <span class="ml-1.5 text-xs bg-green-100 text-green-700 rounded-full px-1.5 py-0.5">
             +{newPositions.length}
           </span>
@@ -118,7 +118,7 @@ export default function PositionChanges({ newPositions, eliminatedPositions, shi
               : 'border-transparent text-gray-500 hover:text-gray-700'
           }`}
         >
-          Eliminated Positions
+          Eliminated positions
           <span class="ml-1.5 text-xs bg-ps-red-100 text-ps-red-700 rounded-full px-1.5 py-0.5">
             -{eliminatedPositions.length}
           </span>

@@ -190,7 +190,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
       marginLeft: 220,
       width: chartWidth,
       height: Math.max(300, chartData.length * 28 + 60),
-      x: { label: 'Personnel Budget Change ($)', tickFormat: (d: number) => formatDollar(d) },
+      x: { label: 'Personnel budget change ($)', tickFormat: (d: number) => formatDollar(d) },
       y: { label: null },
       marks: [
         Plot.barX(chartData, {
@@ -219,15 +219,15 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
       {/* Summary cards */}
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">Positions Changed</div>
+          <div class="text-xs text-gray-500 mb-1">Positions changed</div>
           <div class="text-lg font-semibold">{matched.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">Positions Added</div>
+          <div class="text-xs text-gray-500 mb-1">Positions added</div>
           <div class="text-lg font-semibold text-green-600">{addedInAdopted.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">Positions Removed</div>
+          <div class="text-xs text-gray-500 mb-1">Positions removed</div>
           <div class="text-lg font-semibold text-ps-red-600">{removedFromProposed.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
@@ -240,7 +240,7 @@ export default function CrossYearPersonnel({ proposedPersonnel, adoptedPersonnel
 
       {/* Chart */}
       <div ref={chartContainerRef} class="bg-white rounded-lg border p-4 mb-6">
-        <h3 class="text-sm font-semibold text-gray-700 mb-2">Personnel Budget Changes by Department</h3>
+        <h3 class="text-sm font-semibold text-gray-700 mb-2">Personnel budget changes by department</h3>
         <div ref={chartRef} />
       </div>
 

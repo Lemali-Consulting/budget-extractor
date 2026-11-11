@@ -54,7 +54,7 @@ interface Props {
 type Tab = 'data' | 'visualize' | 'compare';
 
 const TAB_LABELS: Record<Tab, string> = {
-  data: 'Table Data',
+  data: 'Table data',
   visualize: 'Visualize',
   compare: 'Compare',
 };

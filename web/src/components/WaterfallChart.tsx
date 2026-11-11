@@ -43,7 +43,7 @@ export default function WaterfallChart({ data, yearLabel }: Props) {
 
     // Add total bar
     bars.push({
-      label: 'Total Revenue',
+      label: 'Total revenue',
       y1: 0,
       y2: cumulative,
       amount: cumulative,
@@ -94,7 +94,7 @@ export default function WaterfallChart({ data, yearLabel }: Props) {
 
   return (
     <div ref={containerRef}>
-      <h3 class="text-lg font-semibold mb-2">{yearLabel} Revenue Breakdown</h3>
+      <h3 class="text-lg font-semibold mb-2">{yearLabel} revenue breakdown</h3>
       <p class="text-sm text-gray-500 mb-4">
         How the city's projected revenue builds up from its component sources.
       </p>

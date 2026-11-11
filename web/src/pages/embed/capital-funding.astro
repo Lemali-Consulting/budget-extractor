@@ -8,7 +8,7 @@ import { HEADLINE } from '../../lib/budget-year';
 const capitalFunding = HEADLINE.views.capitalFundingSources;
 ---
 
-<Embed title="Capital Funding Sources" description={`Pittsburgh capital budget funding by source, ${HEADLINE.fiscalLabel}.`}>
+<Embed title="Capital funding sources" description={`Pittsburgh capital budget funding by source, ${HEADLINE.fiscalLabel}.`}>
   <EmbedWrapper client:load>
     <FundingSourceChart data={capitalFunding} client:load />
   </EmbedWrapper>

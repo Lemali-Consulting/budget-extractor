@@ -80,7 +80,7 @@ export default function ChangesChart({ data, title, color, routePrefix = '' }: P
       marginRight,
       width: containerWidth,
       height: Math.max(200, sorted.length * 32 + 40),
-      x: { label: 'Dollar Change', tickFormat: (d: number) => formatDollar(d) },
+      x: { label: 'Dollar change', tickFormat: (d: number) => formatDollar(d) },
       y: { label: null },
       marks: [
         Plot.barX(sorted, {

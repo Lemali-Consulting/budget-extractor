@@ -70,14 +70,14 @@ function fmtMoney(n: number): string {
 function AppendixA({ data, year }: { data: { departments: Department[]; totals: Totals }; year: number }) {
   return (
     <section id="appendix-a" class="scroll-mt-20">
-      <h2 class="text-2xl font-semibold mt-10 mb-3">Appendix A — Projects by Department</h2>
+      <h2 class="text-2xl font-semibold mt-10 mb-3">Appendix A — Projects by department</h2>
       <p class="text-sm text-gray-600 mb-4 max-w-3xl">
         Every {year} capital project grouped by the department that owns it, with funding broken
         out by source (CDBG, Bond, Paygo, Other) and the project total.
       </p>
       <div class="overflow-x-auto border border-gray-200 rounded">
         <table class="min-w-full text-sm">
-          <thead class="bg-gray-50 text-xs uppercase text-gray-500">
+          <thead class="bg-gray-50 text-xs text-gray-500">
             <tr>
               <th class="text-left px-3 py-2">Project</th>
               <th class="text-right px-3 py-2">CDBG</th>
@@ -192,12 +192,12 @@ function AppendixB({ data }: { data: { scoring: ScoringRow[] } }) {
 
   return (
     <section id="appendix-b" class="scroll-mt-20">
-      <h2 class="text-2xl font-semibold mt-10 mb-2">Appendix B — CPFC Scoring</h2>
+      <h2 class="text-2xl font-semibold mt-10 mb-2">Appendix B — CPFC scoring</h2>
       <p class="text-sm text-gray-600 mb-3 max-w-3xl">
         The Capital Program Facilitation Committee scores each proposed deliverable on six
         criteria — three from OMB, two from City Council, one from the Controller's Office.
         Each criterion is Yes/No; <strong>Count</strong> is the total Yes votes,
-        <strong> Adjusted Count</strong> weights criteria that were partially met.
+        <strong> Adjusted count</strong> weights criteria that were partially met.
         Higher scores indicate higher-priority projects.
       </p>
 
@@ -238,7 +238,7 @@ function AppendixB({ data }: { data: { scoring: ScoringRow[] } }) {
 
       <div class="overflow-x-auto border border-gray-200 rounded">
         <table class="min-w-full text-sm">
-          <thead class="bg-gray-50 text-xs uppercase text-gray-500 sticky top-0">
+          <thead class="bg-gray-50 text-xs text-gray-500 sticky top-0">
             <tr>
               <th class="text-left px-3 py-2 cursor-pointer select-none" onClick={() => toggleSort('project')}>
                 Project / Deliverable{sortIndicator('project')}
@@ -286,7 +286,7 @@ function AppendixC({ data }: { data: { entries: GlossaryEntry[] } }) {
     <section id="appendix-c" class="scroll-mt-20">
       <h2 class="text-2xl font-semibold mt-10 mb-3">Appendix C — Glossary</h2>
       <p class="text-sm text-gray-600 mb-4 max-w-3xl">
-        Acronyms and terms used throughout the Capital Budget.
+        Acronyms and terms used throughout the capital budget.
       </p>
       <dl class="divide-y divide-gray-100 border border-gray-200 rounded">
         {data.entries.map((e) => (
@@ -308,8 +308,8 @@ export default function CapitalAppendices({ data, year }: { data: AppendicesData
     <div>
       <nav class="flex flex-wrap gap-3 text-sm bg-gray-50 border border-gray-200 rounded px-3 py-2 mb-2">
         <span class="text-gray-500 font-medium">Jump to:</span>
-        <a href="#appendix-a" class="text-ps-blue-700 hover:underline">A · Projects by Department</a>
-        <a href="#appendix-b" class="text-ps-blue-700 hover:underline">B · CPFC Scoring</a>
+        <a href="#appendix-a" class="text-ps-blue-700 hover:underline">A · Projects by department</a>
+        <a href="#appendix-b" class="text-ps-blue-700 hover:underline">B · CPFC scoring</a>
         <a href="#appendix-c" class="text-ps-blue-700 hover:underline">C · Glossary</a>
       </nav>
       <AppendixA data={data.appendix_a} year={year} />

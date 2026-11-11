@@ -30,7 +30,7 @@ function fmtChange(current: number, prior: number): string {
 ---
 
 <div class="bg-white rounded-lg border p-4" data-testid="personnel-total">
-  <div class="text-xs text-gray-400 uppercase tracking-wide">Personnel</div>
+  <div class="text-xs text-gray-400">Personnel</div>
   {salaries && (
     <>
       <div class="text-2xl font-bold text-purple-900 mt-1" data-testid="salaries-amount" data-amount={salaries.current}>{fmtM(salaries.current)}</div>
@@ -43,7 +43,7 @@ function fmtChange(current: number, prior: number): string {
   )}
   {showDetails && <div class="text-xs text-gray-400 mt-0.5">
     {Math.round(fte).toLocaleString('en-US')} General Fund{' '}
-    <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a>
+    <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-time equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a>
     {' '}(our count; the budget prints no citywide total)
   </div>}
 </div>

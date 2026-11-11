@@ -66,7 +66,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
   const hasBreakdown = breakdownCol >= 0;
 
   const availableTabs: { key: Tab; label: string }[] = [];
-  if (hasTrend) availableTabs.push({ key: 'trend', label: 'Budget Trend' });
+  if (hasTrend) availableTabs.push({ key: 'trend', label: 'Budget trend' });
   if (hasChanges) availableTabs.push({ key: 'changes', label: 'Year-over-Year' });
   if (hasBreakdown) availableTabs.push({ key: 'breakdown', label: 'Breakdown' });
 

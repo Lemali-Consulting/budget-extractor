@@ -8,8 +8,8 @@ import { HEADLINE } from '../../lib/budget-year';
 const data = HEADLINE.views.budgetChanges;
 ---
 
-<Embed title="Biggest Budget Decreases" description={`Top department budget decreases, ${HEADLINE.comparisonLabel}.`}>
-  <EmbedWrapper title={`Biggest Budget Decreases, ${HEADLINE.comparisonLabel}`} client:load>
+<Embed title="Biggest budget decreases" description={`Top department budget decreases, ${HEADLINE.comparisonLabel}.`}>
+  <EmbedWrapper title={`Biggest budget decreases, ${HEADLINE.comparisonLabel}`} client:load>
     <ChangesChart
       client:load
       data={data.topDecreases}

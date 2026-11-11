@@ -17,7 +17,7 @@ interface Props {
 const { title, subtitle, description, date, budgetYear = BUDGET_2026 } = Astro.props;
 const archiveLinks = ARCHIVE_YEARS.map((y) => ({
   href: yearPath({ budgetYear: y, path: '/operating/' }),
-  label: `${y.year} Archive`,
+  label: `${y.year} archive`,
   prefix: `${y.routePrefix}/`,
 }));
 const canonicalUrl = Astro.url.href;
@@ -91,9 +91,9 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[12rem]">
                   <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
-                  <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
+                  <a href="/flow/" class={dropdownItemClass('/flow/')}>Money flow</a>
                   <a href="/trends/" class={dropdownItemClass('/trends/')}>Trends</a>
-                  <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
+                  <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs adopted</a>
                   {archiveLinks.map((a) => (
                     <a href={a.href} class={dropdownItemClass(a.prefix)}>{a.label}</a>
                   ))}
@@ -142,7 +142,7 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
         <details class="mb-6">
           <summary class="text-sm font-medium text-gray-500 cursor-pointer hover:text-gray-700">Methodology</summary>
           <p class="mt-2 text-sm text-gray-500 leading-relaxed">
-            All figures are extracted from the City of Pittsburgh's official {budgetYear.fiscalLabel} Operating and Capital Budget documents
+            All figures are extracted from the City of Pittsburgh's official {budgetYear.fiscalLabel} operating and capital budget documents
             using automated table extraction. Year-over-year comparisons use the {budgetYear.priorLabel} as baseline.
             For details on data extraction and known limitations, see the
             <a href="/about/" class="text-ps-blue-600 hover:underline">About page</a>.
@@ -150,8 +150,8 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
         </details>
         <div class="flex items-center gap-4 text-sm">
           <a href="/stories/" class="text-ps-blue-600 hover:underline">&larr; More stories</a>
-          <a href="/brief/" class="text-ps-blue-600 hover:underline">Budget in Brief</a>
-          <a href="/" class="text-ps-blue-600 hover:underline">Full Explorer</a>
+          <a href="/brief/" class="text-ps-blue-600 hover:underline">Budget in brief</a>
+          <a href="/" class="text-ps-blue-600 hover:underline">Full explorer</a>
         </div>
       </footer>
     </article>

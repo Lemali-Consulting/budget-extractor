@@ -43,7 +43,7 @@ const perResident = Math.round(total / 302_971);
 
 <Story
   budgetYear={BUDGET_2026}
-  title="Where Your Tax Dollar Goes"
+  title="Where your tax dollar goes"
   subtitle="A cent-by-cent breakdown of Pittsburgh's operating budget"
   description="Every dollar the city collects, broken down by department. How much goes to police? Parks? What about debt?"
   date="March 2026"
@@ -66,7 +66,7 @@ const perResident = Math.round(total / 302_971);
     debt service, pension contributions, and insurance — costs that aren't tied to any one department.
   </p>
 
-  <h2>Public Safety: {psCents}¢ of every dollar</h2>
+  <h2>Public safety: {psCents}¢ of every dollar</h2>
 
   <p>
     Combine Police ({((psDepts.find(d => d.slug === 'bureau-of-police')?.amount || 0) / total * 100).toFixed(0)}¢),

@@ -57,7 +57,7 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
       width: containerWidth,
       height: Math.max(300, chartData.length * 28),
       x: {
-        label: sizeBy === 'fte' ? 'FTE Count' : 'Budget ($)',
+        label: sizeBy === 'fte' ? 'FTE count' : 'Budget ($)',
         tickFormat: sizeBy === 'budget'
           ? (d: number) => `$${(d / 1_000_000).toFixed(0)}M`
           : undefined,
@@ -68,7 +68,7 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
         scheme: 'RdBu',
         pivot: 0,
         legend: true,
-        label: sizeBy === 'fte' ? 'FTE Change' : 'Budget Change',
+        label: sizeBy === 'fte' ? 'FTE change' : 'Budget change',
       },
       marks: [
         Plot.barX(chartData, {
@@ -125,13 +125,13 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
   return (
     <div class="mb-8" ref={containerRef}>
       <div class="flex items-center gap-3 mb-4">
-        <h3 class="text-lg font-semibold">Staffing Distribution</h3>
+        <h3 class="text-lg font-semibold">Staffing distribution</h3>
         <select
           class="border rounded px-2 py-1 text-sm"
           value={sizeBy}
           onChange={(e) => setSizeBy((e.target as HTMLSelectElement).value as SizeBy)}
         >
-          <option value="fte">FTE Count</option>
+          <option value="fte">FTE count</option>
           <option value="budget">Budget</option>
         </select>
       </div>

@@ -7,13 +7,13 @@ import { PS_BLUE_SCALE, PS_RED_SCALE, PS_SWATCHES, PS_YELLOW_SCALE } from './bra
 // Public Source brand colors where the palette has one; green, cyan and
 // slate stay from Tailwind because the brand palette has no equivalent.
 export const REVENUE_COLORS: Record<string, string> = {
-  'Tax Revenue': PS_BLUE_SCALE[700],     // largest, anchor
-  'Intergovernmental Revenue': '#0891b2', // cyan-600
-  'Charges For Services': '#16a34a',     // green-600
-  'Licenses & Permits Revenue': PS_YELLOW_SCALE[500],
-  'Fines & Forfeitures': PS_RED_SCALE[600],
-  'Interest Earnings': PS_SWATCHES.indigo,
-  'Miscellaneous Revenues': '#64748b',   // slate-500
+  'Tax revenue': PS_BLUE_SCALE[700],     // largest, anchor
+  'Intergovernmental revenue': '#0891b2', // cyan-600
+  'Charges for services': '#16a34a',     // green-600
+  'Licenses & permits revenue': PS_YELLOW_SCALE[500],
+  'Fines & forfeitures': PS_RED_SCALE[600],
+  'Interest earnings': PS_SWATCHES.indigo,
+  'Miscellaneous revenues': '#64748b',   // slate-500
 };
 
 // Capital funding sources — keep the existing SOURCE_COLORS in spirit

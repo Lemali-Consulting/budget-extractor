@@ -29,7 +29,7 @@ test("home page loads with key content", async ({ page }) => {
   await expect(header.getByRole("link", { name: "Explore", exact: true })).toBeVisible();
 
   // Headline is the 2027 proposed budget; amendment callout is 2026-only.
-  await expect(main(page).getByText(/2027 Proposed/).first()).toBeVisible();
+  await expect(main(page).getByText(/2027 proposed/).first()).toBeVisible();
   await expect(main(page).locator('a[href="/amendments/"]')).toHaveCount(0);
   // Archive entry point
   await expect(page.locator('a[href="/2026/operating/"]').first()).toBeAttached();
@@ -57,7 +57,7 @@ test("operating section detail renders tables", async ({ page }) => {
   await page.goto("/sections/revenue-detail/");
 
   await expect(main(page).locator("h1").first()).toContainText(
-    "Revenue Detail",
+    "Revenue detail",
   );
   // Should have at least one table
   await expect(main(page).locator("table").first()).toBeVisible();
@@ -114,7 +114,7 @@ test("data explorer loads", async ({ page }) => {
   await page.goto("/explorer/");
 
   // Title is rendered by the Preact DataExplorer component
-  await expect(page).toHaveTitle(/Data Explorer/);
+  await expect(page).toHaveTitle(/Data explorer/i);
 });
 
 // ---------------------------------------------------------------------------
@@ -141,7 +141,7 @@ for (const statsPage of ["/", "/dashboard/"]) {
     await card.getByRole("link", { name: /See the funds/i }).click();
     await expect(page).toHaveURL(/\/trust-funds\/$/);
 
-    await expect(main(page).locator("h1").first()).toContainText("Trust Funds");
+    await expect(main(page).locator("h1").first()).toContainText("Trust funds");
     await expect(main(page).getByTestId("trust-fund-sum")).toHaveText(cardTotal);
   });
 }
@@ -336,10 +336,10 @@ for (const route of ["/", "/operating/", "/sections/revenue-detail/", "/capital/
 
 test("headline pages are labeled 2027 Proposed", async ({ page }) => {
   await page.goto("/operating/");
-  await expect(main(page).getByText(/FY2027 Proposed Operating Budget/).first()).toBeVisible();
+  await expect(main(page).getByText(/FY2027 proposed operating budget/).first()).toBeVisible();
 
   await page.goto("/capital/");
-  await expect(main(page).getByText(/FY2027 Proposed Capital Budget/).first()).toBeVisible();
+  await expect(main(page).getByText(/FY2027 proposed capital budget/).first()).toBeVisible();
 
   await page.goto("/sections/revenue-detail/");
   await expect(main(page).getByText(/2027/).first()).toBeVisible();
@@ -380,14 +380,14 @@ for (const { route, current, heading } of ARCHIVE_ROUTES) {
 
 test("archive section page uses 2026 labels and images", async ({ page }) => {
   await page.goto("/2026/sections/bureau-of-police/");
-  await expect(main(page).getByText(/2026 Budget/).first()).toBeVisible();
+  await expect(main(page).getByText(/2026 budget/).first()).toBeVisible();
   await page.goto("/2026/capital/");
-  await expect(main(page).getByText(/FY2026 Capital Budget/).first()).toBeVisible();
+  await expect(main(page).getByText(/FY2026 capital budget/).first()).toBeVisible();
 });
 
 test("archive changes page compares 2026 with 2025", async ({ page }) => {
   await page.goto("/2026/changes/");
-  await expect(main(page).getByText(/2026 Budget vs 2025/).first()).toBeVisible();
+  await expect(main(page).getByText(/2026 budget vs 2025/).first()).toBeVisible();
 });
 
 test("archive chart bars link inside the archive", async ({ page }) => {
@@ -406,7 +406,7 @@ test("archive chart bars link inside the archive", async ({ page }) => {
 test("cross-year page renders and links into the 2026 archive", async ({ page }) => {
   await page.goto("/cross-year/");
   await expect(main(page).locator("h1").first()).toBeVisible();
-  await expect(main(page).getByText(/2025 Proposed/).first()).toBeVisible();
+  await expect(main(page).getByText(/2025 proposed/).first()).toBeVisible();
   await expect(main(page).locator('a[href^="/2026/sections/"]').first()).toBeAttached();
   await expect(main(page).locator('a[href^="/sections/"]')).toHaveCount(0);
 });
@@ -677,7 +677,7 @@ test("trends page charts headline figures over time", async ({ page }) => {
 
   // Callouts mention the headline year and are computed from data
   const callouts = main(page).locator('[data-testid="trend-callouts"]');
-  await expect(callouts).toContainText(/2027 Proposed/);
+  await expect(callouts).toContainText(/2027 proposed/);
   await expect(callouts).toContainText(/\$\d/);
 
   // Notes block
@@ -832,4 +832,39 @@ test("the site requests no fonts from Google", async ({ page }) => {
 test("header wordmark is an image of the brand headline face, with a text alternative", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("header").first().getByRole("img", { name: "Budget Explorer" })).toBeVisible();
+});
+
+// ---------------------------------------------------------------------------
+// House style: sentence case
+// ---------------------------------------------------------------------------
+// Public Source capitalizes only the first word and proper nouns. Section
+// names taken from the budget PDF follow that style; department and fund
+// names are proper nouns and stay as printed.
+test("PDF section names are shown in sentence case", async ({ page }) => {
+  await page.goto("/sections/expenditure-summary/");
+  await expect(main(page).locator("h1").first()).toHaveText(/^\s*Expenditure summary\s*$/);
+});
+
+test("department names keep their capitals", async ({ page }) => {
+  await page.goto("/sections/bureau-of-police/");
+  await expect(main(page).locator("h1").first()).toContainText("Bureau of Police");
+});
+
+test("revenue categories on the money flow page are sentence case", async ({ page }) => {
+  await page.goto("/flow/");
+  await expect(main(page)).toContainText("Charges for services");
+  await expect(main(page)).not.toContainText("Charges For Services");
+});
+
+test("dashboard year picker labels follow sentence case", async ({ page }) => {
+  await page.goto("/dashboard/");
+  const options = main(page).locator("select option");
+  await expect(options.filter({ hasText: /^\d{4} budget$/ }).first()).toBeAttached();
+  await expect(options.filter({ hasText: /^\d{4} Budget$/ })).toHaveCount(0);
+});
+
+test("glossary 'used in' links show section names in sentence case", async ({ page }) => {
+  await page.goto("/glossary/");
+  await expect(main(page).getByRole("link", { name: "Revenue detail", exact: true }).first()).toBeVisible();
+  await expect(main(page).getByRole("link", { name: "Revenue Detail", exact: true })).toHaveCount(0);
 });

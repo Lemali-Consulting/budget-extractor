@@ -132,7 +132,7 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
       marginLeft: 220,
       width: chartWidth,
       height: Math.max(300, chartData.length * 28 + 60),
-      x: { label: 'Change from Proposed to Adopted ($)', tickFormat: (d: number) => formatDollar(d) },
+      x: { label: 'Change from proposed to adopted ($)', tickFormat: (d: number) => formatDollar(d) },
       y: { label: null },
       marks: [
         Plot.barX(chartData, {
@@ -153,7 +153,7 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
       {/* Summary cards */}
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">Departments Compared</div>
+          <div class="text-xs text-gray-500 mb-1">Departments compared</div>
           <div class="text-lg font-semibold">{comparison.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
@@ -165,7 +165,7 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
           <div class="text-lg font-semibold">{changed.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">Net Change</div>
+          <div class="text-xs text-gray-500 mb-1">Net change</div>
           <div class={`text-lg font-semibold ${totalDiff >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
             {totalDiff >= 0 ? '+' : ''}{formatDollar(totalDiff)}
           </div>
@@ -175,7 +175,7 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
       {/* Chart */}
       {changed.length > 0 && (
         <div ref={chartContainerRef} class="bg-white rounded-lg border p-4 mb-6">
-          <h3 class="text-sm font-semibold text-gray-700 mb-2">Departments Changed by Council</h3>
+          <h3 class="text-sm font-semibold text-gray-700 mb-2">Departments changed by Council</h3>
           <div ref={chartRef} />
         </div>
       )}
@@ -202,10 +202,10 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
                 Department{arrow('department')}
               </th>
               <th class="text-right p-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSort('proposed')}>
-                2025 Proposed{arrow('proposed')}
+                2025 proposed{arrow('proposed')}
               </th>
               <th class="text-right p-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSort('adopted')}>
-                2025 Adopted{arrow('adopted')}
+                2025 adopted{arrow('adopted')}
               </th>
               <th class="text-right p-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSort('difference')}>
                 Change{arrow('difference')}
@@ -249,8 +249,8 @@ export default function CrossYearComparison({ proposed, adopted, routePrefix }: 
       </div>
 
       <p class="text-xs text-gray-400 mt-4">
-        "2025 Proposed" comes from the 2025 budget document (mayor's proposal).
-        "2025 Adopted" comes from the 2026 budget document (council-approved figure).
+        "2025 proposed" comes from the 2025 budget document (mayor's proposal).
+        "2025 adopted" comes from the 2026 budget document (council-approved figure).
         Departments with extreme discrepancies (&gt;10x) are excluded as likely data quality issues.
       </p>
     </div>

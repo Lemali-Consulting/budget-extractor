@@ -18,7 +18,7 @@ interface Props {
 
 const {
   title,
-  description = `Explore the City of Pittsburgh ${HEADLINE.fiscalLabel} Operating and Capital Budget data.`,
+  description = `Explore the City of Pittsburgh ${HEADLINE.fiscalLabel} operating and capital budget data.`,
   fullWidth = false,
   ogTitle,
   ogDescription,
@@ -52,7 +52,7 @@ function dropdownItemClass(href: string): string {
 const storiesHrefs = ['/stories/', '/departments/'];
 const archiveLinks = ARCHIVE_YEARS.map((y) => ({
   href: yearPath({ budgetYear: y, path: '/operating/' }),
-  label: `${y.year} Archive`,
+  label: `${y.year} archive`,
   prefix: `${y.routePrefix}/`,
 }));
 const budgetsHrefs = ['/operating/', '/capital/', '/flow/', '/trends/', '/amendments/', '/cross-year/', ...archiveLinks.map((a) => a.prefix)];
@@ -107,10 +107,10 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
                 <div class="bg-neutral-800 rounded shadow-lg py-1 min-w-[12rem]">
                   <a href="/operating/" class={dropdownItemClass('/operating/')}>Operating</a>
                   <a href="/capital/" class={dropdownItemClass('/capital/')}>Capital</a>
-                  <a href="/flow/" class={dropdownItemClass('/flow/')}>Money Flow</a>
+                  <a href="/flow/" class={dropdownItemClass('/flow/')}>Money flow</a>
                   <a href="/trends/" class={dropdownItemClass('/trends/')}>Trends</a>
-                  <a href="/amendments/" class={dropdownItemClass('/amendments/')}>2026 Amendments</a>
-                  <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs Adopted</a>
+                  <a href="/amendments/" class={dropdownItemClass('/amendments/')}>2026 amendments</a>
+                  <a href="/cross-year/" class={dropdownItemClass('/cross-year/')}>Proposed vs adopted</a>
                   {archiveLinks.map((a) => (
                     <a href={a.href} class={dropdownItemClass(a.prefix)}>{a.label}</a>
                   ))}
@@ -138,24 +138,24 @@ const exploreHrefs = ['/compare/', '/explorer/', '/dashboard/', '/personnel/', '
         <nav id="mobile-nav" class="hidden md:hidden mt-3 pb-2 text-sm" aria-label="Mobile navigation">
           <a href="/brief/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/brief/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Brief</a>
           <div class="mt-3">
-            <div class="px-2 text-xs uppercase tracking-wide text-ps-yellow-100 font-semibold">Stories</div>
+            <div class="px-2 text-xs text-ps-yellow-100 font-semibold">Stories</div>
             <a href="/stories/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/stories/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Stories</a>
             <a href="/departments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/departments/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Departments</a>
           </div>
           <div class="mt-3">
-            <div class="px-2 text-xs uppercase tracking-wide text-ps-yellow-100 font-semibold">Budgets</div>
+            <div class="px-2 text-xs text-ps-yellow-100 font-semibold">Budgets</div>
             <a href="/operating/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/operating/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Operating</a>
             <a href="/capital/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/capital/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Capital</a>
-            <a href="/flow/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/flow/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Money Flow</a>
+            <a href="/flow/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/flow/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Money flow</a>
             <a href="/trends/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/trends/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Trends</a>
-            <a href="/amendments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/amendments/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>2026 Amendments</a>
-            <a href="/cross-year/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/cross-year/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Proposed vs Adopted</a>
+            <a href="/amendments/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/amendments/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>2026 amendments</a>
+            <a href="/cross-year/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/cross-year/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Proposed vs adopted</a>
             {archiveLinks.map((a) => (
               <a href={a.href} class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive(a.prefix) ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>{a.label}</a>
             ))}
           </div>
           <div class="mt-3">
-            <div class="px-2 text-xs uppercase tracking-wide text-ps-yellow-100 font-semibold">Explore</div>
+            <div class="px-2 text-xs text-ps-yellow-100 font-semibold">Explore</div>
             <a href="/dashboard/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/dashboard/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Dashboard</a>
             <a href="/explorer/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/explorer/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Explorer</a>
             <a href="/compare/" class={`flex items-center min-h-[40px] px-2 py-2 rounded ${isActive('/compare/') ? 'bg-neutral-800 text-white font-semibold' : 'text-gray-200 hover:bg-neutral-800 hover:text-white'}`}>Compare</a>

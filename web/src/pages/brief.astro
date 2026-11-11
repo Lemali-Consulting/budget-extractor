@@ -77,12 +77,12 @@ function fmtB(n: number): string {
 ---
 
 <Base
-  title="Budget in Brief"
+  title="Budget in brief"
   description={`Pittsburgh's ${HEADLINE.fiscalLabel} budget explained in plain language — where the money comes from, where it goes, and what changed.`}
   ogDescription={`Pittsburgh's ${fmtM(totalCurrent)} operating budget explained: ${taxPct}% from taxes, ${publicSafetyPct}% to public safety, ${changes.newPositions.length} new positions.`}
 >
   <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl font-bold mb-2">Pittsburgh's {HEADLINE.label} Budget in Brief</h1>
+    <h1 class="text-3xl font-bold mb-2">Pittsburgh's {HEADLINE.label} budget in brief</h1>
     <p class="text-gray-600 mb-8 text-lg">Five things to know about how Pittsburgh plans to spend your money this year.</p>
 
     <!-- Jump nav -->
@@ -99,8 +99,8 @@ function fmtB(n: number): string {
       <h2 class="text-2xl font-bold mb-4">How big is the budget?</h2>
       <div class="bg-ps-blue-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <HeroStat label="Operating Budget" value={fmtM(totalCurrent)} detail={`${Number(changePct) >= 0 ? '+' : ''}${changePct}% vs ${HEADLINE.priorYear}`} />
-          <HeroStat label="Per Resident" value={`$${perResident.toLocaleString()}`} detail="Based on 2020 Census" />
+          <HeroStat label="Operating budget" value={fmtM(totalCurrent)} detail={`${Number(changePct) >= 0 ? '+' : ''}${changePct}% vs ${HEADLINE.priorYear}`} />
+          <HeroStat label="Per resident" value={`$${perResident.toLocaleString()}`} detail="Based on 2020 Census" />
           <HeroStat label={`Capital (${HEADLINE.year})`} value={fmtM(capitalCurrent)} detail={`6-year plan: ${fmtB(capitalTotal)}`} />
         </div>
       </div>
@@ -160,9 +160,9 @@ function fmtB(n: number): string {
       </div>
       <div class="bg-cyan-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <HeroStat label="Total Positions" value={totalFteCurrent.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
+          <HeroStat label="Total positions" value={totalFteCurrent.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
           <HeroStat label="Year-over-Year" value={`${fteChange >= 0 ? '+' : ''}${fteChange}`} detail={`FTE change vs ${HEADLINE.priorYear}`} color={fteChange >= 0 ? 'text-green-700' : 'text-ps-red-700'} />
-          <HeroStat label="New Positions" value={`${changes.newPositions.length}`} detail={`${changes.eliminatedPositions.length} eliminated`} color="text-cyan-900" />
+          <HeroStat label="New positions" value={`${changes.newPositions.length}`} detail={`${changes.eliminatedPositions.length} eliminated`} color="text-cyan-900" />
         </div>
       </div>
       <div class="bg-white rounded-lg border p-5 mb-4">
@@ -191,8 +191,8 @@ function fmtB(n: number): string {
       </div>
       <div class="bg-orange-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <HeroStat label={`${HEADLINE.year} Capital Spending`} value={fmtM(capitalCurrent)} color="text-orange-900" />
-          <HeroStat label="6-Year Capital Plan" value={fmtB(capitalTotal)} detail={`${HEADLINE.year} through ${HEADLINE.year + 5}`} color="text-orange-900" />
+          <HeroStat label={`${HEADLINE.year} capital spending`} value={fmtM(capitalCurrent)} color="text-orange-900" />
+          <HeroStat label="6-year capital plan" value={fmtB(capitalTotal)} detail={`${HEADLINE.year} through ${HEADLINE.year + 5}`} color="text-orange-900" />
         </div>
       </div>
       <p class="text-gray-700 leading-relaxed">
@@ -211,7 +211,7 @@ function fmtB(n: number): string {
       <summary class="px-4 py-3 text-sm font-medium text-gray-600 cursor-pointer hover:bg-gray-50">About this data</summary>
       <div class="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
         <p class="mb-2">
-          All figures are extracted from the City of Pittsburgh's official {HEADLINE.fiscalLabel} Operating and Capital Budget documents
+          All figures are extracted from the City of Pittsburgh's official {HEADLINE.fiscalLabel} operating and capital budget documents
           using automated table extraction. Population figure (302,971) is from the 2020 U.S. Census.
         </p>
         <p class="mb-2">

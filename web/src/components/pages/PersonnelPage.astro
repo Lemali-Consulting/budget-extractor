@@ -38,7 +38,7 @@ function fmtDollar(n: number): string {
     <span>Personnel</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">Personnel Explorer</h1>
+  <h1 class="text-3xl font-bold mb-2">Personnel explorer</h1>
   <p class="text-gray-600 mb-2">Search and filter positions across all departments.</p>
   <p class="text-sm text-gray-500 mb-6 max-w-3xl" data-testid="personnel-scope-note">
     Salary figures here come from each department's position table: {DEPARTMENT_SALARY_SCOPE.toLowerCase()}, trust funds included.
@@ -54,20 +54,20 @@ function fmtDollar(n: number): string {
 
   {/* Staffing changes summary */}
   <div class="bg-white rounded-lg border p-4 mb-6">
-    <h2 class="text-lg font-semibold mb-3">Staffing Changes: {budgetYear.rangeLabel}</h2>
+    <h2 class="text-lg font-semibold mb-3">Staffing changes: {budgetYear.rangeLabel}</h2>
     <div class="grid grid-cols-3 gap-4 mb-4">
       <div class="bg-gray-50 rounded-lg p-3">
-        <div class="text-xs text-gray-500 mb-1">Net <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a> Change</div>
+        <div class="text-xs text-gray-500 mb-1">Net <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-time equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a> Change</div>
         <div class={`text-lg font-semibold ${fteChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
           {fteChange >= 0 ? '+' : ''}{Math.round(fteChange)}
         </div>
       </div>
       <div class="bg-gray-50 rounded-lg p-3">
-        <div class="text-xs text-gray-500 mb-1">New Positions</div>
+        <div class="text-xs text-gray-500 mb-1">New positions</div>
         <div class="text-lg font-semibold text-green-600">+{newCount}</div>
       </div>
       <div class="bg-gray-50 rounded-lg p-3">
-        <div class="text-xs text-gray-500 mb-1">Eliminated Positions</div>
+        <div class="text-xs text-gray-500 mb-1">Eliminated positions</div>
         <div class="text-lg font-semibold text-ps-red-600">-{elimCount}</div>
       </div>
     </div>
@@ -75,7 +75,7 @@ function fmtDollar(n: number): string {
     <div class="grid md:grid-cols-2 gap-4">
       {topNew.length > 0 && (
         <div>
-          <h3 class="text-sm font-semibold text-green-700 mb-2">Top New Positions</h3>
+          <h3 class="text-sm font-semibold text-green-700 mb-2">Top new positions</h3>
           <ul class="text-sm space-y-1">
             {topNew.map((p: any) => (
               <li class="flex justify-between">
@@ -88,7 +88,7 @@ function fmtDollar(n: number): string {
       )}
       {topElim.length > 0 && (
         <div>
-          <h3 class="text-sm font-semibold text-ps-red-700 mb-2">Top Eliminated Positions</h3>
+          <h3 class="text-sm font-semibold text-ps-red-700 mb-2">Top eliminated positions</h3>
           <ul class="text-sm space-y-1">
             {topElim.map((p: any) => (
               <li class="flex justify-between">

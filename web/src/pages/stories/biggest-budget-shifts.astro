@@ -17,7 +17,7 @@ function fmtM(n: number): string {
 
 <Story
   budgetYear={BUDGET_2026}
-  title="5 Biggest Budget Shifts in 2026"
+  title="5 biggest budget shifts in 2026"
   subtitle="Where the money moved — and what it tells us about city priorities"
   description="The top budget increases and decreases in Pittsburgh's FY2026 operating budget, and what they mean."
   date="March 2026"
@@ -29,7 +29,7 @@ function fmtM(n: number): string {
     increases while others were cut. Here are the five biggest moves.
   </p>
 
-  <h2>The Biggest Increases</h2>
+  <h2>The biggest increases</h2>
 
   <div class="chart-container">
     <ChangesChart data={topInc} title="" color="#16a34a" client:load />
@@ -45,7 +45,7 @@ function fmtM(n: number): string {
     </>
   ))}
 
-  <h2>The Biggest Decreases</h2>
+  <h2>The biggest decreases</h2>
 
   <div class="chart-container">
     <ChangesChart data={topDec} title="" color="#DC2725" client:load />
@@ -66,7 +66,7 @@ function fmtM(n: number): string {
       <strong>The staffing picture:</strong> Across the city, {data.newPositions.length} positions are
       being created and {data.eliminatedPositions.length} eliminated — a net change of
       {data.totalFte2026 - data.totalFte2025 > 0 ? '+' : ''}{Math.round(data.totalFte2026 - data.totalFte2025)} FTE.
-      See the full breakdown on the <a href="/2026/changes/" class="underline">What Changed</a> page.
+      See the full breakdown on the <a href="/2026/changes/" class="underline">What changed</a> page.
     </p>
   </div>
 </Story>

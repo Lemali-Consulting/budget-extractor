@@ -31,12 +31,12 @@ const jump = [
   { id: 'increases', label: 'Increases' },
   { id: 'decreases', label: 'Decreases' },
   { id: 'legislative', label: 'Legislative' },
-  { id: 'all-depts', label: 'All Depts' },
+  { id: 'all-depts', label: 'All depts' },
 ];
 ---
 
-<Base title={`${year} Amendments`} budgetYear={BUDGET_2026} currentHref="/" description={`How City Council's amended ${year} operating budget (${label}) differs from the December adopted budget.`} ogDescription={`The amended ${year} operating budget is ${netChange >= 0 ? 'up' : 'down'} ${netPct}% (${fmtM(Math.abs(netChange))}) from the adopted budget.`}>
-  <h1 class="text-3xl font-bold mb-2">{year} Budget Amendments</h1>
+<Base title={`${year} amendments`} budgetYear={BUDGET_2026} currentHref="/" description={`How City Council's amended ${year} operating budget (${label}) differs from the December adopted budget.`} ogDescription={`The amended ${year} operating budget is ${netChange >= 0 ? 'up' : 'down'} ${netPct}% (${fmtM(Math.abs(netChange))}) from the adopted budget.`}>
+  <h1 class="text-3xl font-bold mb-2">{year} budget amendments</h1>
   <p class="text-gray-600 mb-4">
     The City published an amended {year} operating budget (<strong>{label}</strong>), revising the
     version adopted in December. This page compares it line-by-line against the adopted budget.
@@ -58,19 +58,19 @@ const jump = [
       <div class="text-lg font-semibold">{fmtM(amended)}</div>
     </div>
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-500 mb-1">Net Change</div>
+      <div class="text-xs text-gray-500 mb-1">Net change</div>
       <div class={`text-lg font-semibold ${netChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {netChange >= 0 ? '+' : ''}{netPct}% ({fmtM(Math.abs(netChange))})
       </div>
     </div>
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-500 mb-1">FTE Change</div>
+      <div class="text-xs text-gray-500 mb-1">FTE change</div>
       <div class={`text-lg font-semibold ${fteChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
         {fteChange >= 0 ? '+' : ''}{Math.round(fteChange * 10) / 10}
       </div>
     </div>
     <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-500 mb-1">Changed Line Items</div>
+      <div class="text-xs text-gray-500 mb-1">Changed line items</div>
       <div class="text-lg font-semibold">{meta.changedLineItemCount ?? '—'}</div>
     </div>
   </div>
@@ -83,16 +83,16 @@ const jump = [
   </nav>
 
   <div id="increases" class="scroll-mt-12">
-    <ChangesChart client:load routePrefix={prefix} data={data.topIncreases} title="Largest Amendment Increases" color="#16a34a" />
+    <ChangesChart client:load routePrefix={prefix} data={data.topIncreases} title="Largest amendment increases" color="#16a34a" />
   </div>
 
   <div id="decreases" class="scroll-mt-12">
-    <ChangesChart client:load routePrefix={prefix} data={data.topDecreases} title="Largest Amendment Decreases" color="#DC2725" />
+    <ChangesChart client:load routePrefix={prefix} data={data.topDecreases} title="Largest amendment decreases" color="#DC2725" />
   </div>
 
   {data.legislativeChanges?.length > 0 && (
     <div id="legislative" class="mb-8 scroll-mt-12">
-      <h2 class="text-2xl font-bold mb-2">Legislative Changes</h2>
+      <h2 class="text-2xl font-bold mb-2">Legislative changes</h2>
       <p class="text-gray-600 mb-4 text-sm">Changes in the authorizing legislation that aren't individual table line items.</p>
       <div class="grid gap-3 md:grid-cols-2">
         {data.legislativeChanges.map((c: any) => (
@@ -107,7 +107,7 @@ const jump = [
   )}
 
   <div id="all-depts" class="bg-white rounded-lg border p-4 scroll-mt-12">
-    <h3 class="text-lg font-semibold mb-3">All Department Changes</h3>
+    <h3 class="text-lg font-semibold mb-3">All department changes</h3>
     <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>

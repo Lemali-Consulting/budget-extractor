@@ -4,81 +4,81 @@
  * visually across the trunk. */
 
 export type DepartmentGroup =
-  | 'Public Safety'
-  | 'Public Works & Infrastructure'
-  | 'Parks & Quality of Life'
-  | 'Finance & Administration'
-  | 'Governance & Legal'
-  | 'Planning & Services';
+  | 'Public safety'
+  | 'Public works & infrastructure'
+  | 'Parks & quality of life'
+  | 'Finance & administration'
+  | 'Governance & legal'
+  | 'Planning & services';
 
 export const GROUP_COLORS: Record<DepartmentGroup, string> = {
-  'Public Safety': '#9f1239',                 // rose-800
-  'Public Works & Infrastructure': '#ea580c', // orange-600
-  'Parks & Quality of Life': '#15803d',       // green-700
-  'Finance & Administration': '#4338ca',      // indigo-700
-  'Governance & Legal': '#a21caf',            // fuchsia-700
-  'Planning & Services': '#0d9488',           // teal-600
+  'Public safety': '#9f1239',                 // rose-800
+  'Public works & infrastructure': '#ea580c', // orange-600
+  'Parks & quality of life': '#15803d',       // green-700
+  'Finance & administration': '#4338ca',      // indigo-700
+  'Governance & legal': '#a21caf',            // fuchsia-700
+  'Planning & services': '#0d9488',           // teal-600
 };
 
 const SLUG_TO_GROUP: Record<string, DepartmentGroup> = {
   // Public Safety
-  'bureau-of-police': 'Public Safety',
-  'bureau-of-fire': 'Public Safety',
-  'bureau-of-emergency-medical-services': 'Public Safety',
-  'bureau-of-administration-public-safety': 'Public Safety',
-  'citizen-police-review-board': 'Public Safety',
-  'office-of-municipal-investigations': 'Public Safety',
-  'bureau-of-animal-care-and-control': 'Public Safety',
-  'stop-the-violence-trust-fund': 'Public Safety',
-  'police-secondary-employment-trust-fund': 'Public Safety',
+  'bureau-of-police': 'Public safety',
+  'bureau-of-fire': 'Public safety',
+  'bureau-of-emergency-medical-services': 'Public safety',
+  'bureau-of-administration-public-safety': 'Public safety',
+  'citizen-police-review-board': 'Public safety',
+  'office-of-municipal-investigations': 'Public safety',
+  'bureau-of-animal-care-and-control': 'Public safety',
+  'stop-the-violence-trust-fund': 'Public safety',
+  'police-secondary-employment-trust-fund': 'Public safety',
 
   // Public Works & Infrastructure
-  'bureau-of-operations': 'Public Works & Infrastructure',
-  'bureau-of-administration-public-works': 'Public Works & Infrastructure',
-  'bureau-of-environmental-services': 'Public Works & Infrastructure',
-  'bureau-of-facilities': 'Public Works & Infrastructure',
-  'department-of-mobility-and-infrastructure': 'Public Works & Infrastructure',
-  'liquid-fuels-trust-fund': 'Public Works & Infrastructure',
-  'regional-asset-district-public-works-trust-fund': 'Public Works & Infrastructure',
-  'public-works-trust-fund': 'Public Works & Infrastructure',
-  'shade-tree-trust-fund': 'Public Works & Infrastructure',
+  'bureau-of-operations': 'Public works & infrastructure',
+  'bureau-of-administration-public-works': 'Public works & infrastructure',
+  'bureau-of-environmental-services': 'Public works & infrastructure',
+  'bureau-of-facilities': 'Public works & infrastructure',
+  'department-of-mobility-and-infrastructure': 'Public works & infrastructure',
+  'liquid-fuels-trust-fund': 'Public works & infrastructure',
+  'regional-asset-district-public-works-trust-fund': 'Public works & infrastructure',
+  'public-works-trust-fund': 'Public works & infrastructure',
+  'shade-tree-trust-fund': 'Public works & infrastructure',
 
   // Parks & Quality of Life
-  'department-of-parks-and-recreation': 'Parks & Quality of Life',
-  'parks-tax-trust-fund': 'Parks & Quality of Life',
-  'regional-asset-district-parks-and-recreation-trust-fund': 'Parks & Quality of Life',
-  'frick-park-trust-fund': 'Parks & Quality of Life',
-  'mellon-park-trust-fund': 'Parks & Quality of Life',
-  'schenley-park-rink-trust-fund': 'Parks & Quality of Life',
-  'special-events-trust-fund': 'Parks & Quality of Life',
-  'special-food-service-trust-fund': 'Parks & Quality of Life',
-  'senior-citizens-program-trust-fund': 'Parks & Quality of Life',
+  'department-of-parks-and-recreation': 'Parks & quality of life',
+  'parks-tax-trust-fund': 'Parks & quality of life',
+  'regional-asset-district-parks-and-recreation-trust-fund': 'Parks & quality of life',
+  'frick-park-trust-fund': 'Parks & quality of life',
+  'mellon-park-trust-fund': 'Parks & quality of life',
+  'schenley-park-rink-trust-fund': 'Parks & quality of life',
+  'special-events-trust-fund': 'Parks & quality of life',
+  'special-food-service-trust-fund': 'Parks & quality of life',
+  'senior-citizens-program-trust-fund': 'Parks & quality of life',
 
-  // Finance & Administration
-  'department-of-finance': 'Finance & Administration',
-  'department-of-human-resources-and-civil-service': 'Finance & Administration',
-  'office-of-management-and-budget': 'Finance & Administration',
-  'department-of-innovation-and-performance': 'Finance & Administration',
-  'office-of-the-city-controller': 'Finance & Administration',
-  'three-taxing-bodies-trust-fund': 'Finance & Administration',
-  'pittsburgh-partnership-trust-fund': 'Finance & Administration',
-  'community-development-trust-fund': 'Finance & Administration',
-  'appendices': 'Finance & Administration',
+  // Finance & administration
+  'department-of-finance': 'Finance & administration',
+  'department-of-human-resources-and-civil-service': 'Finance & administration',
+  'office-of-management-and-budget': 'Finance & administration',
+  'department-of-innovation-and-performance': 'Finance & administration',
+  'office-of-the-city-controller': 'Finance & administration',
+  'three-taxing-bodies-trust-fund': 'Finance & administration',
+  'pittsburgh-partnership-trust-fund': 'Finance & administration',
+  'community-development-trust-fund': 'Finance & administration',
+  'appendices': 'Finance & administration',
 
-  // Governance & Legal
-  'office-of-the-mayor': 'Governance & Legal',
-  'city-council': 'Governance & Legal',
-  'office-of-the-city-clerk': 'Governance & Legal',
-  'department-of-law': 'Governance & Legal',
-  'ethics-hearing-board': 'Governance & Legal',
-  'commission-on-human-relations': 'Governance & Legal',
+  // Governance & legal
+  'office-of-the-mayor': 'Governance & legal',
+  'city-council': 'Governance & legal',
+  'office-of-the-city-clerk': 'Governance & legal',
+  'department-of-law': 'Governance & legal',
+  'ethics-hearing-board': 'Governance & legal',
+  'commission-on-human-relations': 'Governance & legal',
 
-  // Planning & Services
-  'department-of-city-planning': 'Planning & Services',
-  'department-of-permits-licenses-and-inspections': 'Planning & Services',
-  'office-of-community-health-and-safety': 'Planning & Services',
-  'eeoc-trust-fund': 'Planning & Services',
-  'hud-fair-housing-program-trust-fund': 'Planning & Services',
+  // Planning & services
+  'department-of-city-planning': 'Planning & services',
+  'department-of-permits-licenses-and-inspections': 'Planning & services',
+  'office-of-community-health-and-safety': 'Planning & services',
+  'eeoc-trust-fund': 'Planning & services',
+  'hud-fair-housing-program-trust-fund': 'Planning & services',
 };
 
 export function groupForSlug(slug: string): DepartmentGroup | null {

@@ -68,6 +68,7 @@ import glossaryBacklinks2025 from '../data/views/2025-glossary-backlinks.json';
 import type { DeptBudgetRow } from './department-budgets';
 import type { SourceCorrection } from './corrections';
 import type { SalariesAndWages } from './personnel';
+import { sectionDisplayTitle } from './text-case';
 
 // ---------------------------------------------------------------------------
 // Constants (defined once; everything else references these)
@@ -213,19 +214,19 @@ function describeVariant(opts: { year: number; variant: Variant }): {
   const { year, variant } = opts;
   if (variant === VARIANT.PROPOSED) {
     return {
-      label: `${year} Proposed`,
-      shortLabel: `${year} Proposed`,
-      fiscalLabel: `FY${year} Proposed`,
+      label: `${year} proposed`,
+      shortLabel: `${year} proposed`,
+      fiscalLabel: `FY${year} proposed`,
     };
   }
   if (variant === VARIANT.AMENDED) {
     return {
-      label: `${year} Budget (as amended)`,
-      shortLabel: `${year} Budget`,
+      label: `${year} budget (as amended)`,
+      shortLabel: `${year} budget`,
       fiscalLabel: `FY${year}`,
     };
   }
-  return { label: `${year} Budget`, shortLabel: `${year} Budget`, fiscalLabel: `FY${year}` };
+  return { label: `${year} budget`, shortLabel: `${year} budget`, fiscalLabel: `FY${year}` };
 }
 
 function buildAmendment(opts: {
@@ -246,6 +247,41 @@ function buildAmendment(opts: {
   };
 }
 
+/**
+ * Give each section the title the site shows, in Public Source's sentence-case
+ * style, keeping the PDF's own wording in `pdf_title`. Capital project pages
+ * (which carry a functional area) keep their names as printed.
+ */
+function withDisplayTitles<T extends { sections: any[] }>(opts: { bundle: T; departmentSlugs: Set<string> }): T {
+  const { bundle, departmentSlugs } = opts;
+  return {
+    ...bundle,
+    sections: bundle.sections.map((s) =>
+      s.functional_area
+        ? s
+        : { ...s, pdf_title: s.title, title: sectionDisplayTitle({ title: s.title, isDepartment: departmentSlugs.has(s.slug) }) },
+    ),
+  };
+}
+
+/** Carry the sections' display titles into the generated indexes that repeat them. */
+function withDisplayTitlesInViews(opts: { views: YearViews; titleBySlug: Map<string, string> }): YearViews {
+  const { views, titleBySlug } = opts;
+  const titleFor = (slug: string, fallback: string): string => titleBySlug.get(slug) ?? fallback;
+  const glossaryBacklinks = Object.fromEntries(
+    Object.entries(views.glossaryBacklinks).map(([key, entry]: [string, any]) => [
+      key,
+      { ...entry, sections: entry.sections.map((sec: any) => ({ ...sec, title: titleFor(sec.slug, sec.title) })) },
+    ]),
+  );
+  return {
+    ...views,
+    tablesIndex: views.tablesIndex.map((t: any) => ({ ...t, sectionTitle: titleFor(t.sectionSlug, t.sectionTitle) })),
+    searchIndex: views.searchIndex.map((e: any) => ({ ...e, sectionTitle: titleFor(e.slug, e.sectionTitle) })),
+    glossaryBacklinks,
+  };
+}
+
 function buildYear(opts: {
   meta: BudgetMeta;
   role: YearRole;
@@ -260,7 +296,12 @@ function buildYear(opts: {
   const { meta, role } = opts;
   const { year, priorYear } = meta;
   const names = describeVariant({ year, variant: meta.operatingVariant });
-  const priorLabel = `${priorYear} Budget`;
+  const priorLabel = `${priorYear} budget`;
+  const operating = withDisplayTitles({ bundle: opts.operating, departmentSlugs: new Set(opts.views.departmentBudgets.map((r) => r.slug)) });
+  const capital = withDisplayTitles({ bundle: opts.capital, departmentSlugs: new Set() });
+  const titleBySlug = new Map<string, string>(
+    [...operating.sections, ...capital.sections].map((sec: any) => [sec.slug, sec.title]),
+  );
   return {
     year,
     priorYear,
@@ -275,13 +316,13 @@ function buildYear(opts: {
     rangeLabel: `${priorYear} → ${year}`,
     columns: {
       budget: `${year} Budget`,
-      priorBudget: priorLabel,
+      priorBudget: `${priorYear} Budget`,
       fte: `${year} FTE`,
       priorFte: `${priorYear} FTE`,
     },
-    operating: opts.operating,
-    capital: opts.capital,
-    views: opts.views,
+    operating,
+    capital,
+    views: withDisplayTitlesInViews({ views: opts.views, titleBySlug }),
     capitalAppendices: opts.capitalAppendices ?? null,
     structureChanges: opts.structureChanges ?? null,
     corrections: opts.corrections ?? [],

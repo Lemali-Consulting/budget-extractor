@@ -10,14 +10,14 @@ const yearsWithoutCorrections = yearsWithCorrections.filter((y) => y.corrections
 const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.length;
 ---
 
-<Base title="About This Site" description="How the Pittsburgh Budget Explorer was built, the role of AI in its construction, and important caveats about data accuracy.">
+<Base title="About this site" description="How the Pittsburgh Budget Explorer was built, the role of AI in its construction, and important caveats about data accuracy.">
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>About</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">About This Site</h1>
+  <h1 class="text-3xl font-bold mb-2">About this site</h1>
   <p class="text-gray-600 mb-8">How this budget explorer was built, what role AI played, and what you should keep in mind when using it.</p>
 
   <div class="prose max-w-none">
@@ -26,7 +26,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
     <section class="mb-10">
       <h2 class="text-xl font-bold text-ps-blue-900 mb-3">What is the Pittsburgh Budget Explorer?</h2>
       <p class="text-gray-700 mb-3">
-        This site makes the City of Pittsburgh's {HEADLINE.fiscalLabel} Operating and Capital Budgets easier to browse. The city publishes its budget as large PDF documents — hundreds of pages of tables, narratives, and financial data. This project extracts that data from the PDFs and presents it in a searchable, sortable, and visual format.
+        This site makes the City of Pittsburgh's {HEADLINE.fiscalLabel} operating and capital budgets easier to browse. The city publishes its budget as large PDF documents — hundreds of pages of tables, narratives, and financial data. This project extracts that data from the PDFs and presents it in a searchable, sortable, and visual format.
       </p>
       <p class="text-gray-700">
         The goal is to make budget information more accessible to residents, journalists, researchers, and anyone who wants to understand how Pittsburgh plans to spend public money — without needing to manually dig through PDFs.
@@ -109,8 +109,8 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
         The source data for this site comes from two PDF documents published by the City of Pittsburgh's Office of Management and Budget:
       </p>
       <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-        <li>The <strong>{HEADLINE.fiscalLabel} Operating Budget</strong> — covering department budgets, revenue, personnel, grants, trust funds, and financial forecasts.</li>
-        <li>The <strong>{HEADLINE.fiscalLabel} Capital Budget</strong> — covering the six-year capital improvement plan, including infrastructure, facilities, parks, and equipment projects.</li>
+        <li>The <strong>{HEADLINE.fiscalLabel} operating budget</strong> — covering department budgets, revenue, personnel, grants, trust funds, and financial forecasts.</li>
+        <li>The <strong>{HEADLINE.fiscalLabel} capital budget</strong> — covering the six-year capital improvement plan, including infrastructure, facilities, parks, and equipment projects.</li>
       </ul>
       <p class="text-gray-700 mb-3">
         The {archive.label} budget remains browsable in the

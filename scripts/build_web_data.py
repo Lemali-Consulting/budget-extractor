@@ -18,6 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.corrections import apply_corrections, load_corrections
+from utils.text_case import phrase_case, sentence_case
 from utils.paths import (
     DEFAULT_YEAR,
     available_years,
@@ -803,7 +804,7 @@ def generate_table_label(table: dict, section_title: str) -> str:
 
     # Fallback: prettify the type
     table_type: str = table.get("table_type", "unknown")
-    label = table_type.replace("_", " ").title()
+    label = sentence_case(table_type.replace("_", " "))
     return label
 
 
@@ -984,8 +985,8 @@ def build_section_highlights(section: dict) -> list[str]:
             line_changes.sort(key=lambda x: abs(x[1]), reverse=True)
             if line_changes and abs(line_changes[0][1]) > abs(dollar_change) * 0.2:
                 driver_label, driver_change = line_changes[0]
-                # Clean subclass codes like "51 - PERSONNEL-SALARIES & WAGES" -> "Personnel - Salaries & Wages"
-                driver_label = re.sub(r"^\d+\s*-\s*", "", driver_label).title()
+                # Clean subclass codes like "51 - PERSONNEL-SALARIES & WAGES" -> "personnel-salaries & wages"
+                driver_label = phrase_case(re.sub(r"^\d+\s*-\s*", "", driver_label))
                 driver_dir = "more" if driver_change > 0 else "less"
                 msg += f", led by {_format_dollar(abs(driver_change))} {driver_dir} in {driver_label}"
             highlights.append(msg)
@@ -2183,7 +2184,7 @@ def build_revenue_waterfall(sections: list[dict]) -> list[dict]:
                 if label == section_label and re.match(r"^\d{2}\s*-\s*", label):
                     amount = parse_currency(row[col_current] if col_current < len(row) else "")
                     if amount and amount > 0:
-                        clean = re.sub(r"^\d+\s*-\s*", "", label).title()
+                        clean = sentence_case(re.sub(r"^\d+\s*-\s*", "", label))
                         items.append({"label": clean, "amount": amount, "type": "revenue"})
 
     return items

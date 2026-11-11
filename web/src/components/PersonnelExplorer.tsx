@@ -125,7 +125,7 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
                 class="px-3 py-2 text-right font-medium cursor-pointer hover:text-ps-blue-600"
                 onClick={() => toggleSort('budgetCurrent')}
               >
-                {year} Budget{sortIcon('budgetCurrent')}
+                {year} budget{sortIcon('budgetCurrent')}
               </th>
             </tr>
           </thead>

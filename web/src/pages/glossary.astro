@@ -17,16 +17,16 @@ function sectionUrl(s: { slug: string; budgetType: string }): string {
 
 const sections = [
   { key: 'abbreviations', title: 'Abbreviations' },
-  { key: 'general_terms', title: 'General Terms' },
-  { key: 'fiscal_metrics', title: 'Fiscal Metrics' },
-  { key: 'capital_funding_sources', title: 'Capital Funding Sources' },
+  { key: 'general_terms', title: 'General terms' },
+  { key: 'fiscal_metrics', title: 'Fiscal metrics' },
+  { key: 'capital_funding_sources', title: 'Capital funding sources' },
   { key: 'funds', title: 'Funds' },
-  { key: 'revenue_subclasses', title: 'Revenue Subclasses' },
-  { key: 'expenditure_subclasses', title: 'Expenditure Subclasses' },
-  { key: 'revenue_line_items', title: 'Revenue Line Items' },
-  { key: 'expenditure_line_items', title: 'Expenditure Line Items' },
+  { key: 'revenue_subclasses', title: 'Revenue subclasses' },
+  { key: 'expenditure_subclasses', title: 'Expenditure subclasses' },
+  { key: 'revenue_line_items', title: 'Revenue line items' },
+  { key: 'expenditure_line_items', title: 'Expenditure line items' },
   { key: 'departments', title: 'Departments' },
-  { key: 'budget_structure', title: 'Budget Structure' },
+  { key: 'budget_structure', title: 'Budget structure' },
 ];
 
 /* Normalize all glossary sections into a uniform shape:
@@ -109,15 +109,15 @@ function normalizeSection(key: string): GlossaryEntry[] {
     <span>Glossary</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">Budget Glossary</h1>
-  <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh {HEADLINE.fiscalLabel} Operating and Capital Budgets.</p>
+  <h1 class="text-3xl font-bold mb-2">Budget glossary</h1>
+  <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh {HEADLINE.fiscalLabel} operating and capital budgets.</p>
 
   <div class="mb-6" data-pagefind-ignore>
     <SiteSearch client:load />
   </div>
 
   <nav class="mb-8 border rounded-lg bg-white p-4" data-pagefind-ignore>
-    <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">On this page</h2>
+    <h2 class="text-sm font-semibold text-gray-500 mb-2">On this page</h2>
     <ul class="columns-2 md:columns-3 gap-x-6 text-sm">
       {sections.map((s) => (
         <li class="py-0.5">

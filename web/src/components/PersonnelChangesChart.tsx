@@ -46,7 +46,7 @@ export default function PersonnelChangesChart({ data, year, priorYear }: Props) 
       marginRight: 80,
       width: containerWidth,
       height: Math.max(200, changes.length * 30 + 40),
-      x: { label: 'FTE Change' },
+      x: { label: 'FTE change' },
       y: { label: null },
       color: {
         domain: [-1, 0, 1],

@@ -48,7 +48,7 @@ export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
       marginBottom: 40,
       x: { label: 'Year', type: 'band', padding: 0.3 },
       y: {
-        label: 'Total Funding ($)',
+        label: 'Total funding ($)',
         tickFormat: (d: number) => `$${(d / 1_000_000).toFixed(0)}M`,
       },
       color: {
@@ -75,7 +75,7 @@ export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
 
   return (
     <div ref={containerRef}>
-      <h3 class="text-lg font-semibold mb-3">Funding by Source ({planRange})</h3>
+      <h3 class="text-lg font-semibold mb-3">Funding by source ({planRange})</h3>
       <div ref={chartRef} />
     </div>
   );

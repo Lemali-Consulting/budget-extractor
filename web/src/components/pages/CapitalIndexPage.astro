@@ -56,14 +56,14 @@ for (const section of sections) {
 }
 ---
 
-<Base title="Capital Budget" budgetYear={budgetYear} currentHref={headlinePath('/capital/')}>
+<Base title="Capital budget" budgetYear={budgetYear} currentHref={headlinePath('/capital/')}>
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
-    <span>Capital Budget</span>
+    <span>Capital budget</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">Capital Budget & Six Year Plan</h1>
+  <h1 class="text-3xl font-bold mb-2">Capital budget & six year plan</h1>
 
   <div class="mb-6">
     {budgetYear.isHeadline ? (
@@ -74,7 +74,7 @@ for (const section of sections) {
   </div>
 
   <p class="text-gray-600 mb-6">
-    City of Pittsburgh {budgetYear.fiscalLabel} Capital Budget.
+    City of Pittsburgh {budgetYear.fiscalLabel} capital budget.
     {sections.length} projects across {grouped.size} functional areas.
     {totalFunding > 0 && ` ${budgetYear.year} total: $${(totalFunding / 1_000_000).toFixed(1)}M.`}
   </p>

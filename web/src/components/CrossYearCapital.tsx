@@ -50,7 +50,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
       {/* Summary cards */}
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">In Both</div>
+          <div class="text-xs text-gray-500 mb-1">In both</div>
           <div class="text-lg font-semibold">{inBoth.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
@@ -58,11 +58,11 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
           <div class="text-lg font-semibold text-green-600">{onlyAdopted.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">Dropped / Consolidated</div>
+          <div class="text-xs text-gray-500 mb-1">Dropped / consolidated</div>
           <div class="text-lg font-semibold text-ps-red-600">{onlyProposed.length}</div>
         </div>
         <div class="bg-white rounded-lg border p-4">
-          <div class="text-xs text-gray-500 mb-1">Metadata Changed</div>
+          <div class="text-xs text-gray-500 mb-1">Metadata changed</div>
           <div class="text-lg font-semibold text-ps-yellow-600">{metadataChanges.length}</div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
             onClick={() => setView(v)}
             class={`px-3 py-1.5 text-sm rounded-md ${view === v ? 'bg-ps-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
           >
-            {v === 'all' ? `All Projects (${inBoth.length + onlyAdopted.length + onlyProposed.length})` : v === 'added' ? `Added (${onlyAdopted.length})` : `Dropped (${onlyProposed.length})`}
+            {v === 'all' ? `All projects (${inBoth.length + onlyAdopted.length + onlyProposed.length})` : v === 'added' ? `Added (${onlyAdopted.length})` : `Dropped (${onlyProposed.length})`}
           </button>
         ))}
       </div>
@@ -83,13 +83,13 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
       {/* Added projects */}
       {(view === 'all' || view === 'added') && onlyAdopted.length > 0 && (
         <div class="mb-6">
-          <h3 class="text-sm font-semibold text-green-700 mb-2">Projects Added in Adopted Budget</h3>
+          <h3 class="text-sm font-semibold text-green-700 mb-2">Projects added in adopted budget</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead>
                 <tr class="bg-green-50 border-b">
                   <th class="text-left p-2">Project</th>
-                  <th class="text-left p-2">Functional Area</th>
+                  <th class="text-left p-2">Functional area</th>
                   <th class="text-left p-2">Department</th>
                   <th class="text-left p-2">Type</th>
                 </tr>
@@ -114,13 +114,13 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
       {/* Dropped projects */}
       {(view === 'all' || view === 'dropped') && onlyProposed.length > 0 && (
         <div class="mb-6">
-          <h3 class="text-sm font-semibold text-ps-red-700 mb-2">Projects Dropped or Consolidated</h3>
+          <h3 class="text-sm font-semibold text-ps-red-700 mb-2">Projects dropped or consolidated</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead>
                 <tr class="bg-ps-red-50 border-b">
                   <th class="text-left p-2">Project</th>
-                  <th class="text-left p-2">Functional Area</th>
+                  <th class="text-left p-2">Functional area</th>
                   <th class="text-left p-2">Type</th>
                   <th class="text-left p-2">Note</th>
                 </tr>
@@ -148,7 +148,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
       {/* Projects in both with metadata changes */}
       {view === 'all' && metadataChanges.length > 0 && (
         <div class="mb-6">
-          <h3 class="text-sm font-semibold text-ps-yellow-700 mb-2">Projects with Metadata Changes</h3>
+          <h3 class="text-sm font-semibold text-ps-yellow-700 mb-2">Projects with metadata changes</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm border-collapse">
               <thead>
@@ -163,7 +163,7 @@ export default function CrossYearCapital({ proposedProjects, adoptedProjects, ro
                 {metadataChanges.flatMap(p => {
                   const a = adoptedMap.get(p.title)!;
                   const diffs: { field: string; from: string; to: string }[] = [];
-                  if (p.functionalArea !== a.functionalArea) diffs.push({ field: 'Functional Area', from: p.functionalArea || '(none)', to: a.functionalArea || '(none)' });
+                  if (p.functionalArea !== a.functionalArea) diffs.push({ field: 'Functional area', from: p.functionalArea || '(none)', to: a.functionalArea || '(none)' });
                   if (p.department !== a.department) diffs.push({ field: 'Department', from: p.department || '(none)', to: a.department || '(none)' });
                   if (p.projectType !== a.projectType) diffs.push({ field: 'Type', from: p.projectType || '(none)', to: a.projectType || '(none)' });
                   return diffs.map((d, i) => (
