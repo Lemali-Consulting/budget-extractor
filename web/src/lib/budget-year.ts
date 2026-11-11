@@ -16,6 +16,7 @@ import headlineDepartmentBudgets from '../data/views/department-budgets.json';
 import headlineBudgetChanges from '../data/views/budget-changes.json';
 import headlinePersonnel from '../data/views/personnel.json';
 import headlinePersonnelByDepartment from '../data/views/personnel-by-department.json';
+import headlineSalariesAndWages from '../data/views/salaries-and-wages.json';
 import headlineCapitalProjects from '../data/views/capital-projects.json';
 import headlineCapitalFunding from '../data/views/capital-funding-sources.json';
 import headlineCapitalAppendices from '../data/views/capital-appendices.json';
@@ -34,6 +35,7 @@ import departmentBudgets2026 from '../data/views/2026-department-budgets.json';
 import budgetChanges2026 from '../data/views/2026-budget-changes.json';
 import personnel2026 from '../data/views/2026-personnel.json';
 import personnelByDepartment2026 from '../data/views/2026-personnel-by-department.json';
+import salariesAndWages2026 from '../data/views/2026-salaries-and-wages.json';
 import capitalProjects2026 from '../data/views/2026-capital-projects.json';
 import capitalFunding2026 from '../data/views/2026-capital-funding-sources.json';
 import capitalAppendices2026 from '../data/views/2026-capital-appendices.json';
@@ -54,6 +56,7 @@ import departmentBudgets2025 from '../data/views/2025-department-budgets.json';
 import budgetChanges2025 from '../data/views/2025-budget-changes.json';
 import personnel2025 from '../data/views/2025-personnel.json';
 import personnelByDepartment2025 from '../data/views/2025-personnel-by-department.json';
+import salariesAndWages2025 from '../data/views/2025-salaries-and-wages.json';
 import capitalProjects2025 from '../data/views/2025-capital-projects.json';
 import capitalFunding2025 from '../data/views/2025-capital-funding-sources.json';
 import revenueWaterfall2025 from '../data/views/2025-revenue-waterfall.json';
@@ -64,6 +67,7 @@ import glossaryBacklinks2025 from '../data/views/2025-glossary-backlinks.json';
 
 import type { DeptBudgetRow } from './department-budgets';
 import type { SourceCorrection } from './corrections';
+import type { SalariesAndWages } from './personnel';
 
 // ---------------------------------------------------------------------------
 // Constants (defined once; everything else references these)
@@ -149,6 +153,8 @@ export interface YearViews {
   budgetChanges: any;
   personnel: any[];
   personnelByDepartment: any[];
+  /** The printed General Fund salaries-and-wages line; null if the document has none. */
+  salariesAndWages: SalariesAndWages | null;
   capitalProjects: any[];
   capitalFundingSources: any[];
   revenueWaterfall: any[];
@@ -298,6 +304,7 @@ const YEAR_2027: BudgetYear = buildYear({
     budgetChanges: headlineBudgetChanges,
     personnel: headlinePersonnel,
     personnelByDepartment: headlinePersonnelByDepartment,
+    salariesAndWages: headlineSalariesAndWages as SalariesAndWages | null,
     capitalProjects: headlineCapitalProjects,
     capitalFundingSources: headlineCapitalFunding,
     revenueWaterfall: headlineRevenueWaterfall,
@@ -321,6 +328,7 @@ const YEAR_2026: BudgetYear = buildYear({
     budgetChanges: budgetChanges2026,
     personnel: personnel2026,
     personnelByDepartment: personnelByDepartment2026,
+    salariesAndWages: salariesAndWages2026 as SalariesAndWages | null,
     capitalProjects: capitalProjects2026,
     capitalFundingSources: capitalFunding2026,
     revenueWaterfall: revenueWaterfall2026,
@@ -348,6 +356,7 @@ const YEAR_2025: BudgetYear = buildYear({
     budgetChanges: budgetChanges2025,
     personnel: personnel2025,
     personnelByDepartment: personnelByDepartment2025,
+    salariesAndWages: salariesAndWages2025 as SalariesAndWages | null,
     capitalProjects: capitalProjects2025,
     capitalFundingSources: capitalFunding2025,
     revenueWaterfall: revenueWaterfall2025,

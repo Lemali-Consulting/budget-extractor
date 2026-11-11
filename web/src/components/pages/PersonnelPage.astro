@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import PersonnelExplorer from '../PersonnelExplorer.tsx';
 import PersonnelTreemap from '../PersonnelTreemap.tsx';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+import { DEPARTMENT_SALARY_SCOPE, type DepartmentPersonnel } from '../../lib/personnel';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -13,6 +14,8 @@ const prefix = budgetYear.routePrefix;
 const personnelData = budgetYear.views.personnel;
 const personnelByDept = budgetYear.views.personnelByDepartment;
 const data = budgetYear.views.budgetChanges;
+const salaries = budgetYear.views.salariesAndWages;
+const departmentSalaryTotal = (personnelByDept as DepartmentPersonnel[]).reduce((sum, d) => sum + d.totalBudgetCurrent, 0);
 const fteChange = (data.totalFteCurrent || 0) - (data.totalFtePrior || 0);
 const newCount = data.newPositions?.length || 0;
 const elimCount = data.eliminatedPositions?.length || 0;
@@ -36,7 +39,18 @@ function fmtDollar(n: number): string {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">Personnel Explorer</h1>
-  <p class="text-gray-600 mb-6">Search and filter positions across all departments.</p>
+  <p class="text-gray-600 mb-2">Search and filter positions across all departments.</p>
+  <p class="text-sm text-gray-500 mb-6 max-w-3xl" data-testid="personnel-scope-note">
+    Salary figures here come from each department's position table: {DEPARTMENT_SALARY_SCOPE.toLowerCase()}, trust funds included.
+    Together they come to {fmtDollar(departmentSalaryTotal)}.
+    {salaries ? (
+      <>That is less than the {fmtDollar(salaries.current)} General Fund salaries-and-wages line on{' '}
+      <a href={`${prefix}/sections/${salaries.sectionSlug}/`} class="text-ps-blue-600 hover:underline">page {salaries.page}</a>,
+      because overtime and other premium pay are budgeted only citywide, not by position.</>
+    ) : (
+      <>Overtime and other premium pay are budgeted only citywide, so they are not included.</>
+    )}
+  </p>
 
   {/* Staffing changes summary */}
   <div class="bg-white rounded-lg border p-4 mb-6">

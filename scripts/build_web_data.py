@@ -104,6 +104,8 @@ def add_year_neutral_fields(record: dict) -> dict:
 # Citywide (non-department) operating sections. Matched by title, not position,
 # because section numbering differs between years and variants.
 REVENUE_DETAIL_TITLE: str = "Revenue Detail"
+EXPENDITURE_SUMMARY_TITLE: str = "Expenditure Summary"
+SALARIES_AND_WAGES_LABEL_PATTERN: re.Pattern[str] = re.compile(r"^51\s*-\s*personnel-salaries\s*&\s*wages$", re.IGNORECASE)
 FIVE_YEAR_FORECAST_TITLE: str = "Five-Year Financial Forecast"
 OVERVIEW_SECTION_TITLES: frozenset[str] = frozenset({
     "Budget Authorizing Legislation",
@@ -2120,6 +2122,35 @@ def build_personnel_by_department(personnel: list[dict]) -> list[dict]:
     return sorted(dept_map.values(), key=lambda d: d[f"totalBudget{BUDGET_YEAR}"], reverse=True)
 
 
+def build_salaries_and_wages(sections: list[dict]) -> dict | None:
+    """Read the General Fund's printed "51 - Personnel-Salaries & Wages" line from the Expenditure Summary.
+
+    This is the citywide salaries figure, overtime and premium pay included,
+    that the budget document itself prints; the home page headlines it with a
+    page citation. Returns None when the document has no such line.
+    """
+    current_header: str = f"{BUDGET_YEAR} Budget"
+    prior_header: str = f"{PRIOR_YEAR} Budget"
+    for section in sections:
+        if section["title"] != EXPENDITURE_SUMMARY_TITLE:
+            continue
+        for table in section["tables"]:
+            headers: list[str] = [h.strip() for h in table.get("headers", [])]
+            if current_header not in headers or prior_header not in headers:
+                continue
+            col_current: int = headers.index(current_header)
+            col_prior: int = headers.index(prior_header)
+            for row in table["rows"]:
+                if row and SALARIES_AND_WAGES_LABEL_PATTERN.match(row[0].strip()):
+                    return {
+                        "current": parse_currency(row[col_current]),
+                        "prior": parse_currency(row[col_prior]),
+                        "page": table.get("absolute_page"),
+                        "sectionSlug": section["slug"],
+                    }
+    return None
+
+
 def build_revenue_waterfall(sections: list[dict]) -> list[dict]:
     """Extract top-level revenue categories with 2026 amounts for waterfall chart."""
     items: list[dict] = []
@@ -2603,6 +2634,12 @@ def main() -> None:
     with open(views_dir / f"{prefix}personnel-by-department.json", "w", encoding="utf-8") as f:
         json.dump(personnel_by_dept, f, indent=2)
     print(f"Wrote {prefix}personnel-by-department.json ({len(personnel_by_dept)} departments)")
+
+    # Citywide salaries and wages (home page / dashboard headline)
+    salaries_and_wages = build_salaries_and_wages(sections)
+    with open(views_dir / f"{prefix}salaries-and-wages.json", "w", encoding="utf-8") as f:
+        json.dump(salaries_and_wages, f, indent=2)
+    print(f"Wrote {prefix}salaries-and-wages.json ({'found' if salaries_and_wages else 'NOT FOUND'})")
 
     # Revenue waterfall
     revenue_waterfall = build_revenue_waterfall(sections)

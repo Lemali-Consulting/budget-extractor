@@ -166,15 +166,34 @@ test("trust-fund breakdown lists each fund with its source pages", async ({ page
 // excludes overtime and includes trust-fund positions. Public Source's
 // fact-check compared it to the $328.2M salaries-and-wages line, so the label
 // must say what it covers rather than "payroll".
+// The personnel card headlines the General Fund's printed salaries-and-wages
+// line (overtime included) rather than a sum of our own, so a reader can find
+// the same number on the cited page of the budget document.
 for (const statsPage of ["/", "/dashboard/"]) {
-  test(`${statsPage} personnel card says what its salary figure covers`, async ({ page }) => {
+  test(`${statsPage} personnel card shows the printed salaries line and cites its page`, async ({ page }) => {
     await page.goto(statsPage);
     const card = main(page).getByTestId("personnel-total");
     await expect(card).not.toContainText(/payroll/i);
-    await expect(card).toContainText(/net salaries/i);
-    await expect(card).toContainText(/excludes overtime/i);
+    await expect(card).toContainText(/includes overtime/i);
+    await expect(card).toContainText(/General Fund/i);
+    const amount = Number(await card.getByTestId("salaries-amount").getAttribute("data-amount"));
+    expect(amount).toBeGreaterThan(0);
+
+    const source = card.getByRole("link", { name: /p\. \d+/ });
+    await expect(source).toHaveAttribute("href", /\/sections\/expenditure-summary\//);
+    await source.click();
+    await expect(main(page)).toContainText(amount.toLocaleString("en-US"));
   });
 }
+
+// Department salary totals come from each position table's net-salaries line
+// and so don't add up to the citywide salaries figure; the page must say why.
+test("personnel page explains why department totals differ from the citywide salaries line", async ({ page }) => {
+  await page.goto("/personnel/");
+  const note = main(page).getByTestId("personnel-scope-note");
+  await expect(note).toContainText(/net of vacancies/i);
+  await expect(note).toContainText(/overtime/i);
+});
 
 // ---------------------------------------------------------------------------
 // What Changed

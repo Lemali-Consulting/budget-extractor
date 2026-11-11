@@ -1,0 +1,47 @@
+---
+/**
+ * Personnel stat card for the home page and dashboard. It headlines the
+ * General Fund's printed salaries-and-wages line, cited to its page, so a
+ * reader can find the same number in the budget document. The FTE count is
+ * matched to that scope (General Fund departments) and is our own sum, since
+ * the document prints no citywide total.
+ */
+import type { BudgetYear } from '../lib/budget-year';
+import { generalFundFte, type DepartmentPersonnel } from '../lib/personnel';
+
+interface Props {
+  budgetYear: BudgetYear;
+}
+
+const { budgetYear } = Astro.props as Props;
+const salaries = budgetYear.views.salariesAndWages;
+const fte = generalFundFte(budgetYear.views.personnelByDepartment as DepartmentPersonnel[], budgetYear.views.departmentBudgets);
+
+function fmtM(n: number): string {
+  return `$${(n / 1_000_000).toFixed(1)}M`;
+}
+
+function fmtChange(current: number, prior: number): string {
+  const pct = ((current - prior) / prior) * 100;
+  return `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}%`;
+}
+---
+
+<div class="bg-white rounded-lg border p-4" data-testid="personnel-total">
+  <div class="text-xs text-gray-400 uppercase tracking-wide">Personnel</div>
+  {salaries && (
+    <>
+      <div class="text-2xl font-bold text-purple-900 mt-1" data-testid="salaries-amount" data-amount={salaries.current}>{fmtM(salaries.current)}</div>
+      <div class="text-sm text-gray-500 mt-0.5">General Fund salaries &amp; wages</div>
+      <div class="text-xs text-gray-400 mt-0.5">
+        Includes overtime &middot; {fmtChange(salaries.current, salaries.prior)} vs. {budgetYear.priorYear} &middot;{' '}
+        <a href={`${budgetYear.routePrefix}/sections/${salaries.sectionSlug}/`} class="text-ps-blue-600 hover:underline whitespace-nowrap">p. {salaries.page}</a>
+      </div>
+    </>
+  )}
+  <div class="text-xs text-gray-400 mt-0.5">
+    {Math.round(fte).toLocaleString('en-US')} General Fund{' '}
+    <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a>
+    {' '}(our count; the budget prints no citywide total)
+  </div>
+</div>

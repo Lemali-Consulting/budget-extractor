@@ -8,7 +8,7 @@ import PersonnelTreemap from '../components/PersonnelTreemap.tsx';
 import EmbedButton from '../components/EmbedButton.tsx';
 import { HEADLINE } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
-import { PERSONNEL_SALARY_SCOPE } from '../lib/personnel';
+import PersonnelCard from '../components/PersonnelCard.astro';
 
 const {
   departmentBudgets: budgetRows,
@@ -33,10 +33,6 @@ const capitalTotal = capitalRows.filter(r => parseInt(r.year) >= HEADLINE.year).
 const capitalCurrent = (capitalFunding as { year: string; amount: number }[])
   .filter(r => r.year === String(HEADLINE.year))
   .reduce((s, r) => s + r.amount, 0);
-
-const personnelData = personnelByDept as { totalFteCurrent: number; totalBudgetCurrent: number }[];
-const totalFte = personnelData.reduce((s, r) => s + r.totalFteCurrent, 0);
-const totalPersonnelBudget = personnelData.reduce((s, r) => s + r.totalBudgetCurrent, 0);
 
 function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -82,12 +78,7 @@ function fmtM(n: number): string {
       <div class="text-2xl font-bold text-ps-yellow-900 mt-1">{fmtM(capitalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
     </div>
-    <div class="bg-white rounded-lg border p-4" data-testid="personnel-total">
-      <div class="text-xs text-gray-400 uppercase tracking-wide">Personnel</div>
-      <div class="text-2xl font-bold text-purple-900 mt-1">{totalFte.toLocaleString('en-US')} <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a></div>
-      <div class="text-sm text-gray-500 mt-0.5">{fmtM(totalPersonnelBudget)} net salaries</div>
-      <div class="text-xs text-gray-400 mt-0.5">{PERSONNEL_SALARY_SCOPE}</div>
-    </div>
+    <PersonnelCard budgetYear={HEADLINE} />
   </div>
 
   <!-- Operating Budget section -->
