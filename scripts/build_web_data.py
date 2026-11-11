@@ -1381,11 +1381,28 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
     return rows
 
 
-# Position tables repeat the part-time lines as a subtotal row under this label
-# (and use the same label as a subheading). Counting it would double the part-time pay.
-PART_TIME_SUBTOTAL_PATTERN: re.Pattern[str] = re.compile(
-    r"^temporary, part-time,? (and|&) seasonal allowances$", re.IGNORECASE
-)
+# Part-time pay appears under a "Temporary, Part-Time, ..." label in two ways.
+# Most departments use the label as an empty subheading, itemize the lines under
+# it, and repeat their sum on a label row in the summary block ("... and
+# Seasonal Allowances", or "... and Interns" for City Council). A few (City
+# Clerk, 2027) skip the itemizing, so the summary row is the only record.
+PART_TIME_LABEL_PATTERN: re.Pattern[str] = re.compile(r"^temporary, part-time\b", re.IGNORECASE)
+
+
+def is_part_time_label(title: str) -> bool:
+    """Whether a row is the part-time subheading or subtotal, rather than a part-time position."""
+    return bool(PART_TIME_LABEL_PATTERN.match(title.strip()))
+
+
+def itemizes_part_time(section: dict) -> bool:
+    """Whether a department lists part-time positions under an empty part-time subheading."""
+    for table in section["tables"]:
+        if table["table_type"] != "personnel":
+            continue
+        for row in table["rows"]:
+            if row and is_part_time_label(row[0]) and not any(c.strip() for c in row[1:]):
+                return True
+    return False
 
 
 def parse_signed_amount(s: str) -> float | None:
@@ -1399,11 +1416,23 @@ def parse_signed_amount(s: str) -> float | None:
     return amount
 
 
-def is_position_row(title: str) -> bool:
-    """Whether a position-table row adds to payroll: not a total line and not the part-time subtotal."""
+def is_payroll_row(title: str, *, part_time_itemized: bool) -> bool:
+    """Whether a position-table row adds to payroll.
+
+    Total lines never do. The part-time label row counts only when the
+    department doesn't itemize part-time lines; otherwise it is a subheading
+    or repeats their sum.
+    """
     if not title or "total" in title.lower():
         return False
-    return not PART_TIME_SUBTOTAL_PATTERN.match(title.strip())
+    return not (is_part_time_label(title) and part_time_itemized)
+
+
+def is_wrapped_total_label(row: list[str], *, title_idx: int) -> bool:
+    """Whether a row is the first line of a wrapped subtotal label: "Total ..." with every other cell empty."""
+    title = row[title_idx] if title_idx < len(row) else ""
+    others = [c for i, c in enumerate(row) if i != title_idx]
+    return title.lower().startswith("total") and not any(c.strip() for c in others)
 
 
 def build_personnel(sections: list[dict]) -> list[dict]:
@@ -1416,6 +1445,7 @@ def build_personnel(sections: list[dict]) -> list[dict]:
     rows: list[dict] = []
 
     for section in sections:
+        part_time_itemized = itemizes_part_time(section)
         for table in section["tables"]:
             if table["table_type"] != "personnel":
                 continue
@@ -1432,9 +1462,18 @@ def build_personnel(sections: list[dict]) -> list[dict]:
             if title_idx < 0:
                 continue
 
+            # A subtotal label can wrap: "Total Office of Immigrant and Refugee"
+            # on an otherwise empty row, then "Affairs" with the amounts.
+            continues_wrapped_total = False
             for row in table["rows"]:
                 title = row[title_idx] if title_idx < len(row) else ""
-                if not is_position_row(title):
+                if continues_wrapped_total:
+                    continues_wrapped_total = False
+                    continue
+                if is_wrapped_total_label(row, title_idx=title_idx):
+                    continues_wrapped_total = True
+                    continue
+                if not is_payroll_row(title, part_time_itemized=part_time_itemized):
                     continue
 
                 def cell(idx: int) -> str:

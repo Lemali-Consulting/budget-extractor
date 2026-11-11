@@ -68,6 +68,78 @@ def test_vacancy_allowance_is_a_deduction():
     assert vacancy["budgetCurrent"] == -8_000
 
 
+def _section(mod: types.ModuleType, rows: list[list[str]]) -> dict:
+    """A one-table department with the standard position-table headers."""
+    prior, current = mod.PRIOR_YEAR, mod.BUDGET_YEAR
+    headers = [
+        "Title", f"{prior} FTE", "Rate/ Grade", "Hours/ Months", f"{prior} Budget",
+        f"{current} FTE", "Rate/ Grade", "Hours/ Months", f"{current} Budget",
+    ]
+    return {"title": "Example", "slug": "example", "tables": [{"table_type": "personnel", "headers": headers, "rows": rows}]}
+
+
+def test_part_time_subtotal_with_another_label_is_not_double_counted():
+    """City Council (2027, p. 63) labels its part-time subtotal "Temporary, Part-Time, and Interns".
+
+    It still repeats the itemized intern line, so it must be skipped like the
+    usual "... and Seasonal Allowances" label.
+    """
+    mod = _mod()
+    rows = [
+        ["Member of Council", "9", "92,269", "12", "830,421", "9", "95,035", "12", "855,317"],
+        ["Total Full-Time Permanent Positions", "9", "", "", "830,421", "9", "", "", "855,317"],
+        ["Temporary, Part-Time, and Seasonal Allowances", "", "", "", "", "", "", "", ""],
+        ["Administrative/Research/Interns", "—", "varies", "—", "65,997", "—", "varies", "—", "65,997"],
+        ["Total Full-Time Permanent Positions", "9", "", "", "830,421", "9", "", "", "855,317"],
+        ["Temporary, Part-Time, and Interns", "—", "", "", "65,997", "—", "", "", "65,997"],
+        ["Vacancy Allowance", "—", "", "", "(74,307)", "—", "", "", "—"],
+        ["Total Full-Time Positions and Net Salaries", "9", "", "", "822,111", "9", "", "", "921,314"],
+    ]
+    personnel = mod.build_personnel([_section(mod, rows)])
+    [dept] = mod.build_personnel_by_department(personnel)
+    assert dept["totalBudgetCurrent"] == 921_314
+    assert dept["totalBudgetPrior"] == 822_111
+
+
+def test_part_time_line_without_itemization_is_counted():
+    """The City Clerk (2027) lists part-time pay only as one summary line, with no itemized lines above it.
+
+    That line is then the only record of the pay, so it must count.
+    """
+    mod = _mod()
+    rows = [
+        ["City Clerk", "1", "35G", "12", "132,995", "1", "35G", "12", "136,989"],
+        ["Total Full-Time Permanent Positions", "1", "", "", "132,995", "1", "", "", "136,989"],
+        ["Temporary, Part-Time, and Seasonal Allowances", "—", "varies", "", "30,575", "—", "varies", "", "30,575"],
+        ["Vacancy Allowance", "—", "", "", "—", "—", "", "", "—"],
+        ["Total Full-Time Positions and Net Salaries", "1", "", "", "163,570", "1", "", "", "167,564"],
+    ]
+    personnel = mod.build_personnel([_section(mod, rows)])
+    [dept] = mod.build_personnel_by_department(personnel)
+    assert dept["totalBudgetCurrent"] == 167_564
+
+
+def test_wrapped_subtotal_label_is_not_counted_as_a_position():
+    """A division subtotal whose label wraps onto a second line is still a subtotal.
+
+    The 2025 Mayor's Office table prints "Total Office of Immigrant and
+    Refugee" on one line and "Affairs" with the amounts on the next; that
+    second line must not be counted as a position named "Affairs".
+    """
+    mod = _mod()
+    rows = [
+        ["Policy Coordinator", "1", "17G", "12", "58,352", "1", "18G", "12", "62,670"],
+        ["Total Office of Immigrant and Refugee", "", "", "", "", "", "", "", ""],
+        ["Affairs", "1", "", "", "58,352", "1", "", "", "62,670"],
+        ["Total Full-Time Permanent Positions", "1", "", "", "58,352", "1", "", "", "62,670"],
+        ["Total Full-Time Positions and Net Salaries", "1", "", "", "58,352", "1", "", "", "62,670"],
+    ]
+    personnel = mod.build_personnel([_section(mod, rows)])
+    assert [r["title"] for r in personnel] == ["Policy Coordinator"]
+    [dept] = mod.build_personnel_by_department(personnel)
+    assert dept["totalFteCurrent"] == 1
+
+
 def test_full_time_equivalents_unchanged():
     """FTE counts come only from positions; the allowance rows carry none."""
     mod = _mod()

@@ -210,15 +210,15 @@
   {
     "department": "Office of the Mayor",
     "slug": "office-of-the-mayor",
-    "totalFte2024": 46.0,
-    "totalFte2025": 41.0,
-    "totalBudget2024": 3362344.0,
-    "totalBudget2025": 3060463.0,
-    "positionCount": 51,
-    "totalBudgetCurrent": 3060463.0,
-    "totalBudgetPrior": 3362344.0,
-    "totalFteCurrent": 41.0,
-    "totalFtePrior": 46.0
+    "totalFte2024": 44.0,
+    "totalFte2025": 39.0,
+    "totalBudget2024": 3222918.0,
+    "totalBudget2025": 2914281.0,
+    "positionCount": 50,
+    "totalBudgetCurrent": 2914281.0,
+    "totalBudgetPrior": 3222918.0,
+    "totalFteCurrent": 39.0,
+    "totalFtePrior": 44.0
   },
   {
     "department": "City Council",
@@ -291,9 +291,9 @@
     "totalFte2024": 21.0,
     "totalFte2025": 21.0,
     "totalBudget2024": 1558870.0,
-    "totalBudget2025": 1574114.0,
-    "positionCount": 24,
-    "totalBudgetCurrent": 1574114.0,
+    "totalBudget2025": 1603586.0,
+    "positionCount": 25,
+    "totalBudgetCurrent": 1603586.0,
     "totalBudgetPrior": 1558870.0,
     "totalFteCurrent": 21.0,
     "totalFtePrior": 21.0

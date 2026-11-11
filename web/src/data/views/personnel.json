@@ -44,20 +44,6 @@
   {
     "department": "City Council",
     "slug": "city-council",
-    "title": "Temporary, Part-Time, and Interns",
-    "fte2026": null,
-    "fte2027": null,
-    "budget2026": 65997.0,
-    "budget2027": 65997.0,
-    "rateGrade": "",
-    "budgetCurrent": 65997.0,
-    "budgetPrior": 65997.0,
-    "fteCurrent": null,
-    "ftePrior": null
-  },
-  {
-    "department": "City Council",
-    "slug": "city-council",
     "title": "Vacancy Allowance",
     "fte2026": null,
     "fte2027": null,
@@ -320,6 +306,20 @@
     "budgetPrior": 97656.0,
     "fteCurrent": 1.0,
     "ftePrior": 1.0
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2026": null,
+    "fte2027": null,
+    "budget2026": 30575.0,
+    "budget2027": 30575.0,
+    "rateGrade": "varies",
+    "budgetCurrent": 30575.0,
+    "budgetPrior": 30575.0,
+    "fteCurrent": null,
+    "ftePrior": null
   },
   {
     "department": "Office of the City Clerk",

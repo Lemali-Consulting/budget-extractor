@@ -324,6 +324,20 @@
   {
     "department": "Office of the City Clerk",
     "slug": "office-of-the-city-clerk",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2025": null,
+    "fte2026": null,
+    "budget2025": 29472.0,
+    "budget2026": 30575.0,
+    "rateGrade": "varies",
+    "budgetCurrent": 30575.0,
+    "budgetPrior": 29472.0,
+    "fteCurrent": null,
+    "ftePrior": null
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
     "title": "Vacancy Allowance",
     "fte2025": null,
     "fte2026": null,

@@ -208,19 +208,6 @@
     "totalFtePrior": 41.0
   },
   {
-    "department": "City Council",
-    "slug": "city-council",
-    "totalFte2026": 36.0,
-    "totalFte2027": 36.0,
-    "totalBudget2026": 2967380.0,
-    "totalBudget2027": 3129024.0,
-    "positionCount": 5,
-    "totalBudgetCurrent": 3129024.0,
-    "totalBudgetPrior": 2967380.0,
-    "totalFteCurrent": 36.0,
-    "totalFtePrior": 36.0
-  },
-  {
     "department": "Office of Community Health and Safety",
     "slug": "office-of-community-health-and-safety",
     "totalFte2026": 0.0,
@@ -232,6 +219,19 @@
     "totalBudgetPrior": 0.0,
     "totalFteCurrent": 43.0,
     "totalFtePrior": 0.0
+  },
+  {
+    "department": "City Council",
+    "slug": "city-council",
+    "totalFte2026": 36.0,
+    "totalFte2027": 36.0,
+    "totalBudget2026": 2901383.0,
+    "totalBudget2027": 3063027.0,
+    "positionCount": 4,
+    "totalBudgetCurrent": 3063027.0,
+    "totalBudgetPrior": 2901383.0,
+    "totalFteCurrent": 36.0,
+    "totalFtePrior": 36.0
   },
   {
     "department": "Department of Human Resources and Civil Service",
@@ -329,11 +329,11 @@
     "slug": "office-of-the-city-clerk",
     "totalFte2026": 19.0,
     "totalFte2027": 19.0,
-    "totalBudget2026": 1464942.0,
-    "totalBudget2027": 1508480.0,
-    "positionCount": 19,
-    "totalBudgetCurrent": 1508480.0,
-    "totalBudgetPrior": 1464942.0,
+    "totalBudget2026": 1495517.0,
+    "totalBudget2027": 1539055.0,
+    "positionCount": 20,
+    "totalBudgetCurrent": 1539055.0,
+    "totalBudgetPrior": 1495517.0,
     "totalFteCurrent": 19.0,
     "totalFtePrior": 19.0
   },

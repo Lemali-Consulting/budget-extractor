@@ -380,6 +380,20 @@
   {
     "department": "Office of the City Clerk",
     "slug": "office-of-the-city-clerk",
+    "title": "Temporary, Part-Time, and Seasonal Allowances",
+    "fte2024": null,
+    "fte2025": null,
+    "budget2024": null,
+    "budget2025": 29472.0,
+    "rateGrade": "",
+    "budgetCurrent": 29472.0,
+    "budgetPrior": null,
+    "fteCurrent": null,
+    "ftePrior": null
+  },
+  {
+    "department": "Office of the City Clerk",
+    "slug": "office-of-the-city-clerk",
     "title": "Vacancy Allowance",
     "fte2024": null,
     "fte2025": null,
@@ -978,20 +992,6 @@
     "budgetPrior": 58352.0,
     "fteCurrent": 1.0,
     "ftePrior": 1.0
-  },
-  {
-    "department": "Office of the Mayor",
-    "slug": "office-of-the-mayor",
-    "title": "Affairs",
-    "fte2024": 2.0,
-    "fte2025": 2.0,
-    "budget2024": 139426.0,
-    "budget2025": 146182.0,
-    "rateGrade": "",
-    "budgetCurrent": 146182.0,
-    "budgetPrior": 139426.0,
-    "fteCurrent": 2.0,
-    "ftePrior": 2.0
   },
   {
     "department": "Office of the Mayor",
