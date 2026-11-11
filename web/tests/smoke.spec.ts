@@ -868,3 +868,35 @@ test("glossary 'used in' links show section names in sentence case", async ({ pa
   await expect(main(page).getByRole("link", { name: "Revenue detail", exact: true }).first()).toBeVisible();
   await expect(main(page).getByRole("link", { name: "Revenue Detail", exact: true })).toHaveCount(0);
 });
+
+// Capital project names are printed in ALL CAPS. Each has a hand-written
+// sentence-case name (named bridges and streets keep their capitals); a new
+// project missing from that list would show up in ALL CAPS here.
+test("capital project names are sentence case, keeping place names", async ({ page }) => {
+  await page.goto("/capital/street-resurfacing/");
+  await expect(main(page).locator("h1").first()).toHaveText(/^\s*Street resurfacing\s*$/);
+  await page.goto("/capital/28th-street-bridge-tip/");
+  await expect(main(page).locator("h1").first()).toHaveText(/^\s*28th Street Bridge \(TIP\)\s*$/);
+});
+
+for (const capitalIndex of ["/capital/", "/2026/capital/"]) {
+  test(`${capitalIndex} lists no project in ALL CAPS`, async ({ page }) => {
+    await page.goto(capitalIndex);
+    const names = await main(page).locator('a[href*="/capital/"]').allInnerTexts();
+    const shouting = names.map((n) => n.trim()).filter((n) => /[A-Z]{4,}/.test(n.replace(/\b(CDBG|HSIP|AIDS|HOME)\b|\([A-Z]+\)/g, "")));
+    expect(shouting).toEqual([]);
+  });
+}
+
+test("reproduced table column headers follow house style", async ({ page }) => {
+  await page.goto("/sections/expenditure-summary/");
+  const headers = main(page).locator("table thead th");
+  await expect(headers.filter({ hasText: /^\s*2027 budget\s*$/ }).first()).toBeAttached();
+  await expect(headers.filter({ hasText: /2027 Budget/ })).toHaveCount(0);
+});
+
+test("capital project metadata chips follow house style", async ({ page }) => {
+  await page.goto("/capital/penn-avenue-reconstruction-phase-ii-tip/");
+  await expect(main(page)).toContainText("Continuing, capital project");
+  await expect(main(page)).toContainText("Engineering and construction");
+});

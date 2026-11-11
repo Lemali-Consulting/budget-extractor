@@ -1,6 +1,7 @@
 /**Bar chart panel for a selected numeric column of a budget table.*/
 
 import { useEffect, useRef } from 'preact/hooks';
+import { columnHeaderLabel } from '../../lib/text-case';
 import * as Plot from '@observablehq/plot';
 import { parseCurrency } from '../../lib/currency';
 import { CHART_COLORS } from '../../lib/chart-colors';
@@ -44,7 +45,7 @@ export default function ChartPanel({ headers, rows, numericCols, chartCol, onCha
       width: containerWidth,
       height: Math.max(300, sliced.length * 28),
       x: {
-        label: headers[chartCol] || `Column ${chartCol + 1}`,
+        label: headers[chartCol] ? columnHeaderLabel(headers[chartCol]) : `Column ${chartCol + 1}`,
         tickFormat: (d: number) =>
           Math.abs(d) >= 1_000_000
             ? `$${(d / 1_000_000).toFixed(1)}M`
@@ -79,7 +80,7 @@ export default function ChartPanel({ headers, rows, numericCols, chartCol, onCha
         >
           {numericCols.map((i) => (
             <option key={i} value={i}>
-              {headers[i] || `Column ${i + 1}`}
+              {headers[i] ? columnHeaderLabel(headers[i]) : `Column ${i + 1}`}
             </option>
           ))}
         </select>

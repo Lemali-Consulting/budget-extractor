@@ -68,7 +68,8 @@ import glossaryBacklinks2025 from '../data/views/2025-glossary-backlinks.json';
 import type { DeptBudgetRow } from './department-budgets';
 import type { SourceCorrection } from './corrections';
 import type { SalariesAndWages } from './personnel';
-import { sectionDisplayTitle } from './text-case';
+import { properNameCase, sectionDisplayTitle, sentenceCase } from './text-case';
+import { capitalProjectName } from './capital-project-names';
 
 // ---------------------------------------------------------------------------
 // Constants (defined once; everything else references these)
@@ -250,7 +251,7 @@ function buildAmendment(opts: {
 /**
  * Give each section the title the site shows, in Public Source's sentence-case
  * style, keeping the PDF's own wording in `pdf_title`. Capital project pages
- * (which carry a functional area) keep their names as printed.
+ * (which carry a functional area) take their hand-written display names.
  */
 function withDisplayTitles<T extends { sections: any[] }>(opts: { bundle: T; departmentSlugs: Set<string> }): T {
   const { bundle, departmentSlugs } = opts;
@@ -258,7 +259,7 @@ function withDisplayTitles<T extends { sections: any[] }>(opts: { bundle: T; dep
     ...bundle,
     sections: bundle.sections.map((s) =>
       s.functional_area
-        ? s
+        ? { ...s, pdf_title: s.title, title: capitalProjectName(s.title), functional_area: sentenceCase(s.functional_area), department: s.department && properNameCase(s.department), project_type: s.project_type && sentenceCase(s.project_type) }
         : { ...s, pdf_title: s.title, title: sectionDisplayTitle({ title: s.title, isDepartment: departmentSlugs.has(s.slug) }) },
     ),
   };
@@ -276,6 +277,14 @@ function withDisplayTitlesInViews(opts: { views: YearViews; titleBySlug: Map<str
   );
   return {
     ...views,
+    capitalProjects: views.capitalProjects.map((p: any) => ({
+      ...p,
+      title: titleFor(p.slug, capitalProjectName(p.title)),
+      functionalArea: p.functionalArea && sentenceCase(p.functionalArea),
+      projectType: p.projectType && sentenceCase(p.projectType),
+      department: p.department && properNameCase(p.department),
+    })),
+    capitalFundingSources: views.capitalFundingSources.map((r: any) => ({ ...r, project: capitalProjectName(r.project) })),
     tablesIndex: views.tablesIndex.map((t: any) => ({ ...t, sectionTitle: titleFor(t.sectionSlug, t.sectionTitle) })),
     searchIndex: views.searchIndex.map((e: any) => ({ ...e, sectionTitle: titleFor(e.slug, e.sectionTitle) })),
     glossaryBacklinks,

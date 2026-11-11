@@ -1,6 +1,7 @@
 ---
 import PageImage from './PageImage.tsx';
 import { BUDGET_YEARS, type AmendmentInfo } from '../lib/budget-year';
+import { columnHeaderLabel } from '../lib/text-case';
 import {
   changedHeaders,
   correctionHref,
@@ -206,8 +207,8 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
                 const colBorder = hi < colCount - 1 ? 'border-r border-gray-200' : '';
                 const sticky = hi === 0 ? 'sticky-col bg-gray-50' : '';
                 return linkCell
-                  ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder} ${sticky}`} data-col={hi} data-numeric={numericColSet.has(hi)}><span set:html={linkCell(h)} /><span class="sort-arrow ml-1 text-gray-400"></span></th>
-                  : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder} ${sticky}`} data-col={hi} data-numeric={numericColSet.has(hi)}>{h}<span class="sort-arrow ml-1 text-gray-400"></span></th>;
+                  ? <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder} ${sticky}`} data-col={hi} data-numeric={numericColSet.has(hi)}><span set:html={linkCell(columnHeaderLabel(h))} /><span class="sort-arrow ml-1 text-gray-400"></span></th>
+                  : <th class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap cursor-pointer hover:bg-gray-100 select-none ${align} ${colBorder} ${sticky}`} data-col={hi} data-numeric={numericColSet.has(hi)}>{columnHeaderLabel(h)}<span class="sort-arrow ml-1 text-gray-400"></span></th>;
               })}
             </tr>
           </thead>

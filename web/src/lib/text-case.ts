@@ -62,3 +62,32 @@ export function sectionDisplayTitle(opts: { title: string; isDepartment: boolean
   if (isDepartment || PROPER_NAME_PATTERN.test(title)) return title;
   return sentenceCase(title);
 }
+
+/**
+ * Column header for a reproduced budget table, in house style: "2027 Budget"
+ * reads "2027 budget". Headers that are department or fund names stay as printed.
+ */
+export function columnHeaderLabel(header: string): string {
+  return PROPER_NAME_PATTERN.test(header) ? header : sentenceCase(header);
+}
+
+/** Words left lowercase inside a proper name, as in "Department of Parks and Recreation". */
+const NAME_MINOR_WORDS: ReadonlySet<string> = new Set(['a', 'an', 'and', 'for', 'in', 'of', 'on', 'or', 'the', 'to']);
+
+/**
+ * A proper name printed in ALL CAPS ("DEPARTMENT OF PUBLIC WORKS"), written
+ * with ordinary capitals ("Department of Public Works"). Names already in
+ * mixed case are returned unchanged.
+ */
+export function properNameCase(name: string): string {
+  if (name !== name.toUpperCase()) return name;
+  let first = true;
+  return name.replace(WORD_PATTERN, (word) => {
+    const lower = word.toLowerCase();
+    const isFirst = first;
+    first = false;
+    if (ACRONYMS.has(word)) return word;
+    if (!isFirst && NAME_MINOR_WORDS.has(lower)) return lower;
+    return lower[0].toUpperCase() + lower.slice(1);
+  });
+}

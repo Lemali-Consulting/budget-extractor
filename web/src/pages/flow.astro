@@ -20,12 +20,6 @@ function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
 }
 
-// Title-case all-caps source data while preserving common acronyms.
-function titleCase(s: string): string {
-  const lowered = s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
-  return lowered.replace(/\b(Tip|Cdbg|Ems|Hud|Eeoc|Rad|Tif|Urd)\b/g, (m) => m.toUpperCase());
-}
-
 // ---------- Operating flow: revenue → trunk → departments ----------
 
 const revenue = revenueWaterfall as RevenueRow[];
@@ -146,10 +140,9 @@ const capitalNodes: FlowNode[] = [
     color: capitalSourceColor(s),
   })),
   ...sortedProjects.slice(0, TOP_N).map(([p]) => {
-    const titled = titleCase(p);
     return {
       id: `proj:${p}`,
-      label: titled.length > 48 ? titled.slice(0, 45).trimEnd() + '…' : titled,
+      label: p.length > 48 ? p.slice(0, 45).trimEnd() + "…" : p,
       category: 'project',
       color: dominantSourceColor(`proj:${p}`),
     };

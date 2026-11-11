@@ -1,5 +1,6 @@
 /**Cross-year capital project comparison: projects added, dropped, or consolidated between proposed and adopted.*/
 import { useState } from 'preact/hooks';
+import { capitalProjectName } from '../lib/capital-project-names';
 
 interface CapitalProject {
   title: string;
@@ -18,8 +19,8 @@ interface Props {
 
 // Known project consolidations (proposed entries that were merged in the adopted budget)
 const CONSOLIDATIONS: Record<string, string> = {
-  'P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)': 'P.J. MCARDLE ROADWAY (TIP)',
-  'P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)': 'P.J. MCARDLE ROADWAY (TIP)',
+  [capitalProjectName('P.J. MCARDLE ROADWAY BRIDGE OVER HILLSIDE (TIP)')]: capitalProjectName('P.J. MCARDLE ROADWAY (TIP)'),
+  [capitalProjectName('P.J. MCARDLE ROADWAY BRIDGE OVER SYCAMORE (TIP)')]: capitalProjectName('P.J. MCARDLE ROADWAY (TIP)'),
 };
 
 export default function CrossYearCapital({ proposedProjects, adoptedProjects, routePrefix }: Props) {

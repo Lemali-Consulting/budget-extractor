@@ -1,4 +1,5 @@
 /**Reusable budget table renderer with section dividers, total-row highlighting, and numeric alignment.*/
+import { columnHeaderLabel } from '../../lib/text-case';
 
 interface Props {
   headers: string[];
@@ -24,7 +25,7 @@ export default function TableView({ headers, rows, sections = [], numericCols }:
             <tr class="bg-gray-50">
               {headers.map((h, i) => (
                 <th key={i} class={`px-3 py-2 font-medium text-gray-700 border-b whitespace-nowrap ${numSet.has(i) ? 'text-right tabular-nums' : 'text-left'} ${i < colCount - 1 ? 'border-r border-gray-200' : ''}`}>
-                  {h}
+                  {columnHeaderLabel(h)}
                 </th>
               ))}
             </tr>
