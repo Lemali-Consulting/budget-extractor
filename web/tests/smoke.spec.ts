@@ -127,6 +127,56 @@ test("personnel page loads", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
+// Trust Funds breakdown
+// ---------------------------------------------------------------------------
+// The budget document never prints a combined trust-fund total, so the
+// homepage and dashboard figure is our sum. Fact-checkers (and readers) need
+// the per-fund amounts behind it to verify it against the PDF.
+for (const statsPage of ["/", "/dashboard/"]) {
+  test(`${statsPage} trust-fund total links to a breakdown that adds up to it`, async ({ page }) => {
+    await page.goto(statsPage);
+    const card = main(page).getByTestId("trust-fund-total");
+    const cardTotal = (await card.getByTestId("trust-fund-total-amount").innerText()).trim();
+
+    await card.getByRole("link", { name: /See the funds/i }).click();
+    await expect(page).toHaveURL(/\/trust-funds\/$/);
+
+    await expect(main(page).locator("h1").first()).toContainText("Trust Funds");
+    await expect(main(page).getByTestId("trust-fund-sum")).toHaveText(cardTotal);
+  });
+}
+
+test("trust-fund breakdown lists each fund with its source pages", async ({ page }) => {
+  await page.goto("/trust-funds/");
+  const rows = main(page).getByTestId("trust-fund-row");
+  expect(await rows.count()).toBeGreaterThan(10);
+
+  // Each fund links to its section page and cites where it sits in the PDF.
+  const first = rows.first();
+  await expect(first.locator("a[href^='/sections/']")).toBeVisible();
+  await expect(first).toContainText(/p+\. \d+/);
+
+  // The stated fund count matches the table.
+  const count = await rows.count();
+  await expect(main(page).getByTestId("trust-fund-count")).toHaveText(String(count));
+});
+
+// The payroll figure is the sum of each department's "Net Salaries" line
+// (budgeted positions, part-time pay, less the vacancy allowance), which
+// excludes overtime and includes trust-fund positions. Public Source's
+// fact-check compared it to the $328.2M salaries-and-wages line, so the label
+// must say what it covers rather than "payroll".
+for (const statsPage of ["/", "/dashboard/"]) {
+  test(`${statsPage} personnel card says what its salary figure covers`, async ({ page }) => {
+    await page.goto(statsPage);
+    const card = main(page).getByTestId("personnel-total");
+    await expect(card).not.toContainText(/payroll/i);
+    await expect(card).toContainText(/net salaries/i);
+    await expect(card).toContainText(/excludes overtime/i);
+  });
+}
+
+// ---------------------------------------------------------------------------
 // What Changed
 // ---------------------------------------------------------------------------
 // The 2027 page was retired at the client's request: functions moving between

@@ -8,6 +8,7 @@ import PersonnelTreemap from '../components/PersonnelTreemap.tsx';
 import EmbedButton from '../components/EmbedButton.tsx';
 import { HEADLINE } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
+import { PERSONNEL_SALARY_SCOPE } from '../lib/personnel';
 
 const {
   departmentBudgets: budgetRows,
@@ -65,10 +66,11 @@ function fmtM(n: number): string {
         {budgetChange >= 0 ? '↑ +' : '↓ '}{budgetChange.toFixed(1)}% vs {HEADLINE.priorYear}
       </div>
     </div>
-    <div class="bg-white rounded-lg border p-4">
+    <div class="bg-white rounded-lg border p-4" data-testid="trust-fund-total">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Trust Funds</div>
-      <div class="text-2xl font-bold text-slate-700 mt-1">{fmtM(trustTotalCurrent)}</div>
+      <div class="text-2xl font-bold text-slate-700 mt-1" data-testid="trust-fund-total-amount">{fmtM(trustTotalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">Separate from operating</div>
+      <a href="/trust-funds/" class="block text-xs text-ps-blue-600 hover:underline mt-1">See the funds &rarr;</a>
     </div>
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Projected Revenue</div>
@@ -80,10 +82,11 @@ function fmtM(n: number): string {
       <div class="text-2xl font-bold text-ps-yellow-900 mt-1">{fmtM(capitalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
     </div>
-    <div class="bg-white rounded-lg border p-4">
+    <div class="bg-white rounded-lg border p-4" data-testid="personnel-total">
       <div class="text-xs text-gray-400 uppercase tracking-wide">Personnel</div>
       <div class="text-2xl font-bold text-purple-900 mt-1">{totalFte.toLocaleString('en-US')} <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a></div>
-      <div class="text-sm text-gray-500 mt-0.5">{fmtM(totalPersonnelBudget)} payroll</div>
+      <div class="text-sm text-gray-500 mt-0.5">{fmtM(totalPersonnelBudget)} net salaries</div>
+      <div class="text-xs text-gray-400 mt-0.5">{PERSONNEL_SALARY_SCOPE}</div>
     </div>
   </div>
 
