@@ -169,7 +169,18 @@ test("trust-fund breakdown lists each fund with its source pages", async ({ page
 // The personnel card headlines the General Fund's printed salaries-and-wages
 // line (overtime included) rather than a sum of our own, so a reader can find
 // the same number on the cited page of the budget document.
-for (const statsPage of ["/", "/dashboard/"]) {
+// The home page keeps the card to the headline figure; the dashboard carries
+// the overtime note, change, citation and FTE count.
+test("/ personnel card shows only the salaries figure and its label", async ({ page }) => {
+  await page.goto("/");
+  const card = main(page).getByTestId("personnel-total");
+  await expect(card.getByTestId("salaries-amount")).toBeVisible();
+  await expect(card).toContainText(/General Fund salaries/i);
+  await expect(card).not.toContainText(/includes overtime/i);
+  await expect(card).not.toContainText(/FTE/);
+});
+
+for (const statsPage of ["/dashboard/"]) {
   test(`${statsPage} personnel card shows the printed salaries line and cites its page`, async ({ page }) => {
     await page.goto(statsPage);
     const card = main(page).getByTestId("personnel-total");

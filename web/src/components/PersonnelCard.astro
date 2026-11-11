@@ -11,9 +11,11 @@ import { generalFundFte, type DepartmentPersonnel } from '../lib/personnel';
 
 interface Props {
   budgetYear: BudgetYear;
+  /** Show the overtime note, change, page citation and FTE count under the figure. */
+  showDetails?: boolean;
 }
 
-const { budgetYear } = Astro.props as Props;
+const { budgetYear, showDetails = true } = Astro.props as Props;
 const salaries = budgetYear.views.salariesAndWages;
 const fte = generalFundFte(budgetYear.views.personnelByDepartment as DepartmentPersonnel[], budgetYear.views.departmentBudgets);
 
@@ -33,15 +35,15 @@ function fmtChange(current: number, prior: number): string {
     <>
       <div class="text-2xl font-bold text-purple-900 mt-1" data-testid="salaries-amount" data-amount={salaries.current}>{fmtM(salaries.current)}</div>
       <div class="text-sm text-gray-500 mt-0.5">General Fund salaries &amp; wages</div>
-      <div class="text-xs text-gray-400 mt-0.5">
+      {showDetails && <div class="text-xs text-gray-400 mt-0.5">
         Includes overtime &middot; {fmtChange(salaries.current, salaries.prior)} vs. {budgetYear.priorYear} &middot;{' '}
         <a href={`${budgetYear.routePrefix}/sections/${salaries.sectionSlug}/`} class="text-ps-blue-600 hover:underline whitespace-nowrap">p. {salaries.page}</a>
-      </div>
+      </div>}
     </>
   )}
-  <div class="text-xs text-gray-400 mt-0.5">
+  {showDetails && <div class="text-xs text-gray-400 mt-0.5">
     {Math.round(fte).toLocaleString('en-US')} General Fund{' '}
     <a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-Time Equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a>
     {' '}(our count; the budget prints no citywide total)
-  </div>
+  </div>}
 </div>
