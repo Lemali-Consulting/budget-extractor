@@ -1381,8 +1381,38 @@ def build_department_budgets(sections: list[dict]) -> list[dict]:
     return rows
 
 
+# Position tables repeat the part-time lines as a subtotal row under this label
+# (and use the same label as a subheading). Counting it would double the part-time pay.
+PART_TIME_SUBTOTAL_PATTERN: re.Pattern[str] = re.compile(
+    r"^temporary, part-time,? (and|&) seasonal allowances$", re.IGNORECASE
+)
+
+
+def parse_signed_amount(s: str) -> float | None:
+    """Parse a currency cell, reading an amount in parentheses as negative.
+
+    Position tables print the vacancy allowance, a deduction, as "(183,808)".
+    """
+    amount = parse_currency(s)
+    if amount is not None and s.strip().startswith("("):
+        return -amount
+    return amount
+
+
+def is_position_row(title: str) -> bool:
+    """Whether a position-table row adds to payroll: not a total line and not the part-time subtotal."""
+    if not title or "total" in title.lower():
+        return False
+    return not PART_TIME_SUBTOTAL_PATTERN.match(title.strip())
+
+
 def build_personnel(sections: list[dict]) -> list[dict]:
-    """Extract personnel rows from all personnel tables."""
+    """Extract payroll rows (positions, part-time lines, allowances) from all personnel tables.
+
+    Summed per department they equal the PDF's "Total Full-Time Positions and
+    Net Salaries" line: total and subtotal rows are skipped, and the vacancy
+    allowance is kept as a negative amount.
+    """
     rows: list[dict] = []
 
     for section in sections:
@@ -1404,7 +1434,7 @@ def build_personnel(sections: list[dict]) -> list[dict]:
 
             for row in table["rows"]:
                 title = row[title_idx] if title_idx < len(row) else ""
-                if not title or "total" in title.lower():
+                if not is_position_row(title):
                     continue
 
                 def cell(idx: int) -> str:
@@ -1416,8 +1446,8 @@ def build_personnel(sections: list[dict]) -> list[dict]:
                     "title": title,
                     f"fte{PRIOR_YEAR}": parse_currency(cell(fte_prior_idx)),
                     f"fte{BUDGET_YEAR}": parse_currency(cell(fte_current_idx)),
-                    f"budget{PRIOR_YEAR}": parse_currency(cell(budget_prior_idx)),
-                    f"budget{BUDGET_YEAR}": parse_currency(cell(budget_current_idx)),
+                    f"budget{PRIOR_YEAR}": parse_signed_amount(cell(budget_prior_idx)),
+                    f"budget{BUDGET_YEAR}": parse_signed_amount(cell(budget_current_idx)),
                     "rateGrade": cell(rate_idx),
                 }))
 
