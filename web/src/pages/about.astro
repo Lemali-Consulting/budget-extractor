@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { BUDGET_YEARS, HEADLINE, ARCHIVE_YEARS, YEAR_ROLE, yearPath, type BudgetYear } from '../lib/budget-year';
 import { changedHeaders, correctionAnchor, quoteList } from '../lib/corrections';
+import { publishedSectionHrefs } from '../lib/published-pages';
 
 const [archive] = ARCHIVE_YEARS as (BudgetYear | undefined)[];
 // Every year the site carries, newest first, with the corrections (if any) we made to its source PDF.
@@ -149,9 +150,9 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
                 <p class="mb-1"><strong>What the PDF says:</strong> the table's year columns are headed {quoteList(printed)}.</p>
                 <p class="mb-1"><strong>What we show:</strong> {quoteList(shown)}. The PDF itself is unchanged; the relabelling is ours.</p>
                 <p class="mb-1"><strong>Why:</strong> {c.evidence}</p>
-                {y.role !== YEAR_ROLE.COMPARISON_ONLY && (
+                {y.role !== YEAR_ROLE.COMPARISON_ONLY && publishedSectionHrefs(y)[c.sectionSlug] && (
                   <p>
-                    <a href={yearPath({ budgetYear: y, path: `/sections/${c.sectionSlug}/#table-${c.tableId}` })} class="font-medium underline hover:text-ps-yellow-700">See the corrected table &rarr;</a>
+                    <a href={`${publishedSectionHrefs(y)[c.sectionSlug]}#table-${c.tableId}`} class="font-medium underline hover:text-ps-yellow-700">See the corrected table &rarr;</a>
                   </p>
                 )}
               </article>

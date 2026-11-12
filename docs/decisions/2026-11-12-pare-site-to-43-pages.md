@@ -1,0 +1,56 @@
+# Pare the public site to 43 pages
+
+**Date:** 2026-11-12
+**Status:** accepted
+
+## Context
+
+The site built 196 pages. Rich (Public Source) asked for 50 or fewer, so that each page can be edited and fact-checked:
+
+> "We want to pare the publicly available part of Pittsburgh Budget Explorer down to 50 pages or fewer, largely to make it possible for us to be thorough in the processes (editing and fact-checking) that are core to Public Source's value proposition." — Rich, via Max, 2026-11-12
+
+Rich named the keepers: the big-picture page, the operating and capital summaries, and every department and bureau. He also named the cuts: the capital project pages and the trust fund pages. The plan is in `docs/plans/2026-11-12-pare-site-to-43-pages.md`.
+
+Each department had two pages, a summary and its PDF section. Max made these choices from the options laid out:
+
+> "1: Let's try the merged page approach 2: Let's count the Department of Public Works parent section and the two boards 3: Unsure. Let's do the other cuts/consolidaitons and see where we land after this. 4: Cut them" — Max, 2026-11-12
+
+The four answers cover:
+1. merged page, over keeping only the summary or only the section;
+2. which sections count as departments;
+3. which citywide sections stay;
+4. the embed pages.
+
+## Decision
+
+The site publishes 43 pages:
+- **10 single pages:** home, operating, capital, about, trust fund overview, brief, trends, glossary, personnel, money flow.
+- **28 department pages** at `/departments/{slug}/`, one for each of PDF sections 9–36. Each shows the department summary on top: headline figures, trend, top expenditures and top positions. The PDF section's tables follow. The Department of Public Works parent section gets a page for the first time. Rich counted 29 departments; the document has 28 department-level sections.
+- **5 citywide sections** at `/sections/{slug}/`: Five-Year Forecast, Revenue Summary, Revenue Detail, Expenditure Summary and Expenditures Detail. This set is provisional, per answer 3.
+
+Cut:
+- the 68 capital project pages;
+- the 20 trust fund pages;
+- the reference and no-table sections (1, 2, 5, 57–63);
+- the data explorer, compare page, /hero/, the departments index and the 5 embed pages.
+
+Links work as follows:
+- One module decides what is published and gives every link its target: `web/src/lib/published-pages.ts`.
+- A name with no published page shows as plain text. This covers capital project cards, trust fund names, pay-split funds that are trust funds, glossary "used in" chips for cut sections, and the "CBA rates" note.
+- The nav's Departments item points to the departments group on the operating index.
+- The operating index lists the trust funds as one card for the overview.
+- Old URLs redirect in `web/public/_redirects`:
+  - a department's `/sections/` URL goes to its department page;
+  - trust funds go to the overview;
+  - other sections go to the operating index;
+  - capital projects go to the capital index;
+  - the explorer, compare, hero and embeds go home.
+
+A smoke test lists the 43 pages and fails on any page built beyond them. It also crawls each one for links to anything else.
+
+## Consequences
+
+- **Page images stay published.** The cut sections' and capital projects' page images still ship and can be reached by direct URL. They are image files, not pages. Whether to stop publishing them is open.
+- **Search covers less.** Search no longer finds text that appeared only on capital project or cut section pages.
+- **Archive years are unaffected.** When published, they keep every section and capital page. The components those routes use stay in the repo.
+- **Data explorer users lose those tools.** Readers who used the data explorer or the compare page lose them. The personnel explorer remains.

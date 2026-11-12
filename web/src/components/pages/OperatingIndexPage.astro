@@ -5,6 +5,7 @@ import SiteSearch from '../SiteSearch.tsx';
 import Sparkline from '../Sparkline.tsx';
 import AmendmentNotice from '../AmendmentNotice.astro';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+import { DEPARTMENT_SECTIONS, isDepartmentSection, isTrustFundSection, publishedSections, sectionPageHref } from '../../lib/published-pages';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -16,27 +17,30 @@ const sections = budgetYear.operating.sections;
 const searchIndex = budgetYear.views.searchIndex;
 const departmentBudgets = budgetYear.views.departmentBudgets;
 
-// Group sections by rough category based on section number
-const categories = [
-  { label: 'Overview', range: [1, 9] },
-  { label: 'Departments', range: [10, 39] },
-  { label: 'Trust funds', range: [40, 57] },
-  { label: 'Other', range: [58, 99] },
-];
+// Group sections the way the document does. On the headline site only published
+// sections are listed: each department links to its merged department page, and
+// the trust funds collapse into one card for the trust fund overview.
+const OVERVIEW = 'Overview';
+const DEPARTMENTS = 'Departments';
+const TRUST_FUNDS = 'Trust funds';
+const OTHER = 'Other';
+const DEPARTMENTS_ANCHOR = 'departments';
+const TRUST_FUNDS_HREF = headlinePath('/trust-funds/');
 
-function getSectionCategory(num: number): string {
-  for (const cat of categories) {
-    if (num >= cat.range[0] && num <= cat.range[1]) return cat.label;
-  }
-  return 'Other';
+function sectionCategory(section: any): string {
+  if (isDepartmentSection(section)) return DEPARTMENTS;
+  if (isTrustFundSection(section)) return TRUST_FUNDS;
+  return section.section_number < DEPARTMENT_SECTIONS.first ? OVERVIEW : OTHER;
 }
 
+const listedSections = budgetYear.isHeadline ? publishedSections(budgetYear) : sections;
 const grouped = new Map<string, typeof sections>();
-for (const section of sections) {
-  const cat = getSectionCategory(section.section_number);
+for (const section of listedSections) {
+  const cat = sectionCategory(section);
   if (!grouped.has(cat)) grouped.set(cat, []);
   grouped.get(cat)!.push(section);
 }
+const trustFundCount = sections.filter((s: any) => isTrustFundSection(s)).length;
 
 // Extract first narrative snippet for each section
 function getSummary(section: any): string {
@@ -91,7 +95,7 @@ function hasChart(section: any): boolean {
   </div>
 
   {[...grouped.entries()].map(([category, secs]) => (
-    <section class="mb-8">
+    <section class="mb-8 scroll-mt-4" id={category === DEPARTMENTS ? DEPARTMENTS_ANCHOR : undefined}>
       <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b pb-1">{category}</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {secs.map((s) => {
@@ -99,7 +103,7 @@ function hasChart(section: any): boolean {
           const hasChartImg = hasChart(s);
           return (
             <a
-              href={`${prefix}/sections/${s.slug}/`}
+              href={sectionPageHref({ budgetYear, section: s }) ?? `${prefix}/sections/${s.slug}/`}
               class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition"
             >
               <div class="font-medium flex items-center gap-2">
@@ -130,4 +134,16 @@ function hasChart(section: any): boolean {
       </div>
     </section>
   ))}
+
+  {budgetYear.isHeadline && trustFundCount > 0 && (
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-700 mb-3 border-b pb-1">{TRUST_FUNDS}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <a href={TRUST_FUNDS_HREF} class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition">
+          <div class="font-medium">Trust fund overview</div>
+          <div class="text-sm text-gray-500 mt-1">{trustFundCount} funds, with each one's budget and its pages in the PDF</div>
+        </a>
+      </div>
+    </section>
+  )}
 </Base>

@@ -1,14 +1,15 @@
 ---
 /**Prev/next navigation bar for moving between sections within a budget type.*/
 
+import type { SlugRef } from '../lib/static-paths';
+
 interface Props {
-  prev?: { slug: string; title: string } | null;
-  next?: { slug: string; title: string } | null;
-  basePath: string; // e.g. "/sections" or "/capital"
+  prev?: SlugRef | null;
+  next?: SlugRef | null;
   position?: 'top' | 'bottom';
 }
 
-const { prev, next, basePath, position = 'bottom' } = Astro.props;
+const { prev, next, position = 'bottom' } = Astro.props;
 const isTop = position === 'top';
 const wrapperClass = isTop
   ? 'mb-6 pb-4 border-b border-gray-200 flex items-stretch gap-4'
@@ -19,7 +20,7 @@ const wrapperClass = isTop
   <nav class={wrapperClass}>
     {prev ? (
       <a
-        href={`${basePath}/${prev.slug}/`}
+        href={prev.href}
         class="flex-1 group flex items-start gap-2 px-4 py-3 rounded-lg border border-gray-200 hover:border-ps-blue-300 hover:bg-ps-blue-50 transition text-left"
       >
         <span class="text-gray-400 group-hover:text-ps-blue-500 mt-0.5 shrink-0" aria-hidden="true">&larr;</span>
@@ -33,7 +34,7 @@ const wrapperClass = isTop
     )}
     {next ? (
       <a
-        href={`${basePath}/${next.slug}/`}
+        href={next.href}
         class="flex-1 group flex items-start gap-2 px-4 py-3 rounded-lg border border-gray-200 hover:border-ps-blue-300 hover:bg-ps-blue-50 transition text-right justify-end"
       >
         <span class="text-right">

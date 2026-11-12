@@ -6,6 +6,9 @@ import { HEADLINE, headlinePath } from '../../lib/budget-year';
 import { chartImageUrl } from '../../lib/image-paths';
 import TableViewer from '../TableViewer.astro';
 import SummaryCard from '../SummaryCard.astro';
+import DepartmentSummary from '../DepartmentSummary.astro';
+import { isDepartmentSection, sectionPageHref } from '../../lib/published-pages';
+import type { SlugRef } from '../../lib/static-paths';
 import SectionToc from '../SectionToc.astro';
 import HighlightsCallout from '../HighlightsCallout.astro';
 import AmendmentNotice from '../AmendmentNotice.astro';
@@ -22,8 +25,8 @@ import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-l
 interface Props {
   budgetYear: BudgetYear;
   section: any;
-  prev: { slug: string; title: string } | null;
-  next: { slug: string; title: string } | null;
+  prev: SlugRef | null;
+  next: SlugRef | null;
 }
 
 const { budgetYear, section, prev, next } = Astro.props as Props;
@@ -36,8 +39,11 @@ const adoptedPageMap = amendment?.adoptedPages || {};
 const departmentBudgets = budgetYear.views.departmentBudgets;
 
 // Same page in the current version, when the headline budget has this section.
-const headlineHasSection = HEADLINE.operating.sections.some((s: any) => s.slug === section.slug);
-const currentHref = headlineHasSection ? headlinePath(`/sections/${section.slug}/`) : headlinePath('/operating/');
+const headlineSection = HEADLINE.operating.sections.find((s: any) => s.slug === section.slug);
+const currentHref = (headlineSection && sectionPageHref({ budgetYear: HEADLINE, section: headlineSection })) || headlinePath('/operating/');
+// Where this page is published; a headline department's section is merged into its department page.
+const pageHref = sectionPageHref({ budgetYear, section }) ?? `${prefix}/sections/${section.slug}/`;
+const showDepartmentSummary = budgetYear.isHeadline && isDepartmentSection(section);
 
 const glossaryTerms = buildGlossaryTerms(budgetYear.operating.glossary || {});
 const linkGlossaryTerms = createGlossaryLinker(glossaryTerms);
@@ -349,11 +355,11 @@ function parseNarrative(raw: string): Segment[] {
     <span>{section.title}</span>
   </nav>
 
-  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} position="top" /></div>
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} position="top" /></div>
 
   <div class="flex items-center gap-3 mb-2">
     <h1 class="text-3xl font-bold">{section.title}</h1>
-    <span data-pagefind-ignore><ShareButton client:load url={`${prefix}/sections/${section.slug}/`} /></span>
+    <span data-pagefind-ignore><ShareButton client:load url={pageHref} /></span>
     <button data-pagefind-ignore class="text-xs text-gray-400 hover:text-ps-blue-600 print:hidden" onclick="window.print()" title="Print this section" aria-label="Print">
       Print
     </button>
@@ -374,6 +380,9 @@ function parseNarrative(raw: string): Segment[] {
   />
   </div>
 
+  {showDepartmentSummary ? (
+    <DepartmentSummary budgetYear={budgetYear} slug={section.slug} />
+  ) : (
   <SummaryCard
     budgetYear={budgetYear}
     budget={metrics.budget}
@@ -384,6 +393,7 @@ function parseNarrative(raw: string): Segment[] {
     pageCount={pageCount}
     sparklineValues={sparklineValues.length >= 2 ? sparklineValues : undefined}
   />
+  )}
 
   <HighlightsCallout highlights={highlights} />
 
@@ -522,15 +532,7 @@ function parseNarrative(raw: string): Segment[] {
         return (
           <div id={`table-${tableData.id}`}>
             <div class="flex justify-end gap-3 mb-1" data-pagefind-ignore>
-              <ShareButton client:load url={`${prefix}/sections/${section.slug}/#table-${tableData.id}`} label="Share table" />
-              {budgetYear.isHeadline && (
-                <a
-                  href={`/explorer/#${tableData.id}`}
-                  class="text-xs text-ps-blue-500 hover:text-ps-blue-700 hover:underline"
-                >
-                  Open in Explorer &rarr;
-                </a>
-              )}
+              <ShareButton client:load url={`${pageHref}#table-${tableData.id}`} label="Share table" />
             </div>
             <TableViewer year={budgetYear.year} table={tableData} slug={section.slug} linkCell={linkGlossaryTerms} amendment={amendment} amendmentDiffs={amendmentByTable[tableData.id]} adoptedPageAvailable={(adoptedPageMap[section.slug] || []).includes(tableData.relative_page)} />
           </div>
@@ -539,7 +541,7 @@ function parseNarrative(raw: string): Segment[] {
     });
   })()}
 
-  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/sections`} /></div>
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} /></div>
 
   <div data-pagefind-ignore>
   {section.start_page && section.end_page && (

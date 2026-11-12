@@ -17,11 +17,11 @@ type SizeBy = 'fte' | 'budget';
 
 interface Props {
   data: DeptData[];
-  /** Route prefix of the budget year's pages ("" headline, "/2026" archive). */
-  routePrefix: string;
+  /** Published page per department slug (see publishedSectionHrefs); bars without one aren't clickable. */
+  sectionHrefs: Record<string, string>;
 }
 
-export default function PersonnelTreemap({ data, routePrefix }: Props) {
+export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -89,11 +89,12 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
       chart.querySelectorAll('g[aria-label="bar"] rect'),
     );
     barRects.forEach((rect, i) => {
-      if (i < chartData.length) {
+      const href = i < chartData.length ? sectionHrefs[chartData[i].slug] : undefined;
+      if (href) {
         rect.setAttribute('data-slug', chartData[i].slug);
         rect.style.cursor = 'pointer';
         rect.addEventListener('click', () => {
-          window.location.href = `${routePrefix}/sections/${chartData[i].slug}/`;
+          window.location.href = href;
         });
         rect.addEventListener('mouseenter', () => {
           rect.setAttribute('opacity', '0.7');
@@ -105,7 +106,7 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
     });
 
     return () => chart.remove();
-  }, [data, sizeBy, containerWidth]);
+  }, [data, sizeBy, containerWidth, sectionHrefs]);
 
   if (data.length === 0) {
     return <div class="text-gray-400 italic py-4">No personnel data available.</div>;

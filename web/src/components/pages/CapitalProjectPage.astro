@@ -149,7 +149,7 @@ function parseNarrative(raw: string): Segment[] {
     <span>{section.title}</span>
   </nav>
 
-  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/capital`} position="top" /></div>
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} position="top" /></div>
 
   <h1 class="text-3xl font-bold mb-2">{section.title}</h1>
 
@@ -268,7 +268,7 @@ function parseNarrative(raw: string): Segment[] {
     }
   })}
 
-  <div data-pagefind-ignore><SectionNav prev={prev} next={next} basePath={`${prefix}/capital`} /></div>
+  <div data-pagefind-ignore><SectionNav prev={prev} next={next} /></div>
 
   <div data-pagefind-ignore>
   {section.start_page && section.end_page && pageCount > 0 && (

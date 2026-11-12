@@ -1,14 +1,14 @@
 ---
-/**Headline department one-pager; the body is shared with the archive route.*/
-import DepartmentPage from '../../components/pages/DepartmentPage.astro';
+/**Headline department page: the department's summary above its full PDF section.*/
+import SectionPage from '../../components/pages/SectionPage.astro';
 import { HEADLINE } from '../../lib/budget-year';
-import { departmentStaticPaths } from '../../lib/static-paths';
+import { departmentSectionStaticPaths } from '../../lib/static-paths';
 
 export function getStaticPaths() {
-  return departmentStaticPaths(HEADLINE);
+  return departmentSectionStaticPaths(HEADLINE);
 }
 
-const { slug } = Astro.params;
+const { section, prev, next } = Astro.props;
 ---
 
-<DepartmentPage budgetYear={HEADLINE} slug={slug!} />
+<SectionPage budgetYear={HEADLINE} section={section} prev={prev} next={next} />

@@ -25,16 +25,20 @@ interface Props {
   rows: PersonnelRow[];
   /** Budget year the rows describe; labels the FTE and budget columns. */
   year: number;
-  /** Route prefix of that year's pages ("" headline, "/2026" archive). */
-  routePrefix: string;
+  /** Published page per section slug (see publishedSectionHrefs); a name without one shows as plain text. */
+  sectionHrefs: Record<string, string>;
 }
+
+/** The PDF section holding the collective-bargaining pay scales that "see below" rates refer to. */
+const SALARY_TABLES_SLUG = 'salary-tables';
+const CBA_RATE_NOTE = 'Rate set by collective bargaining agreement — see the Salary Tables section of the budget document';
 
 function formatCurrency(n: number | null): string {
   if (n === null) return '—';
   return `$${Math.round(n).toLocaleString()}`;
 }
 
-export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
+export default function PersonnelExplorer({ rows, year, sectionHrefs }: Props) {
   const [search, setSearch] = useState('');
   const [deptFilter, setDeptFilter] = useState('');
   // Opens on the biggest position lines; readers asked for that over A–Z by department.
@@ -146,22 +150,26 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
               <tr key={i} class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                 <td class="px-3 py-1.5 border-t">
                   {row.title}
-                  <FundSplitNote split={row.fundSplit} routePrefix={routePrefix} />
+                  <FundSplitNote split={row.fundSplit} sectionHrefs={sectionHrefs} />
                 </td>
                 <td class="px-3 py-1.5 border-t">
-                  <a href={`${routePrefix}/sections/${row.slug}/`} class="text-ps-blue-600 hover:underline">
-                    {row.department}
-                  </a>
+                  {sectionHrefs[row.slug] ? (
+                    <a href={sectionHrefs[row.slug]} class="text-ps-blue-600 hover:underline">
+                      {row.department}
+                    </a>
+                  ) : (
+                    row.department
+                  )}
                 </td>
                 <td class="px-3 py-1.5 border-t text-right">
                   {row.rateGrade === 'see below' ? (
-                    <a
-                      href={`${routePrefix}/sections/salary-tables/`}
-                      class="text-ps-blue-600 hover:underline text-xs"
-                      title="Rate set by collective bargaining agreement — see Salary Tables"
-                    >
-                      CBA rates
-                    </a>
+                    sectionHrefs[SALARY_TABLES_SLUG] ? (
+                      <a href={sectionHrefs[SALARY_TABLES_SLUG]} class="text-ps-blue-600 hover:underline text-xs" title={CBA_RATE_NOTE}>
+                        CBA rates
+                      </a>
+                    ) : (
+                      <span class="text-xs" title={CBA_RATE_NOTE}>CBA rates</span>
+                    )
                   ) : (
                     row.rateGrade || '—'
                   )}

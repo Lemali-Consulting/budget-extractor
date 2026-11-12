@@ -40,10 +40,12 @@ test("operating index lists sections", async ({ page }) => {
   await expect(main(page).locator("h1").first()).toContainText(
     /Operating Budget/i,
   );
-  // Should have multiple section cards
-  const cards = main(page).locator("a[href*='/sections/']");
-  await expect(cards.first()).toBeVisible();
-  expect(await cards.count()).toBeGreaterThan(10);
+  // Departments link to their merged department pages; the citywide sections
+  // keep their section pages, and the trust funds share one overview.
+  const departments = main(page).locator("#departments a[href^='/departments/']");
+  expect(await departments.count()).toBe(28);
+  expect(await main(page).locator("a[href^='/sections/']").count()).toBeGreaterThan(0);
+  await expect(main(page).locator("a[href='/trust-funds/']")).toBeVisible();
 });
 
 // ---------------------------------------------------------------------------
@@ -60,7 +62,7 @@ test("operating section detail renders tables", async ({ page }) => {
 });
 
 test("operating section detail - department page", async ({ page }) => {
-  await page.goto("/sections/city-council/");
+  await page.goto("/departments/city-council/");
 
   await expect(main(page).locator("h1").first()).toContainText("City Council");
 });
@@ -74,21 +76,13 @@ test("capital index lists projects", async ({ page }) => {
   await expect(main(page).locator("h1").first()).toContainText(
     /Capital Budget/i,
   );
-  const cards = main(page).locator("a[href*='/capital/']");
+  const cards = main(page).getByTestId("capital-project-card");
   await expect(cards.first()).toBeVisible();
   expect(await cards.count()).toBeGreaterThan(10);
+  // The site publishes no page per project (Public Source's 50-page limit), so the cards aren't links.
+  await expect(main(page).locator("a[href^='/capital/']")).toHaveCount(0);
 });
 
-// ---------------------------------------------------------------------------
-// Capital Project Detail (sample)
-// ---------------------------------------------------------------------------
-test("capital project detail renders", async ({ page }) => {
-  await page.goto("/capital/28th-street-bridge-tip/");
-
-  await expect(main(page).locator("h1").first()).toContainText(
-    /28TH STREET BRIDGE/i,
-  );
-});
 
 // ---------------------------------------------------------------------------
 // Retired dashboard
@@ -113,15 +107,6 @@ for (const route of ["/", "/brief/", "/personnel/", "/operating/"]) {
   });
 }
 
-// ---------------------------------------------------------------------------
-// Data Explorer
-// ---------------------------------------------------------------------------
-test("data explorer loads", async ({ page }) => {
-  await page.goto("/explorer/");
-
-  // Title is rendered by the Preact DataExplorer component
-  await expect(page).toHaveTitle(/Data explorer/i);
-});
 
 // ---------------------------------------------------------------------------
 // Personnel
@@ -157,9 +142,10 @@ test("trust-fund breakdown lists each fund with its source pages", async ({ page
   const rows = main(page).getByTestId("trust-fund-row");
   expect(await rows.count()).toBeGreaterThan(10);
 
-  // Each fund links to its section page and cites where it sits in the PDF.
+  // Each fund cites where it sits in the PDF. Fund names aren't links: the
+  // site publishes no page per trust fund (Public Source's 50-page limit).
   const first = rows.first();
-  await expect(first.locator("a[href^='/sections/']")).toBeVisible();
+  await expect(first.locator("a[href^='/sections/']")).toHaveCount(0);
   await expect(first).toContainText(/p+\. \d+/);
 
   // The stated fund count matches the table.
@@ -233,11 +219,11 @@ test("headline operating page has no amended-budget notice", async ({ page }) =>
 });
 
 test("headline section pages carry no amendment highlights or adopted toggle", async ({ page }) => {
-  await page.goto("/sections/department-of-human-resources-and-civil-service/");
+  await page.goto("/departments/department-of-human-resources-and-civil-service/");
   await expect(main(page).locator("table").first()).toBeVisible();
   await expect(main(page).locator("td.has-amendment-up, td.has-amendment-down")).toHaveCount(0);
 
-  await page.goto("/sections/bureau-of-police/");
+  await page.goto("/departments/bureau-of-police/");
   await expect(
     main(page).getByRole("button", { name: /View source page/i }).filter({ hasText: /amended/i }),
   ).toHaveCount(0);
@@ -319,16 +305,14 @@ for (const route of [
   "/brief/",
   "/operating/",
   "/capital/",
-  "/departments/",
   "/departments/bureau-of-police/",
-  "/sections/bureau-of-police/",
+  "/sections/revenue-detail/",
+  "/trust-funds/",
   "/personnel/",
   "/flow/",
   "/trends/",
-  "/compare/",
   "/glossary/",
   "/about/",
-  "/embed/",
 ]) {
   test(`${route} links to no retired 2026 page`, async ({ page }) => {
     await page.goto(route);
@@ -336,14 +320,6 @@ for (const route of [
   });
 }
 
-// ---------------------------------------------------------------------------
-// Compare
-// ---------------------------------------------------------------------------
-test("compare page loads", async ({ page }) => {
-  await page.goto("/compare/");
-
-  await expect(main(page).locator("h1").first()).toContainText(/Compare/i);
-});
 
 // ---------------------------------------------------------------------------
 // Glossary
@@ -404,7 +380,7 @@ test("header navigation links are present on all pages", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // Clickable chart bars
 // ---------------------------------------------------------------------------
-test("personnel staffing chart bars link to section pages", async ({ page }) => {
+test("personnel staffing chart bars link to department pages", async ({ page }) => {
   await page.goto("/personnel/");
   // The chart redraws once after hydration, so rely on the auto-retrying
   // assertions and click rather than a one-shot scroll on a stale element.
@@ -414,10 +390,10 @@ test("personnel staffing chart bars link to section pages", async ({ page }) => 
 
   const slug = await bar.getAttribute("data-slug");
   await bar.click({ force: true });
-  await expect(page).toHaveURL(new RegExp(`/sections/${slug}/`));
+  await expect(page).toHaveURL(new RegExp(`/departments/${slug}/`));
 });
 
-test("home budget chart bars link to section pages", async ({ page }) => {
+test("home budget chart bars link to department pages", async ({ page }) => {
   await page.goto("/");
 
   // Wait for the department comparison chart to render
@@ -432,7 +408,7 @@ test("home budget chart bars link to section pages", async ({ page }) => {
   // Click a bar and verify navigation
   const slug = await bar.getAttribute("data-slug");
   await bar.click();
-  await expect(page).toHaveURL(new RegExp(`/sections/${slug}/`));
+  await expect(page).toHaveURL(new RegExp(`/departments/${slug}/`));
 });
 
 // ---------------------------------------------------------------------------
@@ -451,16 +427,6 @@ test("brief page loads with hero stats", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // Department One-Pagers
 // ---------------------------------------------------------------------------
-test("departments index lists departments", async ({ page }) => {
-  await page.goto("/departments/");
-
-  await expect(main(page).locator("h1").first()).toContainText(
-    /Department/i,
-  );
-  const cards = main(page).locator("a[href*='/departments/']");
-  await expect(cards.first()).toBeVisible();
-  expect(await cards.count()).toBeGreaterThan(10);
-});
 
 test("department one-pager renders", async ({ page }) => {
   await page.goto("/departments/bureau-of-police/");
@@ -474,25 +440,6 @@ test("department one-pager renders", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // Embeds
 // ---------------------------------------------------------------------------
-test("embed index lists available charts", async ({ page }) => {
-  await page.goto("/embed/");
-
-  await expect(main(page).locator("h1").first()).toContainText(
-    /Embeddable Charts/i,
-  );
-  await expect(main(page).getByText(/iframe/i).first()).toBeVisible();
-});
-
-test("embed page renders chart without nav", async ({ page }) => {
-  await page.goto("/embed/department-comparison/");
-
-  // Should not have the main site header
-  await expect(page.locator("header nav")).not.toBeVisible();
-  // Should have a source attribution
-  await expect(
-    page.getByText(/Pittsburgh Budget Explorer/i).first(),
-  ).toBeVisible();
-});
 
 // The department-by-department change embeds were retired with the What
 // Changed page (client request, 2026-11-12): functions moving between
@@ -506,7 +453,7 @@ for (const embedPath of RETIRED_EMBED_PATHS) {
   });
 }
 
-for (const route of ["/embed/", "/brief/"]) {
+for (const route of ["/brief/"]) {
   test(`${route} offers none of the retired change embeds`, async ({ page }) => {
     await page.goto(route);
     // Embed buttons carry their path in the island's props, not in a link.
@@ -578,11 +525,11 @@ test("personnel page has no staffing-changes summary", async ({ page }) => {
   await expect(main(page)).not.toContainText(/FTE change|Budget change|year-over-year/i);
 });
 
-test("section summary cards show positions without an FTE change", async ({ page }) => {
+test("department summaries show positions without an FTE change", async ({ page }) => {
   // This section printed "Positions (FTE) 43 ↑ NaN" while the change was shown.
-  await page.goto("/sections/office-of-community-health-and-safety/");
-  await expect(main(page)).toContainText(/Positions\s*\(\s*FTE\s*\)\s*43/);
-  await expect(main(page)).not.toContainText(/Positions\s*\(\s*FTE\s*\)\s*[\d,.]+\s*[↑↓]/);
+  await page.goto("/departments/office-of-community-health-and-safety/");
+  await expect(main(page)).toContainText(/Staff\s*\(\s*FTE\s*\)\s*43/);
+  await expect(main(page)).not.toContainText(/\(\s*FTE\s*\)\s*[\d,.]+\s*[↑↓]/);
   await expect(main(page)).not.toContainText("NaN");
 });
 
@@ -633,12 +580,15 @@ test("personnel explorer starts sorted by 2027 budget, largest first", async ({ 
 const SENIOR_PARK_RANGER_SPLIT = "Pay split: 12% Public Safety Administration General Fund, 88% Parks RAD Trust Fund";
 
 test("department top positions show the pay split on lines the PDF splits", async ({ page }) => {
-  await page.goto("/departments/regional-asset-district-parks-and-recreation-trust-fund/");
-  const table = main(page).locator("table").filter({ hasText: "Per position" });
-  const row = table.locator("tr").filter({ hasText: "Senior Park Ranger" });
+  await page.goto("/personnel/");
+  const explorer = main(page).locator("table").filter({ hasText: "Per position" });
+  await main(page).getByPlaceholder("Filter by title...").fill("Senior Park Ranger");
+  const row = explorer.locator("tbody tr").filter({ hasText: "Public Safety" }).filter({ hasText: "Senior Park Ranger" }).first();
   await expect(row).toContainText(SENIOR_PARK_RANGER_SPLIT);
+  // Each fund links to its department page; trust funds have no page, so theirs is plain text.
   await expect(row.getByRole("link", { name: "Public Safety Administration General Fund" }))
-    .toHaveAttribute("href", "/sections/bureau-of-administration-public-safety/");
+    .toHaveAttribute("href", "/departments/bureau-of-administration-public-safety/");
+  await expect(row.getByRole("link", { name: "Parks RAD Trust Fund" })).toHaveCount(0);
 });
 
 test("personnel explorer shows the pay split on every line the PDF splits, and only those", async ({ page }) => {
@@ -667,8 +617,9 @@ test("no JS errors on key pages", async ({ page }) => {
     "/personnel/",
     "/glossary/",
     "/brief/",
-    "/departments/",
-    "/embed/",
+    "/departments/bureau-of-police/",
+    "/sections/revenue-detail/",
+    "/trust-funds/",
     "/flow/",
     "/trends/",
   ];
@@ -758,18 +709,14 @@ test("trends page has no horizontal scroll on a phone", async ({ page }) => {
 // September edition got wrong, so no document the site carries needs one; the
 // pages must then say nothing was corrected rather than flag stale fixes.
 // ---------------------------------------------------------------------------
-const PARKS_TAX_2027_REVENUE = "9,209,226";
 
-test("parks tax section shows the PDF's own year headings with no correction flags", async ({ page }) => {
-  await page.goto("/sections/parks-tax-trust-fund/");
-
-  await expect(main(page).locator('[data-testid="section-correction-notice"]')).toHaveCount(0);
-  await expect(main(page).locator('[data-testid="table-correction-badge"]')).toHaveCount(0);
-
-  const table = main(page).locator("table", { hasText: "41111 - Parks Tax" }).first();
-  await expect(table.locator("th", { hasText: "2027 Budget" })).toBeVisible();
-  await expect(table.getByText(PARKS_TAX_2027_REVENUE).first()).toBeVisible();
-  await expect(table.locator("th", { hasText: "2025 Budget" })).toHaveCount(0);
+test("the trust fund overview flags no correction on the Parks Tax Trust Fund", async ({ page }) => {
+  // The fund's own section page isn't published (Public Source's 50-page limit),
+  // so the overview is the only place a correction flag could appear.
+  await page.goto("/trust-funds/");
+  const row = main(page).getByTestId("trust-fund-row").filter({ hasText: "Parks Tax Trust Fund" });
+  await expect(row).toBeVisible();
+  await expect(row).not.toContainText("Corrected by us");
 });
 
 test("about page says no corrections were made", async ({ page }) => {
@@ -850,15 +797,6 @@ for (const route of BRANDED_ROUTES) {
   });
 }
 
-test("embedded charts use the brand body font", async ({ page }) => {
-  // Embeds load in other sites' pages, so they carry their own font loading.
-  await page.goto("/embed/revenue-breakdown/");
-  const body = await page.evaluate(async () => {
-    await document.fonts.ready;
-    return getComputedStyle(document.body).fontFamily;
-  });
-  expect(primaryFamily(body)).toBe(BODY_FONT);
-});
 
 test("the site requests no fonts from Google", async ({ page }) => {
   const googleFontRequests: string[] = [];
@@ -887,7 +825,7 @@ test("PDF section names are shown in sentence case", async ({ page }) => {
 });
 
 test("department names keep their capitals", async ({ page }) => {
-  await page.goto("/sections/bureau-of-police/");
+  await page.goto("/departments/bureau-of-police/");
   await expect(main(page).locator("h1").first()).toContainText("Bureau of Police");
 });
 
@@ -914,16 +852,17 @@ test("glossary 'used in' links show section names in sentence case", async ({ pa
 // sentence-case name (named bridges and streets keep their capitals); a new
 // project missing from that list would show up in ALL CAPS here.
 test("capital project names are sentence case, keeping place names", async ({ page }) => {
-  await page.goto("/capital/street-resurfacing/");
-  await expect(main(page).locator("h1").first()).toHaveText(/^\s*Street resurfacing\s*$/);
-  await page.goto("/capital/28th-street-bridge-tip/");
-  await expect(main(page).locator("h1").first()).toHaveText(/^\s*28th Street Bridge \(TIP\)\s*$/);
+  await page.goto("/capital/");
+  const names = main(page).getByTestId("capital-project-name");
+  await expect(names.filter({ hasText: /^\s*Street resurfacing\s*$/ })).toHaveCount(1);
+  await expect(names.filter({ hasText: /^\s*28th Street Bridge \(TIP\)\s*$/ })).toHaveCount(1);
 });
 
 for (const capitalIndex of ["/capital/"]) {
   test(`${capitalIndex} lists no project in ALL CAPS`, async ({ page }) => {
     await page.goto(capitalIndex);
-    const names = await main(page).locator('a[href*="/capital/"]').allInnerTexts();
+    const names = await main(page).getByTestId("capital-project-name").allInnerTexts();
+    expect(names.length).toBeGreaterThan(10);
     const shouting = names.map((n) => n.trim()).filter((n) => /[A-Z]{4,}/.test(n.replace(/\b(CDBG|HSIP|AIDS|HOME)\b|\([A-Z]+\)/g, "")));
     expect(shouting).toEqual([]);
   });
@@ -936,8 +875,3 @@ test("reproduced table column headers follow house style", async ({ page }) => {
   await expect(headers.filter({ hasText: /2027 Budget/ })).toHaveCount(0);
 });
 
-test("capital project metadata chips follow house style", async ({ page }) => {
-  await page.goto("/capital/penn-avenue-reconstruction-phase-ii-tip/");
-  await expect(main(page)).toContainText("Continuing, capital project");
-  await expect(main(page)).toContainText("Engineering and construction");
-});

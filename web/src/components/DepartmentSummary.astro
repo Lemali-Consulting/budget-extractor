@@ -1,0 +1,168 @@
+---
+/**A department's summary: headline stats, budget trend, top spending categories and top positions.*/
+import { PER_POSITION_LABEL, budgetPerPosition } from '../lib/personnel';
+import FundSplitNote from './FundSplitNote.tsx';
+import HeroStat from './HeroStat.tsx';
+import TrendMini from './TrendMini.tsx';
+import type { BudgetYear } from '../lib/budget-year';
+import { publishedSectionHrefs } from '../lib/published-pages';
+
+interface Props {
+  budgetYear: BudgetYear;
+  slug: string;
+}
+
+const { budgetYear, slug } = Astro.props as Props;
+const sectionHrefs = publishedSectionHrefs(budgetYear);
+const changes = budgetYear.views.budgetChanges;
+const budgets = budgetYear.views.departmentBudgets;
+const personnelDepts = budgetYear.views.personnelByDepartment;
+const allPersonnel = budgetYear.views.personnel;
+const sections = budgetYear.operating.sections;
+const { columns } = budgetYear;
+
+/** A two-digit spending category row, e.g. "51 - PERSONNEL-SALARIES & WAGES" (line items carry five digits). */
+const SPENDING_CATEGORY_LABEL = /^\d{2} - /;
+
+// Look up department data from various sources
+const deptChange = changes.departmentChanges.find((d: any) => d.slug === slug);
+const deptPersonnel = personnelDepts.find((d: any) => d.slug === slug);
+const section = sections.find((s: any) => s.slug === slug);
+
+// Budget trend (all years)
+const trend = budgets
+  .filter(b => b.slug === slug)
+  .sort((a, b) => a.year.localeCompare(b.year));
+
+// Top personnel by budget
+const deptStaff = allPersonnel
+  .filter((p: any) => p.slug === slug)
+  .sort((a: any, b: any) => (b.budgetCurrent || 0) - (a.budgetCurrent || 0))
+  .slice(0, 8);
+
+// Extract top line items from the first financial_summary table
+let topLineItems: { label: string; amount: number }[] = [];
+if (section?.tables) {
+  const finTable = section.tables.find((t: any) =>
+    t.table_type === 'financial_summary' || t.table_type === 'expenditure_detail'
+  );
+  if (finTable && finTable.headers && finTable.rows) {
+    // Find the column most likely to be the current-year budget (last numeric column or one labeled with the year)
+    const budgetColIdx = finTable.headers.findIndex((h: string) =>
+      h.includes(String(budgetYear.year)) && h.toLowerCase().includes('budget')
+    );
+    const colIdx = budgetColIdx >= 0 ? budgetColIdx : finTable.headers.length - 1;
+    const labelIdx = 0;
+
+    // The PDF prints each spending category ("51 - PERSONNEL-SALARIES & WAGES")
+    // above its line items ("51101 - Regular"); listing both levels counts the
+    // same dollars twice, so keep the categories when the table has them.
+    const hasCategoryRows = finTable.rows.some((row: any[]) => SPENDING_CATEGORY_LABEL.test(String(row[labelIdx] ?? '').trim()));
+    for (const row of finTable.rows) {
+      if (!row[labelIdx] || !row[colIdx]) continue;
+      const label = String(row[labelIdx]).trim();
+      if (hasCategoryRows && !SPENDING_CATEGORY_LABEL.test(label)) continue;
+      const isNeg = String(row[colIdx]).trim().startsWith('(');
+      const raw = String(row[colIdx]).replace(/[$,()]/g, '').trim();
+      const amount = isNeg ? -parseFloat(raw) : parseFloat(raw);
+      if (!isNaN(amount) && amount > 0 && label.length > 2 && !label.toLowerCase().includes('total')) {
+        topLineItems.push({ label, amount });
+      }
+    }
+    topLineItems = topLineItems.sort((a, b) => b.amount - a.amount).slice(0, 6);
+  }
+}
+
+// Computed values
+const budgetCurrent = deptChange?.budgetCurrent || trend.find(t => t.year === columns.budget)?.amount || 0;
+const budgetPrior = deptChange?.budgetPrior || trend.find(t => t.year === columns.priorBudget)?.amount || 0;
+const dollarChange = deptChange?.dollarChange ?? (budgetCurrent - budgetPrior);
+const pctChange = deptChange?.pctChange ?? (budgetPrior > 0 ? ((dollarChange / budgetPrior) * 100).toFixed(1) : '0');
+const fteCurrent = deptPersonnel?.totalFteCurrent || deptChange?.fteCurrent;
+
+/** A per-position budget, or a dash where the line has none (see budgetPerPosition). */
+function fmtPerPosition(n: number | null): string {
+  return n === null ? '-' : fmtM(n);
+}
+
+function fmtM(n: number): string {
+  if (Math.abs(n) >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (Math.abs(n) >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n.toFixed(0)}`;
+}
+---
+
+<!-- Hero stats -->
+<div class="bg-ps-blue-50 rounded-xl p-6 mb-6 print:bg-gray-100 print:rounded-none print:p-4">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <HeroStat label={budgetYear.shortLabel} value={fmtM(budgetCurrent)} />
+    <HeroStat
+      label={`vs ${budgetYear.priorLabel}`}
+      value={`${Number(pctChange) >= 0 ? '+' : ''}${pctChange}%`}
+      detail={fmtM(Math.abs(dollarChange))}
+      color={Number(pctChange) >= 0 ? 'text-green-700' : 'text-ps-red-700'}
+    />
+    {fteCurrent && (
+      <HeroStat label="Staff (FTE)" value={Math.round(fteCurrent).toLocaleString()} />
+    )}
+  </div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+  <!-- Budget trend -->
+  {trend.length > 1 && (
+    <div class="bg-white rounded-lg border p-4">
+      <h2 class="text-lg font-semibold mb-2">Budget trend</h2>
+      <TrendMini data={trend.map(t => ({ year: t.year.replace(' Budget', '').replace(' Actual', '*'), amount: t.amount }))} client:load />
+    </div>
+  )}
+
+  <!-- Top line items -->
+  {topLineItems.length > 0 && (
+    <div class="bg-white rounded-lg border p-4">
+      <h2 class="text-lg font-semibold mb-3">Top expenditures</h2>
+      <div class="space-y-2">
+        {topLineItems.map(item => (
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-700 truncate mr-2">{item.label}</span>
+            <span class="text-gray-900 font-medium tabular-nums whitespace-nowrap">{fmtM(item.amount)}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
+
+<!-- Top positions by budget -->
+{deptStaff.length > 0 && (
+  <div class="bg-white rounded-lg border p-4 mb-6">
+    <h2 class="text-lg font-semibold mb-3">Top positions by budget</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="px-2 sm:px-3 py-2 text-left font-medium text-gray-700 border-b">Title</th>
+            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">FTE</th>
+            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.budget}</th>
+            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.priorBudget}</th>
+            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{PER_POSITION_LABEL}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {deptStaff.map((p: any, i: number) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100">
+                {p.title}
+                <FundSplitNote split={p.fundSplit} sectionHrefs={sectionHrefs} />
+              </td>
+              <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.fteCurrent || '-'}</td>
+              <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetCurrent ? fmtM(p.budgetCurrent) : '-'}</td>
+              <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetPrior ? fmtM(p.budgetPrior) : '-'}</td>
+              <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{fmtPerPosition(budgetPerPosition(p))}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}

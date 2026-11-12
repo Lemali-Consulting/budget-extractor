@@ -10,6 +10,7 @@ import { HEADLINE, ARCHIVE_YEARS, yearPath, type BudgetYear } from '../lib/budge
 import { operating, sumFor } from '../lib/department-budgets';
 import { correctionHref, trustFundCorrections } from '../lib/corrections';
 import PersonnelCard from '../components/PersonnelCard.astro';
+import { publishedSectionHrefs } from '../lib/published-pages';
 
 const { columns } = HEADLINE;
 const {
@@ -118,7 +119,7 @@ const teaserLinks: FlowLink[] = [
     <!-- Example questions -->
     <div class="flex flex-wrap gap-2 text-sm">
       <span class="text-gray-400">Try:</span>
-      <a href="/sections/bureau-of-police/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-ps-blue-50 text-ps-blue-700 rounded-full hover:bg-ps-blue-100 transition">How much does policing cost?</a>
+      <a href="/departments/bureau-of-police/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-ps-blue-50 text-ps-blue-700 rounded-full hover:bg-ps-blue-100 transition">How much does policing cost?</a>
       <a href="/flow/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-green-50 text-green-700 rounded-full hover:bg-green-100 transition">Where does the money come from?</a>
     </div>
   </div>
@@ -233,7 +234,7 @@ const teaserLinks: FlowLink[] = [
       <h2 class="text-lg font-semibold">Top departments by budget</h2>
     </div>
     <p class="text-sm text-gray-500 mb-3">{HEADLINE.fiscalLabel} operating budget — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
-    <BudgetChart data={operating(budgetRows)} client:load />
+    <BudgetChart data={operating(budgetRows)} sectionHrefs={publishedSectionHrefs(HEADLINE)} client:load />
   </div>
 
   <!-- Search -->
@@ -243,15 +244,7 @@ const teaserLinks: FlowLink[] = [
   </div>
 
   <!-- Quick links -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-    <a href="/compare/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
-      <div class="font-medium text-gray-700">Compare</div>
-      <div class="text-xs text-gray-400 mt-1">Departments side by side</div>
-    </a>
-    <a href="/explorer/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
-      <div class="font-medium text-gray-700">Data explorer</div>
-      <div class="text-xs text-gray-400 mt-1">Search all tables</div>
-    </a>
+  <div class="grid grid-cols-2 gap-3">
     <a href="/flow/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Money flow</div>
       <div class="text-xs text-gray-400 mt-1">Revenue to spending</div>

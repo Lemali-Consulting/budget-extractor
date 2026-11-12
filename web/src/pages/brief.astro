@@ -4,7 +4,6 @@ import Base from '../layouts/Base.astro';
 import HeroStat from '../components/HeroStat.tsx';
 import SimpleBars from '../components/SimpleBars.tsx';
 import WaterfallChart from '../components/WaterfallChart.tsx';
-import EmbedButton from '../components/EmbedButton.tsx';
 import { HEADLINE } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
 
@@ -114,7 +113,6 @@ function fmtB(n: number): string {
     <section id="revenue" class="mb-12 scroll-mt-8">
       <div class="flex items-start justify-between">
         <h2 class="text-2xl font-bold mb-4">Where does the money come from?</h2>
-        <EmbedButton embedPath="/embed/revenue-breakdown/" client:load />
       </div>
       <WaterfallChart data={revenueWaterfall} yearLabel={HEADLINE.label} client:load />
       <p class="text-gray-700 leading-relaxed mt-4">
@@ -132,7 +130,6 @@ function fmtB(n: number): string {
     <section id="spending" class="mb-12 scroll-mt-8">
       <div class="flex items-start justify-between">
         <h2 class="text-2xl font-bold mb-4">Where does the money go?</h2>
-        <EmbedButton embedPath="/embed/spending-breakdown/" client:load />
       </div>
       <div class="bg-white rounded-lg border p-5 mb-4">
         <SimpleBars items={topDepts} client:load />
@@ -177,7 +174,6 @@ function fmtB(n: number): string {
     <section id="capital" class="mb-12 scroll-mt-8">
       <div class="flex items-start justify-between">
         <h2 class="text-2xl font-bold mb-4">What about big projects?</h2>
-        <EmbedButton embedPath="/embed/capital-funding/" client:load />
       </div>
       <div class="bg-orange-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

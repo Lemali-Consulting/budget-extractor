@@ -2,6 +2,8 @@
 
 Extracts tabular data from City of Pittsburgh budget PDFs (operating and capital) into structured CSVs, then powers an Astro-based web explorer for browsing department budgets, revenue, expenditures, and capital projects. The site publishes the **2027 proposed** budget only, plus a long-run trends page spanning the 2024–2027 documents. The 2026 (operating as amended) and 2025 archive machinery and committed data stay in the repo but are not published — see `docs/decisions/2026-11-12-publish-2027-only.md`.
 
+The public site is held to **43 pages** (Public Source's limit is 50, so each page can be fact-checked): 10 single pages, one merged page per department at `/departments/{slug}/` (summary on top, the PDF section below; PDF sections 9–36), and 5 citywide sections at `/sections/{slug}/`. Capital projects, trust funds and reference sections have no page of their own. `web/src/lib/published-pages.ts` says what is published and gives every link its target (none → plain text); `web/tests/published-pages.spec.ts` lists the 43 and crawls them for links to anything else. Adding a page means adding it to both on purpose. See `docs/decisions/2026-11-12-pare-site-to-43-pages.md`.
+
 Key components:
 - **Spatial table extractor** (`utils/spatial_table_extractor.py`) — core PDF-to-CSV engine using pdfplumber word positions
 - **Path config** (`utils/paths.py`) — centralized year-aware path logic; all scripts import from here
@@ -97,7 +99,7 @@ When a source PDF mislabels something (e.g. the September 2027 preliminary heade
 
 # House Style: Sentence Case
 
-Public Source capitalizes only the first word and proper nouns in headings, chart titles, labels, buttons, nav items and page titles ("Proposed capital budget", "Bureau of Police"). This applies to names taken from the PDF too: generic section titles ("Expenditure Summary" → "Expenditure summary") are converted when each year loads in `web/src/lib/budget-year.ts` via `web/src/lib/text-case.ts`, which keeps the PDF's wording in `pdf_title`; labels the data build derives (revenue categories, highlight drivers) go through `utils/text_case.py`. Department, bureau, office and fund names, Pittsburgh Budget Explorer, General Fund and Five-Year Forecast keep their capitals. The two case modules share a proper-noun and acronym list — keep them in step. Capital project names are printed in ALL CAPS and can't be cased by rule, so each has a hand-written display name in `web/src/lib/capital-project-names.ts`; a new project needs an entry there (a smoke test fails on any ALL CAPS project name). ALL CAPS department names in capital data are shown with ordinary capitals. Reproduced table column headers are sentence-cased only where rendered (the section table viewer and the explorer); the data and `columns.budget` ("2027 Budget") stay as printed because code matches on them. Don't pair `tracking-wide` with lowercase labels.
+Public Source capitalizes only the first word and proper nouns in headings, chart titles, labels, buttons, nav items and page titles ("Proposed capital budget", "Bureau of Police"). This applies to names taken from the PDF too: generic section titles ("Expenditure Summary" → "Expenditure summary") are converted when each year loads in `web/src/lib/budget-year.ts` via `web/src/lib/text-case.ts`, which keeps the PDF's wording in `pdf_title`; labels the data build derives (revenue categories, highlight drivers) go through `utils/text_case.py`. Department, bureau, office and fund names, Pittsburgh Budget Explorer, General Fund and Five-Year Forecast keep their capitals. The two case modules share a proper-noun and acronym list — keep them in step. Capital project names are printed in ALL CAPS and can't be cased by rule, so each has a hand-written display name in `web/src/lib/capital-project-names.ts`; a new project needs an entry there (a smoke test fails on any ALL CAPS project name). ALL CAPS department names in capital data are shown with ordinary capitals. Reproduced table column headers are sentence-cased only where rendered (the section table viewer); the data and `columns.budget` ("2027 Budget") stay as printed because code matches on them. Don't pair `tracking-wide` with lowercase labels.
 
 # Long-run Trends
 
@@ -105,7 +107,7 @@ Public Source capitalizes only the first word and proper nouns in headings, char
 
 # Site Search
 
-The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 section pages, capital project pages and the glossary opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years, when published, use the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
+The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 department and citywide section pages and the glossary opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years, when published, use the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
 
 # Brand Colors
 
@@ -116,7 +118,7 @@ The site uses Public Source's 2025 brand colors. They are defined once in `web/s
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.
 
 - Tests build the site and serve it via `astro preview`, then verify all major routes render correctly
-- Covers: home, operating index + detail, capital index + detail, charts, explorer, personnel, compare, glossary, about, trends; and that the retired dashboard, 2026 archive, amendments, cross-year and story pages are not built or linked
+- Covers: home, operating index, department and citywide section pages, capital index, trust fund overview, charts, personnel, glossary, about, trends; that exactly the 43 published pages are built and link nowhere else; and that the retired dashboard, 2026 archive, amendments, cross-year and story pages are not built or linked
 - Checks: page titles, key content visible, navigation present, no JS console errors
 - Run before deploying to Netlify to catch template, routing, or data regressions
 - Requires Playwright browsers: `npx playwright install chromium` (and system deps: `npx playwright install-deps chromium`)

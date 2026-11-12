@@ -11,6 +11,11 @@ interface Props {
 
 const { budgetYear } = Astro.props as Props;
 const prefix = budgetYear.routePrefix;
+// The headline site doesn't publish a page per capital project (Public Source's
+// 50-page limit), so its project cards aren't links. Archive years keep theirs.
+function projectHref(slug: string): string | undefined {
+  return budgetYear.isHeadline ? undefined : `${prefix}/capital/${slug}/`;
+}
 const sections = budgetYear.capital.sections;
 const searchIndex = budgetYear.views.searchIndex;
 const capitalFunding = budgetYear.views.capitalFundingSources;
@@ -92,12 +97,15 @@ for (const section of sections) {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {projects.map((s) => {
           const { currentYear, sixYearTotal } = getProjectFunding(s);
+          const href = projectHref(s.slug);
+          const Card = href ? 'a' : 'div';
           return (
-            <a
-              href={`${prefix}/capital/${s.slug}/`}
-              class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition"
+            <Card
+              data-testid="capital-project-card"
+              href={href}
+              class={`block p-4 bg-white rounded-lg border ${href ? 'ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition' : ''}`}
             >
-              <div class="font-medium">{s.title}</div>
+              <div class="font-medium" data-testid="capital-project-name">{s.title}</div>
               {(s as any).department && (
                 <div class="text-sm text-gray-500 mt-1">{(s as any).department}</div>
               )}
@@ -115,7 +123,7 @@ for (const section of sections) {
                   )}
                 </div>
               )}
-            </a>
+            </Card>
           );
         })}
       </div>

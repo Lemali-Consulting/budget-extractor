@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import SiteSearch from '../components/SiteSearch.tsx';
 import { HEADLINE } from '../lib/budget-year';
+import { publishedSectionHrefs } from '../lib/published-pages';
 import { pagefindBodyAttrs, PAGEFIND_BUDGET_TYPE } from '../lib/pagefind';
 
 // The glossary describes the headline budget, so it is always indexed for search.
@@ -11,8 +12,11 @@ const backlinksData = HEADLINE.views.glossaryBacklinks;
 const glossary = HEADLINE.operating.glossary;
 const backlinks: Record<string, { sections: { slug: string; title: string; budgetType: string }[]; total: number }> = backlinksData;
 
-function sectionUrl(s: { slug: string; budgetType: string }): string {
-  return s.budgetType === 'capital' ? `/capital/${s.slug}` : `/sections/${s.slug}`;
+// Capital projects and unpublished operating sections have no page, so they aren't linked.
+const sectionHrefs = publishedSectionHrefs(HEADLINE);
+const CAPITAL_BUDGET_TYPE = 'capital';
+function sectionUrl(s: { slug: string; budgetType: string }): string | undefined {
+  return s.budgetType === CAPITAL_BUDGET_TYPE ? undefined : sectionHrefs[s.slug];
 }
 
 const sections = [
@@ -151,7 +155,11 @@ function normalizeSection(key: string): GlossaryEntry[] {
                   <dd class="flex flex-wrap gap-1 mt-2" data-pagefind-ignore>
                     <span class="text-xs text-gray-400 mr-1">Used in:</span>
                     {bl.sections.slice(0, 5).map((sec) => (
-                      <a href={sectionUrl(sec)} class="inline-block text-xs px-2 py-0.5 bg-ps-blue-50 text-ps-blue-700 rounded hover:bg-ps-blue-100 whitespace-nowrap">{sec.title}</a>
+                      sectionUrl(sec) ? (
+                        <a href={sectionUrl(sec)} class="inline-block text-xs px-2 py-0.5 bg-ps-blue-50 text-ps-blue-700 rounded hover:bg-ps-blue-100 whitespace-nowrap">{sec.title}</a>
+                      ) : (
+                        <span class="inline-block text-xs px-2 py-0.5 bg-gray-50 text-gray-600 rounded whitespace-nowrap">{sec.title}</span>
+                      )
                     ))}
                     {bl.total > 5 && (
                       <span class="text-xs text-gray-400">+{bl.total - 5} more</span>

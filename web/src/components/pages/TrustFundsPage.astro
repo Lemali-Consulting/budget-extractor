@@ -8,12 +8,15 @@ import Base from '../../layouts/Base.astro';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
 import { trustFundBreakdown } from '../../lib/department-budgets';
 import { correctionHref, trustFundCorrections } from '../../lib/corrections';
+import { publishedSectionHrefs } from '../../lib/published-pages';
 
 interface Props {
   budgetYear: BudgetYear;
 }
 
 const { budgetYear } = Astro.props as Props;
+// The headline site doesn't publish trust fund pages, so fund names there are plain text.
+const sectionHrefs = publishedSectionHrefs(budgetYear);
 const prefix = budgetYear.routePrefix;
 const { columns } = budgetYear;
 const budgetRows = budgetYear.views.departmentBudgets;
@@ -86,7 +89,7 @@ function fmtChange(f: { current: number | null; prior: number | null }): string 
           return (
             <tr class="border-t" data-testid="trust-fund-row">
               <td class="px-3 py-2">
-                <a href={`${prefix}/sections/${f.slug}/`} class="text-ps-blue-600 hover:underline">{f.department}</a>
+                {sectionHrefs[f.slug] ? <a href={sectionHrefs[f.slug]} class="text-ps-blue-600 hover:underline">{f.department}</a> : f.department}
                 {correction && (
                   <a href={correctionHref({ year: budgetYear.year, id: correction.id })} class="ml-1 text-xs text-ps-yellow-800 underline">
                     Corrected by us
@@ -123,7 +126,7 @@ function fmtChange(f: { current: number | null; prior: number | null }): string 
       <ul class="list-disc pl-5">
         {unfunded.map((f) => (
           <li>
-            <a href={`${prefix}/sections/${f.slug}/`} class="text-ps-blue-600 hover:underline">{f.department}</a>: {fmtDollar(f.prior)} in {budgetYear.priorYear}{pages(f.slug) && <> ({pages(f.slug)})</>}
+            {sectionHrefs[f.slug] ? <a href={sectionHrefs[f.slug]} class="text-ps-blue-600 hover:underline">{f.department}</a> : f.department}: {fmtDollar(f.prior)} in {budgetYear.priorYear}{pages(f.slug) && <> ({pages(f.slug)})</>}
           </li>
         ))}
       </ul>

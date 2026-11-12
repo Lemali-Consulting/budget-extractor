@@ -4,10 +4,13 @@
  */
 
 import { type BudgetYear, ARCHIVE_YEARS } from './budget-year';
+import { isDepartmentSection, publishedSections, sectionPageHref } from './published-pages';
 
-interface SlugRef {
+/** A neighbouring page for the previous/next links. */
+export interface SlugRef {
   slug: string;
   title: string;
+  href: string;
 }
 
 interface StaticPath<Props> {
@@ -22,9 +25,13 @@ interface SectionPathProps {
   next: SlugRef | null;
 }
 
-function withNeighbors(opts: { budgetYear: BudgetYear; sections: any[] }): StaticPath<SectionPathProps>[] {
-  const { budgetYear, sections } = opts;
-  const ref = (s: any): SlugRef => ({ slug: s.slug, title: s.title });
+function withNeighbors(opts: {
+  budgetYear: BudgetYear;
+  sections: any[];
+  hrefOf: (section: any) => string;
+}): StaticPath<SectionPathProps>[] {
+  const { budgetYear, sections, hrefOf } = opts;
+  const ref = (s: any): SlugRef => ({ slug: s.slug, title: s.title, href: hrefOf(s) });
   return sections.map((s, i) => ({
     params: { slug: s.slug },
     props: {
@@ -36,17 +43,36 @@ function withNeighbors(opts: { budgetYear: BudgetYear; sections: any[] }): Stati
   }));
 }
 
-/** One path per operating section of the year. */
+/** Paths over the year's published operating sections, each linked to its published neighbours. */
+function publishedSectionPaths(budgetYear: BudgetYear): StaticPath<SectionPathProps>[] {
+  return withNeighbors({
+    budgetYear,
+    sections: publishedSections(budgetYear),
+    hrefOf: (section) => sectionPageHref({ budgetYear, section })!,
+  });
+}
+
+/** One /sections/ path per published section that isn't a department (departments live under /departments/). */
 export function sectionStaticPaths(budgetYear: BudgetYear): StaticPath<SectionPathProps>[] {
-  return withNeighbors({ budgetYear, sections: budgetYear.operating.sections });
+  if (!budgetYear.isHeadline) return publishedSectionPaths(budgetYear);
+  return publishedSectionPaths(budgetYear).filter((p) => !isDepartmentSection(p.props.section));
+}
+
+/** The headline's merged department pages: one per department section, with the section's content. */
+export function departmentSectionStaticPaths(budgetYear: BudgetYear): StaticPath<SectionPathProps>[] {
+  return publishedSectionPaths(budgetYear).filter((p) => isDepartmentSection(p.props.section));
 }
 
 /** One path per capital project of the year. */
 export function capitalStaticPaths(budgetYear: BudgetYear): StaticPath<SectionPathProps>[] {
-  return withNeighbors({ budgetYear, sections: budgetYear.capital.sections });
+  return withNeighbors({
+    budgetYear,
+    sections: budgetYear.capital.sections,
+    hrefOf: (s) => `${budgetYear.routePrefix}/capital/${s.slug}/`,
+  });
 }
 
-/** One path per operating department that has a current-year budget row. */
+/** One path per operating department that has a current-year budget row (archive one-pagers). */
 export function departmentStaticPaths(budgetYear: BudgetYear): StaticPath<{ budgetYear: BudgetYear }>[] {
   const slugs = new Set(
     budgetYear.views.departmentBudgets

@@ -13,7 +13,8 @@ interface BudgetRow {
   amount: number;
 }
 
-export default function BudgetChart({ data }: { data: BudgetRow[] }) {
+/** sectionHrefs: published page per department slug (see publishedSectionHrefs); bars without one aren't clickable. */
+export default function BudgetChart({ data, sectionHrefs }: { data: BudgetRow[]; sectionHrefs: Record<string, string> }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
   const [selectedYear, setSelectedYear] = useState<string>('');
@@ -72,11 +73,12 @@ export default function BudgetChart({ data }: { data: BudgetRow[] }) {
       (r) => r.parentElement?.getAttribute('fill') === CHART_COLORS.primary,
     );
     barRects.forEach((rect, i) => {
-      if (i < filtered.length) {
+      const href = i < filtered.length ? sectionHrefs[filtered[i].slug] : undefined;
+      if (href) {
         rect.setAttribute('data-slug', filtered[i].slug);
         rect.style.cursor = 'pointer';
         rect.addEventListener('click', () => {
-          window.location.href = `/sections/${filtered[i].slug}/`;
+          window.location.href = href;
         });
         rect.addEventListener('mouseenter', () => {
           rect.setAttribute('opacity', '0.7');
