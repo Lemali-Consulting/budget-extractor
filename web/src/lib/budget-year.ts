@@ -9,6 +9,7 @@
  * `image-paths.ts` for image URLs.
  */
 
+import { withApDates } from './ap-dates';
 import headlineMeta from '../data/views/budget-meta.json';
 import headlineBudget from '../data/budget-data.json';
 import headlineCapital from '../data/capital-budget-data.json';
@@ -267,12 +268,17 @@ function withDisplayTitles<T extends { sections: any[] }>(opts: { bundle: T; dep
   const { bundle, departmentSlugs } = opts;
   return {
     ...bundle,
-    sections: bundle.sections.map((s) =>
+    sections: bundle.sections.map(withApDatesInText).map((s) =>
       s.functional_area
         ? { ...s, pdf_title: s.title, title: capitalProjectName(s.title), functional_area: sentenceCase(s.functional_area), department: s.department && properNameCase(s.department), project_type: s.project_type && sentenceCase(s.project_type) }
         : { ...s, pdf_title: s.title, title: sectionDisplayTitle({ title: s.title, isDepartment: departmentSlugs.has(s.slug) }) },
     ),
   };
+}
+
+/** The section's reproduced PDF text (prose and tables) with dates in AP style. */
+function withApDatesInText(section: any): any {
+  return { ...section, page_content: withApDates(section.page_content), tables: withApDates(section.tables) };
 }
 
 /** Carry the sections' display titles into the generated indexes that repeat them. */
@@ -295,7 +301,13 @@ function withDisplayTitlesInViews(opts: { views: YearViews; titleBySlug: Map<str
       department: p.department && properNameCase(p.department),
     })),
     capitalFundingSources: views.capitalFundingSources.map((r: any) => ({ ...r, project: capitalProjectName(r.project) })),
-    tablesIndex: views.tablesIndex.map((t: any) => ({ ...t, sectionTitle: titleFor(t.sectionSlug, t.sectionTitle) })),
+    // The index repeats each table's label and headers, so its dates are restyled like the tables'.
+    tablesIndex: views.tablesIndex.map((t: any) => ({
+      ...t,
+      sectionTitle: titleFor(t.sectionSlug, t.sectionTitle),
+      label: withApDates(t.label),
+      headers: withApDates(t.headers),
+    })),
     searchIndex: views.searchIndex.map((e: any) => ({ ...e, sectionTitle: titleFor(e.slug, e.sectionTitle) })),
     glossaryBacklinks,
   };

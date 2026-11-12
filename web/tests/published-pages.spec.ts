@@ -145,3 +145,47 @@ test("old links to a capital project page redirect to the capital index", () => 
     expect(rules, slug).toContainEqual([`/capital/${slug}/`, "/capital/", "301"]);
   }
 });
+
+/**
+ * Dates follow AP style everywhere the site shows them, the city's own text
+ * reproduced from the PDF included (Max, 2026-11-12): Jan., Feb., Aug., Sept.,
+ * Oct., Nov. and Dec. abbreviated with a day; March through July spelled out;
+ * no ordinals ("July 4th"); no numeric dates ("11/25/26"). Reads the built
+ * HTML whole, so the data explorer's embedded tables are checked too.
+ */
+const NON_AP_DATE = new RegExp(
+  [
+    String.raw`\b\d{1,2}/\d{1,2}/(?:\d{4}|\d{2})\b`,
+    String.raw`\b(?:Jan|Feb|Aug|Sept?|Oct|Nov|Dec) \d{1,2}\b`,
+    String.raw`\b(?:Mar|Apr|Jun|Jul)\.? \d{1,2}\b`,
+    String.raw`\b(?:January|February|August|September|October|November|December) \d{1,2}\b`,
+    String.raw`\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan\.|Feb\.|Aug\.|Sept\.|Oct\.|Nov\.|Dec\.) \d{1,2}(?:st|nd|rd|th)\b`,
+  ].join("|"),
+  "g",
+);
+
+test("published pages write dates in AP style", () => {
+  const offenders: string[] = [];
+  for (const path of PUBLISHED) {
+    const html = readFileSync(join(DIST, path, "index.html"), "utf8").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+    for (const match of html.match(NON_AP_DATE) ?? []) offenders.push(`${path}: ${match}`);
+  }
+  expect([...new Set(offenders)]).toEqual([]);
+});
+
+const AP_DATE_EXAMPLES: [string, string][] = [
+  ["/departments/bureau-of-administration-public-safety/", "From Sept. 1, 2025 - Sept. 1, 2026"],
+  ["/departments/department-of-mobility-and-infrastructure/", "pave up to Nov. 25, 2026"],
+  ["/departments/bureau-of-fire/", "Jan. 1, 2010"],
+  ["/departments/bureau-of-police/", "expired on Dec. 31, 2025"],
+  ["/departments/bureau-of-animal-care-and-control/", "Feb. 19"],
+  ["/departments/department-of-parks-and-recreation/", "July 4"],
+  ["/sections/grants/", "as of Nov. 1, 2026"],
+];
+
+for (const [path, text] of AP_DATE_EXAMPLES) {
+  test(`${path} shows "${text}"`, async ({ page }) => {
+    await page.goto(path);
+    await expect(page.locator("main")).toContainText(text);
+  });
+}
