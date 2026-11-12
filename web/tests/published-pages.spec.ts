@@ -34,9 +34,14 @@ const DEPARTMENT_SLUGS = [
   "department-of-parks-and-recreation", "department-of-mobility-and-infrastructure", "citizen-police-review-board",
 ];
 
-/** The citywide sections kept while Max decides which stay ("see where we land", 2026-11-12). */
+/**
+ * The citywide sections kept while Max decides which stay ("see where we land", 2026-11-12).
+ * Grants was cut with the reference sections, then brought back because it is
+ * the only place the site lists each grant (Max, 2026-11-12).
+ */
 const CITYWIDE_SECTION_SLUGS = [
   "five-year-financial-forecast", "revenue-summary", "revenue-detail", "expenditure-summary", "expenditures-detail",
+  "grants",
 ];
 
 const PUBLISHED = new Set([
@@ -66,8 +71,8 @@ function pagePath(href: string): string | null {
   return path.endsWith("/") ? path : `${path}/`;
 }
 
-test("the site publishes exactly the 45 agreed pages", () => {
-  expect(PUBLISHED.size).toBe(45);
+test("the site publishes exactly the 46 agreed pages", () => {
+  expect(PUBLISHED.size).toBe(46);
   expect(builtPages().sort()).toEqual([...PUBLISHED].sort());
 });
 

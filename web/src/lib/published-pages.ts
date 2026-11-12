@@ -24,10 +24,11 @@ export const DEPARTMENT_SECTIONS: SectionRange = { first: 9, last: 36 };
 export const TRUST_FUND_SECTIONS: SectionRange = { first: 37, last: 56 };
 /**
  * Five-Year Forecast, Revenue Summary, Revenue Detail, Expenditure Summary,
- * Expenditures Detail. Provisional: Max is deciding which citywide sections
- * stay (2026-11-12).
+ * Expenditures Detail, and Grants (58). Provisional: Max is deciding which
+ * citywide sections stay (2026-11-12). Grants was cut with the reference
+ * sections, then brought back as the only list of each grant (Max, 2026-11-12).
  */
-export const PUBLISHED_CITYWIDE_SECTIONS: readonly number[] = [3, 4, 6, 7, 8];
+export const PUBLISHED_CITYWIDE_SECTIONS: readonly number[] = [3, 4, 6, 7, 8, 58];
 
 interface SectionRef {
   section_number: number;

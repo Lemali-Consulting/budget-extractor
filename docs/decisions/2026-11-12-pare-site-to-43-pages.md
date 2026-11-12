@@ -1,4 +1,4 @@
-# Pare the public site to 43 pages (now 45)
+# Pare the public site to 43 pages (now 46)
 
 **Date:** 2026-11-12
 **Status:** accepted
@@ -25,6 +25,8 @@ The four answers cover:
 
 **Update (2026-11-12):** Max brought back the data explorer and then the compare page ("Actually, let's bring the Data Explorer page back", "Also let's bring back the /compare page"). That makes **45 pages**: 12 single pages. Their links to sections go through the published-pages module, like everything else: capital tables and unpublished sections aren't linked. Section tables again carry "Open in Explorer". The compare page now shows each department's total budget, departments only, and no FTE change. See `docs/notes/archive/2026-11-12-compare-page-figures.md`.
 
+**Update (2026-11-12):** Max brought back the Grants section (58) as a citywide section page ("Bring back the Grants section as a page"), making **46 pages**. It had been cut with the reference sections, but it is the only place the budget lists each grant, with its funder, purpose, and amounts awarded, spent and remaining. Max asked after it was pointed out that grants otherwise appeared only as revenue and expense line items and in the data explorer.
+
 The first cut published 43 pages:
 - **10 single pages:** home, operating, capital, about, trust fund overview, brief, trends, glossary, personnel, money flow.
 - **28 department pages** at `/departments/{slug}/`, one for each of PDF sections 9–36. Each shows the department summary on top: headline figures, trend, top expenditures and top positions. The PDF section's tables follow. The Department of Public Works parent section gets a page for the first time. Rich counted 29 departments; the document has 28 department-level sections.
@@ -33,7 +35,7 @@ The first cut published 43 pages:
 Cut:
 - the 68 capital project pages;
 - the 20 trust fund pages;
-- the reference and no-table sections (1, 2, 5, 57–63);
+- the reference and no-table sections (1, 2, 5, 57–63); Grants (58) was later restored (see the updates above);
 - /hero/, the departments index and the 5 embed pages. The data explorer and compare page were cut too, then restored (see the update above).
 
 Links work as follows:

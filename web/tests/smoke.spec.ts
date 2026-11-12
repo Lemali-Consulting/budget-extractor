@@ -61,6 +61,16 @@ test("operating section detail renders tables", async ({ page }) => {
   await expect(main(page).locator("table").first()).toBeVisible();
 });
 
+// The Grants section is the only place the budget lists each grant with its
+// funder and what has been spent; the personnel page's Grants fund links to it.
+test("grants page lists each grant with its funder and balance", async ({ page }) => {
+  await page.goto("/sections/grants/");
+  await expect(main(page).locator("h1").first()).toContainText("Grants");
+  await expect(main(page).locator("table").first()).toBeVisible();
+  await expect(main(page).getByText("Diesel Vehicle Replacement").first()).toBeVisible();
+  await expect(main(page).getByText(/remaining balance/i).first()).toBeVisible();
+});
+
 test("operating section detail - department page", async ({ page }) => {
   await page.goto("/departments/city-council/");
 
