@@ -277,6 +277,19 @@ export function headlineVintageOnly(series: TrendSeries): TrendSeries {
   return { ...series, vintages: series.vintages.filter((v) => v.isHeadline) };
 }
 
+/**
+ * The last actual and the headline line's first point, when they fall in
+ * adjacent years, so the chart can join them. Max asked for the two lines to
+ * connect (2026-11-12); across a gap the join would draw a trend for years no
+ * document reports, so none is returned.
+ */
+export function actualToHeadlineBridge(series: TrendSeries): [TrendPoint, TrendPoint] | null {
+  const lastActual = series.actuals[series.actuals.length - 1];
+  const firstHeadline = series.vintages.find((v) => v.isHeadline)?.points[0];
+  if (!lastActual || !firstHeadline) return null;
+  return firstHeadline.fiscalYear - lastActual.fiscalYear === 1 ? [lastActual, firstHeadline] : null;
+}
+
 /** Largest revenue categories in the headline document's budget year, biggest first. */
 export function majorRevenueCategories(opts: {
   data: LongitudinalData;

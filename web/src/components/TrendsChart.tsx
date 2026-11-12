@@ -6,6 +6,7 @@ import { CHART_COLORS } from '../lib/chart-colors';
 import { useContainerWidth } from '../lib/hooks';
 import {
   KIND,
+  actualToHeadlineBridge,
   KIND_LABEL,
   formatMillions,
   splitVintage,
@@ -34,6 +35,9 @@ const ACTUAL_WIDTH = 2.5;
 const ALTERNATE_RADIUS = 5;
 const ALTERNATE_STROKE_WIDTH = 2;
 const CHART_HEIGHT = 320;
+const SVG_NS = 'http://www.w3.org/2000/svg';
+/** Each chart's join needs its own gradient id; several charts share a page. */
+let bridgeCount = 0;
 const COMPACT_WIDTH = 480;
 const COMPACT_HEIGHT = 280;
 
@@ -62,6 +66,44 @@ function alternateTipTitle(p: AlternatePoint): string {
 function formatAxisMillions(value: number): string {
   const millions = value / 1_000_000;
   return `${millions < 0 ? '−' : ''}$${Math.abs(millions).toFixed(0)}M`;
+}
+
+/**
+ * A segment from the last actual to the headline line's first point, its
+ * color passing from the actuals' to the headline's. Drawn in pixels, with a
+ * gradient along its own length, so a flat segment still renders.
+ */
+function bridgeMark(opts: { from: TrendPoint; to: TrendPoint; gradientId: string }): Plot.RenderFunction {
+  const { from, to, gradientId } = opts;
+  return (_index, scales) => {
+    if (!scales.x || !scales.y) return null;
+    const [x1, y1, x2, y2] = [scales.x(from.fiscalYear), scales.y(from.value), scales.x(to.fiscalYear), scales.y(to.value)];
+    const group = document.createElementNS(SVG_NS, 'g');
+    const gradient = document.createElementNS(SVG_NS, 'linearGradient');
+    gradient.setAttribute('id', gradientId);
+    gradient.setAttribute('gradientUnits', 'userSpaceOnUse');
+    for (const [attr, value] of [['x1', x1], ['y1', y1], ['x2', x2], ['y2', y2]] as const) {
+      gradient.setAttribute(attr, String(value));
+    }
+    for (const [offset, color] of [['0', ACTUAL_COLOR], ['1', HEADLINE_COLOR]]) {
+      const stop = document.createElementNS(SVG_NS, 'stop');
+      stop.setAttribute('offset', offset);
+      stop.setAttribute('stop-color', color);
+      gradient.appendChild(stop);
+    }
+    const defs = document.createElementNS(SVG_NS, 'defs');
+    defs.appendChild(gradient);
+    const line = document.createElementNS(SVG_NS, 'line');
+    for (const [attr, value] of [['x1', x1], ['y1', y1], ['x2', x2], ['y2', y2]] as const) {
+      line.setAttribute(attr, String(value));
+    }
+    line.setAttribute('stroke', `url(#${gradientId})`);
+    line.setAttribute('stroke-width', String(HEADLINE_WIDTH));
+    line.setAttribute('stroke-linecap', 'round');
+    line.setAttribute('data-testid', 'trend-bridge');
+    group.append(defs, line);
+    return group;
+  };
 }
 
 interface StyledVintage {
@@ -125,6 +167,8 @@ export default function TrendsChart({ series, zeroLine = false, ariaLabel }: Pro
   const containerWidth = useContainerWidth(containerRef);
   const styled = styleVintages(series.vintages);
   const alternatePoints: AlternatePoint[] = series.vintages.flatMap((v) => v.alternates);
+  const gradientIdRef = useRef<string>('');
+  if (!gradientIdRef.current) gradientIdRef.current = `trend-bridge-${++bridgeCount}`;
 
   useEffect(() => {
     if (!chartRef.current) return;
@@ -165,6 +209,11 @@ export default function TrendsChart({ series, zeroLine = false, ariaLabel }: Pro
       ];
     });
 
+    const bridge = actualToHeadlineBridge(series);
+    const bridgeMarks = bridge
+      ? [bridgeMark({ from: bridge[0], to: bridge[1], gradientId: gradientIdRef.current })]
+      : [];
+
     const chart = Plot.plot({
       width: containerWidth,
       height: compact ? COMPACT_HEIGHT : CHART_HEIGHT,
@@ -178,6 +227,7 @@ export default function TrendsChart({ series, zeroLine = false, ariaLabel }: Pro
       y: { label: null, grid: true, tickFormat: formatAxisMillions },
       marks: [
         ...(zeroLine ? [Plot.ruleY([0], { stroke: '#374151', strokeWidth: 1.5 })] : []),
+        ...bridgeMarks,
         ...vintageMarks,
         Plot.lineY(series.actuals, {
           x: 'fiscalYear',

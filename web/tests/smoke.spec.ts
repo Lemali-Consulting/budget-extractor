@@ -916,6 +916,32 @@ test("trends charts show only actuals and the proposed 2027 budget's line", asyn
   }
 });
 
+// Max asked for the actual and proposed lines to join, the color passing from
+// one to the other (2026-11-12). The join only spans adjacent years: across a
+// gap it would draw a trend for years no document reports.
+test("trends charts join the last actual to the proposed line with a fading segment", async ({ page }) => {
+  await page.goto("/trends/");
+  for (const id of ["recurring-revenue", "total-expenditures", "revenue-by-category"]) {
+    const section = main(page).getByTestId(`chart-${id}`);
+    await section.scrollIntoViewIfNeeded();
+    const bridge = section.locator('[data-testid="trend-bridge"]');
+    await expect(bridge, id).toHaveCount(1);
+    const stops = await bridge.evaluate((el) => {
+      const ref = (el.getAttribute("stroke") ?? "").match(/url\(#([^)]+)\)/)?.[1];
+      const gradient = ref ? document.getElementById(ref) : null;
+      return gradient ? [...gradient.querySelectorAll("stop")].map((s) => s.getAttribute("stop-color")) : [];
+    });
+    // From the actuals' near-black to the proposed line's blue.
+    expect(stops, id).toHaveLength(2);
+    expect(stops[0], id).toBe("#111827");
+    expect(stops[1], id).not.toBe(stops[0]);
+  }
+  const reserve = main(page).getByTestId("chart-ending-reserve-balance");
+  await reserve.scrollIntoViewIfNeeded();
+  await expect(reserve.locator("svg").first()).toBeVisible();
+  await expect(reserve.locator('[data-testid="trend-bridge"]')).toHaveCount(0);
+});
+
 // House style puts "proposed" before the year (Rich, 2026-11-12).
 test("trends page names the proposed 2027 budget in house style", async ({ page }) => {
   await page.goto("/trends/");
