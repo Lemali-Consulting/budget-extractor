@@ -46,6 +46,7 @@ const charts = [
     blurb: 'Revenue the city expects to collect each year, not counting any use of reserves.',
     metric: METRIC.RECURRING_REVENUE,
     zeroLine: false,
+    showActuals: true,
   },
   {
     id: 'total-expenditures',
@@ -53,6 +54,7 @@ const charts = [
     blurb: 'Everything the operating budget spends in a year.',
     metric: METRIC.TOTAL_EXPENDITURES,
     zeroLine: false,
+    showActuals: true,
   },
   {
     id: 'ending-reserve-balance',
@@ -60,8 +62,14 @@ const charts = [
     blurb: 'The fund balance left at the end of each year. Spending beyond recurring revenue draws it down.',
     metric: METRIC.ENDING_RESERVE_BALANCE,
     zeroLine: true,
+    // No document reports ending balances for 2024 or 2025, so the 2023
+    // actual stood alone, far from the line; Max asked for it to go (2026-11-12).
+    showActuals: false,
   },
-].map((chart) => ({ ...chart, series: seriesFor(chart.metric) }));
+].map((chart) => {
+  const series = seriesFor(chart.metric);
+  return { ...chart, series: chart.showActuals ? series : { ...series, actuals: [] } };
+});
 
 const categoryNames = majorRevenueCategories({
   data,

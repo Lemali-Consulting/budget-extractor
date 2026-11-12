@@ -910,10 +910,21 @@ test("trends page charts headline figures over time", async ({ page }) => {
 // proposed 2027 budget's own estimate, budget and forecast (2026-11-12).
 test("trends charts show only actuals and the proposed 2027 budget's line", async ({ page }) => {
   await page.goto("/trends/");
-  for (const id of ["recurring-revenue", "total-expenditures", "ending-reserve-balance", "revenue-by-category"]) {
+  for (const id of ["recurring-revenue", "total-expenditures", "revenue-by-category"]) {
     const legend = main(page).getByTestId(`chart-${id}`).getByTestId("trend-legend-item");
     await expect(legend).toHaveText(["Actual", "Proposed 2027 budget"]);
   }
+});
+
+// No document reports ending balances for 2024 or 2025, so the reserve chart's
+// one actual (2023) floated alone; Max asked for it to go (2026-11-12).
+test("trends reserve chart shows only the proposed 2027 budget's line", async ({ page }) => {
+  await page.goto("/trends/");
+  const reserve = main(page).getByTestId("chart-ending-reserve-balance");
+  await reserve.scrollIntoViewIfNeeded();
+  await expect(reserve.getByTestId("trend-legend-item")).toHaveText(["Proposed 2027 budget"]);
+  await expect(reserve.locator("svg [aria-label='x-axis tick label'] text", { hasText: "2023" })).toHaveCount(0);
+  await expect(reserve).toContainText("Solid = estimate or budget");
 });
 
 // Max asked for the actual and proposed lines to join, the color passing from

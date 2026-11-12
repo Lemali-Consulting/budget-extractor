@@ -154,7 +154,7 @@ function Legend({
         ))}
       </ul>
       <p class="mt-1 text-gray-500">
-        Solid = actual, estimate or budget; dashed = forecast (a projection, not a commitment).
+        Solid = {hasActuals ? 'actual, estimate or budget' : 'estimate or budget'}; dashed = forecast (a projection, not a commitment).
         {hasAlternates && ' Hollow diamond = a different figure for the same year from another table in the same document (see Notes).'}
       </p>
     </div>
