@@ -947,7 +947,7 @@ test("trends page charts headline figures over time", async ({ page }) => {
   await expect(conflictNote).toContainText("$715.0M");
   await expect(conflictNote).toContainText(/summary table/);
   await expect(conflictNote).toContainText(/department table/);
-  await expect(conflictNote).toContainText(/The line uses the Five-Year Financial Forecast summary table/);
+  await expect(conflictNote).toContainText(/The line uses the five-year financial forecast summary table/);
 
   // Nav link present (desktop dropdown)
   await expect(page.locator('header a[href="/trends/"]').first()).toBeAttached();

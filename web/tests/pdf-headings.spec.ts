@@ -88,7 +88,7 @@ test("notes and sentences printed as headings become small print and prose", () 
 test("subheadings inside the PDF's prose are sentence case", () => {
   expect(pdfHeadingText({ text: "Mission Statement", section: FIRE })).toBe("Mission statement");
   expect(pdfHeadingText({ text: "2026 Accomplishments", section: FIRE })).toBe("2026 accomplishments");
-  expect(pdfHeadingText({ text: "Five-Year Expenditure Forecast", section: FIRE })).toBe("Five-Year expenditure forecast");
+  expect(pdfHeadingText({ text: "Five-Year Expenditure Forecast", section: FIRE })).toBe("Five-year expenditure forecast");
   // A named unit of a department keeps its capitals.
   expect(pdfHeadingText({ text: "Construction Division", section: FIRE })).toBe("Construction Division");
   expect(pdfHeadingText({ text: "Bureau of Fire", section: FIRE })).toBe("Bureau of Fire");

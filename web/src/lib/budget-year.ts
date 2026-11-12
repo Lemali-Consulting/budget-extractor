@@ -71,6 +71,7 @@ import type { SourceCorrection } from './corrections';
 import type { SalariesAndWages } from './personnel';
 import { properNameCase, sectionDisplayTitle, sentenceCase } from './text-case';
 import { classifyPdfHeading } from './pdf-headings';
+import { isCoverPage } from './pdf-pages';
 import { capitalProjectName } from './capital-project-names';
 
 // ---------------------------------------------------------------------------
@@ -296,7 +297,7 @@ const BLOCK_ROLE = { SECTION_TITLE: 'section_title', NARRATIVE: 'narrative', FOO
 /** Where each kind of "section title" block ends up: headings re-cased, notes as small print, chart scraps dropped. */
 const ROLE_FOR_HEADING_KIND = { heading: BLOCK_ROLE.SECTION_TITLE, note: BLOCK_ROLE.FOOTNOTE, prose: BLOCK_ROLE.NARRATIVE } as const;
 
-/** The section's PDF headings in house style, keeping the printed text in `pdf_text`. */
+/** The section's PDF headings in house style (keeping the printed text in `pdf_text`), without its cover page. */
 function withPdfHeadings(section: any): any {
   const headingSection = { pdfTitle: section.pdf_title, title: section.title };
   const recast = (block: any): any[] => {
@@ -305,9 +306,12 @@ function withPdfHeadings(section: any): any {
     if (heading.kind === 'chart-scrap') return [];
     return [{ ...block, pdf_text: block.text, text: heading.text, role: ROLE_FOR_HEADING_KIND[heading.kind] }];
   };
+  const tablePages = new Set<number>((section.tables ?? []).map((t: any) => t.relative_page));
   return {
     ...section,
-    page_content: (section.page_content ?? []).map((page: any) => ({ ...page, text_blocks: (page.text_blocks ?? []).flatMap(recast) })),
+    page_content: (section.page_content ?? [])
+      .filter((page: any) => !isCoverPage({ page, tablePages }))
+      .map((page: any) => ({ ...page, text_blocks: (page.text_blocks ?? []).flatMap(recast) })),
   };
 }
 

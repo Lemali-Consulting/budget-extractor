@@ -35,7 +35,7 @@ export type TableKind = (typeof TABLE_KIND)[keyof typeof TABLE_KIND];
 
 /** Human wording for each table, used in tooltips and notes. */
 export const TABLE_LABEL: Record<TableKind, string> = {
-  [TABLE_KIND.SUMMARY]: 'Five-Year Financial Forecast summary table',
+  [TABLE_KIND.SUMMARY]: 'five-year financial forecast summary table',
   [TABLE_KIND.DEPARTMENT]: 'department table (forecast detail) of the same section',
 };
 
@@ -465,7 +465,7 @@ export function buildNotes(opts: {
       .map((a) => `${a.fiscalYear} (${labelSource(a)})`)
       .join(', ');
     notes.push(
-      `Expenditure actuals are read from the department table on each document's Five-Year Financial ` +
+      `Expenditure actuals are read from the department table on each document's five-year financial ` +
         `Forecast page, not from a dedicated history table: ${perYear}.`,
     );
   }

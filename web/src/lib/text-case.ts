@@ -10,8 +10,6 @@ const PROPER_PHRASES: readonly string[] = [
   'City of Pittsburgh',
   'Pittsburgh',
   'General Fund',
-  'Five-Year Forecast',
-  'Five-Year',
   'City Council',
   'Regional Asset District',
 ];

@@ -143,3 +143,36 @@ test("no published page shows a chart value as a heading", () => {
   walk(DIST);
   expect(found).toEqual([]);
 });
+
+/** "Five-year" is generic (Rich, 2026-11-12); the PDF's own "Five-Year Plan" in its prose is left as printed. */
+const CAPITALIZED_FIVE_YEAR = /Five-Year (?:[Ff]inancial|[Ee]xpenditure|[Ff]orecast)/;
+
+test("no published page capitalizes 'Five-Year' in a section or heading name", () => {
+  const found: string[] = [];
+  const walk = (dir: string) => {
+    for (const name of readdirSync(dir)) {
+      const full = join(dir, name);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (name === "index.html") {
+        const m = readFileSync(full, "utf8").replace(/<[^>]*>/g, " ").match(CAPITALIZED_FIVE_YEAR);
+        if (m) found.push(`${relative(DIST, full)}: ${m[0]}`);
+      }
+    }
+  };
+  walk(DIST);
+  expect(found).toEqual([]);
+});
+
+/** A section's cover page (its name over the city seal) repeats the page title, so it isn't shown (Rich, 2026-11-12). */
+test("no published page shows a section's cover page", () => {
+  const found: string[] = [];
+  const walk = (dir: string) => {
+    for (const name of readdirSync(dir)) {
+      const full = join(dir, name);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (name === "index.html" && readFileSync(full, "utf8").includes("Department seal")) found.push(relative(DIST, full));
+    }
+  };
+  walk(DIST);
+  expect(found).toEqual([]);
+});
