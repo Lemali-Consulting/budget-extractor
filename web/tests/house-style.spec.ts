@@ -18,8 +18,8 @@ const GLOSSARY = join(WEB_ROOT, "..", "output", "glossary", "glossary.json");
 /** Generated data from the PDF, and the hand-written display names of PDF capital project titles. */
 const NOT_OUR_COPY = [join(SRC, "data"), join(SRC, "lib", "capital-project-names.ts")];
 
-/** Official names that are printed with the comma. */
-const OFFICIAL_NAMES = ["Permits, Licenses, and Inspections"];
+/** Official names, and PDF headings our code quotes, that are printed with the comma. */
+const OFFICIAL_NAMES = ["Permits, Licenses, and Inspections", "Temporary, Part-Time, and Seasonal Allowances"];
 
 /** "a, b, and c" or "a, b, or c", within one clause. */
 const OXFORD_COMMA = /\w[^,.;:\n<>{}`"]*, [^,.;:\n<>{}`"]{1,60},\s+(?:and|or)\s/g;
@@ -95,6 +95,48 @@ test("no published page writes '2027 proposed' in a sentence", () => {
       else if (name === "index.html") {
         const m = readFileSync(full, "utf8").replace(/<[^>]*>/g, "").match(YEAR_FIRST_PROSE);
         if (m) found.push(`${relative(DIST, full)}: ${m[0]}`);
+      }
+    }
+  };
+  walk(DIST);
+  expect(found).toEqual([]);
+});
+
+test("PDF headings on a department page are sentence case", async ({ page }) => {
+  await page.goto("/departments/bureau-of-fire/");
+  const headings = page.locator("main h2");
+  await expect(headings.filter({ hasText: /^Position summary$/ }).first()).toBeVisible();
+  await expect(headings.filter({ hasText: /^Subclass detail$/ }).first()).toBeVisible();
+  await expect(headings.filter({ hasText: "Bureau of Fire 2027 expenditures by subclass" })).toHaveCount(1);
+  await expect(page.locator("main")).not.toContainText("BUREAU OF FIRE 2027");
+  await expect(headings.filter({ hasText: /^\d{2} - / })).toHaveCount(0);
+  await expect(page.getByText("51 - Personnel-salaries & wages").first()).toBeVisible();
+  await page.goto("/departments/commission-on-human-relations/");
+  await expect(page.locator("main h3").filter({ hasText: /^2026 accomplishments$/ }).first()).toBeAttached();
+  await expect(page.locator("main")).toContainText("Temporary, part-time, and seasonal allowances");
+});
+
+test("the top positions table labels its columns in sentence case", async ({ page }) => {
+  await page.goto("/departments/bureau-of-fire/");
+  const header = page.locator("table", { has: page.locator("th", { hasText: "Position" }) }).first().locator("thead");
+  await expect(header).toContainText("2027 budget");
+  await expect(header).not.toContainText("2027 Budget");
+});
+
+/** Chart axis values and pie-slice labels the extractor read as titles. */
+const CHART_SCRAP_HEADING = /^\s*\$|\d%\s*$|\$[\d,]{5,}\s*$/;
+
+test("no published page shows a chart value as a heading", () => {
+  const found: string[] = [];
+  const walk = (dir: string) => {
+    for (const name of readdirSync(dir)) {
+      const full = join(dir, name);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (name === "index.html") {
+        for (const m of readFileSync(full, "utf8").matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/g)) {
+          const text = m[1].replace(/<[^>]*>/g, "").trim();
+          if (CHART_SCRAP_HEADING.test(text)) found.push(`${relative(DIST, full)}: ${text}`);
+        }
       }
     }
   };

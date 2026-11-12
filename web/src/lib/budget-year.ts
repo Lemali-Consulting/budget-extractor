@@ -70,6 +70,7 @@ import type { DeptBudgetRow } from './department-budgets';
 import type { SourceCorrection } from './corrections';
 import type { SalariesAndWages } from './personnel';
 import { properNameCase, sectionDisplayTitle, sentenceCase } from './text-case';
+import { classifyPdfHeading } from './pdf-headings';
 import { capitalProjectName } from './capital-project-names';
 
 // ---------------------------------------------------------------------------
@@ -284,8 +285,29 @@ function withDisplayTitles<T extends { sections: any[] }>(opts: { bundle: T; dep
     sections: bundle.sections.map(withApDatesInText).map((s) =>
       s.functional_area
         ? { ...s, pdf_title: s.title, title: capitalProjectName(s.title), functional_area: sentenceCase(s.functional_area), department: s.department && properNameCase(s.department), project_type: s.project_type && sentenceCase(s.project_type) }
-        : { ...s, pdf_title: s.title, title: sectionDisplayTitle({ title: s.title, isDepartment: departmentSlugs.has(s.slug) }) },
+        : withPdfHeadings({ ...s, pdf_title: s.title, title: sectionDisplayTitle({ title: s.title, isDepartment: departmentSlugs.has(s.slug) }) }),
     ),
+  };
+}
+
+/** The role the extractor gives each kind of PDF text block. */
+const BLOCK_ROLE = { SECTION_TITLE: 'section_title', NARRATIVE: 'narrative', FOOTNOTE: 'footnote' } as const;
+
+/** Where each kind of "section title" block ends up: headings re-cased, notes as small print, chart scraps dropped. */
+const ROLE_FOR_HEADING_KIND = { heading: BLOCK_ROLE.SECTION_TITLE, note: BLOCK_ROLE.FOOTNOTE, prose: BLOCK_ROLE.NARRATIVE } as const;
+
+/** The section's PDF headings in house style, keeping the printed text in `pdf_text`. */
+function withPdfHeadings(section: any): any {
+  const headingSection = { pdfTitle: section.pdf_title, title: section.title };
+  const recast = (block: any): any[] => {
+    if (block.role !== BLOCK_ROLE.SECTION_TITLE) return [block];
+    const heading = classifyPdfHeading({ text: block.text, section: headingSection });
+    if (heading.kind === 'chart-scrap') return [];
+    return [{ ...block, pdf_text: block.text, text: heading.text, role: ROLE_FOR_HEADING_KIND[heading.kind] }];
+  };
+  return {
+    ...section,
+    page_content: (section.page_content ?? []).map((page: any) => ({ ...page, text_blocks: (page.text_blocks ?? []).flatMap(recast) })),
   };
 }
 

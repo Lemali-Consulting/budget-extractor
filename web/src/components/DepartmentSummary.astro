@@ -6,6 +6,8 @@ import HeroStat from './HeroStat.tsx';
 import TrendMini from './TrendMini.tsx';
 import type { BudgetYear } from '../lib/budget-year';
 import { publishedSectionHrefs } from '../lib/published-pages';
+import { columnHeaderLabel } from '../lib/text-case';
+import { subclassLabel } from '../lib/pdf-headings';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -124,7 +126,7 @@ function fmtM(n: number): string {
       <div class="space-y-2">
         {topLineItems.map(item => (
           <div class="flex justify-between text-sm">
-            <span class="text-gray-700 truncate mr-2">{item.label}</span>
+            <span class="text-gray-700 truncate mr-2">{subclassLabel(item.label)}</span>
             <span class="text-gray-900 font-medium tabular-nums whitespace-nowrap">{fmtM(item.amount)}</span>
           </div>
         ))}
@@ -143,8 +145,8 @@ function fmtM(n: number): string {
           <tr class="bg-gray-50">
             <th class="px-2 sm:px-3 py-2 text-left font-medium text-gray-700 border-b">Title</th>
             <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">FTE</th>
-            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.budget}</th>
-            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.priorBudget}</th>
+            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columnHeaderLabel(columns.budget)}</th>
+            <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columnHeaderLabel(columns.priorBudget)}</th>
             <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{PER_POSITION_LABEL}</th>
           </tr>
         </thead>

@@ -11,6 +11,7 @@ const PROPER_PHRASES: readonly string[] = [
   'Pittsburgh',
   'General Fund',
   'Five-Year Forecast',
+  'Five Year Forecast',
   'Five-Year',
   'City Council',
   'Regional Asset District',
@@ -22,7 +23,7 @@ const ACRONYMS: ReadonlySet<string> = new Set([
 ]);
 
 /** A department, bureau, office, commission or fund name: a proper noun, left as printed. */
-const PROPER_NAME_PATTERN = /^(Department|Bureau|Office|Commission|Board)\s+of\b|\bFund\b|\bCouncil\b/;
+export const PROPER_NAME_PATTERN = /^(Department|Bureau|Office|Commission|Board)\s+of\b|\bFund\b|\bCouncil\b/;
 
 const WORD_PATTERN = /[A-Za-z][A-Za-z'’]*/g;
 

@@ -203,6 +203,9 @@ const pageCount = section.start_page && section.end_page
 
 // --- Build TOC entries ---
 import { TYPE_COLORS, typeLabel as getTypeLabel } from '../../lib/type-colors';
+import { isPdfChartScrap, pdfHeadingText, tableGroupLabel } from '../../lib/pdf-headings';
+
+const headingSection = { pdfTitle: section.pdf_title ?? section.title, title: section.title };
 
 const typeColors = Object.fromEntries(
   Object.entries(TYPE_COLORS).map(([k, cls]) => [k, { badge: getTypeLabel(k), cls }])
@@ -220,13 +223,13 @@ function deriveTableLabel(t: any, heading: string): string {
   if (t.sections && t.sections.length > 0) {
     const unique = [...new Set(t.sections.filter(Boolean))] as string[];
     // Filter out subclass codes (e.g. "52 - PERSONNEL-EMPLOYEE BENEFITS")
-    const cleaned = unique.filter((s: string) => !/^\d{2}\s*-\s/.test(s));
+    const cleaned = unique.filter((s: string) => !/^\d{2}\s*-\s/.test(s)).map(tableGroupLabel);
     if (cleaned.length === 1) return cleaned[0];
     if (cleaned.length === 2) return cleaned.join(', ');
     if (cleaned.length > 2) return `${cleaned[0]} + ${cleaned.length - 1} more`;
     // All were subclass codes — use the heading
     if (heading) return heading;
-    if (unique.length === 1) return unique[0];
+    if (unique.length === 1) return tableGroupLabel(unique[0]);
   }
   if (heading) return heading;
   return t.table_type.replace(/_/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
@@ -451,7 +454,8 @@ function parseNarrative(raw: string): Segment[] {
           <div class="prose prose-sm max-w-3xl mb-4 text-gray-700 leading-relaxed">
             {segments.map((seg) => {
               if (seg.type === 'heading') {
-                const hHtml = linkGlossaryTerms(seg.text);
+                if (isPdfChartScrap(seg.text)) return null;
+                const hHtml = linkGlossaryTerms(pdfHeadingText({ text: seg.text, section: headingSection }));
                 return <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1" set:html={hHtml} />;
               }
               if (seg.type === 'bullets') {
