@@ -463,6 +463,14 @@ test("flow page renders both sankey diagrams", async ({ page }) => {
 // The budget balances revenue plus a draw on the fund balance against
 // spending. Rich (Public Source) asked for the draw, printed as "Use of Fund
 // Balance" ($28,253,606) in the five-year forecast, to appear on the left.
+// Rich (Public Source) asked for the operating total to read as the proposed
+// budget in whole millions, the way readers will quote it (2026-11-12).
+test("operating flow header names the proposed budget and its total in millions", async ({ page }) => {
+  await page.goto("/flow/");
+  const header = page.getByTestId("operating-flow-total");
+  await expect(header).toHaveText("Proposed 2027 budget · $727M");
+});
+
 test("operating flow shows the use of fund balance as a source", async ({ page }) => {
   await page.goto("/flow/");
   const node = page.locator('rect[data-node-id="source:use-of-fund-balance"]');
