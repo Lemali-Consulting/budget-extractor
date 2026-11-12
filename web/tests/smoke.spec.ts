@@ -532,6 +532,34 @@ test("brief workforce section shows the total positions without a year-over-year
   await expect(page.locator('meta[property="og:description"]')).not.toHaveAttribute("content", /new positions/i);
 });
 
+// Department pages drop the inferred new / eliminated / shifted position
+// lists (client request, 2026-11-12): they match job titles across departments
+// and years, the department-by-department comparison retired elsewhere.
+for (const route of [
+  "/departments/department-of-mobility-and-infrastructure/",
+  "/departments/department-of-innovation-and-performance/",
+]) {
+  test(`${route} lists no inferred position changes`, async ({ page }) => {
+    await page.goto(route);
+    await expect(main(page).getByRole("heading", { name: /Position changes/i })).toHaveCount(0);
+    await expect(main(page)).not.toContainText(/New positions|Eliminated positions|Shifted (in|out)/i);
+  });
+}
+
+// The PDF prints spending categories ("51 - Personnel-Salaries & Wages") with
+// their own line items ("51101 - Regular") beneath them. Listing both counts
+// the same dollars twice, so the department summary lists categories only.
+test("department top expenditures list spending categories only, not their line items", async ({ page }) => {
+  await page.goto("/departments/bureau-of-fire/");
+  const card = main(page).locator("div.bg-white", {
+    has: page.getByRole("heading", { name: "Top expenditures", exact: true }),
+  });
+  const labels = (await card.locator("span.truncate").allInnerTexts()).map((l) => l.trim());
+  expect(labels.length).toBeGreaterThan(0);
+  expect(labels.filter((l) => !/^\d{2} - /.test(l))).toEqual([]);
+  expect(labels[0]).toMatch(/^51 - /);
+});
+
 // ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------

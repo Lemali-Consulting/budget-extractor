@@ -19,6 +19,9 @@ const allPersonnel = budgetYear.views.personnel;
 const sections = budgetYear.operating.sections;
 const { columns } = budgetYear;
 
+/** A two-digit spending category row, e.g. "51 - PERSONNEL-SALARIES & WAGES" (line items carry five digits). */
+const SPENDING_CATEGORY_LABEL = /^\d{2} - /;
+
 // Same department in the current version, when the headline budget has one.
 const headlineHasDepartment = HEADLINE.views.departmentBudgets.some(
   (r) => r.slug === slug && r.year === HEADLINE.columns.budget,
@@ -35,13 +38,6 @@ const section = sections.find((s: any) => s.slug === slug);
 const trend = budgets
   .filter(b => b.slug === slug)
   .sort((a, b) => a.year.localeCompare(b.year));
-
-// Position changes for this department
-const newPositions = changes.newPositions.filter((p: any) => p.department === deptName);
-const eliminatedPositions = changes.eliminatedPositions.filter((p: any) => p.department === deptName);
-const shiftedIn = changes.shiftedPositions.filter((p: any) => p.toDepartment === deptName);
-const shiftedOut = changes.shiftedPositions.filter((p: any) => p.fromDepartment === deptName);
-const hasPositionChanges = newPositions.length + eliminatedPositions.length + shiftedIn.length + shiftedOut.length > 0;
 
 // Top personnel by budget
 const deptStaff = allPersonnel
@@ -77,9 +73,14 @@ if (section?.tables) {
     const colIdx = budgetColIdx >= 0 ? budgetColIdx : finTable.headers.length - 1;
     const labelIdx = 0;
 
+    // The PDF prints each spending category ("51 - PERSONNEL-SALARIES & WAGES")
+    // above its line items ("51101 - Regular"); listing both levels counts the
+    // same dollars twice, so keep the categories when the table has them.
+    const hasCategoryRows = finTable.rows.some((row: any[]) => SPENDING_CATEGORY_LABEL.test(String(row[labelIdx] ?? '').trim()));
     for (const row of finTable.rows) {
       if (!row[labelIdx] || !row[colIdx]) continue;
       const label = String(row[labelIdx]).trim();
+      if (hasCategoryRows && !SPENDING_CATEGORY_LABEL.test(label)) continue;
       const isNeg = String(row[colIdx]).trim().startsWith('(');
       const raw = String(row[colIdx]).replace(/[$,()]/g, '').trim();
       const amount = isNeg ? -parseFloat(raw) : parseFloat(raw);
@@ -107,7 +108,7 @@ function fmtM(n: number): string {
 }
 ---
 
-<Base title={deptName} description={`One-page summary of ${deptName} — ${budgetYear.fiscalLabel} budget, staffing, and key changes.`} budgetYear={budgetYear} currentHref={currentHref}>
+<Base title={deptName} description={`One-page summary of ${deptName} — ${budgetYear.fiscalLabel} budget, staffing, and spending.`} budgetYear={budgetYear} currentHref={currentHref}>
   <div class="max-w-3xl mx-auto print:max-w-none">
     <!-- Header -->
     <div class="mb-6 print:mb-4">
@@ -196,59 +197,6 @@ function fmtM(n: number): string {
             </tbody>
           </table>
         </div>
-      </div>
-    )}
-
-    <!-- Position changes -->
-    {hasPositionChanges && (
-      <div class="bg-white rounded-lg border p-4 mb-6">
-        <h2 class="text-lg font-semibold mb-3">Position changes</h2>
-        {newPositions.length > 0 && (
-          <div class="mb-3">
-            <h3 class="text-sm font-medium text-green-700 mb-1">New positions (+{newPositions.length})</h3>
-            <div class="text-sm text-gray-700">
-              {newPositions.map((p: any) => (
-                <div class="flex justify-between py-0.5">
-                  <span>{p.title}</span>
-                  <span class="text-gray-500 tabular-nums">{p.fte} FTE · {fmtM(p.budget)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-        {eliminatedPositions.length > 0 && (
-          <div class="mb-3">
-            <h3 class="text-sm font-medium text-ps-red-700 mb-1">Eliminated positions (-{eliminatedPositions.length})</h3>
-            <div class="text-sm text-gray-700">
-              {eliminatedPositions.map((p: any) => (
-                <div class="flex justify-between py-0.5">
-                  <span>{p.title}</span>
-                  <span class="text-gray-500 tabular-nums">{p.fte} FTE · {fmtM(p.budget)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-        {shiftedIn.length > 0 && (
-          <div class="mb-3">
-            <h3 class="text-sm font-medium text-ps-blue-700 mb-1">Shifted in ({shiftedIn.length})</h3>
-            <div class="text-sm text-gray-700">
-              {shiftedIn.map((p: any) => (
-                <div class="py-0.5"><span>{p.title}</span> <span class="text-gray-400">from {p.fromDepartment}</span></div>
-              ))}
-            </div>
-          </div>
-        )}
-        {shiftedOut.length > 0 && (
-          <div>
-            <h3 class="text-sm font-medium text-orange-700 mb-1">Shifted out ({shiftedOut.length})</h3>
-            <div class="text-sm text-gray-700">
-              {shiftedOut.map((p: any) => (
-                <div class="py-0.5"><span>{p.title}</span> <span class="text-gray-400">to {p.toDepartment}</span></div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     )}
 
