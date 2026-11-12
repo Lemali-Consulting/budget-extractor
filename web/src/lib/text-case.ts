@@ -31,6 +31,11 @@ function escapeRegExp(s: string): string {
 }
 
 /** Lowercase everything except proper nouns and acronyms. */
+/** A mid-sentence phrase ("proposed 2027 operating budget") made to open a sentence or label. */
+export function capitalizeFirst(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 export function phraseCase(text: string): string {
   const sourceIsAllCaps = text.toUpperCase() === text;
   let out = text.replace(WORD_PATTERN, (word) => {

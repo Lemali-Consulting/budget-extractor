@@ -111,7 +111,7 @@
     },
     {
       "term": "Amusement Tax",
-      "description": "Tax on admission charges to entertainment venues, sporting events, and recreational facilities."
+      "description": "Tax on admission charges to entertainment venues, sporting events and recreational facilities."
     },
     {
       "term": "Local Service Tax",
@@ -139,19 +139,19 @@
     },
     {
       "term": "Licenses and Permits",
-      "description": "Fees from business licenses (liquor, vending, pawn), construction and building permits, and professional registrations."
+      "description": "Fees from business licenses (liquor, vending, pawn), construction and building permits and professional registrations."
     },
     {
       "term": "Charges for Services",
-      "description": "Revenue from city-provided services including parking meter collections, medical services, fire protection, and administrative fees."
+      "description": "Revenue from city-provided services including parking meter collections, medical services, fire protection and administrative fees."
     },
     {
       "term": "Fines and Forfeitures",
-      "description": "Revenue from traffic violations, parking tickets (the majority), magistrate fines, and other penalties."
+      "description": "Revenue from traffic violations, parking tickets (the majority), magistrate fines and other penalties."
     },
     {
       "term": "Intergovernmental Revenue",
-      "description": "Transfers from state and federal governments, including state pension aid, Local Share of Slots revenue, and federal grants."
+      "description": "Transfers from state and federal governments, including state pension aid, Local Share of Slots revenue and federal grants."
     },
     {
       "term": "Interest Earnings",
@@ -159,13 +159,13 @@
     },
     {
       "term": "Miscellaneous Revenues",
-      "description": "Minor revenue sources including rebates, incentives, vending commissions, and registration fees."
+      "description": "Minor revenue sources including rebates, incentives, vending commissions and registration fees."
     }
   ],
   "expenditure_line_items": [
     {
       "term": "Salaries",
-      "description": "Direct wage and salary costs for city employees, including regular pay, overtime, longevity bonuses, and uniform allowances."
+      "description": "Direct wage and salary costs for city employees, including regular pay, overtime, longevity bonuses and uniform allowances."
     },
     {
       "term": "Health Benefits",
@@ -173,7 +173,7 @@
     },
     {
       "term": "Workers' Comp.",
-      "description": "Insurance and claims costs for employee workplace injuries, including medical treatment, indemnity payments, and legal fees."
+      "description": "Insurance and claims costs for employee workplace injuries, including medical treatment, indemnity payments and legal fees."
     },
     {
       "term": "Pension & OPEB",
@@ -181,7 +181,7 @@
     },
     {
       "term": "Operating Departments",
-      "description": "Day-to-day departmental expenses excluding personnel: supplies, utilities, professional services, property maintenance, equipment, and fuel."
+      "description": "Day-to-day departmental expenses excluding personnel: supplies, utilities, professional services, property maintenance, equipment and fuel."
     },
     {
       "term": "Debt Service",
@@ -388,7 +388,7 @@
       },
       {
         "name": "Salary Table",
-        "description": "Employee position titles, grades, steps, and annual rates by department"
+        "description": "Employee position titles, grades, steps and annual rates by department"
       },
       {
         "name": "Grant Table",
@@ -400,7 +400,7 @@
       },
       {
         "name": "Master Fee Schedule",
-        "description": "Comprehensive listing of all city fees, permits, and license costs"
+        "description": "Comprehensive listing of all city fees, permits and license costs"
       }
     ]
   },
@@ -482,25 +482,25 @@
     },
     {
       "term": "Allocation",
-      "description": "The distribution of budgeted funds to a specific department, program, or project within an appropriation."
+      "description": "The distribution of budgeted funds to a specific department, program or project within an appropriation."
     },
     {
       "term": "Functional Area",
-      "description": "Category grouping capital projects by type of work: Engineering and Construction, Facility Improvement, Neighborhood and Community Development, Public Safety, Vehicles and Equipment, or Administration/Sub-Award."
+      "description": "Category grouping capital projects by type of work: Engineering and Construction, Facility Improvement, Neighborhood and Community Development, Public Safety, Vehicles and Equipment or Administration/Sub-Award."
     },
     {
       "term": "Project Type",
-      "description": "Classification of a capital project by timeline and funding origin. Timeline: New (first-time funded), Continuing (spans multiple years), or Recurring (annual). Origin: Capital Project, Intergovernmental Project, or Special Revenue Project."
+      "description": "Classification of a capital project by timeline and funding origin. Timeline: New (first-time funded), Continuing (spans multiple years) or Recurring (annual). Origin: Capital Project, Intergovernmental Project or Special Revenue Project."
     },
     {
       "term": "Deliverable",
-      "description": "A specific work product or outcome within a capital project, with its own location, council district, funding source, and cost."
+      "description": "A specific work product or outcome within a capital project, with its own location, council district, funding source and cost."
     }
   ],
   "capital_funding_sources": [
     {
       "source": "PAYGO",
-      "description": "Pay-as-you-go funding transferred from the General Fund reserve. Used for projects not eligible for bond or CDBG financing, typically shorter-lived assets like IT improvements, traffic calming, or condemned structure remediation."
+      "description": "Pay-as-you-go funding transferred from the General Fund reserve. Used for projects not eligible for bond or CDBG financing, typically shorter-lived assets like IT improvements, traffic calming or condemned structure remediation."
     },
     {
       "source": "BOND",
@@ -508,11 +508,11 @@
     },
     {
       "source": "CDBG",
-      "description": "Community Development Block Grant — federal funds with flexible use, provided the project benefits low- or moderate-income residents, seniors, eliminates blight, or addresses health and safety threats."
+      "description": "Community Development Block Grant — federal funds with flexible use, provided the project benefits low- or moderate-income residents, seniors, eliminates blight or addresses health and safety threats."
     },
     {
       "source": "OTHER",
-      "description": "Funding from federal, state, or local government grants, foundation awards, non-profit donations, or state/federal reimbursement (especially for TIP transportation projects)."
+      "description": "Funding from federal, state or local government grants, foundation awards, non-profit donations or state/federal reimbursement (especially for TIP transportation projects)."
     }
   ]
 }

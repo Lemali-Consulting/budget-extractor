@@ -1,4 +1,4 @@
-/**Tabbed view of new, eliminated, and shifted positions.*/
+/**Tabbed view of new, eliminated and shifted positions.*/
 import { useState } from 'preact/hooks';
 
 interface Position {

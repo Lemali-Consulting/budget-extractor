@@ -17,7 +17,7 @@ export const FUND_BALANCE_ITEM_TYPE = 'fund-balance';
 
 interface Props {
   data: WaterfallItem[];
-  /** Budget label for the heading, e.g. "2027 Proposed". */
+  /** Budget name for the heading, in running-text case, e.g. "proposed 2027 budget". */
   yearLabel: string;
   /** Name of the bar that sums the others. */
   totalLabel?: string;
@@ -110,7 +110,7 @@ export default function WaterfallChart({
 
   return (
     <div ref={containerRef}>
-      <h3 class="text-lg font-semibold mb-2">{yearLabel} revenue breakdown</h3>
+      <h3 class="text-lg font-semibold mb-2">Revenue breakdown, {yearLabel}</h3>
       <p class="text-sm text-gray-500 mb-4">{description}</p>
       <div ref={chartRef} />
     </div>

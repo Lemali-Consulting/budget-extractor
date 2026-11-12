@@ -74,7 +74,7 @@ function TablePicker({ candidates, onSelect, onClose }: {
           </div>
           <input
             type="text"
-            placeholder="Search by section, label, or column name..."
+            placeholder="Search by section, label or column name..."
             class="w-full px-3 py-1.5 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-ps-blue-400"
             value={query}
             onInput={(e) => setQuery((e.target as HTMLInputElement).value)}

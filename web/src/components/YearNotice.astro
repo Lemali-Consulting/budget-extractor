@@ -1,6 +1,6 @@
 ---
 /**
- * Site-wide banner stating which budget the page shows: the Mayor's proposed
+ * Site-wide banner stating which budget the page shows: the mayor's proposed
  * budget (headline pages) or an archived, already-adopted year (archive pages).
  */
 import { type BudgetYear, HEADLINE, headlinePath } from '../lib/budget-year';
@@ -18,7 +18,7 @@ const isHeadline = budgetYear.isHeadline;
 {isHeadline ? (
   <div data-testid="proposed-notice" class="bg-ps-yellow-50 border-b border-ps-yellow-200 text-ps-yellow-900 text-sm print:hidden">
     <p class="max-w-6xl mx-auto px-6 py-2">
-      This is the Mayor&rsquo;s <strong>proposed {budgetYear.year} budget</strong>, pending City Council
+      This is the Pittsburgh mayor&rsquo;s <strong>proposed {budgetYear.year} budget</strong>, pending City Council
       adoption (expected in December). Figures may change before the budget is adopted.
     </p>
   </div>
@@ -28,8 +28,8 @@ const isHeadline = budgetYear.isHeadline;
       You&rsquo;re viewing the <strong>{budgetYear.year} budget</strong>.
       <a href={currentHref} class="font-medium underline hover:text-slate-950">
         {currentHref === headlinePath('/')
-          ? `See the current ${HEADLINE.label} budget`
-          : `See this page in the current ${HEADLINE.label} budget`} &rarr;
+          ? `See the current ${HEADLINE.budgetName.toLowerCase()}`
+          : `See this page in the current ${HEADLINE.budgetName.toLowerCase()}`} &rarr;
       </a>
     </p>
   </div>

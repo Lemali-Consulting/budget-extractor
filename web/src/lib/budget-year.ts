@@ -1,6 +1,6 @@
 /**
  * Year registry: the one place that knows which budget years the site carries,
- * which data bundles belong to each, how they are labeled, and where they live
+ * which data bundles belong to each, how they are labeled and where they live
  * in the URL space. Pages and server-side components read years, labels, route
  * prefixes and data from here instead of hardcoding them.
  *
@@ -87,7 +87,7 @@ export type Variant = (typeof VARIANT)[keyof typeof VARIANT];
 /** Route prefix of the headline (unprefixed) budget pages. */
 export const HEADLINE_ROUTE_PREFIX = '';
 
-/** Where a year's budget-content pages live: at the site root, in the archive, or nowhere. */
+/** Where a year's budget-content pages live: at the site root, in the archive or nowhere. */
 export const YEAR_ROLE = {
   HEADLINE: 'headline',
   ARCHIVE: 'archive',
@@ -187,6 +187,9 @@ export interface BudgetYear {
   budgetName: string;
   /** The source documents as named mid-sentence, e.g. "proposed 2027 operating and capital budgets". */
   documentsName: string;
+  /** Each budget as named mid-sentence, e.g. "proposed 2027 operating budget". */
+  operatingName: string;
+  capitalName: string;
   /** What the prior year is called, e.g. "2026 Budget". */
   priorLabel: string;
   /** Year-over-year wording, e.g. "2027 Proposed vs 2026 Budget". */
@@ -218,6 +221,8 @@ function describeVariant(opts: { year: number; variant: Variant }): {
   fiscalLabel: string;
   budgetName: string;
   documentsName: string;
+  operatingName: string;
+  capitalName: string;
 } {
   const { year, variant } = opts;
   if (variant === VARIANT.PROPOSED) {
@@ -227,6 +232,8 @@ function describeVariant(opts: { year: number; variant: Variant }): {
       fiscalLabel: `FY${year} proposed`,
       budgetName: `Proposed ${year} budget`,
       documentsName: `proposed ${year} operating and capital budgets`,
+      operatingName: `proposed ${year} operating budget`,
+      capitalName: `proposed ${year} capital budget`,
     };
   }
   if (variant === VARIANT.AMENDED) {
@@ -236,9 +243,15 @@ function describeVariant(opts: { year: number; variant: Variant }): {
       fiscalLabel: `FY${year}`,
       budgetName: `${year} budget (as amended)`,
       documentsName: `${year} operating (as amended) and capital budgets`,
+      operatingName: `${year} operating budget (as amended)`,
+      capitalName: `${year} capital budget`,
     };
   }
-  return { label: `${year} budget`, shortLabel: `${year} budget`, fiscalLabel: `FY${year}`, budgetName: `${year} budget`, documentsName: `${year} operating and capital budgets` };
+  return { label: `${year} budget`, shortLabel: `${year} budget`, fiscalLabel: `FY${year}`, budgetName: `${year} budget`,
+    documentsName: `${year} operating and capital budgets`,
+    operatingName: `${year} operating budget`,
+    capitalName: `${year} capital budget`,
+  };
 }
 
 function buildAmendment(opts: {

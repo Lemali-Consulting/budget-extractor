@@ -8,7 +8,7 @@ interface GlossaryEntry {
 
 /**
  * Build a sorted list of glossary term matchers from the glossary data.
- * Covers abbreviations, fiscal metrics, general terms, and capital funding sources.
+ * Covers abbreviations, fiscal metrics, general terms and capital funding sources.
  */
 // Terms too generic to auto-link without false positives.
 // They're still defined on the glossary page, just not auto-linked in content.

@@ -84,11 +84,11 @@ function fmtWholeM(n: number): string {
 
 <Base
   title="Budget in brief"
-  description={`Pittsburgh's ${HEADLINE.fiscalLabel} budget explained in plain language — where the money comes from, where it goes, and who works for the city.`}
+  description={`Pittsburgh's ${HEADLINE.budgetName.toLowerCase()} explained in plain language — where the money comes from, where it goes and who works for the city.`}
   ogDescription={`Pittsburgh's ${fmtM(totalCurrent)} operating budget explained: ${taxPct}% from taxes, ${publicSafetyPct}% to public safety, ${totalFteCurrent.toLocaleString()} budgeted positions.`}
 >
   <div class="max-w-3xl mx-auto">
-    <h1 class="text-3xl font-bold mb-2">Pittsburgh's {HEADLINE.label} budget in brief</h1>
+    <h1 class="text-3xl font-bold mb-2">Pittsburgh's {HEADLINE.budgetName.toLowerCase()} in brief</h1>
     <p class="text-gray-600 mb-8 text-lg">Five things to know about how Pittsburgh plans to spend your money this year.</p>
 
     <!-- Jump nav -->
@@ -111,10 +111,10 @@ function fmtWholeM(n: number): string {
         </div>
       </div>
       <p class="text-gray-700 leading-relaxed">
-        The City of Pittsburgh's proposed operating budget for fiscal year {HEADLINE.year} is <strong>{fmtM(totalCurrent)}</strong>,
+        The City of Pittsburgh's {HEADLINE.operatingName} is <strong>{fmtM(totalCurrent)}</strong>,
         {Number(changePct) >= 0 ? 'up' : 'down'} {Math.abs(Number(changePct))}% ({fmtM(Math.abs(totalChange))}) from last year. That works out to about
         <strong>${perResident.toLocaleString()} per resident</strong> for city services — police, fire, EMS, parks,
-        public works, and more. Separately, the capital budget plans <strong>{fmtM(capitalCurrent)}</strong> in
+        public works and more. Separately, the capital budget plans <strong>{fmtM(capitalCurrent)}</strong> in
         infrastructure spending this year as part of a six-year, {fmtM(capitalTotal)} plan.
       </p>
     </section>
@@ -124,7 +124,7 @@ function fmtWholeM(n: number): string {
       <div class="flex items-start justify-between">
         <h2 class="text-2xl font-bold mb-4">Where does the money come from?</h2>
       </div>
-      <WaterfallChart data={fundingSources} yearLabel={HEADLINE.label} totalLabel={fundBalanceDraw ? 'Total' : 'Total revenue'}
+      <WaterfallChart data={fundingSources} yearLabel={HEADLINE.budgetName.toLowerCase()} totalLabel={fundBalanceDraw ? 'Total' : 'Total revenue'}
         description={fundBalanceDraw
           ? "How the city's projected revenue and its use of fund balance build up to the total."
           : undefined}
@@ -134,9 +134,9 @@ function fmtWholeM(n: number): string {
         The city expects <strong>{fmtM(revenueTotal)}</strong> in revenue{fundBalanceDraw && (
           <> and plans to draw <strong>{fmtM(fundBalanceDraw)} from its fund balance</strong>, for a total of <strong>{fmtWholeM(fundingTotal)}</strong></>
         )}. The biggest source of revenue by far is
-        <strong>tax revenue ({taxPct}% of revenue)</strong> — earned income tax, property tax, and various
+        <strong>tax revenue ({taxPct}% of revenue)</strong> — earned income tax, property tax and various
         business taxes. The rest comes from state and federal aid, fees for city services, permits,
-        fines, and interest earnings.
+        fines and interest earnings.
       </p>
       <p class="text-sm text-gray-500 mt-2">
         <a href="/flow/" class="text-ps-blue-600 hover:underline">Follow the money from revenue to spending &rarr;</a>
@@ -152,10 +152,10 @@ function fmtWholeM(n: number): string {
         <SimpleBars items={topDepts} client:load />
       </div>
       <p class="text-gray-700 leading-relaxed">
-        Public safety dominates the budget. Police, Fire, and EMS together account for
+        Public safety dominates the budget. Police, Fire and EMS together account for
         <strong>{publicSafetyPct}% of all operating spending</strong> ({fmtM(publicSafety)}).
         The Bureau of Police alone is the single largest unit. After public safety,
-        the biggest spending areas are public works, parks, and general government operations.
+        the biggest spending areas are public works, parks and general government operations.
       </p>
       <p class="text-sm text-gray-500 mt-2">
         <a href="/operating/" class="text-ps-blue-600 hover:underline">Browse all departments &rarr;</a>
@@ -200,9 +200,9 @@ function fmtWholeM(n: number): string {
       </div>
       <p class="text-gray-700 leading-relaxed">
         The capital budget funds infrastructure: road repairs, bridge rehabilitation,
-        building renovations, vehicle replacements, and technology upgrades. The six-year plan totals
+        building renovations, vehicle replacements and technology upgrades. The six-year plan totals
         <strong>{fmtM(capitalTotal)}</strong>, funded through bonds, pay-as-you-go (PAYGO) from operating revenue,
-        Community Development Block Grants (CDBG), and other sources.
+        Community Development Block Grants (CDBG) and other sources.
       </p>
       <p class="text-sm text-gray-500 mt-2">
         <a href="/capital/" class="text-ps-blue-600 hover:underline">Browse all capital projects &rarr;</a>
@@ -214,11 +214,11 @@ function fmtWholeM(n: number): string {
       <summary class="px-4 py-3 text-sm font-medium text-gray-600 cursor-pointer hover:bg-gray-50">About this data</summary>
       <div class="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
         <p class="mb-2">
-          All figures are extracted from the City of Pittsburgh's official {HEADLINE.fiscalLabel} operating and capital budget documents
+          All figures are extracted from the City of Pittsburgh's official {HEADLINE.documentsName}
           using automated table extraction. Population figure (302,971) is from the 2020 U.S. Census.
         </p>
         <p class="mb-2">
-          "Operating budget" covers day-to-day city expenses including salaries, supplies, and services.
+          "Operating budget" covers day-to-day city expenses including salaries, supplies and services.
           "Capital budget" covers long-term infrastructure investments. The two are separate funds.
         </p>
         <p>

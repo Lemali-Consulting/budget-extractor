@@ -38,7 +38,7 @@ if (section?.page_content) {
 }
 ---
 
-<Base title={deptName} description={`One-page summary of ${deptName} — ${budgetYear.fiscalLabel} budget, staffing, and spending.`} budgetYear={budgetYear} currentHref={currentHref}>
+<Base title={deptName} description={`One-page summary of ${deptName} in the ${budgetYear.budgetName.toLowerCase()}: budget, staffing and spending.`} budgetYear={budgetYear} currentHref={currentHref}>
   <div class="max-w-3xl mx-auto print:max-w-none">
     <!-- Header -->
     <div class="mb-6 print:mb-4">

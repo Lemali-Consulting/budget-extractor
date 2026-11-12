@@ -1,4 +1,4 @@
-/**Data tab content: CSV download, print button, and table view.*/
+/**Data tab content: CSV download, print button and table view.*/
 
 import TableView from './TableView';
 

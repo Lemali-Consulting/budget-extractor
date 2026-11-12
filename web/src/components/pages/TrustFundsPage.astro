@@ -65,7 +65,7 @@ function fmtChange(f: { current: number | null; prior: number | null }): string 
   <p class="text-gray-600 mb-2 max-w-3xl">
     The budget document calls these special revenue funds: money whose use is restricted or committed to a specific purpose,
     kept separate from the General Fund that pays for day-to-day operations. Despite the word "trust" in most of their names,
-    no trustee holds the money. The {budgetYear.fiscalLabel} operating budget document gives <span data-testid="trust-fund-count">{funds.length}</span> of them
+    no trustee holds the money. The {budgetYear.operatingName} document gives <span data-testid="trust-fund-count">{funds.length}</span> of them
     a {budgetYear.year} budget{Number.isFinite(firstPage) && <>, starting on page {firstPage}</>}.
   </p>
   <p class="text-gray-600 mb-6 max-w-3xl">

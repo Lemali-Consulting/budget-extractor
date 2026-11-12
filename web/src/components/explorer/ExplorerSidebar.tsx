@@ -1,4 +1,4 @@
-/**Sidebar panel with search, budget/type filters, and expandable section accordion.*/
+/**Sidebar panel with search, budget/type filters and expandable section accordion.*/
 
 import { useState } from 'preact/hooks';
 import { TYPE_COLORS, typeLabel } from '../../lib/type-colors';

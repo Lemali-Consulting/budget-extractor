@@ -28,7 +28,7 @@ test("home page loads with key content", async ({ page }) => {
   await expect(header.getByRole("link", { name: "Departments", exact: true })).toBeVisible();
   await expect(header.getByRole("link", { name: "Explore", exact: true })).toBeVisible();
 
-  await expect(main(page).getByText(/2027 proposed/).first()).toBeVisible();
+  await expect(main(page).getByText(/proposed 2027 budget/).first()).toBeVisible();
 });
 
 // ---------------------------------------------------------------------------
@@ -298,12 +298,13 @@ for (const route of ["/", "/operating/", "/sections/revenue-detail/", "/capital/
   });
 }
 
-test("headline pages are labeled 2027 Proposed", async ({ page }) => {
+// Public Source's style: "proposed 2027 operating budget", not "FY2027 proposed" (Rich, 2026-11-12).
+test("headline pages are labeled as the proposed 2027 budget", async ({ page }) => {
   await page.goto("/operating/");
-  await expect(main(page).getByText(/FY2027 proposed operating budget/).first()).toBeVisible();
+  await expect(main(page).getByText(/The City of Pittsburgh's proposed 2027 operating budget\./).first()).toBeVisible();
 
   await page.goto("/capital/");
-  await expect(main(page).getByText(/FY2027 proposed capital budget/).first()).toBeVisible();
+  await expect(main(page).getByText(/The City of Pittsburgh's proposed 2027 capital budget\./).first()).toBeVisible();
 
   await page.goto("/sections/revenue-detail/");
   await expect(main(page).getByText(/2027/).first()).toBeVisible();

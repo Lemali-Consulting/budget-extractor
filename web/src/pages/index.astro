@@ -6,6 +6,7 @@ import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { revenueColor } from '../lib/flow-colors';
 import { colorForSlug } from '../lib/department-groups';
+import { capitalizeFirst } from '../lib/text-case';
 import { HEADLINE, ARCHIVE_YEARS, yearPath, type BudgetYear } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
 import { correctionHref, trustFundCorrections } from '../lib/corrections';
@@ -113,7 +114,7 @@ const teaserLinks: FlowLink[] = [
       <a href="/about/" class="text-ps-blue-600 hover:underline text-base">How this was built</a>
     </p>
     <p class="text-sm text-gray-500 mb-3">
-      Showing the <strong>{HEADLINE.label}</strong> budget &mdash; the Mayor's proposal for fiscal year {HEADLINE.year}.
+      Showing the mayor's <strong>{HEADLINE.budgetName.toLowerCase()}</strong>.
     </p>
 
     <!-- Example questions -->
@@ -202,7 +203,7 @@ const teaserLinks: FlowLink[] = [
       <span class="text-sm text-ps-blue-600 hover:text-ps-blue-800">See the trends &rarr;</span>
     </div>
     <p class="text-sm text-gray-600">
-      Revenue, spending and reserves across budget years, with the {HEADLINE.label} budget set against that history.
+      Revenue, spending and reserves across budget years, with the {HEADLINE.budgetName.toLowerCase()} set against that history.
     </p>
   </a>
 
@@ -210,7 +211,7 @@ const teaserLinks: FlowLink[] = [
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
     <a href="/operating/" class="block p-6 bg-white rounded-lg border-2 border-ps-blue-200 ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow-lg transition">
       <h2 class="text-2xl font-bold text-ps-blue-900 mb-2">Operating budget</h2>
-      <p class="text-gray-600 mb-3">Department budgets, revenue, trust funds, and financial forecasts for day-to-day city operations.</p>
+      <p class="text-gray-600 mb-3">Department budgets, revenue, trust funds and financial forecasts for day-to-day city operations.</p>
       <div class="flex gap-4 text-sm text-gray-500">
         <span class="font-medium">{operatingSections.length} sections</span>
         <span>{operatingTables} tables</span>
@@ -219,7 +220,7 @@ const teaserLinks: FlowLink[] = [
 
     <a href="/capital/" class="block p-6 bg-white rounded-lg border-2 border-green-200 ring-0 hover:ring-2 hover:ring-green-400 hover:shadow-lg transition">
       <h2 class="text-2xl font-bold text-green-900 mb-2">Capital budget</h2>
-      <p class="text-gray-600 mb-3">Six-year capital improvement plan covering infrastructure, facilities, and major projects.</p>
+      <p class="text-gray-600 mb-3">Six-year capital improvement plan covering infrastructure, facilities and major projects.</p>
       <div class="flex gap-4 text-sm text-gray-500">
         <span class="font-medium">{capitalSections.length} projects</span>
         <span>{capitalAreas.size} functional areas</span>
@@ -233,7 +234,7 @@ const teaserLinks: FlowLink[] = [
     <div class="flex items-baseline justify-between mb-1">
       <h2 class="text-lg font-semibold">Top departments by budget</h2>
     </div>
-    <p class="text-sm text-gray-500 mb-3">{HEADLINE.fiscalLabel} operating budget — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
+    <p class="text-sm text-gray-500 mb-3">{capitalizeFirst(HEADLINE.operatingName)} — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
     <BudgetChart data={operating(budgetRows)} sectionHrefs={publishedSectionHrefs(HEADLINE)} client:load />
   </div>
 

@@ -144,7 +144,7 @@ export default function SearchBar({ items, routePrefix = '' }: Props) {
 
   return (
     <div class="relative w-full max-w-xl">
-      <label for="budget-search" class="sr-only">Search sections, tables, and narrative content</label>
+      <label for="budget-search" class="sr-only">Search sections, tables and narrative content</label>
       <input
         id="budget-search"
         ref={inputRef}

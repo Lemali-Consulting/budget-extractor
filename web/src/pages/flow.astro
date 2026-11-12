@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { HEADLINE } from '../lib/budget-year';
+import { capitalizeFirst } from '../lib/text-case';
 import { publishedSectionHrefs } from '../lib/published-pages';
 import { revenueColor, capitalSourceColor, FUND_BALANCE_COLOR } from '../lib/flow-colors';
 import { useOfFundBalance } from '../lib/fund-balance';
@@ -56,7 +57,7 @@ const operatingNodes: FlowNode[] = [
   ...(fundBalanceDraw
     ? [{ id: FUND_BALANCE_NODE_ID, label: 'Use of fund balance', category: 'revenue', color: FUND_BALANCE_COLOR }]
     : []),
-  { id: 'trunk', label: `${HEADLINE.shortLabel} operating budget`, category: 'trunk' },
+  { id: 'trunk', label: capitalizeFirst(HEADLINE.operatingName), category: 'trunk' },
   ...bigDepts
     .slice()
     .sort((a, b) => b.amount - a.amount)
@@ -182,7 +183,7 @@ const capitalLinks: FlowLink[] = [
 
 <Base
   title="Money flow"
-  description={`Where Pittsburgh's ${HEADLINE.label} budget comes from and where it goes — operating revenue and capital spending visualized as flows.`}
+  description={`Where Pittsburgh's ${HEADLINE.budgetName.toLowerCase()} comes from and where it goes — operating revenue and capital spending visualized as flows.`}
   ogDescription={`Operating: ${fmtM(revenueTotal)} revenue across ${revenue.length} sources flows to ${currentDepts.length} departments. Capital: ${fmtM(capitalTotal)} across ${sources.length} funding sources, ${sortedProjects.length} projects, ${years.length} years.`}
 >
   <h1 class="text-3xl font-bold mb-2">Money flow</h1>
@@ -253,6 +254,6 @@ const capitalLinks: FlowLink[] = [
   </section>
 
   <p class="text-xs text-gray-400">
-    Source: {HEADLINE.label} Pittsburgh operating &amp; capital budget (extracted tables).
+    Source: tables extracted from the City of Pittsburgh's {HEADLINE.documentsName}.
   </p>
 </Base>

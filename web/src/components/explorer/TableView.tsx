@@ -1,4 +1,4 @@
-/**Reusable budget table renderer with section dividers, total-row highlighting, and numeric alignment.*/
+/**Reusable budget table renderer with section dividers, total-row highlighting and numeric alignment.*/
 import { columnHeaderLabel } from '../../lib/text-case';
 
 interface Props {

@@ -82,7 +82,7 @@ function hasChart(section: any): boolean {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">Operating budget</h1>
-  <p class="text-gray-600 mb-4">City of Pittsburgh {budgetYear.fiscalLabel} operating budget. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
+  <p class="text-gray-600 mb-4">The City of Pittsburgh's {budgetYear.operatingName}. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
 
   <AmendmentNotice budgetYear={budgetYear} />
 
