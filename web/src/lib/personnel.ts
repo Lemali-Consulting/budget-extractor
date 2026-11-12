@@ -41,3 +41,15 @@ export function budgetPerPosition(line: { fteCurrent: number | null; budgetCurre
   if (!fteCurrent || !budgetCurrent || !Number.isInteger(fteCurrent)) return null;
   return budgetCurrent / fteCurrent;
 }
+
+/** One fund's share of a title the PDF splits between funds (see utils/fund_splits.py). */
+export interface FundShare {
+  /** The fund as the PDF's split table names it, e.g. "Parks RAD Trust Fund". */
+  fund: string;
+  /** Section page of the department or trust fund that holds the fund. */
+  slug: string;
+  percent: number;
+}
+
+/** Lead-in for the note under a split line's title. */
+export const FUND_SPLIT_LABEL = 'Pay split';

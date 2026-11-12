@@ -3,7 +3,8 @@
 import { useState, useMemo } from 'preact/hooks';
 import GlossaryTip from './GlossaryTip';
 import { FTE_TOOLTIP } from '../lib/glossary-terms';
-import { PER_POSITION_LABEL, budgetPerPosition } from '../lib/personnel';
+import { PER_POSITION_LABEL, budgetPerPosition, type FundShare } from '../lib/personnel';
+import FundSplitNote from './FundSplitNote';
 
 interface PersonnelRow {
   department: string;
@@ -14,6 +15,8 @@ interface PersonnelRow {
   budgetPrior: number | null;
   budgetCurrent: number | null;
   rateGrade: string;
+  /** How the PDF splits this title's pay between funds; absent or null when it doesn't. */
+  fundSplit?: FundShare[] | null;
 }
 
 type SortKey = 'title' | 'department' | 'fteCurrent' | 'budgetCurrent' | 'perPosition';
@@ -141,7 +144,10 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
           <tbody>
             {filtered.slice(0, 100).map((row, i) => (
               <tr key={i} class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                <td class="px-3 py-1.5 border-t">{row.title}</td>
+                <td class="px-3 py-1.5 border-t">
+                  {row.title}
+                  <FundSplitNote split={row.fundSplit} routePrefix={routePrefix} />
+                </td>
                 <td class="px-3 py-1.5 border-t">
                   <a href={`${routePrefix}/sections/${row.slug}/`} class="text-ps-blue-600 hover:underline">
                     {row.department}

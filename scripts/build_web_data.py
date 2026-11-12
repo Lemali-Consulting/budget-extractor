@@ -18,6 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.corrections import apply_corrections, load_corrections
+from utils.fund_splits import attach_fund_splits
 from utils.text_case import phrase_case, sentence_case
 from utils.paths import (
     DEFAULT_YEAR,
@@ -2617,7 +2618,7 @@ def main() -> None:
         json.dump(dept_budgets, f, indent=2)
     print(f"Wrote {prefix}department-budgets.json ({len(dept_budgets)} rows)")
 
-    personnel = build_personnel(sections)
+    personnel = attach_fund_splits(build_personnel(sections), sections=sections)
     with open(views_dir / f"{prefix}personnel.json", "w", encoding="utf-8") as f:
         json.dump(personnel, f, indent=2)
     print(f"Wrote {prefix}personnel.json ({len(personnel)} rows)")

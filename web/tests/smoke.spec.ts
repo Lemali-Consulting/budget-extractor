@@ -626,6 +626,33 @@ test("personnel explorer starts sorted by 2027 budget, largest first", async ({ 
   expect(budgets).toEqual([...budgets].sort((a, b) => b - a));
 });
 
+// Where the PDF splits a title's pay between funds, every line it covers says
+// so (client request, 2026-11-12), starred or not: the PDF prints each split
+// once and stars only some of the lines it covers. RAD's Senior Park Ranger
+// line has no asterisk but is in the split.
+const SENIOR_PARK_RANGER_SPLIT = "Pay split: 12% Public Safety Administration General Fund, 88% Parks RAD Trust Fund";
+
+test("department top positions show the pay split on lines the PDF splits", async ({ page }) => {
+  await page.goto("/departments/regional-asset-district-parks-and-recreation-trust-fund/");
+  const table = main(page).locator("table").filter({ hasText: "Per position" });
+  const row = table.locator("tr").filter({ hasText: "Senior Park Ranger" });
+  await expect(row).toContainText(SENIOR_PARK_RANGER_SPLIT);
+  await expect(row.getByRole("link", { name: "Public Safety Administration General Fund" }))
+    .toHaveAttribute("href", "/sections/bureau-of-administration-public-safety/");
+});
+
+test("personnel explorer shows the pay split on every line the PDF splits, and only those", async ({ page }) => {
+  await page.goto("/personnel/");
+  const explorer = main(page).locator("table").filter({ hasText: "Per position" });
+  await main(page).getByPlaceholder("Filter by title...").fill("Park Ranger");
+  const rows = explorer.locator("tbody tr");
+  await expect(rows.filter({ hasText: "Senior Park Ranger" })).toHaveCount(2);
+  for (const row of await rows.filter({ hasText: "Senior Park Ranger" }).all()) {
+    await expect(row).toContainText(SENIOR_PARK_RANGER_SPLIT);
+  }
+  await expect(rows.filter({ hasText: "Park Ranger, Part-Time" })).not.toContainText("Pay split");
+});
+
 // ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------

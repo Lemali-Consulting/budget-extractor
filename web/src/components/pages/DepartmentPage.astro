@@ -2,6 +2,7 @@
 /**Department one-pager — simplified, print-friendly department summary.*/
 import Base from '../../layouts/Base.astro';
 import { PER_POSITION_LABEL, budgetPerPosition } from '../../lib/personnel';
+import FundSplitNote from '../FundSplitNote.tsx';
 import HeroStat from '../HeroStat.tsx';
 import TrendMini from '../TrendMini.tsx';
 import { type BudgetYear, HEADLINE, headlinePath } from '../../lib/budget-year';
@@ -186,7 +187,10 @@ function fmtM(n: number): string {
             <tbody>
               {deptStaff.map((p: any, i: number) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100">{p.title}</td>
+                  <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100">
+                    {p.title}
+                    <FundSplitNote split={p.fundSplit} routePrefix={prefix} />
+                  </td>
                   <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.fteCurrent || '-'}</td>
                   <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetCurrent ? fmtM(p.budgetCurrent) : '-'}</td>
                   <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetPrior ? fmtM(p.budgetPrior) : '-'}</td>
