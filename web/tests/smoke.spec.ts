@@ -961,6 +961,34 @@ test("PDF section names are shown in sentence case", async ({ page }) => {
   await expect(main(page).locator("h1").first()).toHaveText(/^\s*Expenditure summary\s*$/);
 });
 
+// The chart panel on section pages labels its series with the table's row
+// names. Category names ("Charges for Services") follow house style, but
+// department names are proper nouns, even printed short ("Parks and Recreation").
+test("section chart labels follow house style", async ({ page }) => {
+  await page.goto("/sections/revenue-summary/");
+  const panel = main(page).getByTestId("section-charts");
+  await expect(panel).toContainText("Charges for services");
+  await expect(panel).not.toContainText("Charges for Services");
+  await expect(panel.getByRole("tab", { name: "Year-over-year" })).toBeVisible();
+});
+
+// Account rows open with their code; the name after it is what starts the label.
+test("section chart labels capitalize the name after an account code", async ({ page }) => {
+  await page.goto("/departments/bureau-of-police/");
+  const panel = main(page).getByTestId("section-charts");
+  await panel.getByRole("tab", { name: "Breakdown" }).click();
+  await expect(panel).toContainText("51101 - Regular");
+  await expect(panel).toContainText("51 - Personnel-salaries & wages");
+});
+
+test("section chart labels keep department names as printed", async ({ page }) => {
+  await page.goto("/sections/expenditure-summary/");
+  const panel = main(page).getByTestId("section-charts");
+  await panel.getByRole("tab", { name: "Breakdown" }).click();
+  await expect(panel).toContainText("Parks and Recreation");
+  await expect(panel).not.toContainText("Parks and recreation");
+});
+
 test("department names keep their capitals", async ({ page }) => {
   await page.goto("/departments/bureau-of-police/");
   await expect(main(page).locator("h1").first()).toContainText("Bureau of Police");

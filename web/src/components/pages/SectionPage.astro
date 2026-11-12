@@ -7,7 +7,8 @@ import { chartImageUrl } from '../../lib/image-paths';
 import TableViewer from '../TableViewer.astro';
 import SummaryCard from '../SummaryCard.astro';
 import DepartmentSummary from '../DepartmentSummary.astro';
-import { isDepartmentSection, sectionPageHref } from '../../lib/published-pages';
+import { isDepartmentSection, isTrustFundSection, sectionPageHref } from '../../lib/published-pages';
+import { chartRowLabels } from '../../lib/chart-labels';
 import type { SlugRef } from '../../lib/static-paths';
 import SectionToc from '../SectionToc.astro';
 import HighlightsCallout from '../HighlightsCallout.astro';
@@ -180,6 +181,11 @@ const sparklineValues: number[] = departmentBudgets
   .filter((r) => r.slug === section.slug)
   .map((r) => r.amount);
 
+// Department and fund names, which chart labels keep as printed.
+const departmentAndFundNames: string[] = budgetYear.operating.sections
+  .filter((s: any) => isDepartmentSection(s) || isTrustFundSection(s))
+  .map((s: any) => s.title);
+
 // Prepare chart table data (serializable subset for client component)
 const chartTables = section.tables
   .filter((t: any) => ['financial_summary', 'financial'].includes(t.table_type))
@@ -188,6 +194,7 @@ const chartTables = section.tables
     table_type: t.table_type,
     headers: t.headers,
     rows: t.rows,
+    rowLabels: chartRowLabels({ rows: t.rows, properNames: departmentAndFundNames }),
   }));
 
 const pageCount = section.start_page && section.end_page

@@ -5,12 +5,15 @@ import * as Plot from '@observablehq/plot';
 import { parseCurrency, formatDollar } from '../lib/currency';
 import { CHART_COLORS } from '../lib/chart-colors';
 import { useContainerWidth } from '../lib/hooks';
+import { columnHeaderLabel } from '../lib/text-case';
 
 interface TableData {
   id: string;
   table_type: string;
   headers: string[];
   rows: string[][];
+  /** Each row's display name in house style (chartRowLabels). */
+  rowLabels: string[];
 }
 
 interface Props {
@@ -37,6 +40,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
   const headers = summaryTable.headers;
   const rows = summaryTable.rows;
+  const rowLabels = summaryTable.rowLabels;
 
   // Detect numeric columns
   const numericCols = headers
@@ -67,7 +71,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
   const availableTabs: { key: Tab; label: string }[] = [];
   if (hasTrend) availableTabs.push({ key: 'trend', label: 'Budget trend' });
-  if (hasChanges) availableTabs.push({ key: 'changes', label: 'Year-over-Year' });
+  if (hasChanges) availableTabs.push({ key: 'changes', label: 'Year-over-year' });
   if (hasBreakdown) availableTabs.push({ key: 'breakdown', label: 'Breakdown' });
 
   if (availableTabs.length === 0) return null;
@@ -89,8 +93,8 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
   function renderTrend(el: HTMLDivElement) {
     const data: { label: string; year: number; value: number }[] = [];
-    for (const row of rows) {
-      const label = (row[0] || 'Row').trim();
+    for (const [i, row] of rows.entries()) {
+      const label = rowLabels[i] || 'Row';
       if (label.toLowerCase().includes('total')) continue;
       for (const { idx, year } of yearCols) {
         const v = parseCurrency(row[idx] || '');
@@ -149,8 +153,8 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
     if (!from || !to) return;
 
     const data: { label: string; delta: number; pctChange: number }[] = [];
-    for (const row of rows) {
-      const label = (row[0] || 'Row').trim();
+    for (const [i, row] of rows.entries()) {
+      const label = rowLabels[i] || 'Row';
       if (label.toLowerCase().includes('total')) continue;
       const fromVal = parseCurrency(row[from.idx] || '');
       const toVal = parseCurrency(row[to.idx] || '');
@@ -203,8 +207,8 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
   function renderBreakdown(el: HTMLDivElement) {
     const data: { label: string; amount: number }[] = [];
-    for (const row of rows) {
-      const label = (row[0] || 'Row').trim();
+    for (const [i, row] of rows.entries()) {
+      const label = rowLabels[i] || 'Row';
       if (label.toLowerCase().includes('total')) continue;
       const val = parseCurrency(row[breakdownCol] || '');
       if (val !== null && val !== 0) data.push({ label, amount: val });
@@ -217,7 +221,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
     data.sort((a, b) => b.amount - a.amount);
     const sliced = data.slice(0, 20);
-    const colHeader = headers[breakdownCol] || 'Budget';
+    const colHeader = columnHeaderLabel(headers[breakdownCol] || 'Budget');
 
     const chart = Plot.plot({
       marginLeft: Math.min(220, Math.max(100, ...sliced.map((d) => d.label.length * 6.5))),
@@ -247,7 +251,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
   }
 
   return (
-    <div class="mb-8 bg-white rounded-lg border overflow-hidden" ref={containerRef}>
+    <div class="mb-8 bg-white rounded-lg border overflow-hidden" ref={containerRef} data-testid="section-charts">
       <div class="flex border-b bg-gray-50" role="tablist">
         {availableTabs.map((t) => (
           <button
