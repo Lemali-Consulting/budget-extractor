@@ -48,3 +48,13 @@ def test_label_starting_with_a_number_has_no_capital():
     """"2027 Budget" becomes "2027 budget": the first word is the number, so nothing after it is capitalized."""
     mod = _mod()
     assert mod.sentence_case("2027 Budget") == "2027 budget"
+
+
+def test_sentence_case_keeps_regional_asset_district():
+    """"Regional Asset District" is the name of the county's asset district, so it keeps its capitals.
+
+    The revenue summary lists "Regional Asset District Tax Relief" among the
+    city's taxes; the web side's case module keeps the same name.
+    """
+    from utils.text_case import sentence_case
+    assert sentence_case("REGIONAL ASSET DISTRICT TAX RELIEF") == "Regional Asset District tax relief"

@@ -20,6 +20,8 @@ import ChartImage from '../ChartImage.tsx';
 import PdfSidebar from '../PdfSidebar.tsx';
 import SectionNav from '../SectionNav.astro';
 import SectionCharts from '../SectionCharts.tsx';
+import TaxRevenueChart from '../TaxRevenueChart.astro';
+import { taxRevenueByTax } from '../../lib/tax-revenue';
 import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
 
 interface Props {
@@ -169,6 +171,8 @@ function extractMetrics(tables: any[]): SummaryMetrics {
 
 const metrics = extractMetrics(section.tables);
 const highlights: string[] = (section as any).highlights || [];
+// Only the revenue summary prints tax revenue by tax; elsewhere this is null.
+const taxBreakdown = taxRevenueByTax({ tables: section.tables, year: budgetYear.year });
 const ogDesc = highlights.length > 0 ? highlights.join('. ') : undefined;
 
 // Build sparkline values for this section from department budgets
@@ -398,6 +402,8 @@ function parseNarrative(raw: string): Segment[] {
   <HighlightsCallout highlights={highlights} />
 
   <div data-pagefind-ignore><SectionToc items={tocEntries} /></div>
+
+  {taxBreakdown && <TaxRevenueChart breakdown={taxBreakdown} year={budgetYear.year} />}
 
   {chartTables.length > 0 && (
     <SectionCharts client:load year={budgetYear.year} tables={chartTables} sectionTitle={section.title} />

@@ -9,6 +9,7 @@ PROPER_PHRASES: tuple[str, ...] = (
     "Five-Year Forecast",
     "Five-Year",
     "City Council",
+    "Regional Asset District",
 )
 
 # Acronyms the PDFs print in labels. An ALL CAPS label gives no other way to

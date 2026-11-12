@@ -13,6 +13,7 @@ const PROPER_PHRASES: readonly string[] = [
   'Five-Year Forecast',
   'Five-Year',
   'City Council',
+  'Regional Asset District',
 ];
 
 /** Acronyms printed in labels; an ALL CAPS label can't otherwise be told apart from words. */

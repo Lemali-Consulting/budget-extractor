@@ -71,6 +71,31 @@ test("grants page lists each grant with its funder and balance", async ({ page }
   await expect(main(page).getByText(/remaining balance/i).first()).toBeVisible();
 });
 
+// Rich (Public Source) asked for a chart breaking tax revenue down by levy.
+// The revenue summary is the section that prints each tax's 2027 figure, so
+// the chart lives there, largest tax first, labeled in house style.
+test("revenue summary charts 2027 tax revenue by tax, largest first", async ({ page }) => {
+  await page.goto("/sections/revenue-summary/");
+  const chart = main(page).getByTestId("tax-revenue-chart");
+  await expect(chart).toBeVisible();
+  await expect(chart.getByRole("heading")).toContainText(/2027 tax revenue by tax/i);
+  const labels = await chart.getByTestId("tax-revenue-bar-label").allTextContents();
+  expect(labels[0]).toBe("Real estate tax");
+  expect(labels[1]).toBe("Earned income tax");
+  expect(labels).toContain("Regional Asset District tax relief");
+  // The table's total row ("41 - Tax Revenue") is not a tax.
+  expect(labels.filter((l) => /^\d/.test(l))).toEqual([]);
+  await expect(chart).toContainText("$171.4M");
+  // Taxes budgeted at nothing get no bar; the note names them instead.
+  expect(labels).not.toContain("Facility usage fee");
+  await expect(chart.getByTestId("tax-revenue-note")).toHaveText(/^\s*Facility usage fee and other taxes have no revenue budgeted for 2027\./);
+});
+
+test("the tax revenue chart appears only on the revenue summary", async ({ page }) => {
+  await page.goto("/sections/revenue-detail/");
+  await expect(main(page).getByTestId("tax-revenue-chart")).toHaveCount(0);
+});
+
 test("operating section detail - department page", async ({ page }) => {
   await page.goto("/departments/city-council/");
 

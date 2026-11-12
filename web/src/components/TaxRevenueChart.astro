@@ -1,0 +1,49 @@
+---
+/**
+ * Bar chart of the year's tax revenue by tax, rendered as static HTML so the
+ * figures are in the page itself. Shown on the revenue summary page.
+ */
+import type { TaxRevenueBreakdown } from '../lib/tax-revenue';
+import { formatDollar } from '../lib/currency';
+import { CHART_COLORS } from '../lib/chart-colors';
+
+interface Props {
+  breakdown: TaxRevenueBreakdown;
+  year: number;
+}
+
+const { breakdown, year } = Astro.props;
+const largest = Math.max(...breakdown.taxes.map((t) => t.amount));
+const total = breakdown.taxes.reduce((sum, t) => sum + t.amount, 0);
+
+const unbudgetedSentence = breakdown.unbudgeted.length > 0
+  ? `${breakdown.unbudgeted.join(' and ')} ${breakdown.unbudgeted.length === 1 ? 'has' : 'have'} no revenue budgeted for ${year}.`
+  : '';
+const sourceSentence = breakdown.page ? `From the tax revenue table on page ${breakdown.page} of the budget document.` : '';
+const noteText = [unbudgetedSentence, sourceSentence].filter(Boolean).join(' ');
+/** The note opens with a tax name cased for mid-sentence use, so it gets its capital here. */
+const note = noteText.charAt(0).toUpperCase() + noteText.slice(1);
+---
+<section class="bg-white rounded-lg border p-4 mb-6" data-testid="tax-revenue-chart">
+  <h2 class="text-lg font-semibold mb-1">{year} tax revenue by tax</h2>
+  <p class="text-sm text-gray-500 mb-4">
+    {formatDollar(total)} from {breakdown.taxes.length} taxes, largest first.
+  </p>
+  <ol class="space-y-2">
+    {breakdown.taxes.map((tax) => (
+      <li>
+        <div class="flex items-center justify-between gap-2 text-sm mb-0.5">
+          <span class="text-gray-700" data-testid="tax-revenue-bar-label">{tax.label}</span>
+          <span class="text-gray-900 font-medium tabular-nums whitespace-nowrap">{formatDollar(tax.amount)}</span>
+        </div>
+        <div class="h-4 bg-gray-100 rounded-full overflow-hidden" aria-hidden="true">
+          <div
+            class="h-full rounded-full"
+            style={`width: ${(tax.amount / largest) * 100}%; min-width: 2px; background-color: ${CHART_COLORS.primary};`}
+          ></div>
+        </div>
+      </li>
+    ))}
+  </ol>
+  {note && <p class="text-xs text-gray-500 mt-4" data-testid="tax-revenue-note">{note}</p>}
+</section>
