@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'preact/hooks';
 import GlossaryTip from './GlossaryTip';
 import { FTE_TOOLTIP } from '../lib/glossary-terms';
+import { PER_POSITION_LABEL, budgetPerPosition } from '../lib/personnel';
 
 interface PersonnelRow {
   department: string;
@@ -15,7 +16,7 @@ interface PersonnelRow {
   rateGrade: string;
 }
 
-type SortKey = 'title' | 'department' | 'fteCurrent' | 'budgetCurrent';
+type SortKey = 'title' | 'department' | 'fteCurrent' | 'budgetCurrent' | 'perPosition';
 
 interface Props {
   rows: PersonnelRow[];
@@ -27,7 +28,7 @@ interface Props {
 
 function formatCurrency(n: number | null): string {
   if (n === null) return '—';
-  return `$${n.toLocaleString()}`;
+  return `$${Math.round(n).toLocaleString()}`;
 }
 
 export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
@@ -55,7 +56,8 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
       if (sortKey === 'title') { av = a.title; bv = b.title; }
       else if (sortKey === 'department') { av = a.department; bv = b.department; }
       else if (sortKey === 'fteCurrent') { av = a.fteCurrent; bv = b.fteCurrent; }
-      else { av = a.budgetCurrent; bv = b.budgetCurrent; }
+      else if (sortKey === 'budgetCurrent') { av = a.budgetCurrent; bv = b.budgetCurrent; }
+      else { av = budgetPerPosition(a); bv = budgetPerPosition(b); }
       if (av === null) return 1;
       if (bv === null) return -1;
       const cmp = av < bv ? -1 : av > bv ? 1 : 0;
@@ -127,6 +129,12 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
               >
                 {year} budget{sortIcon('budgetCurrent')}
               </th>
+              <th
+                class="px-3 py-2 text-right font-medium cursor-pointer hover:text-ps-blue-600"
+                onClick={() => toggleSort('perPosition')}
+              >
+                {PER_POSITION_LABEL}{sortIcon('perPosition')}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -153,6 +161,7 @@ export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
                 </td>
                 <td class="px-3 py-1.5 border-t text-right">{row.fteCurrent ?? '—'}</td>
                 <td class="px-3 py-1.5 border-t text-right">{formatCurrency(row.budgetCurrent)}</td>
+                <td class="px-3 py-1.5 border-t text-right">{formatCurrency(budgetPerPosition(row))}</td>
               </tr>
             ))}
           </tbody>

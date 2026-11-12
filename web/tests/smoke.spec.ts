@@ -586,6 +586,33 @@ test("section summary cards show positions without an FTE change", async ({ page
   await expect(main(page)).not.toContainText("NaN");
 });
 
+// Position lines show the budget per position (client request, 2026-11-12),
+// so a reader doesn't divide the line total by the headcount. Lines with a
+// fractional headcount are part-time or split between funds, where dividing
+// would not give one position's budget, so they show a dash.
+test("department top positions show the budget per position", async ({ page }) => {
+  await page.goto("/departments/bureau-of-administration-public-safety/");
+  const table = main(page).locator("table").filter({ hasText: "Per position" });
+  await expect(table).toBeVisible();
+  // 6 positions, $511,306 in the 2027 proposed budget.
+  const row = table.locator("tr").filter({ hasText: "Violence Prevention Specialist" });
+  await expect(row.locator("td").last()).toHaveText("$85K");
+});
+
+test("personnel explorer shows the budget per position, except on fractional lines", async ({ page }) => {
+  await page.goto("/personnel/");
+  const explorer = main(page).locator("table").filter({ hasText: "Per position" });
+  await expect(explorer).toBeVisible();
+  const filter = main(page).getByPlaceholder("Filter by title...");
+  await filter.fill("Violence Prevention Specialist");
+  const whole = explorer.locator("tbody tr").filter({ hasText: "Bureau of Administration (Public Safety)" });
+  await expect(whole.locator("td").last()).toHaveText("$85,218");
+  // 1.5 positions split 25%/75% with the Department of Finance.
+  await filter.fill("Senior Assistant, Real Estate");
+  const split = explorer.locator("tbody tr").filter({ hasText: "Three Taxing Bodies Trust Fund" });
+  await expect(split.locator("td").last()).toHaveText("—");
+});
+
 // ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------

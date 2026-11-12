@@ -1,6 +1,7 @@
 ---
 /**Department one-pager — simplified, print-friendly department summary.*/
 import Base from '../../layouts/Base.astro';
+import { PER_POSITION_LABEL, budgetPerPosition } from '../../lib/personnel';
 import HeroStat from '../HeroStat.tsx';
 import TrendMini from '../TrendMini.tsx';
 import { type BudgetYear, HEADLINE, headlinePath } from '../../lib/budget-year';
@@ -99,6 +100,11 @@ const dollarChange = deptChange?.dollarChange ?? (budgetCurrent - budgetPrior);
 const pctChange = deptChange?.pctChange ?? (budgetPrior > 0 ? ((dollarChange / budgetPrior) * 100).toFixed(1) : '0');
 const fteCurrent = deptPersonnel?.totalFteCurrent || deptChange?.fteCurrent;
 
+/** A per-position budget, or a dash where the line has none (see budgetPerPosition). */
+function fmtPerPosition(n: number | null): string {
+  return n === null ? '-' : fmtM(n);
+}
+
 function fmtM(n: number): string {
   if (Math.abs(n) >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
   if (Math.abs(n) >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
@@ -170,19 +176,21 @@ function fmtM(n: number): string {
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-gray-50">
-                <th class="px-3 py-2 text-left font-medium text-gray-700 border-b">Title</th>
-                <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">FTE</th>
-                <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.budget}</th>
-                <th class="px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.priorBudget}</th>
+                <th class="px-2 sm:px-3 py-2 text-left font-medium text-gray-700 border-b">Title</th>
+                <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">FTE</th>
+                <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.budget}</th>
+                <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{columns.priorBudget}</th>
+                <th class="px-2 sm:px-3 py-2 text-right font-medium text-gray-700 border-b">{PER_POSITION_LABEL}</th>
               </tr>
             </thead>
             <tbody>
               {deptStaff.map((p: any, i: number) => (
                 <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td class="px-3 py-1.5 border-b border-gray-100">{p.title}</td>
-                  <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.fteCurrent || '-'}</td>
-                  <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetCurrent ? fmtM(p.budgetCurrent) : '-'}</td>
-                  <td class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetPrior ? fmtM(p.budgetPrior) : '-'}</td>
+                  <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100">{p.title}</td>
+                  <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.fteCurrent || '-'}</td>
+                  <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetCurrent ? fmtM(p.budgetCurrent) : '-'}</td>
+                  <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.budgetPrior ? fmtM(p.budgetPrior) : '-'}</td>
+                  <td class="px-2 sm:px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{fmtPerPosition(budgetPerPosition(p))}</td>
                 </tr>
               ))}
             </tbody>
