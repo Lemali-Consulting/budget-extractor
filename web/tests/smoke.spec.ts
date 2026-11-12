@@ -964,6 +964,27 @@ test("PDF section names are shown in sentence case", async ({ page }) => {
 // The chart panel on section pages labels its series with the table's row
 // names. Category names ("Charges for Services") follow house style, but
 // department names are proper nouns, even printed short ("Parks and Recreation").
+// Each bar's value is printed past its end; the longest bar's value must fit
+// inside the chart rather than run off its right edge ("$98." for "$98.2M").
+for (const route of ["/departments/bureau-of-police/", "/sections/expenditure-summary/"]) {
+  test(`section chart bar values fit inside the chart on ${route}`, async ({ page }) => {
+    await page.goto(route);
+    const panel = main(page).getByTestId("section-charts");
+    for (const tab of ["Breakdown", "Year-over-year"]) {
+      await panel.getByRole("tab", { name: tab }).click();
+      const svg = panel.locator("svg").last();
+      await expect(svg.locator('g[aria-label="text"] text').first()).toBeAttached();
+      const overflow = await svg.evaluate((el) => {
+        const box = el.getBoundingClientRect();
+        return [...el.querySelectorAll('g[aria-label="text"] text')]
+          .map((t) => t.getBoundingClientRect())
+          .filter((r) => r.right > box.right + 0.5 || r.left < box.left - 0.5).length;
+      });
+      expect(overflow, `${tab} labels outside the chart`).toBe(0);
+    }
+  });
+}
+
 test("section chart labels follow house style", async ({ page }) => {
   await page.goto("/sections/revenue-summary/");
   const panel = main(page).getByTestId("section-charts");

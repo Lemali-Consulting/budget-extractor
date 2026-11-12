@@ -25,6 +25,9 @@ interface Props {
 
 type Tab = 'trend' | 'changes' | 'breakdown';
 
+/** Width kept clear right of the bars for the value printed past each one ("$160.0M"). */
+const VALUE_LABEL_MARGIN = 56;
+
 export default function SectionCharts({ tables, sectionTitle, year }: Props) {
   const [tab, setTab] = useState<Tab>('trend');
   const chartRef = useRef<HTMLDivElement>(null);
@@ -175,6 +178,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
     const chart = Plot.plot({
       marginLeft: Math.min(220, Math.max(100, ...sliced.map((d) => d.label.length * 6.5))),
+      marginRight: VALUE_LABEL_MARGIN,
       width: containerWidth,
       height: Math.max(250, sliced.length * 26),
       x: {
@@ -225,6 +229,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
     const chart = Plot.plot({
       marginLeft: Math.min(220, Math.max(100, ...sliced.map((d) => d.label.length * 6.5))),
+      marginRight: VALUE_LABEL_MARGIN,
       width: containerWidth,
       height: Math.max(250, sliced.length * 26),
       x: { label: colHeader, tickFormat: formatDollar },
