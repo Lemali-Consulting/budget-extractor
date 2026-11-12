@@ -445,6 +445,58 @@ test("glossary page loads with terms", async ({ page }) => {
   expect(await headings.count()).toBeGreaterThan(5);
 });
 
+// Rich (Public Source) asked for these glossary edits (2026-11-12): house-style
+// naming of the budget, "city" lowercase unless "City of Pittsburgh", every
+// entry a full sentence ending in a period, AP-style "Dec. 31", PAYGO only
+// where it belongs, and no code lists that only repeat the tables.
+test("glossary and footer name the source as the city's proposed 2027 budgets", async ({ page }) => {
+  await page.goto("/glossary/");
+  await expect(main(page)).toContainText("from the City of Pittsburgh's proposed 2027 operating and capital budgets.");
+  await expect(page.locator("footer")).toContainText("Data extracted from the City of Pittsburgh's proposed 2027 operating and capital budgets");
+  await expect(page.locator("body")).not.toContainText(/FY2027 proposed operating/i);
+});
+
+test("glossary entries lowercase city except in City of Pittsburgh", async ({ page }) => {
+  await page.goto("/glossary/");
+  // Entry text only: the "Used in" links carry office names like "Office of the City Clerk".
+  const text = await main(page).locator("dl > div > :is(dt, dd:not([data-pagefind-ignore]))").allInnerTexts();
+  expect(text.join("\n")).not.toMatch(/\bthe City(?! of Pittsburgh| Council| Code)/);
+});
+
+test("every glossary entry ends with a period", async ({ page }) => {
+  await page.goto("/glossary/");
+  const descriptions = await main(page).locator("dl > div > dd:not([data-pagefind-ignore])").allInnerTexts();
+  expect(descriptions.length).toBeGreaterThan(50);
+  expect(descriptions.filter((d) => !d.trim().endsWith("."))).toEqual([]);
+});
+
+test("glossary abbreviates months AP style", async ({ page }) => {
+  await page.goto("/glossary/");
+  await expect(main(page)).toContainText("Dec. 31, 2024");
+  await expect(main(page)).not.toContainText(/\b(Jan|Feb|Aug|Sept|Oct|Nov|Dec) \d/);
+});
+
+test("glossary lists PAYGO under abbreviations and funding sources, not fiscal metrics", async ({ page }) => {
+  await page.goto("/glossary/");
+  const section = (id: string) => main(page).locator("section", { has: page.locator(`h2#${id}`) });
+  await expect(section("fiscal_metrics").locator("dt", { hasText: "PAYGO" })).toHaveCount(0);
+  await expect(section("abbreviations").locator("dt", { hasText: "PAYGO" })).toHaveCount(1);
+  await expect(section("capital_funding_sources").locator("dt", { hasText: "PAYGO" })).toHaveCount(1);
+});
+
+test("glossary says the Housing Opportunity Fund previously received annual transfers", async ({ page }) => {
+  await page.goto("/glossary/");
+  await expect(main(page)).toContainText("Dedicated fund for affordable housing programs, previously receiving $10M annual transfers.");
+});
+
+test("glossary drops the subclass, department and budget structure lists", async ({ page }) => {
+  await page.goto("/glossary/");
+  for (const id of ["revenue_subclasses", "expenditure_subclasses", "departments", "budget_structure"]) {
+    await expect(main(page).locator(`#${id}`), id).toHaveCount(0);
+    await expect(main(page).locator(`a[href="#${id}"]`), id).toHaveCount(0);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Money Flow
 // ---------------------------------------------------------------------------

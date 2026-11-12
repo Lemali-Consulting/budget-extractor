@@ -25,13 +25,12 @@ const sections = [
   { key: 'fiscal_metrics', title: 'Fiscal metrics' },
   { key: 'capital_funding_sources', title: 'Capital funding sources' },
   { key: 'funds', title: 'Funds' },
-  { key: 'revenue_subclasses', title: 'Revenue subclasses' },
-  { key: 'expenditure_subclasses', title: 'Expenditure subclasses' },
   { key: 'revenue_line_items', title: 'Revenue line items' },
   { key: 'expenditure_line_items', title: 'Expenditure line items' },
-  { key: 'departments', title: 'Departments' },
-  { key: 'budget_structure', title: 'Budget structure' },
 ];
+// Rich (Public Source) asked to drop the revenue and expenditure subclass,
+// department and budget structure lists (2026-11-12): they were bare codes and
+// names with no definitions. The data keeps them.
 
 /* Normalize all glossary sections into a uniform shape:
    { term: string, description: string, code?: string, backlinkKey?: string } */
@@ -65,36 +64,6 @@ function normalizeSection(key: string): GlossaryEntry[] {
         backlinkKey: item.name,
       }));
 
-    case 'revenue_subclasses':
-    case 'expenditure_subclasses':
-      return data.map((item: any) => ({
-        term: item.name,
-        description: '',
-        code: `Code ${item.code}`,
-      }));
-
-    case 'departments':
-      return data.map((item: any) => ({
-        term: item.name,
-        description: '',
-        code: item.cost_center,
-      }));
-
-    case 'budget_structure': {
-      const entries: GlossaryEntry[] = [];
-      if (data.fiscal_year_columns) {
-        for (const item of data.fiscal_year_columns) {
-          entries.push({ term: item.label, description: item.description });
-        }
-      }
-      if (data.table_types) {
-        for (const item of data.table_types) {
-          entries.push({ term: item.name, description: item.description });
-        }
-      }
-      return entries;
-    }
-
     default:
       // general_terms, fiscal_metrics, revenue_line_items, expenditure_line_items
       return data.map((item: any) => ({
@@ -114,7 +83,7 @@ function normalizeSection(key: string): GlossaryEntry[] {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">Budget glossary</h1>
-  <p class="text-gray-600 mb-4">Terms, codes, abbreviations, and structure from the City of Pittsburgh {HEADLINE.fiscalLabel} operating and capital budgets.</p>
+  <p class="text-gray-600 mb-4">Terms and abbreviations from the City of Pittsburgh's {HEADLINE.documentsName}.</p>
 
   <div class="mb-6" data-pagefind-ignore>
     <SiteSearch client:load />

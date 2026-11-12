@@ -87,7 +87,7 @@
   "revenue_line_items": [
     {
       "term": "Real Estate Tax",
-      "description": "Tax on the assessed value of property within city limits; the City's largest single revenue source."
+      "description": "Tax on the assessed value of property within city limits; the city's largest single revenue source."
     },
     {
       "term": "Earned Income Tax",
@@ -103,7 +103,7 @@
     },
     {
       "term": "Regional Asset District Tax Relief",
-      "description": "State-distributed revenue compensating the City for sales tax redirected to the Regional Asset District (transit, stadiums, cultural facilities)."
+      "description": "State-distributed revenue compensating the city for sales tax redirected to the Regional Asset District (transit, stadiums, cultural facilities)."
     },
     {
       "term": "Deed Transfer Tax",
@@ -191,69 +191,65 @@
   "fiscal_metrics": [
     {
       "term": "Operating Result",
-      "description": "Total Revenues minus Total Expenditures for the fiscal year"
+      "description": "Total Revenues minus Total Expenditures for the fiscal year."
     },
     {
       "term": "Beginning Reserve Fund Balance",
-      "description": "Unappropriated fund balance carried forward from the prior fiscal year"
+      "description": "Unappropriated fund balance carried forward from the prior fiscal year."
     },
     {
       "term": "Ending Reserve Fund Balance",
-      "description": "Reserve balance after operating result and transfers (PAYGO, Housing, etc.)"
+      "description": "Reserve balance after operating result and transfers (PAYGO, Housing, etc.)."
     },
     {
       "term": "Fund Balance as a % of Expenditures",
-      "description": "Ending reserve fund balance divided by total expenditures; a measure of fiscal cushion"
+      "description": "Ending reserve fund balance divided by total expenditures; a measure of fiscal cushion."
     },
     {
       "term": "Debt Service as a % of Expenditures",
-      "description": "Debt service costs divided by total expenditures"
-    },
-    {
-      "term": "PAYGO",
-      "description": "Pay-as-you-go capital funding transferred from the reserve fund rather than financed by debt"
+      "description": "Debt service costs divided by total expenditures."
     },
     {
       "term": "OPEB",
-      "description": "Other Post-Employment Benefits (retiree health care, life insurance, etc.)"
+      "description": "Other Post-Employment Benefits (retiree health care, life insurance, etc.)."
     }
   ],
   "funds": [
     {
       "name": "General Fund",
-      "description": "Primary operating fund for the City, covering most departmental expenditures"
+      "description": "Primary operating fund for the city, covering most departmental expenditures."
     },
     {
       "name": "Reserve Fund",
-      "description": "Unappropriated balance carried between fiscal years; used as a fiscal cushion"
+      "description": "Unappropriated balance carried between fiscal years; used as a fiscal cushion."
     },
     {
       "name": "Stop the Violence Fund",
-      "description": "Special fund established under City Code Chapter 237 for violence prevention programs"
+      "description": "Special fund established under City Code Chapter 237 for violence prevention programs."
     },
     {
       "name": "American Rescue Plan Trust Fund",
-      "description": "Federal COVID-19 relief funds; must be obligated by Dec 31, 2024 and spent by Dec 31, 2026"
+      "description": "Federal COVID-19 relief funds; must be obligated by Dec. 31, 2024 and spent by Dec. 31, 2026."
     },
     {
       "name": "Special Food Service Trust Fund",
-      "description": "Trust fund for food service operations"
+      "description": "Trust fund for food service operations."
     },
     {
       "name": "Three Taxing Bodies Trust Fund",
-      "description": "Trust fund shared across three taxing bodies"
+      "description": "Trust fund shared across three taxing bodies."
     },
     {
       "name": "Early Childhood Community Facilities Fund",
-      "description": "Fund for early childhood community facility investments, funded by reserve transfers"
+      "description": "Fund for early childhood community facility investments, funded by reserve transfers."
     },
     {
       "name": "Housing Opportunity Fund",
-      "description": "Dedicated fund for affordable housing programs, receiving $10M annual transfers"
+      "description": "Dedicated fund for affordable housing programs, previously receiving $10M annual transfers."
     },
     {
       "name": "Technology Modernization Fund",
-      "description": "Fund for IT and technology modernization initiatives"
+      "description": "Fund for IT and technology modernization initiatives."
     }
   ],
   "departments": [
@@ -410,26 +406,26 @@
   },
   "abbreviations": {
     "FTE": "Full-Time Equivalent — a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
-    "OPEB": "Other Post-Employment Benefits",
-    "PAYGO": "Pay-As-You-Go (capital funding from reserves instead of debt)",
-    "RAD": "Regional Asset District",
-    "ARP": "American Rescue Plan",
-    "DCP": "Department of City Planning",
-    "OMB": "Office of Management and Budget",
-    "DOMI": "Department of Mobility and Infrastructure",
-    "PLI": "Department of Permits, Licenses, and Inspections",
-    "EMS": "Emergency Medical Services",
-    "JDE": "JD Edwards (the City's enterprise accounting system)",
-    "SSP": "Site Safety Plan",
-    "FAS": "Fire Alarm System",
-    "CDBG": "Community Development Block Grant",
-    "TIP": "Transportation Improvement Program",
-    "HOPWA": "Housing Opportunities for Persons with AIDS",
-    "HOME": "HOME Investment Partnerships Program (federal affordable housing)",
-    "ESG": "Emergency Solutions Grant",
-    "CIP": "Capital Improvement Plan (the City's multi-year capital spending document)",
-    "CPFC": "Capital Program Facilitation Committee (reviews and scores capital project proposals)",
-    "CAGR": "Compound Annual Growth Rate (annualized average rate of return over a multi-year period)"
+    "OPEB": "Other Post-Employment Benefits.",
+    "PAYGO": "Pay-As-You-Go (capital funding from reserves instead of debt).",
+    "RAD": "Regional Asset District.",
+    "ARP": "American Rescue Plan.",
+    "DCP": "Department of City Planning.",
+    "OMB": "Office of Management and Budget.",
+    "DOMI": "Department of Mobility and Infrastructure.",
+    "PLI": "Department of Permits, Licenses, and Inspections.",
+    "EMS": "Emergency Medical Services.",
+    "JDE": "JD Edwards (the city's enterprise accounting system).",
+    "SSP": "Site Safety Plan.",
+    "FAS": "Fire Alarm System.",
+    "CDBG": "Community Development Block Grant.",
+    "TIP": "Transportation Improvement Program.",
+    "HOPWA": "Housing Opportunities for Persons with AIDS.",
+    "HOME": "HOME Investment Partnerships Program (federal affordable housing).",
+    "ESG": "Emergency Solutions Grant.",
+    "CIP": "Capital Improvement Plan (the city's multi-year capital spending document).",
+    "CPFC": "Capital Program Facilitation Committee (reviews and scores capital project proposals).",
+    "CAGR": "Compound Annual Growth Rate (annualized average rate of return over a multi-year period)."
   },
   "general_terms": [
     {
@@ -450,7 +446,7 @@
     },
     {
       "term": "Bond",
-      "description": "Debt instrument issued by the City to finance capital projects. Repaid over time with principal and interest payments from the Debt Service fund."
+      "description": "Debt instrument issued by the city to finance capital projects. Repaid over time with principal and interest payments from the Debt Service fund."
     },
     {
       "term": "Principal",
@@ -466,7 +462,7 @@
     },
     {
       "term": "Longevity",
-      "description": "Additional pay supplement awarded to employees based on years of service with the City."
+      "description": "Additional pay supplement awarded to employees based on years of service with the city."
     },
     {
       "term": "Secondary Employment",

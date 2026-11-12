@@ -184,6 +184,8 @@ export interface BudgetYear {
   fiscalLabel: string;
   /** The budget's name as a heading, e.g. "Proposed 2027 budget" or "2026 budget (as amended)". */
   budgetName: string;
+  /** The source documents as named mid-sentence, e.g. "proposed 2027 operating and capital budgets". */
+  documentsName: string;
   /** What the prior year is called, e.g. "2026 Budget". */
   priorLabel: string;
   /** Year-over-year wording, e.g. "2027 Proposed vs 2026 Budget". */
@@ -214,6 +216,7 @@ function describeVariant(opts: { year: number; variant: Variant }): {
   shortLabel: string;
   fiscalLabel: string;
   budgetName: string;
+  documentsName: string;
 } {
   const { year, variant } = opts;
   if (variant === VARIANT.PROPOSED) {
@@ -222,6 +225,7 @@ function describeVariant(opts: { year: number; variant: Variant }): {
       shortLabel: `${year} proposed`,
       fiscalLabel: `FY${year} proposed`,
       budgetName: `Proposed ${year} budget`,
+      documentsName: `proposed ${year} operating and capital budgets`,
     };
   }
   if (variant === VARIANT.AMENDED) {
@@ -230,9 +234,10 @@ function describeVariant(opts: { year: number; variant: Variant }): {
       shortLabel: `${year} budget`,
       fiscalLabel: `FY${year}`,
       budgetName: `${year} budget (as amended)`,
+      documentsName: `${year} operating (as amended) and capital budgets`,
     };
   }
-  return { label: `${year} budget`, shortLabel: `${year} budget`, fiscalLabel: `FY${year}`, budgetName: `${year} budget` };
+  return { label: `${year} budget`, shortLabel: `${year} budget`, fiscalLabel: `FY${year}`, budgetName: `${year} budget`, documentsName: `${year} operating and capital budgets` };
 }
 
 function buildAmendment(opts: {
