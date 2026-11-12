@@ -10,7 +10,6 @@ interface DeptData {
   slug: string;
   totalFteCurrent: number;
   totalBudgetCurrent: number;
-  positionCount: number;
 }
 
 type SizeBy = 'fte' | 'budget';
@@ -37,7 +36,6 @@ export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
         value: sizeBy === 'fte' ? d.totalFteCurrent : d.totalBudgetCurrent,
         fte: d.totalFteCurrent,
         budget: d.totalBudgetCurrent,
-        positions: d.positionCount,
       }))
       .filter((d) => d.value > 0)
       .sort((a, b) => b.value - a.value)
@@ -67,7 +65,7 @@ export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
           sort: { y: '-x' },
           tip: true,
           title: (d: typeof chartData[0]) =>
-            `${d.department}\nFTE: ${Math.round(d.fte)} | Budget: $${(d.budget / 1_000_000).toFixed(1)}M\n${d.positions} position types`,
+            `${d.department}\nFTE: ${Math.round(d.fte)} | Budget: $${(d.budget / 1_000_000).toFixed(1)}M`,
         }),
         Plot.text(chartData, {
           x: 'value',

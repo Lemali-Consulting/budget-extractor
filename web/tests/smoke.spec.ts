@@ -457,6 +457,20 @@ test("header navigation links are present on all pages", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // Clickable chart bars
 // ---------------------------------------------------------------------------
+// The tooltip counted lines in the PDF's position table, allowances
+// included ("12 position types" for Fire's 10 titles). FTE already gives the
+// headcount, so the count was removed, as on the compare page (Max, 2026-11-12).
+test("personnel staffing chart tooltip shows FTE and budget but no position count", async ({ page }) => {
+  await page.goto("/personnel/");
+  const bar = main(page).locator("rect[data-slug]").first();
+  await expect(bar).toBeVisible({ timeout: 10_000 });
+  await bar.hover({ force: true });
+  const tip = main(page).locator('[aria-label="tip"]');
+  await expect(tip).toContainText(/FTE: \d+/);
+  await expect(tip).toContainText(/Budget: \$[\d.]+M/);
+  await expect(tip).not.toContainText("position types");
+});
+
 test("personnel staffing chart bars link to department pages", async ({ page }) => {
   await page.goto("/personnel/");
   // The chart redraws once after hydration, so rely on the auto-retrying
