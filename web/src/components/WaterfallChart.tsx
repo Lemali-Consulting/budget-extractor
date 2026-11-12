@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import { CHART_COLORS } from '../lib/chart-colors';
+import { FUND_BALANCE_COLOR } from '../lib/flow-colors';
 import { useContainerWidth } from '../lib/hooks';
 
 interface WaterfallItem {
@@ -11,13 +12,25 @@ interface WaterfallItem {
   type: string;
 }
 
+/** Item type for a draw on the fund balance: it funds the budget but isn't revenue, so it gets its own color. */
+export const FUND_BALANCE_ITEM_TYPE = 'fund-balance';
+
 interface Props {
   data: WaterfallItem[];
   /** Budget label for the heading, e.g. "2027 Proposed". */
   yearLabel: string;
+  /** Name of the bar that sums the others. */
+  totalLabel?: string;
+  /** Line under the heading saying what the bars are. */
+  description?: string;
 }
 
-export default function WaterfallChart({ data, yearLabel }: Props) {
+export default function WaterfallChart({
+  data,
+  yearLabel,
+  totalLabel = 'Total revenue',
+  description = "How the city's projected revenue builds up from its component sources.",
+}: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -26,7 +39,7 @@ export default function WaterfallChart({ data, yearLabel }: Props) {
     if (!chartRef.current || data.length === 0) return;
 
     // Build waterfall data with running totals
-    const bars: { label: string; y1: number; y2: number; amount: number; isTotal: boolean }[] = [];
+    const bars: { label: string; y1: number; y2: number; amount: number; isTotal: boolean; type: string }[] = [];
     let cumulative = 0;
 
     for (const item of data) {
@@ -38,16 +51,18 @@ export default function WaterfallChart({ data, yearLabel }: Props) {
         y2: cumulative,
         amount: item.amount,
         isTotal: false,
+        type: item.type,
       });
     }
 
     // Add total bar
     bars.push({
-      label: 'Total revenue',
+      label: totalLabel,
       y1: 0,
       y2: cumulative,
       amount: cumulative,
       isTotal: true,
+      type: 'total',
     });
 
     const chart = Plot.plot({
@@ -69,7 +84,8 @@ export default function WaterfallChart({ data, yearLabel }: Props) {
           x: 'label',
           y1: 'y1',
           y2: 'y2',
-          fill: (d: typeof bars[0]) => (d.isTotal ? CHART_COLORS.primary : CHART_COLORS.positive),
+          fill: (d: typeof bars[0]) =>
+            d.isTotal ? CHART_COLORS.primary : d.type === FUND_BALANCE_ITEM_TYPE ? FUND_BALANCE_COLOR : CHART_COLORS.positive,
           fillOpacity: (d: typeof bars[0]) => (d.isTotal ? 0.8 : 0.7),
         }),
         Plot.text(bars, {
@@ -86,7 +102,7 @@ export default function WaterfallChart({ data, yearLabel }: Props) {
 
     chartRef.current.replaceChildren(chart);
     return () => chart.remove();
-  }, [data, containerWidth]);
+  }, [data, containerWidth, totalLabel]);
 
   if (data.length === 0) {
     return <div class="text-gray-400 italic py-4">No revenue data available.</div>;
@@ -95,9 +111,7 @@ export default function WaterfallChart({ data, yearLabel }: Props) {
   return (
     <div ref={containerRef}>
       <h3 class="text-lg font-semibold mb-2">{yearLabel} revenue breakdown</h3>
-      <p class="text-sm text-gray-500 mb-4">
-        How the city's projected revenue builds up from its component sources.
-      </p>
+      <p class="text-sm text-gray-500 mb-4">{description}</p>
       <div ref={chartRef} />
     </div>
   );

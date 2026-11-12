@@ -597,6 +597,45 @@ test("brief page loads with hero stats", async ({ page }) => {
   await expect(main(page).getByText(/Where does the money go/i).first()).toBeVisible();
 });
 
+// Rich (Public Source) asked for the six-year capital plan in millions rather
+// than "$0.80B", which hid $2.2M of the $802.2M total (2026-11-12).
+test("brief gives the six-year capital plan in millions", async ({ page }) => {
+  await page.goto("/brief/");
+  const body = main(page);
+  await expect(body).not.toContainText(/\$\d+\.\d+B/);
+  await expect(page.locator("#how-big")).toContainText("6-year plan: $802.2M");
+  await expect(page.locator("#how-big")).toContainText("six-year, $802.2M plan");
+  await expect(page.locator("#capital")).toContainText("$802.2M");
+});
+
+// The operating budget is revenue plus a planned draw on the fund balance;
+// Rich asked for the draw in the revenue chart so it adds up to the budget.
+test("brief revenue chart includes the use of fund balance and totals the budget", async ({ page }) => {
+  await page.goto("/brief/");
+  const section = page.locator("#revenue");
+  await expect(section.locator("svg text", { hasText: "Use of fund balance" })).toBeVisible();
+  await expect(section.locator("svg text", { hasText: "$28.3M" })).toBeVisible();
+  // The bars sum to $727.0M: the printed draw is $301K short of what the
+  // budget's own totals imply, a gap Max chose not to annotate (2026-11-12).
+  await expect(section.locator("svg text", { hasText: /^Total$/ })).toBeVisible();
+  await expect(section.locator("svg text", { hasText: "$727.0M" })).toBeVisible();
+  await expect(section).toContainText("$28.3M from its fund balance");
+  await expect(section).toContainText("projected revenue and its use of fund balance build up to the total");
+  await expect(section).toContainText("$727M");
+});
+
+// Police is a bureau, not a department, so Rich asked for "unit".
+test("brief calls the Bureau of Police the single largest unit", async ({ page }) => {
+  await page.goto("/brief/");
+  await expect(page.locator("#spending")).toContainText("The Bureau of Police alone is the single largest unit.");
+});
+
+test("brief capital prose opens on what the capital budget funds", async ({ page }) => {
+  await page.goto("/brief/");
+  await expect(page.locator("#capital")).not.toContainText("Beyond day-to-day operations");
+  await expect(page.locator("#capital")).toContainText("The capital budget funds infrastructure");
+});
+
 // ---------------------------------------------------------------------------
 // Department One-Pagers
 // ---------------------------------------------------------------------------

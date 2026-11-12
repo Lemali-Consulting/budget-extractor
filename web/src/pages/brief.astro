@@ -3,7 +3,8 @@
 import Base from '../layouts/Base.astro';
 import HeroStat from '../components/HeroStat.tsx';
 import SimpleBars from '../components/SimpleBars.tsx';
-import WaterfallChart from '../components/WaterfallChart.tsx';
+import WaterfallChart, { FUND_BALANCE_ITEM_TYPE } from '../components/WaterfallChart.tsx';
+import { useOfFundBalance } from '../lib/fund-balance';
 import { HEADLINE } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
 
@@ -31,6 +32,14 @@ const perResident = Math.round(totalCurrent / PGH_POPULATION);
 const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
 const taxRevenue = revenue.find(r => r.label.includes('Tax'))?.amount || 0;
 const taxPct = ((taxRevenue / revenueTotal) * 100).toFixed(0);
+
+// The budget also draws on the fund balance; Rich (Public Source) asked for
+// it in the revenue chart so the bars add up to the budget (2026-11-12).
+const fundBalanceDraw = useOfFundBalance(HEADLINE);
+const fundingSources = fundBalanceDraw
+  ? [...revenue, { label: 'Use of fund balance', amount: fundBalanceDraw, type: FUND_BALANCE_ITEM_TYPE }]
+  : revenue;
+const fundingTotal = fundingSources.reduce((s, r) => s + r.amount, 0);
 
 // Top departments by spending
 const currentDepts = operating(budgets)
@@ -67,8 +76,9 @@ const capitalTotal = (capitalFunding as any[])
 function fmtM(n: number): string {
   return `$${(n / 1_000_000).toFixed(1)}M`;
 }
-function fmtB(n: number): string {
-  return `$${(n / 1_000_000_000).toFixed(2)}B`;
+/** Whole millions ("$727M"), the way a headline total is quoted. */
+function fmtWholeM(n: number): string {
+  return `$${Math.round(n / 1_000_000)}M`;
 }
 ---
 
@@ -97,7 +107,7 @@ function fmtB(n: number): string {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <HeroStat label="Operating budget" value={fmtM(totalCurrent)} detail={`${Number(changePct) >= 0 ? '+' : ''}${changePct}% vs ${HEADLINE.priorYear}`} />
           <HeroStat label="Per resident" value={`$${perResident.toLocaleString()}`} detail="Based on 2020 Census" />
-          <HeroStat label={`Capital (${HEADLINE.year})`} value={fmtM(capitalCurrent)} detail={`6-year plan: ${fmtB(capitalTotal)}`} />
+          <HeroStat label={`Capital (${HEADLINE.year})`} value={fmtM(capitalCurrent)} detail={`6-year plan: ${fmtM(capitalTotal)}`} />
         </div>
       </div>
       <p class="text-gray-700 leading-relaxed">
@@ -105,7 +115,7 @@ function fmtB(n: number): string {
         {Number(changePct) >= 0 ? 'up' : 'down'} {Math.abs(Number(changePct))}% ({fmtM(Math.abs(totalChange))}) from last year. That works out to about
         <strong>${perResident.toLocaleString()} per resident</strong> for city services — police, fire, EMS, parks,
         public works, and more. Separately, the capital budget plans <strong>{fmtM(capitalCurrent)}</strong> in
-        infrastructure spending this year as part of a six-year, {fmtB(capitalTotal)} plan.
+        infrastructure spending this year as part of a six-year, {fmtM(capitalTotal)} plan.
       </p>
     </section>
 
@@ -114,10 +124,17 @@ function fmtB(n: number): string {
       <div class="flex items-start justify-between">
         <h2 class="text-2xl font-bold mb-4">Where does the money come from?</h2>
       </div>
-      <WaterfallChart data={revenueWaterfall} yearLabel={HEADLINE.label} client:load />
+      <WaterfallChart data={fundingSources} yearLabel={HEADLINE.label} totalLabel={fundBalanceDraw ? 'Total' : 'Total revenue'}
+        description={fundBalanceDraw
+          ? "How the city's projected revenue and its use of fund balance build up to the total."
+          : undefined}
+        client:load
+      />
       <p class="text-gray-700 leading-relaxed mt-4">
-        The city expects <strong>{fmtM(revenueTotal)}</strong> in revenue. The biggest source by far is
-        <strong>tax revenue ({taxPct}% of the total)</strong> — earned income tax, property tax, and various
+        The city expects <strong>{fmtM(revenueTotal)}</strong> in revenue{fundBalanceDraw && (
+          <> and plans to draw <strong>{fmtM(fundBalanceDraw)} from its fund balance</strong>, for a total of <strong>{fmtWholeM(fundingTotal)}</strong></>
+        )}. The biggest source of revenue by far is
+        <strong>tax revenue ({taxPct}% of revenue)</strong> — earned income tax, property tax, and various
         business taxes. The rest comes from state and federal aid, fees for city services, permits,
         fines, and interest earnings.
       </p>
@@ -137,7 +154,7 @@ function fmtB(n: number): string {
       <p class="text-gray-700 leading-relaxed">
         Public safety dominates the budget. Police, Fire, and EMS together account for
         <strong>{publicSafetyPct}% of all operating spending</strong> ({fmtM(publicSafety)}).
-        The Bureau of Police alone is the single largest department. After public safety,
+        The Bureau of Police alone is the single largest unit. After public safety,
         the biggest spending areas are public works, parks, and general government operations.
       </p>
       <p class="text-sm text-gray-500 mt-2">
@@ -178,13 +195,13 @@ function fmtB(n: number): string {
       <div class="bg-orange-50 rounded-xl p-6 mb-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <HeroStat label={`${HEADLINE.year} capital spending`} value={fmtM(capitalCurrent)} color="text-orange-900" />
-          <HeroStat label="6-year capital plan" value={fmtB(capitalTotal)} detail={`${HEADLINE.year} through ${HEADLINE.year + 5}`} color="text-orange-900" />
+          <HeroStat label="6-year capital plan" value={fmtM(capitalTotal)} detail={`${HEADLINE.year} through ${HEADLINE.year + 5}`} color="text-orange-900" />
         </div>
       </div>
       <p class="text-gray-700 leading-relaxed">
-        Beyond day-to-day operations, the capital budget funds infrastructure: road repairs, bridge rehabilitation,
+        The capital budget funds infrastructure: road repairs, bridge rehabilitation,
         building renovations, vehicle replacements, and technology upgrades. The six-year plan totals
-        <strong>{fmtB(capitalTotal)}</strong>, funded through bonds, pay-as-you-go (PAYGO) from operating revenue,
+        <strong>{fmtM(capitalTotal)}</strong>, funded through bonds, pay-as-you-go (PAYGO) from operating revenue,
         Community Development Block Grants (CDBG), and other sources.
       </p>
       <p class="text-sm text-gray-500 mt-2">
