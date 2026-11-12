@@ -5,7 +5,7 @@ import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { HEADLINE } from '../lib/budget-year';
 import { publishedSectionHrefs } from '../lib/published-pages';
 import { revenueColor, capitalSourceColor, FUND_BALANCE_COLOR } from '../lib/flow-colors';
-import { useOfFundBalance } from '../lib/fund-balance';
+import { useOfFundBalance, forecastTotalRevenues } from '../lib/fund-balance';
 import { colorForSlug, GROUP_COLORS } from '../lib/department-groups';
 
 const {
@@ -30,6 +30,13 @@ const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
 // for the rest, and that draw sits on the left beside revenue.
 const fundBalanceDraw = useOfFundBalance(HEADLINE);
 const FUND_BALANCE_NODE_ID = 'source:use-of-fund-balance';
+// The forecast's total revenues count the draw, so the draw they imply is that
+// total less revenue. The 2027 document prints a draw $301,302 below it; Max
+// chose to keep the printed figure and explain the gap (2026-11-12).
+const forecastTotal = forecastTotalRevenues(HEADLINE);
+const impliedDraw = forecastTotal !== null ? forecastTotal - revenueTotal : null;
+const drawGap = fundBalanceDraw && impliedDraw !== null ? impliedDraw - fundBalanceDraw : 0;
+const fmtDollars = (n: number): string => `$${Math.round(n).toLocaleString('en-US')}`;
 
 // Operating departments only — trust funds are not part of the operating flow.
 const currentDepts = (departmentBudgets as DeptRow[]).filter((r) => r.year === HEADLINE.columns.budget && r.fund === 'operating');
@@ -198,6 +205,14 @@ const capitalLinks: FlowLink[] = [
       {bigDepts.length} departments on the right. Departments smaller than 1% are
       grouped together. Every amount is the budget's own figure.
     </p>
+    {fundBalanceDraw && impliedDraw !== null && drawGap !== 0 && (
+      <p class="text-sm text-gray-500 mb-4 max-w-3xl" data-testid="fund-balance-note">
+        The budget document prints the use of fund balance as {fmtDollars(fundBalanceDraw)}. Its own
+        totals imply {fmtDollars(impliedDraw)}: total revenues of {fmtDollars(forecastTotal!)}, including
+        the draw, less {fmtDollars(revenueTotal)} in revenue. We show the printed figure, so the left
+        side is {fmtDollars(Math.abs(drawGap))} {drawGap > 0 ? 'smaller' : 'larger'} than the budget's totals imply.
+      </p>
+    )}
     <div class="bg-white rounded-lg border p-4">
       <FlowSankey
         nodes={operatingNodes}

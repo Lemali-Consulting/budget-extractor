@@ -1,9 +1,9 @@
 # The PDF's 2027 fund balance draw doesn't match its own totals
 
 **Date:** 2026-11-12
-**Status:** open, for Public Source to rule on
+**Status:** fixed
 
-The five-year forecast prints a 2027 "Use of Fund Balance" of $28,253,606. Two other figures in the same document imply a draw of $28,554,908, which is $301,302 more. The money flow page uses the printed figure, so its left side comes to $301,302 less than its right side.
+The five-year forecast prints a 2027 "Use of Fund Balance" of $28,253,606. Two other figures in the same document imply a draw of $28,554,908, which is $301,302 more. The money flow page uses the printed figure, and a note on the page explains the gap (Max chose this on 2026-11-12).
 
 ## Evidence
 
@@ -26,10 +26,14 @@ All figures are from the 2027 proposed operating budget. The forecast table is s
 
 - **Money flow page:** the use of fund balance shows as $28.3M, the printed figure. The left side totals $727,025,474 and the departments total $727,326,774. The department figures come from the expenditure summary's departmental totals.
 - **The gap is too small to see:** at 0.04%, the two sides of the diagram look balanced.
-- **What the page says:** its header gives the budget total, $727.3M. It doesn't mention the gap.
+- **What the page says:** its header gives the budget total, $727.3M. A note under the description gives all three figures and the gap.
 
-## Options (none chosen)
+## Options
 
 - Keep the printed $28,253,606. This is what the site does now: it reproduces the document.
 - Show $28,554,908, the figure that balances the budget, with a "Corrected by us" label like the other source corrections. The project's correction rules only relabel headings and never change amounts, so this would be a first.
 - Keep the printed figure and add a note on the flow page explaining the gap.
+
+## Resolution
+
+Max chose to keep the printed figure and add a note (2026-11-12): "Keep the printed figure and add a note". The note sits under the operating diagram's description. It works out the implied draw from the forecast's total revenues and the revenue total, so it would show different numbers if a later edition of the document changed them, and it disappears when there's no gap. A smoke test checks that it gives $28,253,606, $28,554,908 and $301,302.
