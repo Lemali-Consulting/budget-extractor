@@ -881,7 +881,7 @@ test("trends page charts headline figures over time", async ({ page }) => {
 
   // Callouts mention the headline year and are computed from data
   const callouts = main(page).locator('[data-testid="trend-callouts"]');
-  await expect(callouts).toContainText(/2027 proposed/);
+  await expect(callouts).toContainText(/proposed 2027 budget/);
   await expect(callouts).toContainText(/\$\d/);
 
   // Notes block
@@ -903,6 +903,40 @@ test("trends page charts headline figures over time", async ({ page }) => {
   await expect(main(page).locator('a[href="/trends/"]').first()).toBeVisible();
 
   expect(errors, "No console errors on /trends/").toEqual([]);
+});
+
+// Rich (Public Source) found the overlapping forecast lines from four budget
+// documents confusing; Max chose to keep one line per chart: actuals plus the
+// proposed 2027 budget's own estimate, budget and forecast (2026-11-12).
+test("trends charts show only actuals and the proposed 2027 budget's line", async ({ page }) => {
+  await page.goto("/trends/");
+  for (const id of ["recurring-revenue", "total-expenditures", "ending-reserve-balance", "revenue-by-category"]) {
+    const legend = main(page).getByTestId(`chart-${id}`).getByTestId("trend-legend-item");
+    await expect(legend).toHaveText(["Actual", "Proposed 2027 budget"]);
+  }
+});
+
+// House style puts "proposed" before the year (Rich, 2026-11-12).
+test("trends page names the proposed 2027 budget in house style", async ({ page }) => {
+  await page.goto("/trends/");
+  await expect(main(page)).not.toContainText(/2027 proposed/i);
+  await expect(main(page)).not.toContainText("(headline)");
+});
+
+test("trends reserve callout says when the forecast turns negative and where it ends", async ({ page }) => {
+  await page.goto("/trends/");
+  await expect(main(page).locator('[data-callout="reserve-trajectory"]')).toHaveText(
+    "The 2027 forecast projects the reserve fund turning negative in 2031 and finishing the year at −$31.4M.",
+  );
+});
+
+// With older documents' lines gone, notes comparing against them go too.
+test("trends notes cover only what the charts show", async ({ page }) => {
+  await page.goto("/trends/");
+  const notes = main(page).getByTestId("trend-notes").locator("li");
+  await expect(notes.filter({ hasText: "was restated" })).toHaveCount(0);
+  await expect(notes.filter({ hasText: "2025 budget document" })).toHaveCount(0);
+  expect(await notes.count()).toBeLessThanOrEqual(4);
 });
 
 test("trends page has no horizontal scroll on a phone", async ({ page }) => {

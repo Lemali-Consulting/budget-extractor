@@ -43,13 +43,18 @@ function vintageColor(opts: { vintage: Vintage; olderIndex: number }): string {
     : OLDER_VINTAGE_COLORS[opts.olderIndex % OLDER_VINTAGE_COLORS.length];
 }
 
+/** Source labels are written for mid-sentence use ("proposed 2027 budget"); a label or tooltip line starts with a capital. */
+function asLabel(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 function tipTitle(p: TrendPoint): string {
-  return `${p.sourceLabel}\n${KIND_LABEL[p.kind]} ${p.fiscalYear}: ${formatMillions(p.value)}`;
+  return `${asLabel(p.sourceLabel)}\n${KIND_LABEL[p.kind]} ${p.fiscalYear}: ${formatMillions(p.value)}`;
 }
 
 function alternateTipTitle(p: AlternatePoint): string {
   return (
-    `${p.sourceLabel}\n${KIND_LABEL[p.kind]} ${p.fiscalYear}: ${formatMillions(p.value)}\n` +
+    `${asLabel(p.sourceLabel)}\n${KIND_LABEL[p.kind]} ${p.fiscalYear}: ${formatMillions(p.value)}\n` +
     `From the ${p.tableLabel}. The line shows ${formatMillions(p.lineValue)} from the summary table.`
   );
 }
@@ -94,15 +99,14 @@ function Legend({
         {hasActuals && (
           <li class="flex items-center gap-1.5">
             {swatch(ACTUAL_COLOR, ACTUAL_WIDTH)}
-            <span>Actual</span>
+            <span data-testid="trend-legend-item">Actual</span>
           </li>
         )}
         {[...styled].reverse().map(({ vintage, color }) => (
           <li class="flex items-center gap-1.5">
             {swatch(color, vintage.isHeadline ? HEADLINE_WIDTH : OLDER_WIDTH)}
-            <span class={vintage.isHeadline ? 'font-semibold text-ps-blue-700' : ''}>
-              {vintage.label}
-              {vintage.isHeadline ? ' (headline)' : ''}
+            <span class={vintage.isHeadline ? 'font-semibold text-ps-blue-700' : ''} data-testid="trend-legend-item">
+              {asLabel(vintage.label)}
             </span>
           </li>
         ))}

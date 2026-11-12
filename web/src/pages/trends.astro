@@ -10,6 +10,7 @@ import {
   buildCallouts,
   buildNotes,
   buildSeries,
+  headlineVintageOnly,
   majorRevenueCategories,
   type LongitudinalData,
   type LongitudinalSource,
@@ -18,20 +19,24 @@ import {
 
 const data = longitudinalJson as unknown as LongitudinalData;
 
+/** The headline budget as named mid-sentence: "proposed 2027 budget". */
+const budgetName = HEADLINE.budgetName.charAt(0).toLowerCase() + HEADLINE.budgetName.slice(1);
+
 /** Display name of a source document, from the year registry when it matches. */
 function labelSource(source: LongitudinalSource): string {
+  if (source.sourceYear === HEADLINE.year && source.sourceVariant === HEADLINE.operatingVariant) return budgetName;
   const known = BUDGET_YEARS[source.sourceYear];
   if (known && known.operatingVariant === source.sourceVariant) return known.label;
   return `${source.sourceYear} budget (${source.sourceVariant})`;
 }
 
 function seriesFor(metric: Metric) {
-  return buildSeries({
+  return headlineVintageOnly(buildSeries({
     data,
     metric,
     labelSource,
     headlineSourceYear: HEADLINE.year,
-  });
+  }));
 }
 
 const charts = [
@@ -65,34 +70,33 @@ const categoryNames = majorRevenueCategories({
 });
 const categories: CategorySeries[] = categoryNames.map((category) => ({
   category,
-  series: buildSeries({
+  series: headlineVintageOnly(buildSeries({
     data,
     metric: METRIC.REVENUE_BY_CATEGORY,
     category,
     labelSource,
     headlineSourceYear: HEADLINE.year,
-  }),
+  })),
 }));
 
 const callouts = buildCallouts({
   data,
   headlineSourceYear: HEADLINE.year,
   headlineFiscalYear: HEADLINE.year,
-  headlineLabel: HEADLINE.label,
+  budgetName,
 });
-const notes = buildNotes({ data, labelSource });
+const notes = buildNotes({ data, labelSource, headlineSourceYear: HEADLINE.year, budgetName });
 ---
 
 <Base
   title="Trends"
-  description={`Pittsburgh's revenue, spending and reserves over time, with the ${HEADLINE.label} budget set against that history.`}
+  description={`Pittsburgh's revenue, spending and reserves over time, with the ${budgetName} set against that history.`}
 >
   <h1 class="text-3xl font-bold mb-2">Trends</h1>
   <p class="text-gray-600 mb-6 max-w-3xl">
-    Each budget document reports past actuals plus its own budget and a five-year forecast. This page
-    lines them up, so you can see the {HEADLINE.label} budget against history and how each
-    document's forecast has shifted. Actuals come from the newest document that reports them, and
-    forecasts are not commitments.
+    Each chart sets the {budgetName} and its five-year forecast against the actual figures of past
+    years. Actuals come from the newest budget document that reports them, and forecasts are not
+    commitments.
   </p>
 
   <div
@@ -124,7 +128,7 @@ const notes = buildNotes({ data, labelSource });
   <section class="mb-10" data-testid="chart-revenue-by-category">
     <h2 class="text-xl font-bold mb-1">Revenue by category</h2>
     <p class="text-sm text-gray-500 mb-3 max-w-3xl">
-      The largest revenue sources in the {HEADLINE.label} budget. Pick one to see its history and forecasts.
+      The largest revenue sources in the {budgetName}. Pick one to see its history and forecast.
     </p>
     <div class="bg-white rounded-lg border p-3 sm:p-4">
       <CategoryTrends categories={categories} client:visible />

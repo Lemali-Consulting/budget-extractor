@@ -268,6 +268,15 @@ export function splitVintage(points: TrendPoint[]): { solid: TrendPoint[]; dashe
   return { solid, dashed: forecast.length > 0 ? [...anchor, ...forecast] : [] };
 }
 
+/**
+ * Keep only the headline document's line beside the actuals. Rich (Public
+ * Source) found one forecast line per document confusing; Max chose one line
+ * per chart (2026-11-12).
+ */
+export function headlineVintageOnly(series: TrendSeries): TrendSeries {
+  return { ...series, vintages: series.vintages.filter((v) => v.isHeadline) };
+}
+
 /** Largest revenue categories in the headline document's budget year, biggest first. */
 export function majorRevenueCategories(opts: {
   data: LongitudinalData;
@@ -316,9 +325,10 @@ export function buildCallouts(opts: {
   data: LongitudinalData;
   headlineSourceYear: number;
   headlineFiscalYear: number;
-  headlineLabel: string;
+  /** The headline budget's name as used mid-sentence, e.g. "proposed 2027 budget". */
+  budgetName: string;
 }): Callout[] {
-  const { data, headlineSourceYear, headlineFiscalYear, headlineLabel } = opts;
+  const { data, headlineSourceYear, headlineFiscalYear, budgetName } = opts;
   const callouts: Callout[] = [];
   const headline = (metric: Metric): LongitudinalRecord | undefined =>
     headlineRecord({ data, metric, headlineSourceYear, fiscalYear: headlineFiscalYear });
@@ -342,7 +352,7 @@ export function buildCallouts(opts: {
     callouts.push({
       id: 'revenue-vs-actual',
       text:
-        `${headlineLabel} recurring revenue is ${formatMillions(revenue.value)}, ` +
+        `Recurring revenue in the ${budgetName} is ${formatMillions(revenue.value)}, ` +
         `${formatPercent({ value: Math.abs(change) })} ${direction} the latest reported actual ` +
         `(${latestActual.fiscalYear}: ${formatMillions(latestActual.value)})${annualText}.`,
     });
@@ -357,19 +367,19 @@ export function buildCallouts(opts: {
       callouts.push({
         id: 'reserve-funding',
         text:
-          `${formatMillions(useOfReserves.value)} of the ${headlineLabel} budget ` +
+          `${formatMillions(useOfReserves.value)} of the ${budgetName} ` +
           `(${formatPercent({ value: share })} of its ${formatMillions(expenditures.value)} in spending) ` +
           `is funded from reserves rather than recurring revenue.`,
       });
     } else if (useOfReserves.value > 0) {
       callouts.push({
         id: 'reserve-funding',
-        text: `${formatMillions(useOfReserves.value)} of the ${headlineLabel} budget is funded from reserves.`,
+        text: `${formatMillions(useOfReserves.value)} of the ${budgetName} is funded from reserves.`,
       });
     } else {
       callouts.push({
         id: 'reserve-funding',
-        text: `The ${headlineLabel} budget uses no reserves; it is funded from recurring revenue.`,
+        text: `The ${budgetName} uses no reserves; it is funded from recurring revenue.`,
       });
     }
   }
@@ -387,44 +397,51 @@ export function buildCallouts(opts: {
   if (reserveLine.length > 0) {
     const last = reserveLine[reserveLine.length - 1];
     const firstNegative = reserveLine.find((r) => r.value < 0);
-    const tail = firstNegative
-      ? `, and the balance first turns negative in ${firstNegative.fiscalYear}`
-      : ', and the balance stays positive throughout';
     callouts.push({
       id: 'reserve-trajectory',
-      text:
-        `The ${headlineLabel} forecast projects the reserve fund ending ${last.fiscalYear} ` +
-        `at ${formatMillions(last.value)}${tail}. Forecasts are not commitments.`,
+      text: reserveTrajectoryText({ forecastYear: headlineFiscalYear, last, firstNegative }),
     });
   }
 
   return callouts;
 }
 
-/** Notes explaining the provenance quirks of the data, derived from the data itself. */
-export function buildNotes(opts: { data: LongitudinalData; labelSource: SourceLabeler }): string[] {
-  const { data, labelSource } = opts;
+/**
+ * Rich's wording for the reserve callout (2026-11-12): "The 2027 forecast
+ * projects the reserve fund turning negative in 2031 and finishing the year
+ * at −$31.4M."
+ */
+function reserveTrajectoryText(opts: {
+  forecastYear: number;
+  last: LongitudinalRecord;
+  firstNegative: LongitudinalRecord | undefined;
+}): string {
+  const { forecastYear, last, firstNegative } = opts;
+  const ending = formatMillions(last.value);
+  if (!firstNegative) {
+    return `The ${forecastYear} forecast projects the reserve fund staying positive and finishing ${last.fiscalYear} at ${ending}.`;
+  }
+  const finish =
+    firstNegative.fiscalYear === last.fiscalYear ? 'finishing the year' : `finishing ${last.fiscalYear}`;
+  return `The ${forecastYear} forecast projects the reserve fund turning negative in ${firstNegative.fiscalYear} and ${finish} at ${ending}.`;
+}
+
+/**
+ * Notes explaining the provenance quirks of what the charts show, derived from
+ * the data itself. The charts draw only the headline document's line, so notes
+ * about other documents' lines (their restated actuals, their internal
+ * conflicts) are left out.
+ */
+export function buildNotes(opts: {
+  data: LongitudinalData;
+  labelSource: SourceLabeler;
+  headlineSourceYear: number;
+  /** The headline budget's name as used mid-sentence, e.g. "proposed 2027 budget". */
+  budgetName: string;
+}): string[] {
+  const { data, labelSource, headlineSourceYear, budgetName } = opts;
   const notes: string[] = [];
   const headlineLevel = (a: LongitudinalActual): boolean => a.category === null;
-
-  // Restatements.
-  const restated = data.actuals.filter((a) => a.restatements.length > 0);
-  if (restated.length > 0) {
-    for (const a of restated) {
-      const earlier = a.restatements
-        .map((r) => `${formatMillions(r.value)} in the ${r.sourceYear} document`)
-        .join(', ');
-      notes.push(
-        `${METRIC_LABEL[a.metric]}${a.category ? ` (${a.category})` : ''} for ${a.fiscalYear} was restated: ` +
-          `${formatMillions(a.value)} in ${labelSource(a)}, previously ${earlier}.`,
-      );
-    }
-  } else {
-    notes.push(
-      'No actual figure has been restated between the documents shown here. When documents disagree, ' +
-        'the newest document is used and the earlier value is listed in this block.',
-    );
-  }
 
   // Expenditure actuals come from forecast department tables.
   const expenditureActuals = data.actuals
@@ -461,19 +478,23 @@ export function buildNotes(opts: { data: LongitudinalData; labelSource: SourceLa
     );
   }
 
-  notes.push(...buildConflictNotes({ data, labelSource }));
+  notes.push(...buildConflictNotes({ data, labelSource, headlineSourceYear }));
 
   notes.push(
-    'Each vintage line is that document’s own estimate, budget and forecast. Actuals come from the newest ' +
+    `The blue line is the ${budgetName}’s own estimate, budget and forecast. Actuals come from the newest ` +
       'document that reports them. Forecasts are projections, not commitments.',
   );
   return notes;
 }
 
 /** One neutral note per conflict: the document disagrees with itself, and we say which figure the line uses. */
-function buildConflictNotes(opts: { data: LongitudinalData; labelSource: SourceLabeler }): string[] {
-  const { data, labelSource } = opts;
-  return (data.conflicts ?? []).flatMap((conflict) => {
+function buildConflictNotes(opts: {
+  data: LongitudinalData;
+  labelSource: SourceLabeler;
+  headlineSourceYear: number;
+}): string[] {
+  const { data, labelSource, headlineSourceYear } = opts;
+  return (data.conflicts ?? []).filter((c) => c.sourceYear === headlineSourceYear).flatMap((conflict) => {
     const summary = conflict.values.find((v) => v.table === TABLE_KIND.SUMMARY);
     const other = conflict.values.find((v) => v.table !== TABLE_KIND.SUMMARY);
     if (!summary || !other) return [];
