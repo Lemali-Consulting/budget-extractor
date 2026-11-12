@@ -107,3 +107,15 @@ test("old links to a department's section page redirect to its department page",
     expect(rules, slug).toContainEqual([`/sections/${slug}/`, `/departments/${slug}/`, "301"]);
   }
 });
+
+test("old links to a capital project page redirect to the capital index", () => {
+  // Netlify won't apply "/capital/*  /capital/" because the target matches its
+  // own pattern (old project links 404'd on the preview), so each project needs its own rule.
+  const capital = JSON.parse(readFileSync(join(WEB_ROOT, "src", "data", "capital-budget-data.json"), "utf8"));
+  const rules = readFileSync(join(WEB_ROOT, "public", "_redirects"), "utf8")
+    .split("\n").map((l) => l.trim().split(/\s+/));
+  expect(capital.sections.length).toBeGreaterThan(10);
+  for (const { slug } of capital.sections) {
+    expect(rules, slug).toContainEqual([`/capital/${slug}/`, "/capital/", "301"]);
+  }
+});
