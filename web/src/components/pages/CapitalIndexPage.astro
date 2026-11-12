@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar.tsx';
 import SiteSearch from '../SiteSearch.tsx';
 import FundingSourceChart from '../FundingSourceChart.tsx';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+import { capitalizeFirst } from '../../lib/text-case';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -79,7 +80,7 @@ for (const section of sections) {
   </div>
 
   <p class="text-gray-600 mb-6">
-    The City of Pittsburgh's {budgetYear.capitalName}.
+    {capitalizeFirst(budgetYear.capitalName)}.
     {sections.length} projects across {grouped.size} functional areas.
     {totalFunding > 0 && ` ${budgetYear.year} total: $${(totalFunding / 1_000_000).toFixed(1)}M.`}
   </p>

@@ -304,7 +304,7 @@ test("headline pages are labeled as the proposed 2027 budget", async ({ page }) 
   await expect(main(page).getByText(/The City of Pittsburgh's proposed 2027 operating budget\./).first()).toBeVisible();
 
   await page.goto("/capital/");
-  await expect(main(page).getByText(/The City of Pittsburgh's proposed 2027 capital budget\./).first()).toBeVisible();
+  await expect(main(page).getByText(/^\s*Proposed 2027 capital budget\.\s+\d+ projects/).first()).toBeVisible();
 
   await page.goto("/sections/revenue-detail/");
   await expect(main(page).getByText(/2027/).first()).toBeVisible();

@@ -7,7 +7,6 @@ PROPER_PHRASES: tuple[str, ...] = (
     "Pittsburgh",
     "General Fund",
     "Five-Year Forecast",
-    "Five Year Forecast",
     "Five-Year",
     "City Council",
     "Regional Asset District",

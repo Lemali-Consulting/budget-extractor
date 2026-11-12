@@ -30,7 +30,7 @@ test.describe("PDF table and chart titles become sentence-case headings", () => 
     // Other names keep their capitals.
     ["Department of\nPublic Safety", "Department of Public Safety"],
     ["Special Revenue\nFunds", "Special revenue funds"],
-    ["Five Year Forecast", "Five Year Forecast"],
+    ["Five Year Forecast", "Five year forecast"],
     // After "Position summary:" comes a grant's own name.
     ["Position Summary: Head of Talent Acquisition\n2129400555", "Position summary: Head of Talent Acquisition 2129400555"],
     // A bond series letter is a designator, not a word.
