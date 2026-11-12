@@ -149,10 +149,6 @@ export default function DepartmentCompare({ budgets, departments, year, priorYea
                 <span class="text-gray-500"><GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} />:</span>{' '}
                 <span class="font-medium">{Math.round(p.fteCurrent)}</span>
               </div>
-              <div>
-                <span class="text-gray-500">Positions:</span>{' '}
-                <span class="font-medium">{p.positionCount}</span>
-              </div>
             </div>
           </div>
         ))}
@@ -204,12 +200,6 @@ export default function DepartmentCompare({ budgets, departments, year, priorYea
                 <td class="px-3 py-1.5 border-b border-gray-100 font-medium">{year} <GlossaryTip term="FTE" tooltip={FTE_TOOLTIP} /></td>
                 {selectedPersonnel.map(p => (
                   <td key={p.department} class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{Math.round(p.fteCurrent)}</td>
-                ))}
-              </tr>
-              <tr class="bg-gray-50">
-                <td class="px-3 py-1.5 border-b border-gray-100 font-medium">Total positions</td>
-                {selectedPersonnel.map(p => (
-                  <td key={p.department} class="px-3 py-1.5 border-b border-gray-100 text-right tabular-nums">{p.positionCount}</td>
                 ))}
               </tr>
             </tbody>

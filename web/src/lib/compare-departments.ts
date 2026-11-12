@@ -3,7 +3,8 @@
  *
  * Max, 2026-11-12: departments only, no trust funds; each department's total
  * budget, the figure its department page and the home chart show, rather than
- * the cost of its positions; no FTE change.
+ * the cost of its positions; no FTE change; and no count of position lines,
+ * since FTE already gives the headcount.
  */
 import type { BudgetYear } from './budget-year';
 import { operating, type DeptBudgetRow } from './department-budgets';
@@ -17,13 +18,11 @@ export interface CompareDepartment {
   budgetCurrent: number;
   budgetPrior: number;
   fteCurrent: number;
-  positionCount: number;
 }
 
 interface PersonnelTotals {
   slug: string;
   totalFteCurrent: number;
-  positionCount: number;
 }
 
 function amountFor(rows: DeptBudgetRow[], opts: { slug: string; year: string }): number | undefined {
@@ -50,7 +49,6 @@ export function compareDepartments(budgetYear: BudgetYear): CompareDepartment[] 
       budgetCurrent,
       budgetPrior: amountFor(budgets, { slug: section.slug, year: budgetYear.columns.priorBudget }) ?? 0,
       fteCurrent: staff?.totalFteCurrent ?? 0,
-      positionCount: staff?.positionCount ?? 0,
     });
   }
   return departments.sort((a, b) => a.department.localeCompare(b.department));

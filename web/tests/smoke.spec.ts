@@ -377,6 +377,15 @@ test("compare page shows no FTE changes", async ({ page }) => {
   await expect(main(page)).not.toContainText(/year-over-year/i);
 });
 
+// The count was of lines in the PDF's position table, allowances included,
+// so Fire showed "Positions: 12" beside 679 FTE. FTE already gives the
+// headcount, so the count was removed (Max, 2026-11-12).
+test("compare page shows FTE but no count of position lines", async ({ page }) => {
+  await page.goto(COMPARE_PS_ADMIN);
+  await expect(main(page).getByTestId("compare-card").first()).toContainText("FTE");
+  await expect(main(page)).not.toContainText(/Positions:|Total positions/);
+});
+
 test("compare page offers departments only, not trust funds", async ({ page }) => {
   await page.goto("/compare/");
   const chips = main(page).getByTestId("compare-chip");
