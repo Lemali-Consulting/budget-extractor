@@ -58,3 +58,16 @@ export function sumFor(rows: DeptBudgetRow[], fund: FundType, year: string): num
     .filter((r) => r.fund === fund && r.year === year)
     .reduce((s, r) => s + r.amount, 0);
 }
+
+/**
+ * Each department's or fund's total budget for one year column (e.g. "2027 Budget"),
+ * keyed by slug. This is the figure department pages show, as opposed to the
+ * cost of a department's positions in the personnel views.
+ */
+export function totalBudgetBySlug(rows: DeptBudgetRow[], year: string): Record<string, number> {
+  const totals: Record<string, number> = {};
+  for (const r of rows) {
+    if (r.year === year) totals[r.slug] = (totals[r.slug] ?? 0) + r.amount;
+  }
+  return totals;
+}

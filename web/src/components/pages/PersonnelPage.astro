@@ -5,6 +5,7 @@ import PersonnelTreemap from '../PersonnelTreemap.tsx';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
 import { DEPARTMENT_SALARY_SCOPE, type DepartmentPersonnel } from '../../lib/personnel';
 import { publishedSectionHrefs } from '../../lib/published-pages';
+import { totalBudgetBySlug } from '../../lib/department-budgets';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -46,7 +47,7 @@ function fmtDollar(n: number): string {
     )}
   </p>
 
-  <PersonnelTreemap data={personnelByDept} sectionHrefs={sectionHrefs} client:load />
+  <PersonnelTreemap data={personnelByDept} sectionHrefs={sectionHrefs} totalBudgets={totalBudgetBySlug(budgetYear.views.departmentBudgets, budgetYear.columns.budget)} client:load />
 
   <PersonnelExplorer rows={personnelData} year={budgetYear.year} sectionHrefs={sectionHrefs} client:load />
 </Base>

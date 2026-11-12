@@ -9,18 +9,25 @@ interface DeptData {
   department: string;
   slug: string;
   totalFteCurrent: number;
-  totalBudgetCurrent: number;
 }
 
 type SizeBy = 'fte' | 'budget';
+
+/** Width kept clear right of the bars for their value labels. */
+const VALUE_LABEL_MARGIN = 56;
 
 interface Props {
   data: DeptData[];
   /** Published page per department slug (see publishedSectionHrefs); bars without one aren't clickable. */
   sectionHrefs: Record<string, string>;
+  /**
+   * Each department's total budget by slug (totalBudgetBySlug), the figure its
+   * department page shows, not what its positions cost (Max, 2026-11-12).
+   */
+  totalBudgets: Record<string, number>;
 }
 
-export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
+export default function PersonnelTreemap({ data, sectionHrefs, totalBudgets }: Props) {
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWidth = useContainerWidth(containerRef);
@@ -30,13 +37,16 @@ export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
     if (!chartRef.current || data.length === 0) return;
 
     const chartData = data
-      .map((d) => ({
-        department: d.department,
-        slug: d.slug,
-        value: sizeBy === 'fte' ? d.totalFteCurrent : d.totalBudgetCurrent,
-        fte: d.totalFteCurrent,
-        budget: d.totalBudgetCurrent,
-      }))
+      .map((d) => {
+        const budget = totalBudgets[d.slug] ?? null;
+        return {
+          department: d.department,
+          slug: d.slug,
+          value: sizeBy === 'fte' ? d.totalFteCurrent : budget ?? 0,
+          fte: d.totalFteCurrent,
+          budget,
+        };
+      })
       .filter((d) => d.value > 0)
       .sort((a, b) => b.value - a.value)
       .slice(0, 20);
@@ -48,6 +58,8 @@ export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
 
     const chart = Plot.plot({
       marginLeft: 220,
+      // Room for the value label on the longest bar (e.g. "$160.0M").
+      marginRight: VALUE_LABEL_MARGIN,
       width: containerWidth,
       height: Math.max(300, chartData.length * 28),
       x: {
@@ -65,7 +77,8 @@ export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
           sort: { y: '-x' },
           tip: true,
           title: (d: typeof chartData[0]) =>
-            `${d.department}\nFTE: ${Math.round(d.fte)} | Budget: $${(d.budget / 1_000_000).toFixed(1)}M`,
+            `${d.department}\nFTE: ${Math.round(d.fte)}` +
+            (d.budget === null ? '' : ` | Budget: $${(d.budget / 1_000_000).toFixed(1)}M`),
         }),
         Plot.text(chartData, {
           x: 'value',
@@ -104,7 +117,7 @@ export default function PersonnelTreemap({ data, sectionHrefs }: Props) {
     });
 
     return () => chart.remove();
-  }, [data, sizeBy, containerWidth, sectionHrefs]);
+  }, [data, sizeBy, containerWidth, sectionHrefs, totalBudgets]);
 
   if (data.length === 0) {
     return <div class="text-gray-400 italic py-4">No personnel data available.</div>;

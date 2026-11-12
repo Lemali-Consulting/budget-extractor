@@ -471,6 +471,17 @@ test("personnel staffing chart tooltip shows FTE and budget but no position coun
   await expect(tip).not.toContainText("position types");
 });
 
+// Max, 2026-11-12: the chart's "Budget" is each department's total budget,
+// as on its department page and the compare page, not what its positions cost
+// (Police: $128.2M total, $76.0M in positions).
+test("personnel staffing chart's budget is the department's total budget", async ({ page }) => {
+  await page.goto("/personnel/");
+  const police = main(page).locator('rect[data-slug="bureau-of-police"]');
+  await expect(police).toBeVisible({ timeout: 10_000 });
+  await police.hover({ force: true });
+  await expect(main(page).locator('[aria-label="tip"]')).toContainText("Budget: $128.2M");
+});
+
 test("personnel staffing chart bars link to department pages", async ({ page }) => {
   await page.goto("/personnel/");
   // The chart redraws once after hydration, so rely on the auto-retrying
