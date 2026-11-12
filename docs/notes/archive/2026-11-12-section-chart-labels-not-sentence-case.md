@@ -16,7 +16,7 @@ Every operating section page with a financial table shows the panel. Department 
 
 ## Related
 
-The "Year-over-Year" tab may be removed outright: `docs/notes/2026-11-12-section-year-over-year-chart.md`. That note is still open.
+The "Year-over-Year" tab may be removed outright: `docs/notes/archive/2026-11-12-section-year-over-year-chart.md`. That note is still open.
 
 ## Resolution
 

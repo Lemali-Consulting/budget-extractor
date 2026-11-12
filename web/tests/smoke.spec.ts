@@ -970,7 +970,7 @@ for (const route of ["/departments/bureau-of-police/", "/sections/expenditure-su
   test(`section chart bar values fit inside the chart on ${route}`, async ({ page }) => {
     await page.goto(route);
     const panel = main(page).getByTestId("section-charts");
-    for (const tab of ["Breakdown", "Year-over-year"]) {
+    for (const tab of ["Breakdown"]) {
       await panel.getByRole("tab", { name: tab }).click();
       const svg = panel.locator("svg").last();
       await expect(svg.locator('g[aria-label="text"] text').first()).toBeAttached();
@@ -985,12 +985,19 @@ for (const route of ["/departments/bureau-of-police/", "/sections/expenditure-su
   });
 }
 
+// The panel charts only the PDF's own figures. Its year-over-year tab plotted a
+// row-by-row change the PDF doesn't print, so Max had it removed (2026-11-12).
+test("section charts offer budget trend and breakdown, not a computed year-over-year change", async ({ page }) => {
+  await page.goto("/departments/bureau-of-police/");
+  const tabs = main(page).getByTestId("section-charts").getByRole("tab");
+  await expect(tabs).toHaveText(["Budget trend", "Breakdown"]);
+});
+
 test("section chart labels follow house style", async ({ page }) => {
   await page.goto("/sections/revenue-summary/");
   const panel = main(page).getByTestId("section-charts");
   await expect(panel).toContainText("Charges for services");
   await expect(panel).not.toContainText("Charges for Services");
-  await expect(panel.getByRole("tab", { name: "Year-over-year" })).toBeVisible();
 });
 
 // Account rows open with their code; the name after it is what starts the label.

@@ -1,9 +1,9 @@
 # Section pages chart a year-over-year change we calculate
 
 **Date:** 2026-11-12
-**Status:** open, to review before shipping to production
+**Status:** fixed
 
-Each operating section page has a "Year-over-Year" chart tab that plots our own subtraction of the PDF's year columns, row by row. It is still live on the preview, and nobody has decided whether it stays. It also renders badly: misplaced labels, and unreadable on phones.
+Each operating section page had a "Year-over-Year" chart tab that plotted our own subtraction of the PDF's year columns, row by row. It also rendered badly: labels were misplaced, and it was unreadable on phones. Max had it removed on 2026-11-12; see `docs/decisions/2026-11-12-remove-section-year-over-year-chart.md`.
 
 ## What was observed
 
@@ -33,8 +33,12 @@ This tab is the same kind of thing.
 
 > "Note that as something we should look into before shipping to production." — Max, 2026-11-12, replying to the side observation that the tab charts a computed dollar change.
 
-## Options (none chosen)
+## Options
 
 - Remove the tab, leaving "Budget trend" and "Breakdown". Those plot the PDF's own figures.
 - Keep it, and label it as our calculation.
 - Keep it as is.
+
+## Resolution
+
+Max chose to remove the tab (2026-11-12): "Remove the year-over-year tab". The panel now offers only "Budget trend" and "Breakdown", and a smoke test checks for exactly those two tabs. Recorded in `docs/decisions/2026-11-12-remove-section-year-over-year-chart.md`.

@@ -1,4 +1,8 @@
-/**Charts panel for a budget section page: trend, year-over-year changes, and category breakdown.*/
+/**
+ * Charts panel for a budget section page: trend and category breakdown, both
+ * plotting the PDF's own figures. A year-over-year tab that charted our own
+ * row-by-row subtraction was removed (Max, 2026-11-12).
+ */
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
@@ -23,7 +27,7 @@ interface Props {
   year: number;
 }
 
-type Tab = 'trend' | 'changes' | 'breakdown';
+type Tab = 'trend' | 'breakdown';
 
 /** Width kept clear right of the bars for the value printed past each one ("$160.0M"). */
 const VALUE_LABEL_MARGIN = 56;
@@ -64,7 +68,6 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
     .sort((a, b) => a.year - b.year);
 
   const hasTrend = yearCols.length >= 2;
-  const hasChanges = yearCols.length >= 2;
 
   // Find the current-year Budget column for breakdown (fallback to last year col)
   const breakdownCol =
@@ -74,7 +77,6 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
   const availableTabs: { key: Tab; label: string }[] = [];
   if (hasTrend) availableTabs.push({ key: 'trend', label: 'Budget trend' });
-  if (hasChanges) availableTabs.push({ key: 'changes', label: 'Year-over-year' });
   if (hasBreakdown) availableTabs.push({ key: 'breakdown', label: 'Breakdown' });
 
   if (availableTabs.length === 0) return null;
@@ -87,8 +89,6 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
 
     if (activeTab === 'trend') {
       renderTrend(chartRef.current);
-    } else if (activeTab === 'changes') {
-      renderChanges(chartRef.current);
     } else if (activeTab === 'breakdown') {
       renderBreakdown(chartRef.current);
     }
@@ -144,66 +144,6 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
           r: 3,
         }),
         Plot.ruleY([0]),
-      ],
-    });
-    el.replaceChildren(chart);
-  }
-
-  function renderChanges(el: HTMLDivElement) {
-    // Use last two year columns
-    const from = yearCols[yearCols.length - 2];
-    const to = yearCols[yearCols.length - 1];
-    if (!from || !to) return;
-
-    const data: { label: string; delta: number; pctChange: number }[] = [];
-    for (const [i, row] of rows.entries()) {
-      const label = rowLabels[i] || 'Row';
-      if (label.toLowerCase().includes('total')) continue;
-      const fromVal = parseCurrency(row[from.idx] || '');
-      const toVal = parseCurrency(row[to.idx] || '');
-      if (fromVal === null || toVal === null) continue;
-      const delta = toVal - fromVal;
-      if (delta === 0) continue;
-      const pctChange = fromVal !== 0 ? (delta / Math.abs(fromVal)) * 100 : 0;
-      data.push({ label, delta, pctChange });
-    }
-
-    if (data.length === 0) {
-      el.textContent = 'No changes to display.';
-      return;
-    }
-
-    data.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta));
-    const sliced = data.slice(0, 20);
-
-    const chart = Plot.plot({
-      marginLeft: Math.min(220, Math.max(100, ...sliced.map((d) => d.label.length * 6.5))),
-      marginRight: VALUE_LABEL_MARGIN,
-      width: containerWidth,
-      height: Math.max(250, sliced.length * 26),
-      x: {
-        label: `Change (${from.year} \u2192 ${to.year})`,
-        tickFormat: formatDollar,
-      },
-      y: { label: null },
-      marks: [
-        Plot.barX(sliced, {
-          x: 'delta',
-          y: 'label',
-          fill: (d: { delta: number }) => (d.delta >= 0 ? CHART_COLORS.positive : CHART_COLORS.negative),
-          sort: { y: 'x' },
-        }),
-        Plot.text(sliced, {
-          x: 'delta',
-          y: 'label',
-          text: (d: { pctChange: number }) =>
-            `${d.pctChange >= 0 ? '+' : ''}${d.pctChange.toFixed(1)}%`,
-          dx: (d: { delta: number }) => (d.delta >= 0 ? 4 : -4),
-          textAnchor: (d: { delta: number }) => (d.delta >= 0 ? 'start' : 'end'),
-          fontSize: 10,
-          fill: CHART_COLORS.annotation,
-        }),
-        Plot.ruleX([0]),
       ],
     });
     el.replaceChildren(chart);
