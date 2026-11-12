@@ -1,6 +1,6 @@
 # Budget Extractor
 
-Extracts tabular data from City of Pittsburgh budget PDFs (operating and capital) into structured CSVs, then powers an Astro-based web explorer for browsing department budgets, revenue, expenditures, and capital projects. The site headline is the **2027 proposed** budget; the 2026 budget (operating as amended) stays fully browsable under `/2026/...`, 2025 feeds cross-year comparisons, and a long-run trends page spans the 2024–2027 documents.
+Extracts tabular data from City of Pittsburgh budget PDFs (operating and capital) into structured CSVs, then powers an Astro-based web explorer for browsing department budgets, revenue, expenditures, and capital projects. The site publishes the **2027 proposed** budget only, plus a long-run trends page spanning the 2024–2027 documents. The 2026 (operating as amended) and 2025 archive machinery and committed data stay in the repo but are not published — see `docs/decisions/2026-11-12-publish-2027-only.md`.
 
 Key components:
 - **Spatial table extractor** (`utils/spatial_table_extractor.py`) — core PDF-to-CSV engine using pdfplumber word positions
@@ -85,11 +85,11 @@ A budget can have multiple **variants** for the same `(year, budget_type)` — e
 
 - Inputs: `input/{year}/{budget_type}-{variant}-budget.pdf` + `sections-{budget_type}-{variant}.json`; baselines under `expected/{year}/{budget_type}-{variant}/`.
 - `split_pdf.py` and `render_page_images.py` take `--variant`; `test_regression.py` has no variant flag — it walks every `expected/{year}/{subtype}/` directory. `build_web_data.py` takes `--operating-variant`/`--capital-variant` (`adopted`, `amended`, `proposed`), `--output-prefix` and `--operating-only`.
-- **2027** is filed as the `proposed` variant (`operating-proposed`, `capital-proposed`) and is the **headline**: its bundle and views are unprefixed. The inputs are the November 9 Mayor's budget (full document, same layout as the 2026 adopted); it replaced the September preliminary in place, with no diff kept. When a newer edition replaces an input PDF, repoint any test pinned to a page of the old one (`tests/fixtures/` holds one-page cuts of superseded layouts) and drop corrections the new edition no longer needs, since an unmatched correction fails the build. The 2026 archive uses the `2026-` prefix, 2025 uses `2025-`. Years are registered in `web/src/lib/budget-year.ts` (`HEADLINE`, `ARCHIVE_YEARS`); archive routes under `src/pages/[year]/` are thin wrappers around `src/components/pages/`.
-- **2026 operating** is currently published as **amended** ("as amended 4-20-26"). The amended extraction is the canonical site data; the adopted version is rebuilt as a transient `adopted-*.json` baseline (gitignored) only to compute diffs.
-- `scripts/build_amendment_diff.py` reads the amended + adopted bundles and writes `views/2026-amendment-changes.json` (high-level) and `views/2026-amendment-cell-diffs.json` (per-cell, consumed by `TableViewer` for inline highlighting). The `/amendments` page surfaces the high-level comparison.
+- **2027** is filed as the `proposed` variant (`operating-proposed`, `capital-proposed`) and is the **headline**: its bundle and views are unprefixed. The inputs are the November 9 Mayor's budget (full document, same layout as the 2026 adopted); it replaced the September preliminary in place, with no diff kept. When a newer edition replaces an input PDF, repoint any test pinned to a page of the old one (`tests/fixtures/` holds one-page cuts of superseded layouts) and drop corrections the new edition no longer needs, since an unmatched correction fails the build. The 2026 archive uses the `2026-` prefix, 2025 uses `2025-`. Years are registered in `web/src/lib/budget-year.ts` (`HEADLINE`, `ARCHIVE_YEARS`); archive routes under `src/pages/[year]/` are thin wrappers around `src/components/pages/`. `ARCHIVE_YEARS` is empty, so no `/2026/...` pages are built; adding a year back republishes its archive (and needs its `deploy.sh` steps restored).
+- **2026 operating** (not published; see above) is filed as **amended** ("as amended 4-20-26"). The amended extraction is the canonical site data; the adopted version is rebuilt as a transient `adopted-*.json` baseline (gitignored) only to compute diffs.
+- `scripts/build_amendment_diff.py` reads the amended + adopted bundles and writes `views/2026-amendment-changes.json` (high-level) and `views/2026-amendment-cell-diffs.json` (per-cell, consumed by `TableViewer` for inline highlighting). The `/amendments` page that surfaced it was removed with the archive.
 - **Source-page images come in two versions.** Canonical (amended) images render to `web/public/pages/{year}/{slug}/P{n}.webp` (chart crops likewise under `charts/{year}/`); adopted images for *changed pages only* render to `web/public/pages-adopted/{year}/{slug}/P{n}.webp` via `render_page_images.py --variant adopted --secondary-of amended`, which also writes the `views/2026-adopted-pages.json` manifest (`{slug: [pages]}`). A page counts as "changed" when its normalized text differs between the adopted and amended split PDFs. `PageImage.tsx` reads the manifest (via `[slug].astro` → `TableViewer`) and shows an Amended/Adopted toggle in the lightbox only where an adopted image exists.
-- `deploy.sh` builds 2027 proposed → 2026 amended archive → adopted baseline → `build_amendment_diff.py` → 2025 → `build_longitudinal.py`, validates, then renders page images per year before the Astro build.
+- `deploy.sh` builds 2027 proposed → `build_longitudinal.py`, validates, then renders the 2027 page images before the Astro build. The 2026/2025 build, validate and render steps were dropped when the archive stopped being published; the decision record lists them. `web/public/_redirects` sends old archive, amendments, cross-year and story links to their 2027 equivalents or home.
 
 # Source Corrections
 
@@ -105,7 +105,7 @@ Public Source capitalizes only the first word and proper nouns in headings, char
 
 # Site Search
 
-The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 section pages, capital project pages and the glossary opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years (`/2026/...`, amendments, cross-year) keep the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
+The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 section pages, capital project pages and the glossary opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years, when published, use the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
 
 # Brand Colors
 
@@ -116,7 +116,7 @@ The site uses Public Source's 2025 brand colors. They are defined once in `web/s
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.
 
 - Tests build the site and serve it via `astro preview`, then verify all major routes render correctly
-- Covers: home, operating index + detail, capital index + detail, charts, explorer, personnel, 2026 changes (the 2027 page is retired), compare, glossary, about
+- Covers: home, operating index + detail, capital index + detail, charts, explorer, personnel, compare, glossary, about, trends; and that the retired dashboard, 2026 archive, amendments, cross-year and story pages are not built or linked
 - Checks: page titles, key content visible, navigation present, no JS console errors
 - Run before deploying to Netlify to catch template, routing, or data regressions
 - Requires Playwright browsers: `npx playwright install chromium` (and system deps: `npx playwright install-deps chromium`)

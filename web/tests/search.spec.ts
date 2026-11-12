@@ -1,6 +1,6 @@
 /**
  * Search behaviour: the headline (2027) search box searches the full text of the
- * 2027 section and capital project pages; archive years keep their own search.
+ * 2027 section and capital project pages.
  */
 import { test, expect, type Page } from "@playwright/test";
 
@@ -51,10 +51,4 @@ test("headline search finds glossary definitions, labelled as glossary", async (
   const hit = results.locator('a[href^="/glossary/"]').first();
   await expect(hit).toBeVisible();
   await expect(hit).toContainText("Glossary");
-});
-
-test("archive search still finds 2026 sections inside the archive", async ({ page }) => {
-  await page.goto("/2026/operating/");
-  const results = await search(page, "Bureau of Police");
-  await expect(results.locator('a[href^="/2026/sections/bureau-of-police/"]').first()).toBeVisible();
 });

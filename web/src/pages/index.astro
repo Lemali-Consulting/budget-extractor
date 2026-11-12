@@ -6,7 +6,7 @@ import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { revenueColor } from '../lib/flow-colors';
 import { colorForSlug } from '../lib/department-groups';
-import { HEADLINE, ARCHIVE_YEARS, yearPath } from '../lib/budget-year';
+import { HEADLINE, ARCHIVE_YEARS, yearPath, type BudgetYear } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
 import { correctionHref, trustFundCorrections } from '../lib/corrections';
 import PersonnelCard from '../components/PersonnelCard.astro';
@@ -19,8 +19,8 @@ const {
 } = HEADLINE.views;
 const operatingSections = HEADLINE.operating.sections;
 const capitalSections = HEADLINE.capital.sections;
-// The most recent archived budget, linked from the hero.
-const [archive] = ARCHIVE_YEARS;
+// The most recent archived budget, linked from the hero (none while only 2027 is published).
+const [archive] = ARCHIVE_YEARS as (BudgetYear | undefined)[];
 const operatingTables = operatingSections.reduce((n: number, s: any) => n + s.tables.length, 0);
 
 // Count capital functional areas
@@ -123,19 +123,21 @@ const teaserLinks: FlowLink[] = [
     </div>
   </div>
 
-  <!-- Archive pointer: the previous budget stays browsable -->
-  <a
-    href={yearPath({ budgetYear: archive, path: '/operating/' })}
-    class="block mb-8 p-4 bg-slate-50 rounded-lg border border-slate-300 ring-0 hover:ring-2 hover:ring-slate-400 transition"
-  >
-    <div class="flex items-baseline justify-between gap-3">
-      <h2 class="text-base font-semibold text-slate-800">Looking for the {archive.year} budget?</h2>
-      <span class="text-sm text-slate-600 whitespace-nowrap">Browse the {archive.year} archive &rarr;</span>
-    </div>
-    <p class="text-sm text-slate-600 mt-1">
-      The {archive.label} operating budget and the {archive.year} capital budget stay available, with every department, table and source page.
-    </p>
-  </a>
+  <!-- Archive pointer, shown while a previous budget is published -->
+  {archive && (
+    <a
+      href={yearPath({ budgetYear: archive, path: '/operating/' })}
+      class="block mb-8 p-4 bg-slate-50 rounded-lg border border-slate-300 ring-0 hover:ring-2 hover:ring-slate-400 transition"
+    >
+      <div class="flex items-baseline justify-between gap-3">
+        <h2 class="text-base font-semibold text-slate-800">Looking for the {archive.year} budget?</h2>
+        <span class="text-sm text-slate-600 whitespace-nowrap">Browse the {archive.year} archive &rarr;</span>
+      </div>
+      <p class="text-sm text-slate-600 mt-1">
+        The {archive.label} operating budget and the {archive.year} capital budget stay available, with every department, table and source page.
+      </p>
+    </a>
+  )}
 
   <!-- Summary stats -->
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">

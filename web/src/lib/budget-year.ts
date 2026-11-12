@@ -427,16 +427,18 @@ export const BUDGET_YEARS: Record<number, BudgetYear> = {
 /** The year the unprefixed pages show (2027 proposed). */
 export const HEADLINE: BudgetYear = YEAR_2027;
 
-/** Years browsable under their own route prefix (e.g. /2026/...). */
-export const ARCHIVE_YEARS: BudgetYear[] = [YEAR_2026];
-
 /**
- * The 2026 budget (operating as amended, capital adopted). Stories, the
- * amendments page and cross-year read this, so they stay pinned to 2026 data.
+ * Years browsable under their own route prefix (e.g. /2026/...). Empty: the
+ * site publishes the 2027 proposed budget only (see
+ * docs/decisions/2026-11-12-publish-2027-only.md). Add a year back here to
+ * republish its archive.
  */
+export const ARCHIVE_YEARS: BudgetYear[] = [];
+
+/** The 2026 budget (operating as amended, capital adopted). Not published while ARCHIVE_YEARS is empty. */
 export const BUDGET_2026: BudgetYear = YEAR_2026;
 
-/** The 2025 budget bundle, used only by the cross-year comparison. */
+/** The 2025 budget bundle, kept for cross-year comparisons; not published. */
 export const BUDGET_2025: BudgetYear = YEAR_2025;
 
 // ---------------------------------------------------------------------------

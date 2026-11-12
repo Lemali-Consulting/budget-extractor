@@ -25,14 +25,10 @@ test("home page loads with key content", async ({ page }) => {
   await expect(
     header.getByRole("link", { name: /Budgets/i }),
   ).toBeVisible();
-  await expect(header.getByRole("link", { name: "Stories", exact: true })).toBeVisible();
+  await expect(header.getByRole("link", { name: "Departments", exact: true })).toBeVisible();
   await expect(header.getByRole("link", { name: "Explore", exact: true })).toBeVisible();
 
-  // Headline is the 2027 proposed budget; amendment callout is 2026-only.
   await expect(main(page).getByText(/2027 proposed/).first()).toBeVisible();
-  await expect(main(page).locator('a[href="/amendments/"]')).toHaveCount(0);
-  // Archive entry point
-  await expect(page.locator('a[href="/2026/operating/"]').first()).toBeAttached();
 });
 
 // ---------------------------------------------------------------------------
@@ -110,7 +106,7 @@ test("the dashboard page is no longer built", async ({ page }) => {
   expect(response?.status()).toBe(404);
 });
 
-for (const route of ["/", "/brief/", "/personnel/", "/operating/", "/stories/"]) {
+for (const route of ["/", "/brief/", "/personnel/", "/operating/"]) {
   test(`${route} has no link to the retired dashboard`, async ({ page }) => {
     await page.goto(route);
     await expect(page.locator(`a[href^="${RETIRED_DASHBOARD_HREF}"]`)).toHaveCount(0);
@@ -202,8 +198,7 @@ test("personnel page explains why department totals differ from the citywide sal
 // What Changed
 // ---------------------------------------------------------------------------
 // The 2027 page was retired at the client's request: functions moving between
-// departments make a department-by-department comparison misleading. The
-// archive years keep their What Changed pages.
+// departments make a department-by-department comparison misleading.
 const RETIRED_CHANGES_HREF = "/changes/";
 
 test("the headline What Changed page is no longer published", async ({ page }) => {
@@ -211,7 +206,7 @@ test("the headline What Changed page is no longer published", async ({ page }) =
   expect(response?.status()).toBe(404);
 });
 
-for (const route of ["/", "/brief/", "/personnel/", "/operating/", "/stories/"]) {
+for (const route of ["/", "/brief/", "/personnel/", "/operating/"]) {
   test(`headline ${route} has no link to the retired What Changed page`, async ({ page }) => {
     await page.goto(route);
     await expect(page.locator(`a[href^="${RETIRED_CHANGES_HREF}"]`)).toHaveCount(0);
@@ -225,70 +220,16 @@ test("the brief drops its What changed this year section", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
-// Amendments (adopted vs amended)
+// No amendment presentation on the 2027 pages
 // ---------------------------------------------------------------------------
-test("amendments page loads with adopted-vs-amended figures", async ({ page }) => {
-  await page.goto("/amendments/");
-
-  await expect(main(page).locator("h1").first()).toContainText(/Amendment/i);
-  await expect(main(page).getByText(/Adopted.*Dec 2025/i).first()).toBeVisible();
-  await expect(main(page).getByText(/Amended.*Apr 2026/i).first()).toBeVisible();
-  await expect(main(page).getByText(/Legislative Changes/i)).toBeVisible();
-});
-
 // The amended-budget notice names the amendment date ("as amended 4-20-26").
 // Trust-fund descriptions also quote resolutions "as amended by ...", so the
 // date is what tells the notice apart.
 const AMENDED_NOTICE_TEXT = /as amended \d/i;
 
-test("2026 archive operating page shows the amended-budget notice", async ({ page }) => {
-  await page.goto("/2026/operating/");
-  await expect(main(page).getByText(AMENDED_NOTICE_TEXT).first()).toBeVisible();
-});
-
 test("headline operating page has no amended-budget notice", async ({ page }) => {
   await page.goto("/operating/");
   await expect(main(page).getByText(AMENDED_NOTICE_TEXT)).toHaveCount(0);
-});
-
-test("amended cells are highlighted with adopted-vs-amended tooltips", async ({ page }) => {
-  // HR was reorganized by the amendment, so its tables have highlighted cells.
-  await page.goto("/2026/sections/department-of-human-resources-and-civil-service/");
-
-  const cell = main(page)
-    .locator("td.has-amendment-up, td.has-amendment-down")
-    .first();
-  await expect(cell).toBeVisible();
-  await expect(cell).toHaveAttribute(
-    "data-amendment-tip",
-    /Adopted \(Dec 2025\).*Amended \(Apr 2026\)/,
-  );
-
-  // Hovering shows the shared floating tooltip (escapes table overflow clipping).
-  await cell.hover();
-  await expect(page.locator("#amendment-tooltip")).toBeVisible();
-});
-
-test("changed pages offer an adopted/amended source-image toggle", async ({ page }) => {
-  // Bureau of Police has amended pages, so its source-page links carry the badge.
-  await page.goto("/2026/sections/bureau-of-police/");
-
-  const sourceBtn = main(page)
-    .getByRole("button", { name: /View source page/i })
-    .filter({ hasText: /amended/i })
-    .first();
-  await expect(sourceBtn).toBeVisible();
-  await sourceBtn.click();
-
-  // Lightbox opens on the amended page with an Amended/Adopted toggle.
-  const adoptedToggle = page.getByRole("button", { name: /Adopted.*Dec 2025/ });
-  await expect(adoptedToggle).toBeVisible();
-  const img = page.locator('img[alt^="PDF page"]');
-  await expect(img).toHaveAttribute("src", /\/pages\/2026\/bureau-of-police\//);
-
-  // Toggling to Adopted swaps in the pre-amendment image.
-  await adoptedToggle.click();
-  await expect(img).toHaveAttribute("src", /\/pages-adopted\/2026\/bureau-of-police\//);
 });
 
 test("headline section pages carry no amendment highlights or adopted toggle", async ({ page }) => {
@@ -338,76 +279,62 @@ test("headline pages are labeled 2027 Proposed", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
-// 2026 archive
+// Retired 2026 pages
 // ---------------------------------------------------------------------------
-const ARCHIVE_ROUTES: { route: string; current: string; heading: RegExp }[] = [
-  { route: "/2026/operating/", current: "/operating/", heading: /Operating Budget/i },
-  { route: "/2026/sections/revenue-detail/", current: "/sections/revenue-detail/", heading: /Revenue Detail/i },
-  { route: "/2026/departments/", current: "/departments/", heading: /Department/i },
-  { route: "/2026/departments/bureau-of-police/", current: "/departments/bureau-of-police/", heading: /Bureau of Police/i },
-  { route: "/2026/capital/", current: "/capital/", heading: /Capital Budget/i },
-  { route: "/2026/capital/28th-street-bridge-tip/", current: "/capital/28th-street-bridge-tip/", heading: /28TH STREET BRIDGE/i },
-  { route: "/2026/changes/", current: "/", heading: /What Changed/i },
-  { route: "/2026/personnel/", current: "/personnel/", heading: /Personnel/i },
+// The site covers the 2027 proposed budget only (client request, 2026-11-12):
+// the 2026 archive, the 2026 amendments page, the proposed-vs-adopted
+// comparison and the stories (all written about 2026) are no longer published.
+// Netlify redirects their old URLs (public/_redirects); the local preview
+// server ignores that file, so the build itself must have no such pages.
+const RETIRED_2026_ROUTES = [
+  "/2026/operating/",
+  "/2026/sections/revenue-detail/",
+  "/2026/departments/",
+  "/2026/departments/bureau-of-police/",
+  "/2026/capital/",
+  "/2026/capital/28th-street-bridge-tip/",
+  "/2026/changes/",
+  "/2026/personnel/",
+  "/amendments/",
+  "/cross-year/",
+  "/stories/",
+  "/stories/biggest-budget-shifts/",
+  "/stories/capital-plan/",
+  "/stories/city-workforce/",
+  "/stories/where-your-tax-dollar-goes/",
 ];
 
-for (const { route, current, heading } of ARCHIVE_ROUTES) {
-  test(`archive ${route} renders with the archive notice`, async ({ page }) => {
-    await page.goto(route);
-    await expect(main(page).locator("h1").first()).toContainText(heading);
-
-    const notice = page.locator(ARCHIVE_NOTICE).first();
-    await expect(notice).toBeVisible();
-    await expect(notice).toContainText(/You.re viewing the 2026 budget/i);
-    await expect(notice.locator(`a[href="${current}"]`)).toBeVisible();
-    await expect(page.locator(PROPOSED_NOTICE)).toHaveCount(0);
-
-    // Internal budget-content links stay inside the archive.
-    const leaks = main(page).locator(
-      'a[href^="/sections/"], a[href^="/departments/"], a[href^="/capital/"]',
-    );
-    await expect(leaks).toHaveCount(0);
+for (const route of RETIRED_2026_ROUTES) {
+  test(`retired ${route} is no longer built`, async ({ page }) => {
+    const response = await page.goto(route);
+    expect(response?.status()).toBe(404);
   });
 }
 
-test("archive section page uses 2026 labels and images", async ({ page }) => {
-  await page.goto("/2026/sections/bureau-of-police/");
-  await expect(main(page).getByText(/2026 budget/).first()).toBeVisible();
-  await page.goto("/2026/capital/");
-  await expect(main(page).getByText(/FY2026 capital budget/).first()).toBeVisible();
-});
+const RETIRED_HREF_SELECTOR =
+  'a[href^="/2026/"], a[href^="/2025/"], a[href^="/amendments/"], a[href^="/cross-year/"], a[href^="/stories/"]';
 
-test("archive changes page compares 2026 with 2025", async ({ page }) => {
-  await page.goto("/2026/changes/");
-  await expect(main(page).getByText(/2026 budget vs 2025/).first()).toBeVisible();
-});
-
-test("archive chart bars link inside the archive", async ({ page }) => {
-  await page.goto("/2026/changes/");
-  const bar = main(page).locator("#increases rect[data-slug]").first();
-  await expect(bar).toBeVisible({ timeout: 10_000 });
-  await expect(bar).toHaveCSS("cursor", "pointer");
-  const slug = await bar.getAttribute("data-slug");
-  await bar.click();
-  await expect(page).toHaveURL(new RegExp(`/2026/sections/${slug}/`));
-});
-
-// ---------------------------------------------------------------------------
-// Cross-year (pinned to 2025 proposed vs the 2026 document)
-// ---------------------------------------------------------------------------
-test("cross-year page renders and links into the 2026 archive", async ({ page }) => {
-  await page.goto("/cross-year/");
-  await expect(main(page).locator("h1").first()).toBeVisible();
-  await expect(main(page).getByText(/2025 proposed/).first()).toBeVisible();
-  await expect(main(page).locator('a[href^="/2026/sections/"]').first()).toBeAttached();
-  await expect(main(page).locator('a[href^="/sections/"]')).toHaveCount(0);
-});
-
-test("stories and amendments link into the 2026 archive", async ({ page }) => {
-  await page.goto("/amendments/");
-  await expect(main(page).locator('a[href^="/2026/sections/"]').first()).toBeAttached();
-  await expect(main(page).locator('a[href^="/sections/"]')).toHaveCount(0);
-});
+for (const route of [
+  "/",
+  "/brief/",
+  "/operating/",
+  "/capital/",
+  "/departments/",
+  "/departments/bureau-of-police/",
+  "/sections/bureau-of-police/",
+  "/personnel/",
+  "/flow/",
+  "/trends/",
+  "/compare/",
+  "/glossary/",
+  "/about/",
+  "/embed/",
+]) {
+  test(`${route} links to no retired 2026 page`, async ({ page }) => {
+    await page.goto(route);
+    await expect(page.locator(RETIRED_HREF_SELECTOR)).toHaveCount(0);
+  });
+}
 
 // ---------------------------------------------------------------------------
 // Compare
@@ -466,7 +393,7 @@ test("header navigation links are present on all pages", async ({ page }) => {
       header.getByRole("link", { name: /Budgets/i }),
     ).toBeVisible();
     await expect(
-      header.getByRole("link", { name: "Stories", exact: true }),
+      header.getByRole("link", { name: "Departments", exact: true }),
     ).toBeVisible();
     await expect(
       header.getByRole("link", { name: "Explore", exact: true }),
@@ -544,29 +471,6 @@ test("department one-pager renders", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
-// Stories
-// ---------------------------------------------------------------------------
-test("stories index lists stories", async ({ page }) => {
-  await page.goto("/stories/");
-
-  await expect(main(page).locator("h1").first()).toContainText(/Stories/i);
-  const cards = main(page).locator("a[href*='/stories/']");
-  await expect(cards.first()).toBeVisible();
-  expect(await cards.count()).toBeGreaterThanOrEqual(4);
-});
-
-test("story page renders with content", async ({ page }) => {
-  await page.goto("/stories/biggest-budget-shifts/");
-
-  await expect(page).toHaveTitle(/Budget Shifts/i);
-  await expect(
-    page.locator("article h1").first(),
-  ).toContainText(/Budget Shifts/i);
-  // Should have narrative paragraphs
-  await expect(page.locator("article p").first()).toBeVisible();
-});
-
-// ---------------------------------------------------------------------------
 // Embeds
 // ---------------------------------------------------------------------------
 test("embed index lists available charts", async ({ page }) => {
@@ -601,17 +505,11 @@ test("no JS errors on key pages", async ({ page }) => {
     "/operating/",
     "/capital/",
     "/personnel/",
-    "/amendments/",
     "/glossary/",
     "/brief/",
     "/departments/",
-    "/stories/",
     "/embed/",
     "/flow/",
-    "/2026/operating/",
-    "/2026/changes/",
-    "/2026/personnel/",
-    "/cross-year/",
     "/trends/",
   ];
   for (const route of routes) {
@@ -740,13 +638,13 @@ test("home trust funds card shows figures without a correction footnote", async 
 // Public Source branding (2025 brand guidelines)
 // ---------------------------------------------------------------------------
 // The site is presented with Pittsburgh's Public Source, so every page carries
-// its logo and colors. Both page layouts (Base and Story) are covered.
+// its logo and colors.
 const PS_LOGO_ALT = "Pittsburgh's Public Source";
 const PS_INK_RGB = "rgb(18, 18, 18)";
 // Text links use the brand blue's text-safe shade (5.2:1 on white); PS Blue
 // itself is 4.41:1, under the 4.5:1 minimum for body text.
 const PS_LINK_BLUE_RGB = "rgb(4, 107, 209)";
-const BRANDED_ROUTES = ["/", "/2026/operating/", "/stories/capital-plan/"];
+const BRANDED_ROUTES = ["/", "/operating/", "/trends/"];
 
 for (const route of BRANDED_ROUTES) {
   test(`${route} header carries the Public Source logo on brand ink`, async ({ page }) => {
@@ -862,7 +760,7 @@ test("capital project names are sentence case, keeping place names", async ({ pa
   await expect(main(page).locator("h1").first()).toHaveText(/^\s*28th Street Bridge \(TIP\)\s*$/);
 });
 
-for (const capitalIndex of ["/capital/", "/2026/capital/"]) {
+for (const capitalIndex of ["/capital/"]) {
   test(`${capitalIndex} lists no project in ALL CAPS`, async ({ page }) => {
     await page.goto(capitalIndex);
     const names = await main(page).locator('a[href*="/capital/"]').allInnerTexts();

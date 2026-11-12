@@ -1,3 +1,19 @@
 # The dashboard repeated the home page and was retired; old links land there.
 /dashboard/  /  301
 /dashboard   /  301
+
+# The site publishes the 2027 proposed budget only. Old 2026 and 2025 archive
+# links go to the same page in the 2027 budget; the 2026-only pages (amendments,
+# proposed vs adopted, the stories) go home. The first matching rule wins.
+/2026/changes/*  /  301
+/2026/changes    /  301
+/2026/*          /:splat  301
+/2026            /  301
+/2025/*          /:splat  301
+/2025            /  301
+/amendments/*    /  301
+/amendments      /  301
+/cross-year/*    /  301
+/cross-year      /  301
+/stories/*       /  301
+/stories         /  301
