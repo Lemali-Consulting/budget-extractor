@@ -406,8 +406,9 @@ test("header navigation links are present on all pages", async ({ page }) => {
 // ---------------------------------------------------------------------------
 test("personnel staffing chart bars link to section pages", async ({ page }) => {
   await page.goto("/personnel/");
+  // The chart redraws once after hydration, so rely on the auto-retrying
+  // assertions and click rather than a one-shot scroll on a stale element.
   const bar = main(page).locator("rect[data-slug]").first();
-  await bar.scrollIntoViewIfNeeded();
   await expect(bar).toBeVisible({ timeout: 10_000 });
   await expect(bar).toHaveCSS("cursor", "pointer");
 
@@ -515,6 +516,21 @@ for (const route of ["/embed/", "/brief/"]) {
     }
   });
 }
+
+// The Brief's workforce section dropped its 2027-vs-2026 staffing comparison
+// with the change embeds (client request, 2026-11-12); the total stays.
+test("brief workforce section shows the total positions without a year-over-year comparison", async ({ page }) => {
+  await page.goto("/brief/");
+  const section = page.locator("#workforce");
+  await expect(section).toContainText(/Total positions/i);
+  await expect(section).not.toContainText(/year-over-year/i);
+  await expect(section).not.toContainText(/FTE change/i);
+  await expect(section).not.toContainText(/new positions/i);
+  await expect(section).not.toContainText(/eliminated/i);
+  await expect(section).not.toContainText(/net change/i);
+  // The link-preview description shared to social media follows suit.
+  await expect(page.locator('meta[property="og:description"]')).not.toHaveAttribute("content", /new positions/i);
+});
 
 // ---------------------------------------------------------------------------
 // No console errors on key pages

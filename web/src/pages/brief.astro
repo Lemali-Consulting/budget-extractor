@@ -13,7 +13,6 @@ const { columns } = HEADLINE;
 const {
   departmentBudgets: budgets,
   revenueWaterfall,
-  budgetChanges: changes,
   personnelByDepartment: personnel,
   capitalFundingSources: capitalFunding,
 } = HEADLINE.views;
@@ -52,8 +51,6 @@ const publicSafetyPct = ((publicSafety / totalCurrent) * 100).toFixed(0);
 
 // Personnel
 const totalFteCurrent = Math.round(personnel.reduce((s, d) => s + d.totalFteCurrent, 0));
-const totalFtePrior = Math.round(personnel.reduce((s, d) => s + d.totalFtePrior, 0));
-const fteChange = totalFteCurrent - totalFtePrior;
 const topPersonnel = personnel
   .sort((a: any, b: any) => b.totalFteCurrent - a.totalFteCurrent)
   .slice(0, 8)
@@ -78,8 +75,8 @@ function fmtB(n: number): string {
 
 <Base
   title="Budget in brief"
-  description={`Pittsburgh's ${HEADLINE.fiscalLabel} budget explained in plain language — where the money comes from, where it goes, and what changed.`}
-  ogDescription={`Pittsburgh's ${fmtM(totalCurrent)} operating budget explained: ${taxPct}% from taxes, ${publicSafetyPct}% to public safety, ${changes.newPositions.length} new positions.`}
+  description={`Pittsburgh's ${HEADLINE.fiscalLabel} budget explained in plain language — where the money comes from, where it goes, and who works for the city.`}
+  ogDescription={`Pittsburgh's ${fmtM(totalCurrent)} operating budget explained: ${taxPct}% from taxes, ${publicSafetyPct}% to public safety, ${totalFteCurrent.toLocaleString()} budgeted positions.`}
 >
   <div class="max-w-3xl mx-auto">
     <h1 class="text-3xl font-bold mb-2">Pittsburgh's {HEADLINE.label} budget in brief</h1>
@@ -156,11 +153,7 @@ function fmtB(n: number): string {
     <section id="workforce" class="mb-12 scroll-mt-8">
       <h2 class="text-2xl font-bold mb-4">Who works for the city?</h2>
       <div class="bg-cyan-50 rounded-xl p-6 mb-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <HeroStat label="Total positions" value={totalFteCurrent.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
-          <HeroStat label="Year-over-Year" value={`${fteChange >= 0 ? '+' : ''}${fteChange}`} detail={`FTE change vs ${HEADLINE.priorYear}`} color={fteChange >= 0 ? 'text-green-700' : 'text-ps-red-700'} />
-          <HeroStat label="New positions" value={`${changes.newPositions.length}`} detail={`${changes.eliminatedPositions.length} eliminated`} color="text-cyan-900" />
-        </div>
+        <HeroStat label="Total positions" value={totalFteCurrent.toLocaleString()} detail="Full-time equivalents" color="text-cyan-900" />
       </div>
       <div class="bg-white rounded-lg border p-5 mb-4">
         <h3 class="text-sm font-medium text-gray-500 mb-3">Largest departments by headcount</h3>
@@ -171,8 +164,8 @@ function fmtB(n: number): string {
         />
       </div>
       <p class="text-gray-700 leading-relaxed">
-        The city's workforce is budgeted at <strong>{totalFteCurrent.toLocaleString()} full-time equivalent positions</strong>,
-        a net change of {fteChange >= 0 ? '+' : ''}{fteChange} from {HEADLINE.priorYear}. The Bureau of Police is the largest
+        The city's workforce is budgeted at <strong>{totalFteCurrent.toLocaleString()} full-time equivalent positions</strong>.
+        The Bureau of Police is the largest
         employer, followed by Fire and Operations (public works).
       </p>
       <p class="text-sm text-gray-500 mt-2">
