@@ -244,7 +244,15 @@ const teaserLinks: FlowLink[] = [
   </div>
 
   <!-- Quick links -->
-  <div class="grid grid-cols-2 gap-3">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <a href="/compare/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">Compare</div>
+      <div class="text-xs text-gray-400 mt-1">Departments side by side</div>
+    </a>
+    <a href="/explorer/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">Data explorer</div>
+      <div class="text-xs text-gray-400 mt-1">Search all tables</div>
+    </a>
     <a href="/flow/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Money flow</div>
       <div class="text-xs text-gray-400 mt-1">Revenue to spending</div>

@@ -1,4 +1,4 @@
-# Pare the public site to 43 pages
+# Pare the public site to 43 pages (now 45)
 
 **Date:** 2026-11-12
 **Status:** accepted
@@ -23,7 +23,9 @@ The four answers cover:
 
 ## Decision
 
-The site publishes 43 pages:
+**Update (2026-11-12):** Max brought back the data explorer and then the compare page ("Actually, let's bring the Data Explorer page back", "Also let's bring back the /compare page"). That makes **45 pages**: 12 single pages. Their links to sections go through the published-pages module, like everything else: capital tables and unpublished sections aren't linked. Section tables again carry "Open in Explorer". The compare page came back unchanged. Its figures are in `docs/notes/2026-11-12-compare-page-figures.md`.
+
+The first cut published 43 pages:
 - **10 single pages:** home, operating, capital, about, trust fund overview, brief, trends, glossary, personnel, money flow.
 - **28 department pages** at `/departments/{slug}/`, one for each of PDF sections 9–36. Each shows the department summary on top: headline figures, trend, top expenditures and top positions. The PDF section's tables follow. The Department of Public Works parent section gets a page for the first time. Rich counted 29 departments; the document has 28 department-level sections.
 - **5 citywide sections** at `/sections/{slug}/`: Five-Year Forecast, Revenue Summary, Revenue Detail, Expenditure Summary and Expenditures Detail. This set is provisional, per answer 3.
@@ -32,7 +34,7 @@ Cut:
 - the 68 capital project pages;
 - the 20 trust fund pages;
 - the reference and no-table sections (1, 2, 5, 57–63);
-- the data explorer, compare page, /hero/, the departments index and the 5 embed pages.
+- /hero/, the departments index and the 5 embed pages. The data explorer and compare page were cut too, then restored (see the update above).
 
 Links work as follows:
 - One module decides what is published and gives every link its target: `web/src/lib/published-pages.ts`.
@@ -53,4 +55,3 @@ A smoke test lists the 43 pages and fails on any page built beyond them. It also
 - **Page images stay published.** The cut sections' and capital projects' page images still ship and can be reached by direct URL. They are image files, not pages. Whether to stop publishing them is open.
 - **Search covers less.** Search no longer finds text that appeared only on capital project or cut section pages.
 - **Archive years are unaffected.** When published, they keep every section and capital page. The components those routes use stay in the repo.
-- **Data explorer users lose those tools.** Readers who used the data explorer or the compare page lose them. The personnel explorer remains.

@@ -1,7 +1,7 @@
 # Pare the public site to 43 pages
 
 **Date:** 2026-11-12
-**Status:** completed
+**Status:** completed. The data explorer and compare page were later restored, making 45 pages; see the decision record.
 
 ## Goal
 

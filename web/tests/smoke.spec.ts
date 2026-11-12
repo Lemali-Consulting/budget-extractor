@@ -109,6 +109,16 @@ for (const route of ["/", "/brief/", "/personnel/", "/operating/"]) {
 
 
 // ---------------------------------------------------------------------------
+// Data Explorer
+// ---------------------------------------------------------------------------
+test("data explorer loads", async ({ page }) => {
+  await page.goto("/explorer/");
+
+  // Title is rendered by the Preact DataExplorer component
+  await expect(page).toHaveTitle(/Data explorer/i);
+});
+
+// ---------------------------------------------------------------------------
 // Personnel
 // ---------------------------------------------------------------------------
 test("personnel page loads", async ({ page }) => {
@@ -311,6 +321,8 @@ for (const route of [
   "/personnel/",
   "/flow/",
   "/trends/",
+  "/explorer/",
+  "/compare/",
   "/glossary/",
   "/about/",
 ]) {
@@ -320,6 +332,15 @@ for (const route of [
   });
 }
 
+
+// ---------------------------------------------------------------------------
+// Compare
+// ---------------------------------------------------------------------------
+test("compare page loads", async ({ page }) => {
+  await page.goto("/compare/");
+
+  await expect(main(page).locator("h1").first()).toContainText(/Compare/i);
+});
 
 // ---------------------------------------------------------------------------
 // Glossary

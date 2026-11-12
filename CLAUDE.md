@@ -2,7 +2,7 @@
 
 Extracts tabular data from City of Pittsburgh budget PDFs (operating and capital) into structured CSVs, then powers an Astro-based web explorer for browsing department budgets, revenue, expenditures, and capital projects. The site publishes the **2027 proposed** budget only, plus a long-run trends page spanning the 2024–2027 documents. The 2026 (operating as amended) and 2025 archive machinery and committed data stay in the repo but are not published — see `docs/decisions/2026-11-12-publish-2027-only.md`.
 
-The public site is held to **43 pages** (Public Source's limit is 50, so each page can be fact-checked): 10 single pages, one merged page per department at `/departments/{slug}/` (summary on top, the PDF section below; PDF sections 9–36), and 5 citywide sections at `/sections/{slug}/`. Capital projects, trust funds and reference sections have no page of their own. `web/src/lib/published-pages.ts` says what is published and gives every link its target (none → plain text); `web/tests/published-pages.spec.ts` lists the 43 and crawls them for links to anything else. Adding a page means adding it to both on purpose. See `docs/decisions/2026-11-12-pare-site-to-43-pages.md`.
+The public site is held to **45 pages** (Public Source's limit is 50, so each page can be fact-checked): 12 single pages (the data explorer and compare page included), one merged page per department at `/departments/{slug}/` (summary on top, the PDF section below; PDF sections 9–36), and 5 citywide sections at `/sections/{slug}/`. Capital projects, trust funds and reference sections have no page of their own. `web/src/lib/published-pages.ts` says what is published and gives every link its target (none → plain text); `web/tests/published-pages.spec.ts` lists the 45 and crawls them for links to anything else. Adding a page means adding it to both on purpose. See `docs/decisions/2026-11-12-pare-site-to-43-pages.md`.
 
 Key components:
 - **Spatial table extractor** (`utils/spatial_table_extractor.py`) — core PDF-to-CSV engine using pdfplumber word positions
@@ -118,7 +118,7 @@ The site uses Public Source's 2025 brand colors. They are defined once in `web/s
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.
 
 - Tests build the site and serve it via `astro preview`, then verify all major routes render correctly
-- Covers: home, operating index, department and citywide section pages, capital index, trust fund overview, charts, personnel, glossary, about, trends; that exactly the 43 published pages are built and link nowhere else; and that the retired dashboard, 2026 archive, amendments, cross-year and story pages are not built or linked
+- Covers: home, operating index, department and citywide section pages, capital index, trust fund overview, charts, explorer, compare, personnel, glossary, about, trends; that exactly the 45 published pages are built and link nowhere else; and that the retired dashboard, 2026 archive, amendments, cross-year and story pages are not built or linked
 - Checks: page titles, key content visible, navigation present, no JS console errors
 - Run before deploying to Netlify to catch template, routing, or data regressions
 - Requires Playwright browsers: `npx playwright install chromium` (and system deps: `npx playwright install-deps chromium`)

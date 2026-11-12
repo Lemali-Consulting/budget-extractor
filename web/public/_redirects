@@ -161,8 +161,7 @@
 /departments/frick-park-trust-fund/  /trust-funds/  301
 /departments/frick-park-trust-fund  /trust-funds/  301
 
-# The reference sections, capital project pages, departments index, data explorer,
-# compare page and embeds were cut.
+# The reference sections, capital project pages, departments index, hero and embeds were cut.
 /sections/*     /operating/  301
 # Netlify won't apply "/capital/*  /capital/" (its target matches its own pattern), so each project is listed.
 /capital/capital-budget-introduction/  /capital/  301
@@ -304,10 +303,6 @@
 /departments/   /operating/#departments  301
 /departments    /operating/#departments  301
 /departments/*  /operating/#departments  301
-/explorer/*  /  301
-/explorer    /  301
-/compare/*   /  301
-/compare     /  301
 /hero/*      /  301
 /hero        /  301
 /embed/*     /  301

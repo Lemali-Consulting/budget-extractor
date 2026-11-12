@@ -17,6 +17,8 @@ const DIST = join(WEB_ROOT, "dist");
 const SINGLE_PAGES = [
   "/", "/operating/", "/capital/", "/about/", "/trust-funds/",
   "/brief/", "/trends/", "/glossary/", "/personnel/", "/flow/",
+  // Cut with the first pass, then brought back (Max, 2026-11-12).
+  "/explorer/", "/compare/",
 ];
 
 /** PDF sections 9–36: every department, bureau, office and board, the Public Works parent included. */
@@ -64,8 +66,8 @@ function pagePath(href: string): string | null {
   return path.endsWith("/") ? path : `${path}/`;
 }
 
-test("the site publishes exactly the 43 agreed pages", () => {
-  expect(PUBLISHED.size).toBe(43);
+test("the site publishes exactly the 45 agreed pages", () => {
+  expect(PUBLISHED.size).toBe(45);
   expect(builtPages().sort()).toEqual([...PUBLISHED].sort());
 });
 
@@ -92,6 +94,25 @@ test("a department page shows the summary above the PDF section's tables", async
   const summaryTop = await main.getByRole("heading", { name: "Top expenditures" }).boundingBox();
   const firstTableTop = await main.locator('[id^="table-"]').first().boundingBox();
   expect(summaryTop!.y).toBeLessThan(firstTableTop!.y);
+});
+
+test("the data explorer's section links lead only to published pages", async ({ page }) => {
+  // The explorer lists every table, capital ones included, but only some sections have a page.
+  await page.goto("/explorer/");
+  await page.waitForLoadState("networkidle");
+  const sidebarLinks = page.locator('a[aria-label^="View "]');
+  expect(await sidebarLinks.count()).toBeGreaterThan(0);
+  const hrefs = await page.locator("a[href]").evaluateAll((els) => els.map((e) => e.getAttribute("href") ?? ""));
+  const broken = hrefs.map(pagePath).filter((p): p is string => p !== null && !PUBLISHED.has(p));
+  expect([...new Set(broken)]).toEqual([]);
+});
+
+test("the compare page links each department to its department page", async ({ page }) => {
+  await page.goto("/compare/");
+  await page.waitForLoadState("networkidle");
+  const hrefs = await page.locator("main a[href]").evaluateAll((els) => els.map((e) => e.getAttribute("href") ?? ""));
+  const broken = hrefs.map(pagePath).filter((p): p is string => p !== null && !PUBLISHED.has(p));
+  expect([...new Set(broken)]).toEqual([]);
 });
 
 test("the Department of Public Works parent section has its own department page", async ({ page }) => {
