@@ -4,7 +4,8 @@ import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { HEADLINE } from '../lib/budget-year';
 import { publishedSectionHrefs } from '../lib/published-pages';
-import { revenueColor, capitalSourceColor } from '../lib/flow-colors';
+import { revenueColor, capitalSourceColor, FUND_BALANCE_COLOR } from '../lib/flow-colors';
+import { useOfFundBalance } from '../lib/fund-balance';
 import { colorForSlug, GROUP_COLORS } from '../lib/department-groups';
 
 const {
@@ -25,6 +26,10 @@ function fmtM(n: number): string {
 
 const revenue = revenueWaterfall as RevenueRow[];
 const revenueTotal = revenue.reduce((s, r) => s + r.amount, 0);
+// Revenue alone falls short of spending; the budget draws on the fund balance
+// for the rest, and that draw sits on the left beside revenue.
+const fundBalanceDraw = useOfFundBalance(HEADLINE);
+const FUND_BALANCE_NODE_ID = 'source:use-of-fund-balance';
 
 // Operating departments only — trust funds are not part of the operating flow.
 const currentDepts = (departmentBudgets as DeptRow[]).filter((r) => r.year === HEADLINE.columns.budget && r.fund === 'operating');
@@ -36,10 +41,6 @@ const bigDepts = currentDepts.filter((d) => d.amount / deptTotal >= DEPT_THRESHO
 const smallDepts = currentDepts.filter((d) => d.amount / deptTotal < DEPT_THRESHOLD);
 const otherDeptAmount = smallDepts.reduce((s, d) => s + d.amount, 0);
 
-// Scale department amounts to revenue total so the diagram balances visually
-// — story is "of every revenue dollar, where does it go?"
-const deptScale = revenueTotal / deptTotal;
-
 const operatingNodes: FlowNode[] = [
   ...revenue.map((r) => ({
     id: `rev:${r.label}`,
@@ -47,6 +48,9 @@ const operatingNodes: FlowNode[] = [
     category: 'revenue',
     color: revenueColor(r.label),
   })),
+  ...(fundBalanceDraw
+    ? [{ id: FUND_BALANCE_NODE_ID, label: 'Use of fund balance', category: 'revenue', color: FUND_BALANCE_COLOR }]
+    : []),
   { id: 'trunk', label: `${HEADLINE.shortLabel} operating budget`, category: 'trunk' },
   ...bigDepts
     .slice()
@@ -69,14 +73,15 @@ const operatingNodes: FlowNode[] = [
 
 const operatingLinks: FlowLink[] = [
   ...revenue.map((r) => ({ source: `rev:${r.label}`, target: 'trunk', value: r.amount })),
+  ...(fundBalanceDraw ? [{ source: FUND_BALANCE_NODE_ID, target: 'trunk', value: fundBalanceDraw }] : []),
   ...bigDepts.map((d) => ({
     source: 'trunk',
     target: `dep:${d.slug}`,
-    value: d.amount * deptScale,
+    value: d.amount,
     color: colorForSlug(d.slug),
   })),
   ...(smallDepts.length > 0
-    ? [{ source: 'trunk', target: 'dep:other', value: otherDeptAmount * deptScale }]
+    ? [{ source: 'trunk', target: 'dep:other', value: otherDeptAmount }]
     : []),
 ];
 
@@ -185,14 +190,13 @@ const capitalLinks: FlowLink[] = [
   <section class="mb-12">
     <div class="flex items-baseline justify-between mb-2">
       <h2 class="text-xl font-semibold">Operating budget — revenue to departments</h2>
-      <span class="text-sm text-gray-500">{HEADLINE.fiscalLabel} · {fmtM(revenueTotal)}</span>
+      <span class="text-sm text-gray-500">{HEADLINE.fiscalLabel} · {fmtM(deptTotal)}</span>
     </div>
     <p class="text-sm text-gray-500 mb-4 max-w-3xl">
-      Seven categories of revenue on the left feed the city's general budget,
-      which is then distributed across {bigDepts.length} departments on the right.
-      Departments smaller than 1% are grouped together. Department amounts are
-      scaled proportionally so the two sides balance — the story is "of every
-      revenue dollar, where does it go?"
+      On the left, revenue in {revenue.length} categories{fundBalanceDraw ? ' and the use of fund balance' : ''} feed
+      the city's general budget, which is then distributed across
+      {bigDepts.length} departments on the right. Departments smaller than 1% are
+      grouped together. Every amount is the budget's own figure.
     </p>
     <div class="bg-white rounded-lg border p-4">
       <FlowSankey
@@ -202,7 +206,7 @@ const capitalLinks: FlowLink[] = [
         height={Math.max(760, bigDepts.length * 38)}
         interactive
         showLabels
-        totalAmount={revenueTotal}
+        totalAmount={deptTotal}
         client:visible
       />
       <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600">

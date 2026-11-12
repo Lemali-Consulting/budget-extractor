@@ -205,6 +205,7 @@ export default function FlowSankey({
             const nodeHeight = (n.y1 ?? 0) - (n.y0 ?? 0);
             const nodeRect = (
               <rect
+                data-node-id={n.id}
                 x={n.x0}
                 y={n.y0}
                 width={(n.x1 ?? 0) - (n.x0 ?? 0)}
@@ -291,6 +292,7 @@ export default function FlowSankey({
       {interactive && tooltip && (
         <div
           class="pointer-events-none absolute z-10 rounded bg-gray-900 px-2 py-1 text-xs text-white shadow"
+          data-testid="flow-tooltip"
           style={`left: ${tooltip.x + 12}px; top: ${tooltip.y + 12}px;`}
         >
           {tooltip.text}

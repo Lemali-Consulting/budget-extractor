@@ -16,6 +16,9 @@ export const REVENUE_COLORS: Record<string, string> = {
   'Miscellaneous revenues': '#64748b',   // slate-500
 };
 
+/** The budget's draw on the fund balance, shown beside revenue: stone-500, apart from the revenue colors. */
+export const FUND_BALANCE_COLOR = '#78716c';
+
 // Capital funding sources — keep the existing SOURCE_COLORS in spirit
 // but bump saturation slightly so they read as a coordinated set.
 export const CAPITAL_SOURCE_COLORS: Record<string, string> = {

@@ -460,6 +460,25 @@ test("flow page renders both sankey diagrams", async ({ page }) => {
   expect(await paths.count()).toBeGreaterThan(10);
 });
 
+// The budget balances revenue plus a draw on the fund balance against
+// spending. Rich (Public Source) asked for the draw, printed as "Use of Fund
+// Balance" ($28,253,606) in the five-year forecast, to appear on the left.
+test("operating flow shows the use of fund balance as a source", async ({ page }) => {
+  await page.goto("/flow/");
+  const node = page.locator('rect[data-node-id="source:use-of-fund-balance"]');
+  await expect(main(page).locator("svg text", { hasText: "Use of fund balance" })).toBeVisible();
+  await node.hover();
+  await expect(page.getByTestId("flow-tooltip")).toContainText("Use of fund balance: $28.3M");
+});
+
+// Each department shows its own budget, not one scaled to make the diagram
+// balance: a figure the PDF doesn't print would fail fact-checking.
+test("operating flow shows each department's own budget", async ({ page }) => {
+  await page.goto("/flow/");
+  await page.locator('rect[data-node-id="dep:bureau-of-police"]').hover();
+  await expect(page.getByTestId("flow-tooltip")).toContainText("Bureau of Police: $128.2M");
+});
+
 // ---------------------------------------------------------------------------
 // About
 // ---------------------------------------------------------------------------
