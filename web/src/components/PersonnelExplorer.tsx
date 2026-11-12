@@ -34,8 +34,9 @@ function formatCurrency(n: number | null): string {
 export default function PersonnelExplorer({ rows, year, routePrefix }: Props) {
   const [search, setSearch] = useState('');
   const [deptFilter, setDeptFilter] = useState('');
-  const [sortKey, setSortKey] = useState<SortKey>('department');
-  const [sortAsc, setSortAsc] = useState(true);
+  // Opens on the biggest position lines; readers asked for that over A–Z by department.
+  const [sortKey, setSortKey] = useState<SortKey>('budgetCurrent');
+  const [sortAsc, setSortAsc] = useState(false);
 
   const departments = useMemo(
     () => [...new Set(rows.map((r) => r.department))].sort(),

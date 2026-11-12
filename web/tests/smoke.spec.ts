@@ -613,6 +613,19 @@ test("personnel explorer shows the budget per position, except on fractional lin
   await expect(split.locator("td").last()).toHaveText("—");
 });
 
+// The explorer opens on the biggest position lines (client request,
+// 2026-11-12) rather than alphabetically by department.
+test("personnel explorer starts sorted by 2027 budget, largest first", async ({ page }) => {
+  await page.goto("/personnel/");
+  const explorer = main(page).locator("table").filter({ hasText: "Per position" });
+  await expect(explorer.locator("th").filter({ hasText: "2027 budget" })).toContainText("↓");
+  const budgets = (await explorer.locator("tbody tr td:nth-child(5)").allTextContents())
+    .slice(0, 20)
+    .map((t) => Number(t.replace(/[$,]/g, "")));
+  expect(budgets.length).toBe(20);
+  expect(budgets).toEqual([...budgets].sort((a, b) => b - a));
+});
+
 // ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------
