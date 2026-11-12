@@ -129,7 +129,6 @@ interface SummaryMetrics {
   budgetChange?: string;
   budgetChangePct?: string;
   fte?: number;
-  priorFte?: number;
 }
 
 function extractMetrics(tables: any[]): SummaryMetrics {
@@ -155,9 +154,7 @@ function extractMetrics(tables: any[]): SummaryMetrics {
       // FTE totals from personnel tables
       if (label === 'total full-time permanent positions') {
         const colFte = headers.indexOf(budgetYear.columns.fte);
-        const colPriorFte = headers.indexOf(budgetYear.columns.priorFte);
         if (colFte >= 0 && row[colFte]) metrics.fte = Math.round(parseFloat(row[colFte].replace(/,/g, '')));
-        if (colPriorFte >= 0 && row[colPriorFte]) metrics.priorFte = Math.round(parseFloat(row[colPriorFte].replace(/,/g, '')));
       }
     }
   }
@@ -383,7 +380,6 @@ function parseNarrative(raw: string): Segment[] {
     budgetChange={metrics.budgetChange}
     budgetChangePct={metrics.budgetChangePct}
     fte={metrics.fte}
-    priorFte={metrics.priorFte}
     tableCount={section.tables.length}
     pageCount={pageCount}
     sparklineValues={sparklineValues.length >= 2 ? sparklineValues : undefined}

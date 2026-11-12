@@ -1,15 +1,14 @@
-/**Bar chart showing staffing (FTE or budget) per department with change indicators.*/
+/**Bar chart showing staffing (FTE or budget) per department.*/
 
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import { useContainerWidth } from '../lib/hooks';
+import { CHART_COLORS } from '../lib/chart-colors';
 
 interface DeptData {
   department: string;
   slug: string;
-  totalFtePrior: number;
   totalFteCurrent: number;
-  totalBudgetPrior: number;
   totalBudgetCurrent: number;
   positionCount: number;
 }
@@ -36,9 +35,6 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
         department: d.department,
         slug: d.slug,
         value: sizeBy === 'fte' ? d.totalFteCurrent : d.totalBudgetCurrent,
-        change: sizeBy === 'fte'
-          ? d.totalFteCurrent - d.totalFtePrior
-          : d.totalBudgetCurrent - d.totalBudgetPrior,
         fte: d.totalFteCurrent,
         budget: d.totalBudgetCurrent,
         positions: d.positionCount,
@@ -63,18 +59,11 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
           : undefined,
       },
       y: { label: null },
-      color: {
-        type: 'diverging',
-        scheme: 'RdBu',
-        pivot: 0,
-        legend: true,
-        label: sizeBy === 'fte' ? 'FTE change' : 'Budget change',
-      },
       marks: [
         Plot.barX(chartData, {
           x: 'value',
           y: 'department',
-          fill: 'change',
+          fill: CHART_COLORS.primary,
           sort: { y: '-x' },
           tip: true,
           title: (d: typeof chartData[0]) =>
@@ -136,8 +125,7 @@ export default function PersonnelTreemap({ data, routePrefix }: Props) {
         </select>
       </div>
       <p class="text-sm text-gray-500 mb-3">
-        Top 20 departments by {sizeBy === 'fte' ? 'headcount' : 'total budget'}.
-        Color shows year-over-year change (blue = growth, red = reduction). Hover for details.
+        Top 20 departments by {sizeBy === 'fte' ? 'headcount' : 'total budget'}. Hover for details.
       </p>
       <div ref={chartRef} />
     </div>

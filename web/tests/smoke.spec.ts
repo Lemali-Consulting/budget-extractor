@@ -560,6 +560,32 @@ test("department top expenditures list spending categories only, not their line 
   expect(labels[0]).toMatch(/^51 - /);
 });
 
+// FTE-change boxes are removed (client request, 2026-11-12): the 2027 FTE
+// counts stay, but no page sets them against 2026 or lists new and
+// eliminated positions.
+test("department pages show staff counts without an FTE change box", async ({ page }) => {
+  await page.goto("/departments/bureau-of-fire/");
+  await expect(main(page).getByText("Staff (FTE)", { exact: true })).toBeVisible();
+  await expect(main(page)).not.toContainText(/FTE change/i);
+});
+
+test("personnel page has no staffing-changes summary", async ({ page }) => {
+  await page.goto("/personnel/");
+  await expect(main(page).getByTestId("personnel-scope-note")).toBeVisible();
+  await expect(main(page)).not.toContainText(/Staffing changes|Net FTE change|New positions|Eliminated positions/i);
+  // The staffing chart used to color each bar by its 2026-to-2027 change.
+  await expect(main(page).locator("figure svg, svg").first()).toBeVisible();
+  await expect(main(page)).not.toContainText(/FTE change|Budget change|year-over-year/i);
+});
+
+test("section summary cards show positions without an FTE change", async ({ page }) => {
+  // This section printed "Positions (FTE) 43 ↑ NaN" while the change was shown.
+  await page.goto("/sections/office-of-community-health-and-safety/");
+  await expect(main(page)).toContainText(/Positions\s*\(\s*FTE\s*\)\s*43/);
+  await expect(main(page)).not.toContainText(/Positions\s*\(\s*FTE\s*\)\s*[\d,.]+\s*[↑↓]/);
+  await expect(main(page)).not.toContainText("NaN");
+});
+
 // ---------------------------------------------------------------------------
 // No console errors on key pages
 // ---------------------------------------------------------------------------

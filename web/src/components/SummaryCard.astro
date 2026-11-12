@@ -14,7 +14,6 @@ interface Props {
   budgetChange?: string;
   budgetChangePct?: string;
   fte?: number;
-  priorFte?: number;
   tableCount: number;
   pageCount: number;
   sparklineValues?: number[];
@@ -22,7 +21,7 @@ interface Props {
 
 const {
   budgetYear, budget, budgetChange, budgetChangePct,
-  fte, priorFte, tableCount, pageCount, sparklineValues,
+  fte, tableCount, pageCount, sparklineValues,
 } = Astro.props;
 
 const hasBudget = !!budget;
@@ -33,12 +32,6 @@ const hasMetrics = hasBudget || hasFte;
 const isNegativeChange = budgetChange?.startsWith('(') || budgetChange?.startsWith('-');
 const changeColor = isNegativeChange ? 'text-ps-red-600' : 'text-green-600';
 
-const fteChangeRaw = hasFte && priorFte != null ? fte! - priorFte : null;
-const fteChange = fteChangeRaw != null ? Math.round(fteChangeRaw * 10) / 10 : null;
-const fteChangeStr = fteChange != null && fteChange !== 0
-  ? (fteChange > 0 ? `+${fteChange}` : `${fteChange}`)
-  : null;
-const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-ps-red-600' : 'text-green-600';
 ---
 
 {hasMetrics && (
@@ -69,9 +62,6 @@ const fteChangeColor = fteChange != null && fteChange < 0 ? 'text-ps-red-600' : 
         <div class="text-xs text-gray-500 mb-1">Positions (<a href="/glossary/#abbreviations" class="glossary-term" data-tooltip="Full-time equivalent — 1.0 = one full-time position. Part-time roles are fractions (e.g., 0.5 = half-time).">FTE</a>)</div>
         <div class="text-lg font-semibold text-gray-900">
           {fte?.toLocaleString()}
-          {fteChangeStr && (
-            <span class={`text-sm ml-1 ${fteChangeColor}`}><span aria-hidden="true">{fteChange! < 0 ? '↓' : '↑'}</span> {fteChangeStr}</span>
-          )}
         </div>
       </div>
     )}
