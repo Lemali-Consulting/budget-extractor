@@ -31,7 +31,7 @@ const capitalTotal = (capitalFunding as { year: string; amount: number }[])
   .filter(r => parseInt(r.year) >= HEADLINE.year)
   .reduce((s, r) => s + r.amount, 0);
 
-// Summary stats (same logic as dashboard)
+// Summary stats
 const budgetRows = departmentBudgets;
 const totalCurrent = sumFor(budgetRows, 'operating', columns.budget);
 const totalPrior = sumFor(budgetRows, 'operating', columns.priorBudget);
@@ -119,7 +119,7 @@ const teaserLinks: FlowLink[] = [
     <div class="flex flex-wrap gap-2 text-sm">
       <span class="text-gray-400">Try:</span>
       <a href="/sections/bureau-of-police/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-ps-blue-50 text-ps-blue-700 rounded-full hover:bg-ps-blue-100 transition">How much does policing cost?</a>
-      <a href="/dashboard/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-green-50 text-green-700 rounded-full hover:bg-green-100 transition">Where does the money come from?</a>
+      <a href="/flow/" class="inline-flex items-center min-h-[40px] px-3 py-2 bg-green-50 text-green-700 rounded-full hover:bg-green-100 transition">Where does the money come from?</a>
     </div>
   </div>
 
@@ -171,7 +171,7 @@ const teaserLinks: FlowLink[] = [
       <div class="text-2xl font-bold text-ps-yellow-900 mt-1">{fmtM(capitalCurrent)}</div>
       <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
     </div>
-    <PersonnelCard budgetYear={HEADLINE} showDetails={false} />
+    <PersonnelCard budgetYear={HEADLINE} />
   </div>
 
   <!-- Money Flow teaser -->
@@ -229,7 +229,6 @@ const teaserLinks: FlowLink[] = [
   <div class="bg-white rounded-lg border p-5 mb-8">
     <div class="flex items-baseline justify-between mb-1">
       <h2 class="text-lg font-semibold">Top departments by budget</h2>
-      <a href="/dashboard/" class="text-sm text-ps-blue-500 hover:text-ps-blue-700">Full dashboard &rarr;</a>
     </div>
     <p class="text-sm text-gray-500 mb-3">{HEADLINE.fiscalLabel} operating budget — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
     <BudgetChart data={operating(budgetRows)} client:load />
@@ -251,9 +250,9 @@ const teaserLinks: FlowLink[] = [
       <div class="font-medium text-gray-700">Data explorer</div>
       <div class="text-xs text-gray-400 mt-1">Search all tables</div>
     </a>
-    <a href="/dashboard/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
-      <div class="font-medium text-gray-700">Dashboard</div>
-      <div class="text-xs text-gray-400 mt-1">Budget at a glance</div>
+    <a href="/flow/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
+      <div class="font-medium text-gray-700">Money flow</div>
+      <div class="text-xs text-gray-400 mt-1">Revenue to spending</div>
     </a>
     <a href="/personnel/" class="block p-4 bg-white rounded-lg border ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow transition text-center">
       <div class="font-medium text-gray-700">Personnel</div>

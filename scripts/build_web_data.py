@@ -2636,7 +2636,7 @@ def main() -> None:
         json.dump(personnel_by_dept, f, indent=2)
     print(f"Wrote {prefix}personnel-by-department.json ({len(personnel_by_dept)} departments)")
 
-    # Citywide salaries and wages (home page / dashboard headline)
+    # Citywide salaries and wages (home page headline)
     salaries_and_wages = build_salaries_and_wages(sections)
     with open(views_dir / f"{prefix}salaries-and-wages.json", "w", encoding="utf-8") as f:
         json.dump(salaries_and_wages, f, indent=2)

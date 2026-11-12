@@ -95,17 +95,27 @@ test("capital project detail renders", async ({ page }) => {
 });
 
 // ---------------------------------------------------------------------------
-// Dashboard / Charts
+// Retired dashboard
 // ---------------------------------------------------------------------------
-test("dashboard page renders summary stats", async ({ page }) => {
-  await page.goto("/dashboard/");
+// The dashboard repeated the home page's summary cards and charts, so it was
+// cut at the client's request. Its charts live on the home page (budget by
+// department), the personnel page (staffing), the brief (revenue)
+// and the capital index (funding sources).
+const RETIRED_DASHBOARD_HREF = "/dashboard/";
 
-  await expect(main(page).locator("h1").first()).toContainText(
-    /Dashboard/i,
-  );
-  // Should display budget figures (dollar amounts)
-  await expect(main(page).getByText(/\$/).first()).toBeVisible();
+// Netlify redirects old /dashboard/ links to the home page (public/_redirects);
+// the local preview server ignores that file, so the build itself must have no page.
+test("the dashboard page is no longer built", async ({ page }) => {
+  const response = await page.goto(RETIRED_DASHBOARD_HREF);
+  expect(response?.status()).toBe(404);
 });
+
+for (const route of ["/", "/brief/", "/personnel/", "/operating/", "/stories/"]) {
+  test(`${route} has no link to the retired dashboard`, async ({ page }) => {
+    await page.goto(route);
+    await expect(page.locator(`a[href^="${RETIRED_DASHBOARD_HREF}"]`)).toHaveCount(0);
+  });
+}
 
 // ---------------------------------------------------------------------------
 // Data Explorer
@@ -130,9 +140,9 @@ test("personnel page loads", async ({ page }) => {
 // Trust Funds breakdown
 // ---------------------------------------------------------------------------
 // The budget document never prints a combined trust-fund total, so the
-// homepage and dashboard figure is our sum. Fact-checkers (and readers) need
+// homepage figure is our sum. Fact-checkers (and readers) need
 // the per-fund amounts behind it to verify it against the PDF.
-for (const statsPage of ["/", "/dashboard/"]) {
+for (const statsPage of ["/"]) {
   test(`${statsPage} trust-fund total links to a breakdown that adds up to it`, async ({ page }) => {
     await page.goto(statsPage);
     const card = main(page).getByTestId("trust-fund-total");
@@ -169,8 +179,7 @@ test("trust-fund breakdown lists each fund with its source pages", async ({ page
 // The personnel card headlines the General Fund's printed salaries-and-wages
 // line (overtime included) rather than a sum of our own, so a reader can find
 // the same number on the cited page of the budget document.
-// The home page keeps the card to the headline figure; the dashboard carries
-// the overtime note, change, citation and FTE count.
+// The card shows the headline figure and its label only.
 test("/ personnel card shows only the salaries figure and its label", async ({ page }) => {
   await page.goto("/");
   const card = main(page).getByTestId("personnel-total");
@@ -179,23 +188,6 @@ test("/ personnel card shows only the salaries figure and its label", async ({ p
   await expect(card).not.toContainText(/includes overtime/i);
   await expect(card).not.toContainText(/FTE/);
 });
-
-for (const statsPage of ["/dashboard/"]) {
-  test(`${statsPage} personnel card shows the printed salaries line and cites its page`, async ({ page }) => {
-    await page.goto(statsPage);
-    const card = main(page).getByTestId("personnel-total");
-    await expect(card).not.toContainText(/payroll/i);
-    await expect(card).toContainText(/includes overtime/i);
-    await expect(card).toContainText(/General Fund/i);
-    const amount = Number(await card.getByTestId("salaries-amount").getAttribute("data-amount"));
-    expect(amount).toBeGreaterThan(0);
-
-    const source = card.getByRole("link", { name: /p\. \d+/ });
-    await expect(source).toHaveAttribute("href", /\/sections\/expenditure-summary\//);
-    await source.click();
-    await expect(main(page)).toContainText(amount.toLocaleString("en-US"));
-  });
-}
 
 // Department salary totals come from each position table's net-salaries line
 // and so don't add up to the citywide salaries figure; the page must say why.
@@ -466,7 +458,7 @@ test("about page loads", async ({ page }) => {
 // Navigation consistency
 // ---------------------------------------------------------------------------
 test("header navigation links are present on all pages", async ({ page }) => {
-  const routes = ["/", "/operating/", "/capital/", "/dashboard/", "/glossary/"];
+  const routes = ["/", "/operating/", "/capital/", "/personnel/", "/glossary/"];
   for (const route of routes) {
     await page.goto(route);
     const header = page.locator("header");
@@ -485,18 +477,10 @@ test("header navigation links are present on all pages", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // Clickable chart bars
 // ---------------------------------------------------------------------------
-test("dashboard personnel chart bars link to section pages", async ({ page }) => {
-  await page.goto("/dashboard/");
-
-  // Scroll to personnel section heading, then find a bar with data-slug
-  // that belongs to the personnel treemap (not the budget chart above)
-  await main(page).getByText("Staffing Distribution").scrollIntoViewIfNeeded();
-
-  // The budget chart bars also have data-slug; personnel bars follow them.
-  // Use the 16th+ data-slug rect (budget chart has 15 bars max).
-  const allSlugBars = main(page).locator("rect[data-slug]");
-  const count = await allSlugBars.count();
-  const bar = allSlugBars.nth(count > 15 ? 15 : 0);
+test("personnel staffing chart bars link to section pages", async ({ page }) => {
+  await page.goto("/personnel/");
+  const bar = main(page).locator("rect[data-slug]").first();
+  await bar.scrollIntoViewIfNeeded();
   await expect(bar).toBeVisible({ timeout: 10_000 });
   await expect(bar).toHaveCSS("cursor", "pointer");
 
@@ -505,8 +489,8 @@ test("dashboard personnel chart bars link to section pages", async ({ page }) =>
   await expect(page).toHaveURL(new RegExp(`/sections/${slug}/`));
 });
 
-test("dashboard budget chart bars link to section pages", async ({ page }) => {
-  await page.goto("/dashboard/");
+test("home budget chart bars link to section pages", async ({ page }) => {
+  await page.goto("/");
 
   // Wait for the department comparison chart to render
   const chart = main(page).locator("[data-chart] svg").first();
@@ -616,7 +600,6 @@ test("no JS errors on key pages", async ({ page }) => {
     "/",
     "/operating/",
     "/capital/",
-    "/dashboard/",
     "/personnel/",
     "/amendments/",
     "/glossary/",
@@ -856,8 +839,8 @@ test("revenue categories on the money flow page are sentence case", async ({ pag
   await expect(main(page)).not.toContainText("Charges For Services");
 });
 
-test("dashboard year picker labels follow sentence case", async ({ page }) => {
-  await page.goto("/dashboard/");
+test("budget chart year picker labels follow sentence case", async ({ page }) => {
+  await page.goto("/");
   const options = main(page).locator("select option");
   await expect(options.filter({ hasText: /^\d{4} budget$/ }).first()).toBeAttached();
   await expect(options.filter({ hasText: /^\d{4} Budget$/ })).toHaveCount(0);
