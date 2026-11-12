@@ -483,7 +483,7 @@ test("embed index lists available charts", async ({ page }) => {
 });
 
 test("embed page renders chart without nav", async ({ page }) => {
-  await page.goto("/embed/budget-increases/");
+  await page.goto("/embed/department-comparison/");
 
   // Should not have the main site header
   await expect(page.locator("header nav")).not.toBeVisible();
@@ -492,6 +492,29 @@ test("embed page renders chart without nav", async ({ page }) => {
     page.getByText(/Pittsburgh Budget Explorer/i).first(),
   ).toBeVisible();
 });
+
+// The department-by-department change embeds were retired with the What
+// Changed page (client request, 2026-11-12): functions moving between
+// departments make those comparisons read as policy change.
+const RETIRED_EMBED_PATHS = ["/embed/budget-increases/", "/embed/budget-decreases/", "/embed/personnel-changes/"];
+
+for (const embedPath of RETIRED_EMBED_PATHS) {
+  test(`retired embed ${embedPath} is no longer built`, async ({ page }) => {
+    const response = await page.goto(embedPath);
+    expect(response?.status()).toBe(404);
+  });
+}
+
+for (const route of ["/embed/", "/brief/"]) {
+  test(`${route} offers none of the retired change embeds`, async ({ page }) => {
+    await page.goto(route);
+    // Embed buttons carry their path in the island's props, not in a link.
+    const html = await page.content();
+    for (const embedPath of RETIRED_EMBED_PATHS) {
+      expect(html).not.toContain(embedPath);
+    }
+  });
+}
 
 // ---------------------------------------------------------------------------
 // No console errors on key pages

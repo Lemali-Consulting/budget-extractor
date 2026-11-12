@@ -17,3 +17,8 @@
 /cross-year      /  301
 /stories/*       /  301
 /stories         /  301
+
+# Retired department-by-department change embeds; the embed index lists what remains.
+/embed/budget-increases/*   /embed/  301
+/embed/budget-decreases/*   /embed/  301
+/embed/personnel-changes/*  /embed/  301
