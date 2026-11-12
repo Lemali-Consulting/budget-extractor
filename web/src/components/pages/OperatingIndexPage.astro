@@ -5,6 +5,7 @@ import SiteSearch from '../SiteSearch.tsx';
 import Sparkline from '../Sparkline.tsx';
 import AmendmentNotice from '../AmendmentNotice.astro';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
+import { capitalizeFirst } from '../../lib/text-case';
 import { DEPARTMENT_SECTIONS, isDepartmentSection, isTrustFundSection, publishedSections, sectionPageHref } from '../../lib/published-pages';
 
 interface Props {
@@ -82,7 +83,7 @@ function hasChart(section: any): boolean {
   </nav>
 
   <h1 class="text-3xl font-bold mb-2">Operating budget</h1>
-  <p class="text-gray-600 mb-4">The City of Pittsburgh's {budgetYear.operatingName}. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
+  <p class="text-gray-600 mb-4">{capitalizeFirst(budgetYear.operatingName)}. {sections.length} sections, {sections.reduce((n, s) => n + s.tables.length, 0)} tables extracted.</p>
 
   <AmendmentNotice budgetYear={budgetYear} />
 
