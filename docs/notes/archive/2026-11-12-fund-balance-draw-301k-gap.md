@@ -3,7 +3,7 @@
 **Date:** 2026-11-12
 **Status:** fixed
 
-The five-year forecast prints a 2027 "Use of Fund Balance" of $28,253,606. Two other figures in the same document imply a draw of $28,554,908, which is $301,302 more. The money flow page uses the printed figure, and a note on the page explains the gap (Max chose this on 2026-11-12).
+The five-year forecast prints a 2027 "Use of Fund Balance" of $28,253,606. Two other figures in the same document imply a draw of $28,554,908, which is $301,302 more. The money flow page uses the printed figure and doesn't mention the gap. Max ruled it too minor to note (2026-11-12).
 
 ## Evidence
 
@@ -26,7 +26,7 @@ All figures are from the 2027 proposed operating budget. The forecast table is s
 
 - **Money flow page:** the use of fund balance shows as $28.3M, the printed figure. The left side totals $727,025,474 and the departments total $727,326,774. The department figures come from the expenditure summary's departmental totals.
 - **The gap is too small to see:** at 0.04%, the two sides of the diagram look balanced.
-- **What the page says:** its header gives the budget total, $727.3M. A note under the description gives all three figures and the gap.
+- **What the page says:** its header gives the budget total, $727.3M. It doesn't mention the gap.
 
 ## Options
 
@@ -36,4 +36,8 @@ All figures are from the 2027 proposed operating budget. The forecast table is s
 
 ## Resolution
 
-Max chose to keep the printed figure and add a note (2026-11-12): "Keep the printed figure and add a note". The note sits under the operating diagram's description. It works out the implied draw from the forecast's total revenues and the revenue total, so it would show different numbers if a later edition of the document changed them, and it disappears when there's no gap. A smoke test checks that it gives $28,253,606, $28,554,908 and $301,302.
+Max chose to keep the printed figure with no note:
+
+> "Get rid of that note. It's a very minor error that doesn't meaningfully affect the appearance of the graph" — Max, 2026-11-12
+
+This superseded his earlier choice of "Keep the printed figure and add a note": the note was added in 4191ef6 and then removed. A smoke test checks that the page shows neither the implied $28,554,908 nor the $301,302 gap. If Public Source ever wants the gap explained, this note has the figures and where they come from.

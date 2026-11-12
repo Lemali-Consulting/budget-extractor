@@ -472,14 +472,12 @@ test("operating flow shows the use of fund balance as a source", async ({ page }
 });
 
 // The PDF's printed draw ($28,253,606) is $301,302 less than its own totals
-// imply. Max chose to keep the printed figure and explain the gap on the page
-// (2026-11-12), so a reader comparing the two sides isn't left guessing.
-test("operating flow explains the gap between the printed fund balance draw and the budget's totals", async ({ page }) => {
+// imply. Max chose to show the printed figure without a note: the gap is too
+// small to change how the diagram looks (2026-11-12).
+test("operating flow shows the printed fund balance draw without a note on the gap", async ({ page }) => {
   await page.goto("/flow/");
-  const note = main(page).getByTestId("fund-balance-note");
-  await expect(note).toContainText("$28,253,606");
-  await expect(note).toContainText("$28,554,908");
-  await expect(note).toContainText("$301,302");
+  await expect(main(page)).not.toContainText("$301,302");
+  await expect(main(page)).not.toContainText("$28,554,908");
 });
 
 // Each department shows its own budget, not one scaled to make the diagram
