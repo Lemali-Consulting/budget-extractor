@@ -342,6 +342,53 @@ test("compare page loads", async ({ page }) => {
   await expect(main(page).locator("h1").first()).toContainText(/Compare/i);
 });
 
+// Max, 2026-11-12: the compare page shows each department's total budget (it
+// showed the cost of its positions, which didn't match the department page),
+// drops FTE changes like the rest of the site, and lists departments only:
+// "drop trust funds. They're not a department".
+const COMPARE_PS_ADMIN = "/compare/?depts=Bureau%20of%20Administration%20(Public%20Safety),Bureau%20of%20Fire";
+
+test("compare page shows each department's total budget, as its department page does", async ({ page }) => {
+  await page.goto(COMPARE_PS_ADMIN);
+  // $21,269,163 in the 2027 proposed budget; its positions cost $7.6M.
+  const card = main(page).getByTestId("compare-card").filter({ hasText: "Bureau of Administration (Public Safety)" });
+  await expect(card).toContainText("2027 budget: $21.3M");
+  const table = main(page).locator("table");
+  await expect(table.locator("tr", { hasText: "2027 budget" })).toContainText("$21.3M");
+  await expect(main(page)).not.toContainText("$7.6M");
+});
+
+test("a shared compare link highlights the departments it shows", async ({ page }) => {
+  // The selection came from the link before hydration, so the chips and the
+  // change colors kept the default selection's markup.
+  await page.goto(COMPARE_PS_ADMIN);
+  const pressed = main(page).getByTestId("compare-chip").and(page.locator(".bg-ps-blue-600"));
+  await expect(pressed).toHaveText(["Bureau of Administration (Public Safety)", "Bureau of Fire"]);
+  const change = main(page).locator("tr", { hasText: "Budget change" }).locator("td").last();
+  await expect(change).toContainText("+3.3%");
+  await expect(change).toHaveClass(/text-green-600/);
+});
+
+test("compare page shows no FTE changes", async ({ page }) => {
+  await page.goto(COMPARE_PS_ADMIN);
+  await expect(main(page).getByTestId("compare-card").first()).toBeVisible();
+  await expect(main(page)).not.toContainText(/FTE\s*change/i);
+  await expect(main(page).getByTestId("compare-card").filter({ hasText: /\([+-]\d+\)/ })).toHaveCount(0);
+  await expect(main(page)).not.toContainText(/year-over-year/i);
+});
+
+test("compare page offers departments only, not trust funds", async ({ page }) => {
+  await page.goto("/compare/");
+  const chips = main(page).getByTestId("compare-chip");
+  // The 28 department sections, less the Public Works parent, which has no budget of its own.
+  await expect(chips).toHaveCount(27);
+  await expect(chips.filter({ hasText: /Trust Fund|^Grants$/ })).toHaveCount(0);
+  // Each card's name links to the department page (its FTE label links to the glossary).
+  for (const card of await main(page).getByTestId("compare-card").all()) {
+    await expect(card.locator("a").first()).toHaveAttribute("href", /^\/departments\//);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Glossary
 // ---------------------------------------------------------------------------

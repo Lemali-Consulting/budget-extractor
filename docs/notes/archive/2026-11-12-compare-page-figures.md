@@ -1,9 +1,9 @@
 # The compare page labels position budgets as department budgets, and shows FTE changes
 
 **Date:** 2026-11-12
-**Status:** open, to review before shipping to production
+**Status:** fixed
 
-The restored compare page's "2027 budget" is the sum of a department's position lines, not its total budget. Its staffing cards also show the FTE change from 2026, which was removed elsewhere at Public Source's request. Neither is fixed. The page came back as it was (Max, 2026-11-12).
+The restored compare page's "2027 budget" is the sum of a department's position lines, not its total budget. Its staffing cards also show the FTE change from 2026, which was removed elsewhere at Public Source's request. Both are fixed, and the page now lists departments only.
 
 ## What was observed
 
@@ -19,8 +19,20 @@ Found while screenshotting the restored page.
 
 A reader comparing departments would take "$7.6M" as the bureau's budget, and it doesn't match the department page or the PDF's expenditure summary. The FTE changes are the comparison Public Source asked to take off the site: functions moving between departments make them read as policy change.
 
-## Possible fixes (not chosen)
+## Possible fixes (considered)
 
 - Relabel the figure "Position budget", or switch it to the department's total from the department budgets view, the one the home chart uses.
 - Drop the FTE change from the cards and the "year-over-year" wording from the intro, matching 58e490d.
 - Limit the chips to the 28 departments, or keep the trust funds but leave them unlinked (as now).
+
+## Resolution
+
+Max chose the fixes (2026-11-12):
+> "1: Switched to each department's total budget 2: Drop them like the rest of the site 3: No, drop trust funds. They're not a department" — Max, 2026-11-12
+
+- **Figures.** The page reads each department's 2027 and 2026 budget from the department budgets view, the same figure the department pages and the home chart use. The figure is now $21.3M for Bureau of Administration (Public Safety). The "Budget change" row is computed from those totals.
+- **Departments.** The page offers the 28 department sections, less the Department of Public Works parent, which has no budget of its own: 27 in all (`web/src/lib/compare-departments.ts`).
+- **FTE change.** The cards' FTE change and the table's "FTE change" row are gone, and so is the intro's "year-over-year changes".
+- **Shared links.** A shared link (`?depts=`) used to highlight the default chips and color the change row by the default selection. The page took the selection from the link before hydration. It now applies the link after hydration.
+
+Smoke tests cover all four.

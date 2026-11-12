@@ -23,7 +23,7 @@ The four answers cover:
 
 ## Decision
 
-**Update (2026-11-12):** Max brought back the data explorer and then the compare page ("Actually, let's bring the Data Explorer page back", "Also let's bring back the /compare page"). That makes **45 pages**: 12 single pages. Their links to sections go through the published-pages module, like everything else: capital tables and unpublished sections aren't linked. Section tables again carry "Open in Explorer". The compare page came back unchanged. Its figures are in `docs/notes/2026-11-12-compare-page-figures.md`.
+**Update (2026-11-12):** Max brought back the data explorer and then the compare page ("Actually, let's bring the Data Explorer page back", "Also let's bring back the /compare page"). That makes **45 pages**: 12 single pages. Their links to sections go through the published-pages module, like everything else: capital tables and unpublished sections aren't linked. Section tables again carry "Open in Explorer". The compare page now shows each department's total budget, departments only, and no FTE change. See `docs/notes/archive/2026-11-12-compare-page-figures.md`.
 
 The first cut published 43 pages:
 - **10 single pages:** home, operating, capital, about, trust fund overview, brief, trends, glossary, personnel, money flow.
