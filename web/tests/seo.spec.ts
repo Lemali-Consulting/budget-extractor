@@ -13,7 +13,8 @@ import { test, expect } from "./test-base";
 import { PUBLISHED } from "./published-pages";
 
 const DIST = join(dirname(fileURLToPath(import.meta.url)), "..", "dist");
-const SITE = "https://pgh-budget-explorer.netlify.app";
+// The public address; the netlify.app one serves the same site (Max, 2026-11-13).
+const SITE = "https://budget.publicsource.org";
 const GA_ID = "G-CCLXQK5C14";
 
 function builtHtml(path: string): string {

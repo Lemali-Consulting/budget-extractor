@@ -144,7 +144,7 @@ This project runs in a devcontainer with limited memory. Follow these rules to a
 
 The web app is deployed as a static site to Netlify via manual CLI deploy (not git-linked, since the repo is private).
 
-- **Site URL**: https://pgh-budget-explorer.netlify.app
+- **Site URL**: https://budget.publicsource.org (the public, canonical address); the same site also answers at https://pgh-budget-explorer.netlify.app
 - **Site ID**: `11c41143-d0e2-4a28-9dde-10e173bf230f`
 - **Auth**: handled by the Netlify CLI's local session (`~/.config/netlify/config.json`), populated by `netlify login`. No PAT is needed in `.env`.
 

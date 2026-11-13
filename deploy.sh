@@ -41,4 +41,4 @@ npm run build
 echo "==> Deploying to Netlify..."
 npx netlify deploy --dir=dist --prod
 
-echo "==> Done! Site deployed to https://pgh-budget-explorer.netlify.app"
+echo "==> Done! Site deployed to https://budget.publicsource.org (also https://pgh-budget-explorer.netlify.app)"

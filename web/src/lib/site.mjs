@@ -5,9 +5,12 @@
  * SITE_URL is the address search engines, social previews and Parse.ly are
  * told is canonical. If the site moves to another domain, change it here and
  * every canonical link, the sitemap and robots.txt follow.
+ *
+ * The site is hosted on Netlify and served at both budget.publicsource.org and
+ * pgh-budget-explorer.netlify.app; the Public Source address is the public one.
  */
 
-export const SITE_URL = 'https://pgh-budget-explorer.netlify.app';
+export const SITE_URL = 'https://budget.publicsource.org';
 
 export const SITE_NAME = 'Pittsburgh Budget Explorer';
 
