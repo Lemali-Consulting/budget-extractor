@@ -26,7 +26,7 @@ function fmtDollar(n: number): string {
 }
 ---
 
-<Base title="Personnel" budgetYear={budgetYear} currentHref={headlinePath('/personnel/')}>
+<Base title="Personnel" description={`Search and filter budgeted positions and salaries across Pittsburgh city departments in the ${budgetYear.budgetName.toLowerCase()}.`} budgetYear={budgetYear} currentHref={headlinePath('/personnel/')}>
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>

@@ -2,7 +2,7 @@
  * Search behaviour: the headline (2027) search box searches the full text of the
  * 2027 department and citywide section pages.
  */
-import { test, expect, type Page } from "@playwright/test";
+import { test, expect, type Page } from "./test-base";
 
 /** Type a query into the page's search box and return the results listbox. */
 async function search(page: Page, query: string) {

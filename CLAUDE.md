@@ -111,6 +111,10 @@ Dates follow AP style everywhere, the PDF's own text included: Jan., Feb., Aug.,
 
 The headline (2027) search box uses **Pagefind**, which indexes the built HTML after `astro build` (`npm run build` runs both). Only the 2027 department and citywide section pages and the glossary opt in via `data-pagefind-body`; page chrome inside them is marked `data-pagefind-ignore`. Archive years, when published, use the older Fuse search over `views/{prefix}search-index.json`, which only sees titles, headers and the opening words of prose. Search does not work under `astro dev` — there is no index until a build. See `docs/decisions/2026-11-07-pagefind-full-text-search-2027.md`.
 
+# SEO and Analytics
+
+Every page carries a canonical link, Open Graph/Twitter tags and schema.org JSON-LD (`web/src/layouts/Base.astro`), all built from the production address in `web/src/lib/site.mjs` — change `SITE_URL` there if the site moves domain. `/sitemap.xml` and `/robots.txt` are generated from the published-page list. Public Source's Google Analytics and Parse.ly tags (`web/src/components/Analytics.astro`) are in built pages only, not `astro dev`. Every Playwright spec imports `test` from `web/tests/test-base.ts`, which answers the analytics scripts locally so test runs never count as readers; a new spec must do the same. See `docs/decisions/2026-11-13-seo-and-public-source-analytics.md`.
+
 # Brand Colors
 
 The site uses Public Source's 2025 brand colors. They are defined once in `web/src/lib/brand-colors.mjs`, exposed to Tailwind as `ps-*` (`ps-blue-600`, `ps-red-700`, `ps-yellow-100`, `ps-ink`, …) and imported by chart code. Use `ps-blue` / `ps-red` / `ps-yellow` rather than Tailwind's `blue` / `red` / `amber`; the scales are luminance-matched to Tailwind's, so the same step number gives the same contrast. Don't use bare PS Blue (`ps-blue`, #1277E2) for small text — it is under 4.5:1 on white; links use `ps-blue-600`. The brand fonts are not licensed for web text — don't add them via `@font-face`. Live text uses free lookalikes defined in `web/src/lib/brand-fonts.mjs` (Fira Sans Extra Condensed for h1/h2 and `font-display`, Alegreya Sans for body), self-hosted via Fontsource; the real faces appear only in fixed-size images like the header wordmark. See `docs/decisions/2026-11-09-public-source-brand-colors-and-logo.md`.
@@ -120,7 +124,7 @@ The site uses Public Source's 2025 brand colors. They are defined once in `web/s
 Run `cd web && npm test` to run Playwright smoke tests against the built static site.
 
 - Tests build the site and serve it via `astro preview`, then verify all major routes render correctly
-- Covers: home, operating index, department and citywide section pages, capital index, trust fund overview, charts, explorer, compare, personnel, glossary, about, trends; that exactly the 46 published pages are built and link nowhere else; and that the retired dashboard, 2026 archive, amendments, cross-year and story pages are not built or linked
+- Covers: SEO metadata, sitemap, robots.txt and the analytics tags on every published page (`seo.spec.ts`); home, operating index, department and citywide section pages, capital index, trust fund overview, charts, explorer, compare, personnel, glossary, about, trends; that exactly the 46 published pages are built and link nowhere else; and that the retired dashboard, 2026 archive, amendments, cross-year and story pages are not built or linked
 - Checks: page titles, key content visible, navigation present, no JS console errors
 - Run before deploying to Netlify to catch template, routing, or data regressions
 - Requires Playwright browsers: `npx playwright install chromium` (and system deps: `npx playwright install-deps chromium`)

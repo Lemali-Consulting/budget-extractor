@@ -8,7 +8,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./test-base";
 import { sentenceCase } from "../src/lib/text-case";
 
 const WEB_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");

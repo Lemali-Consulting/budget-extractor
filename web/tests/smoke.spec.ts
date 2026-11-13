@@ -2,7 +2,7 @@
  * Smoke tests for the Pittsburgh Budget Explorer static site.
  * Verifies that all major routes render without errors and display expected content.
  */
-import { test, expect, type Page } from "@playwright/test";
+import { test, expect, type Page } from "./test-base";
 
 /** Scoped to <main> to avoid Astro dev toolbar elements. */
 function main(page: Page) {

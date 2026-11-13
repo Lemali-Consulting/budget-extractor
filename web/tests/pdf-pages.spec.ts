@@ -3,7 +3,7 @@
  * page's own title, so the site leaves it out (Rich via Max, 2026-11-12).
  * Pages with anything else on them stay.
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./test-base";
 import { isCoverPage } from "../src/lib/pdf-pages";
 
 const SEAL = { chart_type: "logo", bbox: [0, 0, 1, 1] };

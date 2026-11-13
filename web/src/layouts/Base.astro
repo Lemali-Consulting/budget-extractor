@@ -2,9 +2,13 @@
 import '../styles/global.css';
 import '../styles/brand-fonts';
 import YearNotice from '../components/YearNotice.astro';
+import Analytics from '../components/Analytics.astro';
+import { SITE_NAME, PUBLISHER } from '../lib/site.mjs';
+import { structuredPageData } from '../lib/structured-data';
 import { type BudgetYear, HEADLINE, ARCHIVE_YEARS, yearPath } from '../lib/budget-year';
 
 interface Props {
+  /** The page's name; the site's name is appended unless this is it (the home page). */
   title: string;
   description?: string;
   fullWidth?: boolean;
@@ -25,9 +29,12 @@ const {
   budgetYear = HEADLINE,
   currentHref,
 } = Astro.props;
-const resolvedOgTitle = ogTitle || `${title} | Pittsburgh Budget Explorer`;
+const documentTitle = title === SITE_NAME ? SITE_NAME : `${title} | ${SITE_NAME}`;
+const resolvedOgTitle = ogTitle || documentTitle;
 const resolvedOgDescription = ogDescription || description;
-const canonicalUrl = Astro.url.href;
+// The production address (astro.config `site`), never the host that built the page.
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const structuredData = structuredPageData({ name: documentTitle, description, url: canonicalUrl });
 
 const path = Astro.url.pathname;
 function isActive(href: string): boolean {
@@ -66,12 +73,22 @@ const DEPARTMENTS_HREF = '/operating/#departments';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={resolvedOgTitle} />
     <meta property="og:description" content={resolvedOgDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={resolvedOgTitle} />
+    <meta name="twitter:description" content={resolvedOgDescription} />
+    <meta name="author" content={PUBLISHER.name} />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231277E2'/><text x='16' y='22' font-size='15' font-family='system-ui' font-weight='bold' fill='white' text-anchor='middle'>PS</text></svg>" />
-    <title>{title} | Pittsburgh Budget Explorer</title>
+    <title>{documentTitle}</title>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <script is:inline type="application/ld+json" set:html={structuredData} />
+    <Analytics />
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-900">
     <header class="bg-ps-ink text-white px-6 py-3">

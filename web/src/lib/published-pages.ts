@@ -30,6 +30,13 @@ export const TRUST_FUND_SECTIONS: SectionRange = { first: 37, last: 56 };
  */
 export const PUBLISHED_CITYWIDE_SECTIONS: readonly number[] = [3, 4, 6, 7, 8, 58];
 
+/** The headline site's pages that aren't a section: overviews, tools and reference pages. */
+export const PUBLISHED_SINGLE_PAGES: readonly string[] = [
+  '/', '/operating/', '/capital/', '/about/', '/trust-funds/',
+  '/brief/', '/trends/', '/glossary/', '/personnel/', '/flow/',
+  '/explorer/', '/compare/',
+];
+
 interface SectionRef {
   section_number: number;
   slug: string;
@@ -81,4 +88,10 @@ export function publishedSectionHrefs(budgetYear: BudgetYear): Record<string, st
  */
 export function sectionPage(opts: { sectionHrefs: Record<string, string>; budgetType?: string; slug: string }): string | undefined {
   return opts.budgetType === CAPITAL_BUDGET_TYPE ? undefined : opts.sectionHrefs[opts.slug];
+}
+
+/** Every page the year publishes, as site paths: the single pages, then its sections in document order. */
+export function publishedPagePaths(budgetYear: BudgetYear): string[] {
+  const sectionPaths = publishedSections(budgetYear).map((section: SectionRef) => sectionPageHref({ budgetYear, section }) as string);
+  return [...PUBLISHED_SINGLE_PAGES, ...sectionPaths];
 }

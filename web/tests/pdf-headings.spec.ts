@@ -4,7 +4,7 @@
  * (Rich via Max, 2026-11-12). Text the extractor mistook for a heading (chart
  * axis values, pie-slice labels, notes) is not shown as one.
  */
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./test-base";
 import { classifyPdfHeading, isPdfChartScrap, pdfHeadingText, subclassLabel, tableGroupLabel } from "../src/lib/pdf-headings";
 
 const FIRE = { pdfTitle: "Bureau of Fire", title: "Bureau of Fire" };

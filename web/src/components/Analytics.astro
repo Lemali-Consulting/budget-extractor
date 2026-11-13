@@ -1,0 +1,24 @@
+---
+/**
+ * Public Source's readership tags — Google Analytics and Parse.ly — as Public
+ * Source supplied them (2026-11-13). Base.astro puts them in every page's head.
+ *
+ * Built pages only: `astro dev` leaves them out so local work never counts as
+ * readers. Tests answer both scripts locally (tests/test-base.ts).
+ */
+const includeAnalytics = import.meta.env.PROD;
+---
+
+{includeAnalytics && (
+  <Fragment>
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-CCLXQK5C14"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CCLXQK5C14');
+    </script>
+    <script is:inline id="parsely-cfg" src="//cdn.parsely.com/keys/publicsource.org/p.js"></script>
+  </Fragment>
+)}

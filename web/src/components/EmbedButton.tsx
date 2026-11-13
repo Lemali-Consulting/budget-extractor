@@ -1,14 +1,13 @@
 /**Small button that shows an iframe embed snippet for a chart.*/
 
 import { useState } from 'preact/hooks';
+import { SITE_URL } from '../lib/site.mjs';
 
 interface Props {
   embedPath: string;
   width?: number;
   height?: number;
 }
-
-const SITE_URL = 'https://pgh-budget-explorer.netlify.app';
 
 export default function EmbedButton({ embedPath, width = 700, height = 450 }: Props) {
   const [open, setOpen] = useState(false);

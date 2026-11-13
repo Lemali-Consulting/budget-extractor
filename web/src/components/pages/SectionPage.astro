@@ -175,6 +175,10 @@ const highlights: string[] = (section as any).highlights || [];
 // Only the revenue summary prints tax revenue by tax; elsewhere this is null.
 const taxBreakdown = taxRevenueByTax({ tables: section.tables, year: budgetYear.year });
 const ogDesc = highlights.length > 0 ? highlights.join('. ') : undefined;
+// Search-result snippet: names the section, so no two section pages share one.
+const pageDescription = isDepartmentSection(section)
+  ? `${section.title} in Pittsburgh's ${budgetYear.operatingName}: budget, staffing and spending, with the full section of the budget document.`
+  : `The ${section.title.toLowerCase()} section of Pittsburgh's ${budgetYear.operatingName}, with its tables and charts.`;
 
 // Build sparkline values for this section from department budgets
 const sparklineValues: number[] = departmentBudgets
@@ -288,7 +292,7 @@ for (const item of finalItems) {
 
 ---
 
-<Base title={section.title} ogTitle={section.title} ogDescription={ogDesc} budgetYear={budgetYear} currentHref={currentHref}>
+<Base title={section.title} description={pageDescription} ogTitle={section.title} ogDescription={ogDesc} budgetYear={budgetYear} currentHref={currentHref}>
   <div {...indexAttrs}>
   <nav class="text-sm text-gray-500 mb-4" data-pagefind-ignore>
     <a href="/" class="hover:text-ps-blue-600">Home</a>

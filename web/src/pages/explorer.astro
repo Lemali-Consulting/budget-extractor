@@ -7,6 +7,6 @@ import { publishedSectionHrefs } from '../lib/published-pages';
 const sections = [...HEADLINE.operating.sections, ...HEADLINE.capital.sections];
 ---
 
-<Base title="Data explorer" fullWidth>
+<Base title="Data explorer" description={`Search, chart and download every table extracted from Pittsburgh's ${HEADLINE.documentsName}.`} fullWidth>
   <DataExplorer tablesIndex={HEADLINE.views.tablesIndex} sections={sections} year={HEADLINE.year} sectionHrefs={publishedSectionHrefs(HEADLINE)} client:load />
 </Base>

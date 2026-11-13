@@ -7,6 +7,7 @@ import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { revenueColor } from '../lib/flow-colors';
 import { colorForSlug } from '../lib/department-groups';
 import { capitalizeFirst } from '../lib/text-case';
+import { SITE_NAME } from '../lib/site.mjs';
 import { HEADLINE, ARCHIVE_YEARS, yearPath, type BudgetYear } from '../lib/budget-year';
 import { operating, sumFor } from '../lib/department-budgets';
 import { correctionHref, trustFundCorrections } from '../lib/corrections';
@@ -105,7 +106,7 @@ const teaserLinks: FlowLink[] = [
 ];
 ---
 
-<Base title="Home">
+<Base title={SITE_NAME} description={`The City of Pittsburgh's ${HEADLINE.documentsName}, turned into searchable tables and charts.`}>
   <!-- Hero -->
   <div class="mb-8">
     <h1 class="text-3xl font-bold mb-2">Pittsburgh Budget Explorer</h1>
