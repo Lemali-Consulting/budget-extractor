@@ -9,6 +9,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { test, expect } from "@playwright/test";
+import { sentenceCase } from "../src/lib/text-case";
 
 const WEB_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(WEB_ROOT, "src");
@@ -175,4 +176,62 @@ test("no published page shows a section's cover page", () => {
   };
   walk(DIST);
   expect(found).toEqual([]);
+});
+
+test("glossary terms are sentence case, named funds and programs keep their capitals", async ({ page }) => {
+  await page.goto("/glossary/");
+  const terms = page.locator("main dt");
+  for (const term of ["Cost center", "Transfer in", "Beginning reserve fund balance", "Real estate tax", "Health benefits", "Reserve fund"]) {
+    await expect(terms.filter({ hasText: new RegExp(`^\\s*${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`) })).toHaveCount(1);
+  }
+  // A funding source's term follows a code badge carrying the same name.
+  for (const source of ["Bond", "Other"]) {
+    await expect(terms.filter({ hasText: new RegExp(`^\\s*${source}\\s+${source}\\s*$`) })).toHaveCount(1);
+  }
+  await expect(terms.filter({ hasText: /\b(?:BOND|OTHER)\b/ })).toHaveCount(0);
+  await expect(terms.filter({ hasText: /^\s*Technology Modernization Fund\s*$/ })).toHaveCount(1);
+  const main = page.locator("main");
+  await expect(main).toContainText("Site safety plan.");
+  await expect(main).toContainText("Compound annual growth rate");
+  await expect(main).toContainText("Community Development Block Grant.");
+});
+
+test("capital funding sources are named in sentence case, acronyms kept", async ({ page }) => {
+  expect(sentenceCase("PAYGO")).toBe("PAYGO");
+  expect(sentenceCase("OTHER")).toBe("Other");
+  await page.goto("/capital/");
+  const chart = page.getByRole("heading", { name: /Funding by source/ }).locator("..");
+  await expect(chart).toContainText("Bond");
+  await expect(chart).not.toContainText("BOND");
+  await page.goto("/flow/");
+  await expect(page.locator("main svg text", { hasText: /^Bond$/ }).first()).toBeAttached();
+});
+
+test("the trends page's revenue buttons are sentence case", async ({ page }) => {
+  await page.goto("/trends/");
+  await expect(page.getByRole("button", { name: "Payroll preparation tax", exact: true })).toBeVisible();
+});
+
+test("table links and locators on section pages are sentence case", async ({ page }) => {
+  await page.goto("/departments/bureau-of-fire/");
+  await expect(page.getByRole("link", { name: /Open in data explorer/ }).first()).toBeVisible();
+  await expect(page.locator("main")).not.toContainText("Open in Explorer");
+  await expect(page.locator("main")).toContainText(/Page \d+, table \d+/);
+});
+
+test("operating index cards preview prose, not a chart title", async ({ page }) => {
+  await page.goto("/operating/");
+  await expect(page.locator("main")).not.toContainText("Expenditures by Subclass");
+  await expect(page.locator("main")).not.toContainText("PROF. & TECHNICAL SERVICES");
+});
+
+test("operating index cards preview the opening paragraph, not the PDF subheading above it", async ({ page }) => {
+  // The PDF's subheadings ("Description of Services") sit at the top of the prose block;
+  // run into the preview they read as a title-case sentence fragment.
+  await page.goto("/operating/");
+  const main = page.locator("main");
+  for (const subheading of ["Description of Services", "By Department The table", "Revenue Summary Major Tax Revenues", "Mission The mission"]) {
+    await expect(main).not.toContainText(subheading);
+  }
+  await expect(main).toContainText("City Council is the legislative branch");
 });

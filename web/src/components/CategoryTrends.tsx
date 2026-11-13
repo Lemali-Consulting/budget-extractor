@@ -3,6 +3,7 @@
 import { useState } from 'preact/hooks';
 import TrendsChart from './TrendsChart';
 import type { TrendSeries } from '../lib/longitudinal';
+import { sentenceCase } from '../lib/text-case';
 
 export interface CategorySeries {
   category: string;
@@ -34,11 +35,11 @@ export default function CategoryTrends({ categories }: Props) {
             }`}
             onClick={() => setSelected(c.category)}
           >
-            {c.category}
+            {sentenceCase(c.category)}
           </button>
         ))}
       </div>
-      <TrendsChart series={current.series} ariaLabel={`${current.category} revenue over time`} />
+      <TrendsChart series={current.series} ariaLabel={`${sentenceCase(current.category)} revenue over time`} />
     </div>
   );
 }

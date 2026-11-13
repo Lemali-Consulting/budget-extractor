@@ -6796,12 +6796,12 @@
     "href": "/glossary/#abbreviations"
   },
   {
-    "sectionTitle": "CAGR \u2014 Compound Annual Growth Rate (annualized average rate of return over a multi-year period).",
+    "sectionTitle": "CAGR \u2014 Compound annual growth rate (annualized average rate of return over a multi-year period).",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Compound Annual Growth Rate (annualized average rate of return over a multi-year period).",
+    "narrative": "Compound annual growth rate (annualized average rate of return over a multi-year period).",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -6822,12 +6822,12 @@
     "href": "/glossary/#abbreviations"
   },
   {
-    "sectionTitle": "CIP \u2014 Capital Improvement Plan (the city's multi-year capital spending document).",
+    "sectionTitle": "CIP \u2014 Capital improvement plan (the city's multi-year capital spending document).",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Capital Improvement Plan (the city's multi-year capital spending document).",
+    "narrative": "Capital improvement plan (the city's multi-year capital spending document).",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -6900,12 +6900,12 @@
     "href": "/glossary/#abbreviations"
   },
   {
-    "sectionTitle": "FAS \u2014 Fire Alarm System.",
+    "sectionTitle": "FAS \u2014 Fire alarm system.",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Fire Alarm System.",
+    "narrative": "Fire alarm system.",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -6913,12 +6913,12 @@
     "href": "/glossary/#abbreviations"
   },
   {
-    "sectionTitle": "FTE \u2014 Full-Time Equivalent \u2014 a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
+    "sectionTitle": "FTE \u2014 Full-time equivalent \u2014 a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Full-Time Equivalent \u2014 a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
+    "narrative": "Full-time equivalent \u2014 a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -6978,12 +6978,12 @@
     "href": "/glossary/#abbreviations"
   },
   {
-    "sectionTitle": "OPEB \u2014 Other Post-Employment Benefits.",
+    "sectionTitle": "OPEB \u2014 Other post-employment benefits.",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Other Post-Employment Benefits.",
+    "narrative": "Other post-employment benefits.",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -6991,12 +6991,12 @@
     "href": "/glossary/#abbreviations"
   },
   {
-    "sectionTitle": "PAYGO \u2014 Pay-As-You-Go (capital funding from reserves instead of debt).",
+    "sectionTitle": "PAYGO \u2014 Pay-as-you-go (capital funding from reserves instead of debt).",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Pay-As-You-Go (capital funding from reserves instead of debt).",
+    "narrative": "Pay-as-you-go (capital funding from reserves instead of debt).",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -7030,12 +7030,12 @@
     "href": "/glossary/#abbreviations"
   },
   {
-    "sectionTitle": "SSP \u2014 Site Safety Plan.",
+    "sectionTitle": "SSP \u2014 Site safety plan.",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Site Safety Plan.",
+    "narrative": "Site safety plan.",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -7082,7 +7082,7 @@
     "href": "/glossary/#general_terms"
   },
   {
-    "sectionTitle": "Cost Center",
+    "sectionTitle": "Cost center",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7173,7 +7173,7 @@
     "href": "/glossary/#general_terms"
   },
   {
-    "sectionTitle": "Secondary Employment",
+    "sectionTitle": "Secondary employment",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7186,7 +7186,7 @@
     "href": "/glossary/#general_terms"
   },
   {
-    "sectionTitle": "Transfer In",
+    "sectionTitle": "Transfer in",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7199,7 +7199,7 @@
     "href": "/glossary/#general_terms"
   },
   {
-    "sectionTitle": "Transfer Out",
+    "sectionTitle": "Transfer out",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7238,7 +7238,7 @@
     "href": "/glossary/#general_terms"
   },
   {
-    "sectionTitle": "Functional Area",
+    "sectionTitle": "Functional area",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7251,7 +7251,7 @@
     "href": "/glossary/#general_terms"
   },
   {
-    "sectionTitle": "Project Type",
+    "sectionTitle": "Project type",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7277,12 +7277,12 @@
     "href": "/glossary/#general_terms"
   },
   {
-    "sectionTitle": "Operating Result",
+    "sectionTitle": "Operating result",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Total Revenues minus Total Expenditures for the fiscal year.",
+    "narrative": "Total revenues minus total expenditures for the fiscal year.",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -7290,7 +7290,7 @@
     "href": "/glossary/#fiscal_metrics"
   },
   {
-    "sectionTitle": "Beginning Reserve Fund Balance",
+    "sectionTitle": "Beginning reserve fund balance",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7303,12 +7303,12 @@
     "href": "/glossary/#fiscal_metrics"
   },
   {
-    "sectionTitle": "Ending Reserve Fund Balance",
+    "sectionTitle": "Ending reserve fund balance",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Reserve balance after operating result and transfers (PAYGO, Housing, etc.).",
+    "narrative": "Reserve balance after operating result and transfers (PAYGO, housing, etc.).",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -7316,7 +7316,7 @@
     "href": "/glossary/#fiscal_metrics"
   },
   {
-    "sectionTitle": "Fund Balance as a % of Expenditures",
+    "sectionTitle": "Fund balance as a % of expenditures",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7329,7 +7329,7 @@
     "href": "/glossary/#fiscal_metrics"
   },
   {
-    "sectionTitle": "Debt Service as a % of Expenditures",
+    "sectionTitle": "Debt service as a % of expenditures",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7347,7 +7347,7 @@
     "tableId": "",
     "tableType": "glossary",
     "headers": "",
-    "narrative": "Other Post-Employment Benefits (retiree health care, life insurance, etc.).",
+    "narrative": "Other post-employment benefits (retiree health care, life insurance, etc.).",
     "lineItems": "",
     "page": 0,
     "tableIndex": -1,
@@ -7368,7 +7368,7 @@
     "href": "/glossary/#capital_funding_sources"
   },
   {
-    "sectionTitle": "BOND",
+    "sectionTitle": "Bond",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7394,7 +7394,7 @@
     "href": "/glossary/#capital_funding_sources"
   },
   {
-    "sectionTitle": "OTHER",
+    "sectionTitle": "Other",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7420,7 +7420,7 @@
     "href": "/glossary/#funds"
   },
   {
-    "sectionTitle": "Reserve Fund",
+    "sectionTitle": "Reserve fund",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7524,7 +7524,7 @@
     "href": "/glossary/#funds"
   },
   {
-    "sectionTitle": "Real Estate Tax",
+    "sectionTitle": "Real estate tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7537,7 +7537,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Earned Income Tax",
+    "sectionTitle": "Earned income tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7550,7 +7550,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Payroll Preparation Tax",
+    "sectionTitle": "Payroll preparation tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7563,7 +7563,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Parking Tax",
+    "sectionTitle": "Parking tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7576,7 +7576,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Regional Asset District Tax Relief",
+    "sectionTitle": "Regional Asset District tax relief",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7589,7 +7589,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Deed Transfer Tax",
+    "sectionTitle": "Deed transfer tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7602,7 +7602,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Amusement Tax",
+    "sectionTitle": "Amusement tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7615,7 +7615,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Local Service Tax",
+    "sectionTitle": "Local service tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7628,7 +7628,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Facility Usage Fee",
+    "sectionTitle": "Facility usage fee",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7641,7 +7641,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Telecommunications Licensing Tax",
+    "sectionTitle": "Telecommunications licensing tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7654,7 +7654,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Institution Service Privilege Tax",
+    "sectionTitle": "Institution service privilege tax",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7667,7 +7667,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Non-Profit Payment for Services",
+    "sectionTitle": "Non-profit payment for services",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7680,7 +7680,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Other Taxes",
+    "sectionTitle": "Other taxes",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7693,7 +7693,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Licenses and Permits",
+    "sectionTitle": "Licenses and permits",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7706,7 +7706,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Charges for Services",
+    "sectionTitle": "Charges for services",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7719,7 +7719,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Fines and Forfeitures",
+    "sectionTitle": "Fines and forfeitures",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7732,7 +7732,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Intergovernmental Revenue",
+    "sectionTitle": "Intergovernmental revenue",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7745,7 +7745,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Interest Earnings",
+    "sectionTitle": "Interest earnings",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7758,7 +7758,7 @@
     "href": "/glossary/#revenue_line_items"
   },
   {
-    "sectionTitle": "Miscellaneous Revenues",
+    "sectionTitle": "Miscellaneous revenues",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7784,7 +7784,7 @@
     "href": "/glossary/#expenditure_line_items"
   },
   {
-    "sectionTitle": "Health Benefits",
+    "sectionTitle": "Health benefits",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7797,7 +7797,7 @@
     "href": "/glossary/#expenditure_line_items"
   },
   {
-    "sectionTitle": "Workers' Comp.",
+    "sectionTitle": "Workers' comp.",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7823,7 +7823,7 @@
     "href": "/glossary/#expenditure_line_items"
   },
   {
-    "sectionTitle": "Operating Departments",
+    "sectionTitle": "Operating departments",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",
@@ -7836,7 +7836,7 @@
     "href": "/glossary/#expenditure_line_items"
   },
   {
-    "sectionTitle": "Debt Service",
+    "sectionTitle": "Debt service",
     "slug": "",
     "tableId": "",
     "tableType": "glossary",

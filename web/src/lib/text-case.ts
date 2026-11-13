@@ -16,7 +16,7 @@ const PROPER_PHRASES: readonly string[] = [
 
 /** Acronyms printed in labels; an ALL CAPS label can't otherwise be told apart from words. */
 const ACRONYMS: ReadonlySet<string> = new Set([
-  'CDBG', 'CIP', 'CPFC', 'EMS', 'FTE', 'HSIP', 'HUD', 'PILOT', 'PWSA', 'RAD', 'TIF', 'TIP', 'URA', 'URD',
+  'CDBG', 'CIP', 'PAYGO', 'CPFC', 'EMS', 'FTE', 'HSIP', 'HUD', 'PILOT', 'PWSA', 'RAD', 'TIF', 'TIP', 'URA', 'URD',
 ]);
 
 /** A department, bureau, office, commission or fund name: a proper noun, left as printed. */

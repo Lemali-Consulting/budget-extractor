@@ -7,6 +7,7 @@ import AmendmentNotice from '../AmendmentNotice.astro';
 import { type BudgetYear, headlinePath } from '../../lib/budget-year';
 import { capitalizeFirst } from '../../lib/text-case';
 import { DEPARTMENT_SECTIONS, isDepartmentSection, isTrustFundSection, publishedSections, sectionPageHref } from '../../lib/published-pages';
+import { parseNarrative } from '../../lib/pdf-narrative';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -43,16 +44,31 @@ for (const section of listedSections) {
 }
 const trustFundCount = sections.filter((s: any) => isTrustFundSection(s)).length;
 
-// Extract first narrative snippet for each section
+/** How much of the opening paragraph a card shows. */
+const PREVIEW_CHARS = 120;
+/** A word ending a sentence: what sets prose apart from a chart title or legend. */
+const SENTENCE_END = /[a-z]{2,}[.!?](?:\s|$)/;
+
+/** The block's first paragraph, past any subheading ("Mission") printed above it. A chart title or legend the extractor read as prose has no sentence in it. */
+function openingParagraph(raw: string): string | undefined {
+  return parseNarrative(raw).find(
+    (seg): seg is { type: 'paragraph'; text: string } => seg.type === 'paragraph' && SENTENCE_END.test(seg.text),
+  )?.text.trim();
+}
+
+/** About PREVIEW_CHARS of text, broken at a word. */
+function truncatePreview(text: string): string {
+  if (text.length <= PREVIEW_CHARS) return text;
+  return text.substring(0, PREVIEW_CHARS).replace(/\s\S*$/, '') + '...';
+}
+
 function getSummary(section: any): string {
   const pages = section.page_content || [];
   for (const page of pages) {
     for (const block of page.text_blocks || []) {
       if (block.role === 'narrative' || block.role === 'leading_prose' || block.role === 'trailing_prose') {
-        // Take first ~120 chars, break at word boundary
-        const text = block.text.replace(/\n/g, ' ').trim();
-        if (text.length <= 120) return text;
-        return text.substring(0, 120).replace(/\s\S*$/, '') + '...';
+        const text = openingParagraph(block.text);
+        if (text) return truncatePreview(text);
       }
     }
   }

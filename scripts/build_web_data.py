@@ -2287,10 +2287,12 @@ def build_glossary_backlinks(
         name = fund["name"]
         terms.append((name, re.compile(re.escape(name), re.IGNORECASE)))
 
-    # Capital funding sources: match as whole words
+    # Capital funding sources: the glossary names them in sentence case ("Bond"), the
+    # capital PDF prints them in capitals ("BOND"); match the capitals as whole words so
+    # the everyday word ("other") doesn't count as a use.
     for src in glossary.get("capital_funding_sources", []):
         source = src["source"]
-        terms.append((source, re.compile(r"\b" + re.escape(source) + r"\b")))
+        terms.append((source, re.compile(r"\b" + re.escape(source.upper()) + r"\b")))
 
     # Scan
     MAX_SECTIONS = 10

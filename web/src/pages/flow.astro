@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import FlowSankey from '../components/FlowSankey.tsx';
 import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
 import { HEADLINE } from '../lib/budget-year';
-import { capitalizeFirst } from '../lib/text-case';
+import { capitalizeFirst, sentenceCase } from '../lib/text-case';
 import { publishedSectionHrefs } from '../lib/published-pages';
 import { revenueColor, capitalSourceColor, FUND_BALANCE_COLOR } from '../lib/flow-colors';
 import { useOfFundBalance } from '../lib/fund-balance';
@@ -147,7 +147,7 @@ const years = [...new Set(capital.map((r) => r.year))].sort();
 const capitalNodes: FlowNode[] = [
   ...sources.map((s) => ({
     id: `src:${s}`,
-    label: s,
+    label: sentenceCase(s),
     category: 'source',
     color: capitalSourceColor(s),
   })),

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import { SOURCE_COLORS } from '../lib/chart-colors';
+import { sentenceCase } from '../lib/text-case';
 import { useContainerWidth } from '../lib/hooks';
 
 interface FundingRow {
@@ -55,6 +56,7 @@ export default function FundingSourceChart({ data }: { data: FundingRow[] }) {
         domain: sources,
         range: sources.map((s) => SOURCE_COLORS[s] || '#9ca3af'),
         legend: true,
+        tickFormat: (source: string) => sentenceCase(source),
       },
       marks: [
         Plot.barY(chartData, Plot.stackY({ x: 'year', y: 'amount', fill: 'source' })),

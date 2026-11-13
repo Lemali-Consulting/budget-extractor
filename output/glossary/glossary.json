@@ -86,79 +86,79 @@
   ],
   "revenue_line_items": [
     {
-      "term": "Real Estate Tax",
+      "term": "Real estate tax",
       "description": "Tax on the assessed value of property within city limits; the city's largest single revenue source."
     },
     {
-      "term": "Earned Income Tax",
+      "term": "Earned income tax",
       "description": "Tax on wages and salaries earned by individuals working in the city, applying to both residents and non-residents."
     },
     {
-      "term": "Payroll Preparation Tax",
+      "term": "Payroll preparation tax",
       "description": "Tax on employers based on the payroll they process; distinct from the earned income tax on individual wages."
     },
     {
-      "term": "Parking Tax",
+      "term": "Parking tax",
       "description": "Tax on parking transactions including both on-street metered parking and commercial lot operations."
     },
     {
-      "term": "Regional Asset District Tax Relief",
+      "term": "Regional Asset District tax relief",
       "description": "State-distributed revenue compensating the city for sales tax redirected to the Regional Asset District (transit, stadiums, cultural facilities)."
     },
     {
-      "term": "Deed Transfer Tax",
+      "term": "Deed transfer tax",
       "description": "Tax assessed on the sale and transfer of real property, collected when ownership changes hands."
     },
     {
-      "term": "Amusement Tax",
+      "term": "Amusement tax",
       "description": "Tax on admission charges to entertainment venues, sporting events and recreational facilities."
     },
     {
-      "term": "Local Service Tax",
+      "term": "Local service tax",
       "description": "Tax on individuals earning income within the city; applies primarily to self-employed and out-of-state workers."
     },
     {
-      "term": "Facility Usage Fee",
+      "term": "Facility usage fee",
       "description": "Charges for use of city-owned facilities and spaces, including building rentals and park venues."
     },
     {
-      "term": "Telecommunications Licensing Tax",
+      "term": "Telecommunications licensing tax",
       "description": "Tax on telecommunications service providers operating within city limits."
     },
     {
-      "term": "Institution Service Privilege Tax",
+      "term": "Institution service privilege tax",
       "description": "Tax on nonprofit institutions (colleges, hospitals, museums) receiving certain service privileges in the city."
     },
     {
-      "term": "Non-Profit Payment for Services",
+      "term": "Non-profit payment for services",
       "description": "Voluntary payments from tax-exempt organizations in lieu of property taxes for city services provided to them."
     },
     {
-      "term": "Other Taxes",
+      "term": "Other taxes",
       "description": "Miscellaneous tax revenue not classified under other specific categories."
     },
     {
-      "term": "Licenses and Permits",
+      "term": "Licenses and permits",
       "description": "Fees from business licenses (liquor, vending, pawn), construction and building permits and professional registrations."
     },
     {
-      "term": "Charges for Services",
+      "term": "Charges for services",
       "description": "Revenue from city-provided services including parking meter collections, medical services, fire protection and administrative fees."
     },
     {
-      "term": "Fines and Forfeitures",
+      "term": "Fines and forfeitures",
       "description": "Revenue from traffic violations, parking tickets (the majority), magistrate fines and other penalties."
     },
     {
-      "term": "Intergovernmental Revenue",
+      "term": "Intergovernmental revenue",
       "description": "Transfers from state and federal governments, including state pension aid, Local Share of Slots revenue and federal grants."
     },
     {
-      "term": "Interest Earnings",
+      "term": "Interest earnings",
       "description": "Income from investing municipal cash reserves and project funds in short-term instruments and bonds."
     },
     {
-      "term": "Miscellaneous Revenues",
+      "term": "Miscellaneous revenues",
       "description": "Minor revenue sources including rebates, incentives, vending commissions and registration fees."
     }
   ],
@@ -168,11 +168,11 @@
       "description": "Direct wage and salary costs for city employees, including regular pay, overtime, longevity bonuses and uniform allowances."
     },
     {
-      "term": "Health Benefits",
+      "term": "Health benefits",
       "description": "Health insurance premiums for active employees and retirees, plus dental and vision coverage."
     },
     {
-      "term": "Workers' Comp.",
+      "term": "Workers' comp.",
       "description": "Insurance and claims costs for employee workplace injuries, including medical treatment, indemnity payments and legal fees."
     },
     {
@@ -180,38 +180,38 @@
       "description": "Mandatory contributions to employee pension plans (police, fire, municipal) and retiree healthcare benefits (Other Post-Employment Benefits)."
     },
     {
-      "term": "Operating Departments",
+      "term": "Operating departments",
       "description": "Day-to-day departmental expenses excluding personnel: supplies, utilities, professional services, property maintenance, equipment and fuel."
     },
     {
-      "term": "Debt Service",
+      "term": "Debt service",
       "description": "Principal and interest payments on municipal bonds issued for capital projects and prior obligations."
     }
   ],
   "fiscal_metrics": [
     {
-      "term": "Operating Result",
-      "description": "Total Revenues minus Total Expenditures for the fiscal year."
+      "term": "Operating result",
+      "description": "Total revenues minus total expenditures for the fiscal year."
     },
     {
-      "term": "Beginning Reserve Fund Balance",
+      "term": "Beginning reserve fund balance",
       "description": "Unappropriated fund balance carried forward from the prior fiscal year."
     },
     {
-      "term": "Ending Reserve Fund Balance",
-      "description": "Reserve balance after operating result and transfers (PAYGO, Housing, etc.)."
+      "term": "Ending reserve fund balance",
+      "description": "Reserve balance after operating result and transfers (PAYGO, housing, etc.)."
     },
     {
-      "term": "Fund Balance as a % of Expenditures",
+      "term": "Fund balance as a % of expenditures",
       "description": "Ending reserve fund balance divided by total expenditures; a measure of fiscal cushion."
     },
     {
-      "term": "Debt Service as a % of Expenditures",
+      "term": "Debt service as a % of expenditures",
       "description": "Debt service costs divided by total expenditures."
     },
     {
       "term": "OPEB",
-      "description": "Other Post-Employment Benefits (retiree health care, life insurance, etc.)."
+      "description": "Other post-employment benefits (retiree health care, life insurance, etc.)."
     }
   ],
   "funds": [
@@ -220,7 +220,7 @@
       "description": "Primary operating fund for the city, covering most departmental expenditures."
     },
     {
-      "name": "Reserve Fund",
+      "name": "Reserve fund",
       "description": "Unappropriated balance carried between fiscal years; used as a fiscal cushion."
     },
     {
@@ -405,9 +405,9 @@
     ]
   },
   "abbreviations": {
-    "FTE": "Full-Time Equivalent — a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
-    "OPEB": "Other Post-Employment Benefits.",
-    "PAYGO": "Pay-As-You-Go (capital funding from reserves instead of debt).",
+    "FTE": "Full-time equivalent — a unit of staffing where 1.0 equals one full-time position. Part-time roles are expressed as fractions (e.g., 0.5 FTE = half-time).",
+    "OPEB": "Other post-employment benefits.",
+    "PAYGO": "Pay-as-you-go (capital funding from reserves instead of debt).",
     "RAD": "Regional Asset District.",
     "ARP": "American Rescue Plan.",
     "DCP": "Department of City Planning.",
@@ -416,16 +416,16 @@
     "PLI": "Department of Permits, Licenses, and Inspections.",
     "EMS": "Emergency Medical Services.",
     "JDE": "JD Edwards (the city's enterprise accounting system).",
-    "SSP": "Site Safety Plan.",
-    "FAS": "Fire Alarm System.",
+    "SSP": "Site safety plan.",
+    "FAS": "Fire alarm system.",
     "CDBG": "Community Development Block Grant.",
     "TIP": "Transportation Improvement Program.",
     "HOPWA": "Housing Opportunities for Persons with AIDS.",
     "HOME": "HOME Investment Partnerships Program (federal affordable housing).",
     "ESG": "Emergency Solutions Grant.",
-    "CIP": "Capital Improvement Plan (the city's multi-year capital spending document).",
+    "CIP": "Capital improvement plan (the city's multi-year capital spending document).",
     "CPFC": "Capital Program Facilitation Committee (reviews and scores capital project proposals).",
-    "CAGR": "Compound Annual Growth Rate (annualized average rate of return over a multi-year period)."
+    "CAGR": "Compound annual growth rate (annualized average rate of return over a multi-year period)."
   },
   "general_terms": [
     {
@@ -437,7 +437,7 @@
       "description": "Pay increment within a salary grade, typically advancing with tenure (e.g., Step A through Step O)."
     },
     {
-      "term": "Cost Center",
+      "term": "Cost center",
       "description": "Numeric code identifying a department or organizational unit in the city's accounting system (e.g., 250000 = Bureau of Police)."
     },
     {
@@ -465,15 +465,15 @@
       "description": "Additional pay supplement awarded to employees based on years of service with the city."
     },
     {
-      "term": "Secondary Employment",
+      "term": "Secondary employment",
       "description": "Compensated off-duty work by city employees (particularly police officers) at private events or businesses, administered through a trust fund."
     },
     {
-      "term": "Transfer In",
+      "term": "Transfer in",
       "description": "Revenue received by a fund from another city fund, such as General Fund transfers to trust funds or special revenue funds."
     },
     {
-      "term": "Transfer Out",
+      "term": "Transfer out",
       "description": "Expenditure representing money moved from one city fund to another (e.g., PAYGO transfer from General Fund to Capital Budget)."
     },
     {
@@ -485,11 +485,11 @@
       "description": "The distribution of budgeted funds to a specific department, program or project within an appropriation."
     },
     {
-      "term": "Functional Area",
+      "term": "Functional area",
       "description": "Category grouping capital projects by type of work: Engineering and Construction, Facility Improvement, Neighborhood and Community Development, Public Safety, Vehicles and Equipment or Administration/Sub-Award."
     },
     {
-      "term": "Project Type",
+      "term": "Project type",
       "description": "Classification of a capital project by timeline and funding origin. Timeline: New (first-time funded), Continuing (spans multiple years) or Recurring (annual). Origin: Capital Project, Intergovernmental Project or Special Revenue Project."
     },
     {
@@ -503,7 +503,7 @@
       "description": "Pay-as-you-go funding transferred from the General Fund reserve. Used for projects not eligible for bond or CDBG financing, typically shorter-lived assets like IT improvements, traffic calming or condemned structure remediation."
     },
     {
-      "source": "BOND",
+      "source": "Bond",
       "description": "Municipal bond financing that spreads project costs over multiple years. Requires the funded asset to have a minimum useful life of 5 years. Repaid through the Debt Service fund with principal and interest."
     },
     {
@@ -511,7 +511,7 @@
       "description": "Community Development Block Grant — federal funds with flexible use, provided the project benefits low- or moderate-income residents, seniors, eliminates blight or addresses health and safety threats."
     },
     {
-      "source": "OTHER",
+      "source": "Other",
       "description": "Funding from federal, state or local government grants, foundation awards, non-profit donations or state/federal reimbursement (especially for TIP transportation projects)."
     }
   ]
