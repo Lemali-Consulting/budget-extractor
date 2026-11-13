@@ -184,9 +184,9 @@ test("glossary terms are sentence case, named funds and programs keep their capi
   for (const term of ["Cost center", "Transfer in", "Beginning reserve fund balance", "Real estate tax", "Health benefits", "Reserve fund"]) {
     await expect(terms.filter({ hasText: new RegExp(`^\\s*${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`) })).toHaveCount(1);
   }
-  // A funding source's term follows a code badge carrying the same name.
+  const sources = page.locator("h2#capital_funding_sources + dl dt");
   for (const source of ["Bond", "Other"]) {
-    await expect(terms.filter({ hasText: new RegExp(`^\\s*${source}\\s+${source}\\s*$`) })).toHaveCount(1);
+    await expect(sources.filter({ hasText: new RegExp(`^\\s*${source}\\s*$`) })).toHaveCount(1);
   }
   await expect(terms.filter({ hasText: /\b(?:BOND|OTHER)\b/ })).toHaveCount(0);
   await expect(terms.filter({ hasText: /^\s*Technology Modernization Fund\s*$/ })).toHaveCount(1);
@@ -234,4 +234,19 @@ test("operating index cards preview the opening paragraph, not the PDF subheadin
     await expect(main).not.toContainText(subheading);
   }
   await expect(main).toContainText("City Council is the legislative branch");
+});
+
+test("glossary terms are named once, without a code badge repeating them", async ({ page }) => {
+  // The badge showed the same word as the term beside it ("CDBG CDBG"); Max dropped it, 2026-11-12.
+  await page.goto("/glossary/");
+  await expect(page.locator("h2#capital_funding_sources + dl dt").filter({ hasText: /^\s*CDBG\s*$/ })).toHaveCount(1);
+  await expect(page.locator("main dt .font-mono")).toHaveCount(0);
+});
+
+test("the table locator counts a page's tables from 1", async ({ page }) => {
+  // Readers count the first table on a page as table 1; the data numbers it 0 (Max, 2026-11-12).
+  await page.goto("/departments/city-council/");
+  const main = page.locator("main");
+  await expect(main).toContainText(/Page \d+, table 1\b/);
+  await expect(main).not.toContainText(/Page \d+, table 0\b/);
 });

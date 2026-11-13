@@ -33,8 +33,8 @@ const sections = [
 // names with no definitions. The data keeps them.
 
 /* Normalize all glossary sections into a uniform shape:
-   { term: string, description: string, code?: string, backlinkKey?: string } */
-type GlossaryEntry = { term: string; description: string; code?: string; backlinkKey?: string };
+   { term: string, description: string, backlinkKey?: string } */
+type GlossaryEntry = { term: string; description: string; backlinkKey?: string };
 
 function normalizeSection(key: string): GlossaryEntry[] {
   const data = (glossary as any)[key];
@@ -45,7 +45,6 @@ function normalizeSection(key: string): GlossaryEntry[] {
       return Object.entries(data).sort().map(([abbr, meaning]) => ({
         term: abbr,
         description: meaning as string,
-        code: abbr,
         backlinkKey: abbr,
       }));
 
@@ -53,7 +52,6 @@ function normalizeSection(key: string): GlossaryEntry[] {
       return data.map((item: any) => ({
         term: item.source,
         description: item.description,
-        code: item.source,
         backlinkKey: item.source,
       }));
 
@@ -112,9 +110,6 @@ function normalizeSection(key: string): GlossaryEntry[] {
             return (
               <div class="px-4 py-3">
                 <dt class="font-medium">
-                  {entry.code && (
-                    <span class="inline-block font-mono text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded mr-2">{entry.code}</span>
-                  )}
                   {entry.term}
                 </dt>
                 {entry.description && (

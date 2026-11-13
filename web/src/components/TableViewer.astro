@@ -167,7 +167,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
         </span>
       )}
       <span class="text-gray-500">
-        Page {table.relative_page}, table {table.table_index}
+        Page {table.relative_page}, table {table.table_index + 1}
         {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
       </span>
       {slug && (
