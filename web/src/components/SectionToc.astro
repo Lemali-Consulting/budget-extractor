@@ -14,9 +14,11 @@ interface TocEntry {
 
 interface Props {
   items: TocEntry[];
+  /** Which document the page numbers count in, e.g. "proposed 2027 operating budget". */
+  documentName: string;
 }
 
-const { items } = Astro.props;
+const { items, documentName } = Astro.props;
 ---
 
 {items.length > 0 && (
@@ -28,6 +30,7 @@ const { items } = Astro.props;
       On this page
     </summary>
     <nav class="px-4 pb-3">
+      <p class="text-xs text-gray-500 mb-2">Page numbers are from the {documentName} PDF.</p>
       <ol class="space-y-1">
         {items.map((item) => (
           <li class="flex items-center gap-2">

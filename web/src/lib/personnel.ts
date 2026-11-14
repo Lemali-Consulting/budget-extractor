@@ -42,6 +42,20 @@ export function budgetPerPosition(line: { fteCurrent: number | null; budgetCurre
   return budgetCurrent / fteCurrent;
 }
 
+/** The PDF's footnote mark after a title ("Battalion Chief *", "Director*"). */
+const FOOTNOTE_MARK = /\s*\*+$/;
+
+/**
+ * A position's title without the PDF's footnote asterisk. The PDF marks a title
+ * split between funds, which the site shows as a note under the title, or one
+ * whose rate has a note (the Bureau of Fire's "Promoted after 1/1/2010"),
+ * which its summaries don't show. Public Source's fact-check found the bare
+ * asterisks unexplained (Rich's factcheck sheet "1126", row 16, item 2).
+ */
+export function positionTitle(title: string): string {
+  return title.replace(FOOTNOTE_MARK, '');
+}
+
 /** One fund's share of a title the PDF splits between funds (see utils/fund_splits.py). */
 export interface FundShare {
   /** The fund as the PDF's split table names it, e.g. "Parks RAD Trust Fund". */

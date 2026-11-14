@@ -115,7 +115,7 @@ function fmtM(n: number): string {
   {trend.length > 1 && (
     <div class="bg-white rounded-lg border p-4">
       <h2 class="text-lg font-semibold mb-2">Budget trend</h2>
-      <TrendMini data={trend.map(t => ({ year: t.year.replace(' Budget', '').replace(' Actual', '*'), amount: t.amount }))} client:load />
+      <TrendMini data={trend.map(t => ({ year: columnHeaderLabel(t.year), amount: t.amount }))} client:load />
     </div>
   )}
 

@@ -68,7 +68,7 @@ import glossaryBacklinks2025 from '../data/views/2025-glossary-backlinks.json';
 
 import type { DeptBudgetRow } from './department-budgets';
 import type { SourceCorrection } from './corrections';
-import type { SalariesAndWages } from './personnel';
+import { positionTitle, type SalariesAndWages } from './personnel';
 import { properNameCase, sectionDisplayTitle, sentenceCase } from './text-case';
 import { classifyPdfHeading, isSubclassChartLegend, isSubclassChartLegendTable } from './pdf-headings';
 import { OMISSIONS_2027, withOmissions, type Omission } from './omitted-content';
@@ -407,7 +407,7 @@ function buildYear(opts: {
     },
     operating,
     capital,
-    views: withDisplayTitlesInViews({ views: opts.views, titleBySlug }),
+    views: withDisplayTitlesInViews({ views: { ...opts.views, personnel: opts.views.personnel.map((p) => ({ ...p, title: positionTitle(p.title) })) }, titleBySlug }),
     capitalAppendices: opts.capitalAppendices ?? null,
     structureChanges: opts.structureChanges ?? null,
     corrections: opts.corrections ?? [],

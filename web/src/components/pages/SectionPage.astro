@@ -344,7 +344,7 @@ for (const item of finalItems) {
 
   <HighlightsCallout highlights={highlights} />
 
-  <div data-pagefind-ignore><SectionToc items={tocEntries} /></div>
+  <div data-pagefind-ignore><SectionToc items={tocEntries} documentName={budgetYear.operatingName} /></div>
 
   {taxBreakdown && <TaxRevenueChart breakdown={taxBreakdown} year={budgetYear.year} />}
 
