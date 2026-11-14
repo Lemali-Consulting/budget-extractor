@@ -73,6 +73,7 @@ import { properNameCase, sectionDisplayTitle, sentenceCase } from './text-case';
 import { classifyPdfHeading, isSubclassChartLegend, isSubclassChartLegendTable } from './pdf-headings';
 import { OMISSIONS_2027, withOmissions, type Omission } from './omitted-content';
 import { isCoverPage } from './pdf-pages';
+import { withMergedPositionTables } from './position-tables';
 import { capitalProjectName } from './capital-project-names';
 
 // ---------------------------------------------------------------------------
@@ -287,7 +288,7 @@ function withDisplayTitles<T extends { sections: any[] }>(opts: { bundle: T; dep
     sections: bundle.sections.map(withApDatesInText).map((s) =>
       s.functional_area
         ? { ...s, pdf_title: s.title, title: capitalProjectName(s.title), functional_area: sentenceCase(s.functional_area), department: s.department && properNameCase(s.department), project_type: s.project_type && sentenceCase(s.project_type) }
-        : withPdfHeadings({ ...s, pdf_title: s.title, title: sectionDisplayTitle({ title: s.title, isDepartment: departmentSlugs.has(s.slug) }) }),
+        : withPdfHeadings(withMergedPositionTables({ ...s, pdf_title: s.title, title: sectionDisplayTitle({ title: s.title, isDepartment: departmentSlugs.has(s.slug) }) })),
     ),
   };
 }

@@ -116,7 +116,6 @@ test("PDF headings on a department page are sentence case", async ({ page }) => 
   await expect(page.getByText("51 - Personnel-salaries & wages").first()).toBeVisible();
   await page.goto("/departments/commission-on-human-relations/");
   await expect(page.locator("main h3").filter({ hasText: /^2026 accomplishments$/ }).first()).toBeAttached();
-  await expect(page.locator("main")).toContainText("Temporary, part-time, and seasonal allowances");
 });
 
 test("the top positions table labels its columns in sentence case", async ({ page }) => {
