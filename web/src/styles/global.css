@@ -80,15 +80,15 @@ details[open] > summary .toc-chevron {
 
 /* Year-over-year change highlighting */
 td.changed-increase {
-  background-color: theme('colors.green.50');
-  box-shadow: inset 2px 0 0 theme('colors.green.400');
+  background-color: theme('colors.ps.blue.50');
+  box-shadow: inset 2px 0 0 theme('colors.ps.blue.400');
 }
 td.changed-decrease {
   background-color: theme('colors.ps.red.50');
   box-shadow: inset 2px 0 0 theme('colors.ps.red.400');
 }
 tr.bg-gray-100 td.changed-increase {
-  background-color: theme('colors.green.100');
+  background-color: theme('colors.ps.blue.100');
 }
 tr.bg-gray-100 td.changed-decrease {
   background-color: theme('colors.ps.red.100');
@@ -96,7 +96,7 @@ tr.bg-gray-100 td.changed-decrease {
 
 /* Amendment (adopted -> amended) highlighting. A separate axis from the
    year-over-year shading above, so it uses an amber accent on the BOTTOM
-   edge (vs. the left-edge green/red) — the two can stack on one cell. */
+   edge (vs. the left-edge blue/red) — the two can stack on one cell. */
 td.has-amendment-up,
 td.has-amendment-down {
   background-color: theme('colors.ps.yellow.50');

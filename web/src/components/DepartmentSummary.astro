@@ -102,7 +102,7 @@ function fmtM(n: number): string {
       label={`vs ${budgetYear.priorLabel}`}
       value={`${Number(pctChange) >= 0 ? '+' : ''}${pctChange}%`}
       detail={fmtM(Math.abs(dollarChange))}
-      color={Number(pctChange) >= 0 ? 'text-green-700' : 'text-ps-red-700'}
+      color={Number(pctChange) >= 0 ? 'text-ps-blue-700' : 'text-ps-red-700'}
     />
     {fteCurrent && (
       <HeroStat label="Staff (FTE)" value={Math.round(fteCurrent).toLocaleString()} />

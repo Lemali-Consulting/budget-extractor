@@ -147,7 +147,7 @@ const teaserLinks: FlowLink[] = [
     <div class="bg-white rounded-lg border p-4">
       <div class="text-xs text-gray-400">Operating budget</div>
       <div class="text-2xl font-bold text-ps-blue-900 mt-1">{fmtM(totalCurrent)}</div>
-      <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
+      <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-ps-blue-600' : 'text-ps-red-600'}`}>
         {budgetChange >= 0 ? '+' : ''}{budgetChange.toFixed(1)}% vs {HEADLINE.priorYear}
       </div>
     </div>

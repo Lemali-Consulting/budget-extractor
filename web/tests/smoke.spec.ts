@@ -3,6 +3,7 @@
  * Verifies that all major routes render without errors and display expected content.
  */
 import { test, expect, type Page } from "./test-base";
+import { PUBLISHED } from "./published-pages";
 
 /** Scoped to <main> to avoid Astro dev toolbar elements. */
 function main(page: Page) {
@@ -391,7 +392,7 @@ test("a shared compare link highlights the departments it shows", async ({ page 
   await expect(pressed).toHaveText(["Bureau of Administration (Public Safety)", "Bureau of Fire"]);
   const change = main(page).locator("tr", { hasText: "Budget change" }).locator("td").last();
   await expect(change).toContainText("+3.3%");
-  await expect(change).toHaveClass(/text-green-600/);
+  await expect(change).toHaveClass(/text-ps-blue-600/); // increases are brand blue
 });
 
 test("compare page shows no FTE changes", async ({ page }) => {
@@ -1256,3 +1257,42 @@ test("reproduced table column headers follow house style", async ({ page }) => {
   await expect(headers.filter({ hasText: /2027 Budget/ })).toHaveCount(0);
 });
 
+
+// ---------------------------------------------------------------------------
+// Increases are Public Source blue, never green (Max, 2026-11-14)
+// ---------------------------------------------------------------------------
+// The brand palette has no green. Max chose blue for increases ("let's make
+// sure it's consistently blue"); decreases stay brand red. Green still marks a
+// few categories (revenue, PAYGO), so this checks figures and bars that show
+// an increase, not every green on the page.
+/** True when a computed CSS color is plainly green (green channel well above red and blue). */
+function isGreen(rgb: string): boolean {
+  const m = rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+  if (!m) return false;
+  const [r, g, b] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  return g > r + 40 && g > b + 20;
+}
+
+test("no published page shows an increase in green", async ({ page }) => {
+  test.setTimeout(240_000); // crawls all 45 published pages
+  const green: string[] = [];
+  for (const route of PUBLISHED) {
+    await page.goto(route);
+    await page.waitForLoadState("networkidle");
+    const increases = await page.evaluate(() =>
+      [...document.querySelectorAll("main *")]
+        .filter((el) => [...el.childNodes].some((n) => n.nodeType === Node.TEXT_NODE && /^\s*[+↑]\s*[$\d]/.test(n.textContent ?? "")))
+        .map((el) => ({ text: (el.textContent ?? "").trim().slice(0, 40), color: getComputedStyle(el).color })),
+    );
+    for (const { text, color } of increases) if (isGreen(color)) green.push(`${route}: "${text}" ${color}`);
+  }
+  expect(green).toEqual([]);
+});
+
+test("the Brief's revenue waterfall builds up in blue, not green", async ({ page }) => {
+  await page.goto("/brief/");
+  const chart = main(page).locator("div", { has: page.getByRole("heading", { name: /^Revenue breakdown/ }) }).last();
+  await expect(chart.locator("svg rect").first()).toBeAttached();
+  const fills = await chart.locator("svg rect").evaluateAll((els) => els.map((e) => getComputedStyle(e).fill));
+  expect(fills.filter(isGreen)).toEqual([]);
+});

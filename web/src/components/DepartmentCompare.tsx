@@ -190,7 +190,7 @@ export default function DepartmentCompare({ budgets, departments, year, priorYea
                   const change = p.budgetCurrent - p.budgetPrior;
                   const pct = p.budgetPrior > 0 ? ((change / p.budgetPrior) * 100).toFixed(1) : '0';
                   return (
-                    <td key={p.department} class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${change >= 0 ? 'text-green-600' : 'text-ps-red-600'}`}>
+                    <td key={p.department} class={`px-3 py-1.5 border-b border-gray-100 text-right tabular-nums ${change >= 0 ? 'text-ps-blue-600' : 'text-ps-red-600'}`}>
                       {formatDollar(change)} ({change >= 0 ? '+' : ''}{pct}%)
                     </td>
                   );

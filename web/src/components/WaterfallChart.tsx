@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import { CHART_COLORS } from '../lib/chart-colors';
+import { PS_SWATCHES } from '../lib/brand-colors.mjs';
 import { FUND_BALANCE_COLOR } from '../lib/flow-colors';
 import { useContainerWidth } from '../lib/hooks';
 
@@ -85,7 +86,8 @@ export default function WaterfallChart({
           y1: 'y1',
           y2: 'y2',
           fill: (d: typeof bars[0]) =>
-            d.isTotal ? CHART_COLORS.primary : d.type === FUND_BALANCE_ITEM_TYPE ? FUND_BALANCE_COLOR : CHART_COLORS.positive,
+            // Components are blue (increases); the total is ink so it stands apart.
+            d.isTotal ? PS_SWATCHES.ink : d.type === FUND_BALANCE_ITEM_TYPE ? FUND_BALANCE_COLOR : CHART_COLORS.positive,
           fillOpacity: (d: typeof bars[0]) => (d.isTotal ? 0.8 : 0.7),
         }),
         Plot.text(bars, {

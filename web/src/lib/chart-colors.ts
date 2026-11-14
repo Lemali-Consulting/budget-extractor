@@ -3,7 +3,8 @@ import { PS_BLUE_SCALE, PS_RED_SCALE, PS_YELLOW_SCALE } from './brand-colors.mjs
 
 export const CHART_COLORS = {
   primary: PS_BLUE_SCALE[600],
-  positive: '#16a34a',   // green-600
+  // Increases are brand blue: the palette has no green (Max, 2026-11-14).
+  positive: PS_BLUE_SCALE[600],
   negative: PS_RED_SCALE[600],
   neutral: '#6b7280',    // gray-500
   annotation: '#666666',

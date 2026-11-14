@@ -101,12 +101,12 @@ export default function PositionChanges({ newPositions, eliminatedPositions, shi
           onClick={() => setTab('new')}
           class={`px-4 py-2 text-sm font-medium border-b-2 transition ${
             tab === 'new'
-              ? 'border-green-600 text-green-700'
+              ? 'border-ps-blue-600 text-ps-blue-700'
               : 'border-transparent text-gray-500 hover:text-gray-700'
           }`}
         >
           New positions
-          <span class="ml-1.5 text-xs bg-green-100 text-green-700 rounded-full px-1.5 py-0.5">
+          <span class="ml-1.5 text-xs bg-ps-blue-100 text-ps-blue-700 rounded-full px-1.5 py-0.5">
             +{newPositions.length}
           </span>
         </button>
