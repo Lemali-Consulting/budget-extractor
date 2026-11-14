@@ -43,8 +43,9 @@ test("operating index lists sections", async ({ page }) => {
   );
   // Departments link to their merged department pages; the citywide sections
   // keep their section pages, and the trust funds share one overview.
+  // 28 department sections, less the Public Works parent, which has no page.
   const departments = main(page).locator("#departments a[href^='/departments/']");
-  expect(await departments.count()).toBe(28);
+  expect(await departments.count()).toBe(27);
   expect(await main(page).locator("a[href^='/sections/']").count()).toBeGreaterThan(0);
   await expect(main(page).locator("a[href='/trust-funds/']")).toBeVisible();
 });
@@ -60,16 +61,6 @@ test("operating section detail renders tables", async ({ page }) => {
   );
   // Should have at least one table
   await expect(main(page).locator("table").first()).toBeVisible();
-});
-
-// The Grants section is the only place the budget lists each grant with its
-// funder and what has been spent; the personnel page's Grants fund links to it.
-test("grants page lists each grant with its funder and balance", async ({ page }) => {
-  await page.goto("/sections/grants/");
-  await expect(main(page).locator("h1").first()).toContainText("Grants");
-  await expect(main(page).locator("table").first()).toBeVisible();
-  await expect(main(page).getByText("Diesel Vehicle Replacement").first()).toBeVisible();
-  await expect(main(page).getByText(/remaining balance/i).first()).toBeVisible();
 });
 
 // Rich (Public Source) asked for a chart breaking tax revenue down by levy.

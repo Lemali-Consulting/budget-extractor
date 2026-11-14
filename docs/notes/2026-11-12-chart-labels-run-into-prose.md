@@ -1,7 +1,7 @@
 # Chart labels run into the PDF's prose paragraphs
 
 **Date:** 2026-11-12 (updated 2026-11-14)
-**Status:** open (department pages fixed; citywide expenditure summary not)
+**Status:** open (department pages fixed; citywide expenditure summary page 46 not)
 
 On the citywide expenditure summary, a chart's values and legend still run into the paragraphs as if they were sentences. Department pages no longer show their subclass pie chart's title or labels: as of 2026-11-14 those are dropped as each year loads.
 
@@ -18,7 +18,7 @@ The fix is a pattern, not an extractor change. A block or table made up only of 
 
 ## Why the citywide case remains
 
-The citywide legend ("General Government Public Safety Finance…") is a run of title-case names with no reliable pattern, so the department rule doesn't catch it. Rich also asked to cut that part of the expenditure summary page outright: row 19, item 2, "everything from 'Expenditures by subclass' down", which is group 3. If that cut lands, this note can be closed with it.
+The citywide legend ("General Government Public Safety Finance…") is a run of title-case names with no reliable pattern, so the department rule doesn't catch it. The fact-check's cut of the expenditure summary (row 19, item 2, "everything from 'Expenditures by subclass' down", 2026-11-14) starts on page 47, so it doesn't reach this paragraph on page 46. The fact-check didn't flag the paragraph either. Still on the built page as of 2026-11-14.
 
 ## Approaches for the citywide case
 

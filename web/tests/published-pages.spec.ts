@@ -10,7 +10,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { test, expect } from "./test-base";
-import { DEPARTMENT_SLUGS, PUBLISHED, RETIRED_EXPLORER } from "./published-pages";
+import { DEPARTMENT_SLUGS, PUBLISHED, RETIRED_EXPLORER, RETIRED_SECTION_PAGES } from "./published-pages";
 
 const WEB_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(WEB_ROOT, "dist");
@@ -36,8 +36,8 @@ function pagePath(href: string): string | null {
   return path.endsWith("/") ? path : `${path}/`;
 }
 
-test("the site publishes exactly the 45 agreed pages", () => {
-  expect(PUBLISHED.size).toBe(45);
+test("the site publishes exactly the 43 agreed pages", () => {
+  expect(PUBLISHED.size).toBe(43);
   expect(builtPages().sort()).toEqual([...PUBLISHED].sort());
 });
 
@@ -74,9 +74,16 @@ test("the compare page links each department to its department page", async ({ p
   expect([...new Set(broken)]).toEqual([]);
 });
 
-test("the Department of Public Works parent section has its own department page", async ({ page }) => {
-  await page.goto("/departments/department-of-public-works/");
-  await expect(page.locator("main h1")).toContainText("Department of Public Works");
+test("the Grants and Public Works parent pages are not built, and old links to them go to the operating index", () => {
+  const rules = readFileSync(join(WEB_ROOT, "public", "_redirects"), "utf8")
+    .split("\n").map((l) => l.trim().split(/\s+/));
+  for (const path of RETIRED_SECTION_PAGES) {
+    expect(builtPages()).not.toContain(path);
+    expect(rules).toContainEqual([path, "/operating/", "301"]);
+    expect(rules).toContainEqual([path.slice(0, -1), "/operating/", "301"]);
+  }
+  // Older section-page links to the Public Works parent skip the retired department page.
+  expect(rules).toContainEqual(["/sections/department-of-public-works/", "/operating/", "301"]);
 });
 
 test("old links to a department's section page redirect to its department page", () => {
@@ -142,7 +149,6 @@ const AP_DATE_EXAMPLES: [string, string][] = [
   ["/departments/bureau-of-police/", "expired on Dec. 31, 2025"],
   ["/departments/bureau-of-animal-care-and-control/", "Feb. 19"],
   ["/departments/department-of-parks-and-recreation/", "July 4"],
-  ["/sections/grants/", "as of Nov. 1, 2026"],
 ];
 
 for (const [path, text] of AP_DATE_EXAMPLES) {

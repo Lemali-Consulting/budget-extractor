@@ -59,3 +59,5 @@ A smoke test lists the 43 pages and fails on any page built beyond them. It also
 - **Page images stay published.** The cut sections' and capital projects' page images still ship and can be reached by direct URL. They are image files, not pages. Whether to stop publishing them is open.
 - **Search covers less.** Search no longer finds text that appeared only on capital project or cut section pages.
 - **Archive years are unaffected.** When published, they keep every section and capital page. The components those routes use stay in the repo.
+
+**Update (2026-11-14):** Grants and the Department of Public Works parent page were cut after Public Source's fact-check, making **43 pages**. See `docs/decisions/2026-11-14-fact-check-content-cuts.md`.

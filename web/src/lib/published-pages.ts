@@ -22,12 +22,19 @@ interface SectionRange {
 export const DEPARTMENT_SECTIONS: SectionRange = { first: 9, last: 36 };
 export const TRUST_FUND_SECTIONS: SectionRange = { first: 37, last: 56 };
 /**
- * Five-Year Forecast, Revenue Summary, Revenue Detail, Expenditure Summary,
- * Expenditures Detail, and Grants (58). Provisional: Max is deciding which
- * citywide sections stay (2026-11-12). Grants was cut with the reference
- * sections, then brought back as the only list of each grant (Max, 2026-11-12).
+ * Five-Year Forecast, Revenue Summary, Revenue Detail, Expenditure Summary and
+ * Expenditures Detail. Grants (58) was cut at Public Source's fact-check as
+ * "not very user friendly, probably not of huge public interest" (Rich's
+ * factcheck sheet, row 13; Max, 2026-11-14).
  */
-export const PUBLISHED_CITYWIDE_SECTIONS: readonly number[] = [3, 4, 6, 7, 8, 58];
+export const PUBLISHED_CITYWIDE_SECTIONS: readonly number[] = [3, 4, 6, 7, 8];
+
+/**
+ * Department sections without a page: the Department of Public Works parent (29),
+ * which holds only prose about its four bureaus, each of which has its own page.
+ * Cut as "extraneous" at the fact-check (row 47; Max, 2026-11-14).
+ */
+export const UNPUBLISHED_DEPARTMENT_SECTIONS: readonly number[] = [29];
 
 /** The headline site's pages that aren't a section: overviews, tools and reference pages. */
 export const PUBLISHED_SINGLE_PAGES: readonly string[] = [
@@ -58,6 +65,7 @@ export function isTrustFundSection(section: SectionRef): boolean {
 export function sectionPageHref(opts: { budgetYear: BudgetYear; section: SectionRef }): string | null {
   const { budgetYear, section } = opts;
   if (!budgetYear.isHeadline) return `${budgetYear.routePrefix}/sections/${section.slug}/`;
+  if (UNPUBLISHED_DEPARTMENT_SECTIONS.includes(section.section_number)) return null;
   if (isDepartmentSection(section)) return `/departments/${section.slug}/`;
   if (PUBLISHED_CITYWIDE_SECTIONS.includes(section.section_number)) return `/sections/${section.slug}/`;
   return null;

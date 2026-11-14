@@ -42,7 +42,6 @@
 /sections/bureau-of-fire/  /departments/bureau-of-fire/  301
 /sections/bureau-of-animal-care-and-control/  /departments/bureau-of-animal-care-and-control/  301
 /sections/office-of-community-health-and-safety/  /departments/office-of-community-health-and-safety/  301
-/sections/department-of-public-works/  /departments/department-of-public-works/  301
 /sections/bureau-of-administration-public-works/  /departments/bureau-of-administration-public-works/  301
 /sections/bureau-of-operations/  /departments/bureau-of-operations/  301
 /sections/bureau-of-environmental-services/  /departments/bureau-of-environmental-services/  301
@@ -70,7 +69,6 @@
 /sections/bureau-of-fire  /departments/bureau-of-fire/  301
 /sections/bureau-of-animal-care-and-control  /departments/bureau-of-animal-care-and-control/  301
 /sections/office-of-community-health-and-safety  /departments/office-of-community-health-and-safety/  301
-/sections/department-of-public-works  /departments/department-of-public-works/  301
 /sections/bureau-of-administration-public-works  /departments/bureau-of-administration-public-works/  301
 /sections/bureau-of-operations  /departments/bureau-of-operations/  301
 /sections/bureau-of-environmental-services  /departments/bureau-of-environmental-services/  301
@@ -300,6 +298,13 @@
 /capital/senior-community-program  /capital/  301
 /capital/capital-budget-appendices/  /capital/  301
 /capital/capital-budget-appendices  /capital/  301
+# Cut at Public Source's fact-check (2026-11-14): Grants and the Public Works parent page.
+/sections/grants/  /operating/  301
+/sections/grants  /operating/  301
+/departments/department-of-public-works/  /operating/  301
+/departments/department-of-public-works  /operating/  301
+/sections/department-of-public-works/  /operating/  301
+/sections/department-of-public-works  /operating/  301
 /departments/   /operating/#departments  301
 /departments    /operating/#departments  301
 /departments/*  /operating/#departments  301

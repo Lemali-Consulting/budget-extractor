@@ -13,7 +13,7 @@ export const SINGLE_PAGES = [
   "/compare/",
 ];
 
-/** PDF sections 9–36: every department, bureau, office and board, the Public Works parent included. */
+/** PDF sections 9–36: every department, bureau, office and board, except the Public Works parent (see RETIRED_SECTION_PAGES). */
 export const DEPARTMENT_SLUGS = [
   "city-council", "office-of-the-city-clerk", "office-of-the-mayor", "office-of-management-and-budget",
   "department-of-innovation-and-performance", "commission-on-human-relations", "office-of-the-city-controller",
@@ -21,19 +21,25 @@ export const DEPARTMENT_SLUGS = [
   "department-of-human-resources-and-civil-service", "department-of-city-planning",
   "department-of-permits-licenses-and-inspections", "bureau-of-administration-public-safety",
   "bureau-of-emergency-medical-services", "bureau-of-police", "bureau-of-fire", "bureau-of-animal-care-and-control",
-  "office-of-community-health-and-safety", "department-of-public-works", "bureau-of-administration-public-works",
+  "office-of-community-health-and-safety", "bureau-of-administration-public-works",
   "bureau-of-operations", "bureau-of-environmental-services", "bureau-of-facilities",
   "department-of-parks-and-recreation", "department-of-mobility-and-infrastructure", "citizen-police-review-board",
 ];
 
-/**
- * The citywide sections kept while Max decides which stay ("see where we land", 2026-11-12).
- * Grants was cut with the reference sections, then brought back because it is
- * the only place the site lists each grant (Max, 2026-11-12).
- */
+/** The citywide sections kept (Max, 2026-11-12). Grants was cut at the fact-check (see RETIRED_SECTION_PAGES). */
 export const CITYWIDE_SECTION_SLUGS = [
   "five-year-financial-forecast", "revenue-summary", "revenue-detail", "expenditure-summary", "expenditures-detail",
-  "grants",
+];
+
+/**
+ * Pages cut at Public Source's fact-check (Rich's factcheck sheet "1126", 2026-11-13; Max, 2026-11-14).
+ * Old links to them go to the operating budget index.
+ */
+export const RETIRED_SECTION_PAGES = [
+  // Row 13: "not very user friendly, probably not of huge public interest".
+  "/sections/grants/",
+  // Row 47: "extraneous". The parent section holds only prose about its bureaus, which have their own pages.
+  "/departments/department-of-public-works/",
 ];
 
 /**

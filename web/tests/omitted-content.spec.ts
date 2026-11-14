@@ -49,3 +49,30 @@ test("an omission that matches nothing stops the build", () => {
   const stale: Omission[] = [{ kind: OMISSION_KIND.TABLE, sectionSlug: FINANCE, tableId: "s16_p4_t9", reason: "moved" }];
   expect(() => withOmissions({ bundle, omissions: stale })).toThrow(/matched nothing/);
 });
+
+test("a cut from a heading drops it and everything after it in the section, keeping what precedes it", () => {
+  const section = {
+    slug: "expenditure-summary",
+    tables: [{ id: "s7_p1_t0", relative_page: 1 }, { id: "s7_p3_t0", relative_page: 3 }, { id: "s7_p4_t0", relative_page: 4 }],
+    page_content: [
+      { relative_page: 1, text_blocks: [{ role: "narrative", text: "Expenditures by Department", bbox: [0, 90, 0, 0] }] },
+      {
+        relative_page: 3,
+        text_blocks: [
+          { role: "narrative", text: "Public Works\nThe department...\nExpenditures by Subclass\nExpenditures can be divided", bbox: [0, 89, 0, 0] },
+          { role: "section_title", text: "2027 Personnel vs. Non-Personnel", bbox: [0, 361, 0, 0] },
+        ],
+        chart_regions: [{ chart_type: "raster_image", bbox: [0, 400, 0, 0] }],
+      },
+      { relative_page: 4, text_blocks: [{ role: "section_title", text: "2027 Expenditures by Subclass", bbox: [0, 97, 0, 0] }] },
+    ],
+  };
+  const omissions: Omission[] = [
+    { kind: OMISSION_KIND.CUT_FROM, sectionSlug: "expenditure-summary", page: 3, line: "Expenditures by Subclass", reason: "cut" },
+  ];
+  const [cut] = withOmissions({ bundle: { sections: [section] }, omissions }).sections;
+  expect(cut.tables.map((t) => t.id)).toEqual(["s7_p1_t0"]);
+  expect(cut.page_content?.map((p) => p.relative_page)).toEqual([1, 3]);
+  expect(cut.page_content?.[1].text_blocks?.map((b) => b.text)).toEqual(["Public Works\nThe department..."]);
+  expect(cut.page_content?.[1].chart_regions).toEqual([]);
+});
