@@ -303,6 +303,10 @@
 /departments/   /operating/#departments  301
 /departments    /operating/#departments  301
 /departments/*  /operating/#departments  301
+# The data explorer showed every table, capital projects and trust funds included,
+# more than one page could be fact-checked; it was culled (Max, 2026-11-14).
+/explorer/   /  301
+/explorer    /  301
 /hero/*      /  301
 /hero        /  301
 /embed/*     /  301

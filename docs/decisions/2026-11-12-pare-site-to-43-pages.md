@@ -25,6 +25,8 @@ The four answers cover:
 
 **Update (2026-11-12):** Max brought back the data explorer and then the compare page ("Actually, let's bring the Data Explorer page back", "Also let's bring back the /compare page"). That makes **45 pages**: 12 single pages. Their links to sections go through the published-pages module, like everything else: capital tables and unpublished sections aren't linked. Section tables again carry "Open in Explorer". The compare page now shows each department's total budget, departments only, and no FTE change. See `docs/notes/archive/2026-11-12-compare-page-figures.md`.
 
+**Update (2026-11-14):** The data explorer was culled after Public Source's fact-check, making **45 pages**. See `docs/decisions/2026-11-14-cull-the-data-explorer.md`.
+
 **Update (2026-11-12):** Max brought back the Grants section (58) as a citywide section page ("Bring back the Grants section as a page"), making **46 pages**. It had been cut with the reference sections, but it is the only place the budget lists each grant, with its funder, purpose, and amounts awarded, spent and remaining. Max asked after it was pointed out that grants otherwise appeared only as revenue and expense line items and in the data explorer.
 
 The first cut published 43 pages:

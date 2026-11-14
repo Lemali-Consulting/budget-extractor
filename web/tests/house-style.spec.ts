@@ -214,8 +214,8 @@ test("the trends page's revenue buttons are sentence case", async ({ page }) => 
 
 test("table links and locators on section pages are sentence case", async ({ page }) => {
   await page.goto("/departments/bureau-of-fire/");
-  await expect(page.getByRole("link", { name: /Open in data explorer/ }).first()).toBeVisible();
-  await expect(page.locator("main")).not.toContainText("Open in Explorer");
+  // The data explorer was retired (2026-11-14), so tables no longer offer to open in it.
+  await expect(page.locator("main")).not.toContainText(/Open in (data )?explorer/i);
   await expect(page.locator("main")).toContainText(/Page \d+, table \d+/);
 });
 

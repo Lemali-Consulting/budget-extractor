@@ -10,7 +10,7 @@ export const SINGLE_PAGES = [
   "/", "/operating/", "/capital/", "/about/", "/trust-funds/",
   "/brief/", "/trends/", "/glossary/", "/personnel/", "/flow/",
   // Cut with the first pass, then brought back (Max, 2026-11-12).
-  "/explorer/", "/compare/",
+  "/compare/",
 ];
 
 /** PDF sections 9–36: every department, bureau, office and board, the Public Works parent included. */
@@ -35,6 +35,14 @@ export const CITYWIDE_SECTION_SLUGS = [
   "five-year-financial-forecast", "revenue-summary", "revenue-detail", "expenditure-summary", "expenditures-detail",
   "grants",
 ];
+
+/**
+ * The data explorer showed every table in both budgets, capital projects and
+ * trust funds included, so one URL held far more than could be fact-checked.
+ * Its charts also mixed headcounts and dollars. Culled at Rich's suggestion
+ * (Max, 2026-11-14); department and section pages show the same tables.
+ */
+export const RETIRED_EXPLORER = "/explorer/";
 
 export const PUBLISHED = new Set([
   ...SINGLE_PAGES,

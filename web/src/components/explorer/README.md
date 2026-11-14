@@ -1,1 +1,0 @@
-Sub-components for the Data Explorer page. Extracted from a single monolithic `DataExplorer.tsx` to improve maintainability. The main shell (`DataExplorer.tsx`) handles state and layout; each sub-component owns its own rendering and behavior.

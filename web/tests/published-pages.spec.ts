@@ -10,7 +10,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { test, expect } from "./test-base";
-import { DEPARTMENT_SLUGS, PUBLISHED } from "./published-pages";
+import { DEPARTMENT_SLUGS, PUBLISHED, RETIRED_EXPLORER } from "./published-pages";
 
 const WEB_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(WEB_ROOT, "dist");
@@ -36,8 +36,8 @@ function pagePath(href: string): string | null {
   return path.endsWith("/") ? path : `${path}/`;
 }
 
-test("the site publishes exactly the 46 agreed pages", () => {
-  expect(PUBLISHED.size).toBe(46);
+test("the site publishes exactly the 45 agreed pages", () => {
+  expect(PUBLISHED.size).toBe(45);
   expect(builtPages().sort()).toEqual([...PUBLISHED].sort());
 });
 
@@ -66,17 +66,6 @@ test("a department page shows the summary above the PDF section's tables", async
   expect(summaryTop!.y).toBeLessThan(firstTableTop!.y);
 });
 
-test("the data explorer's section links lead only to published pages", async ({ page }) => {
-  // The explorer lists every table, capital ones included, but only some sections have a page.
-  await page.goto("/explorer/");
-  await page.waitForLoadState("networkidle");
-  const sidebarLinks = page.locator('a[aria-label^="View "]');
-  expect(await sidebarLinks.count()).toBeGreaterThan(0);
-  const hrefs = await page.locator("a[href]").evaluateAll((els) => els.map((e) => e.getAttribute("href") ?? ""));
-  const broken = hrefs.map(pagePath).filter((p): p is string => p !== null && !PUBLISHED.has(p));
-  expect([...new Set(broken)]).toEqual([]);
-});
-
 test("the compare page links each department to its department page", async ({ page }) => {
   await page.goto("/compare/");
   await page.waitForLoadState("networkidle");
@@ -99,6 +88,14 @@ test("old links to a department's section page redirect to its department page",
   }
 });
 
+test("the retired data explorer is not built, and old links to it go home", () => {
+  expect(builtPages()).not.toContain(RETIRED_EXPLORER);
+  const rules = readFileSync(join(WEB_ROOT, "public", "_redirects"), "utf8")
+    .split("\n").map((l) => l.trim().split(/\s+/));
+  expect(rules).toContainEqual([RETIRED_EXPLORER, "/", "301"]);
+  expect(rules).toContainEqual([RETIRED_EXPLORER.slice(0, -1), "/", "301"]);
+});
+
 test("old links to a capital project page redirect to the capital index", () => {
   // Netlify won't apply "/capital/*  /capital/" because the target matches its
   // own pattern (old project links 404'd on the preview), so each project needs its own rule.
@@ -116,7 +113,7 @@ test("old links to a capital project page redirect to the capital index", () => 
  * reproduced from the PDF included (Max, 2026-11-12): Jan., Feb., Aug., Sept.,
  * Oct., Nov. and Dec. abbreviated with a day; March through July spelled out;
  * no ordinals ("July 4th"); no numeric dates ("11/25/26"). Reads the built
- * HTML whole, so the data explorer's embedded tables are checked too.
+ * HTML whole, so tables reproduced from the PDF are checked too.
  */
 const NON_AP_DATE = new RegExp(
   [

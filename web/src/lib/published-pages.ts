@@ -11,7 +11,6 @@
 
 import type { BudgetYear } from './budget-year';
 
-const CAPITAL_BUDGET_TYPE = 'capital';
 
 /** Section numbers in the 2027 proposed budget document. */
 interface SectionRange {
@@ -34,7 +33,7 @@ export const PUBLISHED_CITYWIDE_SECTIONS: readonly number[] = [3, 4, 6, 7, 8, 58
 export const PUBLISHED_SINGLE_PAGES: readonly string[] = [
   '/', '/operating/', '/capital/', '/about/', '/trust-funds/',
   '/brief/', '/trends/', '/glossary/', '/personnel/', '/flow/',
-  '/explorer/', '/compare/',
+  '/compare/',
 ];
 
 interface SectionRef {
@@ -80,14 +79,6 @@ export function publishedSectionHrefs(budgetYear: BudgetYear): Record<string, st
     if (href) hrefs[section.slug] = href;
   }
   return hrefs;
-}
-
-/**
- * The page for a table's section, for islands that list capital and operating
- * tables together (the data explorer). Capital tables have no section page.
- */
-export function sectionPage(opts: { sectionHrefs: Record<string, string>; budgetType?: string; slug: string }): string | undefined {
-  return opts.budgetType === CAPITAL_BUDGET_TYPE ? undefined : opts.sectionHrefs[opts.slug];
 }
 
 /** Every page the year publishes, as site paths: the single pages, then its sections in document order. */
