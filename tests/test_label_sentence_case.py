@@ -58,3 +58,15 @@ def test_sentence_case_keeps_regional_asset_district():
     """
     from utils.text_case import sentence_case
     assert sentence_case("REGIONAL ASSET DISTRICT TAX RELIEF") == "Regional Asset District tax relief"
+
+
+def test_sentence_case_hyphenates_five_year():
+    """"Five-year" is a compound modifier, so it takes a hyphen however the PDF prints it.
+
+    Public Source asked for "Five-year forecast" on every department page
+    (Rich's factcheck sheet, row 20 and others, 2026-11-13); the web side's
+    case module applies the same rule.
+    """
+    from utils.text_case import sentence_case
+    assert sentence_case("FIVE YEAR FORECAST") == "Five-year forecast"
+    assert sentence_case("Five-Year Financial Forecast") == "Five-year financial forecast"

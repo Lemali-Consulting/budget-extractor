@@ -5,7 +5,7 @@
  * axis values, pie-slice labels, notes) is not shown as one.
  */
 import { test, expect } from "./test-base";
-import { classifyPdfHeading, isPdfChartScrap, pdfHeadingText, subclassLabel, tableGroupLabel } from "../src/lib/pdf-headings";
+import { classifyPdfHeading, isPdfChartScrap, isSubclassChartLegend, pdfHeadingText, subclassLabel, tableGroupLabel } from "../src/lib/pdf-headings";
 
 const FIRE = { pdfTitle: "Bureau of Fire", title: "Bureau of Fire" };
 const CLERK = { pdfTitle: "Office of the\nCity Clerk", title: "Office of the City Clerk" };
@@ -23,14 +23,13 @@ test.describe("PDF table and chart titles become sentence-case headings", () => 
     // The section's own name takes its display title.
     ["Budget Guide", "Budget guide", GUIDE],
     ["Office of the\nCity Clerk", "Office of the City Clerk", CLERK],
-    // A department name printed in capitals above a chart title gets ordinary capitals.
-    ["BUREAU OF FIRE\n2027 Expenditures by Subclass", "Bureau of Fire 2027 expenditures by subclass"],
-    ["ETHICS HEARING BOARD\n2027 Expenditures by Subclass", "Ethics Hearing Board 2027 expenditures by subclass"],
-    ["Office of the City Clerk\n2027 Expenditures by Subclass", "Office of the City Clerk 2027 expenditures by subclass", CLERK],
+    // A department name printed in capitals above a heading gets ordinary capitals.
+    ["BUREAU OF FIRE\nPersonnel Summary", "Bureau of Fire personnel summary"],
     // Other names keep their capitals.
     ["Department of\nPublic Safety", "Department of Public Safety"],
     ["Special Revenue\nFunds", "Special revenue funds"],
-    ["Five Year Forecast", "Five year forecast"],
+    // "Five-year" is a compound modifier (Rich's factcheck sheet, row 20 and most department rows, 2026-11-13).
+    ["Five Year Forecast", "Five-year forecast"],
     // After "Position summary:" comes a grant's own name.
     ["Position Summary: Head of Talent Acquisition\n2129400555", "Position summary: Head of Talent Acquisition 2129400555"],
     // A bond series letter is a designator, not a word.
@@ -61,6 +60,10 @@ test.describe("chart values and labels are not headings", () => {
     // A pie chart's subclass labels, one or several to a line.
     "51 - PERSONNEL-SALARIES & WAGES",
     "54 - PROPERTY SERVICES 56 - SUPPLIES\n53 - PROF. & TECHNICAL SERVICES",
+    // The title of a department's subclass pie chart. The site doesn't show the chart, so its title has nothing to head.
+    "BUREAU OF FIRE\n2027 Expenditures by Subclass",
+    "ETHICS HEARING BOARD\n2027 Expenditures by Subclass",
+    "Office of the City Clerk\n2027 Expenditures by Subclass",
   ];
   for (const text of scraps) {
     test(`${JSON.stringify(text)} is dropped`, () => {
@@ -127,4 +130,41 @@ test("a subclass label in the PDF's prose is a chart label, with or without its 
 test("subclass names in our own lists are sentence case", () => {
   expect(subclassLabel("51 - PERSONNEL-SALARIES & WAGES")).toBe("51 - Personnel-salaries & wages");
   expect(subclassLabel("53 - PROFESSIONAL & TECHNICAL SERVICES")).toBe("53 - Professional & technical services");
+});
+
+/**
+ * Each department's forecast page prints a pie chart of its 2027 spending by
+ * subclass. The site doesn't show the chart, and its title and labels read as
+ * garbled prose (Rich's factcheck sheet, rows 24, 25, 30 and others, 2026-11-13).
+ */
+test.describe("a subclass pie chart's title and labels are recognised wherever they land", () => {
+  const legends = [
+    "BUREAU OF POLICE\n2027 Expenditures by Subclass\n56 - SUPPLIES 57 - PROPERTY\n54 - PROPERTY SERVICES\n53 - PROF. & TECHNICAL SERVICES",
+    "DEPARTMENT OF PUBLIC SAFETY - BUREAU OF ADMINISTRATION\n2027 Expenditures by Subclass",
+    "DEPARTMENT OF PERMITS, LICENSES, AND INSPECTIONS\n2027 Expenditures by Subclass\n55 - OTHER SERVICES",
+    "56 - SUPPLIES\n55 - OTHER SERVICES\n53 - PROF. & TECHNICAL SERVICES\n52 - PERSONNEL-EMPLOYEE BENEFITS",
+    "52 - PERSONNEL-EMPLOYEE BENEFITS",
+    // Labels the extractor read as a table's cells, joined.
+    "CITIZEN POLICE REVIEW BOARD 2027 Expenditures by Subclass 56 - SUPPLIES 55 - OTHER SERVICES 54 - PROPERTY SERVICES",
+    "51 - PERSONNEL-SALARIES & WAGES 52 - PERSONNEL-EMPLOYEE BENEFITS 57 - PROPERTY 56 - SUPPLIES 53 - PROF. & TECHNICAL SERVICES",
+  ];
+  for (const text of legends) {
+    test(`${JSON.stringify(text.slice(0, 60))} is a chart legend`, () => {
+      expect(isSubclassChartLegend(text)).toBe(true);
+    });
+  }
+
+  const notLegends = [
+    // The citywide summary's own heading, kept for now (the section's lower half is a separate cut).
+    "2027 Expenditures by Subclass",
+    "For a more detailed explanation of the subclasses please refer to the “Where Do Expenditures Go?” section.",
+    "91106 - General Fund-Out is broken down as follows:",
+    "51 - PERSONNEL-SALARIES & WAGES 2,869,722 2,940,983",
+    "Mission Statement",
+  ];
+  for (const text of notLegends) {
+    test(`${JSON.stringify(text.slice(0, 60))} is not a chart legend`, () => {
+      expect(isSubclassChartLegend(text)).toBe(false);
+    });
+  }
 });

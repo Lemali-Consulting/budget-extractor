@@ -33,6 +33,10 @@ const NOTE = /^(?:\*|Note:|\[)/;
 /** A subclass code before its name, with or without a dash: "51 - PERSONNEL-SALARIES & WAGES", "52 Personnel-Employee Benefits". */
 const SUBCLASS_SEGMENT = /(\d{2})( - | )([A-Za-z].*?)(?=\s+\d{2}(?: - | )[A-Za-z]|$)/g;
 const SUBCLASS_START = /^\d{2}(?: - | )[A-Za-z]/;
+/** A subclass label as a department's pie chart prints it, in capitals: "53 - PROF. & TECHNICAL SERVICES". */
+const SUBCLASS_CHART_LABEL = /\b\d{2} - [A-Z][A-Z.&-]*(?: [A-Z.&-]+)*/g;
+/** That chart's title: the department's name, then "2027 Expenditures by Subclass". */
+const SUBCLASS_CHART_TITLE = /^[^\d.]{3,80} \d{4} Expenditures by Subclass$/;
 /** A division or program of a department is a named unit, written the way the PDF writes it. */
 const NAMED_UNIT = /\b(?:Division|Program|Office|Team|Unit)\b|\([A-Z]{2,}\)/;
 /** Capitals casing must not lower, put back where the source had them: a designator letter ("Series B") and a month before its day ("Nov. 1"). */
@@ -89,9 +93,28 @@ function headingCase(opts: { lines: string[]; section: HeadingSection }): string
   return sentenceCaseKeepingLetters(text);
 }
 
-/** Text from a chart (an axis value, a slice label) rather than a heading. */
+/**
+ * The title and labels of a department's subclass pie chart, in any mix: the
+ * extractor files them as headings, prose or a table. The site doesn't show
+ * the chart, so they have nothing to label.
+ */
+export function isSubclassChartLegend(text: string): boolean {
+  const labels = text.match(SUBCLASS_CHART_LABEL) ?? [];
+  const rest = collapse(text.replace(SUBCLASS_CHART_LABEL, ' '));
+  if (rest === '') return labels.length > 0;
+  return SUBCLASS_CHART_TITLE.test(rest);
+}
+
+/** A table whose cells hold only a subclass pie chart's title and labels. */
+export function isSubclassChartLegendTable(table: { headers: string[]; rows: string[][] }): boolean {
+  const cells = [...table.headers, ...table.rows.flat()].filter((cell) => cell && cell.trim());
+  return isSubclassChartLegend(cells.join(' '));
+}
+
+/** Text from a chart (an axis value, a slice label, a chart title with no chart) rather than a heading. */
 export function isPdfChartScrap(text: string): boolean {
   if (!/[A-Za-z]/.test(text)) return true;
+  if (isSubclassChartLegend(text)) return true;
   // A subclass name on its own is a pie chart's label; tables carry subclasses in their rows.
   if (SUBCLASS_START.test(text)) return true;
   return CHART_VALUE.test(text) && wordCount(text) <= MAX_CHART_LABEL_WORDS;

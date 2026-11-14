@@ -108,7 +108,9 @@ test("PDF headings on a department page are sentence case", async ({ page }) => 
   const headings = page.locator("main h2");
   await expect(headings.filter({ hasText: /^Position summary$/ }).first()).toBeVisible();
   await expect(headings.filter({ hasText: /^Subclass detail$/ }).first()).toBeVisible();
-  await expect(headings.filter({ hasText: "Bureau of Fire 2027 expenditures by subclass" })).toHaveCount(1);
+  await expect(headings.filter({ hasText: /^Five-year forecast$/ })).toHaveCount(1);
+  // The subclass pie chart isn't shown, so its title isn't either (Rich's factcheck sheet, 2026-11-13).
+  await expect(headings.filter({ hasText: /expenditures by subclass/i })).toHaveCount(0);
   await expect(page.locator("main")).not.toContainText("BUREAU OF FIRE 2027");
   await expect(headings.filter({ hasText: /^\d{2} - / })).toHaveCount(0);
   await expect(page.getByText("51 - Personnel-salaries & wages").first()).toBeVisible();

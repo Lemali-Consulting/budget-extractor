@@ -154,7 +154,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
 <div class="mb-8 bg-white rounded-lg border overflow-hidden" id={`table-container-${table.id}`}>
   <div class="px-4 py-3 bg-gray-50 border-b text-sm">
     <div class="flex items-center gap-3">
-      <span class={`px-2 py-0.5 rounded text-xs font-medium ${badgeClass}`}>
+      <span data-testid="table-type-badge" class={`px-2 py-0.5 rounded text-xs font-medium ${badgeClass}`}>
         {table.table_type}
       </span>
       {tableCorrections.length > 0 && (

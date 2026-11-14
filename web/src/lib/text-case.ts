@@ -19,6 +19,9 @@ const ACRONYMS: ReadonlySet<string> = new Set([
   'CDBG', 'CIP', 'PAYGO', 'CPFC', 'EMS', 'FTE', 'HSIP', 'HUD', 'PILOT', 'PWSA', 'RAD', 'TIF', 'TIP', 'URA', 'URD',
 ]);
 
+/** Compound modifiers the PDF prints without their hyphen ("Five Year Forecast"), as house style writes them. */
+const COMPOUND_MODIFIERS: readonly (readonly [RegExp, string])[] = [[/\bfive year\b/g, 'five-year']];
+
 /** A department, bureau, office, commission or fund name: a proper noun, left as printed. */
 export const PROPER_NAME_PATTERN = /^(Department|Bureau|Office|Commission|Board)\s+of\b|\bFund\b|\bCouncil\b/;
 
@@ -43,6 +46,9 @@ export function phraseCase(text: string): string {
   });
   for (const phrase of PROPER_PHRASES) {
     out = out.replace(new RegExp(escapeRegExp(phrase), 'gi'), phrase);
+  }
+  for (const [unhyphenated, hyphenated] of COMPOUND_MODIFIERS) {
+    out = out.replace(unhyphenated, hyphenated);
   }
   return out;
 }

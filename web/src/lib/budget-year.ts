@@ -70,7 +70,8 @@ import type { DeptBudgetRow } from './department-budgets';
 import type { SourceCorrection } from './corrections';
 import type { SalariesAndWages } from './personnel';
 import { properNameCase, sectionDisplayTitle, sentenceCase } from './text-case';
-import { classifyPdfHeading } from './pdf-headings';
+import { classifyPdfHeading, isSubclassChartLegend, isSubclassChartLegendTable } from './pdf-headings';
+import { OMISSIONS_2027, withOmissions, type Omission } from './omitted-content';
 import { isCoverPage } from './pdf-pages';
 import { capitalProjectName } from './capital-project-names';
 
@@ -297,18 +298,29 @@ const BLOCK_ROLE = { SECTION_TITLE: 'section_title', NARRATIVE: 'narrative', FOO
 /** Where each kind of "section title" block ends up: headings re-cased, notes as small print, chart scraps dropped. */
 const ROLE_FOR_HEADING_KIND = { heading: BLOCK_ROLE.SECTION_TITLE, note: BLOCK_ROLE.FOOTNOTE, prose: BLOCK_ROLE.NARRATIVE } as const;
 
-/** The section's PDF headings in house style (keeping the printed text in `pdf_text`), without its cover page. */
+/**
+ * The section's PDF headings in house style (keeping the printed text in `pdf_text`), without its cover page,
+ * the scraps of its subclass pie chart, or a heading the PDF repeats where a table continues onto the next page.
+ */
 function withPdfHeadings(section: any): any {
   const headingSection = { pdfTitle: section.pdf_title, title: section.title };
+  let previousHeading = '';
   const recast = (block: any): any[] => {
+    if (block.role === BLOCK_ROLE.NARRATIVE && isSubclassChartLegend(block.text)) return [];
     if (block.role !== BLOCK_ROLE.SECTION_TITLE) return [block];
     const heading = classifyPdfHeading({ text: block.text, section: headingSection });
     if (heading.kind === 'chart-scrap') return [];
+    if (heading.kind === 'heading') {
+      if (heading.text === previousHeading) return [];
+      previousHeading = heading.text;
+    }
     return [{ ...block, pdf_text: block.text, text: heading.text, role: ROLE_FOR_HEADING_KIND[heading.kind] }];
   };
-  const tablePages = new Set<number>((section.tables ?? []).map((t: any) => t.relative_page));
+  const tables = (section.tables ?? []).filter((t: any) => !isSubclassChartLegendTable(t));
+  const tablePages = new Set<number>(tables.map((t: any) => t.relative_page));
   return {
     ...section,
+    tables,
     page_content: (section.page_content ?? [])
       .filter((page: any) => !isCoverPage({ page, tablePages }))
       .map((page: any) => ({ ...page, text_blocks: (page.text_blocks ?? []).flatMap(recast) })),
@@ -361,13 +373,15 @@ function buildYear(opts: {
   capitalAppendices?: any | null;
   structureChanges?: any | null;
   corrections?: SourceCorrection[];
+  /** Fragments of the extraction the site leaves out (see omitted-content.ts). */
+  omissions?: readonly Omission[];
   amendment?: AmendmentInfo | null;
 }): BudgetYear {
   const { meta, role } = opts;
   const { year, priorYear } = meta;
   const names = describeVariant({ year, variant: meta.operatingVariant });
   const priorLabel = `${priorYear} budget`;
-  const operating = withDisplayTitles({ bundle: opts.operating, departmentSlugs: new Set(opts.views.departmentBudgets.map((r) => r.slug)) });
+  const operating = withDisplayTitles({ bundle: withOmissions({ bundle: opts.operating, omissions: opts.omissions ?? [] }), departmentSlugs: new Set(opts.views.departmentBudgets.map((r) => r.slug)) });
   const capital = withDisplayTitles({ bundle: opts.capital, departmentSlugs: new Set() });
   const titleBySlug = new Map<string, string>(
     [...operating.sections, ...capital.sections].map((sec: any) => [sec.slug, sec.title]),
@@ -427,6 +441,7 @@ const YEAR_2027: BudgetYear = buildYear({
   capitalAppendices: headlineCapitalAppendices,
   structureChanges: headlineStructureChanges,
   corrections: headlineCorrections as SourceCorrection[],
+  omissions: OMISSIONS_2027,
 });
 
 const YEAR_2026: BudgetYear = buildYear({

@@ -18,6 +18,10 @@ ACRONYMS: frozenset[str] = frozenset({
 
 WORD_PATTERN: re.Pattern[str] = re.compile(r"[A-Za-z][A-Za-z'’]*")
 
+# Compound modifiers the PDF prints without their hyphen ("Five Year Forecast"),
+# as house style writes them. The web side's case module lists the same ones.
+COMPOUND_MODIFIERS: tuple[tuple[re.Pattern[str], str], ...] = ((re.compile(r"\bfive year\b"), "five-year"),)
+
 
 def _restore_word(match: re.Match[str], *, source_is_all_caps: bool) -> str:
     """Lowercase one word unless it is an acronym (known, or all caps in mixed-case text)."""
@@ -35,6 +39,8 @@ def phrase_case(text: str) -> str:
     lowered: str = WORD_PATTERN.sub(lambda m: _restore_word(m, source_is_all_caps=source_is_all_caps), text)
     for phrase in PROPER_PHRASES:
         lowered = re.sub(re.escape(phrase), phrase, lowered, flags=re.IGNORECASE)
+    for unhyphenated, hyphenated in COMPOUND_MODIFIERS:
+        lowered = unhyphenated.sub(hyphenated, lowered)
     return lowered
 
 
