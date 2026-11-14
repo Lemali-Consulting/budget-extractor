@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'preact/hooks';
 import * as Plot from '@observablehq/plot';
 import { CHART_COLORS } from '../lib/chart-colors';
 import { useContainerWidth } from '../lib/hooks';
+import { formatDollar } from '../lib/currency';
 
 interface TrendPoint {
   year: string;
@@ -42,12 +43,12 @@ export default function TrendMini({ data, height = 180, highlightYear }: Props) 
           y: 'amount',
           fill: (d: TrendPoint) => d.year.includes(String(highlightYear)) ? CHART_COLORS.primary : '#97C4FE',
           tip: true,
-          title: (d: TrendPoint) => `${d.year}: $${(d.amount / 1_000_000).toFixed(1)}M`,
+          title: (d: TrendPoint) => `${d.year}: ${formatDollar(d.amount)}`,
         }),
         Plot.text(data, {
           x: 'year',
           y: 'amount',
-          text: (d: TrendPoint) => `$${(d.amount / 1_000_000).toFixed(1)}M`,
+          text: (d: TrendPoint) => formatDollar(d.amount),
           dy: -8,
           fontSize: 11,
           fill: '#374151',

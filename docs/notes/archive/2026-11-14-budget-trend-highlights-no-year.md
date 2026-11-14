@@ -1,9 +1,9 @@
 # The department budget trend chart doesn't highlight the budget year
 
 **Date:** 2026-11-14
-**Status:** open
+**Status:** fixed (2026-11-14)
 
-On every department page, all bars in the "Budget trend" chart are the same light blue. The chart is meant to draw the budget year's bar in the primary color. The fact-check didn't flag it. It is recorded here and not fixed.
+On every department page, all bars in the "Budget trend" chart were the same light blue, though the chart is meant to draw the budget year's bar in the primary color. Fixed 2026-11-14 with the row 42 changes to the same chart.
 
 ## Evidence
 
@@ -14,3 +14,7 @@ On every department page, all bars in the "Budget trend" chart are the same ligh
 ## Fix
 
 Pass `highlightYear={budgetYear.year}`. Row 42 (group 6, the Office of Community Health and Safety's near-zero 2026 spending) also changes this chart, so the two could be done together.
+
+## Resolution
+
+Fixed 2026-11-14 alongside row 42 (group 6): `DepartmentSummary.astro` now passes `highlightYear={budgetYear.year}`. `web/tests/budget-trend.spec.ts` checks that exactly one bar on the Bureau of Fire's chart is in the primary color.

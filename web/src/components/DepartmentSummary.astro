@@ -7,6 +7,8 @@ import TrendMini from './TrendMini.tsx';
 import type { BudgetYear } from '../lib/budget-year';
 import { publishedSectionHrefs } from '../lib/published-pages';
 import { columnHeaderLabel } from '../lib/text-case';
+import { headlineChange } from '../lib/budget-change';
+import { BUDGET_TREND_NOTES } from '../lib/budget-trend-notes';
 import { subclassLabel } from '../lib/pdf-headings';
 
 interface Props {
@@ -78,8 +80,8 @@ if (section?.tables) {
 // Computed values
 const budgetCurrent = deptChange?.budgetCurrent || trend.find(t => t.year === columns.budget)?.amount || 0;
 const budgetPrior = deptChange?.budgetPrior || trend.find(t => t.year === columns.priorBudget)?.amount || 0;
-const dollarChange = deptChange?.dollarChange ?? (budgetCurrent - budgetPrior);
-const pctChange = deptChange?.pctChange ?? (budgetPrior > 0 ? ((dollarChange / budgetPrior) * 100).toFixed(1) : '0');
+const change = headlineChange({ current: budgetCurrent, prior: budgetPrior });
+const trendNote = BUDGET_TREND_NOTES[slug];
 const fteCurrent = deptPersonnel?.totalFteCurrent || deptChange?.fteCurrent;
 
 /** A per-position budget, or a dash where the line has none (see budgetPerPosition). */
@@ -100,9 +102,9 @@ function fmtM(n: number): string {
     <HeroStat label={budgetYear.shortLabel} value={fmtM(budgetCurrent)} />
     <HeroStat
       label={`vs ${budgetYear.priorLabel}`}
-      value={`${Number(pctChange) >= 0 ? '+' : ''}${pctChange}%`}
-      detail={fmtM(Math.abs(dollarChange))}
-      color={Number(pctChange) >= 0 ? 'text-ps-blue-700' : 'text-ps-red-700'}
+      value={change.value}
+      detail={change.detail}
+      color={change.isIncrease ? 'text-ps-blue-700' : 'text-ps-red-700'}
     />
     {fteCurrent && (
       <HeroStat label="Staff (FTE)" value={Math.round(fteCurrent).toLocaleString()} />
@@ -115,7 +117,10 @@ function fmtM(n: number): string {
   {trend.length > 1 && (
     <div class="bg-white rounded-lg border p-4">
       <h2 class="text-lg font-semibold mb-2">Budget trend</h2>
-      <TrendMini data={trend.map(t => ({ year: columnHeaderLabel(t.year), amount: t.amount }))} client:load />
+      <TrendMini data={trend.map(t => ({ year: columnHeaderLabel(t.year), amount: t.amount }))} highlightYear={budgetYear.year} client:load />
+      {trendNote && (
+        <p class="text-xs text-gray-500 mt-2">{trendNote.text} (Operating budget PDF, p. {trendNote.pdfPage}.)</p>
+      )}
     </div>
   )}
 
