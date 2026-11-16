@@ -46,6 +46,6 @@ test("the budget trend labels a small year in thousands and says why it was smal
 test("the budget trend draws the budget year's bar in the primary color", async ({ page }) => {
   await page.goto("/departments/bureau-of-fire/");
   const chart = page.locator("div", { has: page.locator("h2", { hasText: /^Budget trend$/ }) }).last();
-  const fills = await chart.locator("svg rect").evaluateAll((rects) => rects.map((r) => r.getAttribute("fill")));
-  expect(fills.filter((f) => f === CHART_COLORS.primary)).toHaveLength(1);
+  // The chart draws once its script loads; wait for that rather than read an empty chart.
+  await expect(chart.locator(`svg rect[fill="${CHART_COLORS.primary}"]`)).toHaveCount(1);
 });
