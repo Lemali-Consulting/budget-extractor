@@ -1,7 +1,7 @@
 # Fact-check columns C–J: what reproduces on the preview
 
 **Date:** 2026-11-16
-**Status:** open (A–E fixed)
+**Status:** open (A–F fixed)
 
 A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's sheet "Pittsburgh Budget Explorer factcheck 1126" (rows 3–47). The problems they flagged were checked against the preview at f63ba52 (`public-source-blue-increases`): seven groups reproduce and five turned out to be questions with answers.
 
@@ -27,7 +27,7 @@ A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's 
 
 **E. Money flow labels and counts (D7) — fixed.** On a wide screen every node is now named; where small nodes sit closer than a line of text, their labels are spread apart just enough not to overlap (`web/src/lib/label-spread.ts`; tests: `web/tests/flow-labels.spec.ts`). The capital flow's smaller projects are named too. Narrow screens keep the old threshold. As found: The caption's counts are right: 7 revenue categories, which matches the PDF's 41–48 subclasses, plus the use of fund balance; and 16 departments plus "Other (11 departments)". But three revenue bands (fines, interest, miscellaneous) and four department nodes (Facilities, Law, Permits, Licenses and Inspections, and Parks) have no visible label, so the counts can't be checked by eye.
 
-**F. The capital plan's 2026 total is $2.26M short (G7).** The flow sums projects to $912,857,161. Capital budget PDF p. 24 gives 2026 as $112,907,440, against the site's $110,647,439; 2027–2032 match exactly. The gap is in the 2026 project rows, and has not been traced yet.
+**F. The capital plan's 2026 total is $2.26M short (G7) — fixed.** Not an extraction error. The 66 project pages in the 2027 capital PDF add up to $110,647,439 for 2026, the same as the site. The p. 24 summary's 2026 row ($112,907,440) also counts 2026 money for three projects that have no 2027–2032 funding, and so no project page: Urban Redevelopment Authority personnel ($175,000 CDBG, $575,000 PAYGO), small business development ($1,100,000 PAYGO) and information systems modernization ($410,000 PAYGO). Those figures come from the 2026 capital data; they account for the CDBG gap exactly and the PAYGO gap to $1. The PDF titles the plan "2027-2032" and totals only those years ($802,209,722); the flow's "2026–2032 · $912.9M" is the site's own sum. Max chose to drop 2026 (2026-11-16): the capital flow now covers 2027–2032 and reads "2027–2032 · $802.2M", p. 24's own total (`web/src/pages/flow.astro`; test: `web/tests/flow-capital-years.spec.ts`). Rejected: keeping 2026 with a caption note, and adding the three projects' 2026 money from the 2026 capital data. As found: The flow sums projects to $912,857,161. Capital budget PDF p. 24 gives 2026 as $112,907,440, against the site's $110,647,439; 2027–2032 match exactly. The gap is in the 2026 project rows, and has not been traced yet.
 
 **G. A busy table title bar (J19).** The title bar above every reproduced table opens with the raw type tag ("financial_summary"), followed by "Page 1, table 1 (p. 45 in full PDF)", "View source page" and "Copy table".
 

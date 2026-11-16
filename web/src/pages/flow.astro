@@ -93,7 +93,11 @@ const operatingLinks: FlowLink[] = [
 
 // ---------- Capital flow: source → project → year ----------
 
-const capital = capitalFunding as CapitalRow[];
+// The plan the capital document totals runs from the budget year on (2027-2032
+// on p. 24). Its 2026 column is detailed only for projects still funded later,
+// so it falls short of the plan's own 2026 row; it is left out (fact-check
+// sheet "1126", row 7, column G; Max, 2026-11-16).
+const capital = (capitalFunding as CapitalRow[]).filter((r) => Number(r.year) >= HEADLINE.year);
 const capitalTotal = capital.reduce((s, r) => s + r.amount, 0);
 
 // Aggregate by project to find top projects.
