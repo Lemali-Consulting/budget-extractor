@@ -1180,12 +1180,13 @@ test("section chart labels follow house style", async ({ page }) => {
   await expect(panel).not.toContainText("Charges for Services");
 });
 
-// Account rows open with their code; the name after it is what starts the label.
+// Category rows open with their code; the name after it is what starts the label.
+// (Line items such as "51101 - Regular" are not charted beside their category;
+// see chart-rows.spec.ts.)
 test("section chart labels capitalize the name after an account code", async ({ page }) => {
   await page.goto("/departments/bureau-of-police/");
   const panel = main(page).getByTestId("section-charts");
   await panel.getByRole("tab", { name: "Breakdown" }).click();
-  await expect(panel).toContainText("51101 - Regular");
   await expect(panel).toContainText("51 - Personnel-salaries & wages");
 });
 

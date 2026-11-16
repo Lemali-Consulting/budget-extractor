@@ -97,8 +97,8 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
   function renderTrend(el: HTMLDivElement) {
     const data: { label: string; year: number; value: number }[] = [];
     for (const [i, row] of rows.entries()) {
-      const label = rowLabels[i] || 'Row';
-      if (label.toLowerCase().includes('total')) continue;
+      const label = rowLabels[i];
+      if (!label || label.toLowerCase().includes('total')) continue;
       for (const { idx, year } of yearCols) {
         const v = parseCurrency(row[idx] || '');
         if (v !== null) data.push({ label, year, value: v });
@@ -152,8 +152,8 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
   function renderBreakdown(el: HTMLDivElement) {
     const data: { label: string; amount: number }[] = [];
     for (const [i, row] of rows.entries()) {
-      const label = rowLabels[i] || 'Row';
-      if (label.toLowerCase().includes('total')) continue;
+      const label = rowLabels[i];
+      if (!label || label.toLowerCase().includes('total')) continue;
       const val = parseCurrency(row[breakdownCol] || '');
       if (val !== null && val !== 0) data.push({ label, amount: val });
     }

@@ -1,13 +1,13 @@
 # Fact-check columns C–J: what reproduces on the preview
 
 **Date:** 2026-11-16
-**Status:** open (A fixed)
+**Status:** open (A and B fixed)
 
 A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's sheet "Pittsburgh Budget Explorer factcheck 1126" (rows 3–47). The problems they flagged were checked against the preview at f63ba52 (`public-source-blue-increases`): seven groups reproduce and five turned out to be questions with answers.
 
 ## Reproduces
 
-**A. Increase/decrease shading compares each year with the wrong year — fixed.** Flagged in J17, G17, J18, J19, J21–J46. The rule now lives in `web/src/lib/change-shading.ts` (tests: `web/tests/change-shading.spec.ts`). Each year is compared with the year before it. A forecast follows on from the budget year before it, a budget is still not shaded against an actual or an estimate, and percentage cells are shaded by their sign. One assumption Max hasn't confirmed: the five-year forecast's last "Change from prior year" cell (1.6% after 1.6%) now shows blue as growth, where J17 expected neutral. As found, the table viewer paired each year column with the *first* earlier column whose label matches once the year is removed (`web/src/components/TableViewer.astro:80`), not the year just before it:
+**A. Increase/decrease shading compares each year with the wrong year — fixed.** Flagged in J17, G17, J18, J19, J21–J46. The rule now lives in `web/src/lib/change-shading.ts` (tests: `web/tests/change-shading.spec.ts`). Each year is compared with the year before it. A forecast follows on from the budget year before it, a budget is still not shaded against an actual or an estimate, and percentage cells are shaded by their sign. The five-year forecast's last "Change from prior year" cell (1.6% after 1.6%) shows blue as growth, where J17 expected neutral; Max chose to keep it blue (2026-11-16). Live on the preview at 43e5573. As found, the table viewer paired each year column with the *first* earlier column whose label matches once the year is removed (`web/src/components/TableViewer.astro:80`), not the year just before it:
 - In department forecasts ("2027" … "2031"), every year is compared with 2027.
 - In the five-year forecast's department table ("2027 Budget" … "2031 Budget"), 2029–2031 are compared with 2027. Innovation and Performance's 2030 ($24.29M) is above 2029 ($24.13M) but below 2027 ($26.45M), so it shows red. That is J17's example.
 - "2028 Forecast" has no partner because 2027's column is labelled "Budget", so the shading starts in 2029 (G17).
@@ -15,7 +15,7 @@ A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's 
 - In the revenue summary's historical table ("2021 Actual" … "2025 Actual"), every year is compared with 2021 (J18).
 - In the expenditure summary and the department financial summaries, only the 2027 column is shaded, because "2026 Budget" has no earlier budget column to compare with and "2025 Actual" is a different measure (J19).
 
-**B. A "Row" series in department charts.** Flagged in G22, G32, G37, G39, G40 and G44. Each of those six departments' financial summary has one total row whose label the extractor lost (Finance: `s16_p5_t0` row 56). `web/src/components/SectionCharts.tsx` names an unlabeled row "Row". The same charts also plot each spending category ("51 - Personnel-salaries & wages") beside the line items under it ("51101 - Regular"), so the same dollars appear twice.
+**B. A "Row" series in department charts — fixed.** Flagged in G22, G32, G37, G39, G40 and G44. Charts now skip unlabeled rows, and where a table has spending categories they plot only the categories (`web/src/lib/chart-rows.ts`; tests: `web/tests/chart-rows.spec.ts`). As found: Each of those six departments' financial summary has one total row whose label the extractor lost (Finance: `s16_p5_t0` row 56). `web/src/components/SectionCharts.tsx` names an unlabeled row "Row". The same charts also plot each spending category ("51 - Personnel-salaries & wages") beside the line items under it ("51101 - Regular"), so the same dollars appear twice.
 
 **C. The revenue summary's table 2 has a row of growth rates merged into its column headings.** Flagged in G18. Its headings read "Annual growth rate tax revenue", "2027", "2.2% 2028", "0.9% 2029" and so on (`s4_p1_t1`). Separately, the "CAGR" heading renders as "Cagr*" in all three revenue summary tables.
 

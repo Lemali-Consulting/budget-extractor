@@ -9,6 +9,7 @@ import SummaryCard from '../SummaryCard.astro';
 import DepartmentSummary from '../DepartmentSummary.astro';
 import { isDepartmentSection, isTrustFundSection, sectionPageHref } from '../../lib/published-pages';
 import { chartRowLabels } from '../../lib/chart-labels';
+import { chartedRows } from '../../lib/chart-rows';
 import type { SlugRef } from '../../lib/static-paths';
 import SectionToc from '../SectionToc.astro';
 import HighlightsCallout from '../HighlightsCallout.astro';
@@ -193,13 +194,16 @@ const departmentAndFundNames: string[] = budgetYear.operating.sections
 // Prepare chart table data (serializable subset for client component)
 const chartTables = section.tables
   .filter((t: any) => ['financial_summary', 'financial'].includes(t.table_type))
-  .map((t: any) => ({
-    id: t.id,
-    table_type: t.table_type,
-    headers: t.headers,
-    rows: t.rows,
-    rowLabels: chartRowLabels({ rows: t.rows, properNames: departmentAndFundNames }),
-  }));
+  .map((t: any) => {
+    const rows = chartedRows(t.rows);
+    return {
+      id: t.id,
+      table_type: t.table_type,
+      headers: t.headers,
+      rows,
+      rowLabels: chartRowLabels({ rows, properNames: departmentAndFundNames }),
+    };
+  });
 
 const pageCount = section.start_page && section.end_page
   ? section.end_page - section.start_page + 1

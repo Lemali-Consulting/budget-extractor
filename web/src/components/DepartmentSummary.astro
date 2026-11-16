@@ -10,6 +10,7 @@ import { columnHeaderLabel } from '../lib/text-case';
 import { headlineChange } from '../lib/budget-change';
 import { BUDGET_TREND_NOTES } from '../lib/budget-trend-notes';
 import { subclassLabel } from '../lib/pdf-headings';
+import { SPENDING_CATEGORY_LABEL } from '../lib/chart-rows';
 
 interface Props {
   budgetYear: BudgetYear;
@@ -25,8 +26,6 @@ const allPersonnel = budgetYear.views.personnel;
 const sections = budgetYear.operating.sections;
 const { columns } = budgetYear;
 
-/** A two-digit spending category row, e.g. "51 - PERSONNEL-SALARIES & WAGES" (line items carry five digits). */
-const SPENDING_CATEGORY_LABEL = /^\d{2} - /;
 
 // Look up department data from various sources
 const deptChange = changes.departmentChanges.find((d: any) => d.slug === slug);
