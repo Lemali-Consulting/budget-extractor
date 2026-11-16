@@ -22,10 +22,10 @@ function pageText(path: string): string {
     .replace(/\s+/g, " ");
 }
 
-/** The type badge each reproduced table carries, as the extractor names the type. */
+/** The type each reproduced table carries (not shown to readers), as the extractor names the type. */
 function tableTypeBadges(path: string): string[] {
   const html = readFileSync(join(DIST, path, "index.html"), "utf8");
-  return [...html.matchAll(/data-testid="table-type-badge"[^>]*>([^<]*)</g)].map((m) => m[1].trim());
+  return [...html.matchAll(/data-table-type="([^"]*)"/g)].map((m) => m[1]);
 }
 
 test("the revenue summary ends before its tax vs. non-tax revenue charts", () => {

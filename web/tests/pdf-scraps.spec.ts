@@ -41,9 +41,9 @@ function pdfHeadings(html: string): string[] {
   return [...html.matchAll(/<h2 id="heading-\d+"[^>]*>([\s\S]*?)<\/h2>/g)].map((m) => visibleText(m[1]).trim());
 }
 
-/** The type badge each reproduced table carries, as the extractor names the type ("personnel", "unknown"). */
+/** The type each reproduced table carries (not shown to readers), as the extractor names the type ("personnel", "unknown"). */
 function tableTypeBadges(html: string): string[] {
-  return [...html.matchAll(/data-testid="table-type-badge"[^>]*>([^<]*)</g)].map((m) => m[1].trim());
+  return [...html.matchAll(/data-table-type="([^"]*)"/g)].map((m) => m[1]);
 }
 
 /** A subclass pie chart's label, printed in capitals: "56 - SUPPLIES". */

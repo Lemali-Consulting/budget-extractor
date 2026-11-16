@@ -55,9 +55,8 @@ const tableCorrections: SourceCorrection[] = (table.corrections || [])
   )
   .filter((c): c is SourceCorrection => c !== undefined);
 
-import { TYPE_COLORS, typeDescription } from '../lib/type-colors';
+import { typeDescription } from '../lib/type-colors';
 
-const badgeClass = TYPE_COLORS[table.table_type] || TYPE_COLORS.unknown;
 const annotation = table.description || typeDescription(table.table_type);
 const sections = table.sections || [];
 const colCount = table.headers.length;
@@ -108,12 +107,9 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
 });
 ---
 
-<div class="mb-8 bg-white rounded-lg border overflow-hidden" id={`table-container-${table.id}`}>
+<div class="mb-8 bg-white rounded-lg border overflow-hidden" id={`table-container-${table.id}`} data-table-type={table.table_type}>
   <div class="px-4 py-3 bg-gray-50 border-b text-sm">
     <div class="flex items-center gap-3">
-      <span data-testid="table-type-badge" class={`px-2 py-0.5 rounded text-xs font-medium ${badgeClass}`}>
-        {table.table_type}
-      </span>
       {tableCorrections.length > 0 && (
         <span
           class="px-2 py-0.5 rounded text-xs font-semibold bg-ps-yellow-100 text-ps-yellow-900 border border-ps-yellow-300"
@@ -123,10 +119,7 @@ const amendmentCell: ({ cls: string; tip: string } | null)[][] = table.rows.map(
           Corrected by us
         </span>
       )}
-      <span class="text-gray-500">
-        Page {table.relative_page}, table {table.table_index + 1}
-        {table.absolute_page ? ` (p. ${table.absolute_page} in full PDF)` : ''}
-      </span>
+      {table.absolute_page && <span class="text-gray-500">PDF p. {table.absolute_page}</span>}
       {slug && (
         <PageImage client:load year={year} slug={slug} page={table.relative_page} adoptedAvailable={adoptedPageAvailable} amendmentDates={amendmentDates} />
       )}

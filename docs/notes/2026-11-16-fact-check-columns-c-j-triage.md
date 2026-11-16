@@ -1,7 +1,7 @@
 # Fact-check columns C–J: what reproduces on the preview
 
 **Date:** 2026-11-16
-**Status:** open (A–F fixed)
+**Status:** open (A–G fixed; the yellow "48 - Miscellaneous Revenues" row noted under C is not)
 
 A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's sheet "Pittsburgh Budget Explorer factcheck 1126" (rows 3–47). The problems they flagged were checked against the preview at f63ba52 (`public-source-blue-increases`): seven groups reproduce and five turned out to be questions with answers.
 
@@ -29,7 +29,7 @@ A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's 
 
 **F. The capital plan's 2026 total is $2.26M short (G7) — fixed.** Not an extraction error. The 66 project pages in the 2027 capital PDF add up to $110,647,439 for 2026, the same as the site. The p. 24 summary's 2026 row ($112,907,440) also counts 2026 money for three projects that have no 2027–2032 funding, and so no project page: Urban Redevelopment Authority personnel ($175,000 CDBG, $575,000 PAYGO), small business development ($1,100,000 PAYGO) and information systems modernization ($410,000 PAYGO). Those figures come from the 2026 capital data; they account for the CDBG gap exactly and the PAYGO gap to $1. The PDF titles the plan "2027-2032" and totals only those years ($802,209,722); the flow's "2026–2032 · $912.9M" is the site's own sum. Max chose to drop 2026 (2026-11-16): the capital flow now covers 2027–2032 and reads "2027–2032 · $802.2M", p. 24's own total (`web/src/pages/flow.astro`; test: `web/tests/flow-capital-years.spec.ts`). Rejected: keeping 2026 with a caption note, and adding the three projects' 2026 money from the 2026 capital data. As found: The flow sums projects to $912,857,161. Capital budget PDF p. 24 gives 2026 as $112,907,440, against the site's $110,647,439; 2027–2032 match exactly. The gap is in the 2026 project rows, and has not been traced yet.
 
-**G. A busy table title bar (J19).** The title bar above every reproduced table opens with the raw type tag ("financial_summary"), followed by "Page 1, table 1 (p. 45 in full PDF)", "View source page" and "Copy table".
+**G. A busy table title bar (J19) — fixed.** Max chose to drop the type tag and shorten the location to the PDF page (2026-11-16): the bar now reads "PDF p. 45 · View source page … Copy table", with the description line beneath (`web/src/components/TableViewer.astro`; test in `web/tests/house-style.spec.ts`). The type stays on the table as a `data-table-type` attribute for tests. As found: The title bar above every reproduced table opens with the raw type tag ("financial_summary"), followed by "Page 1, table 1 (p. 45 in full PDF)", "View source page" and "Copy table".
 
 ## Does not reproduce: answers for the sheet
 

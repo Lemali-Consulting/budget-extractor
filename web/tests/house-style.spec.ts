@@ -217,7 +217,7 @@ test("table links and locators on section pages are sentence case", async ({ pag
   await page.goto("/departments/bureau-of-fire/");
   // The data explorer was retired (2026-11-14), so tables no longer offer to open in it.
   await expect(page.locator("main")).not.toContainText(/Open in (data )?explorer/i);
-  await expect(page.locator("main")).toContainText(/Page \d+, table \d+/);
+  await expect(page.locator("main")).toContainText(/PDF p\. \d+/);
 });
 
 test("operating index cards preview prose, not a chart title", async ({ page }) => {
@@ -244,10 +244,13 @@ test("glossary terms are named once, without a code badge repeating them", async
   await expect(page.locator("main dt .font-mono")).toHaveCount(0);
 });
 
-test("the table locator counts a page's tables from 1", async ({ page }) => {
-  // Readers count the first table on a page as table 1; the data numbers it 0 (Max, 2026-11-12).
-  await page.goto("/departments/city-council/");
-  const main = page.locator("main");
-  await expect(main).toContainText(/Page \d+, table 1\b/);
-  await expect(main).not.toContainText(/Page \d+, table 0\b/);
+test("a table's title bar gives only its page in the PDF, with no type tag", async ({ page }) => {
+  // The fact-check found the bar busy: a raw tag ("financial_summary") and "Page 1, table 1 (p. 45 in
+  // full PDF)" (Rich's factcheck sheet "1126", row 19, column J). Max chose to drop the tag and keep
+  // only the PDF page, the one page number a reader can look up (2026-11-16).
+  await page.goto("/sections/expenditure-summary/");
+  const bar = page.locator('[id^="table-container-"]').first().locator("> div").first();
+  await expect(bar).toContainText(/^\s*PDF p\. \d+\b/);
+  await expect(bar).not.toContainText(/financial_summary|in full PDF|, table \d/);
+  await expect(page.locator("main")).not.toContainText(/_summary|Page \d+, table/);
 });
