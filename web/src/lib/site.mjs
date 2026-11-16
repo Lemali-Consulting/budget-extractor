@@ -14,6 +14,9 @@ export const SITE_URL = 'https://budget.publicsource.org';
 
 export const SITE_NAME = 'Pittsburgh Budget Explorer';
 
+/** The About page's heading, and the footer link to it on every page. */
+export const ABOUT_PAGE_TITLE = `About ${SITE_NAME}`;
+
 export const PUBLISHER = Object.freeze({
   name: 'Public Source',
   url: 'https://www.publicsource.org/',

@@ -1,140 +1,111 @@
 ---
 import Base from '../layouts/Base.astro';
-import { BUDGET_YEARS, HEADLINE, ARCHIVE_YEARS, YEAR_ROLE, yearPath, type BudgetYear } from '../lib/budget-year';
+import { BUDGET_YEARS, ARCHIVE_YEARS, YEAR_ROLE, yearPath, type BudgetYear } from '../lib/budget-year';
 import { changedHeaders, correctionAnchor, quoteList } from '../lib/corrections';
 import { publishedSectionHrefs } from '../lib/published-pages';
+import { ABOUT_PAGE_TITLE } from '../lib/site.mjs';
+
+// Max's text, with Public Source's suggestions (fact-check sheet "1126", row 15; 2026-11-16).
+const OFFICIAL_BUDGETS_URL = 'https://www.pittsburghpa.gov/City-Government/Finance-Budget/Management-Budget/Budgets-and-Reports';
+const OPERATING_PDF_URL = 'https://www.pittsburghpa.gov/files/assets/city/v/1/omb/documents/operating-budgets/2027-mayors-operating-budget.pdf';
+const CAPITAL_PDF_URL = 'https://www.pittsburghpa.gov/files/assets/city/v/1/omb/documents/capital-budgets/2027-mayors-capital-budget.pdf';
+const SOURCE_CODE_URL = 'https://github.com/Lemali-Consulting/budget-extractor';
+const CLAUDE_CODE_URL = 'https://claude.com/claude-code';
+const ERRORS_EMAIL = 'rich@publicsource.org';
+const AUTHOR_EMAIL = 'max@lemaliconsulting.com';
 
 const [archive] = ARCHIVE_YEARS as (BudgetYear | undefined)[];
 // Every year the site carries, newest first, with the corrections (if any) we made to its source PDF.
 const yearsWithCorrections = Object.values(BUDGET_YEARS).sort((a, b) => b.year - a.year);
 const yearsWithoutCorrections = yearsWithCorrections.filter((y) => y.corrections.length === 0);
 const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.length;
+const link = 'text-ps-blue-600 hover:underline';
 ---
 
-<Base title="About this site" description="How the Pittsburgh Budget Explorer was built, the role of AI in its construction and important caveats about data accuracy.">
+<Base title="About" description="How the Pittsburgh Budget Explorer was built, the role of AI in its construction and important caveats about data accuracy.">
   <nav class="text-sm text-gray-500 mb-4">
     <a href="/" class="hover:text-ps-blue-600">Home</a>
     <span class="mx-1" aria-hidden="true">/</span>
     <span>About</span>
   </nav>
 
-  <h1 class="text-3xl font-bold mb-2">About this site</h1>
-  <p class="text-gray-600 mb-8">How this budget explorer was built, what role AI played and what you should keep in mind when using it.</p>
+  <h1 class="text-3xl font-bold mb-2">{ABOUT_PAGE_TITLE}</h1>
+  <p class="text-gray-600 mb-2">How this site was built, what role AI played and what you should keep in mind when using it.</p>
+  <p class="text-sm text-gray-500 mb-8">By Max Chis</p>
 
   <div class="prose max-w-none">
+    <section class="mb-10">
+      <p class="text-gray-700 mb-3">
+        One of journalism’s eternal missions is to make complex information accessible and understandable, and one of its newest tools is artificial intelligence. Pittsburgh’s Public Source is committed to using AI effectively, thoughtfully and transparently where it can improve understanding of important civic issues and processes.
+      </p>
+      <p class="text-gray-700">
+        The City of Pittsburgh budget is a dense public record that reflects not only the allocation of tax dollars, but the priorities of elected leadership. Developers working with AI can improve its accessibility and transparency by visualizing the budget in a fraction of the time it would take to hand-code.
+      </p>
+    </section>
 
-    <!-- What This Is -->
     <section class="mb-10">
       <h2 class="text-xl font-bold text-ps-blue-900 mb-3">What is the Pittsburgh Budget Explorer?</h2>
-      <p class="text-gray-700 mb-3">
-        This site makes the City of Pittsburgh's {HEADLINE.documentsName} easier to browse. The city publishes its budget as large PDF documents — hundreds of pages of tables, narratives and financial data. This project extracts that data from the PDFs and presents it in a searchable, sortable and visual format.
-      </p>
       <p class="text-gray-700">
-        The goal is to make budget information more accessible to residents, journalists, researchers and anyone who wants to understand how Pittsburgh plans to spend public money — without needing to manually dig through PDFs.
+        The city publishes its budgets as PDF documents including hundreds of pages of tables, narratives and financial data. This project extracts that data from the PDFs and presents it in searchable, sortable and visual formats.
       </p>
     </section>
 
-    <!-- How It Was Built -->
-    <section class="mb-10">
-      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">How was it built?</h2>
-      <p class="text-gray-700 mb-3">
-        The project has two main parts: <strong>data extraction</strong> (getting numbers out of the PDFs) and the <strong>web application</strong> (this site, which presents the data). Both were built through a collaboration between a human developer and AI tools.
-      </p>
-
-      <h3 class="text-lg font-semibold text-gray-800 mt-6 mb-2">Data extraction</h3>
-      <p class="text-gray-700 mb-3">
-        The budget PDFs don't contain neatly structured data — they contain images of tables laid out on pages. Extracting the data required building a custom <strong>spatial table extractor</strong> that reads the position of every word on each page, groups them into rows and columns based on their coordinates and reassembles the table structure. This is more involved than simple text extraction because the tables use whitespace (not borders) to separate columns, and many tables span multiple pages or have complex multi-line headers.
-      </p>
-      <p class="text-gray-700 mb-3">
-        The extractor processes over 100 PDF sections across both the operating and capital budgets. Its output is validated against a <strong>regression test suite</strong> of expected CSV files — one per table — to catch errors whenever the extraction logic is changed.
-      </p>
-
-      <h3 class="text-lg font-semibold text-gray-800 mt-6 mb-2">The web application</h3>
-      <p class="text-gray-700">
-        This site is a static website built with <a href="https://astro.build" class="text-ps-blue-600 hover:underline">Astro</a> and styled with <a href="https://tailwindcss.com" class="text-ps-blue-600 hover:underline">Tailwind CSS</a>. Charts are rendered with <a href="https://observablehq.com/plot/" class="text-ps-blue-600 hover:underline">Observable Plot</a>. The site is generated from the extracted CSV data — there is no backend server or database. Once built, the site is entirely static HTML, CSS and JavaScript.
-      </p>
-    </section>
-
-    <!-- Role of AI -->
     <section class="mb-10">
       <h2 class="text-xl font-bold text-ps-blue-900 mb-3">What role did AI play?</h2>
       <p class="text-gray-700 mb-3">
-        This project was built using <strong>AI-assisted development</strong> — specifically, <a href="https://claude.com/claude-code" class="text-ps-blue-600 hover:underline">Claude Code</a>, an AI coding tool made by Anthropic. The AI was used extensively throughout the project:
+        This project was built using <a href={CLAUDE_CODE_URL} class={link}>Claude Code</a>, an AI coding tool made by Anthropic. Claude Code was used extensively throughout the project for:
       </p>
       <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-        <li><strong>Writing code:</strong> The AI wrote the majority of the Python extraction code, the web application components and the data transformation scripts.</li>
-        <li><strong>Debugging extraction issues:</strong> When tables didn't extract correctly, the AI analyzed the spatial layout of words on the page and adjusted the extraction logic.</li>
-        <li><strong>Building the website:</strong> Page layouts, navigation, charts, search functionality and interactive data views were largely AI-generated.</li>
-        <li><strong>Content generation:</strong> The glossary definitions and some descriptive text on the site were drafted by AI based on the budget documents.</li>
+        <li>Writing code to extract information from the city’s PDFs</li>
+        <li>Debugging the extraction process, tables and layout</li>
+        <li>Building the website, including the layout, navigation, charts, search functionality and interactive visualizations</li>
+        <li>Generating content like glossaries and descriptive text, based on the budget documents.</li>
       </ul>
-      <p class="text-gray-700 mb-3">
-        However, a <strong>human developer directed every step</strong>. The human decided what to build, reviewed the AI's output, identified extraction errors by visually comparing results against the source PDFs, and made editorial and design decisions. The AI did not independently decide what data to extract or how to present it — it worked under human direction and review.
-      </p>
       <p class="text-gray-700">
-        Think of the AI's role as similar to a highly productive assistant: it can write code quickly and suggest approaches, but a human is responsible for the goals, quality checks and final decisions.
+        The instructions given to the AI were designed to avoid hallucination and allow for audit and inspection. When the human team found errors, the AI was tasked with eliminating them through the entire project, and the humans checked the result.
       </p>
     </section>
 
-    <!-- Accuracy and Risks -->
     <section class="mb-10">
       <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Important caveats about accuracy</h2>
-
       <div class="bg-ps-yellow-50 border border-ps-yellow-200 rounded-lg p-5 mb-5">
-        <p class="text-ps-yellow-900 font-semibold mb-2">This site is not an official City of Pittsburgh publication.</p>
-        <p class="text-ps-yellow-800 text-sm">
-          The data shown here was mechanically extracted from the city's published budget PDFs. It has not been reviewed or endorsed by the City of Pittsburgh. For authoritative budget figures, always refer to the <a href="https://www.pittsburghpa.gov/City-Government/Finance-Budget/Management-Budget/Budgets-and-Reports" class="text-ps-yellow-900 underline hover:no-underline">official budget documents</a>.
-        </p>
+        <p class="text-ps-yellow-900 font-semibold">This site is not an official City of Pittsburgh publication.</p>
       </div>
-
       <p class="text-gray-700 mb-3">
-        Extracting tabular data from PDFs is inherently imperfect. While this project uses a regression test suite covering hundreds of tables to minimize errors, there are known risks:
+        Extracting data from PDFs isn’t perfect. Misaligned columns, missing data, inconsistent formatting, negative numbers and footnotes can lead to misinterpretation or faulty summarization.
       </p>
-
-      <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-        <li><strong>Misaligned columns:</strong> When table columns are very close together or values are unusually long, the extractor may assign a number to the wrong column. Dollar amounts could appear under the wrong fiscal year heading.</li>
-        <li><strong>Merged or split rows:</strong> Multi-line cell contents (like long department names) may be incorrectly split into separate rows or merged with adjacent rows.</li>
-        <li><strong>Missing data:</strong> Some tables with unusual formatting may not be extracted at all, or individual rows may be dropped if their layout doesn't match expected patterns.</li>
-        <li><strong>Number formatting:</strong> Parenthetical negative numbers, footnote markers or stray characters near dollar amounts could cause values to be read incorrectly.</li>
-        <li><strong>Aggregation errors:</strong> Summary statistics, charts and "what changed" comparisons on this site are computed from the extracted data. If the underlying extraction has errors, the summaries will reflect those errors.</li>
-      </ul>
-
+      <p class="text-gray-700 mb-3">
+        The data shown here has not been reviewed or endorsed by city officials. For authoritative budget figures, always refer to the <a href={OFFICIAL_BUDGETS_URL} class={link}>official budget documents</a>.
+      </p>
       <p class="text-gray-700">
-        If you spot something that looks wrong, you can verify it against the source PDF. The section pages on this site include page references that correspond to the original budget documents.
+        The section pages on this site include page references that correspond to the original budget documents. If you spot something that looks wrong, you can verify it against the source PDF and email Public Source’s managing editor at <a href={`mailto:${ERRORS_EMAIL}`} class={link}>{ERRORS_EMAIL}</a>.
       </p>
     </section>
 
-    <!-- Source and Transparency -->
     <section class="mb-10">
       <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Source data and transparency</h2>
       <p class="text-gray-700 mb-3">
-        The source data for this site comes from two PDF documents published by the City of Pittsburgh's Office of Management and Budget:
+        The data for this site comes from two PDFs published by the City of Pittsburgh's Office of Management and Budget:
       </p>
       <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-        <li>The <strong>{HEADLINE.operatingName}</strong> — covering department budgets, revenue, personnel, grants, trust funds and financial forecasts.</li>
-        <li>The <strong>{HEADLINE.capitalName}</strong> — covering the six-year capital improvement plan, including infrastructure, facilities, parks and equipment projects.</li>
+        <li>The <a href={OPERATING_PDF_URL} class={link}>City of Pittsburgh’s proposed 2027 operating budget</a>, covering department budgets, revenue, personnel, grants, trust funds and financial forecasts.</li>
+        <li>The <a href={CAPITAL_PDF_URL} class={link}>proposed 2027 capital budget</a>, covering the six-year capital improvement plan, including infrastructure, facilities, parks and equipment projects.</li>
       </ul>
       {archive && (
         <p class="text-gray-700 mb-3">
           The {archive.label} budget remains browsable in the
-          <a href={yearPath({ budgetYear: archive, path: '/operating/' })} class="text-ps-blue-600 hover:underline">{archive.year} archive</a>.
+          <a href={yearPath({ budgetYear: archive, path: '/operating/' })} class={link}>{archive.year} archive</a>.
         </p>
       )}
-      <p class="text-gray-700 mb-3">
-        No data on this site comes from sources other than these two documents. No figures have been manually entered or estimated, and no number has been changed.
-        {anyCorrections
-          ? <>The only editorial adjustments are the few column-heading corrections listed under <a href="#corrections" class="text-ps-blue-600 hover:underline">Corrections</a> below; each is flagged wherever it appears on the site.</>
-          : <>No column headings have been relabelled either; see <a href="#corrections" class="text-ps-blue-600 hover:underline">Corrections</a> below.</>}
-      </p>
       <p class="text-gray-700">
-        The extraction code, test suite and website source code are available for inspection. Transparency about how the data was processed is a core goal of this project.
+        The extraction code, test suite and website source code are available on <a href={SOURCE_CODE_URL} class={link}>GitHub</a>.
       </p>
     </section>
 
-    <!-- Corrections -->
     <section class="mb-10" id="corrections">
       <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Corrections we made to the source documents</h2>
       <p class="text-gray-700 mb-3">
-        Now and then a city budget PDF contains a labelling error that, taken literally, makes this site show wrong or missing figures. Where the evidence is clear, <strong>Pittsburgh Budget Explorer corrects the heading when it builds the data</strong>, and says so on the affected table and section page. These corrections are ours, not the city's: the source PDFs are unchanged, and only column headings are relabelled; no dollar amount is altered.{anyCorrections && ' Each entry below shows what the PDF says, what we show instead and why.'}
+        Now and then a city budget PDF contains a labeling error that, taken literally, makes this site show wrong or missing figures. Where the evidence is clear, Pittsburgh Budget Explorer corrects the heading when it builds the data, and says so on the affected table and section page. These corrections are ours, not the city's: the source PDFs are unchanged, and only column headings are relabeled. No dollar amount is altered.{anyCorrections && ' Each entry below shows what the PDF says, what we show instead and why.'}
       </p>
 
       {yearsWithCorrections.filter((y) => y.corrections.length > 0).map((y) => (
@@ -148,7 +119,7 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
                   {c.section}, page {c.pdfPage} of the full PDF
                 </h4>
                 <p class="mb-1"><strong>What the PDF says:</strong> the table's year columns are headed {quoteList(printed)}.</p>
-                <p class="mb-1"><strong>What we show:</strong> {quoteList(shown)}. The PDF itself is unchanged; the relabelling is ours.</p>
+                <p class="mb-1"><strong>What we show:</strong> {quoteList(shown)}. The PDF itself is unchanged; the relabeling is ours.</p>
                 <p class="mb-1"><strong>Why:</strong> {c.evidence}</p>
                 {y.role !== YEAR_ROLE.COMPARISON_ONLY && publishedSectionHrefs(y)[c.sectionSlug] && (
                   <p>
@@ -172,13 +143,8 @@ const anyCorrections = yearsWithoutCorrections.length < yearsWithCorrections.len
       )}
     </section>
 
-    <!-- Who Made This -->
-    <section class="mb-10">
-      <h2 class="text-xl font-bold text-ps-blue-900 mb-3">Who made this?</h2>
-      <p class="text-gray-700">
-        This project was created by a Pittsburgh resident interested in making public budget data more accessible. It is an independent, volunteer effort and is not affiliated with or endorsed by the City of Pittsburgh government.
-      </p>
-    </section>
-
+    <p class="text-gray-600 italic">
+      Max Chis is the founder of Lemali Consulting, a Pittsburgh business that provides software engineering and technical services for local nonprofits and civic institutions, and can be reached at <a href={`mailto:${AUTHOR_EMAIL}`} class={link}>{AUTHOR_EMAIL}</a>.
+    </p>
   </div>
 </Base>
