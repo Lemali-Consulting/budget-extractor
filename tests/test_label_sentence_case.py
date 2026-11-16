@@ -70,3 +70,14 @@ def test_sentence_case_hyphenates_five_year():
     from utils.text_case import sentence_case
     assert sentence_case("FIVE YEAR FORECAST") == "Five-year forecast"
     assert sentence_case("Five-Year Financial Forecast") == "Five-year financial forecast"
+
+
+def test_sentence_case_keeps_cagr():
+    """"CAGR" (compound annual growth rate) is an acronym, so it keeps its capitals.
+
+    The revenue summary heads a column "CAGR*"; Public Source's fact-check
+    found it shown as "Cagr*" (Rich's factcheck sheet "1126", row 18). The web
+    side's case module lists the same acronym.
+    """
+    from utils.text_case import sentence_case
+    assert sentence_case("CAGR*") == "CAGR*"

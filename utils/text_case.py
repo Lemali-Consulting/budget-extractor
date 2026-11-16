@@ -13,7 +13,7 @@ PROPER_PHRASES: tuple[str, ...] = (
 # Acronyms the PDFs print in labels. An ALL CAPS label gives no other way to
 # tell an acronym from an ordinary word, so they are listed here.
 ACRONYMS: frozenset[str] = frozenset({
-    "CDBG", "CIP", "CPFC", "PAYGO", "EMS", "FTE", "HSIP", "HUD", "PILOT", "PWSA", "RAD", "TIF", "TIP", "URA", "URD",
+    "CAGR", "CDBG", "CIP", "CPFC", "PAYGO", "EMS", "FTE", "HSIP", "HUD", "PILOT", "PWSA", "RAD", "TIF", "TIP", "URA", "URD",
 })
 
 WORD_PATTERN: re.Pattern[str] = re.compile(r"[A-Za-z][A-Za-z'’]*")

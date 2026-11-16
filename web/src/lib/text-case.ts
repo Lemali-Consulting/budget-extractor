@@ -16,7 +16,7 @@ const PROPER_PHRASES: readonly string[] = [
 
 /** Acronyms printed in labels; an ALL CAPS label can't otherwise be told apart from words. */
 const ACRONYMS: ReadonlySet<string> = new Set([
-  'CDBG', 'CIP', 'PAYGO', 'CPFC', 'EMS', 'FTE', 'HSIP', 'HUD', 'PILOT', 'PWSA', 'RAD', 'TIF', 'TIP', 'URA', 'URD',
+  'CAGR', 'CDBG', 'CIP', 'PAYGO', 'CPFC', 'EMS', 'FTE', 'HSIP', 'HUD', 'PILOT', 'PWSA', 'RAD', 'TIF', 'TIP', 'URA', 'URD',
 ]);
 
 /** Compound modifiers the PDF prints without their hyphen ("Five Year Forecast"), as house style writes them. */
