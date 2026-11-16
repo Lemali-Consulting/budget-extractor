@@ -2,6 +2,7 @@
 import PageImage from './PageImage.tsx';
 import { BUDGET_YEARS, type AmendmentInfo } from '../lib/budget-year';
 import { columnHeaderLabel } from '../lib/text-case';
+import { changeShading } from '../lib/change-shading';
 import {
   changedHeaders,
   correctionHref,
@@ -75,52 +76,8 @@ for (let ci = 0; ci < colCount; ci++) {
   if (total > 0 && numCount / total > 0.5) numericColSet.add(ci);
 }
 
-// Detect paired year columns for change highlighting
-// Maps later-year column index → earlier-year column index
-const yearPairs = new Map<number, number>();
-const yearPattern = /\b(20\d{2})\b/;
-for (let ci = 0; ci < colCount; ci++) {
-  const h = table.headers[ci] || '';
-  const m = h.match(yearPattern);
-  if (!m) continue;
-  const year = parseInt(m[1], 10);
-  const metric = h.replace(yearPattern, '').trim().toLowerCase();
-  // Look for an earlier-year column with the same metric
-  for (let cj = 0; cj < ci; cj++) {
-    const h2 = table.headers[cj] || '';
-    const m2 = h2.match(yearPattern);
-    if (!m2) continue;
-    const year2 = parseInt(m2[1], 10);
-    const metric2 = h2.replace(yearPattern, '').trim().toLowerCase();
-    if (metric === metric2 && year > year2) {
-      yearPairs.set(ci, cj);
-      break;
-    }
-  }
-}
-
-function parseNum(s: string): number | null {
-  const t = s.trim();
-  if (!t || t === '—' || t === '-') return null;
-  const neg = t.startsWith('(') || t.startsWith('-');
-  const num = parseFloat(t.replace(/[$,()]/g, ''));
-  if (isNaN(num)) return null;
-  return neg ? -Math.abs(num) : num;
-}
-
-// Pre-compute change classes for each cell: '' | 'increased' | 'decreased'
-const cellChangeClass: string[][] = table.rows.map((row) => {
-  return row.map((cell, ci) => {
-    const pairCol = yearPairs.get(ci);
-    if (pairCol === undefined) return '';
-    const cur = parseNum(cell);
-    const prev = parseNum(row[pairCol] || '');
-    if (cur === null || prev === null) return '';
-    if (cur > prev) return 'changed-increase';
-    if (cur < prev) return 'changed-decrease';
-    return '';
-  });
-});
+// Blue/red shading of each figure against the year before (see change-shading.ts).
+const cellChangeClass = changeShading({ headers: table.headers, rows: table.rows });
 
 function isTotalRow(row: string[]): boolean {
   const cell = (row[0] || '').trim().toLowerCase();
