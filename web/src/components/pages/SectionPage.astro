@@ -22,6 +22,7 @@ import ChartImage from '../ChartImage.tsx';
 import PdfSidebar from '../PdfSidebar.tsx';
 import SectionNav from '../SectionNav.astro';
 import SectionCharts from '../SectionCharts.tsx';
+import { LINE_ITEM_TREND_HIDDEN } from '../../lib/budget-trend-notes';
 import TaxRevenueChart from '../TaxRevenueChart.astro';
 import { taxRevenueByTax } from '../../lib/tax-revenue';
 import { buildGlossaryTerms, createGlossaryLinker } from '../../utils/glossary-linker';
@@ -353,7 +354,7 @@ for (const item of finalItems) {
   {taxBreakdown && <TaxRevenueChart breakdown={taxBreakdown} year={budgetYear.year} />}
 
   {chartTables.length > 0 && (
-    <SectionCharts client:load year={budgetYear.year} tables={chartTables} sectionTitle={section.title} />
+    <SectionCharts client:load year={budgetYear.year} tables={chartTables} sectionTitle={section.title} showTrend={!LINE_ITEM_TREND_HIDDEN.has(section.slug)} />
   )}
 
   {finalItems.length === 0 ? (

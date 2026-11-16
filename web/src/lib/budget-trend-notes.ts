@@ -17,3 +17,14 @@ export const BUDGET_TREND_NOTES: Readonly<Record<string, BudgetTrendNote>> = {
     pdfPage: 191,
   },
 };
+
+/**
+ * Departments whose page leaves out the line-item budget trend chart, because
+ * their line items' history in the PDF doesn't compare like with like. The
+ * total-budget trend above it, with its note, stays.
+ */
+export const LINE_ITEM_TREND_HIDDEN: ReadonlySet<string> = new Set([
+  // Max, 2026-11-16: staff were paid from the Stop the Violence Trust Fund until 2027 (p. 191),
+  // so salaries and benefits print as dashes in 2025 and 2026 and chart as an office with no staff.
+  'office-of-community-health-and-safety',
+]);

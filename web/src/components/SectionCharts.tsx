@@ -26,6 +26,8 @@ interface Props {
   sectionTitle: string;
   /** Budget year of the page; the breakdown tab charts that year's column. */
   year: number;
+  /** False leaves out the line-item trend tab (see LINE_ITEM_TREND_HIDDEN). */
+  showTrend: boolean;
 }
 
 type Tab = 'trend' | 'breakdown';
@@ -33,7 +35,7 @@ type Tab = 'trend' | 'breakdown';
 /** Width kept clear right of the bars for the value printed past each one ("$160.0M"). */
 const VALUE_LABEL_MARGIN = 56;
 
-export default function SectionCharts({ tables, sectionTitle, year }: Props) {
+export default function SectionCharts({ tables, sectionTitle, year, showTrend }: Props) {
   const [tab, setTab] = useState<Tab>('trend');
   const chartRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,7 +70,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
     .filter((x): x is { idx: number; year: number; header: string } => x !== null)
     .sort((a, b) => a.year - b.year);
 
-  const hasTrend = yearCols.length >= 2;
+  const hasTrend = showTrend && yearCols.length >= 2;
 
   // Find the current-year Budget column for breakdown (fallback to last year col)
   const breakdownCol =
