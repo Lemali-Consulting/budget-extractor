@@ -10,6 +10,7 @@ import { parseCurrency, formatDollar } from '../lib/currency';
 import { CHART_COLORS } from '../lib/chart-colors';
 import { useContainerWidth } from '../lib/hooks';
 import { columnHeaderLabel } from '../lib/text-case';
+import { trendPoints } from '../lib/section-trend';
 
 interface TableData {
   id: string;
@@ -95,15 +96,7 @@ export default function SectionCharts({ tables, sectionTitle, year }: Props) {
   }, [activeTab, containerWidth]);
 
   function renderTrend(el: HTMLDivElement) {
-    const data: { label: string; year: number; value: number }[] = [];
-    for (const [i, row] of rows.entries()) {
-      const label = rowLabels[i];
-      if (!label || label.toLowerCase().includes('total')) continue;
-      for (const { idx, year } of yearCols) {
-        const v = parseCurrency(row[idx] || '');
-        if (v !== null) data.push({ label, year, value: v });
-      }
-    }
+    const data = trendPoints({ rows, rowLabels, yearColumns: yearCols });
     if (data.length === 0) {
       el.textContent = 'No trend data available.';
       return;
