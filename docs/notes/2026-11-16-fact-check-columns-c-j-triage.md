@@ -37,5 +37,7 @@ A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's 
 - **Per resident (G9):** the 2027 operating total divided by the 2020 Census population, 302,971. The page footnote says so.
 - **Trends, 2020 and earlier (G10):** these actuals come from the 2024–2026 budget documents (`views/longitudinal.json`), not the 2027 PDF.
 - **EMS per position (G24):** crew chief is $3,641,477 ÷ 39 = $93,371, shown as "$93K". District chief is $1,178,050 ÷ 10 = $117,805, shown as "$118K".
-- **Police FTE:** the PDF's position summary prints 845 for both 2026 and 2027, so "Staffing unchanged at 845" matches.
-- **Already fixed:** OCHS trend (G42), in group 6, f63ba52. The Budget in brief FTE total (J9) was removed earlier.
+- **Police FTE and budget (D5):** the fact-checker's 848 positions and $128.4M are the **September preliminary** figures ($128,403,417; 848), from the PDF the Nov. 9 Mayor's budget replaced (baf3e65). The Nov. 9 PDF prints $128,237,594 (pp. 27, 45, 171) and 845 for both 2026 and 2027, which the site shows.
+- **Data explorer (G6, J6):** the same edition mismatch. Their EMS 2027 total, $39,784,973, is the preliminary's; the Nov. 9 PDF prints $39,385,034 (pp. 27, 45, 162). Their page numbers (13 for the revenue summary, 95 for EMS) are the preliminary's too. The data explorer itself was culled on 2026-11-14.
+- **Brief workforce total (J9):** 3,543 is the sum of the 2027 "Total Full-Time Permanent Positions" across all 41 position summaries in the PDF, trust funds and grants included; the PDF prints no citywide total. The new/eliminated counts Rich questioned (M9, item 5) were removed, but this total still shows.
+- **Already fixed:** OCHS trend (G42), in group 6, f63ba52.
