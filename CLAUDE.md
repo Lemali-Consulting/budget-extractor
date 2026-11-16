@@ -144,7 +144,7 @@ This project runs in a devcontainer with limited memory. Follow these rules to a
 
 # Netlify Deployment
 
-The web app is deployed as a static site to Netlify via manual CLI deploy (not git-linked, since the repo is private).
+The web app is deployed as a static site to Netlify via manual CLI deploy; Netlify is not linked to the repo. The repo (`Lemali-Consulting/budget-extractor`) is public, and the About page links to it as the site's source code.
 
 - **Site URL**: https://budget.publicsource.org (the public, canonical address); the same site also answers at https://pgh-budget-explorer.netlify.app
 - **Site ID**: `11c41143-d0e2-4a28-9dde-10e173bf230f`
