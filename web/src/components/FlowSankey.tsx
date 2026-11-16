@@ -165,7 +165,9 @@ export default function FlowSankey({
             const lit = isLit('link', key);
             const path = sankeyLinkHorizontal()(l);
             const sourceColor = (l as any).color ?? colorFor(l.source as any);
-            return (
+            // A band into a node with a page opens that page; others are hover-only.
+            const href: string | undefined = interactive ? (l.target as any).href : undefined;
+            const band = (
               <path
                 key={key}
                 d={path ?? ''}
@@ -173,7 +175,7 @@ export default function FlowSankey({
                 stroke={sourceColor}
                 stroke-width={Math.max(1, l.width ?? 1)}
                 stroke-opacity={lit ? 0.55 : 0.08}
-                style={interactive ? 'cursor: pointer; transition: stroke-opacity 120ms;' : undefined}
+                style={interactive ? `cursor: ${href ? 'pointer' : 'default'}; transition: stroke-opacity 120ms;` : undefined}
                 onMouseEnter={
                   interactive
                     ? (e: any) => {
@@ -196,6 +198,13 @@ export default function FlowSankey({
                 }
               />
             );
+            return href ? (
+              <a key={key} href={href}>
+                {band}
+              </a>
+            ) : (
+              band
+            );
           })}
         </g>
         <g>
@@ -214,7 +223,7 @@ export default function FlowSankey({
                 fill-opacity={lit ? 0.95 : 0.25}
                 style={
                   interactive
-                    ? 'cursor: pointer; transition: fill-opacity 120ms;'
+                    ? `cursor: ${n.href ? 'pointer' : 'default'}; transition: fill-opacity 120ms;`
                     : undefined
                 }
                 onMouseEnter={
