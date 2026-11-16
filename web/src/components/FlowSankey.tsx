@@ -4,6 +4,7 @@
 
 import { useMemo, useRef, useState, useEffect } from 'preact/hooks';
 import { BODY_FONT_CSS } from '../lib/brand-fonts.mjs';
+import { spreadLabels } from '../lib/label-spread';
 import {
   sankey as d3Sankey,
   sankeyLinkHorizontal,
@@ -123,6 +124,13 @@ export default function FlowSankey({
       links: sankeyLinks as any,
     });
   }, [nodes, links, renderWidth, height, showLabels]);
+
+  const isNarrow = renderWidth < 520;
+  const labelled = (n: any): boolean => showLabels && (n.y1 ?? 0) - (n.y0 ?? 0) >= minLabelHeight({ label: n.label, isNarrow });
+  const labelY = useMemo(
+    () => labelPositions({ nodes: (layout.nodes as any[]).filter(labelled), isNarrow, height }),
+    [layout, isNarrow, height, showLabels],
+  );
 
   // Build adjacency for hover dimming.
   const linkKey = (l: any) =>
@@ -250,24 +258,17 @@ export default function FlowSankey({
               />
             );
 
-            const isYearLabel = /^\d{4}$/.test(n.label);
-            const isNarrow = renderWidth < 520;
-            // Drop in-band labels below a height threshold to avoid collisions;
-            // users can tap/hover for tooltips. Year labels are kept down to 8px
-            // since they're short and on the diagram's edge. On narrow viewports
-            // raise the non-year threshold so only the largest interior nodes
-            // get labeled — adjacent-column labels otherwise run into each other.
-            const minLabelHeight = isYearLabel ? 8 : isNarrow ? 28 : 14;
+            const isYearLabel = YEAR_LABEL.test(n.label);
             // At narrow widths, truncate long interior labels so they don't
             // bleed into the neighboring column.
             const truncatedLabel =
               isNarrow && !isYearLabel && n.label.length > 16
                 ? n.label.slice(0, 15) + '…'
                 : n.label;
-            const labelEl = showLabels && nodeHeight >= minLabelHeight ? (
+            const labelEl = labelled(n) ? (
               <text
                 x={(n.x0 ?? 0) < renderWidth / 2 ? (n.x1 ?? 0) + 6 : (n.x0 ?? 0) - 6}
-                y={((n.y0 ?? 0) + (n.y1 ?? 0)) / 2}
+                y={labelY.get(n.id) ?? ((n.y0 ?? 0) + (n.y1 ?? 0)) / 2}
                 dy="0.35em"
                 text-anchor={(n.x0 ?? 0) < renderWidth / 2 ? 'start' : 'end'}
                 font-size={isYearLabel ? 13 : isNarrow ? 10 : 11}
@@ -309,4 +310,38 @@ export default function FlowSankey({
       )}
     </div>
   );
+}
+
+const YEAR_LABEL = /^\d{4}$/;
+/** Space between label baselines in one column: an 11px line plus breathing room. */
+const LABEL_LINE_GAP = 13;
+const LABEL_EDGE_MARGIN = 6;
+
+/**
+ * The smallest node that gets a printed name. On a wide diagram every node is
+ * named, so the caption's counts can be checked by eye (fact-check sheet
+ * "1126", row 7). On narrow screens only the largest interior nodes are,
+ * since labels there run into the next column; years, short and on the edge,
+ * keep theirs down to 8px. Unnamed nodes still show their name on hover.
+ */
+function minLabelHeight(opts: { label: string; isNarrow: boolean }): number {
+  if (YEAR_LABEL.test(opts.label)) return 8;
+  return opts.isNarrow ? 28 : 0;
+}
+
+/** Where each labelled node's name sits: centred on the node, spread apart within its column so none overlap. */
+function labelPositions(opts: { nodes: any[]; isNarrow: boolean; height: number }): Map<string, number> {
+  const columns = new Map<number, any[]>();
+  for (const n of opts.nodes) columns.set(n.x0 ?? 0, [...(columns.get(n.x0 ?? 0) ?? []), n]);
+  const out = new Map<string, number>();
+  for (const column of columns.values()) {
+    const spread = spreadLabels({
+      positions: column.map((n) => ((n.y0 ?? 0) + (n.y1 ?? 0)) / 2),
+      minGap: opts.isNarrow ? LABEL_LINE_GAP - 1 : LABEL_LINE_GAP,
+      min: LABEL_EDGE_MARGIN,
+      max: opts.height - LABEL_EDGE_MARGIN,
+    });
+    column.forEach((n, i) => out.set(n.id, spread[i]));
+  }
+  return out;
 }

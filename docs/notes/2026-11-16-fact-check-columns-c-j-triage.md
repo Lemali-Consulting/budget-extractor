@@ -1,7 +1,7 @@
 # Fact-check columns C–J: what reproduces on the preview
 
 **Date:** 2026-11-16
-**Status:** open (A–D fixed)
+**Status:** open (A–E fixed)
 
 A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's sheet "Pittsburgh Budget Explorer factcheck 1126" (rows 3–47). The problems they flagged were checked against the preview at f63ba52 (`public-source-blue-increases`): seven groups reproduce and five turned out to be questions with answers.
 
@@ -25,7 +25,7 @@ A Public Source fact-checker filled in the fact-check columns (C–J) of Rich's 
 - **Money flow intro (D7):** "Hover any band" should read "Hover over any band".
 - **Clicking on the money flow (D7):** only a department's bar and name are links; the bands are not.
 
-**E. Money flow labels and counts (D7).** The caption's counts are right: 7 revenue categories, which matches the PDF's 41–48 subclasses, plus the use of fund balance; and 16 departments plus "Other (11 departments)". But three revenue bands (fines, interest, miscellaneous) and four department nodes (Facilities, Law, Permits, Licenses and Inspections, and Parks) have no visible label, so the counts can't be checked by eye.
+**E. Money flow labels and counts (D7) — fixed.** On a wide screen every node is now named; where small nodes sit closer than a line of text, their labels are spread apart just enough not to overlap (`web/src/lib/label-spread.ts`; tests: `web/tests/flow-labels.spec.ts`). The capital flow's smaller projects are named too. Narrow screens keep the old threshold. As found: The caption's counts are right: 7 revenue categories, which matches the PDF's 41–48 subclasses, plus the use of fund balance; and 16 departments plus "Other (11 departments)". But three revenue bands (fines, interest, miscellaneous) and four department nodes (Facilities, Law, Permits, Licenses and Inspections, and Parks) have no visible label, so the counts can't be checked by eye.
 
 **F. The capital plan's 2026 total is $2.26M short (G7).** The flow sums projects to $912,857,161. Capital budget PDF p. 24 gives 2026 as $112,907,440, against the site's $110,647,439; 2027–2032 match exactly. The gap is in the 2026 project rows, and has not been traced yet.
 
