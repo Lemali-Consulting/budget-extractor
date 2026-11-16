@@ -819,6 +819,14 @@ test("personnel explorer starts sorted by 2027 budget, largest first", async ({ 
   expect(budgets).toEqual([...budgets].sort((a, b) => b - a));
 });
 
+// The explorer is server-rendered and its Preact island hydrates after load
+// (Astro drops the island's `ssr` attribute when done); text typed before then
+// is lost, so wait for hydration before filtering.
+async function filterPersonnelByTitle(page: Page, title: string) {
+  await expect(page.locator("astro-island:not([ssr])").filter({ has: page.getByPlaceholder("Filter by title...") })).toHaveCount(1);
+  await main(page).getByPlaceholder("Filter by title...").fill(title);
+}
+
 // Where the PDF splits a title's pay between funds, every line it covers says
 // so (client request, 2026-11-12), starred or not: the PDF prints each split
 // once and stars only some of the lines it covers. RAD's Senior Park Ranger
@@ -828,7 +836,7 @@ const SENIOR_PARK_RANGER_SPLIT = "Pay split: 12% Public Safety Administration Ge
 test("department top positions show the pay split on lines the PDF splits", async ({ page }) => {
   await page.goto("/personnel/");
   const explorer = main(page).locator("table").filter({ hasText: "Per position" });
-  await main(page).getByPlaceholder("Filter by title...").fill("Senior Park Ranger");
+  await filterPersonnelByTitle(page, "Senior Park Ranger");
   const row = explorer.locator("tbody tr").filter({ hasText: "Public Safety" }).filter({ hasText: "Senior Park Ranger" }).first();
   await expect(row).toContainText(SENIOR_PARK_RANGER_SPLIT);
   // Each fund links to its department page; trust funds have no page, so theirs is plain text.
@@ -840,7 +848,7 @@ test("department top positions show the pay split on lines the PDF splits", asyn
 test("personnel explorer shows the pay split on every line the PDF splits, and only those", async ({ page }) => {
   await page.goto("/personnel/");
   const explorer = main(page).locator("table").filter({ hasText: "Per position" });
-  await main(page).getByPlaceholder("Filter by title...").fill("Park Ranger");
+  await filterPersonnelByTitle(page, "Park Ranger");
   const rows = explorer.locator("tbody tr");
   await expect(rows.filter({ hasText: "Senior Park Ranger" })).toHaveCount(2);
   for (const row of await rows.filter({ hasText: "Senior Park Ranger" }).all()) {
