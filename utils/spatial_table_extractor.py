@@ -123,6 +123,15 @@ _CATEGORY_CODE_RE = re.compile(r"^\d{2}\s*-\s+[A-Z]")
 # DEVELOPMENT", its page number fused to the title). Consecutive entries are
 # siblings, so one with blank amounts is still a data row, not a heading.
 _NUMBERED_ENTRY_RE = re.compile(r"^\d+\s*[A-Za-z]")
+# A table's own total row ("Total Revenues", "Expenditures Total"). It belongs to
+# the whole table, not to the category printed above it.
+_TOTAL_ROW_RE = re.compile(r"\btotal\b", re.IGNORECASE)
+
+
+def _is_total_row(row: "SpatialRow") -> bool:
+    """Whether a row is a table's total line rather than a line item."""
+    first_cell: str = row.cells[0].strip() if row.cells else ""
+    return bool(_TOTAL_ROW_RE.search(first_cell))
 
 
 def assign_sections(table: "SpatialTable") -> list[str]:
@@ -193,9 +202,13 @@ def assign_sections(table: "SpatialTable") -> list[str]:
 
         effective_parent = ""
         for _run_idx, (label, start, count) in enumerate(runs):
-            if count == 1 and _CATEGORY_CODE_RE.match(label):
-                # Single-row category-code section → demote to parent
-                sections[start] = effective_parent
+            run_rows = table.rows[start:start + count]
+            grouped_rows = [r for r in run_rows[1:] if not _is_total_row(r)]
+            if not grouped_rows and _CATEGORY_CODE_RE.match(label):
+                # A category-code section grouping nothing but itself (and at most
+                # the table's total) → demote it, and that total, to the parent.
+                for i in range(start, start + count):
+                    sections[i] = effective_parent
             else:
                 effective_parent = label
 
