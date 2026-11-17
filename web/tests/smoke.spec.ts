@@ -97,6 +97,12 @@ test("operating section detail - department page", async ({ page }) => {
 // ---------------------------------------------------------------------------
 // Capital Budget Index
 // ---------------------------------------------------------------------------
+test("the capital page's title hyphenates six-year", async ({ page }) => {
+  // Rich (row 4, 2026-11-16): "six year plan" should be "six-year plan", as everywhere else on the site.
+  await page.goto("/capital/");
+  await expect(page.locator("main h1")).toHaveText("Capital budget & six-year plan");
+});
+
 test("capital index lists projects", async ({ page }) => {
   await page.goto("/capital/");
 

@@ -34,3 +34,12 @@ test("nothing in the money flow shows a pointer unless clicking it goes somewher
   );
   expect(deadPointers).toEqual([]);
 });
+
+test("the operating flow's caption doesn't count the departments", async ({ page }) => {
+  // Rich (row 7, item 4, 2026-11-16): say "departments", not "16 departments", so readers
+  // don't take the count of large departments on the right for the number of city departments.
+  await page.goto("/flow/");
+  const caption = page.locator("main p").filter({ hasText: "feed the city's general budget" });
+  await expect(caption).toContainText("distributed across departments on the right");
+  await expect(caption).not.toContainText(/\d+ departments on the right/);
+});

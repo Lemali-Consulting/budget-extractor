@@ -47,6 +47,14 @@ export const OMISSIONS_2027: readonly Omission[] = [
       "The department table's total row run together with the next table's header, read as a four-row table (row 19, item 1). The same totals close the subclass table below it.",
   },
   {
+    kind: OMISSION_KIND.TEXT,
+    sectionSlug: 'expenditure-summary',
+    page: 1,
+    startsWith: 'Expenditures by Department',
+    reason:
+      'The department table\'s PDF title and column labels, read as one line of text above it (row 19, item 3).',
+  },
+  {
     kind: OMISSION_KIND.CUT_FROM,
     sectionSlug: 'revenue-summary',
     page: 3,

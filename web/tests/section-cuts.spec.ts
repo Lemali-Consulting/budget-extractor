@@ -50,6 +50,15 @@ test("the expenditure summary ends before its expenditures by subclass", () => {
   expect(text).toContain("The City Council budgets amount to $6,578,891");
 });
 
+test("the expenditure summary's department table has no run-together heading above it", () => {
+  // Row 19, item 3 (Rich, 2026-11-16): cut "Expenditures by Department 2025 2026 2027 Increase/ %
+  // Amended Actual Budget (Decrease) Change Budget", the table's PDF title and column labels read as one line of text.
+  const text = pageText("sections/expenditure-summary");
+  expect(text).not.toMatch(/Expenditures by Department 2025 2026 2027/i);
+  // Kept: the table itself.
+  expect(text).toContain("Citizen Police Review Board");
+});
+
 test("the expenditures detail shows its account summary heading once", () => {
   // Row 26: the two repeated "Expenditure account summary" headings at the bottom.
   expect(pageText("sections/expenditures-detail").match(/Expenditure account summary/g)?.length ?? 0).toBeLessThanOrEqual(2);
