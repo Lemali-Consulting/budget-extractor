@@ -14,7 +14,7 @@ test("a first-time reader's first page opens with the About text, which scrolls"
   await page.goto("/departments/bureau-of-fire/");
   await expect(intro(page)).toBeVisible();
   await expect(intro(page)).toContainText("What is the Pittsburgh Budget Explorer?");
-  await expect(intro(page)).toContainText("This site is not an official City of Pittsburgh publication.");
+  await expect(intro(page)).toContainText("This site is not an official City of Pittsburgh publication");
   const scrolls = await intro(page).locator("[data-about-intro-body]").evaluate((el) => el.scrollHeight > el.clientHeight);
   expect(scrolls).toBe(true);
 });

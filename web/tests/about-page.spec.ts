@@ -42,7 +42,7 @@ test("the sections the new version cut are gone", async ({ page }) => {
     "What is the Pittsburgh Budget Explorer?",
     "What role did AI play?",
     "Important caveats about accuracy",
-    "Source data and transparency",
+    "Source data",
     "Corrections we made to the source documents",
   ]);
 });
@@ -51,4 +51,32 @@ test("every page's footer names the About page by its title", async ({ page }) =
   await page.goto("/");
   await expect(page.locator("footer").getByRole("link", { name: "About Pittsburgh Budget Explorer" }))
     .toHaveAttribute("href", "/about/");
+});
+
+/**
+ * Public Source's edit of the About text (relayed by Max, 2026-11-17): a new
+ * opening that links their AI policy, a rewritten account of AI's role and
+ * review, and a search headline and description of its own.
+ */
+test("the About page opens with Public Source's introduction and links its AI policy", async ({ page }) => {
+  await page.goto("/about/");
+  const main = page.locator("main");
+  await expect(main).toContainText("Pittsburgh’s budget shows how the city plans to spend public money.");
+  await expect(main.getByRole("link", { name: "Public Source’s AI policy" }))
+    .toHaveAttribute("href", "https://www.publicsource.org/policies/#h-public-source-ai-policy-and-guidelines");
+  // The introduction's link to the explorer goes to this site's home, not the preview address in the draft.
+  await expect(main.getByRole("link", { name: "this visualization" })).toHaveAttribute("href", "/");
+  await expect(main).toContainText("An editor, a developer and a journalist who fact-checked the project reviewed the work.");
+  await expect(main).not.toContainText("eternal missions");
+  await expect(main).not.toContainText("hallucination");
+});
+
+test("the About page carries Public Source's search headline and description", async ({ page }) => {
+  await page.goto("/about/");
+  await expect(page.locator('meta[property="og:title"]'))
+    .toHaveAttribute("content", "How the Pittsburgh Budget Explorer was built and AI’s role");
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+    "content",
+    "The Pittsburgh Budget Explorer turns the city’s proposed 2027 budget PDFs into searchable tables. Here’s how AI helped build it and how to check its numbers.",
+  );
 });
