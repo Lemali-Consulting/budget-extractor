@@ -1235,36 +1235,20 @@
       "budgetCurrent": 72301.0
     },
     {
-      "title": "Violence Prevention Analyst",
+      "title": "Safer Together PGH Project Coordinator",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Bureau of Administration (Public Safety)",
+      "fte": 5.0,
+      "budgetPrior": 351000.0,
+      "budgetCurrent": 361504.0
+    },
+    {
+      "title": "Assistant Director - Community Affairs",
       "fromDepartment": "Stop the Violence Trust Fund",
       "toDepartment": "Bureau of Administration (Public Safety)",
       "fte": 1.0,
-      "budgetPrior": 76294.0,
-      "budgetCurrent": 78582.0
-    },
-    {
-      "title": "ROOTS Senior Outreach Specialist",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Office of Community Health and Safety",
-      "fte": 4.0,
-      "budgetPrior": 258170.0,
-      "budgetCurrent": 332384.0
-    },
-    {
-      "title": "Department Business Administrator",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Office of Community Health and Safety",
-      "fte": 1.0,
-      "budgetPrior": 82742.0,
-      "budgetCurrent": 85218.0
-    },
-    {
-      "title": "Program Coordinator, Citisports",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Department of Parks and Recreation",
-      "fte": 2.0,
-      "budgetPrior": 167106.0,
-      "budgetCurrent": 114732.0
+      "budgetPrior": 114046.0,
+      "budgetCurrent": 117458.0
     },
     {
       "title": "Administrative Assistant - Disruptive Properties",
@@ -1275,44 +1259,12 @@
       "budgetCurrent": 69480.0
     },
     {
-      "title": "Senior Safer Together PGH Project Coordinator",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Bureau of Administration (Public Safety)",
-      "fte": 1.0,
-      "budgetPrior": 82742.0,
-      "budgetCurrent": 85218.0
-    },
-    {
-      "title": "ROOTS Outreach Site Support Coordinator",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Office of Community Health and Safety",
-      "fte": 4.0,
-      "budgetPrior": 203341.0,
-      "budgetCurrent": 209414.0
-    },
-    {
-      "title": "Social Work Manager",
+      "title": "Community Resilience Program Manager",
       "fromDepartment": "Stop the Violence Trust Fund",
       "toDepartment": "Office of Community Health and Safety",
       "fte": 1.0,
       "budgetPrior": 86008.0,
       "budgetCurrent": 88587.0
-    },
-    {
-      "title": "Assistant Director - Community Health & Safety",
-      "fromDepartment": "Bureau of Administration (Public Safety)",
-      "toDepartment": "Office of Community Health and Safety",
-      "fte": 1.0,
-      "budgetPrior": 114046.0,
-      "budgetCurrent": 117458.0
-    },
-    {
-      "title": "Administrative Assistant",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Bureau of Administration (Public Safety)",
-      "fte": 1.0,
-      "budgetPrior": 59445.0,
-      "budgetCurrent": 61229.0
     },
     {
       "title": "Media Coordinator",
@@ -1323,20 +1275,60 @@
       "budgetCurrent": 72301.0
     },
     {
+      "title": "Violence Prevention Analyst",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Bureau of Administration (Public Safety)",
+      "fte": 1.0,
+      "budgetPrior": 76294.0,
+      "budgetCurrent": 78582.0
+    },
+    {
+      "title": "Social Work Manager",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Office of Community Health and Safety",
+      "fte": 1.0,
+      "budgetPrior": 86008.0,
+      "budgetCurrent": 88587.0
+    },
+    {
+      "title": "Senior Safer Together PGH Project Coordinator",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Bureau of Administration (Public Safety)",
+      "fte": 1.0,
+      "budgetPrior": 82742.0,
+      "budgetCurrent": 85218.0
+    },
+    {
+      "title": "ROOTS Outreach Site Manager",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Office of Community Health and Safety",
+      "fte": 4.0,
+      "budgetPrior": 247686.0,
+      "budgetCurrent": 255091.0
+    },
+    {
+      "title": "Program Coordinator, Citisports",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Department of Parks and Recreation",
+      "fte": 2.0,
+      "budgetPrior": 167106.0,
+      "budgetCurrent": 114732.0
+    },
+    {
+      "title": "Supervisor, CitiSports",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Department of Parks and Recreation",
+      "fte": 2.0,
+      "budgetPrior": 152589.0,
+      "budgetCurrent": 157164.0
+    },
+    {
       "title": "ROOTS Team Lead",
       "fromDepartment": "Stop the Violence Trust Fund",
       "toDepartment": "Office of Community Health and Safety",
       "fte": 4.0,
       "budgetPrior": 305176.0,
       "budgetCurrent": 314328.0
-    },
-    {
-      "title": "Community Resilience Program Manager",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Office of Community Health and Safety",
-      "fte": 1.0,
-      "budgetPrior": 86008.0,
-      "budgetCurrent": 88587.0
     },
     {
       "title": "ROOTS Program Manager",
@@ -1355,36 +1347,12 @@
       "budgetCurrent": 75462.0
     },
     {
-      "title": "ROOTS Outreach Site Manager",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Office of Community Health and Safety",
-      "fte": 4.0,
-      "budgetPrior": 247686.0,
-      "budgetCurrent": 255091.0
-    },
-    {
-      "title": "Supervisor, CitiSports",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Department of Parks and Recreation",
-      "fte": 2.0,
-      "budgetPrior": 152589.0,
-      "budgetCurrent": 157164.0
-    },
-    {
       "title": "Program Coordinator, Afterschool Program",
       "fromDepartment": "Stop the Violence Trust Fund",
       "toDepartment": "Department of Parks and Recreation",
       "fte": 1.0,
       "budgetPrior": 55702.0,
       "budgetCurrent": 57366.0
-    },
-    {
-      "title": "Administrative Specialist",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Office of Community Health and Safety",
-      "fte": 1.0,
-      "budgetPrior": 45593.0,
-      "budgetCurrent": 46961.0
     },
     {
       "title": "Social Worker Team Lead",
@@ -1395,14 +1363,6 @@
       "budgetCurrent": 78582.0
     },
     {
-      "title": "Safer Together PGH Project Coordinator",
-      "fromDepartment": "Stop the Violence Trust Fund",
-      "toDepartment": "Bureau of Administration (Public Safety)",
-      "fte": 5.0,
-      "budgetPrior": 351000.0,
-      "budgetCurrent": 361504.0
-    },
-    {
       "title": "Trauma Specialist",
       "fromDepartment": "Stop the Violence Trust Fund",
       "toDepartment": "Office of Community Health and Safety",
@@ -1411,9 +1371,49 @@
       "budgetCurrent": 72301.0
     },
     {
-      "title": "Assistant Director - Community Affairs",
+      "title": "ROOTS Senior Outreach Specialist",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Office of Community Health and Safety",
+      "fte": 4.0,
+      "budgetPrior": 258170.0,
+      "budgetCurrent": 332384.0
+    },
+    {
+      "title": "Department Business Administrator",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Office of Community Health and Safety",
+      "fte": 1.0,
+      "budgetPrior": 82742.0,
+      "budgetCurrent": 85218.0
+    },
+    {
+      "title": "ROOTS Outreach Site Support Coordinator",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Office of Community Health and Safety",
+      "fte": 4.0,
+      "budgetPrior": 203341.0,
+      "budgetCurrent": 209414.0
+    },
+    {
+      "title": "Administrative Specialist",
+      "fromDepartment": "Stop the Violence Trust Fund",
+      "toDepartment": "Office of Community Health and Safety",
+      "fte": 1.0,
+      "budgetPrior": 45593.0,
+      "budgetCurrent": 46961.0
+    },
+    {
+      "title": "Administrative Assistant",
       "fromDepartment": "Stop the Violence Trust Fund",
       "toDepartment": "Bureau of Administration (Public Safety)",
+      "fte": 1.0,
+      "budgetPrior": 59445.0,
+      "budgetCurrent": 61229.0
+    },
+    {
+      "title": "Assistant Director - Community Health & Safety",
+      "fromDepartment": "Bureau of Administration (Public Safety)",
+      "toDepartment": "Office of Community Health and Safety",
       "fte": 1.0,
       "budgetPrior": 114046.0,
       "budgetCurrent": 117458.0
