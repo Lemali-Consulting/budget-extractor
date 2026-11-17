@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/brand-fonts';
 import YearNotice from '../components/YearNotice.astro';
 import Analytics from '../components/Analytics.astro';
+import AboutIntro from '../components/AboutIntro.astro';
 import { SITE_NAME, PUBLISHER, ABOUT_PAGE_TITLE } from '../lib/site.mjs';
 import { structuredPageData } from '../lib/structured-data';
 import { SITEMAP_PATH, SITEMAP_TITLE } from '../lib/published-pages';
@@ -19,6 +20,8 @@ interface Props {
   budgetYear?: BudgetYear;
   /** Path of this page in the current (headline) version, when one exists. */
   currentHref?: string;
+  /** False on the About page, which would otherwise pop up its own text. */
+  aboutIntro?: boolean;
 }
 
 const {
@@ -29,6 +32,7 @@ const {
   ogDescription,
   budgetYear = HEADLINE,
   currentHref,
+  aboutIntro = true,
 } = Astro.props;
 const documentTitle = title === SITE_NAME ? SITE_NAME : `${title} | ${SITE_NAME}`;
 const resolvedOgTitle = ogTitle || documentTitle;
@@ -226,5 +230,6 @@ const DEPARTMENTS_HREF = '/operating/#departments';
         </a>
       </p>
     </footer>
+    {aboutIntro && <AboutIntro />}
   </body>
 </html>

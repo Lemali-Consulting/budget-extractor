@@ -1,0 +1,80 @@
+---
+/**
+ * The first-visit popup: the About page's text, to scroll through or close
+ * (Public Source, 2026-11-17). It shows once per browser. The text is fetched
+ * from the About page when shown, so it is written once, isn't repeated in
+ * every page's HTML and stays out of the search index.
+ */
+import { ABOUT_PAGE_TITLE } from '../lib/site.mjs';
+import { ABOUT_INTRO_SEEN_KEY } from '../lib/about-intro';
+---
+
+<dialog
+  id="about-intro"
+  aria-labelledby="about-intro-title"
+  data-seen-key={ABOUT_INTRO_SEEN_KEY}
+  data-pagefind-ignore
+  class="w-[min(48rem,calc(100vw-2rem))] max-h-[85vh] rounded-lg border border-gray-200 p-0 shadow-xl backdrop:bg-black/50"
+>
+  <div class="flex max-h-[85vh] flex-col">
+    <div class="flex items-center justify-between gap-4 border-b px-5 py-3">
+      <h2 id="about-intro-title" class="text-xl font-bold text-ps-blue-900">{ABOUT_PAGE_TITLE}</h2>
+      <button type="button" data-about-intro-close aria-label="Close" class="rounded px-2 text-2xl leading-none text-gray-500 hover:text-gray-800">&times;</button>
+    </div>
+    <div data-about-intro-body tabindex="-1" class="overflow-y-auto px-5 py-4 focus:outline-none"></div>
+    <div class="flex items-center justify-between gap-4 border-t px-5 py-3 text-sm">
+      <a href="/about/" class="text-ps-blue-600 hover:underline">Open the About page</a>
+      <button type="button" data-about-intro-close class="rounded bg-ps-blue-600 px-4 py-2 font-medium text-white hover:bg-ps-blue-700">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const ABOUT_PATH = '/about/';
+  const dialog = document.getElementById('about-intro') as HTMLDialogElement | null;
+
+  /** True when this browser has seen the popup, or can't remember that it has (so it never shows on every page). */
+  function alreadySeen(key: string): boolean {
+    try {
+      return localStorage.getItem(key) !== null;
+    } catch {
+      return true;
+    }
+  }
+
+  function markSeen(key: string): void {
+    try {
+      localStorage.setItem(key, '1');
+    } catch {
+      // Storage refused after the check above: the popup simply may show again.
+    }
+  }
+
+  async function aboutText(): Promise<Element | null> {
+    const response = await fetch(ABOUT_PATH);
+    if (!response.ok) return null;
+    const html = new DOMParser().parseFromString(await response.text(), 'text/html');
+    return html.querySelector('[data-about-body]');
+  }
+
+  async function showOnce(dialog: HTMLDialogElement): Promise<void> {
+    const key = dialog.dataset.seenKey!;
+    if (alreadySeen(key)) return;
+    const text = await aboutText().catch(() => null);
+    if (!text) return;
+    dialog.querySelector('[data-about-intro-body]')!.replaceChildren(...text.childNodes);
+    markSeen(key);
+    dialog.showModal();
+    // Opening on the close button would read as "dismiss me"; start at the top of the text instead.
+    (dialog.querySelector("[data-about-intro-body]") as HTMLElement).focus();
+  }
+
+  if (dialog) {
+    dialog.querySelectorAll('[data-about-intro-close]').forEach((button) => button.addEventListener('click', () => dialog.close()));
+    // A click on the dimmed backdrop (the dialog element itself, outside its content) closes it.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    showOnce(dialog);
+  }
+</script>
