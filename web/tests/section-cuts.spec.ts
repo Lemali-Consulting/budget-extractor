@@ -55,8 +55,13 @@ test("the expenditure summary's department table has no run-together heading abo
   // Amended Actual Budget (Decrease) Change Budget", the table's PDF title and column labels read as one line of text.
   const text = pageText("sections/expenditure-summary");
   expect(text).not.toMatch(/Expenditures by Department 2025 2026 2027/i);
-  // Kept: the table itself.
+  // Max (2026-11-16): also cut the lone "Budget" printed above each of the page's two tables, the last line
+  // of the PDF's "2026 Amended Budget" column label spilled out as small print.
+  expect(text).not.toContain("View image Budget Share table");
+  expect(text).not.toContain("Budget Totals may not sum");
+  // Kept: the table itself and the rounding note.
   expect(text).toContain("Citizen Police Review Board");
+  expect(text).toContain("Totals may not sum due to rounding");
 });
 
 test("the expenditures detail shows its account summary heading once", () => {

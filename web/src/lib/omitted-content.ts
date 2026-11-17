@@ -55,6 +55,14 @@ export const OMISSIONS_2027: readonly Omission[] = [
       'The department table\'s PDF title and column labels, read as one line of text above it (row 19, item 3).',
   },
   {
+    kind: OMISSION_KIND.TEXT,
+    sectionSlug: 'expenditure-summary',
+    page: 1,
+    startsWith: 'Budget',
+    reason:
+      'The lone "Budget" above each of the page\'s two tables: the last line of the "2026 Amended Budget" column label, read as small print (Max, 2026-11-16, after row 19, item 3).',
+  },
+  {
     kind: OMISSION_KIND.CUT_FROM,
     sectionSlug: 'revenue-summary',
     page: 3,
