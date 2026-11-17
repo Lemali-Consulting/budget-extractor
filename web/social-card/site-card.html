@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+  The site-wide social card: the image shared links show for every page
+  (design: Max's "Social preview cards" canvas, option A, 2026-11-17).
+  Rendered to public/social-card.png by `npm run social-card`. No figures,
+  so it never needs re-checking when the budget changes.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site-wide social card</title>
+<style>
+@font-face { font-family: "Fira Sans Extra Condensed"; font-weight: 700; src: url("../node_modules/@fontsource/fira-sans-extra-condensed/files/fira-sans-extra-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya Sans"; font-weight: 400; src: url("../node_modules/@fontsource/alegreya-sans/files/alegreya-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya Sans"; font-weight: 500; src: url("../node_modules/@fontsource/alegreya-sans/files/alegreya-sans-latin-500-normal.woff2") format("woff2"); }
+
+body { margin: 0; }
+.card {
+  width: 1200px; height: 630px; box-sizing: border-box; overflow: hidden;
+  background: #121212; color: #FFFFFF; font-family: "Alegreya Sans", sans-serif;
+  display: flex; flex-direction: column; justify-content: space-between; padding: 64px 72px;
+}
+.logos { display: flex; align-items: center; gap: 24px; }
+.logos .public-source { height: 48px; }
+.logos .rule { width: 2px; height: 48px; background: #6B7280; }
+.logos .explorer { height: 44px; }
+.headline { display: flex; flex-direction: column; gap: 20px; }
+.headline h1 { margin: 0; font-family: "Fira Sans Extra Condensed", sans-serif; font-weight: 700; font-size: 132px; line-height: 0.95; }
+.headline p { margin: 0; font-size: 44px; line-height: 1.2; color: #F0EF97; max-width: 900px; }
+.footer { display: flex; align-items: center; justify-content: space-between; }
+.footer .address { font-size: 30px; font-weight: 500; color: #D1D5DB; }
+.footer .bar { width: 160px; height: 16px; background: #EDE44A; }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="logos">
+    <img class="public-source" src="../public/images/public-source-logo-white.png" alt="Pittsburgh's Public Source">
+    <div class="rule"></div>
+    <img class="explorer" src="../public/images/budget-explorer-wordmark-white.png" alt="Budget Explorer">
+  </div>
+  <div class="headline">
+    <h1>Proposed 2027 budget</h1>
+    <p>Pittsburgh’s budget, as searchable tables and charts</p>
+  </div>
+  <div class="footer">
+    <div class="address">budget.publicsource.org</div>
+    <div class="bar"></div>
+  </div>
+</div>
+</body>
+</html>

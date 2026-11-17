@@ -115,7 +115,7 @@ The headline (2027) search box uses **Pagefind**, which indexes the built HTML a
 
 # SEO and Analytics
 
-Every page carries a canonical link, Open Graph/Twitter tags and schema.org JSON-LD (`web/src/layouts/Base.astro`), all built from the production address in `web/src/lib/site.mjs` — change `SITE_URL` there if the site moves domain. `/sitemap.xml` and `/robots.txt` are generated from the published-page list. Public Source's Google Analytics and Parse.ly tags (`web/src/components/Analytics.astro`) are in built pages only, not `astro dev`. Every Playwright spec imports `test` from `web/tests/test-base.ts`, which answers the analytics scripts locally so test runs never count as readers; a new spec must do the same. See `docs/decisions/2026-11-13-seo-and-public-source-analytics.md`.
+Every page carries a canonical link, Open Graph/Twitter tags and schema.org JSON-LD (`web/src/layouts/Base.astro`), all built from the production address in `web/src/lib/site.mjs`; shared links show one site-wide card image (`public/social-card.png`, re-rendered from `web/social-card/site-card.html` by `npm run social-card`) — change `SITE_URL` there if the site moves domain. `/sitemap.xml` and `/robots.txt` are generated from the published-page list. Public Source's Google Analytics and Parse.ly tags (`web/src/components/Analytics.astro`) are in built pages only, not `astro dev`. Every Playwright spec imports `test` from `web/tests/test-base.ts`, which answers the analytics scripts locally so test runs never count as readers; a new spec must do the same. See `docs/decisions/2026-11-13-seo-and-public-source-analytics.md`.
 
 # Brand Colors
 

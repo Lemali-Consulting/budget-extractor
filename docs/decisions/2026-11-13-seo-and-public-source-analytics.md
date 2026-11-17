@@ -27,7 +27,7 @@ Before this change, pages had a description and Open Graph title/description, bu
 
 - **`@astrojs/sitemap`.** Would list every built page; generating from the published-page list is as short and ties the sitemap to the 46-page rule.
 - **Loading analytics only on the production hostname** (checked at runtime). Rejected: it would silently stop tracking if the site moved to a custom domain without a code change.
-- **A social preview image (`og:image`).** Not added: it needs a designed card from Public Source. Shares currently show a text-only card.
+- **A social preview image (`og:image`).** Not added at first; it needed a designed card. *Superseded 2026-11-17:* Max chose one site-wide card (no figures, so nothing to fact-check) over a card per page; every page now shares `public/social-card.png` as a large image, rendered from `web/social-card/site-card.html`.
 
 ## Consequences
 

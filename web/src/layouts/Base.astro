@@ -5,6 +5,7 @@ import YearNotice from '../components/YearNotice.astro';
 import Analytics from '../components/Analytics.astro';
 import AboutIntro from '../components/AboutIntro.astro';
 import { SITE_NAME, PUBLISHER, ABOUT_PAGE_TITLE, ABOUT_PATH } from '../lib/site.mjs';
+import { SOCIAL_CARD } from '../lib/social-card.mjs';
 import { structuredPageData } from '../lib/structured-data';
 import { SITEMAP_PATH, SITEMAP_TITLE } from '../lib/published-pages';
 import { type BudgetYear, HEADLINE, ARCHIVE_YEARS, yearPath } from '../lib/budget-year';
@@ -36,6 +37,8 @@ const {
 } = Astro.props;
 const documentTitle = title === SITE_NAME ? SITE_NAME : `${title} | ${SITE_NAME}`;
 const resolvedOgTitle = ogTitle || documentTitle;
+// One card for every page (Max, 2026-11-17); social sites need its absolute address.
+const socialCardUrl = new URL(SOCIAL_CARD.path, Astro.site).href;
 const resolvedOgDescription = ogDescription || description;
 // The production address (astro.config `site`), never the host that built the page.
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -85,7 +88,14 @@ const DEPARTMENTS_HREF = '/operating/#departments';
     <meta property="og:description" content={resolvedOgDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialCardUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content={String(SOCIAL_CARD.width)} />
+    <meta property="og:image:height" content={String(SOCIAL_CARD.height)} />
+    <meta property="og:image:alt" content={SOCIAL_CARD.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialCardUrl} />
+    <meta name="twitter:image:alt" content={SOCIAL_CARD.alt} />
     <meta name="twitter:title" content={resolvedOgTitle} />
     <meta name="twitter:description" content={resolvedOgDescription} />
     <meta name="author" content={PUBLISHER.name} />

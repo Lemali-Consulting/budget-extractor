@@ -7,7 +7,8 @@
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "test": "playwright test",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "social-card": "node social-card/render.mjs"
   },
   "dependencies": {
     "@astrojs/preact": "^4.0.0",

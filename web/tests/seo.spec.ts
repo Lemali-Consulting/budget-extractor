@@ -135,3 +135,38 @@ test("analytics scripts load in the browser, and tests answer them locally", asy
   expect(lengths.length).toBeGreaterThanOrEqual(2); // gtag.js and p.js were both requested
   expect(lengths.every((length) => length === 0)).toBe(true); // ...and served by the stub
 });
+
+/**
+ * Shared links show one designed card for the whole site (Max chose the
+ * site-wide card over per-page cards, 2026-11-17). It carries no figures, so
+ * it adds nothing to the fact-check; each page's title and description still
+ * appear beneath it.
+ */
+const SOCIAL_CARD = { path: "/social-card.png", width: 1200, height: 630 };
+
+test("every published page shares the site-wide social card as a large image", () => {
+  const imageUrl = `${SITE}${SOCIAL_CARD.path}`;
+  const wrong: string[] = [];
+  for (const path of PUBLISHED) {
+    const html = builtHtml(path);
+    const meta = (key: string, value: string) => tagContent(html, { tag: "meta", key, value, read: "content" });
+    const tags = {
+      ogImage: meta("property", "og:image"),
+      ogWidth: meta("property", "og:image:width"),
+      ogHeight: meta("property", "og:image:height"),
+      ogAlt: meta("property", "og:image:alt"),
+      card: meta("name", "twitter:card"),
+      twitterImage: meta("name", "twitter:image"),
+    };
+    const ok = tags.ogImage === imageUrl && tags.twitterImage === imageUrl && tags.card === "summary_large_image"
+      && tags.ogWidth === String(SOCIAL_CARD.width) && tags.ogHeight === String(SOCIAL_CARD.height) && !!tags.ogAlt;
+    if (!ok) wrong.push(`${path} ${JSON.stringify(tags)}`);
+  }
+  expect(wrong).toEqual([]);
+});
+
+test("the social card image is built at the size its tags declare", () => {
+  // A PNG's width and height sit at bytes 16-23 of its header.
+  const png = readFileSync(join(DIST, SOCIAL_CARD.path));
+  expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([SOCIAL_CARD.width, SOCIAL_CARD.height]);
+});
