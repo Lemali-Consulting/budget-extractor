@@ -100,6 +100,14 @@ export default function FlowSankey({
   }, [interactive]);
 
   const renderWidth = interactive ? measuredWidth : width;
+  const isNarrow = renderWidth < 520;
+  // On a wide diagram the outermost columns' names sit on the white space
+  // beside it, so room is kept for the longest name on each side.
+  const outerNames = showLabels && !isNarrow;
+  const margins = useMemo(
+    () => (outerNames ? outerLabelMargins({ nodes, links }) : { left: 0, right: 0 }),
+    [nodes, links, outerNames],
+  );
 
   const layout = useMemo(() => {
     const nodeMap = new Map(nodes.map((n) => [n.id, { ...n }]));
@@ -115,17 +123,16 @@ export default function FlowSankey({
       .nodeWidth(14)
       .nodePadding(showLabels ? 8 : 4)
       .extent([
-        [1, 1],
-        [renderWidth - 1, height - 1],
+        [1 + margins.left, 1],
+        [renderWidth - 1 - margins.right, height - 1],
       ]);
 
     return generator({
       nodes: sankeyNodes as any,
       links: sankeyLinks as any,
     });
-  }, [nodes, links, renderWidth, height, showLabels]);
+  }, [nodes, links, renderWidth, height, showLabels, margins]);
 
-  const isNarrow = renderWidth < 520;
   const labelled = (n: any): boolean => showLabels && (n.y1 ?? 0) - (n.y0 ?? 0) >= minLabelHeight({ label: n.label, isNarrow });
   const labelY = useMemo(
     () => labelPositions({ nodes: (layout.nodes as any[]).filter(labelled), isNarrow, height }),
@@ -265,16 +272,27 @@ export default function FlowSankey({
               isNarrow && !isYearLabel && n.label.length > 16
                 ? n.label.slice(0, 15) + '…'
                 : n.label;
+            const side = labelSide({
+              node: n,
+              outerNames,
+              lastColumnX: Math.max(...(layout.nodes as any[]).map((m) => m.x0 ?? 0)),
+              renderWidth,
+            });
             const labelEl = labelled(n) ? (
               <text
-                x={(n.x0 ?? 0) < renderWidth / 2 ? (n.x1 ?? 0) + 6 : (n.x0 ?? 0) - 6}
+                x={side === 'right' ? (n.x1 ?? 0) + LABEL_NODE_GAP : (n.x0 ?? 0) - LABEL_NODE_GAP}
                 y={labelY.get(n.id) ?? ((n.y0 ?? 0) + (n.y1 ?? 0)) / 2}
                 dy="0.35em"
-                text-anchor={(n.x0 ?? 0) < renderWidth / 2 ? 'start' : 'end'}
-                font-size={isYearLabel ? 13 : isNarrow ? 10 : 11}
+                text-anchor={side === 'right' ? 'start' : 'end'}
+                font-size={labelFontSize({ label: n.label, isNarrow })}
                 font-weight={isYearLabel ? 600 : 400}
                 fill="#1f2937"
                 fill-opacity={lit ? 1 : 0.35}
+                stroke={LABEL_HALO_COLOR}
+                stroke-width={LABEL_HALO_WIDTH}
+                stroke-linejoin="round"
+                stroke-opacity={lit ? 0.9 : 0.3}
+                paint-order="stroke"
                 style={`pointer-events: none; font-family: ${BODY_FONT_CSS};`}
               >
                 {truncatedLabel}
@@ -313,6 +331,53 @@ export default function FlowSankey({
 }
 
 const YEAR_LABEL = /^\d{4}$/;
+/** Space between a node and its printed name. */
+const LABEL_NODE_GAP = 6;
+/** The white outline drawn behind each name so it reads over any band color. */
+const LABEL_HALO_COLOR = '#ffffff';
+const LABEL_HALO_WIDTH = 3;
+/**
+ * Names can't be measured during the static build, so the room kept beside
+ * the diagram is estimated: an average character width for the body font plus
+ * a fixed allowance, both as shares of the font size. Measured in the browser
+ * (2026-11-16), long names run about 0.42em a character; short all-capitals
+ * names ("CDBG", "PAYGO") run wider, which the allowance covers. Erring wide
+ * only adds white space; a flow-labels test fails if a name is clipped.
+ */
+const CHAR_WIDTH_EM = 0.45;
+const LABEL_WIDTH_ALLOWANCE_EM = 1;
+
+function estimatedLabelWidth(label: string): number {
+  return (label.length * CHAR_WIDTH_EM + LABEL_WIDTH_ALLOWANCE_EM) * labelFontSize({ label, isNarrow: false });
+}
+
+function labelFontSize(opts: { label: string; isNarrow: boolean }): number {
+  if (YEAR_LABEL.test(opts.label)) return 13;
+  return opts.isNarrow ? 10 : 11;
+}
+
+/** Room to keep beside the diagram for the longest name in its first (sources) and last (destinations) columns. */
+function outerLabelMargins(opts: { nodes: FlowNode[]; links: FlowLink[] }): { left: number; right: number } {
+  const targets = new Set(opts.links.map((l) => l.target));
+  const sources = new Set(opts.links.map((l) => l.source));
+  const widest = (column: FlowNode[]): number =>
+    Math.max(
+      0,
+      ...column.map((n) => estimatedLabelWidth(n.label) + LABEL_NODE_GAP + LABEL_HALO_WIDTH),
+    );
+  return {
+    left: widest(opts.nodes.filter((n) => !targets.has(n.id))),
+    right: widest(opts.nodes.filter((n) => !sources.has(n.id))),
+  };
+}
+
+/** Which side of its node a name is printed on: outside the diagram for the outer columns, toward the middle otherwise. */
+function labelSide(opts: { node: any; outerNames: boolean; lastColumnX: number; renderWidth: number }): 'left' | 'right' {
+  const x0: number = opts.node.x0 ?? 0;
+  if (opts.outerNames && opts.node.depth === 0) return 'left';
+  if (opts.outerNames && x0 === opts.lastColumnX) return 'right';
+  return x0 < opts.renderWidth / 2 ? 'right' : 'left';
+}
 /** Space between label baselines in one column: an 11px line plus breathing room. */
 const LABEL_LINE_GAP = 13;
 const LABEL_EDGE_MARGIN = 6;
