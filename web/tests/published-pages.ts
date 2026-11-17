@@ -11,6 +11,9 @@ export const SINGLE_PAGES = [
   "/brief/", "/trends/", "/glossary/", "/personnel/", "/flow/",
   // Cut with the first pass, then brought back (Max, 2026-11-12).
   "/compare/",
+  // A list of every page, linked from the footer, so Public Source can check the
+  // site against its fact-check by eye (Max, 2026-11-17). Links only, no budget content.
+  "/sitemap/",
 ];
 
 /** PDF sections 9–36: every department, bureau, office and board, except the Public Works parent (see RETIRED_SECTION_PAGES). */

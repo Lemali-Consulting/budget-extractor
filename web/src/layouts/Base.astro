@@ -5,6 +5,7 @@ import YearNotice from '../components/YearNotice.astro';
 import Analytics from '../components/Analytics.astro';
 import { SITE_NAME, PUBLISHER, ABOUT_PAGE_TITLE } from '../lib/site.mjs';
 import { structuredPageData } from '../lib/structured-data';
+import { SITEMAP_PATH, SITEMAP_TITLE } from '../lib/published-pages';
 import { type BudgetYear, HEADLINE, ARCHIVE_YEARS, yearPath } from '../lib/budget-year';
 
 interface Props {
@@ -217,6 +218,7 @@ const DEPARTMENTS_HREF = '/operating/#departments';
     <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-200">
       <p>Data extracted from the City of Pittsburgh's {HEADLINE.documentsName}</p>
       <p class="mt-1"><a href="/about/" class="hover:text-ps-blue-600 underline">{ABOUT_PAGE_TITLE}</a> &mdash; how it was built, the role of AI and important caveats</p>
+      <p class="mt-1"><a href={SITEMAP_PATH} class="hover:text-ps-blue-600 underline">{SITEMAP_TITLE}</a></p>
       <p class="mt-3">
         <a href="https://lemaliconsulting.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-gray-600 transition-colors">
           <span>Built by</span>

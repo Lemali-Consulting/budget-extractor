@@ -1,0 +1,57 @@
+---
+/**
+ * Site map: every page the site publishes, grouped, each under its own title.
+ * Built from the published-page list, so it can't drift from what's built.
+ * It holds links only, no budget figures (Max, 2026-11-17).
+ */
+import Base from '../layouts/Base.astro';
+import { HEADLINE } from '../lib/budget-year';
+import {
+  PUBLISHED_SINGLE_PAGES,
+  SITEMAP_TITLE,
+  isDepartmentSection,
+  publishedPagePaths,
+  publishedSections,
+  sectionPageHref,
+} from '../lib/published-pages';
+
+interface Entry {
+  path: string;
+  title: string;
+}
+
+const sectionEntries: (Entry & { isDepartment: boolean })[] = publishedSections(HEADLINE).map((section: any) => ({
+  path: sectionPageHref({ budgetYear: HEADLINE, section }) as string,
+  title: section.title,
+  isDepartment: isDepartmentSection(section),
+}));
+
+const groups: { heading: string; entries: Entry[] }[] = [
+  { heading: 'Overviews and tools', entries: [...PUBLISHED_SINGLE_PAGES] },
+  { heading: 'Departments', entries: sectionEntries.filter((e) => e.isDepartment) },
+  { heading: 'Citywide sections', entries: sectionEntries.filter((e) => !e.isDepartment) },
+];
+
+const pageCount = publishedPagePaths(HEADLINE).length;
+---
+
+<Base title={SITEMAP_TITLE} description={`Every page of the Pittsburgh Budget Explorer: ${pageCount} pages, listed and linked.`}>
+  <div>
+    <h1 class="text-3xl font-bold mb-2">{SITEMAP_TITLE}</h1>
+    <p class="text-gray-600 mb-8">Every page on this site, {pageCount} pages in all.</p>
+    <div data-testid="sitemap" class="space-y-8">
+      {groups.map((group) => (
+        <section>
+          <h2 class="text-xl font-bold mb-3">
+            {group.heading} <span class="text-sm font-normal text-gray-500">({group.entries.length})</span>
+          </h2>
+          <ul class="grid gap-x-8 gap-y-1.5 sm:grid-cols-2 lg:grid-cols-3">
+            {group.entries.map((entry) => (
+              <li><a href={entry.path} class="text-ps-blue-600 hover:underline">{entry.title}</a></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>

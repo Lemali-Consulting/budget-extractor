@@ -36,12 +36,19 @@ function pagePath(href: string): string | null {
   return path.endsWith("/") ? path : `${path}/`;
 }
 
-test("the site publishes exactly the 43 agreed pages", () => {
-  expect(PUBLISHED.size).toBe(43);
+test("the site publishes exactly the 44 agreed pages", () => {
+  expect(PUBLISHED.size).toBe(44);
   expect(builtPages().sort()).toEqual([...PUBLISHED].sort());
 });
 
+/**
+ * Visiting every page takes about 15s alone and passed 30s under the full
+ * suite's load once the site map made it 44 pages (2026-11-17).
+ */
+const CRAWL_TIMEOUT_MS = 90_000;
+
 test("no published page links to a page that isn't published", async ({ page }) => {
+  test.setTimeout(CRAWL_TIMEOUT_MS);
   const broken: string[] = [];
   for (const route of PUBLISHED) {
     await page.goto(route);
