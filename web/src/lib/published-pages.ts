@@ -9,6 +9,7 @@
  * keep every section page.
  */
 
+import { ABOUT_PATH } from './site.mjs';
 import type { BudgetYear } from './budget-year';
 
 
@@ -58,7 +59,7 @@ export const PUBLISHED_SINGLE_PAGES: readonly SinglePage[] = [
   { path: '/compare/', title: 'Compare departments' },
   { path: '/personnel/', title: 'Personnel' },
   { path: '/glossary/', title: 'Glossary' },
-  { path: '/about/', title: 'About' },
+  { path: ABOUT_PATH, title: 'About' },
   { path: SITEMAP_PATH, title: SITEMAP_TITLE },
 ];
 

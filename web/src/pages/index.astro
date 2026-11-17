@@ -4,7 +4,7 @@ import SiteSearch from '../components/SiteSearch.tsx';
 import SummaryCards from '../components/home/SummaryCards.astro';
 import MoneyFlowTeaser from '../components/home/MoneyFlowTeaser.astro';
 import TopDepartments from '../components/home/TopDepartments.astro';
-import { SITE_NAME } from '../lib/site.mjs';
+import { SITE_NAME, ABOUT_PATH } from '../lib/site.mjs';
 import { HEADLINE, ARCHIVE_YEARS, yearPath, type BudgetYear } from '../lib/budget-year';
 import { capitalYearTotal, fmtM } from '../lib/headline-figures';
 
@@ -25,7 +25,7 @@ const capitalCurrent = capitalYearTotal;
     <h1 class="text-3xl font-bold mb-2">Pittsburgh Budget Explorer</h1>
     <p class="text-lg text-gray-600 mb-3">
       The city's 600-page budget PDF, turned into searchable tables and charts.
-      <a href="/about/" class="text-ps-blue-600 hover:underline text-base">How this was built</a>
+      <a href={ABOUT_PATH} class="text-ps-blue-600 hover:underline text-base">How this was built</a>
     </p>
     <p class="text-sm text-gray-500 mb-3">
       Showing the mayor's <strong>{HEADLINE.budgetName.toLowerCase()}</strong>.

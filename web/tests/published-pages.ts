@@ -7,7 +7,7 @@
  */
 
 export const SINGLE_PAGES = [
-  "/", "/operating/", "/capital/", "/about/", "/trust-funds/",
+  "/", "/operating/", "/capital/", "/pittsburgh-budget-explorer-2027-explained/", "/trust-funds/",
   "/brief/", "/trends/", "/glossary/", "/personnel/", "/flow/",
   // Cut with the first pass, then brought back (Max, 2026-11-12).
   "/compare/",

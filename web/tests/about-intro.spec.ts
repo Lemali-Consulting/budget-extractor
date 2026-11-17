@@ -36,7 +36,7 @@ test("the Escape key closes the popup", async ({ page }) => {
 });
 
 test("the About page itself doesn't pop up its own text", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
   await page.waitForLoadState("networkidle");
   await expect(intro(page)).toBeHidden();
 });

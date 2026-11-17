@@ -7,7 +7,7 @@
 import { test, expect } from "./test-base";
 
 test("the About page is titled and bylined as written", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
   const main = page.locator("main");
   await expect(main.locator("h1")).toHaveText("About Pittsburgh Budget Explorer");
   await expect(main).toContainText("By Max Chis");
@@ -16,7 +16,7 @@ test("the About page is titled and bylined as written", async ({ page }) => {
 });
 
 test("the About page links the two source PDFs, the city's budget page and the code", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
   const main = page.locator("main");
   await expect(main.getByRole("link", { name: "City of Pittsburgh’s proposed 2027 operating budget" }))
     .toHaveAttribute("href", /2027-mayors-operating-budget\.pdf$/);
@@ -29,14 +29,14 @@ test("the About page links the two source PDFs, the city's budget page and the c
 });
 
 test("the About page says where to report an error and how to reach the author", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
   const main = page.locator("main");
   await expect(main.getByRole("link", { name: "rich@publicsource.org" })).toHaveAttribute("href", "mailto:rich@publicsource.org");
   await expect(main.getByRole("link", { name: "max@lemaliconsulting.com" })).toHaveAttribute("href", "mailto:max@lemaliconsulting.com");
 });
 
 test("the sections the new version cut are gone", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
   const headings = await page.locator("main h2").allTextContents();
   expect(headings.map((h) => h.trim())).toEqual([
     "What is the Pittsburgh Budget Explorer?",
@@ -50,7 +50,7 @@ test("the sections the new version cut are gone", async ({ page }) => {
 test("every page's footer names the About page by its title", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("footer").getByRole("link", { name: "About Pittsburgh Budget Explorer" }))
-    .toHaveAttribute("href", "/about/");
+    .toHaveAttribute("href", "/pittsburgh-budget-explorer-2027-explained/");
 });
 
 /**
@@ -59,7 +59,7 @@ test("every page's footer names the About page by its title", async ({ page }) =
  * review, and a search headline and description of its own.
  */
 test("the About page opens with Public Source's introduction and links its AI policy", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
   const main = page.locator("main");
   await expect(main).toContainText("Pittsburgh’s budget shows how the city plans to spend public money.");
   await expect(main.getByRole("link", { name: "Public Source’s AI policy" }))
@@ -72,7 +72,7 @@ test("the About page opens with Public Source's introduction and links its AI po
 });
 
 test("the About page carries Public Source's search headline and description", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
   await expect(page.locator('meta[property="og:title"]'))
     .toHaveAttribute("content", "How the Pittsburgh Budget Explorer was built and AI’s role");
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(

@@ -347,7 +347,7 @@ for (const route of [
   "/trends/",
   "/compare/",
   "/glossary/",
-  "/about/",
+  "/pittsburgh-budget-explorer-2027-explained/",
 ]) {
   test(`${route} links to no retired 2026 page`, async ({ page }) => {
     await page.goto(route);
@@ -540,7 +540,7 @@ test("operating flow shows each department's own budget", async ({ page }) => {
 // About
 // ---------------------------------------------------------------------------
 test("about page loads", async ({ page }) => {
-  await page.goto("/about/");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/");
 
   await expect(main(page).locator("h1").first()).toContainText(/About/i);
 });
@@ -1051,7 +1051,7 @@ test("the trust fund overview flags no correction on the Parks Tax Trust Fund", 
 });
 
 test("about page says no corrections were made", async ({ page }) => {
-  await page.goto("/about/#corrections");
+  await page.goto("/pittsburgh-budget-explorer-2027-explained/#corrections");
 
   const section = main(page).locator("#corrections");
   await expect(section.getByRole("heading", { name: /Corrections we made/, level: 2 })).toBeVisible();

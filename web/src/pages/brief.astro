@@ -1,4 +1,5 @@
 ---
+import { ABOUT_PATH } from '../lib/site.mjs';
 /**Budget in Brief — plain-language overview of the headline Pittsburgh budget.*/
 import Base from '../layouts/Base.astro';
 import HeroStat from '../components/HeroStat.tsx';
@@ -222,9 +223,9 @@ function fmtWholeM(n: number): string {
           "Capital budget" covers long-term infrastructure investments. The two are separate funds.
         </p>
         <p>
-          This analysis was produced by <a href="/about/" class="text-ps-blue-600 hover:underline">Pittsburgh Budget Explorer</a>,
+          This analysis was produced by <a href={ABOUT_PATH} class="text-ps-blue-600 hover:underline">Pittsburgh Budget Explorer</a>,
           an independent project. For the underlying data and methodology, see the
-          <a href="/about/" class="text-ps-blue-600 hover:underline">About page</a>.
+          <a href={ABOUT_PATH} class="text-ps-blue-600 hover:underline">About page</a>.
         </p>
       </div>
     </details>

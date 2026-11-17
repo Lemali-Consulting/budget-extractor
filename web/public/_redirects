@@ -1,3 +1,7 @@
+# The About page moved to the address Public Source gave it (Max, 2026-11-17).
+/about/  /pittsburgh-budget-explorer-2027-explained/  301
+/about   /pittsburgh-budget-explorer-2027-explained/  301
+
 # The dashboard repeated the home page and was retired; old links land there.
 /dashboard/  /  301
 /dashboard   /  301

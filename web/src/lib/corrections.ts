@@ -6,10 +6,11 @@
  * page) says the same thing. Pure functions; safe for any component.
  */
 
+import { ABOUT_PATH } from './site.mjs';
 import type { DeptBudgetRow } from './department-budgets';
 
 /** Site path of the About page's corrections list. */
-export const CORRECTIONS_PATH = '/about/#corrections';
+export const CORRECTIONS_PATH = `${ABOUT_PATH}#corrections`;
 
 /** Fund tag, in the department-budget view, of trust funds. */
 const TRUST_FUND = 'trust';
@@ -41,7 +42,7 @@ export function correctionAnchor(opts: { year: number; id: string }): string {
 
 /** Link to a correction's entry on the About page's corrections list. */
 export function correctionHref(opts: { year: number; id: string }): string {
-  return `/about/#${correctionAnchor(opts)}`;
+  return `${ABOUT_PATH}#${correctionAnchor(opts)}`;
 }
 
 /** Headings that were relabelled, as parallel lists: what the PDF prints and what we show. */

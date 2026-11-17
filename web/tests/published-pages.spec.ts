@@ -164,3 +164,14 @@ for (const [path, text] of AP_DATE_EXAMPLES) {
     await expect(page.locator("main")).toContainText(text);
   });
 }
+
+test("the About page lives at Public Source's address, and old About links follow it there", () => {
+  // Public Source gave the About page its address with the text (Max, 2026-11-17).
+  const NEW_ABOUT = "/pittsburgh-budget-explorer-2027-explained/";
+  expect(builtPages()).toContain(NEW_ABOUT);
+  expect(builtPages()).not.toContain("/about/");
+  const rules = readFileSync(join(WEB_ROOT, "public", "_redirects"), "utf8")
+    .split("\n").map((l) => l.trim().split(/\s+/));
+  expect(rules).toContainEqual(["/about/", NEW_ABOUT, "301"]);
+  expect(rules).toContainEqual(["/about", NEW_ABOUT, "301"]);
+});

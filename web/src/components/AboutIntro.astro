@@ -5,7 +5,7 @@
  * from the About page when shown, so it is written once, isn't repeated in
  * every page's HTML and stays out of the search index.
  */
-import { ABOUT_PAGE_TITLE } from '../lib/site.mjs';
+import { ABOUT_PAGE_TITLE, ABOUT_PATH } from '../lib/site.mjs';
 import { ABOUT_INTRO_SEEN_KEY } from '../lib/about-intro';
 ---
 
@@ -23,14 +23,14 @@ import { ABOUT_INTRO_SEEN_KEY } from '../lib/about-intro';
     </div>
     <div data-about-intro-body tabindex="-1" class="overflow-y-auto px-5 py-4 focus:outline-none"></div>
     <div class="flex items-center justify-between gap-4 border-t px-5 py-3 text-sm">
-      <a href="/about/" class="text-ps-blue-600 hover:underline">Open the About page</a>
+      <a href={ABOUT_PATH} class="text-ps-blue-600 hover:underline">Open the About page</a>
       <button type="button" data-about-intro-close class="rounded bg-ps-blue-600 px-4 py-2 font-medium text-white hover:bg-ps-blue-700">Close</button>
     </div>
   </div>
 </dialog>
 
 <script>
-  const ABOUT_PATH = '/about/';
+  import { ABOUT_PATH } from '../lib/site.mjs';
   const dialog = document.getElementById('about-intro') as HTMLDialogElement | null;
 
   /** True when this browser has seen the popup, or can't remember that it has (so it never shows on every page). */

@@ -16,6 +16,8 @@ export const SITE_NAME = 'Pittsburgh Budget Explorer';
 
 /** The About page's heading, and the footer link to it on every page. */
 export const ABOUT_PAGE_TITLE = `About ${SITE_NAME}`;
+/** The About page's address, as Public Source named it (Max, 2026-11-17); /about/ redirects here. */
+export const ABOUT_PATH = '/pittsburgh-budget-explorer-2027-explained/';
 
 export const PUBLISHER = Object.freeze({
   name: 'Public Source',
