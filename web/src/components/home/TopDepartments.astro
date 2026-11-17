@@ -1,0 +1,29 @@
+---
+/**
+ * "Top departments by budget": the largest operating departments as bars,
+ * each linking to its page. Shown on the home page and alone at
+ * /embed/top-departments/.
+ */
+import BudgetChart from '../BudgetChart.tsx';
+import { HEADLINE } from '../../lib/budget-year';
+import { capitalizeFirst } from '../../lib/text-case';
+import { publishedSectionHrefs } from '../../lib/published-pages';
+import { departmentCount, departmentRows } from '../../lib/headline-figures';
+
+interface Props {
+  /** Spacing around the panel, set by the page placing it. */
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+/** How many departments the chart draws. */
+const CHART_DEPARTMENTS = 15;
+---
+
+<div class={`bg-white rounded-lg border p-5 ${className}`} data-testid="top-departments">
+  <div class="flex items-baseline justify-between mb-1">
+    <h2 class="text-lg font-semibold">Top departments by budget</h2>
+  </div>
+  <p class="text-sm text-gray-500 mb-3">{capitalizeFirst(HEADLINE.operatingName)} — largest {Math.min(CHART_DEPARTMENTS, departmentCount)} of {departmentCount} departments.</p>
+  <BudgetChart data={departmentRows} sectionHrefs={publishedSectionHrefs(HEADLINE)} client:load />
+</div>

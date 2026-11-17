@@ -10,7 +10,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { test, expect } from "./test-base";
-import { DEPARTMENT_SLUGS, PUBLISHED, RETIRED_EXPLORER, RETIRED_SECTION_PAGES } from "./published-pages";
+import { DEPARTMENT_SLUGS, EMBED_PAGES, PUBLISHED, RETIRED_EXPLORER, RETIRED_SECTION_PAGES } from "./published-pages";
 
 const WEB_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(WEB_ROOT, "dist");
@@ -38,7 +38,7 @@ function pagePath(href: string): string | null {
 
 test("the site publishes exactly the 44 agreed pages", () => {
   expect(PUBLISHED.size).toBe(44);
-  expect(builtPages().sort()).toEqual([...PUBLISHED].sort());
+  expect(builtPages().sort()).toEqual([...PUBLISHED, ...EMBED_PAGES].sort());
 });
 
 /**

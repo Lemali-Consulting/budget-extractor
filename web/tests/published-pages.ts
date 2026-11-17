@@ -58,3 +58,11 @@ export const PUBLISHED = new Set([
   ...DEPARTMENT_SLUGS.map((s) => `/departments/${s}/`),
   ...CITYWIDE_SECTION_SLUGS.map((s) => `/sections/${s}/`),
 ]);
+
+/**
+ * Frameable copies of three home-page pieces, for Public Source to embed in
+ * its stories (Max, 2026-11-17). They repeat the home page's figures, carry no
+ * site navigation and are kept out of search engines, so they aren't counted
+ * among the pages readers browse or listed on the site map.
+ */
+export const EMBED_PAGES = ["/embed/budget-summary/", "/embed/money-flow/", "/embed/top-departments/"];

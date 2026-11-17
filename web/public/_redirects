@@ -314,5 +314,8 @@
 /explorer    /  301
 /hero/*      /  301
 /hero        /  301
+# Embeds retired with the pared site go home. The three current embeds
+# (/embed/budget-summary/, /embed/money-flow/, /embed/top-departments/) are
+# built pages, which Netlify serves ahead of these rules (Max, 2026-11-17).
 /embed/*     /  301
 /embed       /  301

@@ -113,3 +113,14 @@ export function publishedPagePaths(budgetYear: BudgetYear): string[] {
   const sectionPaths = publishedSections(budgetYear).map((section: SectionRef) => sectionPageHref({ budgetYear, section }) as string);
   return [...PUBLISHED_SINGLE_PAGES.map((page) => page.path), ...sectionPaths];
 }
+
+/**
+ * Frameable copies of three home-page pieces, for Public Source to embed in its
+ * stories (Max, 2026-11-17). They repeat home-page figures and are kept out of
+ * search engines, so they aren't among the pages readers browse or the site map.
+ */
+export const EMBED_PAGES = {
+  budgetSummary: { path: '/embed/budget-summary/', title: 'Budget summary' },
+  moneyFlow: { path: '/embed/money-flow/', title: 'Where the money flows' },
+  topDepartments: { path: '/embed/top-departments/', title: 'Top departments by budget' },
+} as const;

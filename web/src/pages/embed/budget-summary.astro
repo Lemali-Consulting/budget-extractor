@@ -1,0 +1,11 @@
+---
+/** Embeddable copy of the home page's five summary cards. */
+import Embed from '../../layouts/Embed.astro';
+import SummaryCards from '../../components/home/SummaryCards.astro';
+import { HEADLINE } from '../../lib/budget-year';
+import { EMBED_PAGES } from '../../lib/published-pages';
+---
+
+<Embed title={EMBED_PAGES.budgetSummary.title} description={`Pittsburgh's ${HEADLINE.budgetName.toLowerCase()} at a glance.`} sourcePath="/">
+  <SummaryCards />
+</Embed>

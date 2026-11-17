@@ -1,0 +1,11 @@
+---
+/** Embeddable copy of the home page's "Where the money flows" diagram. */
+import Embed from '../../layouts/Embed.astro';
+import MoneyFlowTeaser from '../../components/home/MoneyFlowTeaser.astro';
+import { HEADLINE } from '../../lib/budget-year';
+import { EMBED_PAGES } from '../../lib/published-pages';
+---
+
+<Embed title={EMBED_PAGES.moneyFlow.title} description={`Revenue to departments in Pittsburgh's ${HEADLINE.budgetName.toLowerCase()}.`} sourcePath="/flow/">
+  <MoneyFlowTeaser />
+</Embed>

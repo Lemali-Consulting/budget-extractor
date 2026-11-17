@@ -1,0 +1,82 @@
+---
+/**
+ * "Where the money flows": revenue sources through the operating budget to
+ * the largest departments, linking to the full money flow page. Shown on the
+ * home page and alone at /embed/money-flow/.
+ */
+import FlowSankey from '../FlowSankey.tsx';
+import type { FlowNode, FlowLink } from '../FlowSankey.tsx';
+import { revenueColor } from '../../lib/flow-colors';
+import { colorForSlug } from '../../lib/department-groups';
+import { HEADLINE } from '../../lib/budget-year';
+import { departmentRows, revenueSources, revenueTotal } from '../../lib/headline-figures';
+
+interface Props {
+  /** Spacing around the panel, set by the page placing it. */
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+/** Departments drawn by name; the rest are one "Other" band. */
+const TEASER_TOP = 8;
+const teaserDepts = departmentRows
+  .filter((r) => r.year === HEADLINE.columns.budget)
+  .sort((a, b) => b.amount - a.amount);
+const teaserDeptTotal = teaserDepts.reduce((s, d) => s + d.amount, 0);
+const teaserTop = teaserDepts.slice(0, TEASER_TOP);
+const teaserOther = teaserDepts.slice(TEASER_TOP);
+const teaserOtherAmount = teaserOther.reduce((s, d) => s + d.amount, 0);
+// Departments are scaled so their bands add up to the revenue on the left.
+const teaserScale = revenueTotal / teaserDeptTotal;
+
+const teaserNodes: FlowNode[] = [
+  ...revenueSources.map((r) => ({
+    id: `rev:${r.label}`,
+    label: r.label.replace(/ Revenue$/, ''),
+    category: 'revenue',
+    color: revenueColor(r.label),
+  })),
+  { id: 'trunk', label: 'Operating budget', category: 'trunk' },
+  ...teaserTop.map((d) => ({
+    id: `dep:${d.slug}`,
+    label: d.department.replace(/^Bureau of |^Department of |^Office of(?: the)? /, ''),
+    category: 'department',
+    color: colorForSlug(d.slug),
+  })),
+  ...(teaserOther.length > 0
+    ? [{ id: 'dep:other', label: `Other (${teaserOther.length})`, category: 'department-other' }]
+    : []),
+];
+
+const teaserLinks: FlowLink[] = [
+  ...revenueSources.map((r) => ({
+    source: `rev:${r.label}`,
+    target: 'trunk',
+    value: r.amount,
+  })),
+  ...teaserTop.map((d) => ({
+    source: 'trunk',
+    target: `dep:${d.slug}`,
+    value: d.amount * teaserScale,
+    color: colorForSlug(d.slug),
+  })),
+  ...(teaserOther.length > 0
+    ? [{ source: 'trunk', target: 'dep:other', value: teaserOtherAmount * teaserScale }]
+    : []),
+];
+---
+
+<a
+  href="/flow/"
+  class={`block p-5 bg-white rounded-lg border-2 border-ps-blue-200 ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow-lg transition ${className}`}
+>
+  <div class="flex items-baseline justify-between mb-2">
+    <h2 class="text-xl font-bold text-ps-blue-900">Where the money flows</h2>
+    <span class="text-sm text-ps-blue-600 hover:text-ps-blue-800">See the full money flow &rarr;</span>
+  </div>
+  <p class="text-sm text-gray-600 mb-3">
+    From {revenueSources.length} revenue sources, through the operating budget, out to {teaserDepts.length} departments.
+  </p>
+  <FlowSankey nodes={teaserNodes} links={teaserLinks} width={1000} height={280} showLabels />
+</a>

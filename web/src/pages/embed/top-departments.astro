@@ -1,0 +1,11 @@
+---
+/** Embeddable copy of the home page's "Top departments by budget" chart. */
+import Embed from '../../layouts/Embed.astro';
+import TopDepartments from '../../components/home/TopDepartments.astro';
+import { HEADLINE } from '../../lib/budget-year';
+import { EMBED_PAGES } from '../../lib/published-pages';
+---
+
+<Embed title={EMBED_PAGES.topDepartments.title} description={`The largest departments in Pittsburgh's ${HEADLINE.budgetName.toLowerCase()}.`} sourcePath="/operating/">
+  <TopDepartments />
+</Embed>

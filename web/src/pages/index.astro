@@ -1,25 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import SiteSearch from '../components/SiteSearch.tsx';
-import BudgetChart from '../components/BudgetChart.tsx';
-import FlowSankey from '../components/FlowSankey.tsx';
-import type { FlowNode, FlowLink } from '../components/FlowSankey.tsx';
-import { revenueColor } from '../lib/flow-colors';
-import { colorForSlug } from '../lib/department-groups';
-import { capitalizeFirst } from '../lib/text-case';
+import SummaryCards from '../components/home/SummaryCards.astro';
+import MoneyFlowTeaser from '../components/home/MoneyFlowTeaser.astro';
+import TopDepartments from '../components/home/TopDepartments.astro';
 import { SITE_NAME } from '../lib/site.mjs';
 import { HEADLINE, ARCHIVE_YEARS, yearPath, type BudgetYear } from '../lib/budget-year';
-import { operating, sumFor } from '../lib/department-budgets';
-import { correctionHref, trustFundCorrections } from '../lib/corrections';
-import PersonnelCard from '../components/PersonnelCard.astro';
-import { publishedSectionHrefs } from '../lib/published-pages';
+import { capitalYearTotal, fmtM } from '../lib/headline-figures';
 
-const { columns } = HEADLINE;
-const {
-  departmentBudgets,
-  revenueWaterfall,
-  capitalFundingSources: capitalFunding,
-} = HEADLINE.views;
 const operatingSections = HEADLINE.operating.sections;
 const capitalSections = HEADLINE.capital.sections;
 // The most recent archived budget, linked from the hero (none while only 2027 is published).
@@ -28,82 +16,7 @@ const operatingTables = operatingSections.reduce((n: number, s: any) => n + s.ta
 
 // Count capital functional areas
 const capitalAreas = new Set(capitalSections.map((s: any) => s.functional_area || 'Other'));
-
-// Sum capital six-year plan total (current year onward)
-const capitalTotal = (capitalFunding as { year: string; amount: number }[])
-  .filter(r => parseInt(r.year) >= HEADLINE.year)
-  .reduce((s, r) => s + r.amount, 0);
-
-// Summary stats
-const budgetRows = departmentBudgets;
-const totalCurrent = sumFor(budgetRows, 'operating', columns.budget);
-const totalPrior = sumFor(budgetRows, 'operating', columns.priorBudget);
-const trustTotalCurrent = sumFor(budgetRows, 'trust', columns.budget);
-const budgetChange = totalPrior > 0 ? ((totalCurrent - totalPrior) / totalPrior * 100) : 0;
-// Trust-fund figures in the headline year that rest on one of our corrections to the source PDF.
-const trustCorrections = trustFundCorrections({
-  corrections: HEADLINE.corrections,
-  departmentBudgets: budgetRows,
-  budgetColumn: columns.budget,
-});
-const deptCount = new Set(operating(budgetRows).map(r => r.slug)).size;
-
-const revenueTotal = (revenueWaterfall as { amount: number }[]).reduce((s, r) => s + r.amount, 0);
-
-const capitalCurrent = (capitalFunding as { year: string; amount: number }[])
-  .filter(r => r.year === String(HEADLINE.year))
-  .reduce((s, r) => s + r.amount, 0);
-
-function fmtM(n: number): string {
-  return `$${(n / 1_000_000).toFixed(1)}M`;
-}
-
-// ---------- Teaser Sankey: revenue → trunk → top departments ----------
-const teaserDepts = operating(budgetRows)
-  .filter((r) => r.year === columns.budget)
-  .sort((a, b) => b.amount - a.amount);
-const teaserDeptTotal = teaserDepts.reduce((s, d) => s + d.amount, 0);
-const TEASER_TOP = 8;
-const teaserTop = teaserDepts.slice(0, TEASER_TOP);
-const teaserOther = teaserDepts.slice(TEASER_TOP);
-const teaserOtherAmount = teaserOther.reduce((s, d) => s + d.amount, 0);
-const teaserScale = revenueTotal / teaserDeptTotal;
-
-const teaserNodes: FlowNode[] = [
-  ...(revenueWaterfall as { label: string; amount: number }[]).map((r) => ({
-    id: `rev:${r.label}`,
-    label: r.label.replace(/ Revenue$/, ''),
-    category: 'revenue',
-    color: revenueColor(r.label),
-  })),
-  { id: 'trunk', label: 'Operating budget', category: 'trunk' },
-  ...teaserTop.map((d) => ({
-    id: `dep:${d.slug}`,
-    label: d.department.replace(/^Bureau of |^Department of |^Office of(?: the)? /, ''),
-    category: 'department',
-    color: colorForSlug(d.slug),
-  })),
-  ...(teaserOther.length > 0
-    ? [{ id: 'dep:other', label: `Other (${teaserOther.length})`, category: 'department-other' }]
-    : []),
-];
-
-const teaserLinks: FlowLink[] = [
-  ...(revenueWaterfall as { label: string; amount: number }[]).map((r) => ({
-    source: `rev:${r.label}`,
-    target: 'trunk',
-    value: r.amount,
-  })),
-  ...teaserTop.map((d) => ({
-    source: 'trunk',
-    target: `dep:${d.slug}`,
-    value: d.amount * teaserScale,
-    color: colorForSlug(d.slug),
-  })),
-  ...(teaserOther.length > 0
-    ? [{ source: 'trunk', target: 'dep:other', value: teaserOtherAmount * teaserScale }]
-    : []),
-];
+const capitalCurrent = capitalYearTotal;
 ---
 
 <Base title={SITE_NAME} description={`The City of Pittsburgh's ${HEADLINE.documentsName}, turned into searchable tables and charts.`}>
@@ -142,57 +55,9 @@ const teaserLinks: FlowLink[] = [
     </a>
   )}
 
-  <!-- Summary stats -->
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-    <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-400">Operating budget</div>
-      <div class="text-2xl font-bold text-ps-blue-900 mt-1">{fmtM(totalCurrent)}</div>
-      <div class={`text-sm mt-0.5 ${budgetChange >= 0 ? 'text-ps-blue-600' : 'text-ps-red-600'}`}>
-        {budgetChange >= 0 ? '+' : ''}{budgetChange.toFixed(1)}% vs {HEADLINE.priorYear}
-      </div>
-    </div>
-    <div class="bg-white rounded-lg border p-4" data-testid="trust-fund-total">
-      <div class="text-xs text-gray-400">Trust funds{trustCorrections.length > 0 && <span aria-hidden="true"> &dagger;</span>}</div>
-      <div class="text-2xl font-bold text-slate-700 mt-1" data-testid="trust-fund-total-amount">{fmtM(trustTotalCurrent)}</div>
-      <div class="text-sm text-gray-500 mt-0.5">Separate from operating</div>
-      <a href="/trust-funds/" class="block text-xs text-ps-blue-600 hover:underline mt-1">See the funds &rarr;</a>
-      {trustCorrections.length > 0 && (
-        <a
-          href={correctionHref({ year: HEADLINE.year, id: trustCorrections[0].id })}
-          class="block text-xs text-ps-yellow-800 underline hover:text-ps-yellow-600 mt-1"
-          data-testid="trust-fund-correction-footnote"
-        >
-          &dagger; Includes a heading correction by us ({trustCorrections.map((c) => c.section).join(', ')}): the PDF mislabels its years. Details
-        </a>
-      )}
-    </div>
-    <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-400">Projected revenue</div>
-      <div class="text-2xl font-bold text-green-900 mt-1">{fmtM(revenueTotal)}</div>
-      <div class="text-sm text-gray-500 mt-0.5">{(revenueWaterfall as any[]).length} sources</div>
-    </div>
-    <div class="bg-white rounded-lg border p-4">
-      <div class="text-xs text-gray-400">Capital ({HEADLINE.year})</div>
-      <div class="text-2xl font-bold text-ps-yellow-900 mt-1">{fmtM(capitalCurrent)}</div>
-      <div class="text-sm text-gray-500 mt-0.5">6-yr plan: {fmtM(capitalTotal)}</div>
-    </div>
-    <PersonnelCard budgetYear={HEADLINE} />
-  </div>
+  <SummaryCards class="mb-8" />
 
-  <!-- Money Flow teaser -->
-  <a
-    href="/flow/"
-    class="block mb-8 p-5 bg-white rounded-lg border-2 border-ps-blue-200 ring-0 hover:ring-2 hover:ring-ps-blue-400 hover:shadow-lg transition"
-  >
-    <div class="flex items-baseline justify-between mb-2">
-      <h2 class="text-xl font-bold text-ps-blue-900">Where the money flows</h2>
-      <span class="text-sm text-ps-blue-600 hover:text-ps-blue-800">See the full money flow &rarr;</span>
-    </div>
-    <p class="text-sm text-gray-600 mb-3">
-      From {(revenueWaterfall as any[]).length} revenue sources, through the operating budget, out to {teaserDepts.length} departments.
-    </p>
-    <FlowSankey nodes={teaserNodes} links={teaserLinks} width={1000} height={280} showLabels />
-  </a>
+  <MoneyFlowTeaser class="mb-8" />
 
   <!-- Trends teaser -->
   <a
@@ -230,14 +95,7 @@ const teaserLinks: FlowLink[] = [
     </a>
   </div>
 
-  <!-- Inline chart: top departments -->
-  <div class="bg-white rounded-lg border p-5 mb-8">
-    <div class="flex items-baseline justify-between mb-1">
-      <h2 class="text-lg font-semibold">Top departments by budget</h2>
-    </div>
-    <p class="text-sm text-gray-500 mb-3">{capitalizeFirst(HEADLINE.operatingName)} — largest {deptCount > 15 ? 15 : deptCount} of {deptCount} departments.</p>
-    <BudgetChart data={operating(budgetRows)} sectionHrefs={publishedSectionHrefs(HEADLINE)} client:load />
-  </div>
+  <TopDepartments class="mb-8" />
 
   <!-- Search -->
   <div class="mb-8">

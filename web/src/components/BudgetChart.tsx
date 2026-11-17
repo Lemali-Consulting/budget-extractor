@@ -13,6 +13,18 @@ interface BudgetRow {
   amount: number;
 }
 
+/** Width kept clear right of the bars for the value printed past the longest one ("$160.0M"). */
+const VALUE_LABEL_MARGIN = 56;
+
+/**
+ * Open a department's page from its bar. Framed in another site's story (an
+ * embed), it opens in a new tab so the story stays where the reader left it.
+ */
+function openDepartmentPage(href: string): void {
+  if (window.self !== window.top) window.open(href, '_blank', 'noopener');
+  else window.location.href = href;
+}
+
 /** sectionHrefs: published page per department slug (see publishedSectionHrefs); bars without one aren't clickable. */
 export default function BudgetChart({ data, sectionHrefs }: { data: BudgetRow[]; sectionHrefs: Record<string, string> }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,6 +54,7 @@ export default function BudgetChart({ data, sectionHrefs }: { data: BudgetRow[];
 
     const chart = Plot.plot({
       marginLeft: 220,
+      marginRight: VALUE_LABEL_MARGIN,
       width: containerWidth,
       height: Math.max(300, filtered.length * 30),
       x: { label: 'Amount ($)', tickFormat: (d: number) => `$${(d / 1_000_000).toFixed(1)}M` },
@@ -78,7 +91,7 @@ export default function BudgetChart({ data, sectionHrefs }: { data: BudgetRow[];
         rect.setAttribute('data-slug', filtered[i].slug);
         rect.style.cursor = 'pointer';
         rect.addEventListener('click', () => {
-          window.location.href = href;
+          openDepartmentPage(href);
         });
         rect.addEventListener('mouseenter', () => {
           rect.setAttribute('opacity', '0.7');

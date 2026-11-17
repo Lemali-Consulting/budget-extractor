@@ -1,0 +1,59 @@
+---
+/**
+ * Layout for a frameable piece of the site: the piece alone, with a source
+ * line and no site header, navigation, footer, popup or analytics (a view
+ * inside a Public Source story is counted on the story's page). Links open in
+ * a new tab, and the page tells the page around it how tall it is.
+ */
+import '../styles/global.css';
+import '../styles/brand-fonts';
+import { HEADLINE } from '../lib/budget-year';
+import { SITE_NAME } from '../lib/site.mjs';
+import { EMBED_HEIGHT_MESSAGE } from '../lib/embed';
+
+interface Props {
+  title: string;
+  description: string;
+  /** The full page this piece comes from, linked in the source line. */
+  sourcePath: string;
+}
+
+const { title, description, sourcePath } = Astro.props;
+const sourceUrl = new URL(sourcePath, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <base target="_blank" />
+    <title>{title} | {SITE_NAME}</title>
+  </head>
+  <body class="m-0 bg-white text-gray-900" data-embed-height-message={EMBED_HEIGHT_MESSAGE}>
+    <div data-embed-content>
+    <main class="p-1">
+      <slot />
+    </main>
+    <p class="px-1 pb-1 pt-2 text-xs text-gray-500">
+      Source: <a href={sourceUrl} rel="noopener" class="text-ps-blue-600 underline hover:text-ps-blue-800">{SITE_NAME}</a>,
+      from the City of Pittsburgh's {HEADLINE.documentsName}.
+    </p>
+    </div>
+    <script>
+      // Tell the page around the frame how tall this page is, now and whenever it changes,
+      // so the frame can be sized to fit (see the embed code's listener).
+      // The piece's own height, not the document's: the document is never shorter
+      // than the frame, so measuring it would stop a too-tall frame from shrinking.
+      const type = document.body.dataset.embedHeightMessage;
+      const content = document.querySelector('[data-embed-content]') as HTMLElement;
+      const report = (): void => {
+        window.parent.postMessage({ type, path: location.pathname, height: Math.ceil(content.getBoundingClientRect().height) }, '*');
+      };
+      new ResizeObserver(report).observe(content);
+      window.addEventListener('load', report);
+    </script>
+  </body>
+</html>
